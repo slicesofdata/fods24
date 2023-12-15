@@ -1,6 +1,6 @@
 ---
 title: "Modules" # index to display header for the nested *.qmd files (even if in subdirectory); displays directory name otherwise
-description: "Overview of Modules for PSYC 167"
+description: "Overview of Modules for PSYC 166"
 #author: ""
 #date: ""
 #order: 0 
