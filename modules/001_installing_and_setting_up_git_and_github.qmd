@@ -2,6 +2,9 @@
 title: "**Installing and Setting Up Git and GitHub for R**"
 author: "Gabriel I. Cook"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
+
+execute:
+  enabled: true
 ---
 
 ```{r}
