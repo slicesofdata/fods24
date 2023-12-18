@@ -1009,3 +1009,9 @@ summarizer(DAT, cols = c(min, hour), event)
 
 And of course, when you really get excited, you could add functions so that you can perform different metrics. When you are done, you can save your favorite function to a file you can `source()`. 
 
+
+# **Session Information**
+
+```{r}
+sessionInfo()
+```

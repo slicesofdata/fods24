@@ -972,3 +972,8 @@ dataframe %>%
     summarize(., ...)      # then summarize
 ```
 
+# **Session Information**
+
+```{r}
+sessionInfo()
+```
