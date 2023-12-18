@@ -66,9 +66,7 @@ This course introduces students to R, a programming language for statistical com
 
 -   Learn how to use R and RStudio to answer real‐word questions with data
 
-<!-- -->
-
--   Use the dplyr and tidyr libraries to clean data prior to statistical analysis
+-   Use the **dplyr** and **tidyr** libraries to clean data prior to statistical analysis
 
 -   Learn how to import, clean, manipulate, tidy, and summarize data
 
@@ -145,22 +143,26 @@ Students will read materials covering data-set relevant cognitive functions or a
 
 **Machine Learning:** Thegoal is to introduce students to supervised and unsupervised machine learning applications in order to understand relationships among variables and for classifying and segmenting. For example, supervised learning (e.g., correlation, regression, multiple regression, and if time support-vector machines for nonlinear classification) would be used for understanding relationships among cognitive variables, non-cognitive variables, and to identify groups. Unsupervised learning (e.g., hierarchical clustering, dimension reduction) would be used to understand to data segmentation.
 
-**Project Management:** Projectsforacademics and industry involve collaboration as well as organization of code and materials. Students will learn about and maintain a project with an organized directory structure both locally and remotely with collaborators using Git and GitHub.
+**Project Management:** Projects for academics and industry involve collaboration as well as organization of code and materials. Students will learn about and maintain a project with an organized directory structure both locally and remotely with collaborators using Git and [GitHub](github.com)
 
 ***Academic Integrity.*** Although you may find yourself working on assignments with a partner or discussing them with classmates, all assignments should be your one original work. You are not to share materials with other students if that material has the potential of being copied, even if your intention is not to allow a classmate to copy your work. Any signs of academic dishonesty will be submitted to the Academic Standards Committee for review. Although I do not anticipate any events of academic dishonesty, any form of dishonestly of any form will *not* be tolerated.
 
-Many students are unclear of the definition of plagiarism and for that reason I have posted some CMC links to information that I believe will clarify the issue. In addition, any work completed for another course, past or present, may not be submitted for a grade for this course. http://registrar.academic.claremontmckenna.edu/acpolicy/default.asp
+Many students are unclear of the definition of plagiarism and for that reason I have posted some CMC links to information that I believe will clarify the issue. In addition, any work completed for another course, past or present, may not be submitted for a grade for this course. <http://registrar.academic.claremontmckenna.edu/acpolicy/default.asp>
 
 ***Course Modules.*** This course will be split into modules, allocating various weeks depending on the scope of the module.
 
 ## Course Structure
 
-The assumption is that students possess varying levels of skills related to programming. Nevertheless, students are expected to attend class prepared to engage with and practice concepts related to readings and lectures. Prior to class, students should have completed readings (e.g., modules or readings referenced therein) and watched any associated lectures on the material. Class time will involve answering questions raised by students, a mining lecture, and coding activities that will inform the final project (note, concepts build). Homework assignments will also invovolved engagement with the project data. Class time will be spent engaging in a variety of tasks and activities, including lectures, group-work, applied coding activities, presentations, and discussions.
+The assumption is that students possess varying levels of skills related to programming. Nevertheless, students are expected to attend class prepared to engage with and practice concepts related to readings and lectures. Prior to class, students should have completed readings (e.g., modules or readings referenced therein) and watched any associated lectures on the material. Class time will involve answering questions raised by students, a mining lecture, and coding activities that will inform the final project (note, concepts build). Homework assignments will also involved engagement with the project data. Class time will be spent engaging in a variety of tasks and activities, including lectures, group-work, applied coding activities, presentations, and discussions.
 
 ## Course Schedule
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE, eval=TRUE}
-SCHEDULE <- rio::import(here::here("syllabus/tables/schedule.csv"))
+#SCHEDULE <- rio::import(here::here("syllabus/tables/2schedule.csv"))
+SCHEDULE <- read.table(here::here("syllabus/tables/schedule.csv"), 
+                       header = T,
+                       sep = ";"
+                       )
 knitr::kable(SCHEDULE)
 ```
 

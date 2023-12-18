@@ -1,28 +1,26 @@
-Date,Week,Module,Topic
-29-Aug,1,1,Introduction & Project Management
-,1,2,Graphical Perception
-5-Sep,2,3,Data Frame Manipulation and Wrangling
-,2,4,Data Subsets and Summaries
-12-Sep,3,5,The Grammar of Graphics
-,3,6,Visualizing Amounts
-19-Sep,4,7,Visualizing Associations
-,4,8,Spatial Position and Adjustment
-26-Sep,5,9,Considerations in Data Visualization
-,5,10,Color Scales and Palettes
-3-Oct,6,11,Histograms and Density Plots*
-,6,12,"Coordinates, Axes and Position Scales"
-10-Oct,7,13,Statistical Transformations (Data as-is Versus Summaries)
-,7,14,More Data Wrangling
-17-Oct,8," ",<span style="color:#1EDAFB">Fall Break (no class)</span>
-24-Oct,9,15,Visualizing More Distributions
-,9,16,Visualizing Uncertainty
-31-Oct,10,,<span style="color:#8DFF0A">Mid-Term Presentation</span>
-7-Nov,11,17,Visualizing Trends
-,11,18,Legends and Arrangement
-14-Nov,12,19,Designing Perceptually Efficient Visualizations
-,12,20,Annotation and Text
-21-Nov,13,21,Multi-Panel Plots: Faceting and Layers
-,13,22,Attentional Control and Tradeoffs
-28-Nov,14,23,Titles Captions & Tables
-,14,24,Figure Design (Themes)
-5-Dec,15,,<span style="color:#8DFF0A">Presentation (Last day of Instruction)</span>
+Date;Week;Module;Topic
+01-18;1;1;Introduction to R, RStudio, and R Markdown
+01-25;2;2;Data Mise en Place (Project Management)
+02-01;3;3;Functions, Parameters, Arguments, and Scripts
+;3;4;Reading and Writing Data
+02-08;4;5;Vectors and Data Frame Basics
+;4;6;Variables and Measures of Cognition
+02-15;5;7;Manipulating Data Frames
+;5;8;Work with Cognitive Task Data
+02-22;6;9;Summarizing Data
+;6;10;Summarizing Cognitive Task Data
+03-01;7;11;Visualizing Data
+;7;12;Examine Relationships in Variables of Cognition
+03-07;8;13;Strings and Factors
+03-14;9;-;"<span style=""color:#1EDAFB"">Spring Break (no class)</span>"
+03-21;10;-;"<span style=""color:#8DFF0A"">Mid-Term Presentation</span>"
+03-29;11;15;Joining Relational Data
+;11;16;Joining Project Data
+04-04;12;17;Discuss Appropriate Models Related to Cognition Readings
+;12;18;Cont.
+04-11;13;19;Linear Model Testing
+04-18;14;20;Exploratory Data Analysis
+;14;21;Cont.
+04-18;15;-;Project Week
+04-25;16;-;Project Week
+05-01;17;-;"<span style=""color:#8DFF0A"">Presentation (Last day of Instruction)</span>"

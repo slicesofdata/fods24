@@ -59,14 +59,16 @@ You can also think of an *object* as a sort of container that holds something. C
 
 We will deal with different types of objects in data science. Without providing too complicated or technical of a description, some are describe below. 
 
-- *numeric* objects: representing numeric information (e.g., one's age)
-- *character* objects: representing character information (e.g., one's name or race)
-- *vector* objects: representing more than one numeric object (e.g., ages of participants)
-- *data frame* objects: containing vectors of data (e.g., column variables and row instances of data)
-- *function* objects: that accept one object and return an other object (e.g., the mean of numeric vector)
+- **numeric** objects: representing numeric information (e.g., one's age)
+- **character** objects: representing character information (e.g., one's name or race)
+- **vector** objects: representing more than one numeric object (e.g., ages of participants)
+- **data frame** objects: containing vectors of data (e.g., column variables and row instances of data)
+- **function** objects: that accept one object and return an other object (e.g., the mean of numeric vector)
+
+There are other type of objects that you will learn about and encounter but for now, those are the most relevant.
 
 
-There are other type of objects 
+## **A character example**
 
 Let's start with an example of an object called `name`, which we would like to assign a set of characters, like *Jim Bob*. 
 
@@ -556,23 +558,36 @@ For now, know that you can `source()` the raw code from the course site using th
 source("https://raw.githubusercontent.com/slicesofdata/fods24/main/r/functions/view_html.R")
 ```
 
+If you query the function in the console by typing using `?head` or `help(head)`, you will see in there are two main parameters. 
+
+- `x`: a vector or data frame object 
+- `n`: a value of the indices to be selected (e.g., elements of vector, rows in data frame) 
+
+`head()` needs an object `x` in order to do anything. We can pass the `USArrests` data frame as the argument and if all goes well, we will only see the top or *head* of this data frame.   
+
+```{r message=FALSE, warning=FALSE}
+head(x = USArrests)   # 6 rows by default
+```
+
+And if you pass arguments to parameters in functon according to their order (e.g., position), you do not need to reference the parameters by name when passing arguments. For example, we can remove the reference to `x`.   
+
 ```{r message=FALSE, warning=FALSE}
 head(USArrests)   # 6 rows by default
 ```
 
-If you query the function in the console by typing `?head`, you will see in the that the seconds argument for `head()` is `n`, the number of rows for the function to return. We can change that.
+The second parameter for `head()` is `n`, the number of rows for the function to return. The default numer was 6. We can change the default operation by passing `3` as the argument to it.
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 head(USArrests, n = 3)   # 3 if you change it
 ```
 
-And if you set the arguments in their order, you do not need to reference them. 
+But as long as we pass the arguments to `x` and then to `n`, then we do not need to reference either by name. Instead, we can just pass the arguments.
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
-head(USArrests, 3)   # not changing orer
+head(USArrests, 3)   # not changing order
 ```
 
-But if you change their order, you will need to reference the arguments. You cannot call `head(3, USArrests)` but you can call `head(n = 3, x = USArrests)`. You normally would not wish to change the order of arguments for `head()` but for more complicated functions, you might wish to for different reasons. 
+But if you change order, you will need to reference the arguments. You cannot call `head(3, USArrests)` for example but you can call `head(n = 3, x = USArrests)`. You normally would not wish to change the order of arguments for `head()` but for more complicated functions, you might wish to for different reasons. 
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 #head(3, USArrests)          # will throw an error
@@ -585,7 +600,9 @@ Using the viewing options:
 ```{r viewing}
 #View(USArrests)                            # the standard viewer
 
-#view_html(USArrests, rows = T, show = 5)   # but same as view_html(head(USArrests), rows = T)
+#view_html(USArrests, rows = T, show = 5)   # but same as 
+
+#view_html(head(USArrests), rows = T)
 ```
 
 

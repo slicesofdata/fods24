@@ -5,7 +5,7 @@ the_course       <- "PSYC 166"
 the_section      <- paste(the_course, "Sect-01", sep = ", ")
 the_day_time     <- "Tuesday 2:45 - 05:30PM (Pacific)"
 the_location     <- "Location: The Kravis Center, LC62"
-the_office_hours <- "R: 1-2pm"
+the_office_hours <- "T: 1-2pm"
 the_instructor   <- "Gabriel I. Cook"
 the_contact      <- paste0("Discord or Email: ", the_email, "(*please put '", the_course," in subject line)*")
 the_credit       <- "3 hours; 1 credits"

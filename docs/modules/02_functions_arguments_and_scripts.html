@@ -356,6 +356,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#simple-overview-of-objects" id="toc-simple-overview-of-objects" class="nav-link" data-scroll-target="#simple-overview-of-objects"><strong>Simple Overview of Objects</strong></a>
   <ul class="collapse">
   <li><a href="#examples-of-objects" id="toc-examples-of-objects" class="nav-link" data-scroll-target="#examples-of-objects"><strong>Examples of objects</strong></a></li>
+  <li><a href="#a-character-example" id="toc-a-character-example" class="nav-link" data-scroll-target="#a-character-example"><strong>A character example</strong></a></li>
   </ul></li>
   <li><a href="#object-assignment" id="toc-object-assignment" class="nav-link" data-scroll-target="#object-assignment"><strong>Object Assignment</strong></a>
   <ul class="collapse">
@@ -451,13 +452,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You can also think of an <em>object</em> as a sort of container that holds something. Containers of different types hold different things and so is true in computer programming. A container for holding water may look different from a container for holding books. In computer speak, one type of container can hold numbers, another can hold characters, another can hold a data frame, etc. The container object is holding whatever you have assigned it to hold.</p>
 <p>We will deal with different types of objects in data science. Without providing too complicated or technical of a description, some are describe below.</p>
 <ul>
-<li><em>numeric</em> objects: representing numeric information (e.g., one’s age)</li>
-<li><em>character</em> objects: representing character information (e.g., one’s name or race)</li>
-<li><em>vector</em> objects: representing more than one numeric object (e.g., ages of participants)</li>
-<li><em>data frame</em> objects: containing vectors of data (e.g., column variables and row instances of data)</li>
-<li><em>function</em> objects: that accept one object and return an other object (e.g., the mean of numeric vector)</li>
+<li><strong>numeric</strong> objects: representing numeric information (e.g., one’s age)</li>
+<li><strong>character</strong> objects: representing character information (e.g., one’s name or race)</li>
+<li><strong>vector</strong> objects: representing more than one numeric object (e.g., ages of participants)</li>
+<li><strong>data frame</strong> objects: containing vectors of data (e.g., column variables and row instances of data)</li>
+<li><strong>function</strong> objects: that accept one object and return an other object (e.g., the mean of numeric vector)</li>
 </ul>
-<p>There are other type of objects</p>
+<p>There are other type of objects that you will learn about and encounter but for now, those are the most relevant.</p>
+</section>
+<section id="a-character-example" class="level2">
+<h2 class="anchored" data-anchor-id="a-character-example"><strong>A character example</strong></h2>
 <p>Let’s start with an example of an object called <code>name</code>, which we would like to assign a set of characters, like <em>Jim Bob</em>.</p>
 <p>In order to create such an object, we would need to place the characters within quotation marks (e.g., single or double, does not matter). The quotes let R know the contents of <code>name</code> are <em>characters</em> (aka <em>strings</em>).</p>
 <p><code>"Jim Bob"</code></p>
@@ -920,8 +924,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/slicesofdata/fods24/main/r/functions/view_html.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>If you query the function in the console by typing using <code>?head</code> or <code>help(head)</code>, you will see in there are two main parameters.</p>
+<ul>
+<li><code>x</code>: a vector or data frame object</li>
+<li><code>n</code>: a value of the indices to be selected (e.g., elements of vector, rows in data frame)</li>
+</ul>
+<p><code>head()</code> needs an object <code>x</code> in order to do anything. We can pass the <code>USArrests</code> data frame as the argument and if all goes well, we will only see the top or <em>head</em> of this data frame.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(USArrests)   <span class="co"># 6 rows by default</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="at">x =</span> USArrests)   <span class="co"># 6 rows by default</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           Murder Assault UrbanPop Rape
 Alabama      13.2     236       58 21.2
@@ -932,14 +942,29 @@ California    9.0     276       91 40.6
 Colorado      7.9     204       78 38.7</code></pre>
 </div>
 </div>
-<p>If you query the function in the console by typing <code>?head</code>, you will see in the that the seconds argument for <code>head()</code> is <code>n</code>, the number of rows for the function to return. We can change that.</p>
-<p>And if you set the arguments in their order, you do not need to reference them.</p>
-<p>But if you change their order, you will need to reference the arguments. You cannot call <code>head(3, USArrests)</code> but you can call <code>head(n = 3, x = USArrests)</code>. You normally would not wish to change the order of arguments for <code>head()</code> but for more complicated functions, you might wish to for different reasons.</p>
+<p>And if you pass arguments to parameters in functon according to their order (e.g., position), you do not need to reference the parameters by name when passing arguments. For example, we can remove the reference to <code>x</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(USArrests)   <span class="co"># 6 rows by default</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           Murder Assault UrbanPop Rape
+Alabama      13.2     236       58 21.2
+Alaska       10.0     263       48 44.5
+Arizona       8.1     294       80 31.0
+Arkansas      8.8     190       50 19.5
+California    9.0     276       91 40.6
+Colorado      7.9     204       78 38.7</code></pre>
+</div>
+</div>
+<p>The second parameter for <code>head()</code> is <code>n</code>, the number of rows for the function to return. The default numer was 6. We can change the default operation by passing <code>3</code> as the argument to it.</p>
+<p>But as long as we pass the arguments to <code>x</code> and then to <code>n</code>, then we do not need to reference either by name. Instead, we can just pass the arguments.</p>
+<p>But if you change order, you will need to reference the arguments. You cannot call <code>head(3, USArrests)</code> for example but you can call <code>head(n = 3, x = USArrests)</code>. You normally would not wish to change the order of arguments for <code>head()</code> but for more complicated functions, you might wish to for different reasons.</p>
 <p>Using the viewing options:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="co">#View(USArrests)                            # the standard viewer</span></span>
-<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb99-3"><a href="#cb99-3" aria-hidden="true" tabindex="-1"></a><span class="co">#view_html(USArrests, rows = T, show = 5)   # but same as view_html(head(USArrests), rows = T)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="co">#View(USArrests)                            # the standard viewer</span></span>
+<span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb101-3"><a href="#cb101-3" aria-hidden="true" tabindex="-1"></a><span class="co">#view_html(USArrests, rows = T, show = 5)   # but same as </span></span>
+<span id="cb101-4"><a href="#cb101-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb101-5"><a href="#cb101-5" aria-hidden="true" tabindex="-1"></a><span class="co">#view_html(head(USArrests), rows = T)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can also check whether the <code>USArrests</code> data file is a data frame using <code>is.data.frame()</code>, which will return <code>TRUE</code> indicating that it is indeed a data frame.</p>
 <ul>
@@ -956,15 +981,15 @@ Colorado      7.9     204       78 38.7</code></pre>
 <li><code>typeof()</code> returns the type of the object</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(USArrests)           <span class="co"># what are the names of the columns?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(USArrests)           <span class="co"># what are the names of the columns?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Murder"   "Assault"  "UrbanPop" "Rape"    </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.vector</span>(<span class="fu">names</span>(USArrests))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.vector</span>(<span class="fu">names</span>(USArrests))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="fu">names</span>(USArrests))   <span class="co"># what is type of structure are the names</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="fu">names</span>(USArrests))   <span class="co"># what is type of structure are the names</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "character"</code></pre>
 </div>
@@ -975,8 +1000,8 @@ Colorado      7.9     204       78 38.7</code></pre>
 <p>One library you will use a lot of is <code>dplyr</code> for data manipulation. Here is an example of easy to read code that takes the <code>USArrests</code> data frame, then <code>mutate()</code> new variables that represent the mean of all states and the z-score of each state and then filters based on those values.</p>
 <p>Assign the final objects to data frame objects named <code>a</code> and <code>b</code>. The objects <code>a</code> and <code>b</code> simply represent two different filters of the data from on the <code>filter()</code> line.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
-<span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
+<span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'dplyr'</code></pre>
@@ -991,14 +1016,14 @@ Attaching package: 'dplyr'</code></pre>
 
     intersect, setdiff, setequal, union</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> USArrests <span class="sc">%&gt;%</span>                                 <span class="co"># take this data frame</span></span>
-<span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">mean_murder =</span> <span class="fu">mean</span>(Murder)) <span class="sc">%&gt;%</span>   <span class="co"># mutate a new variable</span></span>
-<span id="cb110-3"><a href="#cb110-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(Murder <span class="sc">&gt;</span> mean_murder)             <span class="co"># filter </span></span>
-<span id="cb110-4"><a href="#cb110-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb110-5"><a href="#cb110-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb110-6"><a href="#cb110-6" aria-hidden="true" tabindex="-1"></a>b <span class="ot">=</span> USArrests <span class="sc">%&gt;%</span> </span>
-<span id="cb110-7"><a href="#cb110-7" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">z_murder =</span> <span class="fu">scale</span>(Murder)) <span class="sc">%&gt;%</span></span>
-<span id="cb110-8"><a href="#cb110-8" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(z_murder <span class="sc">&gt;</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> USArrests <span class="sc">%&gt;%</span>                                 <span class="co"># take this data frame</span></span>
+<span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">mean_murder =</span> <span class="fu">mean</span>(Murder)) <span class="sc">%&gt;%</span>   <span class="co"># mutate a new variable</span></span>
+<span id="cb112-3"><a href="#cb112-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(Murder <span class="sc">&gt;</span> mean_murder)             <span class="co"># filter </span></span>
+<span id="cb112-4"><a href="#cb112-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-5"><a href="#cb112-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-6"><a href="#cb112-6" aria-hidden="true" tabindex="-1"></a>b <span class="ot">=</span> USArrests <span class="sc">%&gt;%</span> </span>
+<span id="cb112-7"><a href="#cb112-7" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">z_murder =</span> <span class="fu">scale</span>(Murder)) <span class="sc">%&gt;%</span></span>
+<span id="cb112-8"><a href="#cb112-8" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(z_murder <span class="sc">&gt;</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Using one column matrices in `filter()` was deprecated in dplyr 1.1.0.
 ℹ Please use one dimensional logical vectors instead.</code></pre>
@@ -1006,7 +1031,7 @@ Attaching package: 'dplyr'</code></pre>
 </div>
 <p>The astute reader would notice that states for which <code>Murder</code> rate is higher than the average will be the same as those that are greater than a z-score of 0 (the mean) so the two data-frame objects are logically equivalent except for the new variable columns. We can check using the logical operator <code>==</code>. <em>Note:</em> Do not confuse the assignment operator <code>=</code> with the logical operator <code>==</code>. If you code <code>a = b</code>, you will assign the object <code>b</code> to object <code>a</code> and overwrite <code>a</code>’s previous assignment in the process.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           Murder Assault UrbanPop Rape mean_murder
 Alabama      13.2     236       58 21.2       7.788
@@ -1016,7 +1041,7 @@ Arkansas      8.8     190       50 19.5       7.788
 California    9.0     276       91 40.6       7.788
 Colorado      7.9     204       78 38.7       7.788</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           Murder Assault UrbanPop Rape   z_murder
 Alabama      13.2     236       58 21.2 1.24256408
@@ -1029,7 +1054,7 @@ Colorado      7.9     204       78 38.7 0.02571456</code></pre>
 </div>
 <p>Are the data-frame objects equivalent?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a>a <span class="sc">==</span> b    <span class="co"># logical test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a>a <span class="sc">==</span> b    <span class="co"># logical test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               Murder Assault UrbanPop Rape mean_murder
 Alabama          TRUE    TRUE     TRUE TRUE       FALSE
@@ -1061,7 +1086,7 @@ Virginia         TRUE    TRUE     TRUE TRUE       FALSE</code></pre>
 <section id="session-information" class="level1">
 <h1><strong>Session Information</strong></h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb120"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.3.1 (2023-06-16 ucrt)
 Platform: x86_64-w64-mingw32/x64 (64-bit)

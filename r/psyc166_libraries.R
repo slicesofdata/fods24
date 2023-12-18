@@ -1,49 +1,61 @@
 dataviz166_packages <- c(
-  
+
   # DATA FRAME MANIPULATION
   "tidyverse", "dplyr", "dtplyr", "data.table",
-  "car",  "magrittr", 
+  "car",  "magrittr",
 
-  # DATES AND TIMES 
+  # DATES AND TIMES
   "lubridate", "zoo", "xts",
 
   # DEVELOPMENT
   "devtools", "remotes",
 
   # FONTS and TEXT
-  "glue", "utf8", 
+  "glue", "utf8",
 
-  # IMAGES AND GRAPHICS 
-  "ragg", "Cairo", "magick", 
+  # IMAGES AND GRAPHICS
+  "ragg", "Cairo", "magick",
 
   # MODELS AND DATA
-  "see", "boot", "easystats", "broom", 
+  "easystats", "see",
+  "boot",    # bootstrapping
+  "broom",   # cleaning up model outputs
+  "lavaan",  # latent variable
+  "ranger",  # random forest
+  "party",   # decision tree
+  "caret",   #
+  # http://www.sthda.com/english/articles/35-statistical-machine-learning-essentials/141-cart-model-decision-tree-essentials/
+  "rpart",   # decision tree
 
   # PLOTTING
-  "dendextend", "dygraphs", 
-  "ggplot2", "GGally", "ggiraph", "ggpubr", 
+  "dendextend", "dygraphs",
+  "ggplot2", "GGally", "ggiraph", "ggpubr",
   "gt", "gtsummary",
-  "plotly", "cowplot",  
+  "plotly", "cowplot",
+  "rpart.plot", # partial R and plotting
 
   # PROJECTS AND MANAGEMENT
   "gitr", "here", "usethis", #"renv",
-  
-  # READING AND WRITING DATA FILES 
-  "foreign", "haven", "vroom", "xlsx", "readr", "openxlsx",
 
-  # REFERENCES AND REPORTING 
-  "bibext", "knitr", "pandoc", "rstudioapi", "rmarkdown", "quarto", 
-  "shiny", "shinydashboard", "shinydashboardPlus", 
+  # READING AND WRITING DATA FILES
+  "foreign", "haven", "vroom", "xlsx", "readr", "openxlsx", "rio",
+
+  # REFERENCES AND REPORTING
+  "bibext", "knitr", "pandoc", "rstudioapi", "rmarkdown", "quarto",
+  "shiny", "shinydashboard", "shinydashboardPlus",
 
   # STRING MANIPULATION
   "stringr",
 
   # TABLES
   "DT", "htmlwidgets", "htmlTable", "kable", "kableExtra",
-  
+
+  # confidence intervals
+  "coin",
+
   # OTHER
-  "coin", "fs", "zoom",
-  "webshot", "sjPlot", "sqldf", 
+  "fs", "zoom",
+  "webshot", "sjPlot", "sqldf"
 )
 
 install.packages(dataviz167_packages, dep = T)
