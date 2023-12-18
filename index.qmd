@@ -11,12 +11,12 @@ format:
 ---
 
 ```{r, echo=FALSE}
-#| image: images/fods_hex_plus_course.jpg
+#| image: images/???.jpg
 #| fig-width: 4
 #| figh-height: 5
 #| out-width: "20%"
 #| fig-align: "left"
-knitr::include_graphics('images/fods_hex_plus_course.png')
+knitr::include_graphics('images/hex_main.png')
 ```
 
 
