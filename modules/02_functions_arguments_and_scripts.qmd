@@ -262,7 +262,7 @@ The **{Hmisc}** library has a function called `Cs()` that obviates the inclusion
 Hmisc::Cs(Jim, Kendra, Bill, Sandy)
 ```
 
-Beware of vector containing elements with space like this:
+Beware of vectors containing elements with space like this:
 
 `Hmisc::Cs(Jim Bob, Kendra)`
 
