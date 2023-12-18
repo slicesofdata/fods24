@@ -25,12 +25,6 @@ A good friend of mine was once tried using R to summarize data. He couldn't figu
 
 The concepts covered is this section may be challenging or confusing to beginners. You may even question why we cannot just jump into data manipulation and why all of this matters. In order to code in R so that you can be comfortable using it and with communicating with other users, a very basic understanding of programming concepts is important. This way, when someone asks you about an object, function, or assignment, you will know what they are taking about. And, well, you can't communicate with R without knowing how functions work at a basic level. 
  
-# **Libraries Used** 
-
-- **{dplyr}**: `r packageVersion("dplyr")`: for manipulating data frames 
-- **{magrittr}**: `r packageVersion("magrittr")`: for piping code
-
-
 ## **External Functions**
 
 Provided in class:
@@ -41,7 +35,7 @@ Provided in class:
 source(here::here("r", "my_functions.R"))
 ```
 
-And also remotely from:
+You can access remotely using this code, though you do not need to do so now.
 
 ```{r}
 source("https://raw.githubusercontent.com/slicesofdata/fods24/main/r/functions/view_html.R")
@@ -91,12 +85,15 @@ Please use `<-` as this is the practice in the R community.
 
 ## **Assignment provides meaning or definition**
 
-In other words, *assignment* is akin to creating a new word and assigning a meaning to it. You could also think of an assignment statement as a way to
-**"create this thing and set it equal to something"** so that the computer understand what that represents. Thus, assignment stores the assigned information as an object of whatever name you decided to call it (e.g., `name`, `Name`, `NAME`).
+In other words, *assignment* is akin to creating a new word and assigning a meaning to it. You could also think of an assignment statement as a way to tell R to **"create this thing and set it equal to something"** so that the computer understand what that represents. 
 
 ## **A character object: A silly example**
 
-If objects are like containers holding things, we can use name of the object (e.g., `container`) and then assign `"things"` to it using `<-`. 
+If objects are like containers holding things, we can use name of the object (e.g., `container`) and then assign `"things"` to it using `<-`. In order to create a character object, we would need to place the characters within quotation marks (e.g., single or double, does not matter). The quotes let R know the contents of `container` are *characters* (aka *strings*). 
+
+`"things"`
+
+When dealing with data, you will encounter many character objects as they often represent factor variables (e.g., race, ethnicity, favorite game, etc.) but you will also see lots of objects that are numeric in some form (e.g., age, rating, cognitive performance, etc.).
 
 Silly Example: 
 
@@ -107,38 +104,85 @@ Silly Example:
 container <- "things"
 ```
 
+And to see its contents, use `print()` to return the objects content:
+
+```{r}
+print(container)
+```
+
+
+Or just type the name of the object and you will see the returned object is `"things"`.
+
+```{r}
+container
+```
+
+For another example, we could also create an object called `name`, which we could assign a set of characters, like *Jim Bob*, making the object a character object. 
+
+```{r}
+name <- "Jim Bob"
+```
+
+To see what is returned:
+
+```{r}
+name
+```
+
+Whether you name is or is not Jim Bob, you can see that `name` contains the characters that represent the name of someone named "Jim Bob". Although we assigned `"Jim Bob"` to `name`, we could have assigned it a given name. The assignment process simply stores the assigned information as an object using of whatever name you decided to call it (e.g., `name`, `Name`, `NAME`, `xyz`, etc.). We will discuss more on these letter casing differences later. 
+
 You could also assign the character to the object this way.
 
 ```{r}
 "things" -> container
 ```
 
-but we won't use much of this approach. In addition, doing so does not follow the [R Style Guide](https://style.tidyverse.org/). The style guide defines a set of guidelines for coding in R. Rather than memorize all of the styling, pay careful attention to the way code appears in the examples provided and try your best to model your code after the examples.
+However, we won't use much of this approach for different reasons. One reason is that doing so does not follow the [R Style Guide](https://style.tidyverse.org/). The style guide defines a set of guidelines for coding in R. Rather than memorize all of the styling, pay careful attention to the way code appears in the examples provided and try your best to model your code after the examples. For example, don't do something this `container<-"things"` just so you save space as doing so makes the code more difficult for you and others to read and understand.
 
-For example, don't do something this `container<-"things"` just so you save space as doing so makes the code more difficult for you and others to read and understand.
-
-OK, back to *Jim Bob*. Of course, there are different people other than Jim Bob who exist in the world but when coding, they do not exist unless you create them. So, let's create an object that holds the name of "Jim Bob".
+OK, back to *Jim Bob*. Of course, there are different people other than Jim Bob who exist in the world but when coding, they do not exist unless you create them. So, let's create an object that holds the name of `"Jim Bob"`.
 
 `name <- "Jim Bob"`
 
 ```{r}
-name <- "Jim Bob"  # assign string to object named name
+name <- "Jim Bob"     # assign string to object named name
 
 
 Name <- "Jim Bob"     # we could have assigned it a different name, say Name
+
+
+NAME <- "Jim Bob"     
 ```
 
-Whenever you reference the object `name` (or `Name`), R will *return* the contents of the object to you, which in this case will be a character or string object containing a single person's name because that's how we assigned it.  
+Whenever you reference the object `name` (or `Name`), R will *return* the contents of the object to you, which in this case will be a character or string object containing a single person's name because that's how we assigned it. 
 
 ```{r}
 name               # call object to return contents of "name"
 ```
 
-We can use `print()` to do the same thing...
+And again, we can use `print()` to do the same thing:
 
 ```{r}
 print(name)
 ```
+
+### **Being mindful of case sensitivity**
+
+A word of warning is needed here. Although `name`, `Name`, and `NAME` all contain the same four characters, *n* *a* *m* and *e* all arranged it he same order, the objects are all different. They just happen to hold the same content. The reason for there being three different object is because R is a case-sensitive language, which means that the letter case matters. In some programming languages, the case is ignored. 
+
+To illustrate, consider an example for which you assign different names to the object.  
+
+```
+name <- "Jim Bob"     # create the object
+
+
+Name <- "Bob"         # then change it
+
+
+NAME <- "Jim"         # then change it again
+```
+
+In those languages, if you asked what the `name` object contained, the program would return `"Jim"` because these characters were assigned last, even though they were assigned to an uppercase version, `NAME`. With R, you will need to be mindful of the letter case. This is by design, perhaps an advantage rather than a disadvantage.
+
 
 ## **A numeric object**
 
@@ -267,12 +311,12 @@ Think of functions like words with definitions. The definition is what the funct
 
 # **Objects and Function Objects**
 
-Now that you have a basic idea of objects and assignment, there are different types of objects. Unlike the example of assigning a value to an object, functions like `mean()`, `plot()`, `data.frame()` and `mutate()` are objects that contain statements for carrying out operations. As you might imagine, calculating the mean of a set of values using the `mean()` function would involve statements to carry out operations like summation and division. 
+Now that you have a basic idea of objects and assignment, there are different types of objects. Unlike the example of assigning a value to an object, functions like `mean()`, `c()`, `data.frame()` and `mutate()` are objects that contain statements for carrying out operations. As you might imagine, calculating the mean of a set of values using the `mean()` function would involve statements to carry out operations like summation and division. 
 
-- `mean()`
-- `plot()`
-- `data.frame()`
-- `dplyr::mutate()`
+- `mean()`: to compute the mean of a numeric vector
+- `c()`: to combine elements into a vector
+- `data.frame()`: to create a data frame
+- `dplyr::mutate()`: for creating variables in data frames
 
 
 # **Understanding Functions by Writing Them** 
@@ -569,13 +613,13 @@ If you query the function in the console by typing using `?head` or `help(head)`
 head(x = USArrests)   # 6 rows by default
 ```
 
-And if you pass arguments to parameters in functon according to their order (e.g., position), you do not need to reference the parameters by name when passing arguments. For example, we can remove the reference to `x`.   
+And if you pass arguments to parameters in function according to their order (e.g., position), you do not need to reference the parameters by name when passing arguments. For example, we can remove the reference to `x`.   
 
 ```{r message=FALSE, warning=FALSE}
 head(USArrests)   # 6 rows by default
 ```
 
-The second parameter for `head()` is `n`, the number of rows for the function to return. The default numer was 6. We can change the default operation by passing `3` as the argument to it.
+The second parameter for `head()` is `n`, the number of rows for the function to return. The default number was 6. We can change the default operation by passing `3` as the argument to it.
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 head(USArrests, n = 3)   # 3 if you change it
@@ -640,42 +684,7 @@ is.vector(names(USArrests))
 typeof(names(USArrests))   # what is type of structure are the names
 ```
 
-# **Using `{dplyr}` and `{magrittr}` **
 
-One library you will use a lot of is `dplyr` for data manipulation. Here is an example of easy to read code that takes the `USArrests` data frame, then `mutate()` new variables that represent the mean of all states and the z-score of each state and then filters based on those values. 
-
-
-Assign the final objects to data frame objects named `a` and `b`. The objects `a` and `b` simply represent two different filters of the data from on the `filter()` line. 
-
-```{r}
-library(magrittr)
-library(dplyr)
-
-a = USArrests %>%                                 # take this data frame
-  dplyr::mutate(mean_murder = mean(Murder)) %>%   # mutate a new variable
-  dplyr::filter(Murder > mean_murder)             # filter 
-
-
-b = USArrests %>% 
-  dplyr::mutate(z_murder = scale(Murder)) %>%
-  dplyr::filter(z_murder > 0)
-```
-
-
-The astute reader would notice that states for which `Murder` rate is higher than the average will be the same as those that are greater than a z-score of 0 (the mean) so the two data-frame objects are logically equivalent except for the new variable columns. We can check using the logical operator `==`. *Note:* Do not confuse the assignment operator `=` with the logical operator `==`.  If you code `a = b`, you will assign the object `b` to object `a` and overwrite `a`'s previous assignment in the process.
-
-```{r}
-head(a)
-
-
-head(b)
-```
-
-Are the data-frame objects equivalent?
-
-```{r}
-a == b    # logical test
-```
 
 # **Session Information**
 
