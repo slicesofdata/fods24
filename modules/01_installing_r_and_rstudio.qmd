@@ -18,7 +18,7 @@ execute:
 #)
 
 this_r_version <- "4.3.2"
-this_rstudio_version <- "2023.09.1-494"
+this_rstudio_version <- "2023.12.0-369"
 ```
 # **Overview**
 
