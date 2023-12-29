@@ -54,9 +54,9 @@ RStudio integrates support for Git but this interface is a little clunky. You ca
 
 1. Do I need to install Git?
 
-     * Mac OS Users can check if already install by typing git `--version` at the Mac Terminal. If a version number is returned, then Git is installed.
+     * Mac OS Users can check whether Git is already installed by typing git `--version` at the Mac Terminal. If a version number is returned, then Git is installed.
 
-     * Windows Users can press the Windows key (or click the Start button) and type Git in the search bar. If you see Git or GitBash listed, then Git is installed.
+     * Windows Users can press the Windows key (or click the Start button) and type Git in the search bar. If you see Git or Git Bash listed, then Git is installed. At the R console, you can also type `system("git --version")` and if it is installed, the function should return the version number.
 
 2. Download and Install Git (if necessary)
 
@@ -99,29 +99,33 @@ There are two ways you can set up, either using R (console) or the command line 
 The **{usethis}** library will make connecting your `R` project to your github account simple. This library should be installed as part of the packages from the start of the course. You will use `usethis::use_git_config()` to configure your GitHub account  (see earlier) with Git on your computer. In the below example, you need to pass two arguments, your `user.name` and `user.email` attached to your GitHub account and then execute the modified `R` code:
 
 ```
-usethis::use_git_config(user.name = "Jane Git", 
-                        user.email = "jane_git@gitrdone.com")
+usethis::use_git_config(user.name = "janegit", 
+                        user.email = "jane_git@gitrdone.com"
+                        )
 ```
 
 
 ## **Creating a Personal Access Token (PAT) for GitHub**
 
-You will need a personal access token for making remote changes to GitHub. 
+You will need a personal access token (PAT) for making remote changes to GitHub. You will first need to create a PAT using `usethis::create_github_token()` and then you will register your PAT with the Git credential manager used by your computers operating system using `gitcreds::gitcreds_set()`. Keep in mind that if you use a different computer, you'll need to register the PAT on that computer.
 
-Execute the following `R` to create a token.
+
+To create your token, type the following at your R console: 
 
 ```
 usethis::create_github_token()
 ```
 
-After executing the code, you will be taken to your GitHub account (if you remained logged in). Go to the bottom of the page and click *generate token*. **Copy it** to the clipboard and **save it someplace safe**. Do not share your token with anyone because anyone who has it can access your public or private GitHub repositories. 
+After executing the code, you will be taken to your GitHub account (if you remained logged in). Go to the bottom of the page and click *generate token*. You should add a description for it so that you can understand its use case. For example, describe it based the computer you are using it on, "my computer make and model". You may also describe it based on a project you are working on, “token-for-project-xyz”. If you do not add a description, you will likely become overwhelmed and/or confused when you have multiple tokens. When you need to regenerate or delete a token, you will not be able to determine what they are for if you do not add a description.
 
-   Note: Your PAT will expire after some duration, usually 30 days unless you change it. For this project, I suggest you change the expiration to a date after the semester ends. 
+After creating your token, **Copy it** to the clipboard and **save it someplace safe**. Do not share your token with anyone because anyone who has it can access your public or private GitHub repositories. 
+
+   **Warning:** Your PAT will expire after some duration, usually 30 days unless you change it. **For this project, I suggest you change the expiration to a date after the semester ends.** If your PAT will soon expire, GitHub will send you an e-mail alterting you also. You can regenerate a PAT from a link in your e-mail. 
 
 
 ## **Setting your Git Credentials (using PAT)**
 
-We now need to set those credentials for RStudio to communicate with your GitHub account.
+Now that you have a PAT, we now need to set those credentials for RStudio to communicate with your GitHub account.
 
 Execute the following `R` code to set your credentials:
 
@@ -129,9 +133,23 @@ Execute the following `R` code to set your credentials:
 gitcreds::gitcreds_set()
 ```
 
-You will then paste your PAT here and press return/enter. If there are options, enter the number corresponding to the one that makes the more sense for what you are doing, like set or replace your credentials.
+You may see a set of number options with corresponding descriptions. If you see them, enter the number corresponding to the option that makes the most sense for what you are trying to accomplish, for example, something like "set or replace your credentials".
 
-  
+When should then see a prompt like `? Enter new password or token`. At this point, paste your PAT here and press return/enter. Then remove the PAT from your clipboard so that you don't paste them someplace.
+
+You can check that your credentials are stored by typing the following `R` code in the console:
+
+```
+gh::gh_whoami()
+```
+
+
+### **Updating your Personal Access Token (PAT)**
+
+At some point, your PAT will expire and you will need to update it. When it's about to expire or if it has expired, you can go to [https://github.com/settings/tokens](https://github.com/settings/tokens) while logged into your [GitHub](www.github.com) account and regenerate the token and change the expiration date. Then, copy the PAT to the clipboard and set your credentials again using 
+`gitcreds::gitcreds_set()`.
+
+
 
 ## **Creating a Version Control Project in RStudio**
 
@@ -140,12 +158,10 @@ You will then paste your PAT here and press return/enter. If there are options, 
 2. In the pop-up, you will see a request for the "repository URL". Paste the URL of the GitHub repository based on your liaison name. This URL will be the same as what you see on your GitHub account. However, we need to add `.git` to the end.
 
 ```
-    https://github.com/slicesofdata/dataviz23-stewart.git
-    https://github.com/slicesofdata/dataviz23-venglass.git
-    https://github.com/slicesofdata/dataviz23-lawson.git
+    https://github.com/slicesofdata/fods24-liaison.git
 ```
 
-3. When you create the project, a directory will be created, a name will auto populate (e.g., 'dataviz23-stewart'). If you change the name, name it something that you will know as your team project. In order to keep the class organized, I might suggest you create the project in your PSYC167 course directory. You should already have a R project for you homework called something like `homework.Rproj` in that course directory. *WARNING:* Do not create the project inside of an existing project's directory.
+3. When you create the project, a directory will be created, a name will auto populate (e.g., 'fods24-liaison'). If you change the name, name it something that you will know as your team project. In order to keep the class organized, I might suggest you create the project in your FODS course directory. You should already have a R project for you homework called something like `homework.Rproj` in that course directory. *WARNING:* Do not create the project inside of an existing project's directory.
 
     * Note: I recommend that you also select *"Open in new session"* in order to compartmentalize projects. When you work on the team project, open the project. When you work on your homework or other class exercises, open your *homework* project.
 
