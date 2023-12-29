@@ -107,7 +107,7 @@ website:
       - icon: github
         href: https://github.com/slicesofdata/fods24
         aria-label: GitHub
-      - text: Main
+      - text: Me
         href: https://gabrielcook.xyz
 
 ################################################################################

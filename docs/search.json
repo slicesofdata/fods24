@@ -980,69 +980,6 @@
     "text": "Video Tutorials\n\n\nGitKraken Git Client examples\nfor more, see: this video"
   },
   {
-    "objectID": "slides/02_git.html#make-this-slide-red",
-    "href": "slides/02_git.html#make-this-slide-red",
-    "title": "Git, GitHub, and RStudio",
-    "section": "Make this slide Red",
-    "text": "Make this slide Red"
-  },
-  {
-    "objectID": "slides/02_git.html#making-a-slide-incremental",
-    "href": "slides/02_git.html#making-a-slide-incremental",
-    "title": "Git, GitHub, and RStudio",
-    "section": "Making a Slide Incremental",
-    "text": "Making a Slide Incremental\nSay you want to reveal the content of slide piecemeal without rewriting separate slides with previous content.\n\nThen add some content…\n\n\nThen some more content"
-  },
-  {
-    "objectID": "slides/02_git.html#omit-this-slide-visibility-hidden",
-    "href": "slides/02_git.html#omit-this-slide-visibility-hidden",
-    "title": "Git, GitHub, and RStudio",
-    "section": "Omit This Slide {visibility = “hidden”}",
-    "text": "Omit This Slide {visibility = “hidden”}"
-  },
-  {
-    "objectID": "slides/02_git.html#add-links",
-    "href": "slides/02_git.html#add-links",
-    "title": "Git, GitHub, and RStudio",
-    "section": "Add links",
-    "text": "Add links\n\ncmc\n\n\n\nFirst item\nSecond item"
-  },
-  {
-    "objectID": "slides/02_git.html#fragments",
-    "href": "slides/02_git.html#fragments",
-    "title": "Git, GitHub, and RStudio",
-    "section": "Fragments",
-    "text": "Fragments\n\nFade in\n\n\nFade out\n\n\nHighlight red\n\n\nFade in, then out"
-  },
-  {
-    "objectID": "slides/02_git.html#fragments-nesting",
-    "href": "slides/02_git.html#fragments-nesting",
-    "title": "Git, GitHub, and RStudio",
-    "section": "Fragments, nesting",
-    "text": "Fragments, nesting\n\n\n\nFade in &gt; Turn red &gt; Semi fade out"
-  },
-  {
-    "objectID": "slides/02_git.html#fragments-spans",
-    "href": "slides/02_git.html#fragments-spans",
-    "title": "Git, GitHub, and RStudio",
-    "section": "Fragments, spans",
-    "text": "Fragments, spans\nThis is an important sentence!\nMind the gap when riding the rail!"
-  },
-  {
-    "objectID": "slides/02_git.html#column-layout",
-    "href": "slides/02_git.html#column-layout",
-    "title": "Git, GitHub, and RStudio",
-    "section": "Column layout",
-    "text": "Column layout\n\n\ncontents…s\n\ncontents…"
-  },
-  {
-    "objectID": "slides/02_git.html#output-location",
-    "href": "slides/02_git.html#output-location",
-    "title": "Git, GitHub, and RStudio",
-    "section": "Output Location",
-    "text": "Output Location\n\n\nlibrary(ggplot2)\n\nmtcars |&gt; \n  ggplot(aes(x = disp, y = mpg)) +\n  geom_point() +\n  geom_smooth(method = \"loess\", formula = \"y~x\")"
-  },
-  {
     "objectID": "slides/02_git.html#videos-of-many-things-you-can-do",
     "href": "slides/02_git.html#videos-of-many-things-you-can-do",
     "title": "Git, GitHub, and RStudio",
