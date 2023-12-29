@@ -34,8 +34,12 @@ website:
 ##    Slides may not be able to be set with _ starting name
       - text: "**Slides**"
         menu:
-        - text: Example 1
-          href: slides/sample_quarto_presentation.qmd
+        #- text: Example 1
+        #  href: slides/sample_quarto_presentation.qmd
+        - text: Git, GitHub, and RStudio
+          href: slides/02_git.qmd
+
+
 ################################################################################
       #- text: "**Readings**"
       #  href: readings/readings.qmd
@@ -103,6 +107,9 @@ website:
       - icon: github
         href: https://github.com/slicesofdata/fods24
         aria-label: GitHub
+      - text: Main
+        href: https://gabrielcook.xyz
+
 ################################################################################
 # to add a topic sidebar
   sidebar:
