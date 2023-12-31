@@ -7,6 +7,10 @@ format:
     css: css/styles.scss
     #fontcolor: white
     toc: true
+
+execute:
+  #enabled: false
+  freeze: auto
 ---
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE, eval=TRUE}

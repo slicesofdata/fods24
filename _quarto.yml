@@ -34,14 +34,14 @@ website:
 ##    Slides may not be able to be set with _ starting name
       - text: "**Slides**"
         menu:
-        #- text: Example 1
-        #  href: slides/sample_quarto_presentation.qmd
+        - text: Example 1
+          href: slides/sample_quarto_presentation.qmd
         - text: Git and GitHub
           href: slides/02_git.qmd
         - text: Git
           href: slides/023_git.qmd
         - text: Sample
-          href: slides/Sample.qmd
+          href: slides/sample.qmd
 
 
 ################################################################################
