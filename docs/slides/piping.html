@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>PSYC166 - Git, GitHub, and RStudio</title>
+<title>PSYC166 - Piping Code</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -98,7 +64,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <link rel="stylesheet" href="../css/nav.css">
 <link rel="stylesheet" href="../css/styles.css">
-<link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -241,32 +206,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#version-control" id="toc-version-control" class="nav-link active" data-scroll-target="#version-control"><strong>Version Control</strong></a></li>
-  <li><a href="#version-control-git-workflow-basics" id="toc-version-control-git-workflow-basics" class="nav-link" data-scroll-target="#version-control-git-workflow-basics"><strong>Version Control: Git Workflow Basics</strong></a></li>
-  <li><a href="#connecting-git-to-github-the-rstudio-terminal" id="toc-connecting-git-to-github-the-rstudio-terminal" class="nav-link" data-scroll-target="#connecting-git-to-github-the-rstudio-terminal"><strong>Connecting Git to GitHub: The RStudio Terminal</strong></a></li>
-  <li><a href="#configuring-git-and-github-with-usethis" id="toc-configuring-git-and-github-with-usethis" class="nav-link" data-scroll-target="#configuring-git-and-github-with-usethis"><strong>Configuring Git and GitHub with {usethis}</strong></a></li>
-  <li><a href="#creating-a-personal-access-token-pat-for-github-with-usethis" id="toc-creating-a-personal-access-token-pat-for-github-with-usethis" class="nav-link" data-scroll-target="#creating-a-personal-access-token-pat-for-github-with-usethis"><strong>Creating a Personal Access Token (PAT) for GitHub with {usethis}</strong></a></li>
-  <li><a href="#setting-your-git-credentials-using-pat-with-gitcreds" id="toc-setting-your-git-credentials-using-pat-with-gitcreds" class="nav-link" data-scroll-target="#setting-your-git-credentials-using-pat-with-gitcreds"><strong>Setting your Git Credentials (using PAT) with {gitcreds}</strong></a></li>
-  <li><a href="#making-local-file-changes-committing-and-pushing-to-github" id="toc-making-local-file-changes-committing-and-pushing-to-github" class="nav-link" data-scroll-target="#making-local-file-changes-committing-and-pushing-to-github"><strong>Making Local File Changes, Committing, and Pushing to GitHub</strong></a></li>
-  <li><a href="#checking-the-status-of-local-file-changes" id="toc-checking-the-status-of-local-file-changes" class="nav-link" data-scroll-target="#checking-the-status-of-local-file-changes"><strong>Checking the status of local file changes</strong></a></li>
-  <li><a href="#staging-changes-adding-changes" id="toc-staging-changes-adding-changes" class="nav-link" data-scroll-target="#staging-changes-adding-changes"><strong>Staging Changes (Adding Changes)</strong></a></li>
-  <li><a href="#staging-a-specific-change" id="toc-staging-a-specific-change" class="nav-link" data-scroll-target="#staging-a-specific-change"><strong>Staging a <em>Specific</em> Change</strong></a></li>
-  <li><a href="#staging-all-changes" id="toc-staging-all-changes" class="nav-link" data-scroll-target="#staging-all-changes"><strong>Staging <em>All</em> Changes</strong></a></li>
-  <li><a href="#committing-the-changes" id="toc-committing-the-changes" class="nav-link" data-scroll-target="#committing-the-changes"><strong>Committing the Change(s)</strong></a></li>
-  <li><a href="#push-publish-the-changes-from-your-branch-to-the-remote-repository" id="toc-push-publish-the-changes-from-your-branch-to-the-remote-repository" class="nav-link" data-scroll-target="#push-publish-the-changes-from-your-branch-to-the-remote-repository"><strong>Push (publish) the change(s) from your branch to the remote repository</strong></a></li>
-  <li><a href="#pulls-changes-from-the-remote-repository" id="toc-pulls-changes-from-the-remote-repository" class="nav-link" data-scroll-target="#pulls-changes-from-the-remote-repository"><strong>Pulls change(s) from the remote repository</strong></a></li>
-  <li><a href="#fetch-changes" id="toc-fetch-changes" class="nav-link" data-scroll-target="#fetch-changes"><strong>Fetch changes</strong></a></li>
-  <li><a href="#video-tutorials" id="toc-video-tutorials" class="nav-link" data-scroll-target="#video-tutorials"><strong>Video Tutorials</strong></a></li>
-  <li><a href="#videos-of-many-things-you-can-do" id="toc-videos-of-many-things-you-can-do" class="nav-link" data-scroll-target="#videos-of-many-things-you-can-do"><strong>Videos of many things you can do</strong></a></li>
+  <li><a href="#some-code" id="toc-some-code" class="nav-link active" data-scroll-target="#some-code"><strong>Some Code</strong></a></li>
+  <li><a href="#piping-functions" id="toc-piping-functions" class="nav-link" data-scroll-target="#piping-functions"><strong>Piping Functions</strong></a></li>
+  <li><a href="#and-placeholders" id="toc-and-placeholders" class="nav-link" data-scroll-target="#and-placeholders"><strong><code>%&gt;%</code> and <code>|&gt;</code> placeholders</strong></a></li>
+  <li><a href="#for" id="toc-for" class="nav-link" data-scroll-target="#for"><strong><code>.</code> for <code>%&gt;%</code></strong></a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><strong>References</strong></a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="02_git.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="piping.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Git, GitHub, and RStudio</h1>
+<h1 class="title">Piping Code</h1>
 </div>
 
 
@@ -281,167 +234,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="version-control" class="level2">
-<h2 class="anchored" data-anchor-id="version-control"><strong>Version Control</strong></h2>
+<section id="some-code" class="level2">
+<h2 class="anchored" data-anchor-id="some-code"><strong>Some Code</strong></h2>
 <div class="incremental">
 <ul class="incremental">
-<li>What is version control?
-<ul class="incremental">
-<li>Project backup</li>
-<li>See specific changes inside files</li>
-<li>Undo changes (time machine)</li>
-</ul></li>
-<li><a href="https://www.youtube.com/watch?v=M-O8ZNW9icQ">Version Control Summary Video</a></li>
+<li><code>as.numeric(c("1", "2", "3"))</code></li>
+<li>read from the inside out</li>
 </ul>
 </div>
 </section>
-<section id="version-control-git-workflow-basics" class="level2">
-<h2 class="anchored" data-anchor-id="version-control-git-workflow-basics"><strong>Version Control: Git Workflow Basics</strong></h2>
-<p>There are three main parts to Git Workflow:</p>
+<section id="piping-functions" class="level2">
+<h2 class="anchored" data-anchor-id="piping-functions"><strong>Piping Functions</strong></h2>
 <div class="incremental">
 <ul class="incremental">
-<li>Version control for files (not empty directories)</li>
-<li>Make local changes (in your working directory)</li>
-<li><strong>Stage</strong> changes (in your staging directory)</li>
-<li><strong>Commit</strong> changes (to apply them for pushing to your remote repository)</li>
-<li><a href="https://www.youtube.com/watch?v=e8PGuOyZ3YU">Version Control Workflow Basics</a></li>
+<li>Make code more readable</li>
+<li>Read from left to right, top to bottom</li>
 </ul>
 </div>
 </section>
-<section id="connecting-git-to-github-the-rstudio-terminal" class="level2">
-<h2 class="anchored" data-anchor-id="connecting-git-to-github-the-rstudio-terminal"><strong>Connecting Git to GitHub: The RStudio Terminal</strong></h2>
+<section id="and-placeholders" class="level2">
+<h2 class="anchored" data-anchor-id="and-placeholders"><strong><code>%&gt;%</code> and <code>|&gt;</code> placeholders</strong></h2>
 <div class="incremental">
 <ul class="incremental">
-<li><strong>Configure</strong> Git and GitHub in RStudio Terminal</li>
-<li><strong>Create</strong> token</li>
-<li><strong>Set</strong> token</li>
-<li>Can use the RStudio Gui (clunky though)</li>
-</ul>
-</div>
-</section>
-<section id="configuring-git-and-github-with-usethis" class="level2">
-<h2 class="anchored" data-anchor-id="configuring-git-and-github-with-usethis"><strong>Configuring Git and GitHub with {usethis}</strong></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(<span class="at">user.name =</span> <span class="st">"janegit"</span>, </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">user.email =</span> <span class="st">"jane_git@gitrdone.com"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="creating-a-personal-access-token-pat-for-github-with-usethis" class="level2">
-<h2 class="anchored" data-anchor-id="creating-a-personal-access-token-pat-for-github-with-usethis"><strong>Creating a Personal Access Token (PAT) for GitHub with {usethis}</strong></h2>
-<div class="incremental">
+<li><code>.</code> for <code>%&gt;%</code></li>
+<li><code>_</code> for <code>|&gt;</code></li>
+<li>also, shortcut command: <code>CTRL+SHIFT+m</code>
 <ul class="incremental">
-<li><code>usethis::create_github_token()</code></li>
-<li>Create token and <strong>copy to your clipboard</strong></li>
-</ul>
-</div>
-</section>
-<section id="setting-your-git-credentials-using-pat-with-gitcreds" class="level2">
-<h2 class="anchored" data-anchor-id="setting-your-git-credentials-using-pat-with-gitcreds"><strong>Setting your Git Credentials (using PAT) with {gitcreds}</strong></h2>
-<div class="incremental">
-<ul class="incremental">
-<li><code>gitcreds::gitcreds_set()</code></li>
-<li>Choose option to either <em>set</em> or <em>replace</em></li>
-<li>At <code>? Enter new password or token</code>, <strong>paste</strong> PAT to set</li>
-<li><code>gh::gh_whoami()</code> to check if set</li>
-</ul>
-</div>
-</section>
-<section id="making-local-file-changes-committing-and-pushing-to-github" class="level2">
-<h2 class="anchored" data-anchor-id="making-local-file-changes-committing-and-pushing-to-github"><strong>Making Local File Changes, Committing, and Pushing to GitHub</strong></h2>
-<div class="incremental">
-<ul class="incremental">
-<li>Make a change to a file</li>
-<li>Check <strong>status</strong> of project for changes</li>
-<li><strong>Stage</strong> change</li>
-<li><strong>Commit</strong> all changes</li>
-<li><strong>Push</strong> changes</li>
-<li><strong>Commit</strong> a specific change</li>
-<li><strong>Pull</strong> changes down from repo (downloads and integrates changes)</li>
-<li><strong>Fetch</strong> downloads new data (does not change your working copy)</li>
-</ul>
-</div>
-</section>
-<section id="checking-the-status-of-local-file-changes" class="level2">
-<h2 class="anchored" data-anchor-id="checking-the-status-of-local-file-changes"><strong>Checking the status of local file changes</strong></h2>
-<p>At the <strong>Terminal</strong> in RStudio</p>
-<ul>
-<li><code>$ git status</code></li>
-</ul>
-</section>
-<section id="staging-changes-adding-changes" class="level2">
-<h2 class="anchored" data-anchor-id="staging-changes-adding-changes"><strong>Staging Changes (Adding Changes)</strong></h2>
-<div class="incremental">
-<ul class="incremental">
-<li><a href="https://www.youtube.com/watch?v=7exFDGHgQcw">Staging and Committing</a>
-<ul class="incremental">
-<li>Untracked vs.&nbsp;tracked files</li>
-<li>To have tracked by Git, you need to <strong>add</strong></li>
+<li>based on Tools -&gt; Global Options -&gt; Code -&gt; Editing: <code>|&gt;</code> setting</li>
 </ul></li>
 </ul>
 </div>
 </section>
-<section id="staging-a-specific-change" class="level2">
-<h2 class="anchored" data-anchor-id="staging-a-specific-change"><strong>Staging a <em>Specific</em> Change</strong></h2>
+<section id="for" class="level2">
+<h2 class="anchored" data-anchor-id="for"><strong><code>.</code> for <code>%&gt;%</code></strong></h2>
 <div class="incremental">
 <ul class="incremental">
-<li><p><code>$ git add &lt;file&gt;...</code> such that <code>&lt;file&gt;</code> refers to the file name</p></li>
-<li><p>file might be in a directory, e.g., <code>r/</code></p></li>
-<li><p><code>$ git add r/yourname.R</code></p></li>
-<li><p>Tab to auto-complete, e.g., <code>git add r/you{TAB}</code></p></li>
+<li><p><code>.</code> for <code>%&gt;%</code></p></li>
+<li><p>`<code>for</code>|&gt;`</p></li>
+<li><p>shortcut command: <code>CTRL+SHIFT+m</code></p></li>
 </ul>
 </div>
 </section>
-<section id="staging-all-changes" class="level2">
-<h2 class="anchored" data-anchor-id="staging-all-changes"><strong>Staging <em>All</em> Changes</strong></h2>
-<ul>
-<li><code>$ git add .</code></li>
-</ul>
-</section>
-<section id="committing-the-changes" class="level2">
-<h2 class="anchored" data-anchor-id="committing-the-changes"><strong>Committing the Change(s)</strong></h2>
-<div class="incremental">
-<ul class="incremental">
-<li><code>git commit</code> is used to commit the changes</li>
-<li>add <code>-m</code> to tell git you want a message (e.g., <code>"my message here"</code>)<br>
-</li>
-<li><code>$ git commit -m "added my first .R file"</code></li>
-</ul>
-</div>
-</section>
-<section id="push-publish-the-changes-from-your-branch-to-the-remote-repository" class="level2">
-<h2 class="anchored" data-anchor-id="push-publish-the-changes-from-your-branch-to-the-remote-repository"><strong>Push (publish) the change(s) from your branch to the remote repository</strong></h2>
-<div class="incremental">
-<ul class="incremental">
-<li><p><code>$ git push</code></p></li>
-<li><p><a href="https://www.youtube.com/watch?v=lqw7ipXmc-4">Pushing changes</a></p></li>
-</ul>
-</div>
-</section>
-<section id="pulls-changes-from-the-remote-repository" class="level2">
-<h2 class="anchored" data-anchor-id="pulls-changes-from-the-remote-repository"><strong>Pulls change(s) from the remote repository</strong></h2>
-<div class="incremental">
-<ul class="incremental">
-<li><code>$ git pull</code></li>
-<li>If you make changes that other will need, let them know to pull</li>
-</ul>
-</div>
-</section>
-<section id="fetch-changes" class="level2">
-<h2 class="anchored" data-anchor-id="fetch-changes"><strong>Fetch changes</strong></h2>
-</section>
-<section id="video-tutorials" class="level2">
-<h2 class="anchored" data-anchor-id="video-tutorials"><strong>Video Tutorials</strong></h2>
-<div class="incremental">
-<ul class="incremental">
-<li><a href="https://www.gitkraken.com/learn/git">GitKraken Git Client examples</a></li>
-<li>for more, see: this <a href="https://www.youtube.com/watch?v=A4rIs-6c98s">video</a></li>
-</ul>
-</div>
-</section>
-<section id="videos-of-many-things-you-can-do" class="level2">
-<h2 class="anchored" data-anchor-id="videos-of-many-things-you-can-do"><strong>Videos of many things you can do</strong></h2>
-<p>If interested, see <a href="https://www.youtube.com/@gittower">gittower YouTube</a></p>
+<section id="references" class="level1">
+<h1><strong>References</strong></h1>
+<p>https://dmeg.cessda.eu/Data-Management-Expert-Guide/2.-Organise-Document/File-naming-and-folder-structure</p>
+<p>Kane, M. J., Hambrick, D. Z., Tuholski, S. W., Wilhelm, O., Payne, T. W., &amp; Engle, R. W. (2004). The generality of working memory capacity: A latent variable approach to verbal and visuospatial memory span and reasoning. Journal of Experimental Psychology: General, 133, 189-217.</p>
+<p>Heitz, R. P. &amp; Engle, R. W. (2007). Focusing the spotlight: Individual differences in visual attention control. Journal of Experimental Psychology: General, 136, 217 - 240.</p>
+<p>Unsworth, N. &amp; Engle, R.W. (2008). Speed and accuracy of accessing information in working memory: An individual differences investigation of focus switching. Journal of Experimental Psychology: Learning, Memory, and Cognition, 34, 616-630.</p>
+<p>Barch, D. M., Berman, M. G., Engle, R. W., Jones, J. H., Jonides, J., MacDonald, A. III, Nee, D. E., Redick, T. S., Sponheim, S. R., (2009). CNTRICS final task selection: Working memory. Schizophrenia Bulletin, 35, 136-152.</p>
 
 
 </section>

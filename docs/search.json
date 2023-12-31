@@ -871,15 +871,15 @@
     "objectID": "slides/02_git.html#version-control",
     "href": "slides/02_git.html#version-control",
     "title": "Git, GitHub, and RStudio",
-    "section": "Version Control",
-    "text": "Version Control\n\n\nWhat is version control?\n\nProject backup\nSee specific changes inside files\nUndo changes (time machine)\n\nVersion Control Summary Video"
+    "section": "",
+    "text": "What is version control?\n\nProject backup\nSee specific changes inside files\nUndo changes (time machine)\n\nVersion Control Summary Video"
   },
   {
     "objectID": "slides/02_git.html#version-control-git-workflow-basics",
     "href": "slides/02_git.html#version-control-git-workflow-basics",
     "title": "Git, GitHub, and RStudio",
     "section": "Version Control: Git Workflow Basics",
-    "text": "Version Control: Git Workflow Basics\nThere are three main parts to Git Workflow:\n\n\nVersion Control\nMake local changes (in your working directory)\nStage changes (in your staging directory)\nCommit changes (to apply them for pushing to your remote repository)\nVersion Control Workflow Basics"
+    "text": "Version Control: Git Workflow Basics\nThere are three main parts to Git Workflow:\n\n\nVersion control for files (not empty directories)\nMake local changes (in your working directory)\nStage changes (in your staging directory)\nCommit changes (to apply them for pushing to your remote repository)\nVersion Control Workflow Basics"
   },
   {
     "objectID": "slides/02_git.html#connecting-git-to-github-the-rstudio-terminal",
@@ -1069,5 +1069,194 @@
     "title": "Sample Presentation",
     "section": "Output Location",
     "text": "Output Location\n\n\nlibrary(ggplot2)\n\nmtcars |&gt; \n  ggplot(aes(x = disp, y = mpg)) +\n  geom_point() +\n  geom_smooth(method = \"loess\", formula = \"y~x\")"
+  },
+  {
+    "objectID": "slides/project_management.html#and-placeholders",
+    "href": "slides/project_management.html#and-placeholders",
+    "title": "Data Mise en Place: Project Management",
+    "section": "%>% and |> placeholders",
+    "text": "%&gt;% and |&gt; placeholders\n\n\n. for %&gt;%\n_ for |&gt;\nalso, shortcut command: CTRL+SHIFT+m\n\nbased on Tools -&gt; Global Options -&gt; Code -&gt; Editing: |&gt; setting"
+  },
+  {
+    "objectID": "slides/project_management.html#for",
+    "href": "slides/project_management.html#for",
+    "title": "Data Mise en Place: Project Management",
+    "section": ". for %>%",
+    "text": ". for %&gt;%\n\n\n. for %&gt;%\n`for|&gt;`\nshortcut command: CTRL+SHIFT+m"
+  },
+  {
+    "objectID": "slides/project_management.html#drop",
+    "href": "slides/project_management.html#drop",
+    "title": "Data Mise en Place (Project Management)",
+    "section": "**Drop",
+    "text": "**Drop"
+  },
+  {
+    "objectID": "slides/project_management.html#project-management",
+    "href": "slides/project_management.html#project-management",
+    "title": "Data Mise en Place: Project Management",
+    "section": "Project Management",
+    "text": "Project Management\n\n\nInvolves orderly management of files\nContaining\n\nProject backup\nSee specific changes inside files\nUndo changes (time machine)\n\nVersion Control Summary Video"
+  },
+  {
+    "objectID": "slides/project_management.html#file-organization-and-structure",
+    "href": "slides/project_management.html#file-organization-and-structure",
+    "title": "Data Mise en Place: Project Management",
+    "section": "File Organization and Structure",
+    "text": "File Organization and Structure\n\n\nProjects are organized by their directory structure\nFiles are not stored in a single directory\nFiles are not stored in the top project directory\nFiles are organized within directories in the project\n\nsimilar files are grouped together\ndissimilar files are not grouped together\n\nYes, files are saved logically"
+  },
+  {
+    "objectID": "slides/project_management.html#directory-structure-for-projects",
+    "href": "slides/project_management.html#directory-structure-for-projects",
+    "title": "Data Mise en Place: Project Management",
+    "section": "Directory Structure for Projects",
+    "text": "Directory Structure for Projects\n\n\nr/: for R code\n\nor code/r/ if using multiple languages\n\nr/scripts: for scripts to clean data\ndata/: for data files (e.g., .csv, .Rds, .xlsx, etc.)\ndata/results: for data files containing result outputs\nreports: for report files\nrefs: for references\ndocs: for other documents\nlibraries with win and linux versions if necessary"
+  },
+  {
+    "objectID": "slides/project_management.html#file-naming",
+    "href": "slides/project_management.html#file-naming",
+    "title": "Data Mise en Place: Project Management",
+    "section": "File Naming",
+    "text": "File Naming\n\n\nFiles should be named meaningfully for humans\n\nmake short and descriptive\ninclude a version or order number when applicable\nestablish a naming convention with collaborators (and follow it)\nmake naming convention part of your data management plan"
+  },
+  {
+    "objectID": "slides/project_management.html#file-naming-cont.",
+    "href": "slides/project_management.html#file-naming-cont.",
+    "title": "Data Mise en Place: Project Management",
+    "section": "File Naming (Cont.)",
+    "text": "File Naming (Cont.)\n\n\nFiles should be machine readable\n\navoid spaces (use underscore to make readable)\navoid commas, colons,\navoid upper or camel casing (just make lowercase)\n&lt; 25 characters"
+  },
+  {
+    "objectID": "slides/project_management.html#projects-in-rstudio",
+    "href": "slides/project_management.html#projects-in-rstudio",
+    "title": "Data Mise en Place: Project Management",
+    "section": "Projects in RStudio",
+    "text": "Projects in RStudio\n\n\nAre contained in a project directory, e.g., myproject\nAre recognized by file name extension .Rproj, e.g., myproject.Rproj\n.Rproj determines the project root on your system\nGreat for version control and collaboration (e.g., Git, GitHub)\nAre portable\n\nPaths to files can be set relative to the project’s root directory"
+  },
+  {
+    "objectID": "slides/project_management.html#managing-file-paths-using-here",
+    "href": "slides/project_management.html#managing-file-paths-using-here",
+    "title": "Data Mise en Place: Project Management",
+    "section": "Managing File Paths using {here}",
+    "text": "Managing File Paths using {here}\n\n\nLibrary that simplifies path management\nMaintains tidy path structure\nRemoves guesswork of paths\nObviates setting working directory using setwd()\n\nMoving project folder does not break paths\n\nObviates using paste() or {glue} functions"
+  },
+  {
+    "objectID": "slides/project_management.html#managing-file-paths-using-here-1",
+    "href": "slides/project_management.html#managing-file-paths-using-here-1",
+    "title": "Data Mise en Place: Project Management",
+    "section": "Managing File Paths using {here}",
+    "text": "Managing File Paths using {here}\n\n\nhere::here(): returns project root directory\n\na character vector\n\nAppends strings to root path\nObviates need to use \"/\" (though possible)"
+  },
+  {
+    "objectID": "slides/project_management.html#video-tutorials",
+    "href": "slides/project_management.html#video-tutorials",
+    "title": "Data Mise en Place: Project Management",
+    "section": "Video Tutorials",
+    "text": "Video Tutorials\n\n\nGitKraken Git Client examples\nfor more, see: this video"
+  },
+  {
+    "objectID": "slides/project_management.html#videos-of-many-things-you-can-do",
+    "href": "slides/project_management.html#videos-of-many-things-you-can-do",
+    "title": "Data Mise en Place: Project Management",
+    "section": "Videos of many things you can do",
+    "text": "Videos of many things you can do\nIf interested, see gittower YouTube"
+  },
+  {
+    "objectID": "slides/project_management.html#usinghere",
+    "href": "slides/project_management.html#usinghere",
+    "title": "Data Mise en Place: Project Management",
+    "section": "Using{here}",
+    "text": "Using{here}\n\n\nhere::here(\"data\")\n\n[1] \"C:/Users/gcook/Sync/git/fods24/data\"\n\n\n\nhere::here(\"data\", \"results\")\n\n[1] \"C:/Users/gcook/Sync/git/fods24/data/results\"\n\n\n\nhere::here(\"data/results\")\n\n[1] \"C:/Users/gcook/Sync/git/fods24/data/results\""
+  },
+  {
+    "objectID": "slides/project_management.html#mise-en-place",
+    "href": "slides/project_management.html#mise-en-place",
+    "title": "Data Mise en Place: Project Management",
+    "section": "Mise en Place",
+    "text": "Mise en Place"
+  },
+  {
+    "objectID": "slides/project_management.html",
+    "href": "slides/project_management.html",
+    "title": "Data Mise en Place: Project Management",
+    "section": "",
+    "text": "French for “everything in its place”\nCheck the recipe\nCollect tools\nGather ingredients, measure out, organize, etc.\n\n\n\n\n\nhttps://www.escoffier.edu\n\n\nhttps://dmeg.cessda.eu/Data-Management-Expert-Guide/2.-Organise-Document/File-naming-and-folder-structure\nKane, M. J., Hambrick, D. Z., Tuholski, S. W., Wilhelm, O., Payne, T. W., & Engle, R. W. (2004). The generality of working memory capacity: A latent variable approach to verbal and visuospatial memory span and reasoning. Journal of Experimental Psychology: General, 133, 189-217.\nHeitz, R. P. & Engle, R. W. (2007). Focusing the spotlight: Individual differences in visual attention control. Journal of Experimental Psychology: General, 136, 217 - 240.\nUnsworth, N. & Engle, R.W. (2008). Speed and accuracy of accessing information in working memory: An individual differences investigation of focus switching. Journal of Experimental Psychology: Learning, Memory, and Cognition, 34, 616-630.\nBarch, D. M., Berman, M. G., Engle, R. W., Jones, J. H., Jonides, J., MacDonald, A. III, Nee, D. E., Redick, T. S., Sponheim, S. R., (2009). CNTRICS final task selection: Working memory. Schizophrenia Bulletin, 35, 136-152."
+  },
+  {
+    "objectID": "slides/02_git.html",
+    "href": "slides/02_git.html",
+    "title": "Git, GitHub, and RStudio",
+    "section": "",
+    "text": "What is version control?\n\nProject backup\nSee specific changes inside files\nUndo changes (time machine)\n\nVersion Control Summary Video"
+  },
+  {
+    "objectID": "slides/project_management.html#using-here",
+    "href": "slides/project_management.html#using-here",
+    "title": "Data Mise en Place: Project Management",
+    "section": "Using {here}",
+    "text": "Using {here}\n\nhere::here(\"data\")\n\n[1] \"C:/Users/gcook/Sync/git/fods24/data\""
+  },
+  {
+    "objectID": "slides/project_management.html#mise-en-place-1",
+    "href": "slides/project_management.html#mise-en-place-1",
+    "title": "Data Mise en Place: Project Management",
+    "section": "Mise en Place",
+    "text": "Mise en Place\n\n\nFrench for “everything in its place”\nCheck the recipe\nCollect tools\nGather ingredients, measure out, organize, etc."
+  },
+  {
+    "objectID": "slides/project_management.html#using-here-1",
+    "href": "slides/project_management.html#using-here-1",
+    "title": "Data Mise en Place: Project Management",
+    "section": "Using {here}",
+    "text": "Using {here}\n\nhere::here(\"data\", \"results\")\n\n[1] \"C:/Users/gcook/Sync/git/fods24/data/results\""
+  },
+  {
+    "objectID": "slides/project_management.html#using-here-2",
+    "href": "slides/project_management.html#using-here-2",
+    "title": "Data Mise en Place: Project Management",
+    "section": "Using {here}",
+    "text": "Using {here}\n\nhere::here(\"data/results\")\n\n[1] \"C:/Users/gcook/Sync/git/fods24/data/results\""
+  },
+  {
+    "objectID": "slides/piping.html#and-placeholders",
+    "href": "slides/piping.html#and-placeholders",
+    "title": "Piping Code",
+    "section": "%>% and |> placeholders",
+    "text": "%&gt;% and |&gt; placeholders\n\n\n. for %&gt;%\n_ for |&gt;\nalso, shortcut command: CTRL+SHIFT+m\n\nbased on Tools -&gt; Global Options -&gt; Code -&gt; Editing: |&gt; setting"
+  },
+  {
+    "objectID": "slides/piping.html#for",
+    "href": "slides/piping.html#for",
+    "title": "Piping Code",
+    "section": ". for %>%",
+    "text": ". for %&gt;%\n\n\n. for %&gt;%\n`for|&gt;`\nshortcut command: CTRL+SHIFT+m"
+  },
+  {
+    "objectID": "slides/piping.html#some-code",
+    "href": "slides/piping.html#some-code",
+    "title": "Piping Code",
+    "section": "",
+    "text": "as.numeric(c(\"1\", \"2\", \"3\"))\nread from the inside out"
+  },
+  {
+    "objectID": "slides/piping.html#piping-functions",
+    "href": "slides/piping.html#piping-functions",
+    "title": "Piping Code",
+    "section": "Piping Functions",
+    "text": "Piping Functions\n\n\nMake code more readable\nRead from left to right, top to bottom"
+  },
+  {
+    "objectID": "slides/piping.html#piping-functions-1",
+    "href": "slides/piping.html#piping-functions-1",
+    "title": "Piping Code",
+    "section": "Piping Functions",
+    "text": "Piping Functions\n\nc(\"1\", \"2\", \"3\") |&gt;\n  as.numeric()\n\n[1] 1 2 3"
+  },
+  {
+    "objectID": "slides/piping.html",
+    "href": "slides/piping.html",
+    "title": "Piping Code",
+    "section": "",
+    "text": "as.numeric(c(\"1\", \"2\", \"3\"))\nread from the inside out"
   }
 ]
