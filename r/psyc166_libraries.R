@@ -35,7 +35,7 @@ dataviz166_packages <- c(
   "rpart.plot", # partial R and plotting
 
   # PROJECTS AND MANAGEMENT
-  "gitr", "gh", "gitcreds", "usethis", "here", "renv",
+  "gert", "gitr", "gh", "gitcreds", "usethis", "here", "renv",
 
   # READING AND WRITING DATA FILES
   "foreign", "haven", "vroom", "xlsx", "readr", "openxlsx", "rio",
@@ -58,4 +58,4 @@ dataviz166_packages <- c(
   "webshot", "sjPlot", "sqldf"
 )
 
-install.packages(dataviz167_packages, dep = T)
+install.packages(dataviz166_packages, dep = T)
