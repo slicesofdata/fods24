@@ -6,6 +6,7 @@
 
 /.quarto/
 _content/
+_freeze/
 omit/
 notes/
 exercises/
