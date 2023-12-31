@@ -1,0 +1,18 @@
+{
+  "hash": "c7b28d3585e93364b6e509932b9b4434",
+  "result": {
+    "markdown": "---\ntitle: \"Piping Code\"\nformat:\n  revealjs: \n    theme: moon\n\n#highlight-style: arrow-light\n    \nslide-number: c/t #h/v\n\n#  width: 1600\n#  height: 900\n#logo: \"images/??.jpg\"\n#css: [\"slides/css/test.scss\"]\n\n#theme: simple\necho: true  # for code echo\n\n#editor: visual\n\nexecute:\n  #enabled: false\n  freeze: auto\n\n# ## **title** {background-color=\"#002b36\"}\n\n---\n\n\n\n## **Some Code**\n\n::: incremental\n- `as.numeric(c(\"1\", \"2\", \"3\"))`\n- read from the inside out\n:::\n\n\n## **Piping Functions**\n\n::: incremental\n- Make code more readable\n- Read from left to right, top to bottom\n:::\n\n## **Piping Functions**\n\n\n::: {.cell}\n\n```{.r .cell-code}\nc(\"1\", \"2\", \"3\") |>\n  as.numeric()\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 1 2 3\n```\n:::\n:::\n\n\n\n\n## **`%>%` and `|>` placeholders** \n\n::: incremental\n-   `.` for `%>%`\n-   `_` for `|>`\n-   also, shortcut command: `CTRL+SHIFT+m`\n    -   based on Tools -\\> Global Options -\\> Code -\\> Editing: `|>` setting\n:::\n\n## **`.` for `%>%`** \n\n::: incremental\n-   `.` for `%>%`\n\n-   \\``for`\\|\\>\\`\n\n-   shortcut command: `CTRL+SHIFT+m`\n:::\n\n# **References**\n\nhttps://dmeg.cessda.eu/Data-Management-Expert-Guide/2.-Organise-Document/File-naming-and-folder-structure\n\nKane, M. J., Hambrick, D. Z., Tuholski, S. W., Wilhelm, O., Payne, T. W., & Engle, R. W. (2004). The generality of working memory capacity: A latent variable approach to verbal and visuospatial memory span and reasoning. Journal of Experimental Psychology: General, 133, 189-217.\n\nHeitz, R. P. & Engle, R. W. (2007). Focusing the spotlight: Individual differences in visual attention control. Journal of Experimental Psychology: General, 136, 217 - 240.\n\nUnsworth, N. & Engle, R.W. (2008). Speed and accuracy of accessing information in working memory: An individual differences investigation of focus switching. Journal of Experimental Psychology: Learning, Memory, and Cognition, 34, 616-630.\n\nBarch, D. M., Berman, M. G., Engle, R. W., Jones, J. H., Jonides, J., MacDonald, A. III, Nee, D. E., Redick, T. S., Sponheim, S. R., (2009). CNTRICS final task selection: Working memory. Schizophrenia Bulletin, 35, 136-152.\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\r\n<script>\r\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\r\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\r\n  // slide changes (different for each slide format).\r\n  (function () {\r\n    // dispatch for htmlwidgets\r\n    function fireSlideEnter() {\r\n      const event = window.document.createEvent(\"Event\");\r\n      event.initEvent(\"slideenter\", true, true);\r\n      window.document.dispatchEvent(event);\r\n    }\r\n\r\n    function fireSlideChanged(previousSlide, currentSlide) {\r\n      fireSlideEnter();\r\n\r\n      // dispatch for shiny\r\n      if (window.jQuery) {\r\n        if (previousSlide) {\r\n          window.jQuery(previousSlide).trigger(\"hidden\");\r\n        }\r\n        if (currentSlide) {\r\n          window.jQuery(currentSlide).trigger(\"shown\");\r\n        }\r\n      }\r\n    }\r\n\r\n    // hookup for slidy\r\n    if (window.w3c_slidy) {\r\n      window.w3c_slidy.add_observer(function (slide_num) {\r\n        // slide_num starts at position 1\r\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\r\n      });\r\n    }\r\n\r\n  })();\r\n</script>\r\n\r\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
