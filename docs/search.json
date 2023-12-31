@@ -86,119 +86,119 @@
   {
     "objectID": "slides/02_git.html#version-control",
     "href": "slides/02_git.html#version-control",
-    "title": "Git, GitHub, and RStudio",
+    "title": "Git and GitHub",
     "section": "Version Control",
     "text": "Version Control\n\n\nWhat is version control?\n\nProject backup\nSee specific changes inside files\nUndo changes (time machine)\n\nVersion Control Summary Video"
   },
   {
     "objectID": "slides/02_git.html#version-control-git-workflow-basics",
     "href": "slides/02_git.html#version-control-git-workflow-basics",
-    "title": "Git, GitHub, and RStudio",
+    "title": "Git and GitHub",
     "section": "Version Control: Git Workflow Basics",
     "text": "Version Control: Git Workflow Basics\nThere are three main parts to Git Workflow:\n\n\nVersion control for files (not empty directories)\nMake local changes (in your working directory)\nStage changes (in your staging directory)\nCommit changes (to apply them for pushing to your remote repository)\nVersion Control Workflow Basics"
   },
   {
     "objectID": "slides/02_git.html#connecting-git-to-github-the-rstudio-terminal",
     "href": "slides/02_git.html#connecting-git-to-github-the-rstudio-terminal",
-    "title": "Git, GitHub, and RStudio",
+    "title": "Git and GitHub",
     "section": "Connecting Git to GitHub: The RStudio Terminal",
     "text": "Connecting Git to GitHub: The RStudio Terminal\n\n\nConfigure Git and GitHub in RStudio Terminal\nCreate token\nSet token\nCan use the RStudio Gui (clunky though)"
   },
   {
     "objectID": "slides/02_git.html#configuring-git-and-github-with-usethis",
     "href": "slides/02_git.html#configuring-git-and-github-with-usethis",
-    "title": "Git, GitHub, and RStudio",
+    "title": "Git and GitHub",
     "section": "Configuring Git and GitHub with {usethis}",
     "text": "Configuring Git and GitHub with {usethis}\n\nusethis::use_git_config(user.name = \"janegit\", \n                        user.email = \"jane_git@gitrdone.com\"\n                        )"
   },
   {
     "objectID": "slides/02_git.html#creating-a-personal-access-token-pat-for-github-with-usethis",
     "href": "slides/02_git.html#creating-a-personal-access-token-pat-for-github-with-usethis",
-    "title": "Git, GitHub, and RStudio",
+    "title": "Git and GitHub",
     "section": "Creating a Personal Access Token (PAT) for GitHub with {usethis}",
     "text": "Creating a Personal Access Token (PAT) for GitHub with {usethis}\n\n\nusethis::create_github_token()\nCreate token and copy to your clipboard"
   },
   {
     "objectID": "slides/02_git.html#setting-your-git-credentials-using-pat-with-gitcreds",
     "href": "slides/02_git.html#setting-your-git-credentials-using-pat-with-gitcreds",
-    "title": "Git, GitHub, and RStudio",
+    "title": "Git and GitHub",
     "section": "Setting your Git Credentials (using PAT) with {gitcreds}",
     "text": "Setting your Git Credentials (using PAT) with {gitcreds}\n\n\ngitcreds::gitcreds_set()\nChoose option to either set or replace\nAt ? Enter new password or token, paste PAT to set\ngh::gh_whoami() to check if set"
   },
   {
     "objectID": "slides/02_git.html#making-local-file-changes-committing-and-pushing-to-github",
     "href": "slides/02_git.html#making-local-file-changes-committing-and-pushing-to-github",
-    "title": "Git, GitHub, and RStudio",
+    "title": "Git and GitHub",
     "section": "Making Local File Changes, Committing, and Pushing to GitHub",
     "text": "Making Local File Changes, Committing, and Pushing to GitHub\n\n\nMake a change to a file\nCheck status of project for changes\nStage change\nCommit all changes\nPush changes\nCommit a specific change\nPull changes down from repo (downloads and integrates changes)\nFetch downloads new data (does not change your working copy)"
   },
   {
     "objectID": "slides/02_git.html#checking-the-status-of-local-file-changes",
     "href": "slides/02_git.html#checking-the-status-of-local-file-changes",
-    "title": "Git, GitHub, and RStudio",
+    "title": "Git and GitHub",
     "section": "Checking the status of local file changes",
     "text": "Checking the status of local file changes\nAt the Terminal in RStudio\n\n$ git status"
   },
   {
     "objectID": "slides/02_git.html#staging-changes-adding-changes",
     "href": "slides/02_git.html#staging-changes-adding-changes",
-    "title": "Git, GitHub, and RStudio",
+    "title": "Git and GitHub",
     "section": "Staging Changes (Adding Changes)",
     "text": "Staging Changes (Adding Changes)\n\n\nStaging and Committing\n\nUntracked vs. tracked files\nTo have tracked by Git, you need to add"
   },
   {
     "objectID": "slides/02_git.html#staging-a-specific-change",
     "href": "slides/02_git.html#staging-a-specific-change",
-    "title": "Git, GitHub, and RStudio",
+    "title": "Git and GitHub",
     "section": "Staging a Specific Change",
     "text": "Staging a Specific Change\n\n\n$ git add &lt;file&gt;... such that &lt;file&gt; refers to the file name\nfile might be in a directory, e.g., r/\n$ git add r/yourname.R\nTab to auto-complete, e.g., git add r/you{TAB}"
   },
   {
     "objectID": "slides/02_git.html#staging-all-changes",
     "href": "slides/02_git.html#staging-all-changes",
-    "title": "Git, GitHub, and RStudio",
+    "title": "Git and GitHub",
     "section": "Staging All Changes",
     "text": "Staging All Changes\n\n$ git add ."
   },
   {
     "objectID": "slides/02_git.html#committing-the-changes",
     "href": "slides/02_git.html#committing-the-changes",
-    "title": "Git, GitHub, and RStudio",
+    "title": "Git and GitHub",
     "section": "Committing the Change(s)",
     "text": "Committing the Change(s)\n\n\ngit commit is used to commit the changes\nadd -m to tell git you want a message (e.g., \"my message here\")\n\n$ git commit -m \"added my first .R file\""
   },
   {
     "objectID": "slides/02_git.html#push-publish-the-changes-from-your-branch-to-the-remote-repository",
     "href": "slides/02_git.html#push-publish-the-changes-from-your-branch-to-the-remote-repository",
-    "title": "Git, GitHub, and RStudio",
+    "title": "Git and GitHub",
     "section": "Push (publish) the change(s) from your branch to the remote repository",
     "text": "Push (publish) the change(s) from your branch to the remote repository\n\n\n$ git push\nPushing changes"
   },
   {
     "objectID": "slides/02_git.html#pulls-changes-from-the-remote-repository",
     "href": "slides/02_git.html#pulls-changes-from-the-remote-repository",
-    "title": "Git, GitHub, and RStudio",
+    "title": "Git and GitHub",
     "section": "Pulls change(s) from the remote repository",
     "text": "Pulls change(s) from the remote repository\n\n\n$ git pull\nIf you make changes that other will need, let them know to pull"
   },
   {
     "objectID": "slides/02_git.html#fetch-changes",
     "href": "slides/02_git.html#fetch-changes",
-    "title": "Git, GitHub, and RStudio",
+    "title": "Git and GitHub",
     "section": "Fetch changes",
     "text": "Fetch changes"
   },
   {
     "objectID": "slides/02_git.html#video-tutorials",
     "href": "slides/02_git.html#video-tutorials",
-    "title": "Git, GitHub, and RStudio",
+    "title": "Git and GitHub",
     "section": "Video Tutorials",
     "text": "Video Tutorials\n\n\nGitKraken Git Client examples\nfor more, see: this video"
   },
   {
     "objectID": "slides/02_git.html#videos-of-many-things-you-can-do",
     "href": "slides/02_git.html#videos-of-many-things-you-can-do",
-    "title": "Git, GitHub, and RStudio",
+    "title": "Git and GitHub",
     "section": "Videos of many things you can do",
     "text": "Videos of many things you can do\nIf interested, see gittower YouTube"
   },

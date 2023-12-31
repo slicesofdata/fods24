@@ -1,13 +1,15 @@
 ---
-title: "Git, GitHub, and RStudio"
-format: revealjs
+title: "Git and GitHub"
+format: 
+  revealjs:
+    theme: dark
 slide-number: c/t #h/v
 #  width: 1600
 #  height: 900
 #logo: "images/??.jpg"
 #logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
 #footer: "[](https://rstudio-conf-2022.github.io/get-started-quarto/)"
-css: ["css/styles.css"]
+#css: ["css/styles.css"]
 #theme: simple
 echo: true  # for code echo
 
@@ -35,7 +37,7 @@ execute:
 There are three main parts to Git Workflow:
 
 ::: {.incremental}
-- Version Control
+- Version control for files (not empty directories)
 - Make local changes (in your working directory) 
 - **Stage** changes (in your staging directory) 
 - **Commit** changes (to apply them for pushing to your remote repository)

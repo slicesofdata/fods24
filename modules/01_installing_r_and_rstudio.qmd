@@ -127,9 +127,15 @@ knitr::include_graphics(here::here("images", "RStudio1.png"))
 ```
 
 
+
+
 # **Configure RStudio**
 
 A. Go to ***Tools -> Global Options*** under the ***General + Basic*** Tab
+
+```{r echo=FALSE}
+knitr::include_graphics(here::here("images", "RStudio12.png"))
+```
 
 **R Sessions -> R version:** There should be a path to the installed R version listed if you installed R before R Studio. You should not need to change this unless you have another version installed on your system. If you do have multiple versions, browse to version **`r this_r_version`**. Do not update R or any libraries during this course.
 
