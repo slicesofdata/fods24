@@ -41,14 +41,14 @@ dataviz166_packages <- c(
   "foreign", "haven", "vroom", "xlsx", "readr", "openxlsx", "rio",
 
   # REFERENCES AND REPORTING
-  "bibext", "knitr", "pandoc", "rstudioapi", "rmarkdown", "quarto",
+  "bibtex", "knitr", "pandoc", "rstudioapi", "rmarkdown", "quarto",
   "shiny", "shinydashboard", "shinydashboardPlus",
 
   # STRING MANIPULATION
   "stringr",
 
   # TABLES
-  "DT", "htmlwidgets", "htmlTable", "kable", "kableExtra",
+  "DT", "htmlwidgets", "htmlTable", "kableExtra",
 
   # confidence intervals
   "coin",
@@ -58,4 +58,9 @@ dataviz166_packages <- c(
   "webshot", "sjPlot", "sqldf"
 )
 
-install.packages(dataviz166_packages, dep = T)
+# install.packages(dataviz166_packages, dep = T)
+
+new_pkg <- dataviz166_packages[
+  !(dataviz166_packages %in% installed.packages()[,"Package"])]
+
+if(length(new_pkg)) install.packages(new_pkg)
