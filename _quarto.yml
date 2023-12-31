@@ -36,8 +36,10 @@ website:
         menu:
         #- text: Example 1
         #  href: slides/sample_quarto_presentation.qmd
-        - text: Git, GitHub, and RStudio
+        - text: Git and GitHub
           href: slides/02_git.qmd
+        - text: Git
+          href: slides/023_git.qmd
 
 
 ################################################################################

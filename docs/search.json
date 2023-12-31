@@ -203,67 +203,256 @@
     "text": "Videos of many things you can do\nIf interested, see gittower YouTube"
   },
   {
-    "objectID": "project/index.html",
-    "href": "project/index.html",
-    "title": "Project",
+    "objectID": "resources/tools.html#websites",
+    "href": "resources/tools.html#websites",
+    "title": "Tools for Foundations of Data Science",
+    "section": "Websites",
+    "text": "Websites\n\nPractice Coding in R on Posit Cloud\n\nhttps://posit.cloud/learn/primers/"
+  },
+  {
+    "objectID": "resources/tools.html#books",
+    "href": "resources/tools.html#books",
+    "title": "Tools for Foundations of Data Science",
+    "section": "Books",
+    "text": "Books\n\nLots of alternative books https://www.bigbookofr.com/data-visualization.html"
+  },
+  {
+    "objectID": "project/10_project_report.html",
+    "href": "project/10_project_report.html",
+    "title": "Final report",
     "section": "",
-    "text": "For the project, your team will write code in order to analyze data and create data visualizations in order to communicate a story that would address the question(s) proposed by the participating body about cognitive functioning. Given the constraints of data to inform this specific question, the project may involve data exploration to tell a story about relationships between variables.\nAny exploratory component allows for a healthy dose of flexibility in team creativity. This open element will also allow teams to develop ideas independently, thereby producing stories that will likely diverge wildly from each other, making the project an exciting foray into data storytelling for many students."
+    "text": "The final written report for the project will be delivered to me and to your liaison. I can provide a color-printed copy for you to distribute to the liaison and for their offices.\nThe final report is to be created in R Markdown and knit as a Pdf or Word document. An example starter file will be provided in the project repository. When working with a report file on GitHub, I recommend that you first pull down the fill from the repo, then add your content, push the changed file to the repo, and then close your file. If you leave the file open in RStudio and you pull down the changes made by your peers, you will wan to ensure that you reload/refresh the file so that when you push the changed file, it contains the previous changes.\nIf someone is familiar with LaTeX coding, Overleaf.com provides a way for collaborating without having to pull and push from GitHub."
   },
   {
-    "objectID": "project/index.html#project-description",
-    "href": "project/index.html#project-description",
-    "title": "Project",
+    "objectID": "project/10_project_report.html#abstract",
+    "href": "project/10_project_report.html#abstract",
+    "title": "Final report",
+    "section": "Abstract",
+    "text": "Abstract\nThe abstract provides a main summary of data, problem, methods, and key findings."
+  },
+  {
+    "objectID": "project/10_project_report.html#contents",
+    "href": "project/10_project_report.html#contents",
+    "title": "Final report",
+    "section": "Contents",
+    "text": "Contents\nA contents pages, or table of contents, provides a listing of the document sections and subsections as we as a page for location.\n\nTitle Page\nAbstract\nTable of Contents\nAcknowledgments\n\nChapters:\n\nIntroduction\nData\nResults/Findings\nDiscussion\nConclusion\nReferences"
+  },
+  {
+    "objectID": "project/10_project_report.html#sources-of-data",
+    "href": "project/10_project_report.html#sources-of-data",
+    "title": "Final report",
+    "section": "Sources of Data",
+    "text": "Sources of Data\nWhat was the data source/where did you obtain it from? Include the source URL of the website from which you accessed the data.The data were obtained from https://www.tfrrs.org/. Include information about where and how the data were collected or obtained. Specify whether the data were obtained from internal databases, external sources, or gathered through specific methods (surveys, sensors, web scraping, etc.)."
+  },
+  {
+    "objectID": "project/10_project_report.html#data-characteristics",
+    "href": "project/10_project_report.html#data-characteristics",
+    "title": "Final report",
+    "section": "Data Characteristics",
+    "text": "Data Characteristics\nDiscuss the data in detail. In which format was the data stored? How many cases were there in total? How many variables were contained? What variables were contained? What were the key variables you used?\nDescribe the types of variables present in the data set (numerical, categorical, text, etc.). When discussing variables of the visualization in the results chapter, make sure to provide clarity about the variable, its metric, and reason for using that variable (e.g., mean, max, median, mean of max values, median of max values, dispersion measures, etc.).\nList and briefly describe each attribute, feature, or variable in the data set, paying special attention to those used for the project."
+  },
+  {
+    "objectID": "project/10_project_report.html#data-quality-and-data-preprocessing",
+    "href": "project/10_project_report.html#data-quality-and-data-preprocessing",
+    "title": "Final report",
+    "section": "Data Quality and Data Preprocessing",
+    "text": "Data Quality and Data Preprocessing\nDescribe the steps taken to clean and prepare the data for investigation. This description may include removing duplicates, standardizing formats, trimming, correcting inconsistencies, etc. Explain any criteria used to select variables or features for visualization, focusing on those with the greatest impact or insight for the organization’s understanding.\nSome key details to address include:\n\nMissing Values: Explain the presence and treatment of any missing data. Explain how missing values were handled during analysis (removal, replacement, etc.).\nOutliers and Anomalies: Mention any identified outliers or anomalies and how they were addressed (treatment or exclusion).\nVariables Created: Describe the variables created, their units of measurement, etc. Explain if any normalization or scaling procedures applied to create the variables and to ensure data consistency and comparability across measures.\n\nAlso, specify where the cleaned data may be obtained."
+  },
+  {
+    "objectID": "project/10_project_report.html#data-limitations",
+    "href": "project/10_project_report.html#data-limitations",
+    "title": "Final report",
+    "section": "Data Limitations",
+    "text": "Data Limitations\nHighlight any limitations or constraints of the data set that affected the team’s ability to address the initial problem. Similarly, describe how any limitations might affect the interpretation of the findings."
+  },
+  {
+    "objectID": "project/04_project_midterm.html",
+    "href": "project/04_project_midterm.html",
+    "title": "Midterm presentation",
     "section": "",
-    "text": "For the project, your team will write code in order to analyze data and create data visualizations in order to communicate a story that would address the question(s) proposed by the participating body about cognitive functioning. Given the constraints of data to inform this specific question, the project may involve data exploration to tell a story about relationships between variables.\nAny exploratory component allows for a healthy dose of flexibility in team creativity. This open element will also allow teams to develop ideas independently, thereby producing stories that will likely diverge wildly from each other, making the project an exciting foray into data storytelling for many students."
+    "text": "After having several weeks to investigate and examine your data, brainstorm potential key items to address, identify potential story lines, and create some data visualizations, the next step is to present to the class. You goal for the midterm presentation will be to present and discuss data visualizations, or variants thereof, that could find their way into the end-of-semester final presentation and report deliverable.\nYou will be evaluated on you and your team’s ability to convey the steps taken to clean up the data in service of creating some plots as well as share a decision-making journey of plot creation. Any variables that needed to be fixed or modified, factorized, computed anew, or summarized in some way can resulted in one single starting data frame/tibble and likely some smaller data summaries. Teams taking different approaches, or who are guided by liaisons who have different interests, will end up with different data, different data visualizations, and different stories. Include code where appropriate to communicate how you achieved your goals.\nAt this stage in the project, the important point is that all team members should be working with data, challenge themselves to think about data, and practice using {ggplot} for creating data visualizations. Thus, all team members must have two plots, even if those plots communicate detailed variants of the same performance metric. By plot variants, mean Same Data, Different Stories. Variant plots use the same data but are visualized differently in order to facilitate different comparisons, use additional date to provide a more nuanced or detailed interpretation, use different levels/grouping of exiting variables, or use a different scaling structures, etc. Alternatively, the two plots could visualize different metrics obtained from the data, different calculations of a metric, compare different calculations, etc. to represent depths to data inquiry.\nAn example of looking at the data in different ways is illustrated in Nathan Yau’s post One Dataset, Visualized 25 Ways. If you struggle to think about data, you can also check out his post on how to think like a statistician without the math. I believe that the most valuable comment is this post to in the Ask Why section. He explains that “…the most important thing I’ve learned, [is to] always ask why. When you see a blip in a graph, you should wonder why it’s there. If you find some correlation, you should think about whether or not it makes any sense. If it does make sense, then cool, but if not, dig deeper. Numbers are great, but you have to remember that when humans are involved, errors are always a possibility.” Asking why data are they way they are is important because patterns in data can happen by chance or for some systematic reason. Any systematic influence has to have a reason, an explanation for its presence. Although you may be able to describe a pattern or influence, if you cannot provide an explanation for it, there is no useful way to make that information actionable."
   },
   {
-    "objectID": "project/index.html#team-membership-and-roles",
-    "href": "project/index.html#team-membership-and-roles",
-    "title": "Project",
-    "section": "Team Membership and Roles",
-    "text": "Team Membership and Roles\nA team of students will work with a project liaison to develop the project and work together to produce the midterm and final deliverables. Rather than having all students in charge of all duties, team members should consider delegating tasks and various types of workloads to students who are best equipped to handle them either because of ability or because of interest and desire. Teams are to meet weekly and members are to complete individual worklog reports, which are used for final grading."
+    "objectID": "project/04_project_midterm.html#data-cleaning-and-variable-creation",
+    "href": "project/04_project_midterm.html#data-cleaning-and-variable-creation",
+    "title": "Midterm presentation",
+    "section": "Data Cleaning and Variable Creation",
+    "text": "Data Cleaning and Variable Creation\nYou should communicate steps taken to clean data to fulfill sub-goals for different plots. I recommend sharing your code. The audience should understand the code and may have the capacity to identify errors.\n\nGeneral Data Cleaning\n\nCommunicate steps taken to clean data to fulfill sub-goals\nCommunicate how you modified variables and/or computed variables of interest\nCommunicate any usage of {dplyr} functions like group_by(), mutate(), filter(), ungroup(), or other functions from {stringr}, {tidyr} or otherwise for merging/joining, adding new variables, etc.\n\n\n\nData Summaries for Plots\n\nCommunicate how you calculated and/or obtained summary metrics\nCommunicate any usage of functions like group_by(), summarize(), filter(), or ungroup() to ensure your data are computed correctly"
   },
   {
-    "objectID": "project/index.html#deliverables",
-    "href": "project/index.html#deliverables",
-    "title": "Project",
-    "section": "Deliverables",
-    "text": "Deliverables\n\nMidterm Presentation\nFinal Presentation\nFinal R Markdown Report\nWorklogs/GitHub commits"
+    "objectID": "project/04_project_midterm.html#data-visualizations-story-telling-with-pictures",
+    "href": "project/04_project_midterm.html#data-visualizations-story-telling-with-pictures",
+    "title": "Midterm presentation",
+    "section": "Data Visualizations: Story Telling with Pictures",
+    "text": "Data Visualizations: Story Telling with Pictures\n\nConvey performance metrics using data visualizations\nWalk audience through an explanation of the visualizations\nConvey why you chose the data to plot and why you chose the plot to convey the data\nCommunicate plot limitations and intended amendments along with reasons why\n\nA plot is chosen as a visual aid for a talk, paper, news article, etc. for various reasons:\n\nwas the only plot created\nwas the only plot known how to create\nwas the best of several plots created\n\nEach data visualization must serve a goal for your audience. You should consider how you intend to talk about the visualization to your audience when you create it. If there are different ways to talk about the same data and more than one variant facilitates that communications, you may consider creating more than one.\nYou should stumble upon neither that goal nor the the geom type used to communicate that goal. Are you trying to communicate comparisons of some sort? If so, does the plot make that particular comparison easy?\n\nPlot Introduction\nBefore revealing your plot, set the stage for its intent. Use words. In your final report, you will be telling a story about the data. You will not just present plots and talk about them. For example, you make introduce a research question that the plot will either help answer or provide information about examining further. After walking the reader through the problem, you will reference a figure containing the plot. For the midterm presentation, you will similarly introduce a question that the plot will help address. Mention the data that the plot visualizes. Are these data minimums, maximums, means, medians, measures of variability, etc. Do the data represent groups of people? Do they include dates? Think of this step as a topic slide before presenting the plot. Your topic title should be brief and clear and you should fill in any more detail with words. This step will set the stage for the audience to understand what data you would be presenting before you throw a plot in their face.\n\n\nPlot Reveal and Explanation\nYou should make sure that you walk the reader through the data visualization. Be explicit about what the axes represent and what any aesthetics represent so that the audience does not have to figure this out. In other words, do not just present the plot and say “we can see there are differences in metric X across time”. Instead, say something more clear like: “This plot visualizes data about Event X for Group/Person/year Y. Along the horizontal axis is… a long the y axis is…. You can see that the average range of times/distances for Event X decreases as athletes’ move through class ranks (e.g, FR to SR). This pattern in the data suggests that…”. You get the point.\n\n\nPlot Discussion\nFor each plot you should:\n\nexplain why you selected this plot as the data visualization of choice to communicate the element of data being communicated\nincorporate information from readings about why you have chosen this plot type\nexplain what modifications you made to the plot (feel free to share code)\nexplain limitations that the plot contains\nshare your future goals to:\n\nreplace the plot with a completely new plot for reason X\nmodify it in one or various ways to solve limitation X, Y, and X\nleave plot as is/explain why the plot needs no work"
   },
   {
-    "objectID": "project/index.html#project-evaluation",
-    "href": "project/index.html#project-evaluation",
-    "title": "Project",
-    "section": "Project Evaluation",
-    "text": "Project Evaluation\nThe project has different components representing it at various stages (e.g., midterm presentation, final presentation and report). See those sections specifically but the following general items will be important to consider.\n\nQuality of project deliverable documents (e.g., organization, coherence, story, coding clarity/organization, plots, etc.)\nProfessionalism (e.g., liaison meeting etiquette and responsibility, timely discord communication, non-tardy attendance at weekly team meeting, weekly worklogs, feedback from liaison, etc.)\nPeer evaluation (e.g., contributions, team player, etc.)\n\nNote: Liaison’s will also participate in evaluating all teams. The team with the most impressive project (e.g., most clear, most useful and actionable, most interesting, most thought provoking, etc.) will receive bonus points.\n\nPresentation Characteristics\nSee the midterm and final presentation guidelines for more detail and rubric but in general, the following characteristics will be evaluated.\n\nClarity: well-explained; easy to follow/understand; ability to communicate points effectively\nOrganization: structured logically; ability to walk audience through the data journey and communicate a story interpretation about data\nThoroughness: all relevant issues discussed thoroughly\nPresentation Style: degree of preparedness and polish in presentation; smooth and rehearsed; minimum of reading; well-paced; slide quality"
+    "objectID": "project/04_project_midterm.html#data-cleaning-and-variable-creation-30-pts",
+    "href": "project/04_project_midterm.html#data-cleaning-and-variable-creation-30-pts",
+    "title": "Midterm presentation",
+    "section": "Data Cleaning and Variable Creation (30 pts)",
+    "text": "Data Cleaning and Variable Creation (30 pts)\n\nCommunicate steps taken to clean data to fulfill sub-goals\nCommunicate how you modified variables and/or computed variables of interest\nCommunicate any usage of functions to ensure your data are computed correctly\nCommunicate any aggregation methods and summary data frames per plot"
   },
   {
-    "objectID": "project/index.html#weekly-worklogreport",
-    "href": "project/index.html#weekly-worklogreport",
-    "title": "Project",
-    "section": "Weekly Worklog/Report",
-    "text": "Weekly Worklog/Report\nTracking individual and team goals weekly ensures progress toward the goal, commitment to the project, accountability for oneself, and a record of accomplishments.\nThe Project Manager should inquire with the team about the best way to submit worklogs or transparency and review. This could be a Google Doc File, a spreadsheet, or even a Google From that contains questions to answer, which then get dumped into a Google Spreadsheet for all to review.\n\nFrequency of Worklog\nWorklogs are to be completed by end-of-day following the team meeting, after communicating future goals (distributed equally) to other team members. Please make public for me to review. Meetings should be physical to facilitate team cohesion and conversation, and limit silly technical issues that just waste meeting time.\n\n\nContents of Worklog\nWorklogs should contain information about the reporting date, the team member reporting, that member’s previous week accomplishments, and that member’s future week goals\n\nFor the past week, I accomplished the following specific goals for my team:\n\n\nThis…\nThat…\nAnd the other…\n\n\nFor this past week, the number of hours allocated toward those goals was: ___\nFor this coming week, my specific goals for the team include:\n\n\nThis…\nThat…\nAnd the other…\n\n\nIf relevant, any items to discuss with liaison."
+    "objectID": "project/04_project_midterm.html#data-visualizations-story-telling-with-pictures-40-pts",
+    "href": "project/04_project_midterm.html#data-visualizations-story-telling-with-pictures-40-pts",
+    "title": "Midterm presentation",
+    "section": "Data Visualizations: Story Telling with Pictures (40 pts)",
+    "text": "Data Visualizations: Story Telling with Pictures (40 pts)\n\nPlot Introduction (5 pts)\nPlot Reveal and Explanation (20 pts)\nPlot Discussion (15 pts)"
   },
   {
-    "objectID": "project/08_project_final.html",
-    "href": "project/08_project_final.html",
-    "title": "Final presentation",
+    "objectID": "project/04_project_midterm.html#presentation-characteristics-20-pts",
+    "href": "project/04_project_midterm.html#presentation-characteristics-20-pts",
+    "title": "Midterm presentation",
+    "section": "Presentation Characteristics (20 pts)",
+    "text": "Presentation Characteristics (20 pts)\n\nClarity (5pts): well-explained; easy to follow/understand; ability to communicate points effectively\nOrganization (5pts): structured logically; ability to walk audience through some story line or the a story about plot decision processes\nThoroughness (5pts): all relevant issues discussed thoroughly\nPresentation Style (5pts): degree of preparedness and polish in presentation; smooth and rehearsed; minimum of reading; well-paced; slide quality"
+  },
+  {
+    "objectID": "project/04_project_midterm.html#team-and-team-member-evaluation-5-pts",
+    "href": "project/04_project_midterm.html#team-and-team-member-evaluation-5-pts",
+    "title": "Midterm presentation",
+    "section": "Team and Team Member Evaluation (5 pts)",
+    "text": "Team and Team Member Evaluation (5 pts)\n\nEvaluation of personal contributions toward the project as evaluated by other team members (claims partially validated using on-time weekly report submissions).\nThe audience (your client) will also provide an overall review for the team and individual team members."
+  },
+  {
+    "objectID": "project/04_project_midterm.html#self-evaluation-5-pts",
+    "href": "project/04_project_midterm.html#self-evaluation-5-pts",
+    "title": "Midterm presentation",
+    "section": "Self Evaluation (5 pts)",
+    "text": "Self Evaluation (5 pts)\nEvaluation of your personal contributions toward the project as evaluated by yourself (claims partially validated using on-time weekly report submissions)."
+  },
+  {
+    "objectID": "modules/index.html",
+    "href": "modules/index.html",
+    "title": "Modules",
     "section": "",
-    "text": "Overview\nThe final written report for the project will be delivered to me and to your liaison. I can provide a color-printed copy for you to distrubtue to the liaison and for their offices.\n\n\nElements to Focus On\n\n\nPresentation Medium\nYou can use any slide-presentation tool you wish. You will just need to provide me with: * a printed version of the slide deck for class time and * an electronic pdf of the slide deck before or after the presentation.\n\n\nStakeholders\nIdentify the stakeholders for your project. For example, include you liaison, professor, athletic director, college, etc. for whom the final work will be submitted.\n\n\nEvaluation and Generalized Rubric\nMore detail will be added here similar to the Midterm Presentation.\n\nQuality of project deliverable documents (e.g., organization, coherence, story, coding clarity/organization, plots, etc.)\nProfessionalism (e.g., liaison meeting etiquette and responsibility, timely discord communication, non-tardy attendance at weekly team meeting, weekly worklogs, feedback from liaison, etc.)\nPeer evaluation (e.g., contributions, team player, etc.)\n\nNote: Liaison’s will also participate in evaluating all teams. The team with the most impressive project (e.g., most clear, most useful and actionable, most interesting, most thought provoking, etc.) will receive bonus points.\n\n\nPresentation Tips\nMay be moved to a new sidebar link due to redundancy with Midterm Presentation."
+    "text": "This course introduces students to R, a programming language for statistical computing and graphics. Students will learn how to clean, manipulate, transform, join, and tidy data sets to prepare for statistical modeling. Supervised (e.g., regression) and unsupervised (e.g., clustering) approaches will be applied to understand simple and complex relationships between cognitive and non-cognitive variables (e.g., biology, aging, education, socioeconomic, health, etc.). Students will apply their skills to wrangle, explore, and model relevant data sets for a hands-on project for local scholars, offices, organizations, or industry participants. Data sets and relevant readings will change depending on semester."
   },
   {
-    "objectID": "project/02_project_team_roles.html",
-    "href": "project/02_project_team_roles.html",
-    "title": "Team membership and roles",
-    "section": "",
-    "text": "Project roles help streamline events, assist delegation, allow for some accountability, and reduce workload overlap. Project roles are designed to help keep the project organized and reduce confusion about what project elements team members are taking on. Team roles should be decided upon in a way that maximizes member ability so that task demands are equal across team members. These roles provide some guidelines but do not obviate members from contributing to and participating in other tasks subsumed under specific roles. In other words, when the Project Manager falls ill, another team member should step up to facilitate any necessary communication between the liaison of me. Likewise, the Coding Lead would step in to help the Writing Lead revise writing when necessary. Similarly, the Writing Lead or Project Manager should help the Coding Lead with organizing code when appropriate. All team members have have the same goal, which is to develop, code, and communicate the project to the liaison. All members will code, organize, and write and may take lead on sections with which they are most familiar or most qualified in addressing.\nIf the team decides to create roles different from those suggested below, please just let me know.\nSuggested Roles:\n\n\n\nCommunicating with course faculty and liaison(s);\nScheduling and reminding the team meetings and meetings with liaison;\nAssigning tasks to team members (with help from course professor is needed) and based on the project requirements;\nMonitoring and keeping track of each member’s project progress;\nMotivating the team members on their task completion and future goals;\nDealing with any conflicts within the team and updating any concerns with course professor;\nCoordinating team activities such as presentation dry runs;\nHelping maintain equity of tasks across all team members, inclusion the PM;\nThe Project Manager is not responsible to reminding team members to complete their tasks or complete worklogs.\n\n\n\n\n\n1 or 2 members\nPlanning, guiding, and leading report writing;\nDoing background/external research on topic as relevant;\nAssigning sections/chapters of documents to appropriate members;\nKeeping track of the written progress;\nHelping develop a data visualization story line;\nFormatting, text, images, inline code (R code embedded in text), and tables on final document (RMarkdown for final report);\nProofreading/editing deliverable documents like slide presentation, written report, etc.;\nThe Reporting Team is not responsible to all writing.\n\n\n\n\n\n1 or 2 members\nCreating and maintaining organization of the project code (e.g., directories, sourced scripts, etc.)\nLeading coding and code documenting;\nAssigning technical tasks to other team members;\nKeeping track of the progress of the technical tasks;\nHelping other team members troubleshoot code (see also TA and course professor);\nCommunicating with PM, liaison (during liaison meetings), and course professor regarding any technical needs and concerns;\nCommunicating with RL regarding messaging of coded results;\nMaintaining GitHub repo (recommended, please see course professor for assistance);\nThe Coding Team is not responsible for all coding.\n\nBased on abilities and interests of team members, the team should determine how many individuals to assign to a given role, or determine other appropriate roles given the abilities of the team members. There should be unanimity in these decisions. I will not assign you to roles."
+    "objectID": "modules/index.html#module-structure",
+    "href": "modules/index.html#module-structure",
+    "title": "Modules",
+    "section": "Module structure",
+    "text": "Module structure\nIn general, modules will contain readings, additional resources, and weekly assignments.\nThe modules will be updated across the semester as needed. There are more modules on this course site because some modules provide other useful information. The names of the modules listed in the syllabus, however, do match the names in the module listing."
   },
   {
-    "objectID": "project/02_project_team_roles.html#team-roles",
-    "href": "project/02_project_team_roles.html#team-roles",
-    "title": "Team membership and roles",
+    "objectID": "modules/02_functions_arguments_and_scripts.html",
+    "href": "modules/02_functions_arguments_and_scripts.html",
+    "title": "Functions, arguments, and R scripts",
     "section": "",
-    "text": "Project roles help streamline events, assist delegation, allow for some accountability, and reduce workload overlap. Project roles are designed to help keep the project organized and reduce confusion about what project elements team members are taking on. Team roles should be decided upon in a way that maximizes member ability so that task demands are equal across team members. These roles provide some guidelines but do not obviate members from contributing to and participating in other tasks subsumed under specific roles. In other words, when the Project Manager falls ill, another team member should step up to facilitate any necessary communication between the liaison of me. Likewise, the Coding Lead would step in to help the Writing Lead revise writing when necessary. Similarly, the Writing Lead or Project Manager should help the Coding Lead with organizing code when appropriate. All team members have have the same goal, which is to develop, code, and communicate the project to the liaison. All members will code, organize, and write and may take lead on sections with which they are most familiar or most qualified in addressing.\nIf the team decides to create roles different from those suggested below, please just let me know.\nSuggested Roles:\n\n\n\nCommunicating with course faculty and liaison(s);\nScheduling and reminding the team meetings and meetings with liaison;\nAssigning tasks to team members (with help from course professor is needed) and based on the project requirements;\nMonitoring and keeping track of each member’s project progress;\nMotivating the team members on their task completion and future goals;\nDealing with any conflicts within the team and updating any concerns with course professor;\nCoordinating team activities such as presentation dry runs;\nHelping maintain equity of tasks across all team members, inclusion the PM;\nThe Project Manager is not responsible to reminding team members to complete their tasks or complete worklogs.\n\n\n\n\n\n1 or 2 members\nPlanning, guiding, and leading report writing;\nDoing background/external research on topic as relevant;\nAssigning sections/chapters of documents to appropriate members;\nKeeping track of the written progress;\nHelping develop a data visualization story line;\nFormatting, text, images, inline code (R code embedded in text), and tables on final document (RMarkdown for final report);\nProofreading/editing deliverable documents like slide presentation, written report, etc.;\nThe Reporting Team is not responsible to all writing.\n\n\n\n\n\n1 or 2 members\nCreating and maintaining organization of the project code (e.g., directories, sourced scripts, etc.)\nLeading coding and code documenting;\nAssigning technical tasks to other team members;\nKeeping track of the progress of the technical tasks;\nHelping other team members troubleshoot code (see also TA and course professor);\nCommunicating with PM, liaison (during liaison meetings), and course professor regarding any technical needs and concerns;\nCommunicating with RL regarding messaging of coded results;\nMaintaining GitHub repo (recommended, please see course professor for assistance);\nThe Coding Team is not responsible for all coding.\n\nBased on abilities and interests of team members, the team should determine how many individuals to assign to a given role, or determine other appropriate roles given the abilities of the team members. There should be unanimity in these decisions. I will not assign you to roles."
+    "text": "A good friend of mine was once tried using R to summarize data. He couldn’t figure out why he could not use a function called mean() to calculate the mean of variables in his data set. Yes, mean() does compute a mean but he did not understand the object for which he was trying to compute a mean. When I explained the issue to him, he told me that he would often try to ‘brute force’ his way into obtaining results. He did not understand how the function worked and was not very concerned with learning. Without knowing how functions work, you limit yourself to troubleshoot answers and you spend a lot of time troubleshooting errors. You cannot just brute force yourself into data science or running models without getting yourself into trouble.\nThe concepts covered is this section may be challenging or confusing to beginners. You may even question why we cannot just jump into data manipulation and why all of this matters. In order to code in R so that you can be comfortable using it and with communicating with other users, a very basic understanding of programming concepts is important. This way, when someone asks you about an object, function, or assignment, you will know what they are taking about. And, well, you can’t communicate with R without knowing how functions work at a basic level.\n\n\nProvided in class:\nview_html(): for viewing data frames in html format, from /r/my_functions.R\n\nsource(here::here(\"r\", \"my_functions.R\"))\n\nYou can access remotely using this code, though you do not need to do so now.\n\nsource(\"https://raw.githubusercontent.com/slicesofdata/fods24/main/r/functions/view_html.R\")"
+  },
+  {
+    "objectID": "modules/02_functions_arguments_and_scripts.html#external-functions",
+    "href": "modules/02_functions_arguments_and_scripts.html#external-functions",
+    "title": "Functions, arguments, and R scripts",
+    "section": "",
+    "text": "Provided in class:\nview_html(): for viewing data frames in html format, from /r/my_functions.R\n\nsource(here::here(\"r\", \"my_functions.R\"))\n\nYou can access remotely using this code, though you do not need to do so now.\n\nsource(\"https://raw.githubusercontent.com/slicesofdata/fods24/main/r/functions/view_html.R\")"
+  },
+  {
+    "objectID": "modules/02_functions_arguments_and_scripts.html#examples-of-objects",
+    "href": "modules/02_functions_arguments_and_scripts.html#examples-of-objects",
+    "title": "Functions, arguments, and R scripts",
+    "section": "Examples of objects",
+    "text": "Examples of objects\nYou can also think of an object as a sort of container that holds something. Containers of different types hold different things and so is true in computer programming. A container for holding water may look different from a container for holding books. In computer speak, one type of container can hold numbers, another can hold characters, another can hold a data frame, etc. The container object is holding whatever you have assigned it to hold.\nWe will deal with different types of objects in data science. Without providing too complicated or technical of a description, some are describe below.\n\nnumeric objects: representing numeric information (e.g., one’s age)\ncharacter objects: representing character information (e.g., one’s name or race)\nvector objects: representing more than one numeric object (e.g., ages of participants)\ndata frame objects: containing vectors of data (e.g., column variables and row instances of data)\nfunction objects: that accept one object and return an other object (e.g., the mean of numeric vector)\n\nThere are other type of objects that you will learn about and encounter but for now, those are the most relevant."
+  },
+  {
+    "objectID": "modules/02_functions_arguments_and_scripts.html#a-character-example",
+    "href": "modules/02_functions_arguments_and_scripts.html#a-character-example",
+    "title": "Functions, arguments, and R scripts",
+    "section": "A character example",
+    "text": "A character example\nLet’s start with an example of an object called name, which we would like to assign a set of characters, like Jim Bob.\nIn order to create such an object, we would need to place the characters within quotation marks (e.g., single or double, does not matter). The quotes let R know the contents of name are characters (aka strings).\n\"Jim Bob\"\nWhen dealing with data, you will encounter many character objects as they often represent factor variables (e.g., race, ethnicity, favorite game, etc.) but you will also see lots of objects that are numeric in some form (e.g., age, rating, cognitive performance, etc.)."
+  },
+  {
+    "objectID": "modules/02_functions_arguments_and_scripts.html#assignment-using--",
+    "href": "modules/02_functions_arguments_and_scripts.html#assignment-using--",
+    "title": "Functions, arguments, and R scripts",
+    "section": "Assignment using <-",
+    "text": "Assignment using &lt;-\nBefore we can create any objects, however, we need to understand a little about assignment. In computer programming, an assignment statement sets (or re-sets) an object denoted by a name. Assignment requires using an assignment operator, which in R is &lt;-. In some computer languages = is the assignment operator, so R is a little different if you are familiar with other languages. This practice also helps you distinguish between object assignment and other uses of = that don’t stand for assignment.\nNOTE: Technically, you can assign objects with = in R but please do not be tempted to do so. If you do this once or twice, that’s fine. Making this a practice will cost you. The reason is that &lt;- and = behave differently. The one exception is when you are assigning objects inside of a function you create but many of you won’t be writing many functions, if any at all.\nPlease use &lt;- as this is the practice in the R community."
+  },
+  {
+    "objectID": "modules/02_functions_arguments_and_scripts.html#assignment-provides-meaning-or-definition",
+    "href": "modules/02_functions_arguments_and_scripts.html#assignment-provides-meaning-or-definition",
+    "title": "Functions, arguments, and R scripts",
+    "section": "Assignment provides meaning or definition",
+    "text": "Assignment provides meaning or definition\nIn other words, assignment is akin to creating a new word and assigning a meaning to it. You could also think of an assignment statement as a way to tell R to “create this thing and set it equal to something” so that the computer understand what that represents."
+  },
+  {
+    "objectID": "modules/02_functions_arguments_and_scripts.html#a-character-object-a-silly-example",
+    "href": "modules/02_functions_arguments_and_scripts.html#a-character-object-a-silly-example",
+    "title": "Functions, arguments, and R scripts",
+    "section": "A character object: A silly example",
+    "text": "A character object: A silly example\nIf objects are like containers holding things, we can use name of the object (e.g., container) and then assign \"things\" to it using &lt;-. In order to create a character object, we would need to place the characters within quotation marks (e.g., single or double, does not matter). The quotes let R know the contents of container are characters (aka strings).\n\"things\"\nWhen dealing with data, you will encounter many character objects as they often represent factor variables (e.g., race, ethnicity, favorite game, etc.) but you will also see lots of objects that are numeric in some form (e.g., age, rating, cognitive performance, etc.).\nSilly Example:\n\n\"something\" assigned to container\ncontainer &lt;- \"something\"\n\n\ncontainer &lt;- \"things\"\n\nAnd to see its contents, use print() to return the objects content:\n\nprint(container)\n\n[1] \"things\"\n\n\nOr just type the name of the object and you will see the returned object is \"things\".\n\ncontainer\n\n[1] \"things\"\n\n\nFor another example, we could also create an object called name, which we could assign a set of characters, like Jim Bob, making the object a character object.\n\nname &lt;- \"Jim Bob\"\n\nTo see what is returned:\n\nname\n\n[1] \"Jim Bob\"\n\n\nWhether you name is or is not Jim Bob, you can see that name contains the characters that represent the name of someone named “Jim Bob”. Although we assigned \"Jim Bob\" to name, we could have assigned it a given name. The assignment process simply stores the assigned information as an object using of whatever name you decided to call it (e.g., name, Name, NAME, xyz, etc.). We will discuss more on these letter casing differences later.\nYou could also assign the character to the object this way.\n\n\"things\" -&gt; container\n\nHowever, we won’t use much of this approach for different reasons. One reason is that doing so does not follow the R Style Guide. The style guide defines a set of guidelines for coding in R. Rather than memorize all of the styling, pay careful attention to the way code appears in the examples provided and try your best to model your code after the examples. For example, don’t do something this container&lt;-\"things\" just so you save space as doing so makes the code more difficult for you and others to read and understand.\nOK, back to Jim Bob. Of course, there are different people other than Jim Bob who exist in the world but when coding, they do not exist unless you create them. So, let’s create an object that holds the name of \"Jim Bob\".\nname &lt;- \"Jim Bob\"\n\nname &lt;- \"Jim Bob\"     # assign string to object named name\n\n\nName &lt;- \"Jim Bob\"     # we could have assigned it a different name, say Name\n\n\nNAME &lt;- \"Jim Bob\"     \n\nWhenever you reference the object name (or Name), R will return the contents of the object to you, which in this case will be a character or string object containing a single person’s name because that’s how we assigned it.\n\nname               # call object to return contents of \"name\"\n\n[1] \"Jim Bob\"\n\n\nAnd again, we can use print() to do the same thing:\n\nprint(name)\n\n[1] \"Jim Bob\"\n\n\n\nBeing mindful of case sensitivity\nA word of warning is needed here. Although name, Name, and NAME all contain the same four characters, n a m and e all arranged it he same order, the objects are all different. They just happen to hold the same content. The reason for there being three different object is because R is a case-sensitive language, which means that the letter case matters. In some programming languages, the case is ignored.\nTo illustrate, consider an example for which you assign different names to the object.\nname &lt;- \"Jim Bob\"     # create the object\n\n\nName &lt;- \"Bob\"         # then change it\n\n\nNAME &lt;- \"Jim\"         # then change it again\nIn those languages, if you asked what the name object contained, the program would return \"Jim\" because these characters were assigned last, even though they were assigned to an uppercase version, NAME. With R, you will need to be mindful of the letter case. This is by design, perhaps an advantage rather than a disadvantage."
+  },
+  {
+    "objectID": "modules/02_functions_arguments_and_scripts.html#a-numeric-object",
+    "href": "modules/02_functions_arguments_and_scripts.html#a-numeric-object",
+    "title": "Functions, arguments, and R scripts",
+    "section": "A numeric object",
+    "text": "A numeric object\nWhat about numeric information? We can create an object called year and assign the current year to it; let’s have this object contain the current year in numeric form, not as a string. Remember to use &lt;- for assignment.\n\nyear &lt;- 2024    # assign a number to year ; notice no quotes\n\nIn order to know whether this year object now contains the year, we can check by typing the name of the object or use print() to print the returned value.\n\nyear\n\n[1] 2024\n\nprint(year)\n\n[1] 2024"
+  },
+  {
+    "objectID": "modules/02_functions_arguments_and_scripts.html#inspecting-vectors-with-some-functions",
+    "href": "modules/02_functions_arguments_and_scripts.html#inspecting-vectors-with-some-functions",
+    "title": "Functions, arguments, and R scripts",
+    "section": "Inspecting vectors with some functions",
+    "text": "Inspecting vectors with some functions\nname and year are very simple objects. name is a simple character/string object we created, which contains only the name of 1 person and year only holds the current year. There is something else important about how R treats them that you cannot see on the surface. Both of these objects are also vectors. Vectors are one-dimensional arrays containing n pieces of information. You might also think of a vector so a variable (e.g., IQs of people). Both the name and year vectors contain only one piece of information, however. If you don’t believe me, we can use some functions that will answer this for us.\n\nis.vector() is a function that returns a logical (T or F) about whether the object is a vector\nlength() is a function that returns a non-negative numeric integer representing the number of elements contained\ntypeof() is a function that returns the object’s type\n\nLet’s try them by passing the object name inside the function.\n\nis.vector(name)   # is it a vector?\n\n[1] TRUE\n\n#?length\nlength(name)      # how many elements?\n\n[1] 1\n\ntypeof(name)      # what is it's type?\n\n[1] \"character\"\n\n\nIf name contained more than one object, it would still be a vector having a different length. But in order to create such vectors, each element of the vector needs to be separated by a comma and each elements needs to be wrapped by quotes.\nIf you do not separate strings by a comma…\n\nname &lt;- \"Jim Bob Kendra\"\n\n\nname                                # return object; also print(name)\n\n[1] \"Jim Bob Kendra\"\n\nis.character(name)                  # is it a character?\n\n[1] TRUE\n\nlength(name)                        # what is its length?\n\n[1] 1\n\n\nIf you do use quotes for each element and separate each by a comma, you need to use a function to combine them, which is c().\n\nname &lt;- c(\"Jim Bob\", \"Kendra\")  # two names, combine with c()\n\n\n\nis.character(name)        \n\n[1] TRUE\n\nlength(name)                   # vector with length 2\n\n[1] 2\n\n\nThe more you work with character vector, the more you way want to avoid some annoyances of creating them.\nThe {Hmisc} library has a function called Cs() that obviates the inclusion of the quotes.\n\nHmisc::Cs(Jim, Kendra, Bill, Sandy)\n\n[1] \"Jim\"    \"Kendra\" \"Bill\"   \"Sandy\" \n\n\nBeware of vectors containing elements with space like this:\nHmisc::Cs(Jim Bob, Kendra)\nR will throw an error to inform you that something is wrong. For example: Error: unexpected symbol in \"Hmisc::Cs(Jim Bob\"."
+  },
+  {
+    "objectID": "modules/02_functions_arguments_and_scripts.html#elements-of-vectors",
+    "href": "modules/02_functions_arguments_and_scripts.html#elements-of-vectors",
+    "title": "Functions, arguments, and R scripts",
+    "section": "Elements of vectors",
+    "text": "Elements of vectors\nAs a side note, the pieces/values of a vector are referred to as elements. You can reference elements by number representing their position in the vector.\n\nname[1]   # first element\n\n[1] \"Jim Bob\"\n\nname[2]   # second element\n\n[1] \"Kendra\"\n\nname[3]   # a third element? No. It only has length 2\n\n[1] NA\n\n\nObjects in R, however, can take on many forms other than strings or numbers just illustrated. Objects can be strings/characters, numeric values, character strings, functions, data frames, vectors, lists, matrices, plots, etc. If you use typeof() on a data frame object, the function will return \"list\" because a data frame is also a list. More on this later."
+  },
+  {
+    "objectID": "index.html#psyc-166-foundations-of-data-science-human-cognition",
+    "href": "index.html#psyc-166-foundations-of-data-science-human-cognition",
+    "title": "**PSYC166**",
+    "section": "PSYC 166: Foundations of Data Science (Human Cognition)",
+    "text": "PSYC 166: Foundations of Data Science (Human Cognition)\nThis is the course website for PSYC 166: Foundations of Data Science (Human Cognition), taught by Prof. Gabriel I. Cook; 1 credit\nDescription\nThis course introduces students to R, a programming language for statistical computing and graphics. Students will learn how to clean, manipulate, transform, join, and tidy data sets to prepare for statistical modeling. Supervised (e.g., regression) and unsupervised (e.g., clustering) approaches will be applied to understand simple and complex relationships between cognitive and non-cognitive variables (e.g., biology, aging, education, socioeconomic, health, etc.). Students will apply their skills to wrangle, explore, and model relevant data sets for a hands-on project for local scholars, offices, organizations, or industry participants. Data sets and relevant readings will change depending on semester."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Nothing to see here"
+  },
+  {
+    "objectID": "modules/01_installing_r_and_rstudio.html",
+    "href": "modules/01_installing_r_and_rstudio.html",
+    "title": "Installing R & RStudio",
+    "section": "",
+    "text": "For this course, we will use the R programming language and the RStudio IDE for manipulating data and creating data visualizations."
+  },
+  {
+    "objectID": "modules/01_installing_r_and_rstudio.html#tasks",
+    "href": "modules/01_installing_r_and_rstudio.html#tasks",
+    "title": "Installing R & RStudio",
+    "section": "Tasks",
+    "text": "Tasks\nThe first step is to install these pieces of software so that you can use them.\n\nDownload and Install R\nDownload and Install RStudio\nConfigure RStudio"
+  },
+  {
+    "objectID": "modules/01_installing_r_and_rstudio.html#readings",
+    "href": "modules/01_installing_r_and_rstudio.html#readings",
+    "title": "Installing R & RStudio",
+    "section": "Readings",
+    "text": "Readings\n\nIntro to R\nWorking with RMarkdown"
+  },
+  {
+    "objectID": "modules/01_installing_r_and_rstudio.html#install-r-first-and-then-install-rstudio.",
+    "href": "modules/01_installing_r_and_rstudio.html#install-r-first-and-then-install-rstudio.",
+    "title": "Installing R & RStudio",
+    "section": "Install R first and then install RStudio.",
+    "text": "Install R first and then install RStudio.\nInstalling should be easy and you can accept all of the defaults although the desktop icons are not needed, especially for R because you will never need it; RStudio will find R for you. You can follow these videos for simple installing.\nPC: How to Install R and R Studio on Windows 10/11\nMac: Installing R and RStudio on a Mac\nNote: If you leave the desktop icon for R, you can remove that later. You will never need it because RStudio will find R for you."
+  },
+  {
+    "objectID": "modules/01_installing_r_and_rstudio.html#additional-step-for-mac-users",
+    "href": "modules/01_installing_r_and_rstudio.html#additional-step-for-mac-users",
+    "title": "Installing R & RStudio",
+    "section": "Additional Step for Mac Users:",
+    "text": "Additional Step for Mac Users:\nDownload and Install XQuartz\nSome functions in R require an “X11 Server” and/or libraries associated with an X11 server. Apple does not provide this software with OS X anymore so unfortunately you have to do it on your own via a third-party application called XQuartz for OS X 10.9 or later.\nUse the url below to download the XQuartz file and save it to your computer. Follow the same install instructions as above for installing the XQuartz file.\nFor macOS 10.9 or later, download this XQuartz file and save it to your computer and install: https://github.com/XQuartz/XQuartz/releases/download/XQuartz-2.8.5/XQuartz-2.8.5.pkg"
   },
   {
     "objectID": "modules/03_installing_and_setting_up_git_and_github.html",
@@ -371,256 +560,186 @@
     "text": "Other Resources\n\nGit Client:\n\nGit clients work like the RStudio Gui option described above but likely much better. One client is GitKraken. * If you find the Terminal command line daunting or limiting, I might recommend a Git Client to use as I am not a big fan of the RStudio interface. * GitKraken is a good option and they have lots of tutorials on their website. GitKraken is seamless to set up. Install, connect your GitHub account, select your repo to add, and voilà. You can stage, commit, and push from there.\n\nhappygitwithr"
   },
   {
-    "objectID": "modules/01_installing_r_and_rstudio.html",
-    "href": "modules/01_installing_r_and_rstudio.html",
-    "title": "Installing R & RStudio",
+    "objectID": "project/02_project_team_roles.html",
+    "href": "project/02_project_team_roles.html",
+    "title": "Team membership and roles",
     "section": "",
-    "text": "For this course, we will use the R programming language and the RStudio IDE for manipulating data and creating data visualizations."
+    "text": "Project roles help streamline events, assist delegation, allow for some accountability, and reduce workload overlap. Project roles are designed to help keep the project organized and reduce confusion about what project elements team members are taking on. Team roles should be decided upon in a way that maximizes member ability so that task demands are equal across team members. These roles provide some guidelines but do not obviate members from contributing to and participating in other tasks subsumed under specific roles. In other words, when the Project Manager falls ill, another team member should step up to facilitate any necessary communication between the liaison of me. Likewise, the Coding Lead would step in to help the Writing Lead revise writing when necessary. Similarly, the Writing Lead or Project Manager should help the Coding Lead with organizing code when appropriate. All team members have have the same goal, which is to develop, code, and communicate the project to the liaison. All members will code, organize, and write and may take lead on sections with which they are most familiar or most qualified in addressing.\nIf the team decides to create roles different from those suggested below, please just let me know.\nSuggested Roles:\n\n\n\nCommunicating with course faculty and liaison(s);\nScheduling and reminding the team meetings and meetings with liaison;\nAssigning tasks to team members (with help from course professor is needed) and based on the project requirements;\nMonitoring and keeping track of each member’s project progress;\nMotivating the team members on their task completion and future goals;\nDealing with any conflicts within the team and updating any concerns with course professor;\nCoordinating team activities such as presentation dry runs;\nHelping maintain equity of tasks across all team members, inclusion the PM;\nThe Project Manager is not responsible to reminding team members to complete their tasks or complete worklogs.\n\n\n\n\n\n1 or 2 members\nPlanning, guiding, and leading report writing;\nDoing background/external research on topic as relevant;\nAssigning sections/chapters of documents to appropriate members;\nKeeping track of the written progress;\nHelping develop a data visualization story line;\nFormatting, text, images, inline code (R code embedded in text), and tables on final document (RMarkdown for final report);\nProofreading/editing deliverable documents like slide presentation, written report, etc.;\nThe Reporting Team is not responsible to all writing.\n\n\n\n\n\n1 or 2 members\nCreating and maintaining organization of the project code (e.g., directories, sourced scripts, etc.)\nLeading coding and code documenting;\nAssigning technical tasks to other team members;\nKeeping track of the progress of the technical tasks;\nHelping other team members troubleshoot code (see also TA and course professor);\nCommunicating with PM, liaison (during liaison meetings), and course professor regarding any technical needs and concerns;\nCommunicating with RL regarding messaging of coded results;\nMaintaining GitHub repo (recommended, please see course professor for assistance);\nThe Coding Team is not responsible for all coding.\n\nBased on abilities and interests of team members, the team should determine how many individuals to assign to a given role, or determine other appropriate roles given the abilities of the team members. There should be unanimity in these decisions. I will not assign you to roles."
   },
   {
-    "objectID": "modules/01_installing_r_and_rstudio.html#tasks",
-    "href": "modules/01_installing_r_and_rstudio.html#tasks",
-    "title": "Installing R & RStudio",
-    "section": "Tasks",
-    "text": "Tasks\nThe first step is to install these pieces of software so that you can use them.\n\nDownload and Install R\nDownload and Install RStudio\nConfigure RStudio"
-  },
-  {
-    "objectID": "modules/01_installing_r_and_rstudio.html#readings",
-    "href": "modules/01_installing_r_and_rstudio.html#readings",
-    "title": "Installing R & RStudio",
-    "section": "Readings",
-    "text": "Readings\n\nIntro to R\nWorking with RMarkdown"
-  },
-  {
-    "objectID": "modules/01_installing_r_and_rstudio.html#install-r-first-and-then-install-rstudio.",
-    "href": "modules/01_installing_r_and_rstudio.html#install-r-first-and-then-install-rstudio.",
-    "title": "Installing R & RStudio",
-    "section": "Install R first and then install RStudio.",
-    "text": "Install R first and then install RStudio.\nInstalling should be easy and you can accept all of the defaults although the desktop icons are not needed, especially for R because you will never need it; RStudio will find R for you. You can follow these videos for simple installing.\nPC: How to Install R and R Studio on Windows 10/11\nMac: Installing R and RStudio on a Mac\nNote: If you leave the desktop icon for R, you can remove that later. You will never need it because RStudio will find R for you."
-  },
-  {
-    "objectID": "modules/01_installing_r_and_rstudio.html#additional-step-for-mac-users",
-    "href": "modules/01_installing_r_and_rstudio.html#additional-step-for-mac-users",
-    "title": "Installing R & RStudio",
-    "section": "Additional Step for Mac Users:",
-    "text": "Additional Step for Mac Users:\nDownload and Install XQuartz\nSome functions in R require an “X11 Server” and/or libraries associated with an X11 server. Apple does not provide this software with OS X anymore so unfortunately you have to do it on your own via a third-party application called XQuartz for OS X 10.9 or later.\nUse the url below to download the XQuartz file and save it to your computer. Follow the same install instructions as above for installing the XQuartz file.\nFor macOS 10.9 or later, download this XQuartz file and save it to your computer and install: https://github.com/XQuartz/XQuartz/releases/download/XQuartz-2.8.5/XQuartz-2.8.5.pkg"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "project/02_project_team_roles.html#team-roles",
+    "href": "project/02_project_team_roles.html#team-roles",
+    "title": "Team membership and roles",
     "section": "",
-    "text": "Nothing to see here"
+    "text": "Project roles help streamline events, assist delegation, allow for some accountability, and reduce workload overlap. Project roles are designed to help keep the project organized and reduce confusion about what project elements team members are taking on. Team roles should be decided upon in a way that maximizes member ability so that task demands are equal across team members. These roles provide some guidelines but do not obviate members from contributing to and participating in other tasks subsumed under specific roles. In other words, when the Project Manager falls ill, another team member should step up to facilitate any necessary communication between the liaison of me. Likewise, the Coding Lead would step in to help the Writing Lead revise writing when necessary. Similarly, the Writing Lead or Project Manager should help the Coding Lead with organizing code when appropriate. All team members have have the same goal, which is to develop, code, and communicate the project to the liaison. All members will code, organize, and write and may take lead on sections with which they are most familiar or most qualified in addressing.\nIf the team decides to create roles different from those suggested below, please just let me know.\nSuggested Roles:\n\n\n\nCommunicating with course faculty and liaison(s);\nScheduling and reminding the team meetings and meetings with liaison;\nAssigning tasks to team members (with help from course professor is needed) and based on the project requirements;\nMonitoring and keeping track of each member’s project progress;\nMotivating the team members on their task completion and future goals;\nDealing with any conflicts within the team and updating any concerns with course professor;\nCoordinating team activities such as presentation dry runs;\nHelping maintain equity of tasks across all team members, inclusion the PM;\nThe Project Manager is not responsible to reminding team members to complete their tasks or complete worklogs.\n\n\n\n\n\n1 or 2 members\nPlanning, guiding, and leading report writing;\nDoing background/external research on topic as relevant;\nAssigning sections/chapters of documents to appropriate members;\nKeeping track of the written progress;\nHelping develop a data visualization story line;\nFormatting, text, images, inline code (R code embedded in text), and tables on final document (RMarkdown for final report);\nProofreading/editing deliverable documents like slide presentation, written report, etc.;\nThe Reporting Team is not responsible to all writing.\n\n\n\n\n\n1 or 2 members\nCreating and maintaining organization of the project code (e.g., directories, sourced scripts, etc.)\nLeading coding and code documenting;\nAssigning technical tasks to other team members;\nKeeping track of the progress of the technical tasks;\nHelping other team members troubleshoot code (see also TA and course professor);\nCommunicating with PM, liaison (during liaison meetings), and course professor regarding any technical needs and concerns;\nCommunicating with RL regarding messaging of coded results;\nMaintaining GitHub repo (recommended, please see course professor for assistance);\nThe Coding Team is not responsible for all coding.\n\nBased on abilities and interests of team members, the team should determine how many individuals to assign to a given role, or determine other appropriate roles given the abilities of the team members. There should be unanimity in these decisions. I will not assign you to roles."
   },
   {
-    "objectID": "index.html#psyc-166-foundations-of-data-science-human-cognition",
-    "href": "index.html#psyc-166-foundations-of-data-science-human-cognition",
-    "title": "**PSYC166**",
-    "section": "PSYC 166: Foundations of Data Science (Human Cognition)",
-    "text": "PSYC 166: Foundations of Data Science (Human Cognition)\nThis is the course website for PSYC 166: Foundations of Data Science (Human Cognition), taught by Prof. Gabriel I. Cook; 1 credit\nDescription\nThis course introduces students to R, a programming language for statistical computing and graphics. Students will learn how to clean, manipulate, transform, join, and tidy data sets to prepare for statistical modeling. Supervised (e.g., regression) and unsupervised (e.g., clustering) approaches will be applied to understand simple and complex relationships between cognitive and non-cognitive variables (e.g., biology, aging, education, socioeconomic, health, etc.). Students will apply their skills to wrangle, explore, and model relevant data sets for a hands-on project for local scholars, offices, organizations, or industry participants. Data sets and relevant readings will change depending on semester."
-  },
-  {
-    "objectID": "modules/02_functions_arguments_and_scripts.html",
-    "href": "modules/02_functions_arguments_and_scripts.html",
-    "title": "Functions, arguments, and R scripts",
+    "objectID": "project/08_project_final.html",
+    "href": "project/08_project_final.html",
+    "title": "Final presentation",
     "section": "",
-    "text": "A good friend of mine was once tried using R to summarize data. He couldn’t figure out why he could not use a function called mean() to calculate the mean of variables in his data set. Yes, mean() does compute a mean but he did not understand the object for which he was trying to compute a mean. When I explained the issue to him, he told me that he would often try to ‘brute force’ his way into obtaining results. He did not understand how the function worked and was not very concerned with learning. Without knowing how functions work, you limit yourself to troubleshoot answers and you spend a lot of time troubleshooting errors. You cannot just brute force yourself into data science or running models without getting yourself into trouble.\nThe concepts covered is this section may be challenging or confusing to beginners. You may even question why we cannot just jump into data manipulation and why all of this matters. In order to code in R so that you can be comfortable using it and with communicating with other users, a very basic understanding of programming concepts is important. This way, when someone asks you about an object, function, or assignment, you will know what they are taking about. And, well, you can’t communicate with R without knowing how functions work at a basic level.\n\n\nProvided in class:\nview_html(): for viewing data frames in html format, from /r/my_functions.R\n\nsource(here::here(\"r\", \"my_functions.R\"))\n\nYou can access remotely using this code, though you do not need to do so now.\n\nsource(\"https://raw.githubusercontent.com/slicesofdata/fods24/main/r/functions/view_html.R\")"
+    "text": "Overview\nThe final written report for the project will be delivered to me and to your liaison. I can provide a color-printed copy for you to distrubtue to the liaison and for their offices.\n\n\nElements to Focus On\n\n\nPresentation Medium\nYou can use any slide-presentation tool you wish. You will just need to provide me with: * a printed version of the slide deck for class time and * an electronic pdf of the slide deck before or after the presentation.\n\n\nStakeholders\nIdentify the stakeholders for your project. For example, include you liaison, professor, athletic director, college, etc. for whom the final work will be submitted.\n\n\nEvaluation and Generalized Rubric\nMore detail will be added here similar to the Midterm Presentation.\n\nQuality of project deliverable documents (e.g., organization, coherence, story, coding clarity/organization, plots, etc.)\nProfessionalism (e.g., liaison meeting etiquette and responsibility, timely discord communication, non-tardy attendance at weekly team meeting, weekly worklogs, feedback from liaison, etc.)\nPeer evaluation (e.g., contributions, team player, etc.)\n\nNote: Liaison’s will also participate in evaluating all teams. The team with the most impressive project (e.g., most clear, most useful and actionable, most interesting, most thought provoking, etc.) will receive bonus points.\n\n\nPresentation Tips\nMay be moved to a new sidebar link due to redundancy with Midterm Presentation."
   },
   {
-    "objectID": "modules/02_functions_arguments_and_scripts.html#external-functions",
-    "href": "modules/02_functions_arguments_and_scripts.html#external-functions",
-    "title": "Functions, arguments, and R scripts",
+    "objectID": "project/index.html",
+    "href": "project/index.html",
+    "title": "Project",
     "section": "",
-    "text": "Provided in class:\nview_html(): for viewing data frames in html format, from /r/my_functions.R\n\nsource(here::here(\"r\", \"my_functions.R\"))\n\nYou can access remotely using this code, though you do not need to do so now.\n\nsource(\"https://raw.githubusercontent.com/slicesofdata/fods24/main/r/functions/view_html.R\")"
+    "text": "For the project, your team will write code in order to analyze data and create data visualizations in order to communicate a story that would address the question(s) proposed by the participating body about cognitive functioning. Given the constraints of data to inform this specific question, the project may involve data exploration to tell a story about relationships between variables.\nAny exploratory component allows for a healthy dose of flexibility in team creativity. This open element will also allow teams to develop ideas independently, thereby producing stories that will likely diverge wildly from each other, making the project an exciting foray into data storytelling for many students."
   },
   {
-    "objectID": "modules/02_functions_arguments_and_scripts.html#examples-of-objects",
-    "href": "modules/02_functions_arguments_and_scripts.html#examples-of-objects",
-    "title": "Functions, arguments, and R scripts",
-    "section": "Examples of objects",
-    "text": "Examples of objects\nYou can also think of an object as a sort of container that holds something. Containers of different types hold different things and so is true in computer programming. A container for holding water may look different from a container for holding books. In computer speak, one type of container can hold numbers, another can hold characters, another can hold a data frame, etc. The container object is holding whatever you have assigned it to hold.\nWe will deal with different types of objects in data science. Without providing too complicated or technical of a description, some are describe below.\n\nnumeric objects: representing numeric information (e.g., one’s age)\ncharacter objects: representing character information (e.g., one’s name or race)\nvector objects: representing more than one numeric object (e.g., ages of participants)\ndata frame objects: containing vectors of data (e.g., column variables and row instances of data)\nfunction objects: that accept one object and return an other object (e.g., the mean of numeric vector)\n\nThere are other type of objects that you will learn about and encounter but for now, those are the most relevant."
-  },
-  {
-    "objectID": "modules/02_functions_arguments_and_scripts.html#a-character-example",
-    "href": "modules/02_functions_arguments_and_scripts.html#a-character-example",
-    "title": "Functions, arguments, and R scripts",
-    "section": "A character example",
-    "text": "A character example\nLet’s start with an example of an object called name, which we would like to assign a set of characters, like Jim Bob.\nIn order to create such an object, we would need to place the characters within quotation marks (e.g., single or double, does not matter). The quotes let R know the contents of name are characters (aka strings).\n\"Jim Bob\"\nWhen dealing with data, you will encounter many character objects as they often represent factor variables (e.g., race, ethnicity, favorite game, etc.) but you will also see lots of objects that are numeric in some form (e.g., age, rating, cognitive performance, etc.)."
-  },
-  {
-    "objectID": "modules/02_functions_arguments_and_scripts.html#assignment-using--",
-    "href": "modules/02_functions_arguments_and_scripts.html#assignment-using--",
-    "title": "Functions, arguments, and R scripts",
-    "section": "Assignment using <-",
-    "text": "Assignment using &lt;-\nBefore we can create any objects, however, we need to understand a little about assignment. In computer programming, an assignment statement sets (or re-sets) an object denoted by a name. Assignment requires using an assignment operator, which in R is &lt;-. In some computer languages = is the assignment operator, so R is a little different if you are familiar with other languages. This practice also helps you distinguish between object assignment and other uses of = that don’t stand for assignment.\nNOTE: Technically, you can assign objects with = in R but please do not be tempted to do so. If you do this once or twice, that’s fine. Making this a practice will cost you. The reason is that &lt;- and = behave differently. The one exception is when you are assigning objects inside of a function you create but many of you won’t be writing many functions, if any at all.\nPlease use &lt;- as this is the practice in the R community."
-  },
-  {
-    "objectID": "modules/02_functions_arguments_and_scripts.html#assignment-provides-meaning-or-definition",
-    "href": "modules/02_functions_arguments_and_scripts.html#assignment-provides-meaning-or-definition",
-    "title": "Functions, arguments, and R scripts",
-    "section": "Assignment provides meaning or definition",
-    "text": "Assignment provides meaning or definition\nIn other words, assignment is akin to creating a new word and assigning a meaning to it. You could also think of an assignment statement as a way to tell R to “create this thing and set it equal to something” so that the computer understand what that represents."
-  },
-  {
-    "objectID": "modules/02_functions_arguments_and_scripts.html#a-character-object-a-silly-example",
-    "href": "modules/02_functions_arguments_and_scripts.html#a-character-object-a-silly-example",
-    "title": "Functions, arguments, and R scripts",
-    "section": "A character object: A silly example",
-    "text": "A character object: A silly example\nIf objects are like containers holding things, we can use name of the object (e.g., container) and then assign \"things\" to it using &lt;-. In order to create a character object, we would need to place the characters within quotation marks (e.g., single or double, does not matter). The quotes let R know the contents of container are characters (aka strings).\n\"things\"\nWhen dealing with data, you will encounter many character objects as they often represent factor variables (e.g., race, ethnicity, favorite game, etc.) but you will also see lots of objects that are numeric in some form (e.g., age, rating, cognitive performance, etc.).\nSilly Example:\n\n\"something\" assigned to container\ncontainer &lt;- \"something\"\n\n\ncontainer &lt;- \"things\"\n\nAnd to see its contents, use print() to return the objects content:\n\nprint(container)\n\n[1] \"things\"\n\n\nOr just type the name of the object and you will see the returned object is \"things\".\n\ncontainer\n\n[1] \"things\"\n\n\nFor another example, we could also create an object called name, which we could assign a set of characters, like Jim Bob, making the object a character object.\n\nname &lt;- \"Jim Bob\"\n\nTo see what is returned:\n\nname\n\n[1] \"Jim Bob\"\n\n\nWhether you name is or is not Jim Bob, you can see that name contains the characters that represent the name of someone named “Jim Bob”. Although we assigned \"Jim Bob\" to name, we could have assigned it a given name. The assignment process simply stores the assigned information as an object using of whatever name you decided to call it (e.g., name, Name, NAME, xyz, etc.). We will discuss more on these letter casing differences later.\nYou could also assign the character to the object this way.\n\n\"things\" -&gt; container\n\nHowever, we won’t use much of this approach for different reasons. One reason is that doing so does not follow the R Style Guide. The style guide defines a set of guidelines for coding in R. Rather than memorize all of the styling, pay careful attention to the way code appears in the examples provided and try your best to model your code after the examples. For example, don’t do something this container&lt;-\"things\" just so you save space as doing so makes the code more difficult for you and others to read and understand.\nOK, back to Jim Bob. Of course, there are different people other than Jim Bob who exist in the world but when coding, they do not exist unless you create them. So, let’s create an object that holds the name of \"Jim Bob\".\nname &lt;- \"Jim Bob\"\n\nname &lt;- \"Jim Bob\"     # assign string to object named name\n\n\nName &lt;- \"Jim Bob\"     # we could have assigned it a different name, say Name\n\n\nNAME &lt;- \"Jim Bob\"     \n\nWhenever you reference the object name (or Name), R will return the contents of the object to you, which in this case will be a character or string object containing a single person’s name because that’s how we assigned it.\n\nname               # call object to return contents of \"name\"\n\n[1] \"Jim Bob\"\n\n\nAnd again, we can use print() to do the same thing:\n\nprint(name)\n\n[1] \"Jim Bob\"\n\n\n\nBeing mindful of case sensitivity\nA word of warning is needed here. Although name, Name, and NAME all contain the same four characters, n a m and e all arranged it he same order, the objects are all different. They just happen to hold the same content. The reason for there being three different object is because R is a case-sensitive language, which means that the letter case matters. In some programming languages, the case is ignored.\nTo illustrate, consider an example for which you assign different names to the object.\nname &lt;- \"Jim Bob\"     # create the object\n\n\nName &lt;- \"Bob\"         # then change it\n\n\nNAME &lt;- \"Jim\"         # then change it again\nIn those languages, if you asked what the name object contained, the program would return \"Jim\" because these characters were assigned last, even though they were assigned to an uppercase version, NAME. With R, you will need to be mindful of the letter case. This is by design, perhaps an advantage rather than a disadvantage."
-  },
-  {
-    "objectID": "modules/02_functions_arguments_and_scripts.html#a-numeric-object",
-    "href": "modules/02_functions_arguments_and_scripts.html#a-numeric-object",
-    "title": "Functions, arguments, and R scripts",
-    "section": "A numeric object",
-    "text": "A numeric object\nWhat about numeric information? We can create an object called year and assign the current year to it; let’s have this object contain the current year in numeric form, not as a string. Remember to use &lt;- for assignment.\n\nyear &lt;- 2024    # assign a number to year ; notice no quotes\n\nIn order to know whether this year object now contains the year, we can check by typing the name of the object or use print() to print the returned value.\n\nyear\n\n[1] 2024\n\nprint(year)\n\n[1] 2024"
-  },
-  {
-    "objectID": "modules/02_functions_arguments_and_scripts.html#inspecting-vectors-with-some-functions",
-    "href": "modules/02_functions_arguments_and_scripts.html#inspecting-vectors-with-some-functions",
-    "title": "Functions, arguments, and R scripts",
-    "section": "Inspecting vectors with some functions",
-    "text": "Inspecting vectors with some functions\nname and year are very simple objects. name is a simple character/string object we created, which contains only the name of 1 person and year only holds the current year. There is something else important about how R treats them that you cannot see on the surface. Both of these objects are also vectors. Vectors are one-dimensional arrays containing n pieces of information. You might also think of a vector so a variable (e.g., IQs of people). Both the name and year vectors contain only one piece of information, however. If you don’t believe me, we can use some functions that will answer this for us.\n\nis.vector() is a function that returns a logical (T or F) about whether the object is a vector\nlength() is a function that returns a non-negative numeric integer representing the number of elements contained\ntypeof() is a function that returns the object’s type\n\nLet’s try them by passing the object name inside the function.\n\nis.vector(name)   # is it a vector?\n\n[1] TRUE\n\n#?length\nlength(name)      # how many elements?\n\n[1] 1\n\ntypeof(name)      # what is it's type?\n\n[1] \"character\"\n\n\nIf name contained more than one object, it would still be a vector having a different length. But in order to create such vectors, each element of the vector needs to be separated by a comma and each elements needs to be wrapped by quotes.\nIf you do not separate strings by a comma…\n\nname &lt;- \"Jim Bob Kendra\"\n\n\nname                                # return object; also print(name)\n\n[1] \"Jim Bob Kendra\"\n\nis.character(name)                  # is it a character?\n\n[1] TRUE\n\nlength(name)                        # what is its length?\n\n[1] 1\n\n\nIf you do use quotes for each element and separate each by a comma, you need to use a function to combine them, which is c().\n\nname &lt;- c(\"Jim Bob\", \"Kendra\")  # two names, combine with c()\n\n\n\nis.character(name)        \n\n[1] TRUE\n\nlength(name)                   # vector with length 2\n\n[1] 2\n\n\nThe more you work with character vector, the more you way want to avoid some annoyances of creating them.\nThe {Hmisc} library has a function called Cs() that obviates the inclusion of the quotes.\n\nHmisc::Cs(Jim, Kendra, Bill, Sandy)\n\n[1] \"Jim\"    \"Kendra\" \"Bill\"   \"Sandy\" \n\n\nBeware of vectors containing elements with space like this:\nHmisc::Cs(Jim Bob, Kendra)\nR will throw an error to inform you that something is wrong. For example: Error: unexpected symbol in \"Hmisc::Cs(Jim Bob\"."
-  },
-  {
-    "objectID": "modules/02_functions_arguments_and_scripts.html#elements-of-vectors",
-    "href": "modules/02_functions_arguments_and_scripts.html#elements-of-vectors",
-    "title": "Functions, arguments, and R scripts",
-    "section": "Elements of vectors",
-    "text": "Elements of vectors\nAs a side note, the pieces/values of a vector are referred to as elements. You can reference elements by number representing their position in the vector.\n\nname[1]   # first element\n\n[1] \"Jim Bob\"\n\nname[2]   # second element\n\n[1] \"Kendra\"\n\nname[3]   # a third element? No. It only has length 2\n\n[1] NA\n\n\nObjects in R, however, can take on many forms other than strings or numbers just illustrated. Objects can be strings/characters, numeric values, character strings, functions, data frames, vectors, lists, matrices, plots, etc. If you use typeof() on a data frame object, the function will return \"list\" because a data frame is also a list. More on this later."
-  },
-  {
-    "objectID": "modules/index.html",
-    "href": "modules/index.html",
-    "title": "Modules",
+    "objectID": "project/index.html#project-description",
+    "href": "project/index.html#project-description",
+    "title": "Project",
     "section": "",
-    "text": "This course introduces students to R, a programming language for statistical computing and graphics. Students will learn how to clean, manipulate, transform, join, and tidy data sets to prepare for statistical modeling. Supervised (e.g., regression) and unsupervised (e.g., clustering) approaches will be applied to understand simple and complex relationships between cognitive and non-cognitive variables (e.g., biology, aging, education, socioeconomic, health, etc.). Students will apply their skills to wrangle, explore, and model relevant data sets for a hands-on project for local scholars, offices, organizations, or industry participants. Data sets and relevant readings will change depending on semester."
+    "text": "For the project, your team will write code in order to analyze data and create data visualizations in order to communicate a story that would address the question(s) proposed by the participating body about cognitive functioning. Given the constraints of data to inform this specific question, the project may involve data exploration to tell a story about relationships between variables.\nAny exploratory component allows for a healthy dose of flexibility in team creativity. This open element will also allow teams to develop ideas independently, thereby producing stories that will likely diverge wildly from each other, making the project an exciting foray into data storytelling for many students."
   },
   {
-    "objectID": "modules/index.html#module-structure",
-    "href": "modules/index.html#module-structure",
-    "title": "Modules",
-    "section": "Module structure",
-    "text": "Module structure\nIn general, modules will contain readings, additional resources, and weekly assignments.\nThe modules will be updated across the semester as needed. There are more modules on this course site because some modules provide other useful information. The names of the modules listed in the syllabus, however, do match the names in the module listing."
+    "objectID": "project/index.html#team-membership-and-roles",
+    "href": "project/index.html#team-membership-and-roles",
+    "title": "Project",
+    "section": "Team Membership and Roles",
+    "text": "Team Membership and Roles\nA team of students will work with a project liaison to develop the project and work together to produce the midterm and final deliverables. Rather than having all students in charge of all duties, team members should consider delegating tasks and various types of workloads to students who are best equipped to handle them either because of ability or because of interest and desire. Teams are to meet weekly and members are to complete individual worklog reports, which are used for final grading."
   },
   {
-    "objectID": "project/04_project_midterm.html",
-    "href": "project/04_project_midterm.html",
-    "title": "Midterm presentation",
-    "section": "",
-    "text": "After having several weeks to investigate and examine your data, brainstorm potential key items to address, identify potential story lines, and create some data visualizations, the next step is to present to the class. You goal for the midterm presentation will be to present and discuss data visualizations, or variants thereof, that could find their way into the end-of-semester final presentation and report deliverable.\nYou will be evaluated on you and your team’s ability to convey the steps taken to clean up the data in service of creating some plots as well as share a decision-making journey of plot creation. Any variables that needed to be fixed or modified, factorized, computed anew, or summarized in some way can resulted in one single starting data frame/tibble and likely some smaller data summaries. Teams taking different approaches, or who are guided by liaisons who have different interests, will end up with different data, different data visualizations, and different stories. Include code where appropriate to communicate how you achieved your goals.\nAt this stage in the project, the important point is that all team members should be working with data, challenge themselves to think about data, and practice using {ggplot} for creating data visualizations. Thus, all team members must have two plots, even if those plots communicate detailed variants of the same performance metric. By plot variants, mean Same Data, Different Stories. Variant plots use the same data but are visualized differently in order to facilitate different comparisons, use additional date to provide a more nuanced or detailed interpretation, use different levels/grouping of exiting variables, or use a different scaling structures, etc. Alternatively, the two plots could visualize different metrics obtained from the data, different calculations of a metric, compare different calculations, etc. to represent depths to data inquiry.\nAn example of looking at the data in different ways is illustrated in Nathan Yau’s post One Dataset, Visualized 25 Ways. If you struggle to think about data, you can also check out his post on how to think like a statistician without the math. I believe that the most valuable comment is this post to in the Ask Why section. He explains that “…the most important thing I’ve learned, [is to] always ask why. When you see a blip in a graph, you should wonder why it’s there. If you find some correlation, you should think about whether or not it makes any sense. If it does make sense, then cool, but if not, dig deeper. Numbers are great, but you have to remember that when humans are involved, errors are always a possibility.” Asking why data are they way they are is important because patterns in data can happen by chance or for some systematic reason. Any systematic influence has to have a reason, an explanation for its presence. Although you may be able to describe a pattern or influence, if you cannot provide an explanation for it, there is no useful way to make that information actionable."
+    "objectID": "project/index.html#deliverables",
+    "href": "project/index.html#deliverables",
+    "title": "Project",
+    "section": "Deliverables",
+    "text": "Deliverables\n\nMidterm Presentation\nFinal Presentation\nFinal R Markdown Report\nWorklogs/GitHub commits"
   },
   {
-    "objectID": "project/04_project_midterm.html#data-cleaning-and-variable-creation",
-    "href": "project/04_project_midterm.html#data-cleaning-and-variable-creation",
-    "title": "Midterm presentation",
-    "section": "Data Cleaning and Variable Creation",
-    "text": "Data Cleaning and Variable Creation\nYou should communicate steps taken to clean data to fulfill sub-goals for different plots. I recommend sharing your code. The audience should understand the code and may have the capacity to identify errors.\n\nGeneral Data Cleaning\n\nCommunicate steps taken to clean data to fulfill sub-goals\nCommunicate how you modified variables and/or computed variables of interest\nCommunicate any usage of {dplyr} functions like group_by(), mutate(), filter(), ungroup(), or other functions from {stringr}, {tidyr} or otherwise for merging/joining, adding new variables, etc.\n\n\n\nData Summaries for Plots\n\nCommunicate how you calculated and/or obtained summary metrics\nCommunicate any usage of functions like group_by(), summarize(), filter(), or ungroup() to ensure your data are computed correctly"
+    "objectID": "project/index.html#project-evaluation",
+    "href": "project/index.html#project-evaluation",
+    "title": "Project",
+    "section": "Project Evaluation",
+    "text": "Project Evaluation\nThe project has different components representing it at various stages (e.g., midterm presentation, final presentation and report). See those sections specifically but the following general items will be important to consider.\n\nQuality of project deliverable documents (e.g., organization, coherence, story, coding clarity/organization, plots, etc.)\nProfessionalism (e.g., liaison meeting etiquette and responsibility, timely discord communication, non-tardy attendance at weekly team meeting, weekly worklogs, feedback from liaison, etc.)\nPeer evaluation (e.g., contributions, team player, etc.)\n\nNote: Liaison’s will also participate in evaluating all teams. The team with the most impressive project (e.g., most clear, most useful and actionable, most interesting, most thought provoking, etc.) will receive bonus points.\n\nPresentation Characteristics\nSee the midterm and final presentation guidelines for more detail and rubric but in general, the following characteristics will be evaluated.\n\nClarity: well-explained; easy to follow/understand; ability to communicate points effectively\nOrganization: structured logically; ability to walk audience through the data journey and communicate a story interpretation about data\nThoroughness: all relevant issues discussed thoroughly\nPresentation Style: degree of preparedness and polish in presentation; smooth and rehearsed; minimum of reading; well-paced; slide quality"
   },
   {
-    "objectID": "project/04_project_midterm.html#data-visualizations-story-telling-with-pictures",
-    "href": "project/04_project_midterm.html#data-visualizations-story-telling-with-pictures",
-    "title": "Midterm presentation",
-    "section": "Data Visualizations: Story Telling with Pictures",
-    "text": "Data Visualizations: Story Telling with Pictures\n\nConvey performance metrics using data visualizations\nWalk audience through an explanation of the visualizations\nConvey why you chose the data to plot and why you chose the plot to convey the data\nCommunicate plot limitations and intended amendments along with reasons why\n\nA plot is chosen as a visual aid for a talk, paper, news article, etc. for various reasons:\n\nwas the only plot created\nwas the only plot known how to create\nwas the best of several plots created\n\nEach data visualization must serve a goal for your audience. You should consider how you intend to talk about the visualization to your audience when you create it. If there are different ways to talk about the same data and more than one variant facilitates that communications, you may consider creating more than one.\nYou should stumble upon neither that goal nor the the geom type used to communicate that goal. Are you trying to communicate comparisons of some sort? If so, does the plot make that particular comparison easy?\n\nPlot Introduction\nBefore revealing your plot, set the stage for its intent. Use words. In your final report, you will be telling a story about the data. You will not just present plots and talk about them. For example, you make introduce a research question that the plot will either help answer or provide information about examining further. After walking the reader through the problem, you will reference a figure containing the plot. For the midterm presentation, you will similarly introduce a question that the plot will help address. Mention the data that the plot visualizes. Are these data minimums, maximums, means, medians, measures of variability, etc. Do the data represent groups of people? Do they include dates? Think of this step as a topic slide before presenting the plot. Your topic title should be brief and clear and you should fill in any more detail with words. This step will set the stage for the audience to understand what data you would be presenting before you throw a plot in their face.\n\n\nPlot Reveal and Explanation\nYou should make sure that you walk the reader through the data visualization. Be explicit about what the axes represent and what any aesthetics represent so that the audience does not have to figure this out. In other words, do not just present the plot and say “we can see there are differences in metric X across time”. Instead, say something more clear like: “This plot visualizes data about Event X for Group/Person/year Y. Along the horizontal axis is… a long the y axis is…. You can see that the average range of times/distances for Event X decreases as athletes’ move through class ranks (e.g, FR to SR). This pattern in the data suggests that…”. You get the point.\n\n\nPlot Discussion\nFor each plot you should:\n\nexplain why you selected this plot as the data visualization of choice to communicate the element of data being communicated\nincorporate information from readings about why you have chosen this plot type\nexplain what modifications you made to the plot (feel free to share code)\nexplain limitations that the plot contains\nshare your future goals to:\n\nreplace the plot with a completely new plot for reason X\nmodify it in one or various ways to solve limitation X, Y, and X\nleave plot as is/explain why the plot needs no work"
+    "objectID": "project/index.html#weekly-worklogreport",
+    "href": "project/index.html#weekly-worklogreport",
+    "title": "Project",
+    "section": "Weekly Worklog/Report",
+    "text": "Weekly Worklog/Report\nTracking individual and team goals weekly ensures progress toward the goal, commitment to the project, accountability for oneself, and a record of accomplishments.\nThe Project Manager should inquire with the team about the best way to submit worklogs or transparency and review. This could be a Google Doc File, a spreadsheet, or even a Google From that contains questions to answer, which then get dumped into a Google Spreadsheet for all to review.\n\nFrequency of Worklog\nWorklogs are to be completed by end-of-day following the team meeting, after communicating future goals (distributed equally) to other team members. Please make public for me to review. Meetings should be physical to facilitate team cohesion and conversation, and limit silly technical issues that just waste meeting time.\n\n\nContents of Worklog\nWorklogs should contain information about the reporting date, the team member reporting, that member’s previous week accomplishments, and that member’s future week goals\n\nFor the past week, I accomplished the following specific goals for my team:\n\n\nThis…\nThat…\nAnd the other…\n\n\nFor this past week, the number of hours allocated toward those goals was: ___\nFor this coming week, my specific goals for the team include:\n\n\nThis…\nThat…\nAnd the other…\n\n\nIf relevant, any items to discuss with liaison."
   },
   {
-    "objectID": "project/04_project_midterm.html#data-cleaning-and-variable-creation-30-pts",
-    "href": "project/04_project_midterm.html#data-cleaning-and-variable-creation-30-pts",
-    "title": "Midterm presentation",
-    "section": "Data Cleaning and Variable Creation (30 pts)",
-    "text": "Data Cleaning and Variable Creation (30 pts)\n\nCommunicate steps taken to clean data to fulfill sub-goals\nCommunicate how you modified variables and/or computed variables of interest\nCommunicate any usage of functions to ensure your data are computed correctly\nCommunicate any aggregation methods and summary data frames per plot"
+    "objectID": "slides/023_git.html#version-control",
+    "href": "slides/023_git.html#version-control",
+    "title": "Git and GitHub",
+    "section": "Version Control",
+    "text": "Version Control\n\n\nWhat is version control?\n\nProject backup\nSee specific changes inside files\nUndo changes (time machine)\n\nVersion Control Summary Video"
   },
   {
-    "objectID": "project/04_project_midterm.html#data-visualizations-story-telling-with-pictures-40-pts",
-    "href": "project/04_project_midterm.html#data-visualizations-story-telling-with-pictures-40-pts",
-    "title": "Midterm presentation",
-    "section": "Data Visualizations: Story Telling with Pictures (40 pts)",
-    "text": "Data Visualizations: Story Telling with Pictures (40 pts)\n\nPlot Introduction (5 pts)\nPlot Reveal and Explanation (20 pts)\nPlot Discussion (15 pts)"
+    "objectID": "slides/023_git.html#version-control-git-workflow-basics",
+    "href": "slides/023_git.html#version-control-git-workflow-basics",
+    "title": "Git and GitHub",
+    "section": "Version Control: Git Workflow Basics",
+    "text": "Version Control: Git Workflow Basics\nThere are three main parts to Git Workflow:\n\n\nVersion control for files (not empty directories)\nMake local changes (in your working directory)\nStage changes (in your staging directory)\nCommit changes (to apply them for pushing to your remote repository)\nVersion Control Workflow Basics"
   },
   {
-    "objectID": "project/04_project_midterm.html#presentation-characteristics-20-pts",
-    "href": "project/04_project_midterm.html#presentation-characteristics-20-pts",
-    "title": "Midterm presentation",
-    "section": "Presentation Characteristics (20 pts)",
-    "text": "Presentation Characteristics (20 pts)\n\nClarity (5pts): well-explained; easy to follow/understand; ability to communicate points effectively\nOrganization (5pts): structured logically; ability to walk audience through some story line or the a story about plot decision processes\nThoroughness (5pts): all relevant issues discussed thoroughly\nPresentation Style (5pts): degree of preparedness and polish in presentation; smooth and rehearsed; minimum of reading; well-paced; slide quality"
+    "objectID": "slides/023_git.html#connecting-git-to-github-the-rstudio-terminal",
+    "href": "slides/023_git.html#connecting-git-to-github-the-rstudio-terminal",
+    "title": "Git and GitHub",
+    "section": "Connecting Git to GitHub: The RStudio Terminal",
+    "text": "Connecting Git to GitHub: The RStudio Terminal\n\n\nConfigure Git and GitHub in RStudio Terminal\nCreate token\nSet token\nCan use the RStudio Gui (clunky though)"
   },
   {
-    "objectID": "project/04_project_midterm.html#team-and-team-member-evaluation-5-pts",
-    "href": "project/04_project_midterm.html#team-and-team-member-evaluation-5-pts",
-    "title": "Midterm presentation",
-    "section": "Team and Team Member Evaluation (5 pts)",
-    "text": "Team and Team Member Evaluation (5 pts)\n\nEvaluation of personal contributions toward the project as evaluated by other team members (claims partially validated using on-time weekly report submissions).\nThe audience (your client) will also provide an overall review for the team and individual team members."
+    "objectID": "slides/023_git.html#configuring-git-and-github-with-usethis",
+    "href": "slides/023_git.html#configuring-git-and-github-with-usethis",
+    "title": "Git and GitHub",
+    "section": "Configuring Git and GitHub with {usethis}",
+    "text": "Configuring Git and GitHub with {usethis}\n\nusethis::use_git_config(user.name = \"janegit\", \n                        user.email = \"jane_git@gitrdone.com\"\n                        )"
   },
   {
-    "objectID": "project/04_project_midterm.html#self-evaluation-5-pts",
-    "href": "project/04_project_midterm.html#self-evaluation-5-pts",
-    "title": "Midterm presentation",
-    "section": "Self Evaluation (5 pts)",
-    "text": "Self Evaluation (5 pts)\nEvaluation of your personal contributions toward the project as evaluated by yourself (claims partially validated using on-time weekly report submissions)."
+    "objectID": "slides/023_git.html#creating-a-personal-access-token-pat-for-github-with-usethis",
+    "href": "slides/023_git.html#creating-a-personal-access-token-pat-for-github-with-usethis",
+    "title": "Git and GitHub",
+    "section": "Creating a Personal Access Token (PAT) for GitHub with {usethis}",
+    "text": "Creating a Personal Access Token (PAT) for GitHub with {usethis}\n\n\nusethis::create_github_token()\nCreate token and copy to your clipboard"
   },
   {
-    "objectID": "project/10_project_report.html",
-    "href": "project/10_project_report.html",
-    "title": "Final report",
-    "section": "",
-    "text": "The final written report for the project will be delivered to me and to your liaison. I can provide a color-printed copy for you to distribute to the liaison and for their offices.\nThe final report is to be created in R Markdown and knit as a Pdf or Word document. An example starter file will be provided in the project repository. When working with a report file on GitHub, I recommend that you first pull down the fill from the repo, then add your content, push the changed file to the repo, and then close your file. If you leave the file open in RStudio and you pull down the changes made by your peers, you will wan to ensure that you reload/refresh the file so that when you push the changed file, it contains the previous changes.\nIf someone is familiar with LaTeX coding, Overleaf.com provides a way for collaborating without having to pull and push from GitHub."
+    "objectID": "slides/023_git.html#setting-your-git-credentials-using-pat-with-gitcreds",
+    "href": "slides/023_git.html#setting-your-git-credentials-using-pat-with-gitcreds",
+    "title": "Git and GitHub",
+    "section": "Setting your Git Credentials (using PAT) with {gitcreds}",
+    "text": "Setting your Git Credentials (using PAT) with {gitcreds}\n\n\ngitcreds::gitcreds_set()\nChoose option to either set or replace\nAt ? Enter new password or token, paste PAT to set\ngh::gh_whoami() to check if set"
   },
   {
-    "objectID": "project/10_project_report.html#abstract",
-    "href": "project/10_project_report.html#abstract",
-    "title": "Final report",
-    "section": "Abstract",
-    "text": "Abstract\nThe abstract provides a main summary of data, problem, methods, and key findings."
+    "objectID": "slides/023_git.html#making-local-file-changes-committing-and-pushing-to-github",
+    "href": "slides/023_git.html#making-local-file-changes-committing-and-pushing-to-github",
+    "title": "Git and GitHub",
+    "section": "Making Local File Changes, Committing, and Pushing to GitHub",
+    "text": "Making Local File Changes, Committing, and Pushing to GitHub\n\n\nMake a change to a file\nCheck status of project for changes\nStage change\nCommit all changes\nPush changes\nCommit a specific change\nPull changes down from repo (downloads and integrates changes)\nFetch downloads new data (does not change your working copy)"
   },
   {
-    "objectID": "project/10_project_report.html#contents",
-    "href": "project/10_project_report.html#contents",
-    "title": "Final report",
-    "section": "Contents",
-    "text": "Contents\nA contents pages, or table of contents, provides a listing of the document sections and subsections as we as a page for location.\n\nTitle Page\nAbstract\nTable of Contents\nAcknowledgments\n\nChapters:\n\nIntroduction\nData\nResults/Findings\nDiscussion\nConclusion\nReferences"
+    "objectID": "slides/023_git.html#checking-the-status-of-local-file-changes",
+    "href": "slides/023_git.html#checking-the-status-of-local-file-changes",
+    "title": "Git and GitHub",
+    "section": "Checking the status of local file changes",
+    "text": "Checking the status of local file changes\nAt the Terminal in RStudio\n\n$ git status"
   },
   {
-    "objectID": "project/10_project_report.html#sources-of-data",
-    "href": "project/10_project_report.html#sources-of-data",
-    "title": "Final report",
-    "section": "Sources of Data",
-    "text": "Sources of Data\nWhat was the data source/where did you obtain it from? Include the source URL of the website from which you accessed the data.The data were obtained from https://www.tfrrs.org/. Include information about where and how the data were collected or obtained. Specify whether the data were obtained from internal databases, external sources, or gathered through specific methods (surveys, sensors, web scraping, etc.)."
+    "objectID": "slides/023_git.html#staging-changes-adding-changes",
+    "href": "slides/023_git.html#staging-changes-adding-changes",
+    "title": "Git and GitHub",
+    "section": "Staging Changes (Adding Changes)",
+    "text": "Staging Changes (Adding Changes)\n\n\nStaging and Committing\n\nUntracked vs. tracked files\nTo have tracked by Git, you need to add"
   },
   {
-    "objectID": "project/10_project_report.html#data-characteristics",
-    "href": "project/10_project_report.html#data-characteristics",
-    "title": "Final report",
-    "section": "Data Characteristics",
-    "text": "Data Characteristics\nDiscuss the data in detail. In which format was the data stored? How many cases were there in total? How many variables were contained? What variables were contained? What were the key variables you used?\nDescribe the types of variables present in the data set (numerical, categorical, text, etc.). When discussing variables of the visualization in the results chapter, make sure to provide clarity about the variable, its metric, and reason for using that variable (e.g., mean, max, median, mean of max values, median of max values, dispersion measures, etc.).\nList and briefly describe each attribute, feature, or variable in the data set, paying special attention to those used for the project."
+    "objectID": "slides/023_git.html#staging-a-specific-change",
+    "href": "slides/023_git.html#staging-a-specific-change",
+    "title": "Git and GitHub",
+    "section": "Staging a Specific Change",
+    "text": "Staging a Specific Change\n\n\n$ git add &lt;file&gt;... such that &lt;file&gt; refers to the file name\nfile might be in a directory, e.g., r/\n$ git add r/yourname.R\nTab to auto-complete, e.g., git add r/you{TAB}"
   },
   {
-    "objectID": "project/10_project_report.html#data-quality-and-data-preprocessing",
-    "href": "project/10_project_report.html#data-quality-and-data-preprocessing",
-    "title": "Final report",
-    "section": "Data Quality and Data Preprocessing",
-    "text": "Data Quality and Data Preprocessing\nDescribe the steps taken to clean and prepare the data for investigation. This description may include removing duplicates, standardizing formats, trimming, correcting inconsistencies, etc. Explain any criteria used to select variables or features for visualization, focusing on those with the greatest impact or insight for the organization’s understanding.\nSome key details to address include:\n\nMissing Values: Explain the presence and treatment of any missing data. Explain how missing values were handled during analysis (removal, replacement, etc.).\nOutliers and Anomalies: Mention any identified outliers or anomalies and how they were addressed (treatment or exclusion).\nVariables Created: Describe the variables created, their units of measurement, etc. Explain if any normalization or scaling procedures applied to create the variables and to ensure data consistency and comparability across measures.\n\nAlso, specify where the cleaned data may be obtained."
+    "objectID": "slides/023_git.html#staging-all-changes",
+    "href": "slides/023_git.html#staging-all-changes",
+    "title": "Git and GitHub",
+    "section": "Staging All Changes",
+    "text": "Staging All Changes\n\n$ git add ."
   },
   {
-    "objectID": "project/10_project_report.html#data-limitations",
-    "href": "project/10_project_report.html#data-limitations",
-    "title": "Final report",
-    "section": "Data Limitations",
-    "text": "Data Limitations\nHighlight any limitations or constraints of the data set that affected the team’s ability to address the initial problem. Similarly, describe how any limitations might affect the interpretation of the findings."
+    "objectID": "slides/023_git.html#committing-the-changes",
+    "href": "slides/023_git.html#committing-the-changes",
+    "title": "Git and GitHub",
+    "section": "Committing the Change(s)",
+    "text": "Committing the Change(s)\n\n\ngit commit is used to commit the changes\nadd -m to tell git you want a message (e.g., \"my message here\")\n\n$ git commit -m \"added my first .R file\""
   },
   {
-    "objectID": "resources/tools.html#websites",
-    "href": "resources/tools.html#websites",
-    "title": "Tools for Foundations of Data Science",
-    "section": "Websites",
-    "text": "Websites\n\nPractice Coding in R on Posit Cloud\n\nhttps://posit.cloud/learn/primers/"
+    "objectID": "slides/023_git.html#push-publish-the-changes-from-your-branch-to-the-remote-repository",
+    "href": "slides/023_git.html#push-publish-the-changes-from-your-branch-to-the-remote-repository",
+    "title": "Git and GitHub",
+    "section": "Push (publish) the change(s) from your branch to the remote repository",
+    "text": "Push (publish) the change(s) from your branch to the remote repository\n\n\n$ git push\nPushing changes"
   },
   {
-    "objectID": "resources/tools.html#books",
-    "href": "resources/tools.html#books",
-    "title": "Tools for Foundations of Data Science",
-    "section": "Books",
-    "text": "Books\n\nLots of alternative books https://www.bigbookofr.com/data-visualization.html"
+    "objectID": "slides/023_git.html#pulls-changes-from-the-remote-repository",
+    "href": "slides/023_git.html#pulls-changes-from-the-remote-repository",
+    "title": "Git and GitHub",
+    "section": "Pulls change(s) from the remote repository",
+    "text": "Pulls change(s) from the remote repository\n\n\n$ git pull\nIf you make changes that other will need, let them know to pull"
+  },
+  {
+    "objectID": "slides/023_git.html#fetch-changes",
+    "href": "slides/023_git.html#fetch-changes",
+    "title": "Git and GitHub",
+    "section": "Fetch changes",
+    "text": "Fetch changes"
+  },
+  {
+    "objectID": "slides/023_git.html#video-tutorials",
+    "href": "slides/023_git.html#video-tutorials",
+    "title": "Git and GitHub",
+    "section": "Video Tutorials",
+    "text": "Video Tutorials\n\n\nGitKraken Git Client examples\nfor more, see: this video"
+  },
+  {
+    "objectID": "slides/023_git.html#videos-of-many-things-you-can-do",
+    "href": "slides/023_git.html#videos-of-many-things-you-can-do",
+    "title": "Git and GitHub",
+    "section": "Videos of many things you can do",
+    "text": "Videos of many things you can do\nIf interested, see gittower YouTube"
   },
   {
     "objectID": "slides/sample_quarto_presentation.html#step-1",

@@ -60,7 +60,10 @@ dataviz166_packages <- c(
 
 # install.packages(dataviz166_packages, dep = T)
 
-new_pkg <- dataviz166_packages[
-  !(dataviz166_packages %in% installed.packages()[,"Package"])]
+install_if_not_installed <- function(list) {
+  new_pkg <- list[
+    !(list %in% installed.packages()[,"Package"])]
+  if(length(new_pkg)) install.packages(new_pkg)
+}
 
-if(length(new_pkg)) install.packages(new_pkg)
+install_if_not_installed(dataviz166_packages)
