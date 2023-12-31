@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
-  <title>PSYC166 - Git and GitHub</title>
+  <title>PSYC166 - Sample Presentation</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -390,178 +390,140 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Git and GitHub</h1>
+  <h1 class="title">Sample Presentation</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="version-control" class="slide level2">
-<h2><strong>Version Control</strong></h2>
-<div>
-<ul>
-<li class="fragment">What is version control?
-<ul>
-<li class="fragment">Project backup</li>
-<li class="fragment">See specific changes inside files</li>
-<li class="fragment">Undo changes (time machine)</li>
-</ul></li>
-<li class="fragment"><a href="https://www.youtube.com/watch?v=M-O8ZNW9icQ">Version Control Summary Video</a></li>
-</ul>
-</div>
+<section>
+<section id="this-url" class="title-slide slide level1 center">
+<h1><a href="https://rstudio-conf-2022.github.io/get-started-quarto/materials/05-presentations.html#/fragments-nesting-1">this url</a></h1>
+
 </section>
-<section id="version-control-git-workflow-basics" class="slide level2">
-<h2><strong>Version Control: Git Workflow Basics</strong></h2>
-<p>There are three main parts to Git Workflow:</p>
-<div>
+<section id="step-1" class="slide level2">
+<h2>Step 1</h2>
 <ul>
-<li class="fragment">Version control for files (not empty directories)</li>
-<li class="fragment">Make local changes (in your working directory)</li>
-<li class="fragment"><strong>Stage</strong> changes (in your staging directory)</li>
-<li class="fragment"><strong>Commit</strong> changes (to apply them for pushing to your remote repository)</li>
-<li class="fragment"><a href="https://www.youtube.com/watch?v=e8PGuOyZ3YU">Version Control Workflow Basics</a></li>
+<li>Split slides up with level 2 headers: <code>## Heading 2</code></li>
+<li>Add some markdown + text and/or some R/Python code</li>
 </ul>
-</div>
 </section>
-<section id="connecting-git-to-github-the-rstudio-terminal" class="slide level2">
-<h2><strong>Connecting Git to GitHub: The RStudio Terminal</strong></h2>
-<div>
-<ul>
-<li class="fragment"><strong>Configure</strong> Git and GitHub in RStudio Terminal</li>
-<li class="fragment"><strong>Create</strong> token</li>
-<li class="fragment"><strong>Set</strong> token</li>
-<li class="fragment">Can use the RStudio Gui (clunky though)</li>
-</ul>
-</div>
-</section>
-<section id="configuring-git-and-github-with-usethis" class="slide level2">
-<h2><strong>Configuring Git and GitHub with {usethis}</strong></h2>
+<section id="some-r-code" class="slide level2">
+<h2>Some R Code</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(<span class="at">user.name =</span> <span class="st">"janegit"</span>, </span>
-<span id="cb1-2"><a href="#cb1-2"></a>                        <span class="at">user.email =</span> <span class="st">"jane_git@gitrdone.com"</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a>                        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># comment </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="creating-a-personal-access-token-pat-for-github-with-usethis" class="slide level2">
-<h2><strong>Creating a Personal Access Token (PAT) for GitHub with {usethis}</strong></h2>
+<section id="slide-title" class="slide level2">
+<h2>Slide Title</h2>
+<ul>
+<li>one</li>
+<li>two</li>
+</ul>
+</section>
+<section id="make-this-slide-red" class="slide level2" data-background-color="red">
+<h2>Make this slide Red</h2>
+</section>
+<section id="making-a-slide-incremental" class="slide level2">
+<h2>Making a Slide Incremental</h2>
+<p>Say you want to reveal the content of slide piecemeal without rewriting separate slides with previous content.</p>
+<div class="fragment">
+<p>Then add some content…</p>
+</div>
+<div class="fragment">
+<p>Then some more content</p>
+</div>
+</section>
+<section id="omit-this-slide-visibility-hidden" class="slide level2">
+<h2>Omit This Slide {visibility = “hidden”}</h2>
+</section>
+<section id="add-links" class="slide level2">
+<h2>Add links</h2>
+<ul>
+<li><a href="http://cmc.edu" title="my tooltip">cmc</a></li>
+</ul>
 <div>
 <ul>
-<li class="fragment"><code>usethis::create_github_token()</code></li>
-<li class="fragment">Create token and <strong>copy to your clipboard</strong></li>
+<li class="fragment">First item</li>
+<li class="fragment">Second item</li>
 </ul>
 </div>
 </section>
-<section id="setting-your-git-credentials-using-pat-with-gitcreds" class="slide level2">
-<h2><strong>Setting your Git Credentials (using PAT) with {gitcreds}</strong></h2>
-<div>
-<ul>
-<li class="fragment"><code>gitcreds::gitcreds_set()</code></li>
-<li class="fragment">Choose option to either <em>set</em> or <em>replace</em></li>
-<li class="fragment">At <code>? Enter new password or token</code>, <strong>paste</strong> PAT to set</li>
-<li class="fragment"><code>gh::gh_whoami()</code> to check if set</li>
-</ul>
+<section id="fragments" class="slide level2">
+<h2>Fragments</h2>
+<div class="fragment">
+<p>Fade in</p>
+</div>
+<div class="fragment fade-out">
+<p>Fade out</p>
+</div>
+<div class="fragment highlight-red">
+<p>Highlight red</p>
+</div>
+<div class="fragment fade-in-then-out">
+<p>Fade in, then out</p>
+</div>
+</section></section>
+<section>
+<section id="new-section" class="title-slide slide level1 center">
+<h1>New Section</h1>
+
+</section>
+<section id="fragments-nesting" class="slide level2">
+<h2>Fragments, nesting</h2>
+<div class="fragment fade-in">
+<div class="fragment highlight-red">
+<div class="fragment semi-fade-out">
+<p>Fade in &gt; Turn red &gt; Semi fade out</p>
+</div>
+</div>
 </div>
 </section>
-<section id="making-local-file-changes-committing-and-pushing-to-github" class="slide level2">
-<h2><strong>Making Local File Changes, Committing, and Pushing to GitHub</strong></h2>
-<div>
-<ul>
-<li class="fragment">Make a change to a file</li>
-<li class="fragment">Check <strong>status</strong> of project for changes</li>
-<li class="fragment"><strong>Stage</strong> change</li>
-<li class="fragment"><strong>Commit</strong> all changes</li>
-<li class="fragment"><strong>Push</strong> changes</li>
-<li class="fragment"><strong>Commit</strong> a specific change</li>
-<li class="fragment"><strong>Pull</strong> changes down from repo (downloads and integrates changes)</li>
-<li class="fragment"><strong>Fetch</strong> downloads new data (does not change your working copy)</li>
-</ul>
+<section id="fragments-spans" class="slide level2">
+<h2>Fragments, spans</h2>
+<p>This is an <span class="fragment highlight-red">important sentence!</span></p>
+<p>Mind the <span class="fragment fade-in">gap</span> when riding the rail!</p>
+</section></section>
+<section>
+<section id="columns" class="title-slide slide level1 center">
+<h1>Columns</h1>
+
+</section>
+<section id="column-layout" class="slide level2">
+<h2>Column layout</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>contents…s</p>
+</div><div class="column" style="width:60%;">
+<p>contents…</p>
+</div>
 </div>
 </section>
-<section id="checking-the-status-of-local-file-changes" class="slide level2">
-<h2><strong>Checking the status of local file changes</strong></h2>
-<p>At the <strong>Terminal</strong> in RStudio</p>
-<ul>
-<li><code>$ git status</code></li>
-</ul>
-</section>
-<section id="staging-changes-adding-changes" class="slide level2">
-<h2><strong>Staging Changes (Adding Changes)</strong></h2>
-<div>
-<ul>
-<li class="fragment"><a href="https://www.youtube.com/watch?v=7exFDGHgQcw">Staging and Committing</a>
-<ul>
-<li class="fragment">Untracked vs.&nbsp;tracked files</li>
-<li class="fragment">To have tracked by Git, you need to <strong>add</strong></li>
-</ul></li>
-</ul>
+<section id="output-location" class="slide level2">
+<h2>Output Location</h2>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb4" data-code-line-numbers="|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a>mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">formula =</span> <span class="st">"y~x"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fragment">
+<div class="cell-output-display">
+<p><img data-src="sample_files/figure-revealjs/unnamed-chunk-1-1.png" width="960"></p>
 </div>
-</section>
-<section id="staging-a-specific-change" class="slide level2">
-<h2><strong>Staging a <em>Specific</em> Change</strong></h2>
-<div>
-<ul>
-<li class="fragment"><p><code>$ git add &lt;file&gt;...</code> such that <code>&lt;file&gt;</code> refers to the file name</p></li>
-<li class="fragment"><p>file might be in a directory, e.g., <code>r/</code></p></li>
-<li class="fragment"><p><code>$ git add r/yourname.R</code></p></li>
-<li class="fragment"><p>Tab to auto-complete, e.g., <code>git add r/you{TAB}</code></p></li>
-</ul>
 </div>
-</section>
-<section id="staging-all-changes" class="slide level2">
-<h2><strong>Staging <em>All</em> Changes</strong></h2>
-<ul>
-<li><code>$ git add .</code></li>
-</ul>
-</section>
-<section id="committing-the-changes" class="slide level2">
-<h2><strong>Committing the Change(s)</strong></h2>
-<div>
-<ul>
-<li class="fragment"><code>git commit</code> is used to commit the changes</li>
-<li class="fragment">add <code>-m</code> to tell git you want a message (e.g., <code>"my message here"</code>)<br>
-</li>
-<li class="fragment"><code>$ git commit -m "added my first .R file"</code></li>
-</ul>
 </div>
-</section>
-<section id="push-publish-the-changes-from-your-branch-to-the-remote-repository" class="slide level2">
-<h2><strong>Push (publish) the change(s) from your branch to the remote repository</strong></h2>
-<div>
-<ul>
-<li class="fragment"><p><code>$ git push</code></p></li>
-<li class="fragment"><p><a href="https://www.youtube.com/watch?v=lqw7ipXmc-4">Pushing changes</a></p></li>
-</ul>
-</div>
-</section>
-<section id="pulls-changes-from-the-remote-repository" class="slide level2">
-<h2><strong>Pulls change(s) from the remote repository</strong></h2>
-<div>
-<ul>
-<li class="fragment"><code>$ git pull</code></li>
-<li class="fragment">If you make changes that other will need, let them know to pull</li>
-</ul>
-</div>
-</section>
-<section id="fetch-changes" class="slide level2">
-<h2><strong>Fetch changes</strong></h2>
-</section>
-<section id="video-tutorials" class="slide level2">
-<h2><strong>Video Tutorials</strong></h2>
-<div>
-<ul>
-<li class="fragment"><a href="https://www.gitkraken.com/learn/git">GitKraken Git Client examples</a></li>
-<li class="fragment">for more, see: this <a href="https://www.youtube.com/watch?v=A4rIs-6c98s">video</a></li>
-</ul>
-</div>
-</section>
-<section id="videos-of-many-things-you-can-do" class="slide level2">
-<h2><strong>Videos of many things you can do</strong></h2>
-<p>If interested, see <a href="https://www.youtube.com/@gittower">gittower YouTube</a></p>
 
 <div class="footer footer-default">
 
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

@@ -8,7 +8,7 @@ slide-number: c/t #h/v
 #logo: "images/??.jpg"
 #logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
 #footer: "[](https://rstudio-conf-2022.github.io/get-started-quarto/)"
-#css: ["css/styles.css"]
+css: ["css/styles.css"]
 #theme: simple
 echo: true  # for code echo
 

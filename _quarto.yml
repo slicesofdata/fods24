@@ -40,6 +40,8 @@ website:
           href: slides/02_git.qmd
         - text: Git
           href: slides/023_git.qmd
+        - text: Sample
+          href: slides/Sample.qmd
 
 
 ################################################################################
