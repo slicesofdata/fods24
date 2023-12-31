@@ -35,7 +35,7 @@ dataviz166_packages <- c(
   "rpart.plot", # partial R and plotting
 
   # PROJECTS AND MANAGEMENT
-  "gitr", "here", "usethis", #"renv",
+  "gitr", "here", "usethis", "renv",
 
   # READING AND WRITING DATA FILES
   "foreign", "haven", "vroom", "xlsx", "readr", "openxlsx", "rio",
