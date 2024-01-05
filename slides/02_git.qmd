@@ -3,6 +3,10 @@ title: "Git and GitHub"
 format: 
   revealjs:
     theme: dark
+    preview-links: auto
+    embed-resources: true 
+    # slide-tone: true # play sound on change - blind users
+    
 slide-number: c/t #h/v
 #  width: 1600
 #  height: 900
@@ -93,11 +97,47 @@ usethis::use_git_config(user.name = "janegit",
 :::
 
 
-## **Checking the status of local file changes**
+## **Checking the Status of Local File Changes**
 
 At the **Terminal** in RStudio
 
 - `$ git status`
+
+## **Shared Repository Workflow**
+
+* update your local repo
+  * `git pull origin master`
+* create a working branch
+  * `git checkout -b yourBranchName`
+* make your changes on your branch and stage them 
+  * `git add`
+* commit changes locally
+  * `git commit -m "description of changes"`
+* upload the changes (including your new branch) to GitHub 
+  * `git push origin yourBranchName`
+
+* Visit main repo on GitHub where you should now see your new branch
+click on your branch name
+click on “Pull Request” button (URC)
+click on “Send Pull Request”
+
+## **Some Basic Commands**
+
+BASIC COMMANDS/ACTIONS
+Term	Explanation
+* `Fork`: to make a copy of a repo in your own GitHub account
+Clone	Make a copy of the your GitHub repo on your local computer. In CLI: ‘git clone’ copies a remote repo to create a local repo with a remote called origin automatically set up.
+Pull	You incorporate changes into your repo.
+Add	Adding snapshots of your changes to the “Staging” area.
+Commit	Takes the files as they are in your staging area and stores a snap shot of your files (changes) permanently in your Git directory.
+Push	You “push” your files (changes) to the remote repo.
+Merge	Incorporate changes into the branch you are on.
+Pull Request	Term used in collaboration. You “issue a pull request” to the owner of the upstream repo asking them to pull your changes into their repo (accept your work).
+
+
+
+
+
 
 ## **Staging Changes (Adding Changes)**
 

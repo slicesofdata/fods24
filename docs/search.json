@@ -759,8 +759,8 @@
     "objectID": "slides/02_git.html#checking-the-status-of-local-file-changes",
     "href": "slides/02_git.html#checking-the-status-of-local-file-changes",
     "title": "Git and GitHub",
-    "section": "Checking the status of local file changes",
-    "text": "Checking the status of local file changes\nAt the Terminal in RStudio\n\n$ git status"
+    "section": "Checking the Status of Local File Changes",
+    "text": "Checking the Status of Local File Changes\nAt the Terminal in RStudio\n\n$ git status"
   },
   {
     "objectID": "slides/02_git.html#staging-changes-adding-changes",
@@ -908,5 +908,19 @@
     "title": "Sample Presentation",
     "section": "Output Location",
     "text": "Output Location\n\n\nlibrary(ggplot2)\n\nmtcars |&gt; \n  ggplot(aes(x = disp, y = mpg)) +\n  geom_point() +\n  geom_smooth(method = \"loess\", formula = \"y~x\")"
+  },
+  {
+    "objectID": "slides/02_git.html#shared-repository-workflow",
+    "href": "slides/02_git.html#shared-repository-workflow",
+    "title": "Git and GitHub",
+    "section": "Shared Repository Workflow",
+    "text": "Shared Repository Workflow\n\nupdate your local repo\n\ngit pull origin master\n\ncreate a working branch\n\ngit checkout -b yourBranchName\n\nmake your changes on your branch and stage them\n\ngit add\n\ncommit changes locally\n\ngit commit -m \"description of changes\"\n\nupload the changes (including your new branch) to GitHub\n\ngit push origin yourBranchName\n\nVisit main repo on GitHub where you should now see your new branch click on your branch name click on “Pull Request” button (URC) click on “Send Pull Request”"
+  },
+  {
+    "objectID": "slides/02_git.html#some-basic-commands",
+    "href": "slides/02_git.html#some-basic-commands",
+    "title": "Git and GitHub",
+    "section": "Some Basic Commands",
+    "text": "Some Basic Commands\nBASIC COMMANDS/ACTIONS Term Explanation * Fork: to make a copy of a repo in your own GitHub account Clone Make a copy of the your GitHub repo on your local computer. In CLI: ‘git clone’ copies a remote repo to create a local repo with a remote called origin automatically set up. Pull You incorporate changes into your repo. Add Adding snapshots of your changes to the “Staging” area. Commit Takes the files as they are in your staging area and stores a snap shot of your files (changes) permanently in your Git directory. Push You “push” your files (changes) to the remote repo. Merge Incorporate changes into the branch you are on. Pull Request Term used in collaboration. You “issue a pull request” to the owner of the upstream repo asking them to pull your changes into their repo (accept your work)."
   }
 ]
