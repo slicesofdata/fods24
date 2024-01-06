@@ -4,7 +4,7 @@ format:
   revealjs:
     theme: dark
     preview-links: auto
-    embed-resources: true 
+    embed-resources: true # needed to allow for showing slides on a website (otherwise link is blank)
     # slide-tone: true # play sound on change - blind users
     
 slide-number: c/t #h/v
@@ -36,6 +36,7 @@ execute:
 * [Version Control Summary Video](https://www.youtube.com/watch?v=M-O8ZNW9icQ)
 :::
 
+
 ## **Version Control: Git Workflow Basics**
 
 There are three main parts to Git Workflow:
@@ -46,7 +47,16 @@ There are three main parts to Git Workflow:
 - **Stage** changes (in your staging directory) 
 - **Commit** changes (to apply them for pushing to your remote repository)
 - [Version Control Workflow Basics](https://www.youtube.com/watch?v=e8PGuOyZ3YU)
+* Other Parts 
+  * **Push** for sending commits to GitHub 
+  * **Merge** for merging branches (i.e., to incorporate your edits into main)
 :::
+
+
+## **Git: Image Version**
+
+[understanding git through images](https://dev.to/nopenoshishi/understanding-git-through-images-4an1)
+
 
 ## **Connecting Git to GitHub: The RStudio Terminal**
 
@@ -103,10 +113,13 @@ At the **Terminal** in RStudio
 
 - `$ git status`
 
+
 ## **Shared Repository Workflow**
 
 * update your local repo
   * `git pull origin master`
+* ensure you are on main branch
+  * `git checkout 
 * create a working branch
   * `git checkout -b yourBranchName`
 * make your changes on your branch and stage them 
@@ -126,16 +139,48 @@ click on “Send Pull Request”
 BASIC COMMANDS/ACTIONS
 Term	Explanation
 * `Fork`: to make a copy of a repo in your own GitHub account
-Clone	Make a copy of the your GitHub repo on your local computer. In CLI: ‘git clone’ copies a remote repo to create a local repo with a remote called origin automatically set up.
-Pull	You incorporate changes into your repo.
-Add	Adding snapshots of your changes to the “Staging” area.
-Commit	Takes the files as they are in your staging area and stores a snap shot of your files (changes) permanently in your Git directory.
-Push	You “push” your files (changes) to the remote repo.
-Merge	Incorporate changes into the branch you are on.
-Pull Request	Term used in collaboration. You “issue a pull request” to the owner of the upstream repo asking them to pull your changes into their repo (accept your work).
+* `Clone`: make a copy of the your GitHub repo on your local computer. 
+  * In CLI: ‘git clone’ copies a remote repo to create a local repo with a remote called origin automatically set up.
+`Pull`:	incorporate changes into your repo
+`Add`:	Adding snapshots of your changes to the "Staging" area.
+`Commit`:	akes the files as they are in your staging area and stores a snap shot of your files (changes) permanently in your Git directory.
+`Push`:	You "push" your files (changes) to the remote repo
+`Merge`: Incorporate changes into the branch you are on.
+`Pull Request`: Term used in collaboration. By "issuing a pull request" to the owner of the upstream repo, you are requesting that your changes be pulled into their repo (accept your changes/work).
 
 
 
+## **The Process in Library Form**
+
+* check out original (checkout main)
+* make a copy of the original (checkout <branch>)
+* make edits to the copy
+* add the edits (add)
+* commit to those changes (commit)
+* push the edits to the copy (push) - optional 
+* switch/check out the original (checkout main)
+* merge edits to the original (merge)
+
+
+## **Main Branch, Your Branch, Merging Your Branch to Main**
+
+1. Switch to the main branch:
+   * `git checkout main`
+
+2. Merge the branch into main:
+   * `git merge <branch>`
+
+3. Confirm 
+
+4. Delete the branch:
+   * `git branch -d <branch>`
+
+5. Confirm branch removal:
+
+   * `git branch`
+
+6. Repeat with new issue
+  * Steps 1, 2, 3, 4, 5
 
 
 

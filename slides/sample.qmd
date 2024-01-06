@@ -11,6 +11,9 @@ css: ["css/styles.css"]
 #theme: simple
 echo: true  # for code echo
 
+execute:
+  #enabled: false
+  freeze: auto
 #editor: visual
 ---
 

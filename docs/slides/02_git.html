@@ -1236,8 +1236,17 @@ margin-right: 0; }
 <li class="fragment"><strong>Stage</strong> changes (in your staging directory)</li>
 <li class="fragment"><strong>Commit</strong> changes (to apply them for pushing to your remote repository)</li>
 <li class="fragment"><a href="https://www.youtube.com/watch?v=e8PGuOyZ3YU">Version Control Workflow Basics</a></li>
+<li class="fragment">Other Parts
+<ul>
+<li class="fragment"><strong>Push</strong> for sending commits to GitHub</li>
+<li class="fragment"><strong>Merge</strong> for merging branches (i.e., to incorporate your edits into main)</li>
+</ul></li>
 </ul>
 </div>
+</section>
+<section id="git-image-version" class="slide level2">
+<h2><strong>Git: Image Version</strong></h2>
+<p><a href="https://dev.to/nopenoshishi/understanding-git-through-images-4an1">understanding git through images</a></p>
 </section>
 <section id="connecting-git-to-github-the-rstudio-terminal" class="slide level2">
 <h2><strong>Connecting Git to GitHub: The RStudio Terminal</strong></h2>
@@ -1307,6 +1316,10 @@ margin-right: 0; }
 <ul>
 <li><code>git pull origin master</code></li>
 </ul></li>
+<li>ensure you are on main branch
+<ul>
+<li>`git checkout</li>
+</ul></li>
 <li>create a working branch
 <ul>
 <li><code>git checkout -b yourBranchName</code></li>
@@ -1328,7 +1341,46 @@ margin-right: 0; }
 </section>
 <section id="some-basic-commands" class="slide level2">
 <h2><strong>Some Basic Commands</strong></h2>
-<p>BASIC COMMANDS/ACTIONS Term Explanation * <code>Fork</code>: to make a copy of a repo in your own GitHub account Clone Make a copy of the your GitHub repo on your local computer. In CLI: ‘git clone’ copies a remote repo to create a local repo with a remote called origin automatically set up. Pull You incorporate changes into your repo. Add Adding snapshots of your changes to the “Staging” area. Commit Takes the files as they are in your staging area and stores a snap shot of your files (changes) permanently in your Git directory. Push You “push” your files (changes) to the remote repo. Merge Incorporate changes into the branch you are on. Pull Request Term used in collaboration. You “issue a pull request” to the owner of the upstream repo asking them to pull your changes into their repo (accept your work).</p>
+<p>BASIC COMMANDS/ACTIONS Term Explanation * <code>Fork</code>: to make a copy of a repo in your own GitHub account * <code>Clone</code>: make a copy of the your GitHub repo on your local computer. * In CLI: ‘git clone’ copies a remote repo to create a local repo with a remote called origin automatically set up. <code>Pull</code>: incorporate changes into your repo <code>Add</code>: Adding snapshots of your changes to the “Staging” area. <code>Commit</code>: akes the files as they are in your staging area and stores a snap shot of your files (changes) permanently in your Git directory. <code>Push</code>: You “push” your files (changes) to the remote repo <code>Merge</code>: Incorporate changes into the branch you are on. <code>Pull Request</code>: Term used in collaboration. By “issuing a pull request” to the owner of the upstream repo, you are requesting that your changes be pulled into their repo (accept your changes/work).</p>
+</section>
+<section id="the-process-in-library-form" class="slide level2">
+<h2><strong>The Process in Library Form</strong></h2>
+<ul>
+<li>check out original (checkout main)</li>
+<li>make a copy of the original (checkout <branch>)</branch></li>
+<li>make edits to the copy</li>
+<li>add the edits (add)</li>
+<li>commit to those changes (commit)</li>
+<li>push the edits to the copy (push) - optional</li>
+<li>switch/check out the original (checkout main)</li>
+<li>merge edits to the original (merge)</li>
+</ul>
+</section>
+<section id="main-branch-your-branch-merging-your-branch-to-main" class="slide level2">
+<h2><strong>Main Branch, Your Branch, Merging Your Branch to Main</strong></h2>
+<ol type="1">
+<li><p>Switch to the main branch:</p>
+<ul>
+<li><code>git checkout main</code></li>
+</ul></li>
+<li><p>Merge the branch into main:</p>
+<ul>
+<li><code>git merge &lt;branch&gt;</code></li>
+</ul></li>
+<li><p>Confirm</p></li>
+<li><p>Delete the branch:</p>
+<ul>
+<li><code>git branch -d &lt;branch&gt;</code></li>
+</ul></li>
+<li><p>Confirm branch removal:</p>
+<ul>
+<li><code>git branch</code></li>
+</ul></li>
+<li><p>Repeat with new issue</p></li>
+</ol>
+<ul>
+<li>Steps 1, 2, 3, 4, 5</li>
+</ul>
 </section>
 <section id="staging-changes-adding-changes" class="slide level2">
 <h2><strong>Staging Changes (Adding Changes)</strong></h2>
@@ -2437,44 +2489,6 @@ window.QuartoSupport = function () {
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

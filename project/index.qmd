@@ -4,6 +4,10 @@ description: "Overview of Project for PSYC 166"
 #author: ""
 #date: ""
 #order: 0 
+
+execute:
+  #enabled: false
+  freeze: auto
 ---
 
 ## **Project Description**

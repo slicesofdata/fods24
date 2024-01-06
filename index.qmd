@@ -1,13 +1,18 @@
 ---
-title: " " #Home
-
+title: " " # an empty string will cause:
+# [WARNING] This document format requires a nonempty <title> element.
+#  Defaulting to 'quarto-input4906d811' as the title.
+#  To specify a title, use 'title' in metadata or --metadata title="...".
+  
 format:
   html: 
     #theme: cosmo #quartz
     #css: css/home.css
-    #fontcolor: black
     page-layout: full
 
+execute:
+  #enabled: false
+  freeze: auto
 ---
 
 ```{r, echo=FALSE}

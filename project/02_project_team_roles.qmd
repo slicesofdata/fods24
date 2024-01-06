@@ -5,7 +5,8 @@ author: "Gabriel I. Cook"
 #date: "`r format(Sys.time(), '%d %B, %Y')`"
 
 execute:
-  enabled: true
+  #enabled: false
+  freeze: auto
 ---
 
 

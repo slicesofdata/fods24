@@ -1,6 +1,6 @@
 Date;Week;Module;Topic
 01-18;1;1;Introduction to R, RStudio, and R Markdown
-01-25;2;2;Data Mise en Place (Project Management)
+01-25;2;2;Data Mise en Place (Project Management), Git & GitHub
 02-01;3;3;Functions, Parameters, Arguments, and Scripts
 ;3;4;Reading and Writing Data
 02-08;4;5;Vectors and Data Frame Basics
