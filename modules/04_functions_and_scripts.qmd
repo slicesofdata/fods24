@@ -20,6 +20,12 @@ execute:
 webshot::install_phantomjs()
 ```
 
+::: callout-important
+## Under construction. 
+
+This page is a work in progress and may contain areas that need more detail or that required syntactical, grammatical, and typographical changes. If you find some part requiring some editing, please let me know so I can fix it for you.
+:::
+
 # **Overview**
 
 A good friend of mine was once tried using R to summarize data. He couldn't figure out why he could not use a function called `mean()` to calculate the mean of variables in his data set. Yes, `mean()` does compute a mean but he did not understand the object for which he was trying to compute a mean. When I explained the issue to him, he told me that he would often try to *'brute force'* his way into obtaining results. He did not understand how the function worked and was not very concerned with learning. Without knowing how functions work, you limit yourself to troubleshoot answers and you spend a lot of time troubleshooting errors. You cannot just brute force yourself into data science or running models without getting yourself into trouble. 

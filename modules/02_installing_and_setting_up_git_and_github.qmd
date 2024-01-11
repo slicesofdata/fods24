@@ -14,6 +14,12 @@ execute:
 #https://jennybc.github.io/2014-05-12-ubc/ubc-r/session03_git.html
 ```
 
+::: callout-important
+## Under construction. 
+
+This page is a work in progress and may contain areas that need more detail or that required syntactical, grammatical, and typographical changes. If you find some part requiring some editing, please let me know so I can fix it for you.
+:::
+
 ## **Overview**
 
 We will perform all the necessary tasks for using Git with RStudio and managing files at the remote repository at GitHub. 
