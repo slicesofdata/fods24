@@ -109,7 +109,7 @@ If you do the math, including class time of 2½ hours, you should expect to allo
 
 All of the course materials will be available on this course website .
 
-Link to the course website: [https://slicesofdata.github.io/fods24](https://slicesofdata.github.io/dataviz23){.uri}
+Link to the course website: [https://gabrielcook.xyz/fods24/](https://gabrielcook.xyz/fods24/){.uri}
 
 #### **Required Equipment**:
 
