@@ -24,8 +24,24 @@ webshot::install_phantomjs()
 
 A good friend of mine was once tried using R to summarize data. He couldn't figure out why he could not use a function called `mean()` to calculate the mean of variables in his data set. Yes, `mean()` does compute a mean but he did not understand the object for which he was trying to compute a mean. When I explained the issue to him, he told me that he would often try to *'brute force'* his way into obtaining results. He did not understand how the function worked and was not very concerned with learning. Without knowing how functions work, you limit yourself to troubleshoot answers and you spend a lot of time troubleshooting errors. You cannot just brute force yourself into data science or running models without getting yourself into trouble. 
 
-The concepts covered is this section may be challenging or confusing to beginners. You may even question why we cannot just jump into data manipulation and why all of this matters. In order to code in R so that you can be comfortable using it and with communicating with other users, a very basic understanding of programming concepts is important. This way, when someone asks you about an object, function, or assignment, you will know what they are taking about. And, well, you can't communicate with R without knowing how functions work at a basic level. 
+Although the R language differs from other languages like Python, JavaScript, or HTML, the concepts covered is this section may be redundant for student who have taken a computer-science class. For beginners, the concepts may initially be challenging or confusing. You may even question why we cannot just jump into data manipulation and why all of this matters. In order to code in `R` so that you can be comfortable using it and with communicating with other users, a very basic understanding of programming concepts is important. This way, when someone asks you about an object, function, or assignment, you will know what they are taking about. And, well, you cannot communicate with R without knowing how functions work at a basic level. 
+
+## **Readings and Preparation**
+
+*Before Class*: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time.  
+
+*Class*: In class, some functions and concepts will be introduced and we will practice implementing code through exercises. 
+
+## **Supplementary Readings**
+
+- [R Workflow Basics](https://r4ds.hadley.nz/workflow-basics)
+
  
+### **To Do**
+
+Read through the module. You can use the `R` console or open up an `R Markdown` (e.g., `.Rmd`) file to follow along interactively. If you instead prefer to simply read through the content so that you can understand the concepts without coding, that is fine too. Concepts will be applied in class in order to complete activities, however. Reading the module will provide you with confidence working on those activities and prevent you from feeling lost. Testing out some code may provide you more confidence.
+
+
 ## **External Functions**
 
 Provided in class:
@@ -74,19 +90,27 @@ In order to create such an object, we would need to place the characters within 
 When dealing with data, you will encounter many character objects as they often represent factor variables (e.g., race, ethnicity, favorite game, etc.) but you will also see lots of objects that are numeric in some form (e.g., age, rating, cognitive performance, etc.).
 
 
-# **Object Assignment**
+# **Object Assignment using `<-`**
 
-## **Assignment using `<-`**
+Before we can create any objects, however, we need to understand a little about *assignment*. In computer programming, an assignment statement sets (or re-sets) an object denoted by a name. An assignment statement symbolically associates a specific piece of information (e.g., an object) with a name. For example, you can assign the numeric value `22` representing Caleb's age to the name `caleb_age`. The assignment statement is what allows you to call the object `caleb_age` and get the returned value of `22`. Because we assign objects to names, the objects can be single values as with `22` or be something more complex like a *vector* of values, a *data frame*, a *list*, a *list of data frames*, a *plot*, a *function*, or any other object. The name is simply the container to which the object is assigned. Because assignment is the association between an object and a name, I may sometimes refer to the process as *assigning a name to an object* or the reverse, *assigning a name to an object*.  
 
-Before we can create any objects, however, we need to understand a little about *assignment*. In computer programming, an assignment statement sets (or re-sets) an object denoted by a name. Assignment requires using an *assignment operator*, which in R is `<-`. In some computer languages `=` is the assignment operator, so R is a little different if you are familiar with other languages. This practice also helps you distinguish between object assignment and other uses of `=` that don't stand for assignment. 
+Assignment requires using an *assignment operator*. The most common assignment operator used by computer programming is `=` (e.g., `caleb_age = 22` or less commonly `22 = caleb_age`). Programming languages can utilize more than one operator for assignment, however. 
 
-**NOTE**: *Technically, you can assign objects with `=` in R but please do not be tempted to do so. If you do this once or twice, that's fine. Making this a practice will cost you. The reason is that *`<-` *and* `=` *behave differently. The one exception is when you are assigning objects inside of a function you create but many of you won't be writing many functions, if any at all.* 
+In fact, R has three: 
 
-Please use `<-` as this is the practice in the R community. 
+- `=`
+- `<-` or less commonly `->`
+- `<<-` or less commonly `->>`
+
+These operators behave differently in different environments. The main difference is with `<<-`. A discussion about environments and scoping is beyond this class, however. 
+
+For historic reasons, `<-` is the assignment operator of choice. The R community has adopted this tradition. To assimilate with others, you should use `<-` rather than `=`. **If you routinely use `=` rather than `<-`, there may be penalties.** 
+
+**Keyboard Shortcut:** If you don't wish to type out the two characters and you like keyboard shortcuts, you can type `Alt + and -` on Windows and `Option + and -` on Mac, though perhaps not intuitive. Savvy coders can customize the setting at **Tools** -> **Modify Keyboard Shortcuts** and search for *assignment*.
 
 ## **Assignment provides meaning or definition**
 
-In other words, *assignment* is akin to creating a new word and assigning a meaning to it. You could also think of an assignment statement as a way to tell R to **"create this thing and set it equal to something"** so that the computer understand what that represents. 
+*Assignment* is akin to creating a new word and assigning a meaning to it. You could also think of an assignment statement as a way to tell R to **"create this thing and set it equal to something"** so that the computer understand what association represents. 
 
 ## **A character object: A silly example**
 
@@ -130,6 +154,7 @@ To see what is returned:
 name
 ```
 
+
 Whether you name is or is not Jim Bob, you can see that `name` contains the characters that represent the name of someone named "Jim Bob". Although we assigned `"Jim Bob"` to `name`, we could have assigned it a given name. The assignment process simply stores the assigned information as an object using of whatever name you decided to call it (e.g., `name`, `Name`, `NAME`, `xyz`, etc.). We will discuss more on these letter casing differences later. 
 
 You could also assign the character to the object this way.
@@ -151,7 +176,7 @@ name <- "Jim Bob"     # assign string to object named name
 Name <- "Jim Bob"     # we could have assigned it a different name, say Name
 
 
-NAME <- "Jim Bob"     
+NAME <- "Jim Bob"     # or assigned it in all caps
 ```
 
 Whenever you reference the object `name` (or `Name`), R will *return* the contents of the object to you, which in this case will be a character or string object containing a single person's name because that's how we assigned it. 
@@ -201,6 +226,7 @@ year
 
 print(year)
 ```
+
 
 ## **Inspecting vectors with some functions**
 
@@ -268,6 +294,7 @@ Beware of vectors containing elements with space like this:
 `Hmisc::Cs(Jim Bob, Kendra)`
 
 R will throw an error to inform you that something is wrong. For example: `Error: unexpected symbol in "Hmisc::Cs(Jim Bob"`.
+
 
 ## **Elements of vectors**
 

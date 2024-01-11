@@ -1,0 +1,56 @@
+---
+title: "**Transforming Data**"
+author: "Gabriel I. Cook"
+#date: "`r Sys.Date()`"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+
+execute:
+  #enabled: false
+  freeze: auto
+
+---
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+# secret functions
+source(here::here("r", "src", "color_format_text.R"))
+```
+
+
+::: callout-important
+## Under construction. 
+
+This page is a work in progress and may contain areas that need more detail or that required syntactical, grammatical, and typographical changes. If you find some part requiring some editing, please let me know so I can fix it for you.
+:::
+
+
+```{r}
+#| label: load-packages
+#| include: false
+
+#library()
+source(here::here("r", "my_functions.R"))
+
+```
+
+# **Overview**
+
+In this module, we will start working with data frames. Data frames are composed of column variables and row observations/cases and we will address how to perform operations on both. We will learn how to use **{dplyr}**, rather than `base R` to select, remove, add, and modify vectors in data frames. In addition, we will address how to filter row in various way. The focus will be on cleaning or wrangling data. 
+
+## **Readings and Preparation**
+
+*Before Class*: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time. Work through some examples so that you have a good idea of your level of understanding and confidence. 
+
+*Class*: In class, some functions and concepts will be introduced and we will practice implementing code through exercises. 
+
+
+## **Supplementary Readings**
+
+- [Data Transformation](https://r4ds.hadley.nz/data-transform)
+
+
+## **Libraries** 
+
+- **{here}** `r packageVersion("here")`: for file path management
+
+Related:
+

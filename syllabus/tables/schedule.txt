@@ -1,0 +1,26 @@
+Date;Week;Module;Topic
+01-18;1;1;Introduction to R, RStudio, and R Markdown
+01-25;2;2;Data Mise en Place (Project Management), Git & GitHub
+02-01;3;3;Functions, Parameters, Arguments, and Scripts
+;3;4;Vectors and Data Frame Basics
+02-08;4;5;Importing and Exporting Data
+;4;6;Variables and Measures of Cognition
+02-15;5;7;Manipulating Data Frames
+;5;8;Working with Cognitive Task Data
+02-22;6;9;Summarizing Data
+;6;10;Summarizing Cognitive Task Data
+03-01;7;11;Visualizing Data
+;7;12;Examining Relationships in Variables of Cognition
+03-07;8;13;Strings and Factors
+03-14;9;-;"<span style=""color:#1EDAFB"">Spring Break (no class)</span>"
+03-21;10;-;"<span style=""color:#8DFF0A"">Mid-Term Presentation</span>"
+03-29;11;15;Joining Relational Data
+;11;16;Joining Project Data
+04-04;12;17;Discuss Appropriate Models Related to Cognition Readings
+;12;18;Cont.
+04-11;13;19;Linear Model Testing
+04-18;14;20;Exploratory Data Analysis
+;14;21;Cont.
+04-18;15;-;Project Week
+04-25;16;-;Project Week
+05-01;17;-;"<span style=""color:#8DFF0A"">Presentation (Last day of Instruction)</span>"

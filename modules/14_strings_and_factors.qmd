@@ -1,0 +1,65 @@
+---
+title: "**Strings and Factors**"
+author: "Gabriel I. Cook"
+#date: "`r Sys.Date()`"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+
+execute:
+  #enabled: false
+  freeze: auto
+
+---
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+# secret functions
+# source(here::here("r", "src", "color_format_text.R"))
+```
+
+
+::: callout-important
+## Under construction. 
+
+This page is a work in progress and may contain areas that need more detail or that required syntactical, grammatical, and typographical changes. If you find some part requiring some editing, please let me know so I can fix it for you.
+:::
+
+
+```{r}
+#| label: load-packages
+#| include: false
+
+#library()
+source(here::here("r", "my_functions.R"))
+
+```
+
+# **Overview**
+
+In this module, we work with strings, or character vectors, and factors. 
+
+## **Readings and Preparation**
+
+*Before Class*: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time. Work through some examples so that you have a good idea of your level of understanding and confidence. 
+
+*Class*: In class, some functions and concepts will be introduced and we will practice implementing code through exercises. 
+
+
+```{r eval=FALSE, warning=FALSE, include=FALSE}
+# **To Do**
+# 
+## **Supplementary Readings**
+
+#- [R Workflow Basics](https://r4ds.hadley.nz/data-transform)
+```
+
+
+## **Libraries** 
+
+- **{here}** `r packageVersion("here")`: for file path management
+- **{readr}** `r packageVersion("readr")`: for reading `.csv`, `.tsv`, and `.fwf` files
+- **{openxlsx}** `r packageVersion("openxlsx")`: for reading Excel spreadsheets from a URL and writing Excel files
+- **{haven}** `r packageVersion("haven")`: for reading SPSS, Stata, and SAS files (e.g., `.sav`, `.dta`, `.sas7bdat`, etc. )
+- **{rio}** `r packageVersion("rio")`: a Swiss-Army knife for data I/O
+
+Related:
+
+- **{readxl}** `r packageVersion("readxl")`: for reading Excel spreadsheets

@@ -1,0 +1,77 @@
+---
+title: "**Joining Relational Data**"
+author: "Gabriel I. Cook"
+#date: "`r Sys.Date()`"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+
+execute:
+  #enabled: false
+  freeze: auto
+
+---
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+# secret functions
+# source(here::here("r", "src", "color_format_text.R"))
+```
+
+
+::: callout-important
+## Under construction. 
+
+This page is a work in progress and may contain areas that need more detail or that required syntactical, grammatical, and typographical changes. If you find some part requiring some editing, please let me know so I can fix it for you.
+:::
+
+
+```{r}
+#| label: load-packages
+#| include: false
+
+#library()
+source(here::here("r", "my_functions.R"))
+
+```
+
+# **Overview**
+
+In this module, we will cover how to join data frames that are related in some way. For example, perhaps you have multiple data frames containing data from the same participants and you need to combine them all so that you can summarize, visualize, or model the data. Students familiar with `SQL` (Structured Query Language) should have some experience with joining relational data. The joining or merging process is often a large component of data science projects, especially those that involve collaborators cleaning separate components that need to be merged together. 
+
+You can run `SQL` code within an R Markdown code block but there are other libraries like **{sqldf}** that allow you to include `SQL` to perform data queries. 
+
+For those who wish to dig deeper into learning `SQL`, there are [tutorials here](https://www.w3resource.com/sql/tutorials.php).
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+#[](https://dept.stat.lsa.umich.edu/~jerrick/courses/stat701/notes/sql.html)
+#[dplyr](https://solutions.posit.co/connections/db/getting-started/database-queries/)
+
+```
+
+## **Readings and Preparation**
+
+*Before Class*: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time. Work through some examples so that you have a good idea of your level of understanding and confidence. 
+
+*Class*: In class, some functions and concepts will be introduced and we will practice implementing code through exercises. 
+
+
+```{r eval=FALSE, warning=FALSE, include=FALSE}
+# **To Do**
+# 
+## **Supplementary Readings**
+
+#- [R Workflow Basics](https://r4ds.hadley.nz/data-transform)
+```
+
+- [Joining Data](https://r4ds.hadley.nz/joins)
+
+## **Libraries** 
+
+- **{here}** `r packageVersion("here")`: for file path management
+- **{tidyr}** `r packageVersion("tidyr")`: for joining and tidying data (e.g., pivot)
+
+More generally:
+- **{tidyverse}** `r packageVersion("tidyverse")`: the tidyverse ecosystem
+
+
+Related:
+
+- **{readxl}** `r packageVersion("readxl")`: for reading Excel spreadsheets

@@ -147,7 +147,7 @@ Students will read materials covering data-set relevant cognitive functions or a
 
 **Machine Learning:** The goal is to introduce students to supervised and unsupervised machine learning applications in order to understand relationships among variables and for classifying and segmenting. For example, supervised learning (e.g., correlation, regression, multiple regression, and if time support-vector machines for nonlinear classification) would be used for understanding relationships among cognitive variables, non-cognitive variables, and to identify groups. Unsupervised learning (e.g., hierarchical clustering, dimension reduction) would be used to understand to data segmentation.
 
-**Project Management:** Projects for academics and industry involve collaboration as well as organization of code and materials. Students will learn about and maintain a project with an organized directory structure both locally and remotely with collaborators using Git and [GitHub](github.com)
+**Project Management:** Projects for academics and industry involve collaboration as well as organization of code and materials. Students will learn about and maintain a project with an organized directory structure both locally and remotely with collaborators using Git and [GitHub](github.com).
 
 ***Academic Integrity.*** Although you may find yourself working on assignments with a partner or discussing them with classmates, all assignments should be your one original work. You are not to share materials with other students if that material has the potential of being copied, even if your intention is not to allow a classmate to copy your work. Any signs of academic dishonesty will be submitted to the Academic Standards Committee for review. Although I do not anticipate any events of academic dishonesty, any form of dishonestly of any form will *not* be tolerated.
 
@@ -163,7 +163,7 @@ The assumption is that students possess varying levels of skills related to prog
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE, eval=TRUE}
 #SCHEDULE <- rio::import(here::here("syllabus/tables/2schedule.csv"))
-SCHEDULE <- read.table(here::here("syllabus/tables/schedule.csv"), 
+SCHEDULE <- read.table(here::here("syllabus/tables/schedule.txt"), 
                        header = T,
                        sep = ";"
                        )

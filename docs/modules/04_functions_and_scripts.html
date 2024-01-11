@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gabriel I. Cook">
-<meta name="dcterms.date" content="2023-12-29">
+<meta name="dcterms.date" content="2024-01-10">
 
 <title>PSYC166 - Functions, arguments, and R scripts</title>
 <style>
@@ -241,7 +241,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/index.html"><strong>Modules</strong></a></li><li class="breadcrumb-item"><a href="../modules/02_functions_arguments_and_scripts.html"><strong>Functions, arguments, and R scripts</strong></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/index.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/04_functions_and_scripts.html"><strong>Functions, arguments, and R scripts</strong></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -262,7 +262,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../modules/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">**Modules**</span></a>
+ <span class="menu-text">Modules</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -276,14 +276,104 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/02_functions_arguments_and_scripts.html" class="sidebar-item-text sidebar-link active">
+  <a href="../modules/02_installing_and_setting_up_git_and_github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Installing and Setting Up Git and GitHub for R</strong></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/03_using_git_and_github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Installing and Setting Up Git and GitHub for R</strong></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/04_functions_and_scripts.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><strong>Functions, arguments, and R scripts</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/03_installing_and_setting_up_git_and_github.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Installing and Setting Up Git and GitHub for R</strong></span></a>
+  <a href="../modules/05_vectors_and_data_frame_basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Vectors and Fata Frame Basics</strong></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/06_importing_and_exporting_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Importing and exporting data</strong></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/07_variables_and_measures_of_cognition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Variables and Measures of Cognition.qmd</strong></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/08_transforming_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Transforming Data</strong></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/09_working_with_cognitive_task_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Working with Cognitive Task Data</strong></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/10_summarizing_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Summarizing Data</strong></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/11_summarizing_cognitive_task_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Summarizing Cognitive Task Data</strong></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/12_visualizing_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Visualizing Data: {ggplot} and the grammar of graphics</strong></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/13_examining_relationships_in_variables_of_cognition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Examining Relationships in Variables of Cognition</strong></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/14_strings_and_factors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Strings and Factors</strong></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/15_joining_relational_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Joining Relational Data</strong></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/16_joining_project_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Joining Project Data</strong></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/17_linear_models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Linear Models</strong></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/18_exploratory_data_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Exploratory Data Analysis</strong></span></a>
   </div>
 </li>
       </ul>
@@ -335,6 +425,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><strong>Overview</strong></a>
   <ul class="collapse">
+  <li><a href="#readings-and-preparation" id="toc-readings-and-preparation" class="nav-link" data-scroll-target="#readings-and-preparation"><strong>Readings and Preparation</strong></a></li>
+  <li><a href="#supplementary-readings" id="toc-supplementary-readings" class="nav-link" data-scroll-target="#supplementary-readings"><strong>Supplementary Readings</strong></a>
+  <ul class="collapse">
+  <li><a href="#to-do" id="toc-to-do" class="nav-link" data-scroll-target="#to-do"><strong>To Do</strong></a></li>
+  </ul></li>
   <li><a href="#external-functions" id="toc-external-functions" class="nav-link" data-scroll-target="#external-functions"><strong>External Functions</strong></a></li>
   </ul></li>
   <li><a href="#simple-overview-of-objects" id="toc-simple-overview-of-objects" class="nav-link" data-scroll-target="#simple-overview-of-objects"><strong>Simple Overview of Objects</strong></a>
@@ -342,9 +437,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#examples-of-objects" id="toc-examples-of-objects" class="nav-link" data-scroll-target="#examples-of-objects"><strong>Examples of objects</strong></a></li>
   <li><a href="#a-character-example" id="toc-a-character-example" class="nav-link" data-scroll-target="#a-character-example"><strong>A character example</strong></a></li>
   </ul></li>
-  <li><a href="#object-assignment" id="toc-object-assignment" class="nav-link" data-scroll-target="#object-assignment"><strong>Object Assignment</strong></a>
+  <li><a href="#object-assignment-using--" id="toc-object-assignment-using--" class="nav-link" data-scroll-target="#object-assignment-using--"><strong>Object Assignment using <code>&lt;-</code></strong></a>
   <ul class="collapse">
-  <li><a href="#assignment-using--" id="toc-assignment-using--" class="nav-link" data-scroll-target="#assignment-using--"><strong>Assignment using <code>&lt;-</code></strong></a></li>
   <li><a href="#assignment-provides-meaning-or-definition" id="toc-assignment-provides-meaning-or-definition" class="nav-link" data-scroll-target="#assignment-provides-meaning-or-definition"><strong>Assignment provides meaning or definition</strong></a></li>
   <li><a href="#a-character-object-a-silly-example" id="toc-a-character-object-a-silly-example" class="nav-link" data-scroll-target="#a-character-object-a-silly-example"><strong>A character object: A silly example</strong></a>
   <ul class="collapse">
@@ -395,7 +489,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 29, 2023</p>
+      <p class="date">January 10, 2024</p>
     </div>
   </div>
   
@@ -408,7 +502,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="overview" class="level1">
 <h1><strong>Overview</strong></h1>
 <p>A good friend of mine was once tried using R to summarize data. He couldn’t figure out why he could not use a function called <code>mean()</code> to calculate the mean of variables in his data set. Yes, <code>mean()</code> does compute a mean but he did not understand the object for which he was trying to compute a mean. When I explained the issue to him, he told me that he would often try to <em>‘brute force’</em> his way into obtaining results. He did not understand how the function worked and was not very concerned with learning. Without knowing how functions work, you limit yourself to troubleshoot answers and you spend a lot of time troubleshooting errors. You cannot just brute force yourself into data science or running models without getting yourself into trouble.</p>
-<p>The concepts covered is this section may be challenging or confusing to beginners. You may even question why we cannot just jump into data manipulation and why all of this matters. In order to code in R so that you can be comfortable using it and with communicating with other users, a very basic understanding of programming concepts is important. This way, when someone asks you about an object, function, or assignment, you will know what they are taking about. And, well, you can’t communicate with R without knowing how functions work at a basic level.</p>
+<p>Although the R language differs from other languages like Python, JavaScript, or HTML, the concepts covered is this section may be redundant for student who have taken a computer-science class. For beginners, the concepts may initially be challenging or confusing. You may even question why we cannot just jump into data manipulation and why all of this matters. In order to code in <code>R</code> so that you can be comfortable using it and with communicating with other users, a very basic understanding of programming concepts is important. This way, when someone asks you about an object, function, or assignment, you will know what they are taking about. And, well, you cannot communicate with R without knowing how functions work at a basic level.</p>
+<section id="readings-and-preparation" class="level2">
+<h2 class="anchored" data-anchor-id="readings-and-preparation"><strong>Readings and Preparation</strong></h2>
+<p><em>Before Class</em>: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time.</p>
+<p><em>Class</em>: In class, some functions and concepts will be introduced and we will practice implementing code through exercises.</p>
+</section>
+<section id="supplementary-readings" class="level2">
+<h2 class="anchored" data-anchor-id="supplementary-readings"><strong>Supplementary Readings</strong></h2>
+<ul>
+<li><a href="https://r4ds.hadley.nz/workflow-basics">R Workflow Basics</a></li>
+</ul>
+<section id="to-do" class="level3">
+<h3 class="anchored" data-anchor-id="to-do"><strong>To Do</strong></h3>
+<p>Read through the module. You can use the <code>R</code> console or open up an <code>R Markdown</code> (e.g., <code>.Rmd</code>) file to follow along interactively. If you instead prefer to simply read through the content so that you can understand the concepts without coding, that is fine too. Concepts will be applied in class in order to complete activities, however. Reading the module will provide you with confidence working on those activities and prevent you from feeling lost. Testing out some code may provide you more confidence.</p>
+</section>
+</section>
 <section id="external-functions" class="level2">
 <h2 class="anchored" data-anchor-id="external-functions"><strong>External Functions</strong></h2>
 <p>Provided in class:</p>
@@ -447,17 +556,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>When dealing with data, you will encounter many character objects as they often represent factor variables (e.g., race, ethnicity, favorite game, etc.) but you will also see lots of objects that are numeric in some form (e.g., age, rating, cognitive performance, etc.).</p>
 </section>
 </section>
-<section id="object-assignment" class="level1">
-<h1><strong>Object Assignment</strong></h1>
-<section id="assignment-using--" class="level2">
-<h2 class="anchored" data-anchor-id="assignment-using--"><strong>Assignment using <code>&lt;-</code></strong></h2>
-<p>Before we can create any objects, however, we need to understand a little about <em>assignment</em>. In computer programming, an assignment statement sets (or re-sets) an object denoted by a name. Assignment requires using an <em>assignment operator</em>, which in R is <code>&lt;-</code>. In some computer languages <code>=</code> is the assignment operator, so R is a little different if you are familiar with other languages. This practice also helps you distinguish between object assignment and other uses of <code>=</code> that don’t stand for assignment.</p>
-<p><strong>NOTE</strong>: <em>Technically, you can assign objects with <code>=</code> in R but please do not be tempted to do so. If you do this once or twice, that’s fine. Making this a practice will cost you. The reason is that </em><code>&lt;-</code> <em>and</em> <code>=</code> <em>behave differently. The one exception is when you are assigning objects inside of a function you create but many of you won’t be writing many functions, if any at all.</em></p>
-<p>Please use <code>&lt;-</code> as this is the practice in the R community.</p>
-</section>
+<section id="object-assignment-using--" class="level1">
+<h1><strong>Object Assignment using <code>&lt;-</code></strong></h1>
+<p>Before we can create any objects, however, we need to understand a little about <em>assignment</em>. In computer programming, an assignment statement sets (or re-sets) an object denoted by a name. An assignment statement symbolically associates a specific piece of information (e.g., an object) with a name. For example, you can assign the numeric value <code>22</code> representing Caleb’s age to the name <code>caleb_age</code>. The assignment statement is what allows you to call the object <code>caleb_age</code> and get the returned value of <code>22</code>. Because we assign objects to names, the objects can be single values as with <code>22</code> or be something more complex like a <em>vector</em> of values, a <em>data frame</em>, a <em>list</em>, a <em>list of data frames</em>, a <em>plot</em>, a <em>function</em>, or any other object. The name is simply the container to which the object is assigned. Because assignment is the association between an object and a name, I may sometimes refer to the process as <em>assigning a name to an object</em> or the reverse, <em>assigning a name to an object</em>.</p>
+<p>Assignment requires using an <em>assignment operator</em>. The most common assignment operator used by computer programming is <code>=</code> (e.g., <code>caleb_age = 22</code> or less commonly <code>22 = caleb_age</code>). Programming languages can utilize more than one operator for assignment, however.</p>
+<p>In fact, R has three:</p>
+<ul>
+<li><code>=</code></li>
+<li><code>&lt;-</code> or less commonly <code>-&gt;</code></li>
+<li><code>&lt;&lt;-</code> or less commonly <code>-&gt;&gt;</code></li>
+</ul>
+<p>These operators behave differently in different environments. The main difference is with <code>&lt;&lt;-</code>. A discussion about environments and scoping is beyond this class, however.</p>
+<p>For historic reasons, <code>&lt;-</code> is the assignment operator of choice. The R community has adopted this tradition. To assimilate with others, you should use <code>&lt;-</code> rather than <code>=</code>. <strong>If you routinely use <code>=</code> rather than <code>&lt;-</code>, there may be penalties.</strong></p>
+<p><strong>Keyboard Shortcut:</strong> If you don’t wish to type out the two characters and you like keyboard shortcuts, you can type <code>Alt + and -</code> on Windows and <code>Option + and -</code> on Mac, though perhaps not intuitive. Savvy coders can customize the setting at <strong>Tools</strong> -&gt; <strong>Modify Keyboard Shortcuts</strong> and search for <em>assignment</em>.</p>
 <section id="assignment-provides-meaning-or-definition" class="level2">
 <h2 class="anchored" data-anchor-id="assignment-provides-meaning-or-definition"><strong>Assignment provides meaning or definition</strong></h2>
-<p>In other words, <em>assignment</em> is akin to creating a new word and assigning a meaning to it. You could also think of an assignment statement as a way to tell R to <strong>“create this thing and set it equal to something”</strong> so that the computer understand what that represents.</p>
+<p><em>Assignment</em> is akin to creating a new word and assigning a meaning to it. You could also think of an assignment statement as a way to tell R to <strong>“create this thing and set it equal to something”</strong> so that the computer understand what association represents.</p>
 </section>
 <section id="a-character-object-a-silly-example" class="level2">
 <h2 class="anchored" data-anchor-id="a-character-object-a-silly-example"><strong>A character object: A silly example</strong></h2>
@@ -512,7 +626,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>Name <span class="ot">&lt;-</span> <span class="st">"Jim Bob"</span>     <span class="co"># we could have assigned it a different name, say Name</span></span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>NAME <span class="ot">&lt;-</span> <span class="st">"Jim Bob"</span>     </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>NAME <span class="ot">&lt;-</span> <span class="st">"Jim Bob"</span>     <span class="co"># or assigned it in all caps</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Whenever you reference the object <code>name</code> (or <code>Name</code>), R will <em>return</em> the contents of the object to you, which in this case will be a character or string object containing a single person’s name because that’s how we assigned it.</p>
 <div class="cell">
@@ -1040,23 +1154,28 @@ time zone: America/Los_Angeles
 tzcode source: internal
 
 attached base packages:
-[1] stats     graphics  grDevices utils     datasets  methods   base     
+[1] stats     graphics  grDevices datasets  utils     methods   base     
 
 loaded via a namespace (and not attached):
- [1] utf8_1.2.4         generics_0.1.3     stringi_1.8.3      digest_0.6.33     
- [5] magrittr_2.0.3     evaluate_0.23      grid_4.3.2         fastmap_1.1.1     
- [9] rprojroot_2.0.4    jsonlite_1.8.8     processx_3.8.3     nnet_7.3-19       
-[13] backports_1.4.1    Formula_1.2-5      ps_1.7.5           gridExtra_2.3     
-[17] fansi_1.0.6        scales_1.3.0       cli_3.6.2          rlang_1.1.2       
-[21] munsell_0.5.0      Hmisc_5.1-1        base64enc_0.1-3    yaml_2.3.8        
-[25] tools_4.3.2        checkmate_2.3.1    htmlTable_2.4.2    dplyr_1.1.4       
-[29] colorspace_2.1-1   ggplot2_3.4.4      webshot_0.5.5      here_1.0.1        
-[33] vctrs_0.6.5        R6_2.5.1           rpart_4.1.23       lifecycle_1.0.4   
-[37] stringr_1.5.1      htmlwidgets_1.6.4  foreign_0.8-86     cluster_2.1.6     
-[41] pkgconfig_2.0.3    callr_3.7.3        pillar_1.9.0       gtable_0.3.4      
-[45] glue_1.6.2         data.table_1.14.10 xfun_0.41          tibble_3.2.1      
-[49] tidyselect_1.2.0   rstudioapi_0.15.0  knitr_1.45         htmltools_0.5.7   
-[53] rmarkdown_2.25     compiler_4.3.2    </code></pre>
+ [1] utf8_1.2.4          generics_0.1.3      renv_1.0.3         
+ [4] stringi_1.7.12      digest_0.6.33       magrittr_2.0.3     
+ [7] evaluate_0.21       grid_4.3.2          fastmap_1.1.1      
+[10] rprojroot_2.0.3     jsonlite_1.8.7      processx_3.8.2     
+[13] nnet_7.3-19         backports_1.4.1     Formula_1.2-5      
+[16] ps_1.7.5            gridExtra_2.3       BiocManager_1.30.22
+[19] fansi_1.0.4         scales_1.3.0        cli_3.6.1          
+[22] rlang_1.1.1         munsell_0.5.0       Hmisc_5.1-0        
+[25] base64enc_0.1-3     yaml_2.3.7          tools_4.3.2        
+[28] checkmate_2.2.0     htmlTable_2.4.2     dplyr_1.1.4        
+[31] colorspace_2.1-0    ggplot2_3.4.4       webshot_0.5.5      
+[34] here_1.0.1          vctrs_0.6.5         R6_2.5.1           
+[37] rpart_4.1.23        lifecycle_1.0.3     stringr_1.5.1      
+[40] htmlwidgets_1.6.4   foreign_0.8-86      cluster_2.1.4      
+[43] pkgconfig_2.0.3     callr_3.7.3         pillar_1.9.0       
+[46] gtable_0.3.4        data.table_1.14.10  glue_1.6.2         
+[49] xfun_0.40           tibble_3.2.1        tidyselect_1.2.0   
+[52] rstudioapi_0.15.0   knitr_1.45          htmltools_0.5.7    
+[55] rmarkdown_2.25      compiler_4.3.2     </code></pre>
 </div>
 </div>
 

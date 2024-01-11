@@ -13,3 +13,16 @@ colFmt <- function(x,color) {
   
   return(ret)
 }
+
+color_text <- colFmt
+
+colorize <- function(x, color, bold = F) {
+  if (knitr::is_latex_output()) {
+    sprintf("\\textcolor{%s}{%s}", color, x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<span style='font-weight: bold;color: %s;'>%s</span>", color,
+      x)
+  } else x
+}
+
+# usage `r colorize("some words in red", "red")`
