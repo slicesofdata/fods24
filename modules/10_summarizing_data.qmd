@@ -29,7 +29,7 @@ This page is a work in progress and may contain areas that need more detail or t
 
 #library()
 source(here::here("r", "my_functions.R"))
-
+R.utils::sourceDirectory(here::here("r", "functions"))
 ```
 
 # **Overview**
@@ -59,15 +59,16 @@ Interact with the examples so that you are ready to practice them in class.
 
 ## **External Functions**
 
-Provided in class:
+`view_html()`: for viewing data frames in `HTML` format
 
-`view_html()`: for viewing data frames in html format, from `/r/my_functions.R` 
-
-You can use this function in your own workspace but I am having a challenge rendering this to the website, so I'll default to `print()` on occasion.
+You can access remotely using this code, though you do not need to do so now.
 
 ```{r}
-source(here::here("r", "my_functions.R"))
+source("https://raw.githubusercontent.com/slicesofdata/fods24/main/r/functions/view_html.R")
 ```
+
+You can use this function in your own work space but I am having a challenge rendering this to the website, so I'll default to `print()` on occasion.
+
 
 ## **Libraries**
 

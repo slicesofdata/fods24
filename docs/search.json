@@ -408,23 +408,23 @@
   {
     "objectID": "modules/14_strings_and_factors.html",
     "href": "modules/14_strings_and_factors.html",
-    "title": "Strings and Factors",
+    "title": "Strings, Factors, and Regular Expressions",
     "section": "",
     "text": "Under construction.\n\n\n\nThis page is a work in progress and may contain areas that need more detail or that required syntactical, grammatical, and typographical changes. If you find some part requiring some editing, please let me know so I can fix it for you."
   },
   {
     "objectID": "modules/14_strings_and_factors.html#readings-and-preparation",
     "href": "modules/14_strings_and_factors.html#readings-and-preparation",
-    "title": "Strings and Factors",
+    "title": "Strings, Factors, and Regular Expressions",
     "section": "Readings and Preparation",
     "text": "Readings and Preparation\nBefore Class: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time. Work through some examples so that you have a good idea of your level of understanding and confidence.\nClass: In class, some functions and concepts will be introduced and we will practice implementing code through exercises."
   },
   {
     "objectID": "modules/14_strings_and_factors.html#libraries",
     "href": "modules/14_strings_and_factors.html#libraries",
-    "title": "Strings and Factors",
+    "title": "Strings, Factors, and Regular Expressions",
     "section": "Libraries",
-    "text": "Libraries\n\n{here} 1.0.1: for file path management\n{readr} 2.1.4: for reading .csv, .tsv, and .fwf files\n{openxlsx} 4.2.5.2: for reading Excel spreadsheets from a URL and writing Excel files\n{haven} 2.5.4: for reading SPSS, Stata, and SAS files (e.g., .sav, .dta, .sas7bdat, etc. )\n{rio} 1.0.1: a Swiss-Army knife for data I/O\n\nRelated:\n\n{readxl} 1.4.3: for reading Excel spreadsheets"
+    "text": "Libraries\n\n{here} 1.0.1: for file path management"
   },
   {
     "objectID": "modules/12_visualizing_data.html",
@@ -578,7 +578,7 @@
     "href": "modules/10_summarizing_data.html#external-functions",
     "title": "Summarizing Data",
     "section": "External Functions",
-    "text": "External Functions\nProvided in class:\nview_html(): for viewing data frames in html format, from /r/my_functions.R\nYou can use this function in your own workspace but I am having a challenge rendering this to the website, so I’ll default to print() on occasion.\n\nsource(here::here(\"r\", \"my_functions.R\"))"
+    "text": "External Functions\nview_html(): for viewing data frames in HTML format\nYou can access remotely using this code, though you do not need to do so now.\n\nsource(\"https://raw.githubusercontent.com/slicesofdata/fods24/main/r/functions/view_html.R\")\n\nYou can use this function in your own work space but I am having a challenge rendering this to the website, so I’ll default to print() on occasion."
   },
   {
     "objectID": "modules/10_summarizing_data.html#libraries-1",
@@ -669,14 +669,133 @@
     "href": "modules/08_transforming_data.html#supplementary-readings",
     "title": "Transforming Data",
     "section": "Supplementary Readings",
-    "text": "Supplementary Readings\n\nData Transformation"
+    "text": "Supplementary Readings\n\nData Transformation\nHuber: Transforming Data"
   },
   {
     "objectID": "modules/08_transforming_data.html#libraries",
     "href": "modules/08_transforming_data.html#libraries",
     "title": "Transforming Data",
     "section": "Libraries",
-    "text": "Libraries\n\n{here} 1.0.1: for file path management\n\nRelated:"
+    "text": "Libraries\n\n{here}: 1.0.1: for path management\n{dplyr} 1.1.4: for selecting, filtering, and mutating\n{magrittr} 2.0.3: for code clarity and piping data frame objects\n{stringr}: 1.5.1: for working with strings\n{tidyselect}: 1.2.0: for selecting sets from strings"
+  },
+  {
+    "objectID": "modules/08_transforming_data.html#external-functions",
+    "href": "modules/08_transforming_data.html#external-functions",
+    "title": "Transforming Data",
+    "section": "External Functions",
+    "text": "External Functions\nview_html(): for viewing data frames in HTML format\nYou can access remotely using this code, though you do not need to do so now.\n\nsource(\"https://raw.githubusercontent.com/slicesofdata/fods24/main/r/functions/view_html.R\")\n\nIf this function is in r/functions/:\n\nR.utils::sourceDirectory(here::here(\"r\", \"functions\"))"
+  },
+  {
+    "objectID": "modules/08_transforming_data.html#selecting-variables-using-dplyrselect",
+    "href": "modules/08_transforming_data.html#selecting-variables-using-dplyrselect",
+    "title": "Transforming Data",
+    "section": "Selecting Variables using dplyr::select()",
+    "text": "Selecting Variables using dplyr::select()\n\nSelecting Variables by column position\n\nUSArrests |&gt;\n  select(1, 3) |&gt; \n  head()\n\n           Murder UrbanPop\nAlabama      13.2       58\nAlaska       10.0       48\nArizona       8.1       80\nArkansas      8.8       50\nCalifornia    9.0       91\nColorado      7.9       78\n\n\nVariables can be passed separately without quotes or collectively as a character vector.\n\n\nPassing variable names\n\nUSArrests |&gt; \n  select(Murder, Assault) |&gt; \n  head()\n\n           Murder Assault\nAlabama      13.2     236\nAlaska       10.0     263\nArizona       8.1     294\nArkansas      8.8     190\nCalifornia    9.0     276\nColorado      7.9     204\n\n\n\n\nPassing variables separately as characters/strings\n\nUSArrests |&gt; \n  select(\"Murder\", \"Assault\") |&gt; \n  head()\n\n           Murder Assault\nAlabama      13.2     236\nAlaska       10.0     263\nArizona       8.1     294\nArkansas      8.8     190\nCalifornia    9.0     276\nColorado      7.9     204\n\n\n\n\nPassing variables separately as characters vector\nThis approach is more similar to a procedures use with in base R functions.\n\nUSArrests |&gt;\n  select(c(\"Murder\", \"Assault\")) |&gt; \n  head()\n\n           Murder Assault\nAlabama      13.2     236\nAlaska       10.0     263\nArizona       8.1     294\nArkansas      8.8     190\nCalifornia    9.0     276\nColorado      7.9     204\n\n\n\n\nPassing a numeric vector of column positions\n\nUSArrests |&gt;\n  select(c(1, 3)) |&gt; \n  head()\n\n           Murder UrbanPop\nAlabama      13.2       58\nAlaska       10.0       48\nArizona       8.1       80\nArkansas      8.8       50\nCalifornia    9.0       91\nColorado      7.9       78\n\n\n\n\nPassing an object holding a character vector containing two elements\nFirst, create the vector object:\n\nkeep_vars &lt;- c(\"Murder\", \"Assault\")\n\nThen pass the vector into the function:\n\nUSArrests |&gt;\n  select(all_of(keep_vars)) |&gt; \n  head()\n\n           Murder Assault\nAlabama      13.2     236\nAlaska       10.0     263\nArizona       8.1     294\nArkansas      8.8     190\nCalifornia    9.0     276\nColorado      7.9     204\n\n\nNote: select(keep_vars) is deprecated as a solution, so if you see this approach someplace, it won’t work properly at this time or in the future.\n\n\nSelect Variables Starting with or Ending with Certain Characters\nOne thing about {dplyr}, when you load the library, there are functions from other libraries that are imported along with {dplyr}’s own functions. These important functions are designed to work with each other, so the people who maintain the libraries have packaged them up nicely so you don’t have to load separate libraries.\nMany of the functions are imported from the {tidyselect} library and these functions are what give you additional manipulation ability. Some imported functions are: all_of(), any_of(), contains(), ends_with(), everything(), last_col(), matches(), and starts_with().\nWith functions like starts_with(), contains(), and ends_with(), you can select variables with character patterns in their names.\nRather that passing the names of the variables as the second argument (e.g., c(\"Murder\", \"Assault\")), you would pass the helper function, say starts_with(). Whatever starts_with() returns is what gets passed to select() as the variables. This is what is referred to as functional programming. Rather than coding specifically what to do, you with utilize the task of another function to passed its returned object as an argument to another function.\nBut first, we need to see what these functions, like starts_with(), are doing. For more information, use ?starts_with.\n\nstarts_with(match, ignore.case = TRUE, vars = NULL)\n\nArguments:\n\nmatch: A character vector\nignore.case: If TRUE, the default, ignores case when matching names. This is most flexible.\nvars: A character vector of variable names. If not supplied, the variables are taken from the current selection context (as established by functions like select() or pivot_longer()).\n\nLet’s just try out starts_with() on its own. Let’s set a required pattern match = some character and because vars = NULL by default, let’s just set vars = some character vector. Note that vars is not the second argument, so you will want to name it in the function call.\n\nstarts_with(match = \"a\", vars = c(\"Hello\", \"Hi\", \"Bye\"))\n\ninteger(0)\n\n\nReturns integer(0) which is speak for “there is no match”. Hmm, OK. Let’s try another character.\n\nstarts_with(match = \"b\", vars = c(\"Hello\", \"Hi\", \"Bye\"))\n\n[1] 3\n\n\nOK, so now an integer is returned (yes, try is.integer() if you don’t believe me).\n\nis.integer(starts_with(\"b\", vars = c(\"Hello\", \"Hi\", \"Bye\")))\n\n[1] TRUE\n\n\nImportantly, the value refers to the element index/position in the vars vector. Because the third string \"Bye\" starts with \"b\", that’s what is returned.\nTry something else:\n\nstarts_with(\"h\", vars = c(\"Hello\", \"Hi\", \"Bye\"))\n\n[1] 1 2\n\n\nNow a vector with length = 2 is returned, representing both the first and the second elements start with “h”.\n\nlength(starts_with(\"h\", vars = c(\"Hello\", \"Hi\", \"Bye\")))\n\n[1] 2\n\n\nSee, it’s really a vector containing the element(s) of the vars vector matching the pattern.\nAnd yes, this the letter casing is ignored because the default ignore.case = TRUE. Set to FALSE if you want your match to be case sensitive.\n\nstarts_with(\"h\", \n            vars = c(\"Hello\", \"Hi\", \"Bye\"), \n            ignore.case = F\n            )\n\ninteger(0)\n\n\nOK, there are no matches.\nYou will typically use starts_with() along with other functions. When using starts_with() in the context of select(), the vars argument is essentially passing vars = the names of the columns of the data frame passed to select().\nExample:\nselect(mydataframe,\n    starts_with(match = \"my pattern\",\n                vars = \"var names of mydataframe\")\n                )\nPassing the data frame into select() without piping it using %&gt;%:\n\nselect(USArrests, starts_with(\"m\")) |&gt; \n  head()\n\n           Murder\nAlabama      13.2\nAlaska       10.0\nArizona       8.1\nArkansas      8.8\nCalifornia    9.0\nColorado      7.9\n\n\nPiping the data frame into select():\n\nUSArrests |&gt;\n  select(starts_with(\"m\")) |&gt; \n  head()\n\n           Murder\nAlabama      13.2\nAlaska       10.0\nArizona       8.1\nArkansas      8.8\nCalifornia    9.0\nColorado      7.9\n\n\nAnother example:\n\nUSArrests |&gt;\n  select(ends_with(\"t\")) |&gt; \n  head()\n\n           Assault\nAlabama        236\nAlaska         263\nArizona        294\nArkansas       190\nCalifornia     276\nColorado       204"
+  },
+  {
+    "objectID": "modules/08_transforming_data.html#selecting-and-selecting-out-variables-bybetween-index",
+    "href": "modules/08_transforming_data.html#selecting-and-selecting-out-variables-bybetween-index",
+    "title": "Transforming Data",
+    "section": "Selecting and Selecting Out Variables By/Between Index",
+    "text": "Selecting and Selecting Out Variables By/Between Index\nThere are many approaches for selecting or selecting out column variables. You can pass multiple arguments for each specification or you can pass a single vector that contains all specifications.\n\nselect(1,2): select first and second columns\nselect(c(1,2)): select first and second columns\nselect(-c(1,2)): select out first and second columns\nselect(1:2): select first through second columns\nselect(c(1:2)): select first through second columns\nselect(-c(1:2)): select out first through second columns\n\nPotential Recommendation: use options utilizing c() to pass a vector because this habit will be more versatile with base R functionality. However, online solutions will likely not take this approach.\nLet’s make a data frame to work with first.\n\nDAT &lt;- data.frame(\n  Id  = c(100, 101, 102, 103, 104, 100, 105),\n  Sex = c('male', 'female', 'Male', NA, 'man', \"male\", \"neither\"),\n  Age = c(25, 33, 27, 40, 44, 25, 40),\n  Renting = c(\"yes\", NA, \"yes\", NA, \"no\", \"yes\", \"yes\")\n)\n\nSelect columns 1 and 2:\n\nDAT |&gt;\n  select(1, 2) \n\n   Id     Sex\n1 100    male\n2 101  female\n3 102    Male\n4 103    &lt;NA&gt;\n5 104     man\n6 100    male\n7 105 neither\n\n\nSelect columns 1 and 2 as a vector containing values 1 and 2:\n\nDAT |&gt;\n  select(c(1, 2)) \n\n   Id     Sex\n1 100    male\n2 101  female\n3 102    Male\n4 103    &lt;NA&gt;\n5 104     man\n6 100    male\n7 105 neither\n\n\nSelect out columns 1 and 2 as a vector containing values 1 and 2:\n\nDAT |&gt;\n  select(-c(1,2)) \n\n  Age Renting\n1  25     yes\n2  33    &lt;NA&gt;\n3  27     yes\n4  40    &lt;NA&gt;\n5  44      no\n6  25     yes\n7  40     yes\n\n\nSelect from columns 1 to 2 using the : operator:\n\nDAT |&gt;\n  select(1:2) \n\n   Id     Sex\n1 100    male\n2 101  female\n3 102    Male\n4 103    &lt;NA&gt;\n5 104     man\n6 100    male\n7 105 neither\n\n\nSelect from columns 1 through 3 using a vector containing the : operator:\n\nDAT |&gt;\n  select(c(1:3)) \n\n   Id     Sex Age\n1 100    male  25\n2 101  female  33\n3 102    Male  27\n4 103    &lt;NA&gt;  40\n5 104     man  44\n6 100    male  25\n7 105 neither  40\n\n\nSelect out columns 1 through 3 using a vector containing the : operator:\n\nDAT |&gt;\n  select(-c(1:3))   # select out from here to there\n\n  Renting\n1     yes\n2    &lt;NA&gt;\n3     yes\n4    &lt;NA&gt;\n5      no\n6     yes\n7     yes"
+  },
+  {
+    "objectID": "modules/08_transforming_data.html#selecting-and-selecting-out-variables-by-or-between-character-name",
+    "href": "modules/08_transforming_data.html#selecting-and-selecting-out-variables-by-or-between-character-name",
+    "title": "Transforming Data",
+    "section": "Selecting and Selecting Out Variables By or Between Character Name",
+    "text": "Selecting and Selecting Out Variables By or Between Character Name\nThese approaches are similar to those offered earlier except that some involve passing variables by their name (e.g., character names). Whereas the order of the variables in a data frame may move around, the names may be more stable or permanent, at least after you have cleaned up the names. Consequently, passing variables by name may be more foolproof.\nYou don’t have to be familiar with all approaches and you may settle on using one that makes the most sense to you.\n\nselect(\"var1\", \"var2\")\nselect(c(\"var1\", \"var2\"))\nselect(-c(\"var1\", \"var2\"))\nselect(var1:var2))\nselect(c(\"var1\":\"var2))\nselect(-c(\"var1\":\"var2))\n\nRecommendation: use options utilizing c() as this will be more versatile with base R functionality.\nThese function approaches also work but they may lead to some confusion regarding usage of quotes:\n\nselect(var1, var2)\nselect(c(var1, var2))\nselect(-c(var1, var2))\n\nSelect variables Id though Age using the : operator:\n\nDAT |&gt;\n  select(Id:Age)                            # select from here to there\n\n   Id     Sex Age\n1 100    male  25\n2 101  female  33\n3 102    Male  27\n4 103    &lt;NA&gt;  40\n5 104     man  44\n6 100    male  25\n7 105 neither  40\n\n\nSelect variables Id though Age passed as strings using the : operator:\n\nDAT |&gt;\n  select(\"Id\":\"Age\")                        # select from here to there\n\n   Id     Sex Age\n1 100    male  25\n2 101  female  33\n3 102    Male  27\n4 103    &lt;NA&gt;  40\n5 104     man  44\n6 100    male  25\n7 105 neither  40\n\n\nSelect variables Id though Age as a vector containing the variable names passed as strings and using the : operator:\n\nDAT |&gt;\n  select(c(\"Id\":\"Age\"))                     # select from here to there\n\n   Id     Sex Age\n1 100    male  25\n2 101  female  33\n3 102    Male  27\n4 103    &lt;NA&gt;  40\n5 104     man  44\n6 100    male  25\n7 105 neither  40\n\n\nSelect out variables Id though Age as a vector containing the variable names passed as strings and using the : operator:\n\nDAT |&gt;\n  select(-c(\"Id\":\"Age\"))                    # select out from here to there\n\n  Renting\n1     yes\n2    &lt;NA&gt;\n3     yes\n4    &lt;NA&gt;\n5      no\n6     yes\n7     yes\n\n\nYou can also use the ! operator to select NOT these variables (therefore, all others)\n\nDAT |&gt;\n  select(!c(\"Id\":\"Age\"))                    # select out from here to there\n\n  Renting\n1     yes\n2    &lt;NA&gt;\n3     yes\n4    &lt;NA&gt;\n5      no\n6     yes\n7     yes"
+  },
+  {
+    "objectID": "modules/08_transforming_data.html#selecting-and-selecting-out-variables-characters-in-their-names",
+    "href": "modules/08_transforming_data.html#selecting-and-selecting-out-variables-characters-in-their-names",
+    "title": "Transforming Data",
+    "section": "Selecting and Selecting Out Variables Characters in Their Names",
+    "text": "Selecting and Selecting Out Variables Characters in Their Names\n\nselect(starts_with(\"characters\"))\nselect(ends_with(\"characters\"))\nselect(contains('e'))\n\n\nSelecting using starts_with()\nSelect variables which start with character “i”:\n\nDAT |&gt; \n  select(starts_with('i'))\n\n   Id\n1 100\n2 101\n3 102\n4 103\n5 104\n6 100\n7 105\n\n\nSelect variables which DO NOT start with character “s”:\n\nDAT |&gt; \n  select(-starts_with('s'))\n\n   Id Age Renting\n1 100  25     yes\n2 101  33    &lt;NA&gt;\n3 102  27     yes\n4 103  40    &lt;NA&gt;\n5 104  44      no\n6 100  25     yes\n7 105  40     yes\n\n\n\n\nSelecting using ends_with()\nSelect variables which end with character “e”:\n\nDAT |&gt; \n  select(ends_with('e'))\n\n  Age\n1  25\n2  33\n3  27\n4  40\n5  44\n6  25\n7  40\n\n\nSelect variables which end with character “e”:\n\nDAT |&gt; \n  select(-ends_with('e'))\n\n   Id     Sex Renting\n1 100    male     yes\n2 101  female    &lt;NA&gt;\n3 102    Male     yes\n4 103    &lt;NA&gt;    &lt;NA&gt;\n5 104     man      no\n6 100    male     yes\n7 105 neither     yes\n\n\n\n\nSelecting using contains()\nSelect variables which contain character “g”:\n\nDAT |&gt; \n  select(contains('g'))\n\n  Age Renting\n1  25     yes\n2  33    &lt;NA&gt;\n3  27     yes\n4  40    &lt;NA&gt;\n5  44      no\n6  25     yes\n7  40     yes\n\n\nSelect variables which DO NOT contain character “g”:\n\nDAT |&gt; \n  select(-contains('g'))\n\n   Id     Sex\n1 100    male\n2 101  female\n3 102    Male\n4 103    &lt;NA&gt;\n5 104     man\n6 100    male\n7 105 neither\n\n\n\n\nSelecting using regular expressions\nSometimes you do not want to search for specific character strings. Instead, you might want to look for strings that contain particular character patterns. For example, typing out var1, var2, var3 could be annoying. You might prefer just grabbing variables that match the pattern \"var\".\nWe will use some regular expressions, or regex, to help us. For the regex, you we will need to specify some code for finding patterns. For example, \\\\d{4} will search for patterns with 4 digits, whereas the dot star .* will help with all patterns. In particular, . refers to any character (e.g,. digit, alpha character, or any other special character) and * means zero or more times, so this pattern will search for all files that start with 4 digits followed by anything in the name. A pattern will restrict the search to files containing that exact character string. Some example will be helpful.\n\nSelecting variables of all patterns using \".*\"\nSelect variables containing a regular expression, use matches():\n.* will grab all names because it means any character and any number of times\n\nDAT |&gt; \n  select(matches(\".*\"))\n\n   Id     Sex Age Renting\n1 100    male  25     yes\n2 101  female  33    &lt;NA&gt;\n3 102    Male  27     yes\n4 103    &lt;NA&gt;  40    &lt;NA&gt;\n5 104     man  44      no\n6 100    male  25     yes\n7 105 neither  40     yes\n\n\n\n\nSelecting variables with digits using \"\\\\d\"\n\\\\d will grab all variables containing a digit:\n\nDAT |&gt; \n  mutate(var_1    = 1,\n         var_11   = 1,\n         var_3    = 1,\n         var1_var = 1\n         ) |&gt;\n  select(matches(\"\\\\d\"))\n\n  var_1 var_11 var_3 var1_var\n1     1      1     1        1\n2     1      1     1        1\n3     1      1     1        1\n4     1      1     1        1\n5     1      1     1        1\n6     1      1     1        1\n7     1      1     1        1\n\n\n\n\nSelecting variables that start and contain characters \"v.*\\\\d\"\nv.*\\\\d will grab all variables that start with v and then contain any characters which are followed by a digit:\n\nDAT |&gt;\n    mutate(var_1    = 1,\n           var_11   = 1,\n           var_3    = 1,\n           var1_var = 1\n         ) |&gt;\n  select(matches(\"v.*\\\\d\"))\n\n  var_1 var_11 var_3 var1_var\n1     1      1     1        1\n2     1      1     1        1\n3     1      1     1        1\n4     1      1     1        1\n5     1      1     1        1\n6     1      1     1        1\n7     1      1     1        1\n\n\n\n\nSelecting variables that end with a digit using \"\\\\d$\"\n\\\\d$ will grab all variables ending in a digit ($ means end):\n\nDAT |&gt; \n    mutate(var_1    = 1,\n           var_11   = 1,\n           var_3    = 1,\n           var1_var = 1\n           ) |&gt;\n  select(matches(\"\\\\d$\"))\n\n  var_1 var_11 var_3\n1     1      1     1\n2     1      1     1\n3     1      1     1\n4     1      1     1\n5     1      1     1\n6     1      1     1\n7     1      1     1\n\n\n\n\n\nSelecting variables by negation\nYou can also negate all regular expression matches if you want to exclude:\n\nDAT |&gt;\n      mutate(var_1    = 1,\n             var_11   = 1,\n             var_3    = 1,\n             var1_var = 1\n             ) |&gt;\n  select(-matches(\"\\\\d$\"))\n\n   Id     Sex Age Renting var1_var\n1 100    male  25     yes        1\n2 101  female  33    &lt;NA&gt;        1\n3 102    Male  27     yes        1\n4 103    &lt;NA&gt;  40    &lt;NA&gt;        1\n5 104     man  44      no        1\n6 100    male  25     yes        1\n7 105 neither  40     yes        1\n\n\nNote: The functions will return lowercase and uppercase variable name matches because the default behavior is ignore.case = TRUE. Set to FALSE if you want to perform precise surgery on the variables."
+  },
+  {
+    "objectID": "modules/08_transforming_data.html#selecting-and-selecting-out-variables-by-type",
+    "href": "modules/08_transforming_data.html#selecting-and-selecting-out-variables-by-type",
+    "title": "Transforming Data",
+    "section": "Selecting and Selecting Out Variables by Type",
+    "text": "Selecting and Selecting Out Variables by Type\nSelect variables that are numeric:\n\nDAT |&gt;\n  select(where(is.numeric))\n\n   Id Age\n1 100  25\n2 101  33\n3 102  27\n4 103  40\n5 104  44\n6 100  25\n7 105  40\n\n\nSelect variables that are NOT numeric:\n\nDAT |&gt; \n  select(-where(is.numeric))\n\n      Sex Renting\n1    male     yes\n2  female    &lt;NA&gt;\n3    Male     yes\n4    &lt;NA&gt;    &lt;NA&gt;\n5     man      no\n6    male     yes\n7 neither     yes\n\n\nSelect variables that are character:\n\nDAT |&gt; \n  select(where(is.character))\n\n      Sex Renting\n1    male     yes\n2  female    &lt;NA&gt;\n3    Male     yes\n4    &lt;NA&gt;    &lt;NA&gt;\n5     man      no\n6    male     yes\n7 neither     yes\n\n\nSelect variables that are NOT character:\n\nDAT |&gt;\n  select(-where(is.character))\n\n   Id Age\n1 100  25\n2 101  33\n3 102  27\n4 103  40\n5 104  44\n6 100  25\n7 105  40\n\n\nSelect variables that are logical (TRUE to FALSE):\n\nDAT |&gt; \n  select(where(is.logical))\n\ndata frame with 0 columns and 7 rows\n\n\nSelect variables that are NOT logical (TRUE to FALSE):\n\nDAT |&gt; \n  select(-where(is.logical))\n\n   Id     Sex Age Renting\n1 100    male  25     yes\n2 101  female  33    &lt;NA&gt;\n3 102    Male  27     yes\n4 103    &lt;NA&gt;  40    &lt;NA&gt;\n5 104     man  44      no\n6 100    male  25     yes\n7 105 neither  40     yes"
+  },
+  {
+    "objectID": "modules/08_transforming_data.html#removing-duplicate-rows-using-distinct",
+    "href": "modules/08_transforming_data.html#removing-duplicate-rows-using-distinct",
+    "title": "Transforming Data",
+    "section": "Removing duplicate rows using distinct()",
+    "text": "Removing duplicate rows using distinct()\n\ndplyr::distinct(): remove duplicate rows\ndplyr::distinct(., column): remove duplicate rows by specific column\nna.omit(): remove any row with NA’s (missing values)\n\nLet’s use the simple DAT data frame.\n\nDAT\n\n   Id     Sex Age Renting\n1 100    male  25     yes\n2 101  female  33    &lt;NA&gt;\n3 102    Male  27     yes\n4 103    &lt;NA&gt;  40    &lt;NA&gt;\n5 104     man  44      no\n6 100    male  25     yes\n7 105 neither  40     yes\n\n\nNotice that rows 1 and 6 are the same person (e.g., Id) and have exactly the same data for all variables.\n\nDAT[1,] == DAT[6,]\n\n    Id  Sex  Age Renting\n1 TRUE TRUE TRUE    TRUE\n\n\nGreat that the rows are consistent but you don’t want their data twice. So let’s just remove any rows that are identical.\n\nDAT |&gt;\n  distinct()       # Remove exact duplicates\n\n   Id     Sex Age Renting\n1 100    male  25     yes\n2 101  female  33    &lt;NA&gt;\n3 102    Male  27     yes\n4 103    &lt;NA&gt;  40    &lt;NA&gt;\n5 104     man  44      no\n6 105 neither  40     yes\n\n\nIf you know each row is unique based on a variable in the data frame, you can also use distinct() to remove duplicates for a specific variable. Make sure that this variable specification is actually one that you would not want duplicates of.\n\nDAT |&gt;           \n  distinct(Id)     #  Remove duplicates by variable; passes unique values for data frame\n\n   Id\n1 100\n2 101\n3 102\n4 103\n5 104\n6 105\n\n\nBut this function simply returns the unique values in Id. To retain the variables, set .keep_all = T. If you want to remove duplicates and assign the cleaned data frame to an object, you would likely want to keep all of your variables.\n\nDAT |&gt;             \n  distinct(Id, \n           .keep_all = T\n           ) #\n\n   Id     Sex Age Renting\n1 100    male  25     yes\n2 101  female  33    &lt;NA&gt;\n3 102    Male  27     yes\n4 103    &lt;NA&gt;  40    &lt;NA&gt;\n5 104     man  44      no\n6 105 neither  40     yes\n\n\nNotice, however, this only removed the last instance or Id == 100. Which row to include is a judgment call. The first, the last, neither, the average? Is there a correct answer?"
+  },
+  {
+    "objectID": "modules/08_transforming_data.html#filter-cases-using",
+    "href": "modules/08_transforming_data.html#filter-cases-using",
+    "title": "Transforming Data",
+    "section": "Filter Cases using ==",
+    "text": "Filter Cases using ==\nFilter rows for which the Sex variable is equal to the string 'female':\n\nDAT |&gt;\n  dplyr::filter(Sex == 'female')\n\n   Id    Sex Age Renting\n1 101 female  33    &lt;NA&gt;\n\n\nFilter rows for which the Sex variable is not equal to the string 'female':\n\nDAT |&gt;\n  dplyr::filter(Sex != 'female')\n\n   Id     Sex Age Renting\n1 100    male  25     yes\n2 102    Male  27     yes\n3 104     man  44      no\n4 100    male  25     yes\n5 105 neither  40     yes\n\n\nFilter rows for which the Sex variable is equal to the string 'female' AND Age is greater than the numeric 27:\n\nDAT |&gt;\n  dplyr::filter(Sex == 'female' & Age &gt; 27) # this \"AND\" that\n\n   Id    Sex Age Renting\n1 101 female  33    &lt;NA&gt;\n\n\nFilter rows for which the Sex variable is equal to the string 'female' OR Age is greater than the numeric 27:\n\nDAT |&gt;\n  dplyr::filter(Sex == 'female' | Age &gt; 27) # this \"OR\" that\n\n   Id     Sex Age Renting\n1 101  female  33    &lt;NA&gt;\n2 103    &lt;NA&gt;  40    &lt;NA&gt;\n3 104     man  44      no\n4 105 neither  40     yes\n\n\nA cleaner method involves separate lines of code. Although cleaner, this will not allow the “OR” option because the data frame that is returned from the first filter() is passed to the second filter() and all cases other than \"female\" have already been removed from the data frame.\n\nDAT |&gt;\n  dplyr::filter(Sex == 'female') |&gt;    # keep female (and add another pipe)\n  dplyr::filter(Age &gt;= 27)             # keep only those equal to or older than 27\n\n   Id    Sex Age Renting\n1 101 female  33    &lt;NA&gt;"
+  },
+  {
+    "objectID": "modules/08_transforming_data.html#filter-by-and-or-or",
+    "href": "modules/08_transforming_data.html#filter-by-and-or-or",
+    "title": "Transforming Data",
+    "section": "Filter by < and > or <= or >=",
+    "text": "Filter by &lt; and &gt; or &lt;= or &gt;=\nKeep those less than:\n\nDAT |&gt; \n  dplyr::filter(Age &lt; 40)   \n\n   Id    Sex Age Renting\n1 100   male  25     yes\n2 101 female  33    &lt;NA&gt;\n3 102   Male  27     yes\n4 100   male  25     yes\n\n\nKeep older than:\n\nDAT |&gt; \n  dplyr::filter(Age &gt; 40)  \n\n   Id Sex Age Renting\n1 104 man  44      no\n\n\nKeep equal to or older than:\n\nDAT |&gt; \n  dplyr::filter(Age &gt;= 40)  \n\n   Id     Sex Age Renting\n1 103    &lt;NA&gt;  40    &lt;NA&gt;\n2 104     man  44      no\n3 105 neither  40     yes"
+  },
+  {
+    "objectID": "modules/08_transforming_data.html#filter-cases-by-conditional-x-or-y-using-operator",
+    "href": "modules/08_transforming_data.html#filter-cases-by-conditional-x-or-y-using-operator",
+    "title": "Transforming Data",
+    "section": "Filter Cases by Conditional X or Y Using | Operator…",
+    "text": "Filter Cases by Conditional X or Y Using | Operator…\nUsing the “OR” operator, |, cases can be included if “this” OR “that” condition.\nFilter numbers:\n\nDAT |&gt;\n  dplyr::filter(Age == 25 | Age == 40)    # filter out numeric values IN a range\n\n   Id     Sex Age Renting\n1 100    male  25     yes\n2 103    &lt;NA&gt;  40    &lt;NA&gt;\n3 100    male  25     yes\n4 105 neither  40     yes\n\n\nFilter characters:\n\nDAT |&gt;\n  dplyr::filter(Sex == 'male' | Sex == 'female')\n\n   Id    Sex Age Renting\n1 100   male  25     yes\n2 101 female  33    &lt;NA&gt;\n3 100   male  25     yes\n\n\nAlthough dplyr::filter(sex %in% c('male', 'female')) would be easier.\nFilter rows of variables of both types:\n\nDAT |&gt;\n  dplyr::filter(Sex == 'male' | Age == 27)  \n\n   Id  Sex Age Renting\n1 100 male  25     yes\n2 102 Male  27     yes\n3 100 male  25     yes"
+  },
+  {
+    "objectID": "modules/08_transforming_data.html#filter-cases-between-values-with-between",
+    "href": "modules/08_transforming_data.html#filter-cases-between-values-with-between",
+    "title": "Transforming Data",
+    "section": "Filter Cases Between Values with between()",
+    "text": "Filter Cases Between Values with between()\nBetween ages 25 and 33:\n\nDAT |&gt;\n  dplyr::filter(between(Age, 27, 33))\n\n   Id    Sex Age Renting\n1 101 female  33    &lt;NA&gt;\n2 102   Male  27     yes"
+  },
+  {
+    "objectID": "modules/08_transforming_data.html#filter-by-range-using-the-in-operator-this-is-in-meaning-in",
+    "href": "modules/08_transforming_data.html#filter-by-range-using-the-in-operator-this-is-in-meaning-in",
+    "title": "Transforming Data",
+    "section": "Filter by range using the %in% operator (this is IN meaning in)",
+    "text": "Filter by range using the %in% operator (this is IN meaning in)\nThough less flexible than using between(), %in% may be easier to remember:\n\nDAT |&gt;\n  dplyr::filter(Age %in% 20:43)    # filter out numeric values IN a range\n\n   Id     Sex Age Renting\n1 100    male  25     yes\n2 101  female  33    &lt;NA&gt;\n3 102    Male  27     yes\n4 103    &lt;NA&gt;  40    &lt;NA&gt;\n5 100    male  25     yes\n6 105 neither  40     yes\n\n\nOne’s age is in the range from 20 through 43.\nIf a vector object is already defined (e.g., my_levels = c('male', 'female')), you can use that for filtering also. Such approaches are useful when data manipulation involves reusing a reference as it simplifies coding and reduces errors because the specification is defined only once.\n\nmy_levels = c('male', 'female')\n\nDAT |&gt;\n  dplyr::filter(Sex %in% my_levels)\n\n   Id    Sex Age Renting\n1 100   male  25     yes\n2 101 female  33    &lt;NA&gt;\n3 100   male  25     yes"
+  },
+  {
+    "objectID": "modules/08_transforming_data.html#filter-by-exclusion",
+    "href": "modules/08_transforming_data.html#filter-by-exclusion",
+    "title": "Transforming Data",
+    "section": "Filter by exclusion",
+    "text": "Filter by exclusion\nWhen inclusion of variables is inappropriate, exclusion of them may be useful. The ! operator means “NOT” in R so you can use that to accomplish the opposite of the statement. For example, dplyr::filter(., !sex %in% c('male', NA)) will “filter the data frame to include rows in the sex column for which the value is NOT in the vector”.\nExclude rows in the Sex variable that are NA or 'male':\n\nDAT |&gt;\n  dplyr::filter(!Sex %in% c('male', NA))  # keep only if NOT in vector\n\n   Id     Sex Age Renting\n1 101  female  33    &lt;NA&gt;\n2 102    Male  27     yes\n3 104     man  44      no\n4 105 neither  40     yes\n\n\nExclude rows in the Sex variable that are Men or 'male':\n\nDAT |&gt;\n  dplyr::filter(!Sex %in% c('male', 'Men'))  # keep only if NOT in vector\n\n   Id     Sex Age Renting\n1 101  female  33    &lt;NA&gt;\n2 102    Male  27     yes\n3 103    &lt;NA&gt;  40    &lt;NA&gt;\n4 104     man  44      no\n5 105 neither  40     yes"
+  },
+  {
+    "objectID": "modules/08_transforming_data.html#filter-by-conditional-x-and-y-using-operator",
+    "href": "modules/08_transforming_data.html#filter-by-conditional-x-and-y-using-operator",
+    "title": "Transforming Data",
+    "section": "Filter by conditional X and Y using & operator…",
+    "text": "Filter by conditional X and Y using & operator…\nBy range:\n\nDAT |&gt;\n  dplyr::filter(Id &gt;= 102 & Age &lt;= 43)    \n\n   Id     Sex Age Renting\n1 102    Male  27     yes\n2 103    &lt;NA&gt;  40    &lt;NA&gt;\n3 105 neither  40     yes\n\n\n\nDAT |&gt;\n  dplyr::filter(Age &gt;= 20 & Age &lt;= 43)    \n\n   Id     Sex Age Renting\n1 100    male  25     yes\n2 101  female  33    &lt;NA&gt;\n3 102    Male  27     yes\n4 103    &lt;NA&gt;  40    &lt;NA&gt;\n5 100    male  25     yes\n6 105 neither  40     yes\n\n\nNote: Age 20:43 won’t work. Can you figure out why?"
+  },
+  {
+    "objectID": "modules/08_transforming_data.html#filter-using-na.omit",
+    "href": "modules/08_transforming_data.html#filter-using-na.omit",
+    "title": "Transforming Data",
+    "section": "Filter using na.omit()",
+    "text": "Filter using na.omit()\n\nDAT |&gt;\n  na.omit()           # omit any rows with NAs \n\n   Id     Sex Age Renting\n1 100    male  25     yes\n3 102    Male  27     yes\n5 104     man  44      no\n6 100    male  25     yes\n7 105 neither  40     yes"
+  },
+  {
+    "objectID": "modules/08_transforming_data.html#filter-using-is.na-and-is.na",
+    "href": "modules/08_transforming_data.html#filter-using-is.na-and-is.na",
+    "title": "Transforming Data",
+    "section": "Filter using is.na() and !is.na()",
+    "text": "Filter using is.na() and !is.na()\n\nDAT |&gt;\n  filter(is.na(Sex))       # keep NAs by variable\n\n   Id  Sex Age Renting\n1 103 &lt;NA&gt;  40    &lt;NA&gt;\n\n\nBut your goal may likely be to keep everything that is not NA:\n\nDAT |&gt;\n  filter(!is.na(Sex))      # remove NAs by variable\n\n   Id     Sex Age Renting\n1 100    male  25     yes\n2 101  female  33    &lt;NA&gt;\n3 102    Male  27     yes\n4 104     man  44      no\n5 100    male  25     yes\n6 105 neither  40     yes\n\n\nAnd filter step-by-step for each variable using %&gt;% and separate function calls:\n\nDAT |&gt;\n  filter(!is.na(Sex)) |&gt;\n  filter(!is.na(Renting))\n\n   Id     Sex Age Renting\n1 100    male  25     yes\n2 102    Male  27     yes\n3 104     man  44      no\n4 100    male  25     yes\n5 105 neither  40     yes\n\n\nSo why use separate lines of code if you can use & all in one line? One reason is that separate function calls written as separate lines of code make code inclusion/exclusion extremely easy.\nComment out what you don’t want using #:\n\nDAT |&gt;\n  #filter(., !is.na(Sex)) |&gt;\n  filter(!is.na(Renting))\n\n   Id     Sex Age Renting\n1 100    male  25     yes\n2 102    Male  27     yes\n3 104     man  44      no\n4 100    male  25     yes\n5 105 neither  40     yes"
+  },
+  {
+    "objectID": "modules/08_transforming_data.html#filter-using-complete.cases",
+    "href": "modules/08_transforming_data.html#filter-using-complete.cases",
+    "title": "Transforming Data",
+    "section": "Filter using complete.cases()",
+    "text": "Filter using complete.cases()\nThe complete.cases() function returns a logical vector for which TRUE reflects the row has complete information and no missing cases. Using complete.cases() along with filter(), you would retain all rows TRUE rows.\n\nDAT %&gt;%\n  dplyr::filter(complete.cases(.))\n\n   Id     Sex Age Renting\n1 100    male  25     yes\n2 102    Male  27     yes\n3 104     man  44      no\n4 100    male  25     yes\n5 105 neither  40     yes"
   },
   {
     "objectID": "modules/06_importing_and_exporting_data.html",
@@ -697,7 +816,7 @@
     "href": "modules/06_importing_and_exporting_data.html#supplementary-readings",
     "title": "Importing and exporting data",
     "section": "Supplementary Readings",
-    "text": "Supplementary Readings\n\nData ImportR"
+    "text": "Supplementary Readings\n\nData Import\nHuber: Data Import I and II"
   },
   {
     "objectID": "modules/06_importing_and_exporting_data.html#tidy-files",
@@ -781,7 +900,7 @@
     "href": "modules/04_functions_and_scripts.html#supplementary-readings",
     "title": "Functions, arguments, and R scripts",
     "section": "Supplementary Readings",
-    "text": "Supplementary Readings\n\nR Workflow Basics\n\n\nTo Do\nRead through the module. You can use the R console or open up an R Markdown (e.g., .Rmd) file to follow along interactively. If you instead prefer to simply read through the content so that you can understand the concepts without coding, that is fine too. Concepts will be applied in class in order to complete activities, however. Reading the module will provide you with confidence working on those activities and prevent you from feeling lost. Testing out some code may provide you more confidence."
+    "text": "Supplementary Readings\n\nR Workflow Basics\nHuber: Functions\n\n\nTo Do\nRead through the module. You can use the R console or open up an R Markdown (e.g., .Rmd) file to follow along interactively. If you instead prefer to simply read through the content so that you can understand the concepts without coding, that is fine too. Concepts will be applied in class in order to complete activities, however. Reading the module will provide you with confidence working on those activities and prevent you from feeling lost. Testing out some code may provide you more confidence."
   },
   {
     "objectID": "modules/04_functions_and_scripts.html#external-functions",
@@ -931,20 +1050,6 @@
     "text": "Other Resources\n\nGit Client: Git clients work like the RStudio Gui option described above but likely much better. If you find the Terminal command line daunting or limiting, I might recommend a Git Client to use as I am not a big fan of the RStudio interface.\n\nGitKraken is a good option and they have lots of tutorials on their website. GitKraken is seamless to set up. Install, connect your GitHub account, select your repo to add, and voilà. You can stage, commit, and push from there.\nGitHub Desktop is another common option. Install, connect your GitHub account and select your repo to add, and voilà. You can stage, commit, and push from there.\n\nTroubleshooting: happygitwithr is a resource for troubleshooting Git issues specifically with R."
   },
   {
-    "objectID": "index.html#psyc-166-foundations-of-data-science-human-cognition",
-    "href": "index.html#psyc-166-foundations-of-data-science-human-cognition",
-    "title": "**PSYC166**",
-    "section": "PSYC 166: Foundations of Data Science (Human Cognition)",
-    "text": "PSYC 166: Foundations of Data Science (Human Cognition)\nThis is the course website for PSYC 166: Foundations of Data Science (Human Cognition), taught by Prof. Gabriel I. Cook; 1 credit\nDescription\nThis course introduces students to R, a programming language for statistical computing and graphics. Students will learn how to clean, manipulate, transform, join, and tidy data sets to prepare for statistical modeling. Supervised (e.g., regression) and unsupervised (e.g., clustering) approaches will be applied to understand simple and complex relationships between cognitive and non-cognitive variables (e.g., biology, aging, education, socioeconomic, health, etc.). Students will apply their skills to wrangle, explore, and model relevant data sets for a hands-on project for local scholars, offices, organizations, or industry participants. Data sets and relevant readings will change depending on semester."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Nothing to see here"
-  },
-  {
     "objectID": "modules/01_installing_r_and_rstudio.html",
     "href": "modules/01_installing_r_and_rstudio.html",
     "title": "Installing R & RStudio",
@@ -980,86 +1085,128 @@
     "text": "Additional Step for Mac Users:\nDownload and Install XQuartz\nSome functions in R require an “X11 Server” and/or libraries associated with an X11 server. Apple does not provide this software with OS X anymore so unfortunately you have to do it on your own via a third-party application called XQuartz for OS X 10.9 or later.\nUse the url below to download the XQuartz file and save it to your computer. Follow the same install instructions as above for installing the XQuartz file.\nFor macOS 10.9 or later, download this XQuartz file and save it to your computer and install: https://github.com/XQuartz/XQuartz/releases/download/XQuartz-2.8.5/XQuartz-2.8.5.pkg"
   },
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Nothing to see here"
+  },
+  {
+    "objectID": "index.html#psyc-166-foundations-of-data-science-human-cognition",
+    "href": "index.html#psyc-166-foundations-of-data-science-human-cognition",
+    "title": "**PSYC166**",
+    "section": "PSYC 166: Foundations of Data Science (Human Cognition)",
+    "text": "PSYC 166: Foundations of Data Science (Human Cognition)\nThis is the course website for PSYC 166: Foundations of Data Science (Human Cognition), taught by Prof. Gabriel I. Cook; 1 credit\nDescription\nThis course introduces students to R, a programming language for statistical computing and graphics. Students will learn how to clean, manipulate, transform, join, and tidy data sets to prepare for statistical modeling. Supervised (e.g., regression) and unsupervised (e.g., clustering) approaches will be applied to understand simple and complex relationships between cognitive and non-cognitive variables (e.g., biology, aging, education, socioeconomic, health, etc.). Students will apply their skills to wrangle, explore, and model relevant data sets for a hands-on project for local scholars, offices, organizations, or industry participants. Data sets and relevant readings will change depending on semester."
+  },
+  {
+    "objectID": "modules/01_introduction_to_r_rstudio_and_rmarkdown.html",
+    "href": "modules/01_introduction_to_r_rstudio_and_rmarkdown.html",
+    "title": "Introduction to RStudio and RMarkdown",
+    "section": "",
+    "text": "Under construction.\n\n\n\nThis page is a work in progress and may contain areas that need more detail or that required syntactical, grammatical, and typographical changes. If you find some part requiring some editing, please let me know so I can fix it for you."
+  },
+  {
+    "objectID": "modules/01_introduction_to_r_rstudio_and_rmarkdown.html#readings-and-preparation",
+    "href": "modules/01_introduction_to_r_rstudio_and_rmarkdown.html#readings-and-preparation",
+    "title": "Introduction to RStudio and RMarkdown",
+    "section": "Readings and Preparation",
+    "text": "Readings and Preparation\nBefore Class: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time.\nClass: In class, some functions and concepts will be introduced and we will practice implementing code through exercises."
+  },
+  {
+    "objectID": "modules/01_introduction_to_r_rstudio_and_rmarkdown.html#supplementary-readings",
+    "href": "modules/01_introduction_to_r_rstudio_and_rmarkdown.html#supplementary-readings",
+    "title": "Introduction to RStudio and RMarkdown",
+    "section": "Supplementary Readings",
+    "text": "Supplementary Readings\n\nHuber: RMarkdown"
+  },
+  {
+    "objectID": "modules/01_introduction_to_r_rstudio_and_rmarkdown.html#libraries",
+    "href": "modules/01_introduction_to_r_rstudio_and_rmarkdown.html#libraries",
+    "title": "Introduction to RStudio and RMarkdown",
+    "section": "Libraries",
+    "text": "Libraries\n\n{here} 1.0.1: for file path management"
+  },
+  {
     "objectID": "modules/03_using_git_and_github.html",
     "href": "modules/03_using_git_and_github.html",
-    "title": "Installing and Setting Up Git and GitHub for R",
+    "title": "Using Git and GitHub",
     "section": "",
     "text": "Under construction.\n\n\n\nThis page is a work in progress and may contain areas that need more detail or that required syntactical, grammatical, and typographical changes. If you find some part requiring some editing, please let me know so I can fix it for you."
   },
   {
     "objectID": "modules/03_using_git_and_github.html#overview",
     "href": "modules/03_using_git_and_github.html#overview",
-    "title": "Installing and Setting Up Git and GitHub for R",
+    "title": "Using Git and GitHub",
     "section": "Overview",
     "text": "Overview\nIn order to maintain organization, you will set up a class folder/directory on your computer. You will then create an RStudio project and connect it to GitHub. Finally, you will create directories within your new project directory so that you have an organized directory structure for storing your files. This process will also ensure that all student’s computers are configured in the same manner.\nIn class, we will use Git to interact with a remote repository connected to a Project in RStudio. Reading through these steps, however, will facilitate your ability to apply the concepts and run the associated functions in class. in order to create project for class exercises (and homework) as well as your team project.\n\nReadings and Preparation\nBefore Class: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time.\nClass: In class, some functions and concepts will be introduced and we will practice implementing code through exercises.\n\n\nTo Do: Steps of the Task\n\nSet up your class space\n\n\nCreate top-level /fods24 directory\n\n\nCreate Version Control Projects in RStudio\n\n\nExercises\n\nTeam Project (will do in class)\n\n\nMake file edits, stage the, and commit them\nPush commits to GitHub\n\nClass Activity:\nWhen you collaborate with others, you have to be more mindful of the changes you make and those that others make, ensuring that the repository can incorporate the changes. Thus, we will interact with Git in class in a slightly different way.\nThings we will do:\n\nCreate a new project and connect to a remote repository\nCreate a branch\nMake file edits, stage them, and commit them\nPush commits to GitHub\nMerge your branch with the main brain"
   },
   {
     "objectID": "modules/03_using_git_and_github.html#libraries-used",
     "href": "modules/03_using_git_and_github.html#libraries-used",
-    "title": "Installing and Setting Up Git and GitHub for R",
+    "title": "Using Git and GitHub",
     "section": "Libraries Used",
     "text": "Libraries Used\n\n{usethis}: 2.2.2: for project workflow automation\n{gitcreds}: 0.1.2: for querying git credentials"
   },
   {
     "objectID": "modules/03_using_git_and_github.html#creating-a-local-directory-for-class",
     "href": "modules/03_using_git_and_github.html#creating-a-local-directory-for-class",
-    "title": "Installing and Setting Up Git and GitHub for R",
+    "title": "Using Git and GitHub",
     "section": "Creating a Local Directory for Class",
     "text": "Creating a Local Directory for Class\nCreate a folder (aka directory) named \"fods24\" on your computer. I recommend creating the directory someplace where you might not accidentally delete it."
   },
   {
     "objectID": "modules/03_using_git_and_github.html#connecting-the-repository-to-an-rstudio-project",
     "href": "modules/03_using_git_and_github.html#connecting-the-repository-to-an-rstudio-project",
-    "title": "Installing and Setting Up Git and GitHub for R",
+    "title": "Using Git and GitHub",
     "section": "Connecting the Repository to an RStudio Project",
     "text": "Connecting the Repository to an RStudio Project\n\nIn RStudio, File &gt; New Project &gt; Version Control &gt; Git.\nIn the pop-up, you will see a request for the “repository URL”. Paste the URL of the GitHub repository. This URL will be the same as what you see on your GitHub account. However, we need to add .git to the end of it.\n\n    https://github.com/&lt;your_github_username&gt;/fods-exercises.git\n\nWhen you create the project, a directory will be created as a sub-directory of /fods24 and its name should auto populate (e.g., 'fods-exercises').\n\nWARNING: Do not create the project inside of an existing project’s directory.\n* Note: I recommend that you also select *\"Open in new session\"* in order to compartmentalize projects. When you work on the team project, open the project. When you work on your homework or other class exercises, open your *homework* project.\n\nClick “Create Project” to create the new project directory, which will create:\n\na project directory on your computer\na project file with file extension .Rproj\na Git repository or link to the remote GitHub repository for the project (also an RStudio Project)\n\n\nIf the repository already exists on GitHub (and it does in this instance) you should see RStudio flash a connection to GitHub and likely pull the repo contents down to your newly-created project directory. In this case, however, your repository will contain few files."
   },
   {
     "objectID": "modules/03_using_git_and_github.html#creating-project-relevant-directories",
     "href": "modules/03_using_git_and_github.html#creating-project-relevant-directories",
-    "title": "Installing and Setting Up Git and GitHub for R",
+    "title": "Using Git and GitHub",
     "section": "Creating Project Relevant Directories",
     "text": "Creating Project Relevant Directories\nNow, inside the /fods24/fods-exercises directory, create directories named:\n\ndata\ndocs\nfigs\nr\nrefs\nreport\n\nYou will now see the directory structure, though all your directories will be empty. Moving forward, save all data to /data, create all .R files in /r, and create all exercise or homework R Markdown files (e.g., .Rmd) in /report. Any readings or references can can saved in /refs and any other document files can be saved in /docs. Finally, reserve /figs for saving plots or figures."
   },
   {
     "objectID": "modules/03_using_git_and_github.html#understanding-git-workflow-basics",
     "href": "modules/03_using_git_and_github.html#understanding-git-workflow-basics",
-    "title": "Installing and Setting Up Git and GitHub for R",
+    "title": "Using Git and GitHub",
     "section": "Understanding Git Workflow Basics",
     "text": "Understanding Git Workflow Basics\nThere are three main parts to Git Workflow:\n\nMake local changes (in your working directory)\nStage changes (in your staging directory)\nCommit changes (to apply them for pushing to your remote repository)"
   },
   {
     "objectID": "modules/03_using_git_and_github.html#making-local-file-changes-committing-and-pushing-to-github",
     "href": "modules/03_using_git_and_github.html#making-local-file-changes-committing-and-pushing-to-github",
-    "title": "Installing and Setting Up Git and GitHub for R",
+    "title": "Using Git and GitHub",
     "section": "Making Local File Changes, Committing, and Pushing to GitHub",
     "text": "Making Local File Changes, Committing, and Pushing to GitHub\n\nMaking a local change\n\nCreate a .R script and name it something like yourname.R. Where should you save it? You guessed it: /r.\n\nChecking the status of local file changes\n\nCheck for the local changes you have made at the Terminal by typing git status and press return/enter\n\n$ git status\n\nIf you made changes, Git will tell you what those changes are. For example, there will be a new file, a deleted file, a modified file, etc.\n\nStaging Changes (Add Changes)\n\nStage a specific change: If you made multiple changes and all you want to do is commit a single change and no others, you can specify the change you want to add. For example, if you want only to add a specific file, like yourname.R, you will use git add &lt;file&gt;... such that &lt;file&gt; refers to the file name.\n\nAt the Terminal prompt, type git add followed by &lt;file&gt; to include in what will be committed)\n$ git add r/yourname.R\n\nStage all change(s): When you make numerous changes, you may wish not to specify each file individually as that could be tedious. In this case, you may wish to stage all of your changes. Assuming everything you are doing is relevant to the project, one of the easiest ways to add changes is to just add all of your file changes. Note, your changes should not be done inside data files (e.g., .csv, .xlsx). Changes should only be done using R code. If not, your project will not be reproducible.\n\nAt the Terminal, you can type git add . which tells Git that you are adding all of those changes to commit them.\n$ git add .\n\n\nCommitting the change(s)\n\nNow that you made a change, you will commit it and assign a useful message to remind your future self and collaborators what you just did.\n\nAt the Terminal, type git commit to commit the changes, add -m to tell git you want a message, and then type the message as a string, \"my message here\" and then press enter/return to commit the changes.\n$ git commit -m \"added my first .R file\"\n\n\nPush the change to the remote repository\n\nWe need to push the changes to the remote GitHub repository for version control and for collaborators to access\n\nAt the Terminal, you will push those changes using git push and press enter/return to push.\n$ git push\n\nIf you navigate to your GitHub account in your web browser, you will see the changes there as soon as they arrive. Congrats!\n\nPractice (Yes, seriously): Changing, Committing, and Pushing Again\n\nYou know that file with your name is not needed for the project. Delete it from the project as you normally would delete a file (no need to use the Terminal) and then add the change, commit the change with message “deleted my silly file”, and push changes.\nIf for some reason, your push did not work, you may need to specify the project branch. Branching is beyond the scope of this course. If team members are working on separate tasks, their code will be compartmentalized so you can use the main branch.\n\nYou can set the branch to the main branch at the Terminal using git branch -M main.\n$ git branch -M main\n\n\nPushing Specific File Changes\n\nYou should not push all of your edits. For example, if you edit a file and save it but it is incomplete (e.g., it contains errors) that will create problems for your team members, you do not want to push them to the repo. If you do, your team member’s code will also break if they are sourcing (e.g., source()) your script file. Similarly, if the data file you write out contains errors, a teammate cannot read that file in successfully. So make sure that what you push is correct and accurate before pushing.\n\nPulling Changes from the Remote\n\nThe opposite of push is pull. When your teammates push their changes (e.g., data cleaning, file creation, etc.) to the repo and your code depends on those files, you will want to make sure their edits are in your local project so that you can use them.\n\nTo pull the changes down to your project, at the Terminal, type git pull.\n$ git pull\n\nYou should find the changes appear in your local project directory."
   },
   {
     "objectID": "modules/03_using_git_and_github.html#using-the-git-tab-in-your-rstudio-pane",
     "href": "modules/03_using_git_and_github.html#using-the-git-tab-in-your-rstudio-pane",
-    "title": "Installing and Setting Up Git and GitHub for R",
+    "title": "Using Git and GitHub",
     "section": "Using the Git Tab in your RStudio Pane",
     "text": "Using the Git Tab in your RStudio Pane\nIf you do not use the Terminal to run Git commands (e.g., add, commit, and push), you can also use Git with RStudio, though I tend to find this process creates an annoying lag when there are many files.\nWhen you edit files (e.g., made changes and saved the file), the file will be detected in the project if you have set up Git. The changes detected will be listed in the window for this tab. You can then stage, commit the changes, push the changes using this RStudio GUI.\n\nClick the Git tab\nCheck the box under Staged next to the file\n\nNote: There may be a delay.\n\nClick the Commit icon on the toolbar directly above Status\n\nA window will pop up showing some of the edits to the file\nA window for Commit message will also appear for adding your message. This window is where you want to be.\n\nType your commit message in that window\n\nYour message should be clear and useful to remind your future self or colleagues of the edits but not be overly wordy.\n\nClick Commit to commit the change\nClick the Green Arrow to Push your committed change up to the remote repository.\n\nNote: You will click the Blue Arrow to Pull the changes down from the remote repository what were pushed there by your collaborators"
   },
   {
     "objectID": "modules/03_using_git_and_github.html#creating-a-version-control-project-in-rstudio-for-the-team-project",
     "href": "modules/03_using_git_and_github.html#creating-a-version-control-project-in-rstudio-for-the-team-project",
-    "title": "Installing and Setting Up Git and GitHub for R",
+    "title": "Using Git and GitHub",
     "section": "Creating a Version Control Project in RStudio for the Team Project",
     "text": "Creating a Version Control Project in RStudio for the Team Project\n\nIn RStudio, File &gt; New Project &gt; Version Control &gt; Git.\nIn the pop-up, you will see a request for the “repository URL”. Paste the URL of the GitHub repository based on your liaison name. This URL will be the same as what you see on your GitHub account. However, we need to add .git to the end.\n\n    https://github.com/slicesofdata/fods24-&lt;to_be_announced&gt;.git\n\nWhen you create the project, a directory will be created, a name will auto populate (e.g., ‘fods24-liaison’). If you change the name, name it something that you will know as your team project. In order to keep the class organized, I might suggest you create the project in your FODS course directory. You should already have a R project for you homework called something like homework.Rproj in that course directory. WARNING: Do not create the project inside of an existing project’s directory.\n\nNote: I recommend that you also select “Open in new session” in order to compartmentalize projects. When you work on the team project, open the project. When you work on your homework or other class exercises, open your homework project.\n\nClick “Create Project” to create the new project directory, which will create:\n\na project directory on your computer\na project file with file extension .Rproj\na Git repository or link to the remote GitHub repository for the project (also an RStudio Project)\n\n\nIf the repository already exists (and it does in this instance) you should see RStudio flash a connection to GitHub and likely pull the repo contents down to your newly-created project directory. You will see the directory structure and corresponding files. Your code files should be saved to /r, the data you read or save to /data, your RMarkdown report files to /report, etc.\nThese directories are there for project management purposes. Also, to maintain a clean project, create sub-directories within those directories as needed; create new directories if and only if its contents differ qualitatively from what is in the existing directories. Because the project report will need to be reproduced, don’t complicate your code by creating RMarkdown files for code used to perform some task when only code is needed. In those cases, use .R code script files. Use .Rmd files only for a report containing text and minor code. You cannot easily source() .Rmd files and creating them will be a a hassle to deal with later. Project organization is an element of the project."
   },
   {
     "objectID": "modules/03_using_git_and_github.html#summary",
     "href": "modules/03_using_git_and_github.html#summary",
-    "title": "Installing and Setting Up Git and GitHub for R",
+    "title": "Using Git and GitHub",
     "section": "Summary",
     "text": "Summary\nYou now understand how to create projects in R, how to connect projects to remote GitHub repositories, and how to use Git to track your work in your local repository and a remote one. These simple commands are basic but provide you some exposure to and confidence with using Git for version control."
   },
   {
     "objectID": "modules/03_using_git_and_github.html#other-resources",
     "href": "modules/03_using_git_and_github.html#other-resources",
-    "title": "Installing and Setting Up Git and GitHub for R",
+    "title": "Using Git and GitHub",
     "section": "Other Resources",
     "text": "Other Resources\n\nGit Client:\n\nGit clients work like the RStudio Gui option described above but likely much better. One client is GitKraken. * If you find the Terminal command line daunting or limiting, I might recommend a Git Client to use as I am not a big fan of the RStudio interface. * GitKraken is a good option and they have lots of tutorials on their website. GitKraken is seamless to set up. Install, connect your GitHub account, select your repo to add, and voilà. You can stage, commit, and push from there.\n\nhappygitwithr"
   },
@@ -1082,7 +1229,84 @@
     "href": "modules/05_vectors_and_data_frame_basics.html#libraries",
     "title": "Vectors and Fata Frame Basics",
     "section": "Libraries",
-    "text": "Libraries\n\n{here} 1.0.1: for file path management\n\nRelated:\n\n{readxl} 1.4.3: for reading Excel spreadsheets"
+    "text": "Libraries\n\n{here} 1.0.1: for file path management\n\n\nTo Do\nRead through the module. You can use the R console or open up an R Markdown (e.g., .Rmd) file to follow along interactively. If you instead prefer to simply read through the content so that you can understand the concepts without coding, that is fine too. Concepts will be applied in class in order to complete activities, however. Reading the module will provide you with confidence working on those activities and prevent you from feeling lost while completing activities. Testing out some code may provide you more confidence."
+  },
+  {
+    "objectID": "modules/05_vectors_and_data_frame_basics.html#combining-elements-into-vectors-using-c",
+    "href": "modules/05_vectors_and_data_frame_basics.html#combining-elements-into-vectors-using-c",
+    "title": "Vectors and Fata Frame Basics",
+    "section": "Combining elements into vectors using c()",
+    "text": "Combining elements into vectors using c()\nOne way to create vectors is by using the combine function, c(). You can combine numeric and character elements into a vector. Let’s create some examples and assign names to them.\n\nNumeric vector:\n\nnumeric_vector &lt;- c(23, 22, 35)\n\nCall the object:\n\nnumeric_vector\n\n[1] 23 22 35\n\n\nNotice that the 3 returned elements of the vector are numbers.\n\n\nCharacter vector:\n\ncharacter_vector &lt;- c(\"Salle\", \"Jane\", \"Beavis\")\n\ncharacter_vector\n\n[1] \"Salle\"  \"Jane\"   \"Beavis\"\n\n\nNow, the 3 returned elements are enclosed by quotation marks, \". The quotes help you understand that the vector is character type.\n\n\nNumeric values as a character:\n\nquote_num_vector &lt;- c(\"23\", \"22\", \"35\")\n\nquote_num_vector\n\n[1] \"23\" \"22\" \"35\"\n\n\nAlthough the elements are numbers, they are in quotes, which indicates that the vector is character type.\n\n\nNumbers and characters:\n\nnum_char_vector &lt;- c(23, \"22\", \"35\")\n\nnum_char_vector\n\n[1] \"23\" \"22\" \"35\"\n\n\nAlthough one of the elements of the vector is numeric, the entire vector is returned as character. This is an important characteristic of vectors in R. They can be numeric or character but not both. If there is even one number enclosed by quotes, the vector is character as seen here.\n\nc(23, 22, 35, \"30\")\n\n[1] \"23\" \"22\" \"35\" \"30\""
+  },
+  {
+    "objectID": "modules/05_vectors_and_data_frame_basics.html#creating-vectors-using-rnorm",
+    "href": "modules/05_vectors_and_data_frame_basics.html#creating-vectors-using-rnorm",
+    "title": "Vectors and Fata Frame Basics",
+    "section": "Creating vectors using rnorm()",
+    "text": "Creating vectors using rnorm()\nLet’s use rnorm() to create a numeric vector object that will represent sampling from a random normal distribution. The distribution will have a certain number of observations, n, a mean, mean, and a standard deviation, sd. We will need to pass arguments to create the data.\nArguments:\n\nn: the number of elements in the vector\nmean: the mean of the elements\nsd: the standard deviation of the elements\n\nLet’s create a random normal distribution with a length of 1000 values. The mean should be 100 and standard deviation 15 (e.g., IQ distribution).\n\niq &lt;- rnorm(n = 1000, mean = 100, sd = 15)  \n\nRemember, as long as the order is correct, you do not have to specify the parameter names. You only need to specify the arguments for the parameters.\n\niq &lt;- rnorm(1000, 100, 15)      \n\nLook at the object’s head using head() in order to inspect the first 6 elements:\n\nhead(iq)                        \n\n[1]  84.81493 122.85108 113.26173 121.99849 131.76406  99.27283\n\n\nOr inspect the first 10 elements by setting n = 10.\n\nhead(iq, n = 10)\n\n [1]  84.81493 122.85108 113.26173 121.99849 131.76406  99.27283  81.17513\n [8] 113.52166  80.87113  91.85421"
+  },
+  {
+    "objectID": "modules/05_vectors_and_data_frame_basics.html#creating-number-sequences-using-seq",
+    "href": "modules/05_vectors_and_data_frame_basics.html#creating-number-sequences-using-seq",
+    "title": "Vectors and Fata Frame Basics",
+    "section": "Creating number sequences using seq()",
+    "text": "Creating number sequences using seq()\nYou can dig a little more deeply into the functionality of seq() by looking at the help documentation, help(seq) or ?seq.\nArguments:\nfrom, to: the starting and (maximal) end values of the sequence. Of length 1 unless just from is supplied as an unnamed argument. by: number: increment of the sequence. length.out: desired length of the sequence. A non-negative number, which for seq and seq.int will be rounded up if fractional. along.with: take the length from the length of this argument.\n\nSequences from one value to another\nUse seq() to create a sequence FROM 1 TO 10:\n\nseq(from = 1, to = 10)       \n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\nThe help documentation will inform you that the from and to parameters are in the first and second position, respectively. We can specify their arguments without using the parameter explicitly.\nReference only to:\n\nseq(1, to = 10)\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\nOr, remove both:\n\nseq(1, 10) \n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\nThe returned result will be the same.\n\n\nSequences with increments using the by argument\nWe can also modify the from and to step through using the by function such that the numbers will increment by the value of by.\n\nseq(2, 10, by = 2)           # FROM 2 TO 10 BY 2s, dropping from and to arguments\n\n[1]  2  4  6  8 10\n\n\nUsing another example, create a sequence from 1 to 1000 and assign that to an object named id.\n\nid &lt;- seq(1, 1000)            # assign a sequence of 1 to 1000 to a vector named id\n\nInspecting the head:\n\nhead(id)\n\n[1] 1 2 3 4 5 6\n\n\n\n\nObtaining the number of elements using length()\nIf the number of elements in a vector variable changes, hard coding can be troublesome. We can return the length() of the sex vector and pass that as the sequence value. This approach is useful for objects that get modified. This approach would be more flexible.\n\nlength(sex)                # length will return the length of the vector, including NAs\n\n[1] 1000\n\n\nGreat, we get 1000!\n\n\nCreating a sequence using other functions\nThe argument for a function can also be another function. If we have the number of elements in a vector, we could also create a sequence from a starting number to the ending number as defined the another function.\nAssign a sequence of 1 to the length() of the sex object and assign that to an object named id. To make the code more easy to read, we will place the parameters on separate lines.\n\nid &lt;- seq(from = 1, \n          to = length(sex)\n          )  \n\nAnd look at the head:\n\nhead(id)\n\n[1] 1 2 3 4 5 6"
+  },
+  {
+    "objectID": "modules/05_vectors_and_data_frame_basics.html#converting-numeric-or-characters-containing-numbers-to-integer",
+    "href": "modules/05_vectors_and_data_frame_basics.html#converting-numeric-or-characters-containing-numbers-to-integer",
+    "title": "Vectors and Fata Frame Basics",
+    "section": "Converting numeric or characters containing numbers to integer",
+    "text": "Converting numeric or characters containing numbers to integer\nConvert to integer:\n\niq &lt;- as.integer(iq)\n\nNow they are integers:\n\nhead(iq)\n\n[1]  84 122 113 121 131  99"
+  },
+  {
+    "objectID": "modules/05_vectors_and_data_frame_basics.html#converting-numeric-vectors-to-character",
+    "href": "modules/05_vectors_and_data_frame_basics.html#converting-numeric-vectors-to-character",
+    "title": "Vectors and Fata Frame Basics",
+    "section": "Converting numeric vectors to character",
+    "text": "Converting numeric vectors to character\nIf the characters are numbers, pass an existing vector into as.character() to convert\n\niq &lt;- as.character(iq)                # make is a character vector  \n\nNow the numbers are in quotes representing strings.\n\nhead(iq)               \n\n[1] \"84\"  \"122\" \"113\" \"121\" \"131\" \"99\""
+  },
+  {
+    "objectID": "modules/05_vectors_and_data_frame_basics.html#converting-character-vectors-to-numeric",
+    "href": "modules/05_vectors_and_data_frame_basics.html#converting-character-vectors-to-numeric",
+    "title": "Vectors and Fata Frame Basics",
+    "section": "Converting character vectors to numeric",
+    "text": "Converting character vectors to numeric\nIf the elements are characters, pass an existing vector into as.integer() to convert.\n\niq &lt;- as.integer(iq)  \n\nNow elements are integers, not floats.\n\nhead(iq)\n\n[1]  84 122 113 121 131  99\n\n\nYou can also wrap a function in another function when the initial object is created. Here, as.integer() converts the vector returned by rnorm() into an integer.\n\niq &lt;- as.integer(rnorm(1000, 100, 15))                 # create initially by wrapping as.integer() around rnorm()"
+  },
+  {
+    "objectID": "modules/05_vectors_and_data_frame_basics.html#using-piping-operators-and",
+    "href": "modules/05_vectors_and_data_frame_basics.html#using-piping-operators-and",
+    "title": "Vectors and Fata Frame Basics",
+    "section": "Using piping operators |> and %>%",
+    "text": "Using piping operators |&gt; and %&gt;%\nAlternatively, if nesting functions and reading them from the inside out confuses you, you can instead use piping operators to pass objects from function to function. Piping also improves code readability.\nBase R now includes it’s own piping operator, |&gt;. In the past, piping was accomplish using {magrittr} piping operators and sometimes those operators work better than the base R pipe. The main piping operator from {magrittr} is %&gt;%. To use it, we will need to load the library first using library(), though you should loads all libraries at the top of your file. We will use both piping operators to illustrate differences in functionality. I may use them interchangeably in materials.\nLoad the library:\n\nlibrary(magrittr)\n\nCreate the iq vector:\n\niq &lt;- rnorm(1000, 100, 15)        # create the random normal dist\n\nCheck whether the vector is an integer:\n\nis.integer(iq)\n\n[1] FALSE\n\n\nis.integer() is a logical test, so it will return either TRUE or FALSE. You see that the vector is not an integer as FALSE was returned. Because IQ scores are integers, let’s use the process to make it an integer.\n\niq &lt;- rnorm(1000, 100, 15) %&gt;%    # create the random normal dist\n    as.integer()                  # pipe to make integer\n\nUsing base R’s piping operator:\n\niq &lt;- rnorm(1000, 100, 15) |&gt;     # create the random normal dist\n    as.integer()                  # pipe to make integer"
+  },
+  {
+    "objectID": "modules/05_vectors_and_data_frame_basics.html#examine-the-head-of-the-object",
+    "href": "modules/05_vectors_and_data_frame_basics.html#examine-the-head-of-the-object",
+    "title": "Vectors and Fata Frame Basics",
+    "section": "Examine the head() of the object",
+    "text": "Examine the head() of the object\nHowever you create the vector, we can examine the head of the vector using head():\n\nhead(iq)\n\n[1] 111 114 103 119  73 120\n\n\nA note about pipes: If you did not pipe the object from one function to another, you would need to wrap the functions as layers. The the function in the inner layer would be executed first and the function of the outer layer would be executed last.\nas.integer(rnorm(1000, 100, 15))\nAlthough there is nothing incorrect with this code, readability is compromised because you have to read the functions from the inside out. Piping objects to functions allows for reading functions from top to bottom."
+  },
+  {
+    "objectID": "modules/05_vectors_and_data_frame_basics.html#plotting-the-vector-using-hist",
+    "href": "modules/05_vectors_and_data_frame_basics.html#plotting-the-vector-using-hist",
+    "title": "Vectors and Fata Frame Basics",
+    "section": "Plotting the vector using hist()",
+    "text": "Plotting the vector using hist()\nAnd to see a plot, use hist(iq):\n\nhist(iq)\n\n\n\n\nOr pass the object using a pipe (e.g., |&gt; or %&gt;%) and pipe the vector to the histogram function in base R:\n\niq %&gt;% hist()\n\n\n\n\n\niq |&gt; hist()\n\n\n\n\nNotice that this approach changes the title. When piping objects with {magrittr}’s pipe, the object is referenced using . so this because the name of the object."
+  },
+  {
+    "objectID": "modules/05_vectors_and_data_frame_basics.html#adding-a-title-to-the-plot",
+    "href": "modules/05_vectors_and_data_frame_basics.html#adding-a-title-to-the-plot",
+    "title": "Vectors and Fata Frame Basics",
+    "section": "Adding a title to the plot",
+    "text": "Adding a title to the plot\nTO add a title, pass a string argument to main:\n\niq |&gt; hist(main = \"IQ Distribution\")"
+  },
+  {
+    "objectID": "modules/05_vectors_and_data_frame_basics.html#recoding-vectors",
+    "href": "modules/05_vectors_and_data_frame_basics.html#recoding-vectors",
+    "title": "Vectors and Fata Frame Basics",
+    "section": "Recoding vectors",
+    "text": "Recoding vectors\nSometimes elements of vectors are messy and need to be fixed. In general, this process is referred to as recoding. There are various ways to recode in R and there are special libraries dedicated to recoding. Now, we will perform some simple recoding.\nYou can use ifelse() or dplyr::case_when() to test whether the elements of a vector match some condition and if yes (do one thing), otherwise no (do something else). In order to understand how these functions and many others work we need to understand a logical test.\n\nifelse()\ndplyr::case_when()\n\n\nPerforming a logical test\nWe can perform a logical test on all types of objects but this example will focus on vectors, for which all elements will be examined. The logical test will return TRUE or FALSE for each vector element depending on whether the case matches a test condition.\nRather than illustrate this the 1000 element sex vector, we will create a vector of length 5 called temp_sex. In this example, you will also see what happens when you need to clean up and recode the sloppy data. You can see are composed of both upper and lower case letters presumably corresponding to biological sex. Because R is a case-sensitive language, \"M\" and \"m\" represent different objects even though the intent is for them to be the same.\n\ntemp_sex &lt;- c(\"M\", \"m\", \"F\", \"f\", NA)\n\nYou can see that some character elements in the vector are upper- and lowercase m’s and f’s. Let’s see what happens when we perform a logical test of the vector. Remember that by itself = will be assignment (like &lt;-). In order to determine whether an object or elements of an object is equal to something, we use ==.\nFor example, temp_sex == \"M\":\n\ntemp_sex == \"M\"\n\n[1]  TRUE FALSE FALSE FALSE    NA\n\n\nThe returned vector is of the same length as the vector tested. Each element of the vector was tested and those elements that matched the character \"M\" returns TRUE. The other elements are FALSE, except of the NA, or missing value. Importantly, the logical test does not return FALSE for NAs.\n\n\nRecoding using ifelse()\nLet’s perform the logical test inside ifelse(). The function will test each element and IF it is TRUE (matches the condition) will assign 0, else/otherwise assign 1 in order to recode the letters into numbers. Of course, you may often wish to recode letters into other letters.\n\nifelse(temp_sex == \"M\", 0, 1)\n\n[1]  0  1  1  1 NA\n\n\nWe can see that all of the TRUEs are 0 and all else except for NA are 0. You can see that only the \"M\" was recoded to 0 and all other elements that were not NA were recoded as 1. Clearly, this is not correct. We can use multiple ifelse() functions but the solution won’t be offered here because it’s just really messy. Instead of focusing on bad code, let’s just focus on offering better solutions.\nPerforming the same test on sex but piping the vector to head() will allow for inspection of the first few elements.\n\nifelse(sex == \"M\", 0, 1) |&gt;\n  head()\n\n[1] 1 1 1 1 1 1\n\n\nThe ifelse() approach is fine for two groups. When there are more than two groups, however, re-coding can be confusing with ifelse() because you’ll need to nest an ifelse() inside an ifelse(). The popular {dplyr} library also has a couple functions similar to ifelse(), for example, if_else() and case_when().\n\n\nRecoding using dplyr::case_when()\nThe case_when() function will also perform logical tests but you can easily specify more than one. The help documentation tells us that “This function allows you to vectorise multiple if_else() statements. Each case is evaluated sequentially and the first match for each element determines the corresponding value in the output vector. If no cases match, the .default is used as a final”else” statement.” And later “If none of the cases match and no .default is supplied, NA is used.\nWith case_when(), we will perform a logical test of the elements against the character string \"M\" first. The elements that match \"M\" will evaluate as TRUE and will be recoded as 0. Then the elements of the new recoded vector will be tested again against \"F\". Those that are TRUE will be recoded as 1. Anything else will be assigned NA for missing because they matched neither \"M\" nor \"F\".\nWe wee that only the first element returns TRUE. Other elements are FALSE or NA.\n\ndplyr::case_when(\n  temp_sex == \"M\" ~ 0,\n  temp_sex == \"F\" ~ 1\n  ) \n\n[1]  0 NA  1 NA NA\n\n\nBut note that if the character case is inconsistent, NA’s will replace elements that are \"m\" and \"f\". An easy fix for casing is to convert the vector (without assignment) by passing it to tolower() or toupper() and then perform the logical conversion on the case change elements.\n\ndplyr::case_when(\n  toupper(temp_sex) == \"M\" ~ 0,\n  toupper(temp_sex) == \"F\" ~ 1\n  ) \n\n[1]  0  0  1  1 NA\n\n\nYou can now see that all elements will evaluate to TRUE and are recoded except for the NA in the vector. Keep in mind that strings may be very messy and require careful inspection and cleaning. Sometimes simple case recoding solves your problems.\nNote: There is a much powerful library called {stringr} for wrangling strings. We will use this library to perform other tasks. If you wanted to familiarize yourself with making strings upper or lowercase using that library, use stringr::str_to_lower() and stringr::str_to_upper().\nTo illustrate:\n\nlibrary(stringr)            # load the library first\n\ndplyr::case_when(\n  str_to_upper(temp_sex) == \"M\" ~ 0,\n  str_to_upper(temp_sex) == \"F\" ~ 1\n  ) \n\n[1]  0  0  1  1 NA\n\n\nWhen you have more logical tests to perform, you can specify them on a new line. Using the existing vector, we can illustrate with a silly example.\n\ndplyr::case_when(\n  temp_sex == \"m\" ~ \"Young Men\",\n  temp_sex == \"M\" ~ \"Old Men\",\n  temp_sex == \"f\" ~ \"Young Women\",\n  temp_sex == \"F\" ~ \"Old Women\",\n  ) \n\n[1] \"Old Men\"     \"Young Men\"   \"Old Women\"   \"Young Women\" NA           \n\n\nWe have not recoded the vector to have clear names for 4 groups, plus and NAs. Of course, you have not changed temp_sex unless you assign the returned vector to a name.\n\ntemp_sex\n\n[1] \"M\" \"m\" \"F\" \"f\" NA \n\n\nAssign to temp_sex to overwrite:\n\ntemp_sex &lt;- dplyr::case_when(\n  temp_sex == \"m\" ~ \"Young Men\",\n  temp_sex == \"M\" ~ \"Old Men\",\n  temp_sex == \"f\" ~ \"Young Women\",\n  temp_sex == \"F\" ~ \"Old Women\",\n  ) \n\n\ntemp_sex\n\n[1] \"Old Men\"     \"Young Men\"   \"Old Women\"   \"Young Women\" NA"
   },
   {
     "objectID": "modules/07_variables_and_measures_of_cognition.html",
@@ -1425,7 +1649,7 @@
     "href": "slides/02_git.html#shared-repository-workflow",
     "title": "Git and GitHub",
     "section": "Shared Repository Workflow",
-    "text": "Shared Repository Workflow\n\nupdate your local repo\n\ngit pull origin master\n\nensure you are on main branch\n\n`git checkout\n\ncreate a working branch\n\ngit checkout -b yourBranchName\n\nmake your changes on your branch and stage them\n\ngit add\n\ncommit changes locally\n\ngit commit -m \"description of changes\"\n\nupload the changes (including your new branch) to GitHub\n\ngit push origin yourBranchName\n\nVisit main repo on GitHub where you should now see your new branch click on your branch name click on “Pull Request” button (URC) click on “Send Pull Request”"
+    "text": "Shared Repository Workflow\n\nupdate your local repo\n\n\ngit pull origin master\n\n\nensure you are on main branch\n\n\n`git checkout\n\n\ncreate a working branch\n\n\ngit checkout -b yourBranchName\n\n\nmake your changes on your branch and stage them\n\n\ngit add\n\n\ncommit changes locally\n\n\ngit commit -m \"description of changes\"\n\n\nupload the changes (including your new branch) to GitHub\n\n\ngit push origin yourBranchName\nVisit main repo on GitHub where you should now see your new branch click on your branch name click on “Pull Request” button (URC) click on “Send Pull Request”"
   },
   {
     "objectID": "slides/02_git.html#some-basic-commands",

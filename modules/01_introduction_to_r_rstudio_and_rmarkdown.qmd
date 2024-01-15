@@ -1,0 +1,85 @@
+---
+title: "**Introduction to RStudio and RMarkdown**"
+author: "Gabriel I. Cook"
+#date: "`r Sys.Date()`"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+
+execute:
+  #enabled: false
+  freeze: auto
+---
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+# secret functions
+# source(here::here("r", "src", "color_format_text.R"))
+```
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+# huber text
+huber_pdf <- "https://www.markhuberdatascience.org/_files/ugd/c2b9b6_543ea42a1ea64e32b4440b34ffd71635.pdf"
+front_matter <- 10
+huber_intro_ch <- glue::glue(huber_pdf,"#page=",front_matter + 3)
+huber_rmarkdown_ch <- glue::glue(huber_pdf,"#page=",front_matter + 10)
+huber_graphing_ch <- glue::glue(huber_pdf,"#page=",front_matter + 17)
+huber_transformation_ch <- glue::glue(huber_pdf,"#page=",front_matter + 59) # 5
+huber_summaries_ch <- glue::glue(huber_pdf,"#page=",front_matter + 71)
+huber_eda_var_ch <- glue::glue(huber_pdf,"#page=",front_matter + 81)
+huber_eda_covar_ch <- glue::glue(huber_pdf,"#page=",front_matter + 93)
+huber_import_ch <- glue::glue(huber_pdf,"#page=",front_matter + 103)
+huber_tidy_data_ch <- glue::glue(huber_pdf,"#page=",front_matter + 123)
+huber_relational_ch <- glue::glue(huber_pdf,"#page=",front_matter + 141)
+huber_filtering_joins_ch <- glue::glue(huber_pdf,"#page=",front_matter + 150)
+huber_strings_ch <- glue::glue(huber_pdf,"#page=",front_matter + 155)
+huber_regex_ch <- glue::glue(huber_pdf,"#page=",front_matter + 162)
+huber_using_regex_ch <- glue::glue(huber_pdf,"#page=",front_matter + 170)
+huber_func_patterns_ch <- glue::glue(huber_pdf,"#page=",front_matter + 182)
+huber_factors_ch <- glue::glue(huber_pdf,"#page=",front_matter + 186)
+huber_sql_ch <- glue::glue(huber_pdf,"#page=",front_matter + 199)
+huber_writing_functions_ch <- glue::glue(huber_pdf,"#page=",front_matter + 232)
+huber_modeling_ch <- glue::glue(huber_pdf,"#page=",front_matter + 241)
+```
+
+
+::: callout-important
+## Under construction. 
+
+This page is a work in progress and may contain areas that need more detail or that required syntactical, grammatical, and typographical changes. If you find some part requiring some editing, please let me know so I can fix it for you.
+:::
+
+
+```{r}
+#| label: load-packages
+#| include: false
+
+#library()
+source(here::here("r", "my_functions.R"))
+
+```
+
+# **Overview**
+
+In this module, we familiarize ourselves with using R in RStudio as well as create files that contain both text and `R` using  [**RMarkdown**](https://gabrielcook.xyz/fods24/cheatsheets/rmarkdown-2.0.pdf). 
+
+
+## **Readings and Preparation**
+
+*Before Class*: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time.  
+
+*Class*: In class, some functions and concepts will be introduced and we will practice implementing code through exercises. 
+
+## **Supplementary Readings**
+
+```{r eval=FALSE, warning=FALSE, include=FALSE}
+# **To Do**
+# 
+#- [R4DS: YAML Header](https://r4ds.hadley.nz/quarto.html#yaml-header)
+```
+
+- [Huber: RMarkdown](`r huber_rmarkdown_ch`)
+
+
+## **Libraries** 
+
+- **{here}** `r packageVersion("here")`: for file path management
+
+

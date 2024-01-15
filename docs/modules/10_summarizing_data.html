@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gabriel I. Cook">
-<meta name="dcterms.date" content="2024-01-10">
+<meta name="dcterms.date" content="2024-01-15">
 
 <title>PSYC166 - Summarizing Data</title>
 <style>
@@ -276,6 +276,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../modules/01_introduction_to_r_rstudio_and_rmarkdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Introduction to RStudio and RMarkdown</strong></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../modules/02_installing_and_setting_up_git_and_github.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><strong>Installing and Setting Up Git and GitHub for R</strong></span></a>
   </div>
@@ -283,7 +289,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../modules/03_using_git_and_github.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Installing and Setting Up Git and GitHub for R</strong></span></a>
+ <span class="menu-text"><strong>Using Git and GitHub</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -349,7 +355,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../modules/14_strings_and_factors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Strings and Factors</strong></span></a>
+ <span class="menu-text"><strong>Strings, Factors, and Regular Expressions</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -503,7 +509,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 10, 2024</p>
+      <p class="date">January 15, 2024</p>
     </div>
   </div>
   
@@ -554,12 +560,12 @@ Under construction.
 </section>
 <section id="external-functions" class="level2">
 <h2 class="anchored" data-anchor-id="external-functions"><strong>External Functions</strong></h2>
-<p>Provided in class:</p>
-<p><code>view_html()</code>: for viewing data frames in html format, from <code>/r/my_functions.R</code></p>
-<p>You can use this function in your own workspace but I am having a challenge rendering this to the website, so I’ll default to <code>print()</code> on occasion.</p>
+<p><code>view_html()</code>: for viewing data frames in <code>HTML</code> format</p>
+<p>You can access remotely using this code, though you do not need to do so now.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"r"</span>, <span class="st">"my_functions.R"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/slicesofdata/fods24/main/r/functions/view_html.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>You can use this function in your own work space but I am having a challenge rendering this to the website, so I’ll default to <code>print()</code> on occasion.</p>
 </section>
 <section id="libraries-1" class="level2">
 <h2 class="anchored" data-anchor-id="libraries-1"><strong>Libraries</strong></h2>

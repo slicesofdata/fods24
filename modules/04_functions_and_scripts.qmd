@@ -20,6 +20,31 @@ execute:
 webshot::install_phantomjs()
 ```
 
+```{r message=FALSE, warning=FALSE, include=FALSE}
+# huber text
+huber_pdf <- "https://www.markhuberdatascience.org/_files/ugd/c2b9b6_543ea42a1ea64e32b4440b34ffd71635.pdf"
+front_matter <- 10
+huber_intro_ch <- glue::glue(huber_pdf,"#page=",front_matter + 3)
+huber_rmarkdown_ch <- glue::glue(huber_pdf,"#page=",front_matter + 10)
+huber_graphing_ch <- glue::glue(huber_pdf,"#page=",front_matter + 17)
+huber_transformation_ch <- glue::glue(huber_pdf,"#page=",front_matter + 59) # 5
+huber_summaries_ch <- glue::glue(huber_pdf,"#page=",front_matter + 71)
+huber_eda_var_ch <- glue::glue(huber_pdf,"#page=",front_matter + 81)
+huber_eda_covar_ch <- glue::glue(huber_pdf,"#page=",front_matter + 93)
+huber_import_ch <- glue::glue(huber_pdf,"#page=",front_matter + 103)
+huber_tidy_data_ch <- glue::glue(huber_pdf,"#page=",front_matter + 123)
+huber_relational_ch <- glue::glue(huber_pdf,"#page=",front_matter + 141)
+huber_filtering_joins_ch <- glue::glue(huber_pdf,"#page=",front_matter + 150)
+huber_strings_ch <- glue::glue(huber_pdf,"#page=",front_matter + 155)
+huber_regex_ch <- glue::glue(huber_pdf,"#page=",front_matter + 162)
+huber_using_regex_ch <- glue::glue(huber_pdf,"#page=",front_matter + 170)
+huber_func_patterns_ch <- glue::glue(huber_pdf,"#page=",front_matter + 182)
+huber_factors_ch <- glue::glue(huber_pdf,"#page=",front_matter + 186)
+huber_sql_ch <- glue::glue(huber_pdf,"#page=",front_matter + 199)
+huber_writing_functions_ch <- glue::glue(huber_pdf,"#page=",front_matter + 232)
+huber_modeling_ch <- glue::glue(huber_pdf,"#page=",front_matter + 241)
+```
+
 ::: callout-important
 ## Under construction. 
 
@@ -32,17 +57,20 @@ A good friend of mine was once tried using R to summarize data. He couldn't figu
 
 Although the R language differs from other languages like Python, JavaScript, or HTML, the concepts covered is this section may be redundant for student who have taken a computer-science class. For beginners, the concepts may initially be challenging or confusing. You may even question why we cannot just jump into data manipulation and why all of this matters. In order to code in `R` so that you can be comfortable using it and with communicating with other users, a very basic understanding of programming concepts is important. This way, when someone asks you about an object, function, or assignment, you will know what they are taking about. And, well, you cannot communicate with R without knowing how functions work at a basic level. 
 
+
 ## **Readings and Preparation**
 
 *Before Class*: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time.  
 
 *Class*: In class, some functions and concepts will be introduced and we will practice implementing code through exercises. 
 
+
 ## **Supplementary Readings**
 
 - [R Workflow Basics](https://r4ds.hadley.nz/workflow-basics)
+- [Huber: Functions](`r huber_writing_functions_ch`)
 
- 
+
 ### **To Do**
 
 Read through the module. You can use the `R` console or open up an `R Markdown` (e.g., `.Rmd`) file to follow along interactively. If you instead prefer to simply read through the content so that you can understand the concepts without coding, that is fine too. Concepts will be applied in class in order to complete activities, however. Reading the module will provide you with confidence working on those activities and prevent you from feeling lost. Testing out some code may provide you more confidence.
@@ -64,11 +92,13 @@ You can access remotely using this code, though you do not need to do so now.
 source("https://raw.githubusercontent.com/slicesofdata/fods24/main/r/functions/view_html.R")
 ```
 
+
 # **Simple Overview of Objects**
 
 Let's talk about **objects**, object **names**, and **assignment** of names to objects. Quite likely, you have been *assigned* a name, whether at birth or shortly thereafter. Typically speaking, you cannot leave the hospital without being given a name to be part of the governments records. As part of this process, you are also assigned a SSN. Of course, you may have been born outside of a hospital and someone forgot to process paperwork on your behalf, in which case there may not be any record of a name assigned to you nor may there be a record of you existing. Unlikely is the case, however. 
 
 In the example above, you are the *object* and a *name* has been *assigned* to you. Names help distinguish you from another person. In programming languages, different names are used to distinguish one object from another object.  
+
 
 ## **Examples of objects**
 
@@ -114,9 +144,11 @@ For historic reasons, `<-` is the assignment operator of choice. The R community
 
 **Keyboard Shortcut:** If you don't wish to type out the two characters and you like keyboard shortcuts, you can type `Alt + and -` on Windows and `Option + and -` on Mac, though perhaps not intuitive. Savvy coders can customize the setting at **Tools** -> **Modify Keyboard Shortcuts** and search for *assignment*.
 
+
 ## **Assignment provides meaning or definition**
 
 *Assignment* is akin to creating a new word and assigning a meaning to it. You could also think of an assignment statement as a way to tell R to **"create this thing and set it equal to something"** so that the computer understand what association represents. 
+
 
 ## **A character object: A silly example**
 
@@ -196,6 +228,7 @@ And again, we can use `print()` to do the same thing:
 ```{r}
 print(name)
 ```
+
 
 ### **Being mindful of case sensitivity**
 
@@ -430,6 +463,7 @@ Parameters versus arguments
 - A function's parameters are the names listed in the function's definition.
 - A function's arguments are the actual values passed to the function.
 
+
 # **An example with `length()`**
 
 Example:
@@ -444,6 +478,7 @@ Thus the *argument* is the value passed to the parameter as shown here:
 ```{r}
 length(x = c("Bob", "Jim", "Sally"))
 ```
+
 
 The **returned** value is the integer representing the number of elements.
 
@@ -717,7 +752,6 @@ is.vector(names(USArrests))
 
 typeof(names(USArrests))   # what is type of structure are the names
 ```
-
 
 
 # **Session Information**

@@ -1,5 +1,5 @@
 ---
-title: "**Installing and Setting Up Git and GitHub for R**"
+title: "**Using Git and GitHub**"
 author: "Gabriel I. Cook"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 

@@ -1,5 +1,5 @@
 ---
-title: "**Strings and Factors**"
+title: "**Strings, Factors, and Regular Expressions**"
 author: "Gabriel I. Cook"
 #date: "`r Sys.Date()`"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
@@ -46,6 +46,7 @@ In this module, we work with strings, or character vectors, and factors.
 ```{r eval=FALSE, warning=FALSE, include=FALSE}
 # **To Do**
 # 
+# https://uoftcoders.github.io/studyGroup/lessons/r/intermediate/lesson/
 ## **Supplementary Readings**
 
 #- [R Workflow Basics](https://r4ds.hadley.nz/data-transform)
@@ -55,11 +56,4 @@ In this module, we work with strings, or character vectors, and factors.
 ## **Libraries** 
 
 - **{here}** `r packageVersion("here")`: for file path management
-- **{readr}** `r packageVersion("readr")`: for reading `.csv`, `.tsv`, and `.fwf` files
-- **{openxlsx}** `r packageVersion("openxlsx")`: for reading Excel spreadsheets from a URL and writing Excel files
-- **{haven}** `r packageVersion("haven")`: for reading SPSS, Stata, and SAS files (e.g., `.sav`, `.dta`, `.sas7bdat`, etc. )
-- **{rio}** `r packageVersion("rio")`: a Swiss-Army knife for data I/O
 
-Related:
-
-- **{readxl}** `r packageVersion("readxl")`: for reading Excel spreadsheets
