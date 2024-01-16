@@ -1287,18 +1287,36 @@ margin-right: 0; }
 </ul>
 </div>
 </section>
+<section id="some-basic-commands" class="slide level2">
+<h2><strong>Some Basic Commands</strong></h2>
+<div>
+<p><code>Fork</code>: to make a copy of a repo in your own GitHub account</p>
+<p><code>Clone</code>: make a copy of the your GitHub repo on your local computer. * copies a remote repo to create a local repo with a remote called origin automatically set up.</p>
+</div>
+</section>
+<section id="some-basic-commands-cont." class="slide level2">
+<h2><strong>Some Basic Commands (Cont.)</strong></h2>
+<div>
+<p><code>Pull</code>: incorporate changes into your repo</p>
+<p><code>Add</code>: Adding snapshots of your changes to the “Staging” area.</p>
+<p><code>Commit</code>: akes the files as they are in your staging area and stores a snap shot of your files (changes) permanently in your Git directory.</p>
+<p><code>Push</code>: You “push” your files (changes) to the remote repo</p>
+<p><code>Merge</code>: Incorporate changes into the branch you are on.</p>
+<p><code>Status</code>: check the status of a repo changes, etc.</p>
+<p><code>Pull Request</code>: Collaboration term. By “issuing a pull request” to the owner of the upstream repo, you are requesting that your changes be pulled into their repo (accept your changes/work).</p>
+</div>
+</section>
 <section id="making-local-file-changes-committing-and-pushing-to-github" class="slide level2">
 <h2><strong>Making Local File Changes, Committing, and Pushing to GitHub</strong></h2>
 <div>
 <ul>
 <li class="fragment">Make a change to a file</li>
-<li class="fragment">Check <strong>status</strong> of project for changes</li>
-<li class="fragment"><strong>Stage</strong> change</li>
-<li class="fragment"><strong>Commit</strong> all changes</li>
-<li class="fragment"><strong>Push</strong> changes</li>
-<li class="fragment"><strong>Commit</strong> a specific change</li>
-<li class="fragment"><strong>Pull</strong> changes down from repo (downloads and integrates changes)</li>
-<li class="fragment"><strong>Fetch</strong> downloads new data (does not change your working copy)</li>
+<li class="fragment">Check <strong><em>status</em></strong> of project for changes</li>
+<li class="fragment"><strong><em>Stage</em></strong> change</li>
+<li class="fragment"><strong><em>Commit</em></strong> change(s)</li>
+<li class="fragment"><strong><em>Push</em></strong> changes</li>
+<li class="fragment"><strong><em>Pull</em></strong> changes down from repo (downloads and integrates changes)</li>
+<li class="fragment"><strong><em>Fetch</em></strong> downloads new data (does not change your working copy)</li>
 </ul>
 </div>
 </section>
@@ -1309,88 +1327,61 @@ margin-right: 0; }
 <li><code>$ git status</code></li>
 </ul>
 </section>
+<section id="shared-repository-workflow-book-analogy" class="slide level2">
+<h2><strong>Shared Repository Workflow: Book Analogy</strong></h2>
+<div>
+<ul>
+<li class="fragment"><strong><em>check out</em></strong> original (checkout main)</li>
+<li class="fragment">make a <strong><em>copy</em></strong> of the original (checkout <branch>)</branch></li>
+<li class="fragment"><strong><em>make edits</em></strong> to the copy</li>
+<li class="fragment"><strong><em>add</em></strong> the edits (add)</li>
+<li class="fragment"><strong><em>commit</em></strong> to those changes (commit)</li>
+<li class="fragment"><strong><em>push</em></strong> the edits to the copy (push) - optional</li>
+<li class="fragment"><strong><em>switch/check out</em></strong> the original (checkout main)</li>
+<li class="fragment"><strong><em>merge edits</em></strong> to the original (merge)</li>
+</ul>
+</div>
+</section>
 <section id="shared-repository-workflow" class="slide level2">
 <h2><strong>Shared Repository Workflow</strong></h2>
+<div>
 <ol type="1">
-<li>update your local repo</li>
+<li class="fragment">Pull recent changes of main: <code>git pull</code></li>
+<li class="fragment">Create a working branch (<strong>IMPORTANT!</strong>): <code>git checkout -b yourBranchName</code></li>
+<li class="fragment">Verify new branch: <code>git checkout</code></li>
+<li class="fragment">Make changes, then Stage your changes: <code>git add</code></li>
+<li class="fragment">Commit changes locally: <code>git commit -m &quot;description of changes&quot;</code></li>
+<li class="fragment">Upload your new the changes to GitHub: <code>git push</code></li>
 </ol>
-<ul>
-<li><code>git pull origin master</code></li>
-</ul>
-<ol start="2" type="1">
-<li>ensure you are on main branch</li>
-</ol>
-<ul>
-<li>`git checkout</li>
-</ul>
-<ol start="3" type="1">
-<li>create a working branch</li>
-</ol>
-<ul>
-<li><code>git checkout -b yourBranchName</code></li>
-</ul>
-<ol start="4" type="1">
-<li>make your changes on your branch and stage them</li>
-</ol>
-<ul>
-<li><code>git add</code></li>
-</ul>
-<ol start="5" type="1">
-<li>commit changes locally</li>
-</ol>
-<ul>
-<li><code>git commit -m &quot;description of changes&quot;</code></li>
-</ul>
-<ol start="6" type="1">
-<li>upload the changes (including your new branch) to GitHub</li>
-</ol>
-<ul>
-<li><p><code>git push origin yourBranchName</code></p></li>
-<li><p>Visit main repo on GitHub where you should now see your new branch click on your branch name click on “Pull Request” button (URC) click on “Send Pull Request”</p></li>
-</ul>
+</div>
 </section>
-<section id="some-basic-commands" class="slide level2">
-<h2><strong>Some Basic Commands</strong></h2>
-<p>BASIC COMMANDS/ACTIONS Term Explanation * <code>Fork</code>: to make a copy of a repo in your own GitHub account * <code>Clone</code>: make a copy of the your GitHub repo on your local computer. * In CLI: ‘git clone’ copies a remote repo to create a local repo with a remote called origin automatically set up. <code>Pull</code>: incorporate changes into your repo <code>Add</code>: Adding snapshots of your changes to the “Staging” area. <code>Commit</code>: akes the files as they are in your staging area and stores a snap shot of your files (changes) permanently in your Git directory. <code>Push</code>: You “push” your files (changes) to the remote repo <code>Merge</code>: Incorporate changes into the branch you are on. <code>Pull Request</code>: Term used in collaboration. By “issuing a pull request” to the owner of the upstream repo, you are requesting that your changes be pulled into their repo (accept your changes/work).</p>
-</section>
-<section id="the-process-in-library-form" class="slide level2">
-<h2><strong>The Process in Library Form</strong></h2>
-<ul>
-<li>check out original (checkout main)</li>
-<li>make a copy of the original (checkout <branch>)</branch></li>
-<li>make edits to the copy</li>
-<li>add the edits (add)</li>
-<li>commit to those changes (commit)</li>
-<li>push the edits to the copy (push) - optional</li>
-<li>switch/check out the original (checkout main)</li>
-<li>merge edits to the original (merge)</li>
-</ul>
-</section>
-<section id="main-branch-your-branch-merging-your-branch-to-main" class="slide level2">
-<h2><strong>Main Branch, Your Branch, Merging Your Branch to Main</strong></h2>
+<section id="merging-your-branch-to-main" class="slide level2">
+<h2><strong>Merging Your Branch to Main</strong></h2>
+<div>
 <ol type="1">
-<li><p>Switch to the main branch:</p>
-<ul>
-<li><code>git checkout main</code></li>
-</ul></li>
-<li><p>Merge the branch into main:</p>
-<ul>
-<li><code>git merge &lt;branch&gt;</code></li>
-</ul></li>
-<li><p>Confirm</p></li>
-<li><p>Delete the branch:</p>
-<ul>
-<li><code>git branch -d &lt;branch&gt;</code></li>
-</ul></li>
-<li><p>Confirm branch removal:</p>
-<ul>
-<li><code>git branch</code></li>
-</ul></li>
-<li><p>Repeat with new issue</p></li>
+<li class="fragment">Get main branch: <code>git checkout main</code></li>
+<li class="fragment">Verify main: <code>git checkout</code></li>
+<li class="fragment">Pull recent changes: <code>git pull</code></li>
+<li class="fragment">Merge into main branch: <code>git merge &lt;branch_name&gt;</code></li>
+<li class="fragment">Tag the change (optional): <code>git tag</code></li>
+<li class="fragment">Delete the branch (optional): <code>git branch -d &lt;branch_name&gt;</code></li>
+<li class="fragment">Confirm branch removal (optional): <code>git branch</code></li>
 </ol>
-<ul>
-<li>Steps 1, 2, 3, 4, 5</li>
-</ul>
+</div>
+</section>
+<section id="collaboration-process-review" class="slide level2">
+<h2><strong>Collaboration Process Review</strong></h2>
+<div>
+<ol type="1">
+<li class="fragment"><code>git checkout main</code>, then <code>git pull</code></li>
+<li class="fragment"><code>git checkout -b &lt;branch_name&gt;</code></li>
+<li class="fragment"><code>git</code> <code>add</code>, <code>commit</code>, <code>push</code> changes</li>
+<li class="fragment"><code>git checkout main</code>, then <code>git pull</code> recent changes</li>
+<li class="fragment"><code>git merge &lt;branch_name&gt;</code> into main</li>
+<li class="fragment"><code>git tag</code> to add a tag</li>
+<li class="fragment">For new issue/task: Repeat Steps 1, 2, 3, 4, 5, (6)</li>
+</ol>
+</div>
 </section>
 <section id="staging-changes-adding-changes" class="slide level2">
 <h2><strong>Staging Changes (Adding Changes)</strong></h2>
@@ -2499,6 +2490,44 @@ window.QuartoSupport = function () {
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

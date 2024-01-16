@@ -1635,7 +1635,7 @@
     "href": "slides/02_git.html#making-local-file-changes-committing-and-pushing-to-github",
     "title": "Git and GitHub",
     "section": "Making Local File Changes, Committing, and Pushing to GitHub",
-    "text": "Making Local File Changes, Committing, and Pushing to GitHub\n\n\nMake a change to a file\nCheck status of project for changes\nStage change\nCommit all changes\nPush changes\nCommit a specific change\nPull changes down from repo (downloads and integrates changes)\nFetch downloads new data (does not change your working copy)"
+    "text": "Making Local File Changes, Committing, and Pushing to GitHub\n\n\nMake a change to a file\nCheck status of project for changes\nStage change\nCommit change(s)\nPush changes\nPull changes down from repo (downloads and integrates changes)\nFetch downloads new data (does not change your working copy)"
   },
   {
     "objectID": "slides/02_git.html#checking-the-status-of-local-file-changes",
@@ -1649,14 +1649,14 @@
     "href": "slides/02_git.html#shared-repository-workflow",
     "title": "Git and GitHub",
     "section": "Shared Repository Workflow",
-    "text": "Shared Repository Workflow\n\nupdate your local repo\n\n\ngit pull origin master\n\n\nensure you are on main branch\n\n\n`git checkout\n\n\ncreate a working branch\n\n\ngit checkout -b yourBranchName\n\n\nmake your changes on your branch and stage them\n\n\ngit add\n\n\ncommit changes locally\n\n\ngit commit -m \"description of changes\"\n\n\nupload the changes (including your new branch) to GitHub\n\n\ngit push origin yourBranchName\nVisit main repo on GitHub where you should now see your new branch click on your branch name click on “Pull Request” button (URC) click on “Send Pull Request”"
+    "text": "Shared Repository Workflow\n\n\nPull recent changes of main: git pull\nCreate a working branch (IMPORTANT!): git checkout -b yourBranchName\nVerify new branch: git checkout\nMake changes, then Stage your changes: git add\nCommit changes locally: git commit -m \"description of changes\"\nUpload your new the changes to GitHub: git push"
   },
   {
     "objectID": "slides/02_git.html#some-basic-commands",
     "href": "slides/02_git.html#some-basic-commands",
     "title": "Git and GitHub",
     "section": "Some Basic Commands",
-    "text": "Some Basic Commands\nBASIC COMMANDS/ACTIONS Term Explanation * Fork: to make a copy of a repo in your own GitHub account * Clone: make a copy of the your GitHub repo on your local computer. * In CLI: ‘git clone’ copies a remote repo to create a local repo with a remote called origin automatically set up. Pull: incorporate changes into your repo Add: Adding snapshots of your changes to the “Staging” area. Commit: akes the files as they are in your staging area and stores a snap shot of your files (changes) permanently in your Git directory. Push: You “push” your files (changes) to the remote repo Merge: Incorporate changes into the branch you are on. Pull Request: Term used in collaboration. By “issuing a pull request” to the owner of the upstream repo, you are requesting that your changes be pulled into their repo (accept your changes/work)."
+    "text": "Some Basic Commands\n\nFork: to make a copy of a repo in your own GitHub account\nClone: make a copy of the your GitHub repo on your local computer. * copies a remote repo to create a local repo with a remote called origin automatically set up."
   },
   {
     "objectID": "slides/02_git.html#the-process-in-library-form",
@@ -1881,5 +1881,40 @@
     "title": "Introduction to RStudio and R Markdown",
     "section": "Some things you can do with RMarkdown",
     "text": "Some things you can do with RMarkdown\nWrap text in * to make text italics\nItalicize this\nWrap text in ** to make text bold\nBold this\nEmbed R code inside test using r\nFor example, the average mpg for cars in the mtcars data set is 20.090625 thought that should be rounded 20.1 to be more clear.\nEmbed R code blocks using ```{r}\nAutomatically enumerate text sections flagged using #\nExample:\n# Main Section\n## 2nd Level\n### 3rd Level"
+  },
+  {
+    "objectID": "slides/02_git.html#some-basic-commands-cont.",
+    "href": "slides/02_git.html#some-basic-commands-cont.",
+    "title": "Git and GitHub",
+    "section": "Some Basic Commands (Cont.)",
+    "text": "Some Basic Commands (Cont.)\n\nPull: incorporate changes into your repo\nAdd: Adding snapshots of your changes to the “Staging” area.\nCommit: akes the files as they are in your staging area and stores a snap shot of your files (changes) permanently in your Git directory.\nPush: You “push” your files (changes) to the remote repo\nMerge: Incorporate changes into the branch you are on.\nStatus: check the status of a repo changes, etc.\nPull Request: Collaboration term. By “issuing a pull request” to the owner of the upstream repo, you are requesting that your changes be pulled into their repo (accept your changes/work)."
+  },
+  {
+    "objectID": "slides/02_git.html#shared-repository-workflow-book-analogy",
+    "href": "slides/02_git.html#shared-repository-workflow-book-analogy",
+    "title": "Git and GitHub",
+    "section": "Shared Repository Workflow: Book Analogy",
+    "text": "Shared Repository Workflow: Book Analogy\n\n\ncheck out original (checkout main)\nmake a copy of the original (checkout )\nmake edits to the copy\nadd the edits (add)\ncommit to those changes (commit)\npush the edits to the copy (push) - optional\nswitch/check out the original (checkout main)\nmerge edits to the original (merge)"
+  },
+  {
+    "objectID": "slides/02_git.html#merging-your-branch-to-main-cont.",
+    "href": "slides/02_git.html#merging-your-branch-to-main-cont.",
+    "title": "Git and GitHub",
+    "section": "Merging Your Branch to Main (Cont.)",
+    "text": "Merging Your Branch to Main (Cont.)\n\n\nGet main branch: git checkout main\nVerify main: git checkout\nPull recent changes: git pull\nMerge into main branch: git merge &lt;branch&gt;\nTag the change (optional): git tag\nDelete the branch (optional): git branch -d &lt;branch&gt;\nConfirm branch removal (optional): git branch"
+  },
+  {
+    "objectID": "slides/02_git.html#collaboration-process-review",
+    "href": "slides/02_git.html#collaboration-process-review",
+    "title": "Git and GitHub",
+    "section": "Collaboration Process Review",
+    "text": "Collaboration Process Review\n\n\ngit checkout main, then git pull\ngit checkout -b &lt;branch_name&gt;\ngit add, commit, push changes\ngit checkout main, then git pull recent changes\ngit merge &lt;branch_name&gt; into main\ngit tag to add a tag\nFor new issue/task: Repeat Steps 1, 2, 3, 4, 5, (6)"
+  },
+  {
+    "objectID": "slides/02_git.html#merging-your-branch-to-main",
+    "href": "slides/02_git.html#merging-your-branch-to-main",
+    "title": "Git and GitHub",
+    "section": "Merging Your Branch to Main",
+    "text": "Merging Your Branch to Main\n\n\nGet main branch: git checkout main\nVerify main: git checkout\nPull recent changes: git pull\nMerge into main branch: git merge &lt;branch_name&gt;\nTag the change (optional): git tag\nDelete the branch (optional): git branch -d &lt;branch_name&gt;\nConfirm branch removal (optional): git branch"
   }
 ]

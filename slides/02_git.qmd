@@ -84,6 +84,7 @@ usethis::use_git_config(user.name = "janegit",
 - Create token and **copy to your clipboard**
 :::
 
+
 ## **Setting your Git Credentials (using PAT) with {gitcreds}**
 
 ::: {.incremental}
@@ -93,17 +94,46 @@ usethis::use_git_config(user.name = "janegit",
 - `gh::gh_whoami()` to check if set
 :::
 
+
+## **Some Basic Commands**
+
+::: {.incremental}
+`Fork`: to make a copy of a repo in your own GitHub account
+
+`Clone`: make a copy of the your GitHub repo on your local computer. 
+  * copies a remote repo to create a local repo with a remote called origin automatically set up.
+:::
+
+
+## **Some Basic Commands (Cont.)**
+
+::: {.incremental}
+`Pull`:	incorporate changes into your repo
+
+`Add`:	Adding snapshots of your changes to the "Staging" area.
+
+`Commit`:	takes the files as they are in your staging area and stores a snap shot of your files (changes) permanently in your Git directory
+
+`Push`:	You "push" your files (changes) to the remote repo
+
+`Merge`: Incorporate changes into the branch you are on.
+
+`Status`: check the status of a repo changes, etc.
+
+`Pull Request`: By "issuing a pull request" to the owner of the upstream repo, you are requesting that your changes be pulled into their repo (accept your changes/work).
+:::
+
+
 ## **Making Local File Changes, Committing, and Pushing to GitHub**
 
 ::: {.incremental}
 - Make a change to a file
-- Check **status** of project for changes
-- **Stage** change
-- **Commit** all changes
-- **Push** changes
-- **Commit** a specific change
-- **Pull** changes down from repo (downloads and integrates changes)
-- **Fetch** downloads new data (does not change your working copy)
+- Check ***status*** of project for changes
+- ***Stage*** change
+- ***Commit*** change(s)
+- ***Push*** changes
+- ***Pull*** changes down from repo (downloads and integrates changes)
+- ***Fetch*** downloads new data (does not change your working copy)
 :::
 
 
@@ -114,73 +144,56 @@ At the **Terminal** in RStudio
 - `$ git status`
 
 
+## **Shared Repository Workflow: Book Analogy**
+
+::: {.incremental}
+* ***check out*** original (checkout main)
+* make a ***copy*** of the original (checkout <branch>)
+* ***make edits*** to the copy
+* ***add*** the edits (add)
+* ***commit*** to those changes (commit)
+* ***push*** the edits to the copy (push) - optional 
+* ***switch/check out*** the original (checkout main)
+* ***merge edits*** to the original (merge)
+:::
+
+
 ## **Shared Repository Workflow**
 
-1. update your local repo
-  * `git pull origin master`
-2. ensure you are on main branch
-  * `git checkout 
-3. create a working branch
-  * `git checkout -b yourBranchName`
-4. make your changes on your branch and stage them 
-  * `git add`
-5. commit changes locally
-  * `git commit -m "description of changes"`
-6. upload the changes (including your new branch) to GitHub 
-  * `git push origin yourBranchName`
-
-* Visit main repo on GitHub where you should now see your new branch
-click on your branch name
-click on “Pull Request” button (URC)
-click on “Send Pull Request”
-
-## **Some Basic Commands**
-
-BASIC COMMANDS/ACTIONS
-Term	Explanation
-* `Fork`: to make a copy of a repo in your own GitHub account
-* `Clone`: make a copy of the your GitHub repo on your local computer. 
-  * In CLI: ‘git clone’ copies a remote repo to create a local repo with a remote called origin automatically set up.
-`Pull`:	incorporate changes into your repo
-`Add`:	Adding snapshots of your changes to the "Staging" area.
-`Commit`:	akes the files as they are in your staging area and stores a snap shot of your files (changes) permanently in your Git directory.
-`Push`:	You "push" your files (changes) to the remote repo
-`Merge`: Incorporate changes into the branch you are on.
-`Pull Request`: Term used in collaboration. By "issuing a pull request" to the owner of the upstream repo, you are requesting that your changes be pulled into their repo (accept your changes/work).
+::: {.incremental}
+1. Pull recent changes of main: `git pull`
+2. Create a working branch (**IMPORTANT!**): `git checkout -b yourBranchName`
+3. Verify new branch: `git checkout` 
+4. Make changes, then Stage your changes: `git add`
+5. Commit changes locally: `git commit -m "description of changes"`
+6. Upload your new the changes to GitHub: `git push`
+:::
 
 
+## **Merging Your Branch to Main**
 
-## **The Process in Library Form**
+::: {.incremental}
+1. Get main branch: `git checkout main`
+2. Verify main: `git checkout`
+3. Pull recent changes: `git pull`
+4. Merge into main branch: `git merge <branch_name>`
+5. Tag the change (optional): `git tag`
+6. Delete the branch (optional): `git branch -d <branch_name>`
+7. Confirm branch removal (optional): `git branch`
+:::
 
-* check out original (checkout main)
-* make a copy of the original (checkout <branch>)
-* make edits to the copy
-* add the edits (add)
-* commit to those changes (commit)
-* push the edits to the copy (push) - optional 
-* switch/check out the original (checkout main)
-* merge edits to the original (merge)
 
+## **Collaboration Process Review**
 
-## **Main Branch, Your Branch, Merging Your Branch to Main**
-
-1. Switch to the main branch:
-   * `git checkout main`
-
-2. Merge the branch into main:
-   * `git merge <branch>`
-
-3. Confirm 
-
-4. Delete the branch:
-   * `git branch -d <branch>`
-
-5. Confirm branch removal:
-
-   * `git branch`
-
-6. Repeat with new issue
-  * Steps 1, 2, 3, 4, 5
+::: {.incremental}
+1. `git checkout main`, then `git pull` 
+2. `git checkout -b <branch_name>` 
+3. `git` `add`, `commit`, `push` changes
+5. `git checkout main`, then `git pull` recent changes
+6. `git merge <branch_name>` into main
+7. `git tag` to add a tag
+8. For new issue/task: Repeat Steps 1, 2, 3, 4, 5, (6)
+:::
 
 
 
@@ -191,6 +204,7 @@ Term	Explanation
   * Untracked vs. tracked files 
   * To have tracked by Git, you need to **add**
 :::
+
 
 ## **Staging a *Specific* Change**
 
@@ -206,7 +220,6 @@ Term	Explanation
 
 
 ## **Staging *All* Changes**
-
 
 * `$ git add .`
 
@@ -233,6 +246,7 @@ Term	Explanation
 - `$ git pull`
 - If you make changes that other will need, let them know to pull
 :::
+
 
 ## **Fetch changes**
 
