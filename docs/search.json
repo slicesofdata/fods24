@@ -1824,14 +1824,14 @@
     "href": "slides/02_git.html#some-basic-commands-cont.",
     "title": "Git and GitHub",
     "section": "Some Basic Commands (Cont.)",
-    "text": "Some Basic Commands (Cont.)\n\nPull: incorporate changes into your repo\nAdd: Adding snapshots of your changes to the “Staging” area.\nCommit: takes the files as they are in your staging area and stores a snap shot of your files (changes) permanently in your Git directory\nPush: You “push” your files (changes) to the remote repo\nMerge: Incorporate changes into the branch you are on.\nStatus: check the status of a repo changes, etc.\nPull Request: By “issuing a pull request” to the owner of the upstream repo, you are requesting that your changes be pulled into their repo (accept your changes/work)."
+    "text": "Some Basic Commands (Cont.)\n\nPull: incorporates changes into your repo from remote\nAdd: adds snapshots of your changes to the “Staging” area.\nCommit: takes the files as they are in your staging area and stores a snap shot of your files (changes) permanently in your Git directory\nPush: uploads your files (changes) to the remote repo\nStatus: checks the status of a repo changes, etc.\nMerge: incorporates changes into the branch you are on.\nPull Request: By “issuing a pull request” to the owner of the upstream repo, you are requesting that your changes be pulled into their repo (accept your changes/work)."
   },
   {
     "objectID": "slides/02_git.html#making-local-file-changes-committing-and-pushing-to-github",
     "href": "slides/02_git.html#making-local-file-changes-committing-and-pushing-to-github",
     "title": "Git and GitHub",
     "section": "Making Local File Changes, Committing, and Pushing to GitHub",
-    "text": "Making Local File Changes, Committing, and Pushing to GitHub\n\n\nMake a change to a file\nCheck status of project for changes\nStage change\nCommit change(s)\nPush changes\nPull changes down from repo (downloads and integrates changes)\nFetch downloads new data (does not change your working copy)"
+    "text": "Making Local File Changes, Committing, and Pushing to GitHub\n\n\nMake a change to a file, save to local computer\nCheck status of project for changes\nAdd/Stage change\nCommit change(s)\nPush changes\nPull pulls changes down from repo (downloads and merges changes)\nFetch downloads new data (does not change your working copy)"
   },
   {
     "objectID": "slides/02_git.html#checking-the-status-of-local-file-changes",
@@ -1852,7 +1852,7 @@
     "href": "slides/02_git.html#shared-repository-workflow",
     "title": "Git and GitHub",
     "section": "Shared Repository Workflow",
-    "text": "Shared Repository Workflow\n\n\nPull recent changes of main: git pull\nCreate a working branch (IMPORTANT!): git checkout -b yourBranchName\nVerify new branch: git checkout\nMake changes, then Stage your changes: git add\nCommit changes locally: git commit -m \"description of changes\"\nUpload your new the changes to GitHub: git push"
+    "text": "Shared Repository Workflow\n\n\nPull recent changes from main: git pull\nMake changes to files\nStage your changes: git add\nCommit changes locally: git commit -m \"description of changes\"\nUpload your new the changes to GitHub: git push"
   },
   {
     "objectID": "slides/02_git.html#merging-your-branch-to-main",
@@ -2014,5 +2014,12 @@
     "title": "Sample Presentation",
     "section": "Output Location",
     "text": "Output Location\n\n\nlibrary(ggplot2)\n\nmtcars |&gt; \n  ggplot(aes(x = disp, y = mpg)) +\n  geom_point() +\n  geom_smooth(method = \"loess\", formula = \"y~x\")"
+  },
+  {
+    "objectID": "slides/02_git.html#git-client-video-tutorials",
+    "href": "slides/02_git.html#git-client-video-tutorials",
+    "title": "Git and GitHub",
+    "section": "Git Client Video Tutorials",
+    "text": "Git Client Video Tutorials\n\n\nGitKraken Git Client examples\nfor more, see: this video"
   }
 ]

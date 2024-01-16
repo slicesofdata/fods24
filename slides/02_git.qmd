@@ -108,17 +108,17 @@ usethis::use_git_config(user.name = "janegit",
 ## **Some Basic Commands (Cont.)**
 
 ::: {.incremental}
-`Pull`:	incorporate changes into your repo
+`Pull`:	incorporates changes into your repo from remote
 
-`Add`:	Adding snapshots of your changes to the "Staging" area.
+`Add`:	adds snapshots of your changes to the "Staging" area.
 
 `Commit`:	takes the files as they are in your staging area and stores a snap shot of your files (changes) permanently in your Git directory
 
-`Push`:	You "push" your files (changes) to the remote repo
+`Push`:	uploads your files (changes) to the remote repo
 
-`Merge`: Incorporate changes into the branch you are on.
+`Status`: checks the status of a repo changes, etc.
 
-`Status`: check the status of a repo changes, etc.
+`Merge`: incorporates changes into the branch you are on.
 
 `Pull Request`: By "issuing a pull request" to the owner of the upstream repo, you are requesting that your changes be pulled into their repo (accept your changes/work).
 :::
@@ -127,12 +127,12 @@ usethis::use_git_config(user.name = "janegit",
 ## **Making Local File Changes, Committing, and Pushing to GitHub**
 
 ::: {.incremental}
-- Make a change to a file
+- Make a change to a file, save to local computer
 - Check ***status*** of project for changes
-- ***Stage*** change
+- ***Add/Stage*** change
 - ***Commit*** change(s)
 - ***Push*** changes
-- ***Pull*** changes down from repo (downloads and integrates changes)
+- ***Pull*** pulls changes down from repo (downloads and merges changes)
 - ***Fetch*** downloads new data (does not change your working copy)
 :::
 
@@ -144,57 +144,15 @@ At the **Terminal** in RStudio
 - `$ git status`
 
 
-## **Shared Repository Workflow: Book Analogy**
-
-::: {.incremental}
-* ***check out*** original (checkout main)
-* make a ***copy*** of the original (checkout <branch>)
-* ***make edits*** to the copy
-* ***add*** the edits (add)
-* ***commit*** to those changes (commit)
-* ***push*** the edits to the copy (push) - optional 
-* ***switch/check out*** the original (checkout main)
-* ***merge edits*** to the original (merge)
-:::
-
-
 ## **Shared Repository Workflow**
 
 ::: {.incremental}
-1. Pull recent changes of main: `git pull`
-2. Create a working branch (**IMPORTANT!**): `git checkout -b yourBranchName`
-3. Verify new branch: `git checkout` 
-4. Make changes, then Stage your changes: `git add`
-5. Commit changes locally: `git commit -m "description of changes"`
-6. Upload your new the changes to GitHub: `git push`
+1. Pull recent changes from main: `git pull`
+2. Make changes to files
+3. Stage your changes: `git add`
+4. Commit changes locally: `git commit -m "description of changes"`
+5. Upload your new the changes to GitHub: `git push`
 :::
-
-
-## **Merging Your Branch to Main**
-
-::: {.incremental}
-1. Get main branch: `git checkout main`
-2. Verify main: `git checkout`
-3. Pull recent changes: `git pull`
-4. Merge into main branch: `git merge <branch_name>`
-5. Tag the change (optional): `git tag`
-6. Delete the branch (optional): `git branch -d <branch_name>`
-7. Confirm branch removal (optional): `git branch`
-:::
-
-
-## **Collaboration Process Review**
-
-::: {.incremental}
-1. `git checkout main`, then `git pull` 
-2. `git checkout -b <branch_name>` 
-3. `git` `add`, `commit`, `push` changes
-5. `git checkout main`, then `git pull` recent changes
-6. `git merge <branch_name>` into main
-7. `git tag` to add a tag
-8. For new issue/task: Repeat Steps 1, 2, 3, 4, 5, (6)
-:::
-
 
 
 ## **Staging Changes (Adding Changes)**
@@ -232,6 +190,7 @@ At the **Terminal** in RStudio
 - `$ git commit -m "added my first .R file"`
 :::
 
+
 ## **Push (publish) the change(s) from your branch to the remote repository**
 
 ::: {.incremental}
@@ -239,6 +198,7 @@ At the **Terminal** in RStudio
 
 - [Pushing changes](https://www.youtube.com/watch?v=lqw7ipXmc-4)
 :::
+
 
 ## **Pulls change(s) from the remote repository**
 
@@ -248,15 +208,13 @@ At the **Terminal** in RStudio
 :::
 
 
-## **Fetch changes**
-
-
-## **Video Tutorials**
+## **Git Client Video Tutorials**
 
 ::: {.incremental}
 - [GitKraken Git Client examples](https://www.gitkraken.com/learn/git)
 - for more, see: this [video](https://www.youtube.com/watch?v=A4rIs-6c98s)
 :::
+
 
 ## **Videos of many things you can do**
 

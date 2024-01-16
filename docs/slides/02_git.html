@@ -1297,12 +1297,12 @@ margin-right: 0; }
 <section id="some-basic-commands-cont." class="slide level2">
 <h2><strong>Some Basic Commands (Cont.)</strong></h2>
 <div>
-<p><code>Pull</code>: incorporate changes into your repo</p>
-<p><code>Add</code>: Adding snapshots of your changes to the “Staging” area.</p>
+<p><code>Pull</code>: incorporates changes into your repo from remote</p>
+<p><code>Add</code>: adds snapshots of your changes to the “Staging” area.</p>
 <p><code>Commit</code>: takes the files as they are in your staging area and stores a snap shot of your files (changes) permanently in your Git directory</p>
-<p><code>Push</code>: You “push” your files (changes) to the remote repo</p>
-<p><code>Merge</code>: Incorporate changes into the branch you are on.</p>
-<p><code>Status</code>: check the status of a repo changes, etc.</p>
+<p><code>Push</code>: uploads your files (changes) to the remote repo</p>
+<p><code>Status</code>: checks the status of a repo changes, etc.</p>
+<p><code>Merge</code>: incorporates changes into the branch you are on.</p>
 <p><code>Pull Request</code>: By “issuing a pull request” to the owner of the upstream repo, you are requesting that your changes be pulled into their repo (accept your changes/work).</p>
 </div>
 </section>
@@ -1310,12 +1310,12 @@ margin-right: 0; }
 <h2><strong>Making Local File Changes, Committing, and Pushing to GitHub</strong></h2>
 <div>
 <ul>
-<li class="fragment">Make a change to a file</li>
+<li class="fragment">Make a change to a file, save to local computer</li>
 <li class="fragment">Check <strong><em>status</em></strong> of project for changes</li>
-<li class="fragment"><strong><em>Stage</em></strong> change</li>
+<li class="fragment"><strong><em>Add/Stage</em></strong> change</li>
 <li class="fragment"><strong><em>Commit</em></strong> change(s)</li>
 <li class="fragment"><strong><em>Push</em></strong> changes</li>
-<li class="fragment"><strong><em>Pull</em></strong> changes down from repo (downloads and integrates changes)</li>
+<li class="fragment"><strong><em>Pull</em></strong> pulls changes down from repo (downloads and merges changes)</li>
 <li class="fragment"><strong><em>Fetch</em></strong> downloads new data (does not change your working copy)</li>
 </ul>
 </div>
@@ -1327,59 +1327,15 @@ margin-right: 0; }
 <li><code>$ git status</code></li>
 </ul>
 </section>
-<section id="shared-repository-workflow-book-analogy" class="slide level2">
-<h2><strong>Shared Repository Workflow: Book Analogy</strong></h2>
-<div>
-<ul>
-<li class="fragment"><strong><em>check out</em></strong> original (checkout main)</li>
-<li class="fragment">make a <strong><em>copy</em></strong> of the original (checkout <branch>)</branch></li>
-<li class="fragment"><strong><em>make edits</em></strong> to the copy</li>
-<li class="fragment"><strong><em>add</em></strong> the edits (add)</li>
-<li class="fragment"><strong><em>commit</em></strong> to those changes (commit)</li>
-<li class="fragment"><strong><em>push</em></strong> the edits to the copy (push) - optional</li>
-<li class="fragment"><strong><em>switch/check out</em></strong> the original (checkout main)</li>
-<li class="fragment"><strong><em>merge edits</em></strong> to the original (merge)</li>
-</ul>
-</div>
-</section>
 <section id="shared-repository-workflow" class="slide level2">
 <h2><strong>Shared Repository Workflow</strong></h2>
 <div>
 <ol type="1">
-<li class="fragment">Pull recent changes of main: <code>git pull</code></li>
-<li class="fragment">Create a working branch (<strong>IMPORTANT!</strong>): <code>git checkout -b yourBranchName</code></li>
-<li class="fragment">Verify new branch: <code>git checkout</code></li>
-<li class="fragment">Make changes, then Stage your changes: <code>git add</code></li>
+<li class="fragment">Pull recent changes from main: <code>git pull</code></li>
+<li class="fragment">Make changes to files</li>
+<li class="fragment">Stage your changes: <code>git add</code></li>
 <li class="fragment">Commit changes locally: <code>git commit -m &quot;description of changes&quot;</code></li>
 <li class="fragment">Upload your new the changes to GitHub: <code>git push</code></li>
-</ol>
-</div>
-</section>
-<section id="merging-your-branch-to-main" class="slide level2">
-<h2><strong>Merging Your Branch to Main</strong></h2>
-<div>
-<ol type="1">
-<li class="fragment">Get main branch: <code>git checkout main</code></li>
-<li class="fragment">Verify main: <code>git checkout</code></li>
-<li class="fragment">Pull recent changes: <code>git pull</code></li>
-<li class="fragment">Merge into main branch: <code>git merge &lt;branch_name&gt;</code></li>
-<li class="fragment">Tag the change (optional): <code>git tag</code></li>
-<li class="fragment">Delete the branch (optional): <code>git branch -d &lt;branch_name&gt;</code></li>
-<li class="fragment">Confirm branch removal (optional): <code>git branch</code></li>
-</ol>
-</div>
-</section>
-<section id="collaboration-process-review" class="slide level2">
-<h2><strong>Collaboration Process Review</strong></h2>
-<div>
-<ol type="1">
-<li class="fragment"><code>git checkout main</code>, then <code>git pull</code></li>
-<li class="fragment"><code>git checkout -b &lt;branch_name&gt;</code></li>
-<li class="fragment"><code>git</code> <code>add</code>, <code>commit</code>, <code>push</code> changes</li>
-<li class="fragment"><code>git checkout main</code>, then <code>git pull</code> recent changes</li>
-<li class="fragment"><code>git merge &lt;branch_name&gt;</code> into main</li>
-<li class="fragment"><code>git tag</code> to add a tag</li>
-<li class="fragment">For new issue/task: Repeat Steps 1, 2, 3, 4, 5, (6)</li>
 </ol>
 </div>
 </section>
@@ -1441,11 +1397,8 @@ margin-right: 0; }
 </ul>
 </div>
 </section>
-<section id="fetch-changes" class="slide level2">
-<h2><strong>Fetch changes</strong></h2>
-</section>
-<section id="video-tutorials" class="slide level2">
-<h2><strong>Video Tutorials</strong></h2>
+<section id="git-client-video-tutorials" class="slide level2">
+<h2><strong>Git Client Video Tutorials</strong></h2>
 <div>
 <ul>
 <li class="fragment"><a href="https://www.gitkraken.com/learn/git">GitKraken Git Client examples</a></li>
