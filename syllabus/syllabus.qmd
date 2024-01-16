@@ -70,7 +70,7 @@ This course introduces students to R, a programming language for statistical com
 
 -   Learn how to use R and RStudio to answer real‐word questions with data
 
--   Use the **dplyr** and **tidyr** libraries to clean data prior to statistical analysis
+-   Use the **{dplyr}** and **{tidyr}** libraries to clean data prior to statistical analysis
 
 -   Learn how to import, clean, manipulate, tidy, and summarize data
 
@@ -97,7 +97,7 @@ The following **departmental learning goals** will also be met: 1. Knowledge of 
 #    -   subpoint 
 ```
 
-## Courses at CMC
+## **Courses at CMC**
 
 #### **Faculty Handbook 5.4.2 Work Load in Classes**
 
@@ -113,13 +113,13 @@ Link to the course website: [https://gabrielcook.xyz/fods24/](https://gabrielcoo
 
 #### **Required Equipment**:
 
-Computer: current Mac (macOS) or PC (Windows or Linux) with high-speed internet connection, capable of running R and RStudio
+Computer: current Mac (macOS) or PC (Windows or Linux) with high-speed internet connection, capable of running `R` and `RStudio`
 
 #### **Required Software**:
 
 **R** and **RStudio**: Students will be required to use R and RStudio software. Note: Install Version will be provided. Before installing RStudio, you must also download and install the base R software at <https://www.r-project.org/> that is appropriate for your computer's operating system. RStudio can be downloaded for free at <https://www.rstudio.com>. You are expected to install R and RStudio on your personal computer by downloading the software from the links above. You will also have to install appropriate libraries throughout the course. Further instructions will be provided.
 
-### Reading Materials/Textbook(s)
+### **Reading Materials/Textbook(s)**
 
 Readings will be taken from different sources and will appear in each topic module.
 
@@ -198,7 +198,7 @@ Students are expected to attend and participate in each class.
 
 ## **Course Policies**
 
-### Due dates
+### **Due dates**
 
 Due dates are suggestions for completing coursework on a weekly basis. You may be able to work ahead, but you are not encouraged to fall behind.
 
@@ -255,6 +255,7 @@ The above link lists many examples of cheating and plagiarism that are not allow
 -   Do not copy random words from the internet that have nothing to do with the assignment and submit them as your own work.
 -   Do not work on individual assignments with other students, share answers or other material, and then all hand in versions of the same thing that are slightly different.
 -   Do not plagiarize yourself by submitting work that you have previously completed in another class.
+
 
 ### **Mandate to report violations**
 
