@@ -9,36 +9,12 @@ execute:
   freeze: auto
 ---
 
+
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 # secret functions
 # source(here::here("r", "src", "color_format_text.R"))
+source(here::here("r", "_common.R"))
 ```
-
-```{r message=FALSE, warning=FALSE, include=FALSE}
-# huber text
-huber_pdf <- "https://www.markhuberdatascience.org/_files/ugd/c2b9b6_543ea42a1ea64e32b4440b34ffd71635.pdf"
-front_matter <- 10
-huber_intro_ch <- glue::glue(huber_pdf,"#page=",front_matter + 3)
-huber_rmarkdown_ch <- glue::glue(huber_pdf,"#page=",front_matter + 10)
-huber_graphing_ch <- glue::glue(huber_pdf,"#page=",front_matter + 17)
-huber_transformation_ch <- glue::glue(huber_pdf,"#page=",front_matter + 59) # 5
-huber_summaries_ch <- glue::glue(huber_pdf,"#page=",front_matter + 71)
-huber_eda_var_ch <- glue::glue(huber_pdf,"#page=",front_matter + 81)
-huber_eda_covar_ch <- glue::glue(huber_pdf,"#page=",front_matter + 93)
-huber_import_ch <- glue::glue(huber_pdf,"#page=",front_matter + 103)
-huber_tidy_data_ch <- glue::glue(huber_pdf,"#page=",front_matter + 123)
-huber_relational_ch <- glue::glue(huber_pdf,"#page=",front_matter + 141)
-huber_filtering_joins_ch <- glue::glue(huber_pdf,"#page=",front_matter + 150)
-huber_strings_ch <- glue::glue(huber_pdf,"#page=",front_matter + 155)
-huber_regex_ch <- glue::glue(huber_pdf,"#page=",front_matter + 162)
-huber_using_regex_ch <- glue::glue(huber_pdf,"#page=",front_matter + 170)
-huber_func_patterns_ch <- glue::glue(huber_pdf,"#page=",front_matter + 182)
-huber_factors_ch <- glue::glue(huber_pdf,"#page=",front_matter + 186)
-huber_sql_ch <- glue::glue(huber_pdf,"#page=",front_matter + 199)
-huber_writing_functions_ch <- glue::glue(huber_pdf,"#page=",front_matter + 232)
-huber_modeling_ch <- glue::glue(huber_pdf,"#page=",front_matter + 241)
-```
-
 
 ::: callout-important
 ## Under construction. 
@@ -51,14 +27,13 @@ This page is a work in progress and may contain areas that need more detail or t
 #| label: load-packages
 #| include: false
 
-#library()
-source(here::here("r", "my_functions.R"))
 
+R.utils::sourceDirectory(here::here("r", "functions"))
 ```
 
 # **Overview**
 
-In this module, we familiarize ourselves with using `R` in `RStudio` as well as create files that contain both text and `R` using  [**RMarkdown**](https://gabrielcook.xyz/fods24/cheatsheets/rmarkdown-2.0.pdf). 
+In this module, we familiarize ourselves with using `R` in `RStudio` as well as create files that contain both text and `R` using  [**R Markdown**](https://gabrielcook.xyz/fods24/cheatsheets/rmarkdown-2.0.pdf). 
 
 
 ## **Readings and Preparation**
@@ -88,7 +63,7 @@ In this module, we familiarize ourselves with using `R` in `RStudio` as well as 
 
 ## **`R` is an Interpreted Language**
 
-`R` is an interpreted language. This means that code or programs you write may be executed by the `R` interpreter in real time. The code you write does not need to be compiled prior to being executed. Rather, the `R` interpreter translates your code in real time if it understands what your code. If the `R` interpreter doesn't understand the code, it will be unable to translate and you will receive some error.
+`R` is an interpreted language. This means that code or programs you write may be executed by the `R` interpreter in real time. The code you write does not need to be compiled prior to being executed. Rather, the `R` interpreter translates your code in real time if it understands your code. If the `R` interpreter doesn't understand your code, it will be unable to translate and you will receive some error.
 
 
 ## **Functions**
@@ -111,7 +86,7 @@ To ask `R` about what a function does, you can use `?` paired with the function.
 
 `?install.packages`
 
-```
+```{.r}
 ?install.packages
 ```
 
@@ -121,23 +96,22 @@ Alternatively, you can use the `help()` function:
 - `help("install.packages", package = "utils")`
 
 
-Similar methods:
+These methods are all equivalent ways of getting help:
 
-```
-# these methods are all equivalent ways of getting help
-help("install.packages")
-?install.packages
-?utils::install.packages
+```{.r}
+help("summarize")
+?summarize
+?summarize::summarize
 ```
 
-You can also simply type a query into the search bar in the `RStudio` Help menu. 
+You can also simply type a query into the search bar in the `RStudio` Help menu tab (likely to the right). 
 
 
 ## **External Help**
 
 Sometimes you need to find help outside of the `R` environment. In this case, just use Google. Type in your query by including the letter R to narrow the search results and you will see a lot that pops up. [https://stackoverflow.com](https://stackoverflow.com) will likely be returned in your search results with questions that people have posted to the website for help from others. This is a community of coders helping coders. You can create an account if you wish, but reading questions and answers to those questions is free. Perhaps in years from now, you can answer questions for others.
 
-For example, if you know you are using the `dplyr` library and you are using a function called `starts_with()`, you can search Google for "dplyr starts_with r"
+For example, if you know you are using the **{dplyr}** library and you are using a function called `starts_with()`, you can search Google for "dplyr starts_with r"
 [and this is what you will see](https://www.google.com/search?q=dplyr+starts_with+r)
 
 
@@ -179,12 +153,14 @@ This exercise serves as a tutorial with the goal of familiarizing you with using
 There are many ways to customize an `R Markdown` file. You will need to insert `R` code, write text descriptions, create plots and tables, etc. In some instances you would want to include your `R` code or hide it from the output in their certain ways for doing that in the `R Markdown` language. Some of these ways are created automatically for you in `RStudio` when you initiate new `R Markdown` file.  others can be be found in this 
 [R Markdown cheat sheet](https://www.dataquest.io/blog/r-markdown-guide-cheatsheet/). 
 `RStudio` also has various cheat sheets which you can find [here](https://www.rstudio.com/resources/cheatsheets/).
-You can also read more in [FODS CH2](https://www.markhuberdatascience.org/_files/ugd/c2b9b6_543ea42a1ea64e32b4440b34ffd71635.pdf)
+You can also read more in [Huber: CH 2](https://www.markhuberdatascience.org/_files/ugd/c2b9b6_543ea42a1ea64e32b4440b34ffd71635.pdf)
+
+On the [course site](the_course_site), there are additional cheat sheet files located on the **Cheat sheet** tab.  
 
 
 ## **R Markdown: The Definitive Guide**
 
-Xie, Allaire, and Grolemund have an advanced guide for all the things you can do with `R Markdown`. It's called [R Markdown: The Definitive Guide] ([https://bookdown.org/yihui/rmarkdown/output-formats.html)
+Xie, Allaire, and Grolemund have an advanced guide for all the things you can do with `R Markdown`. It's called [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/output-formats.html)
 
 
 ## **Some things you can do with RMarkdown**
@@ -197,7 +173,7 @@ Wrap text in ** to make text bold
 
 Bold **this**
 
-Embed `R` code inside test using ``r `` 
+Embed `R` code inside text using ``r `` 
 
 For example, the average mpg for cars in the mtcars data set is `r mean(mtcars$mpg)` thought that should be rounded  `r round(mean(mtcars$mpg), 1)` to be more clear.
 

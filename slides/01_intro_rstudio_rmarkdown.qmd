@@ -25,14 +25,195 @@ execute:
 ---
 
 
-## **R**
+# **Part 1: `R`**
+
+## **`R` is an Interpreted Language**
+
+::: {.incremental}
+* code or programs you write execute in real time
+* the `R` interpreter translates your code 
+* code does not need to be compiled prior to being executed 
+:::
+
+## **`R` involves functional programming**
+
+::: {.incremental}
+* [https://en.wikipedia.org/wiki/Functional_programming](https://en.wikipedia.org/wiki/Functional_programming)
+* programs are constructed by applying and composing functions
+* functions:
+  * `mean()`
+  * `dplyr::summarize()`
+:::
+
+
+## **Some basics**
+
+::: {.incremental}
+
+* numeric objects
+
+* strings/character objects: 
+  * composed of letters
+  * enclosed by quotes
+
+:::
+
+
+
+## **Write some code**
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+cat('```{r}\nband <- "your favorite band"\nstate <- "the state in which you grew up"\nname <- "your name"\nage <- your age\n```')
+```
 
 
 
 
-## **RStudio**
+# **Part 2: `RStudio`**
+
+## **`RStudio`**
+
+* IDE for using `R`
+* make for a better experience
+* lots of extras
+  * better UI, markdown, Terminal, Git, **code snippets**
+
+
+# **Part 3: `R Markdown`**
+
+## **`R Markdown`**
+
+::: {.incremental}
+* **Markdown** is a lightweight markup language used for adding formatting elements to plain text text
+
+* `R Markdown` is a markdown language create for `R` and `RStudio`
+
+* Allows you to dress up text, embed and render code, reference hyperlinks, etc. within a written document
+
+* Libraries like **{rmarkdown}** and **{knitr}** help you build `HTML`, `pdf`, and `Word` documents that update automatically with new data
+:::
+
+
+## **Create an R Markdown File**
+
+::: {.incremental}
+* Create directory/folder named: `fods24`
+* File > New File > R Markdown
+* Name it: `my_first_markdown.Rmd`
+* Save in: `/fods24`
+* **NOTE:** Directories will be addressed for next week!
+:::
+
+
+## **Dressing up Text**
+
+::: {.incremental}
+* *Italics*: wrap text in `*`  
+  * \*italics\*
+
+* **Bold**: wrap text in `**`  
+  * \*\*bold\*\*
+
+* ***Bold Italics***: wrap text in `***`  
+  * \*\*\*bold italics\*\*\*
+:::
+
+
+## **Insert and Embed Code Block**
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+cat("```{r}\n\n```")
+```
+
+::: {.incremental}
+* **Windows:** CLTR+ALT+I
+
+* **Mac:** COMMAND+ALT+I
+:::
+
+
+
+## **Create Code in Block: Assign value to `year` **
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+cat("```{r}\nyear <- 2024\n```")
+```
+
+```{r}
+#| code-fold: true
+#| code-summary: "code"
+year <- 2024
+```
+
+
+## **Code block settings**
+
+```{r, echo=FALSE, out.width="20%"}
+knitr::include_graphics(here::here("images", "chunk_options_gear.png"))
+```
+
+
+
+## **Embed code in-line (inside text)**
+
+::: {.incremental}
+* If you have an object in `R`
+* You can render the object in text 
+* And dress up the text
+:::
+
+
+## **Embed code in-line (inside text)**
+
+* If you have an object in `R`
+* You can render the object in text 
+* And dress up the text
+
+```{r echo=FALSE}
+cat("The year is `r year`!")
+```
+
+
+## **Embed code in-line (inside text)**
+
+* If you have an object in `R`
+* You can render the object in text 
+* And dress up the text
+
+```{r echo=FALSE}
+cat("The year is `r year`!")
+```
+
+The year is **`r year`**!
 
 
 
 
-## **R Markdown**
+## **Add header sections and subsections using #** 
+
+*# Main Section*
+
+*## 2nd Level*
+
+*### 3rd Level*
+
+
+
+## **Insert hyperlinks**
+
+::: {.incremental}
+* \[message](url)
+
+* \[cheatsheet](https://gabrielcook.xyz/fods24/cheatsheets/rmarkdown-2.0.pdf)
+
+* [cheatsheet](https://gabrielcook.xyz/fods24/cheatsheets/rmarkdown-2.0.pdf)
+:::
+
+
+## **Knitting R Markdown Files**
+
+::: {.incremental}
+* As `HTML`
+* As `pdf`
+* As `Word`
+:::

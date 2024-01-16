@@ -774,7 +774,7 @@
     "href": "modules/01_introduction_to_r_rstudio_and_rmarkdown.html#r-is-an-interpreted-language",
     "title": "Introduction to RStudio and R Markdown",
     "section": "R is an Interpreted Language",
-    "text": "R is an Interpreted Language\nR is an interpreted language. This means that code or programs you write may be executed by the R interpreter in real time. The code you write does not need to be compiled prior to being executed. Rather, the R interpreter translates your code in real time if it understands what your code. If the R interpreter doesn’t understand the code, it will be unable to translate and you will receive some error."
+    "text": "R is an Interpreted Language\nR is an interpreted language. This means that code or programs you write may be executed by the R interpreter in real time. The code you write does not need to be compiled prior to being executed. Rather, the R interpreter translates your code in real time if it understands your code. If the R interpreter doesn’t understand your code, it will be unable to translate and you will receive some error."
   },
   {
     "objectID": "modules/01_introduction_to_r_rstudio_and_rmarkdown.html#functions",
@@ -795,14 +795,14 @@
     "href": "modules/01_introduction_to_r_rstudio_and_rmarkdown.html#internal-help",
     "title": "Introduction to RStudio and R Markdown",
     "section": "Internal Help",
-    "text": "Internal Help\nYou will certainly run into problems coding. When you don’t speak the language perfectly, R will let you know there are errors. So, how do you find help in R?\nTo ask R about what a function does, you can use ? paired with the function. In the Help window, you will see information about the package the function is from, how it is used, how to use it by specifying arguments (more on this later), and usually some examples of how it is used.\n?install.packages\n?install.packages\nAlternatively, you can use the help() function:\n\nhelp(\"install.packages\")\nhelp(\"install.packages\", package = \"utils\")\n\nSimilar methods:\n# these methods are all equivalent ways of getting help\nhelp(\"install.packages\")\n?install.packages\n?utils::install.packages\nYou can also simply type a query into the search bar in the RStudio Help menu."
+    "text": "Internal Help\nYou will certainly run into problems coding. When you don’t speak the language perfectly, R will let you know there are errors. So, how do you find help in R?\nTo ask R about what a function does, you can use ? paired with the function. In the Help window, you will see information about the package the function is from, how it is used, how to use it by specifying arguments (more on this later), and usually some examples of how it is used.\n?install.packages\n?install.packages\nAlternatively, you can use the help() function:\n\nhelp(\"install.packages\")\nhelp(\"install.packages\", package = \"utils\")\n\nThese methods are all equivalent ways of getting help:\nhelp(\"summarize\")\n?summarize\n?summarize::summarize\nYou can also simply type a query into the search bar in the RStudio Help menu tab (likely to the right)."
   },
   {
     "objectID": "modules/01_introduction_to_r_rstudio_and_rmarkdown.html#external-help",
     "href": "modules/01_introduction_to_r_rstudio_and_rmarkdown.html#external-help",
     "title": "Introduction to RStudio and R Markdown",
     "section": "External Help",
-    "text": "External Help\nSometimes you need to find help outside of the R environment. In this case, just use Google. Type in your query by including the letter R to narrow the search results and you will see a lot that pops up. https://stackoverflow.com will likely be returned in your search results with questions that people have posted to the website for help from others. This is a community of coders helping coders. You can create an account if you wish, but reading questions and answers to those questions is free. Perhaps in years from now, you can answer questions for others.\nFor example, if you know you are using the dplyr library and you are using a function called starts_with(), you can search Google for “dplyr starts_with r” and this is what you will see"
+    "text": "External Help\nSometimes you need to find help outside of the R environment. In this case, just use Google. Type in your query by including the letter R to narrow the search results and you will see a lot that pops up. https://stackoverflow.com will likely be returned in your search results with questions that people have posted to the website for help from others. This is a community of coders helping coders. You can create an account if you wish, but reading questions and answers to those questions is free. Perhaps in years from now, you can answer questions for others.\nFor example, if you know you are using the {dplyr} library and you are using a function called starts_with(), you can search Google for “dplyr starts_with r” and this is what you will see"
   },
   {
     "objectID": "modules/01_introduction_to_r_rstudio_and_rmarkdown.html#r-markdown-code-execution",
@@ -816,21 +816,21 @@
     "href": "modules/01_introduction_to_r_rstudio_and_rmarkdown.html#r-markdown-cheat-sheet",
     "title": "Introduction to RStudio and R Markdown",
     "section": "R Markdown: Cheat Sheet",
-    "text": "R Markdown: Cheat Sheet\nThere are many ways to customize an R Markdown file. You will need to insert R code, write text descriptions, create plots and tables, etc. In some instances you would want to include your R code or hide it from the output in their certain ways for doing that in the R Markdown language. Some of these ways are created automatically for you in RStudio when you initiate new R Markdown file. others can be be found in this R Markdown cheat sheet. RStudio also has various cheat sheets which you can find here. You can also read more in FODS CH2"
+    "text": "R Markdown: Cheat Sheet\nThere are many ways to customize an R Markdown file. You will need to insert R code, write text descriptions, create plots and tables, etc. In some instances you would want to include your R code or hide it from the output in their certain ways for doing that in the R Markdown language. Some of these ways are created automatically for you in RStudio when you initiate new R Markdown file. others can be be found in this R Markdown cheat sheet. RStudio also has various cheat sheets which you can find here. You can also read more in Huber: CH 2\nOn the course site, there are additional cheat sheet files located on the Cheat sheet tab."
   },
   {
     "objectID": "modules/01_introduction_to_r_rstudio_and_rmarkdown.html#r-markdown-the-definitive-guide",
     "href": "modules/01_introduction_to_r_rstudio_and_rmarkdown.html#r-markdown-the-definitive-guide",
     "title": "Introduction to RStudio and R Markdown",
     "section": "R Markdown: The Definitive Guide",
-    "text": "R Markdown: The Definitive Guide\nXie, Allaire, and Grolemund have an advanced guide for all the things you can do with R Markdown. It’s called [R Markdown: The Definitive Guide] ([https://bookdown.org/yihui/rmarkdown/output-formats.html)"
+    "text": "R Markdown: The Definitive Guide\nXie, Allaire, and Grolemund have an advanced guide for all the things you can do with R Markdown. It’s called R Markdown: The Definitive Guide"
   },
   {
     "objectID": "modules/01_introduction_to_r_rstudio_and_rmarkdown.html#some-things-you-can-do-with-rmarkdown",
     "href": "modules/01_introduction_to_r_rstudio_and_rmarkdown.html#some-things-you-can-do-with-rmarkdown",
     "title": "Introduction to RStudio and R Markdown",
     "section": "Some things you can do with RMarkdown",
-    "text": "Some things you can do with RMarkdown\nWrap text in * to make text italics\nItalicize this\nWrap text in ** to make text bold\nBold this\nEmbed R code inside test using r\nFor example, the average mpg for cars in the mtcars data set is 20.090625 thought that should be rounded 20.1 to be more clear.\nEmbed R code blocks using ```{r}\nAutomatically enumerate text sections flagged using #\nExample:\n# Main Section\n## 2nd Level\n### 3rd Level"
+    "text": "Some things you can do with RMarkdown\nWrap text in * to make text italics\nItalicize this\nWrap text in ** to make text bold\nBold this\nEmbed R code inside text using r\nFor example, the average mpg for cars in the mtcars data set is 20.090625 thought that should be rounded 20.1 to be more clear.\nEmbed R code blocks using ```{r}\nAutomatically enumerate text sections flagged using #\nExample:\n# Main Section\n## 2nd Level\n### 3rd Level"
   },
   {
     "objectID": "index.html#psyc-166-foundations-of-data-science-human-cognition",
@@ -1645,25 +1645,123 @@
     "text": "Weekly Worklog/Report\nTracking individual and team goals weekly ensures progress toward the goal, commitment to the project, accountability for oneself, and a record of accomplishments.\nThe Project Manager should inquire with the team about the best way to submit worklogs or transparency and review. This could be a Google Doc File, a spreadsheet, or even a Google From that contains questions to answer, which then get dumped into a Google Spreadsheet for all to review.\n\nFrequency of Worklog\nWorklogs are to be completed by end-of-day following the team meeting, after communicating future goals (distributed equally) to other team members. Please make public for me to review. Meetings should be physical to facilitate team cohesion and conversation, and limit silly technical issues that just waste meeting time.\n\n\nContents of Worklog\nWorklogs should contain information about the reporting date, the team member reporting, that member’s previous week accomplishments, and that member’s future week goals\n\nFor the past week, I accomplished the following specific goals for my team:\n\n\nThis…\nThat…\nAnd the other…\n\n\nFor this past week, the number of hours allocated toward those goals was: ___\nFor this coming week, my specific goals for the team include:\n\n\nThis…\nThat…\nAnd the other…\n\n\nIf relevant, any items to discuss with liaison."
   },
   {
-    "objectID": "slides/01_intro_rstudio_rmarkdown.html#r",
-    "href": "slides/01_intro_rstudio_rmarkdown.html#r",
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#r-is-an-interpreted-language",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#r-is-an-interpreted-language",
     "title": "R, RStudio, & Rmarkdown",
-    "section": "R",
-    "text": "R"
+    "section": "R is an Interpreted Language",
+    "text": "R is an Interpreted Language\n\n\ncode or programs you write execute in real time\nthe R interpreter translates your code\ncode does not need to be compiled prior to being executed"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#r-involves-functional-programming",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#r-involves-functional-programming",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "R involves functional programming",
+    "text": "R involves functional programming\n\n\nhttps://en.wikipedia.org/wiki/Functional_programming\nprograms are constructed by applying and composing functions\nfunctions:\n\nmean()\ndplyr::summarize()"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#some-basics",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#some-basics",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Some basics",
+    "text": "Some basics\n\n\nnumeric objects\nstrings/character objects:\n\ncomposed of letters\nenclosed by quotes"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#write-some-code",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#write-some-code",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Write some code",
+    "text": "Write some code\n\n\n```{r}\nband &lt;- \"your favorite band\"\nstate &lt;- \"the state in which you grew up\"\nname &lt;- \"your name\"\nage &lt;- your age\n```"
   },
   {
     "objectID": "slides/01_intro_rstudio_rmarkdown.html#rstudio",
     "href": "slides/01_intro_rstudio_rmarkdown.html#rstudio",
     "title": "R, RStudio, & Rmarkdown",
     "section": "RStudio",
-    "text": "RStudio"
+    "text": "RStudio\n\nIDE for using R\nmake for a better experience\nlots of extras\n\nbetter UI, markdown, Terminal, Git, code snippets"
   },
   {
     "objectID": "slides/01_intro_rstudio_rmarkdown.html#r-markdown",
     "href": "slides/01_intro_rstudio_rmarkdown.html#r-markdown",
     "title": "R, RStudio, & Rmarkdown",
     "section": "R Markdown",
-    "text": "R Markdown"
+    "text": "R Markdown\n\n\nMarkdown is a lightweight markup language used for adding formatting elements to plain text text\nR Markdown is a markdown language create for R and RStudio\nAllows you to dress up text, embed and render code, reference hyperlinks, etc. within a written document\nLibraries like {rmarkdown} and {knitr} help you build HTML, pdf, and Word documents that update automatically with new data"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#create-an-r-markdown-file",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#create-an-r-markdown-file",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Create an R Markdown File",
+    "text": "Create an R Markdown File\n\n\nCreate directory/folder named: fods24\nFile &gt; New File &gt; R Markdown\nName it: my_first_markdown.Rmd\nSave in: /fods24\nNOTE: Directories will be addressed for next week!"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#dressing-up-text",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#dressing-up-text",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Dressing up Text",
+    "text": "Dressing up Text\n\n\nItalics: wrap text in *\n\n*italics*\n\nBold: wrap text in **\n\n**bold**\n\nBold Italics: wrap text in ***\n\n***bold italics***"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#insert-and-embed-code-block",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#insert-and-embed-code-block",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Insert and Embed Code Block",
+    "text": "Insert and Embed Code Block\n\n\n```{r}\n\n```\n\n\n\n\nWindows: CLTR+ALT+I\nMac: COMMAND+ALT+I"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#create-code-in-block-assign-value-to-year",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#create-code-in-block-assign-value-to-year",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Create Code in Block: Assign value to year ",
+    "text": "Create Code in Block: Assign value to year \n\n\n```{r}\nyear &lt;- 2024\n```\n\n\n\n\ncode\nyear &lt;- 2024"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#code-block-settings",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#code-block-settings",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Code block settings",
+    "text": "Code block settings"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#embed-code-in-line-inside-text",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#embed-code-in-line-inside-text",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Embed code in-line (inside text)",
+    "text": "Embed code in-line (inside text)\n\n\nIf you have an object in R\nYou can render the object in text\nAnd dress up the text"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#embed-code-in-line-inside-text-1",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#embed-code-in-line-inside-text-1",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Embed code in-line (inside text)",
+    "text": "Embed code in-line (inside text)\n\nIf you have an object in R\nYou can render the object in text\nAnd dress up the text\n\n\n\nThe year is `r year`!"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#embed-code-in-line-inside-text-2",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#embed-code-in-line-inside-text-2",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Embed code in-line (inside text)",
+    "text": "Embed code in-line (inside text)\n\nIf you have an object in R\nYou can render the object in text\nAnd dress up the text\n\n\n\nThe year is `r year`!\n\n\nThe year is 2024!"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#add-header-sections-and-subsections-using",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#add-header-sections-and-subsections-using",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Add header sections and subsections using #",
+    "text": "Add header sections and subsections using #\n# Main Section\n## 2nd Level\n### 3rd Level"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#insert-hyperlinks",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#insert-hyperlinks",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Insert hyperlinks",
+    "text": "Insert hyperlinks\n\n\n[message](url)\n[cheatsheet](https://gabrielcook.xyz/fods24/cheatsheets/rmarkdown-2.0.pdf)\ncheatsheet"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#knitting-r-markdown-files",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#knitting-r-markdown-files",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Knitting R Markdown Files",
+    "text": "Knitting R Markdown Files\n\n\nAs HTML\nAs pdf\nAs Word"
   },
   {
     "objectID": "slides/02_git.html#version-control",
