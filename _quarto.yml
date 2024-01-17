@@ -27,7 +27,7 @@ website:
       #- text: "Textbook"
       #  href: https://psyteachr.github.io/ads-v2
       - text: "**Modules**"
-        file: modules/index.qmd
+        file: modules/index.qmd                            # all files in dir are referenced and ordered by file number
       - text: "**Project**"
         file: project/index.qmd                            # will reference subdirs
 

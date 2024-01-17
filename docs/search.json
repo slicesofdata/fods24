@@ -1986,5 +1986,12 @@
     "title": "Sample Presentation",
     "section": "Output Location",
     "text": "Output Location\n\n\nlibrary(ggplot2)\n\nmtcars |&gt; \n  ggplot(aes(x = disp, y = mpg)) +\n  geom_point() +\n  geom_smooth(method = \"loess\", formula = \"y~x\")"
+  },
+  {
+    "objectID": "modules/01_installing_r_and_rstudio.html#install-r-first-and-then-install-rstudio",
+    "href": "modules/01_installing_r_and_rstudio.html#install-r-first-and-then-install-rstudio",
+    "title": "Installing R & RStudio",
+    "section": "Install R first and then install RStudio",
+    "text": "Install R first and then install RStudio\nInstalling should be easy and you can accept all of the defaults although the desktop icons are not needed, especially for R because you will never need it; RStudio will find R for you. You can follow these videos for simple installing.\nPC: How to Install R and R Studio on Windows 10/11\nMac: Installing R and RStudio on a Mac\nNote: If you leave the desktop icon for R, you can remove that later. You will never need it because RStudio will find R for you."
   }
 ]

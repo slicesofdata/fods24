@@ -91,7 +91,7 @@ file_name <- "cms-top-all-time-2023-swim.xlsx"
 base_url <- "https://github.com/slicesofdata/fods24/raw/main/data/"
 ```
 
-Look to make sure there are not any odd spacing. 
+Look to make sure there are not any odd spaces. 
 
 ```{r}
 paste(base_url, file_name, sep = "")
