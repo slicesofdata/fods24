@@ -562,98 +562,98 @@
   {
     "objectID": "modules/05_vectors_and_data_frame_basics.html",
     "href": "modules/05_vectors_and_data_frame_basics.html",
-    "title": "Vectors and Fata Frame Basics",
+    "title": "Vectors and Data Frame Basics",
     "section": "",
     "text": "Under construction.\n\n\n\nThis page is a work in progress and may contain areas that need more detail or that required syntactical, grammatical, and typographical changes. If you find some part requiring some editing, please let me know so I can fix it for you."
   },
   {
     "objectID": "modules/05_vectors_and_data_frame_basics.html#readings-and-preparation",
     "href": "modules/05_vectors_and_data_frame_basics.html#readings-and-preparation",
-    "title": "Vectors and Fata Frame Basics",
+    "title": "Vectors and Data Frame Basics",
     "section": "Readings and Preparation",
     "text": "Readings and Preparation\nBefore Class: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time.\nClass: In class, some functions and concepts will be introduced and we will practice implementing code through exercises."
   },
   {
     "objectID": "modules/05_vectors_and_data_frame_basics.html#libraries",
     "href": "modules/05_vectors_and_data_frame_basics.html#libraries",
-    "title": "Vectors and Fata Frame Basics",
+    "title": "Vectors and Data Frame Basics",
     "section": "Libraries",
     "text": "Libraries\n\n{here} 1.0.1: for file path management\n\n\nTo Do\nRead through the module. You can use the R console or open up an R Markdown (e.g., .Rmd) file to follow along interactively. If you instead prefer to simply read through the content so that you can understand the concepts without coding, that is fine too. Concepts will be applied in class in order to complete activities, however. Reading the module will provide you with confidence working on those activities and prevent you from feeling lost while completing activities. Testing out some code may provide you more confidence."
   },
   {
     "objectID": "modules/05_vectors_and_data_frame_basics.html#combining-elements-into-vectors-using-c",
     "href": "modules/05_vectors_and_data_frame_basics.html#combining-elements-into-vectors-using-c",
-    "title": "Vectors and Fata Frame Basics",
+    "title": "Vectors and Data Frame Basics",
     "section": "Combining elements into vectors using c()",
     "text": "Combining elements into vectors using c()\nOne way to create vectors is by using the combine function, c(). You can combine numeric and character elements into a vector. Let’s create some examples and assign names to them.\n\nNumeric vector:\n\nnumeric_vector &lt;- c(23, 22, 35)\n\nCall the object:\n\nnumeric_vector\n\n[1] 23 22 35\n\n\nNotice that the 3 returned elements of the vector are numbers.\n\n\nCharacter vector:\n\ncharacter_vector &lt;- c(\"Salle\", \"Jane\", \"Beavis\")\n\ncharacter_vector\n\n[1] \"Salle\"  \"Jane\"   \"Beavis\"\n\n\nNow, the 3 returned elements are enclosed by quotation marks, \". The quotes help you understand that the vector is character type.\n\n\nNumeric values as a character:\n\nquote_num_vector &lt;- c(\"23\", \"22\", \"35\")\n\nquote_num_vector\n\n[1] \"23\" \"22\" \"35\"\n\n\nAlthough the elements are numbers, they are in quotes, which indicates that the vector is character type.\n\n\nNumbers and characters:\n\nnum_char_vector &lt;- c(23, \"22\", \"35\")\n\nnum_char_vector\n\n[1] \"23\" \"22\" \"35\"\n\n\nAlthough one of the elements of the vector is numeric, the entire vector is returned as character. This is an important characteristic of vectors in R. They can be numeric or character but not both. If there is even one number enclosed by quotes, the vector is character as seen here.\n\nc(23, 22, 35, \"30\")\n\n[1] \"23\" \"22\" \"35\" \"30\""
   },
   {
     "objectID": "modules/05_vectors_and_data_frame_basics.html#creating-vectors-using-rnorm",
     "href": "modules/05_vectors_and_data_frame_basics.html#creating-vectors-using-rnorm",
-    "title": "Vectors and Fata Frame Basics",
+    "title": "Vectors and Data Frame Basics",
     "section": "Creating vectors using rnorm()",
-    "text": "Creating vectors using rnorm()\nLet’s use rnorm() to create a numeric vector object that will represent sampling from a random normal distribution. The distribution will have a certain number of observations, n, a mean, mean, and a standard deviation, sd. We will need to pass arguments to create the data.\nArguments:\n\nn: the number of elements in the vector\nmean: the mean of the elements\nsd: the standard deviation of the elements\n\nLet’s create a random normal distribution with a length of 1000 values. The mean should be 100 and standard deviation 15 (e.g., IQ distribution).\n\niq &lt;- rnorm(n = 1000, mean = 100, sd = 15)  \n\nRemember, as long as the order is correct, you do not have to specify the parameter names. You only need to specify the arguments for the parameters.\n\niq &lt;- rnorm(1000, 100, 15)      \n\nLook at the object’s head using head() in order to inspect the first 6 elements:\n\nhead(iq)                        \n\n[1]  84.81493 122.85108 113.26173 121.99849 131.76406  99.27283\n\n\nOr inspect the first 10 elements by setting n = 10.\n\nhead(iq, n = 10)\n\n [1]  84.81493 122.85108 113.26173 121.99849 131.76406  99.27283  81.17513\n [8] 113.52166  80.87113  91.85421"
+    "text": "Creating vectors using rnorm()\nLet’s use rnorm() to create a numeric vector object that will represent sampling from a random normal distribution. The distribution will have a certain number of observations, n, a mean, mean, and a standard deviation, sd. We will need to pass arguments to create the data.\nArguments:\n\nn: the number of elements in the vector\nmean: the mean of the elements\nsd: the standard deviation of the elements\n\nLet’s create a random normal distribution with a length of 1000 values. The mean should be 100 and standard deviation 15 (e.g., IQ distribution).\n\niq &lt;- rnorm(n = 1000, mean = 100, sd = 15)  \n\nRemember, as long as the order is correct, you do not have to specify the parameter names. You only need to specify the arguments for the parameters.\n\niq &lt;- rnorm(1000, 100, 15)      \n\nLook at the object’s head using head() in order to inspect the first 6 elements:\n\nhead(iq)                        \n\n[1] 109.27259 103.52641 115.89645  75.63572  90.29918 109.88854\n\n\nOr inspect the first 10 elements by setting n = 10.\n\nhead(iq, n = 10)\n\n [1] 109.27259 103.52641 115.89645  75.63572  90.29918 109.88854 103.65453\n [8] 113.92694 123.41507  97.74822"
   },
   {
     "objectID": "modules/05_vectors_and_data_frame_basics.html#creating-number-sequences-using-seq",
     "href": "modules/05_vectors_and_data_frame_basics.html#creating-number-sequences-using-seq",
-    "title": "Vectors and Fata Frame Basics",
+    "title": "Vectors and Data Frame Basics",
     "section": "Creating number sequences using seq()",
     "text": "Creating number sequences using seq()\nYou can dig a little more deeply into the functionality of seq() by looking at the help documentation, help(seq) or ?seq.\nArguments:\nfrom, to: the starting and (maximal) end values of the sequence. Of length 1 unless just from is supplied as an unnamed argument. by: number: increment of the sequence. length.out: desired length of the sequence. A non-negative number, which for seq and seq.int will be rounded up if fractional. along.with: take the length from the length of this argument.\n\nSequences from one value to another\nUse seq() to create a sequence FROM 1 TO 10:\n\nseq(from = 1, to = 10)       \n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\nThe help documentation will inform you that the from and to parameters are in the first and second position, respectively. We can specify their arguments without using the parameter explicitly.\nReference only to:\n\nseq(1, to = 10)\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\nOr, remove both:\n\nseq(1, 10) \n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\nThe returned result will be the same.\n\n\nSequences with increments using the by argument\nWe can also modify the from and to step through using the by function such that the numbers will increment by the value of by.\n\nseq(2, 10, by = 2)           # FROM 2 TO 10 BY 2s, dropping from and to arguments\n\n[1]  2  4  6  8 10\n\n\nUsing another example, create a sequence from 1 to 1000 and assign that to an object named id.\n\nid &lt;- seq(1, 1000)            # assign a sequence of 1 to 1000 to a vector named id\n\nInspecting the head:\n\nhead(id)\n\n[1] 1 2 3 4 5 6\n\n\n\n\nObtaining the number of elements using length()\nIf the number of elements in a vector variable changes, hard coding can be troublesome. We can return the length() of the sex vector and pass that as the sequence value. This approach is useful for objects that get modified. This approach would be more flexible.\n\nlength(sex)                # length will return the length of the vector, including NAs\n\n[1] 1000\n\n\nGreat, we get 1000!\n\n\nCreating a sequence using other functions\nThe argument for a function can also be another function. If we have the number of elements in a vector, we could also create a sequence from a starting number to the ending number as defined the another function.\nAssign a sequence of 1 to the length() of the sex object and assign that to an object named id. To make the code more easy to read, we will place the parameters on separate lines.\n\nid &lt;- seq(from = 1, \n          to = length(sex)\n          )  \n\nAnd look at the head:\n\nhead(id)\n\n[1] 1 2 3 4 5 6"
   },
   {
     "objectID": "modules/05_vectors_and_data_frame_basics.html#converting-numeric-or-characters-containing-numbers-to-integer",
     "href": "modules/05_vectors_and_data_frame_basics.html#converting-numeric-or-characters-containing-numbers-to-integer",
-    "title": "Vectors and Fata Frame Basics",
+    "title": "Vectors and Data Frame Basics",
     "section": "Converting numeric or characters containing numbers to integer",
-    "text": "Converting numeric or characters containing numbers to integer\nConvert to integer:\n\niq &lt;- as.integer(iq)\n\nNow they are integers:\n\nhead(iq)\n\n[1]  84 122 113 121 131  99"
+    "text": "Converting numeric or characters containing numbers to integer\nConvert to integer:\n\niq &lt;- as.integer(iq)\n\nNow they are integers:\n\nhead(iq)\n\n[1] 109 103 115  75  90 109"
   },
   {
     "objectID": "modules/05_vectors_and_data_frame_basics.html#converting-numeric-vectors-to-character",
     "href": "modules/05_vectors_and_data_frame_basics.html#converting-numeric-vectors-to-character",
-    "title": "Vectors and Fata Frame Basics",
+    "title": "Vectors and Data Frame Basics",
     "section": "Converting numeric vectors to character",
-    "text": "Converting numeric vectors to character\nIf the characters are numbers, pass an existing vector into as.character() to convert\n\niq &lt;- as.character(iq)                # make is a character vector  \n\nNow the numbers are in quotes representing strings.\n\nhead(iq)               \n\n[1] \"84\"  \"122\" \"113\" \"121\" \"131\" \"99\""
+    "text": "Converting numeric vectors to character\nIf the characters are numbers, pass an existing vector into as.character() to convert\n\niq &lt;- as.character(iq)                # make is a character vector  \n\nNow the numbers are in quotes representing strings.\n\nhead(iq)               \n\n[1] \"109\" \"103\" \"115\" \"75\"  \"90\"  \"109\""
   },
   {
     "objectID": "modules/05_vectors_and_data_frame_basics.html#converting-character-vectors-to-numeric",
     "href": "modules/05_vectors_and_data_frame_basics.html#converting-character-vectors-to-numeric",
-    "title": "Vectors and Fata Frame Basics",
+    "title": "Vectors and Data Frame Basics",
     "section": "Converting character vectors to numeric",
-    "text": "Converting character vectors to numeric\nIf the elements are characters, pass an existing vector into as.integer() to convert.\n\niq &lt;- as.integer(iq)  \n\nNow elements are integers, not floats.\n\nhead(iq)\n\n[1]  84 122 113 121 131  99\n\n\nYou can also wrap a function in another function when the initial object is created. Here, as.integer() converts the vector returned by rnorm() into an integer.\n\niq &lt;- as.integer(rnorm(1000, 100, 15))                 # create initially by wrapping as.integer() around rnorm()"
+    "text": "Converting character vectors to numeric\nIf the elements are characters, pass an existing vector into as.integer() to convert.\n\niq &lt;- as.integer(iq)  \n\nNow elements are integers, not floats.\n\nhead(iq)\n\n[1] 109 103 115  75  90 109\n\n\nYou can also wrap a function in another function when the initial object is created. Here, as.integer() converts the vector returned by rnorm() into an integer.\n\niq &lt;- as.integer(rnorm(1000, 100, 15))                 # create initially by wrapping as.integer() around rnorm()"
   },
   {
     "objectID": "modules/05_vectors_and_data_frame_basics.html#using-piping-operators-and",
     "href": "modules/05_vectors_and_data_frame_basics.html#using-piping-operators-and",
-    "title": "Vectors and Fata Frame Basics",
+    "title": "Vectors and Data Frame Basics",
     "section": "Using piping operators |> and %>%",
     "text": "Using piping operators |&gt; and %&gt;%\nAlternatively, if nesting functions and reading them from the inside out confuses you, you can instead use piping operators to pass objects from function to function. Piping also improves code readability.\nBase R now includes it’s own piping operator, |&gt;. In the past, piping was accomplish using {magrittr} piping operators and sometimes those operators work better than the base R pipe. The main piping operator from {magrittr} is %&gt;%. To use it, we will need to load the library first using library(), though you should loads all libraries at the top of your file. We will use both piping operators to illustrate differences in functionality. I may use them interchangeably in materials.\nLoad the library:\n\nlibrary(magrittr)\n\nCreate the iq vector:\n\niq &lt;- rnorm(1000, 100, 15)        # create the random normal dist\n\nCheck whether the vector is an integer:\n\nis.integer(iq)\n\n[1] FALSE\n\n\nis.integer() is a logical test, so it will return either TRUE or FALSE. You see that the vector is not an integer as FALSE was returned. Because IQ scores are integers, let’s use the process to make it an integer.\n\niq &lt;- rnorm(1000, 100, 15) %&gt;%    # create the random normal dist\n    as.integer()                  # pipe to make integer\n\nUsing base R’s piping operator:\n\niq &lt;- rnorm(1000, 100, 15) |&gt;     # create the random normal dist\n    as.integer()                  # pipe to make integer"
   },
   {
     "objectID": "modules/05_vectors_and_data_frame_basics.html#examine-the-head-of-the-object",
     "href": "modules/05_vectors_and_data_frame_basics.html#examine-the-head-of-the-object",
-    "title": "Vectors and Fata Frame Basics",
+    "title": "Vectors and Data Frame Basics",
     "section": "Examine the head() of the object",
-    "text": "Examine the head() of the object\nHowever you create the vector, we can examine the head of the vector using head():\n\nhead(iq)\n\n[1] 111 114 103 119  73 120\n\n\nA note about pipes: If you did not pipe the object from one function to another, you would need to wrap the functions as layers. The the function in the inner layer would be executed first and the function of the outer layer would be executed last.\nas.integer(rnorm(1000, 100, 15))\nAlthough there is nothing incorrect with this code, readability is compromised because you have to read the functions from the inside out. Piping objects to functions allows for reading functions from top to bottom."
+    "text": "Examine the head() of the object\nHowever you create the vector, we can examine the head of the vector using head():\n\nhead(iq)\n\n[1] 100 103  84 119  88  85\n\n\nA note about pipes: If you did not pipe the object from one function to another, you would need to wrap the functions as layers. The the function in the inner layer would be executed first and the function of the outer layer would be executed last.\nas.integer(rnorm(1000, 100, 15))\nAlthough there is nothing incorrect with this code, readability is compromised because you have to read the functions from the inside out. Piping objects to functions allows for reading functions from top to bottom."
   },
   {
     "objectID": "modules/05_vectors_and_data_frame_basics.html#plotting-the-vector-using-hist",
     "href": "modules/05_vectors_and_data_frame_basics.html#plotting-the-vector-using-hist",
-    "title": "Vectors and Fata Frame Basics",
+    "title": "Vectors and Data Frame Basics",
     "section": "Plotting the vector using hist()",
     "text": "Plotting the vector using hist()\nAnd to see a plot, use hist(iq):\n\nhist(iq)\n\n\n\n\nOr pass the object using a pipe (e.g., |&gt; or %&gt;%) and pipe the vector to the histogram function in base R:\n\niq %&gt;% hist()\n\n\n\n\n\niq |&gt; hist()\n\n\n\n\nNotice that this approach changes the title. When piping objects with {magrittr}’s pipe, the object is referenced using . so this because the name of the object."
   },
   {
     "objectID": "modules/05_vectors_and_data_frame_basics.html#adding-a-title-to-the-plot",
     "href": "modules/05_vectors_and_data_frame_basics.html#adding-a-title-to-the-plot",
-    "title": "Vectors and Fata Frame Basics",
+    "title": "Vectors and Data Frame Basics",
     "section": "Adding a title to the plot",
     "text": "Adding a title to the plot\nTO add a title, pass a string argument to main:\n\niq |&gt; hist(main = \"IQ Distribution\")"
   },
   {
     "objectID": "modules/05_vectors_and_data_frame_basics.html#recoding-vectors",
     "href": "modules/05_vectors_and_data_frame_basics.html#recoding-vectors",
-    "title": "Vectors and Fata Frame Basics",
+    "title": "Vectors and Data Frame Basics",
     "section": "Recoding vectors",
     "text": "Recoding vectors\nSometimes elements of vectors are messy and need to be fixed. In general, this process is referred to as recoding. There are various ways to recode in R and there are special libraries dedicated to recoding. Now, we will perform some simple recoding.\nYou can use ifelse() or dplyr::case_when() to test whether the elements of a vector match some condition and if yes (do one thing), otherwise no (do something else). In order to understand how these functions and many others work we need to understand a logical test.\n\nifelse()\ndplyr::case_when()\n\n\nPerforming a logical test\nWe can perform a logical test on all types of objects but this example will focus on vectors, for which all elements will be examined. The logical test will return TRUE or FALSE for each vector element depending on whether the case matches a test condition.\nRather than illustrate this the 1000 element sex vector, we will create a vector of length 5 called temp_sex. In this example, you will also see what happens when you need to clean up and recode the sloppy data. You can see are composed of both upper and lower case letters presumably corresponding to biological sex. Because R is a case-sensitive language, \"M\" and \"m\" represent different objects even though the intent is for them to be the same.\n\ntemp_sex &lt;- c(\"M\", \"m\", \"F\", \"f\", NA)\n\nYou can see that some character elements in the vector are upper- and lowercase m’s and f’s. Let’s see what happens when we perform a logical test of the vector. Remember that by itself = will be assignment (like &lt;-). In order to determine whether an object or elements of an object is equal to something, we use ==.\nFor example, temp_sex == \"M\":\n\ntemp_sex == \"M\"\n\n[1]  TRUE FALSE FALSE FALSE    NA\n\n\nThe returned vector is of the same length as the vector tested. Each element of the vector was tested and those elements that matched the character \"M\" returns TRUE. The other elements are FALSE, except of the NA, or missing value. Importantly, the logical test does not return FALSE for NAs.\n\n\nRecoding using ifelse()\nLet’s perform the logical test inside ifelse(). The function will test each element and IF it is TRUE (matches the condition) will assign 0, else/otherwise assign 1 in order to recode the letters into numbers. Of course, you may often wish to recode letters into other letters.\n\nifelse(temp_sex == \"M\", 0, 1)\n\n[1]  0  1  1  1 NA\n\n\nWe can see that all of the TRUEs are 0 and all else except for NA are 0. You can see that only the \"M\" was recoded to 0 and all other elements that were not NA were recoded as 1. Clearly, this is not correct. We can use multiple ifelse() functions but the solution won’t be offered here because it’s just really messy. Instead of focusing on bad code, let’s just focus on offering better solutions.\nPerforming the same test on sex but piping the vector to head() will allow for inspection of the first few elements.\n\nifelse(sex == \"M\", 0, 1) |&gt;\n  head()\n\n[1] 1 1 1 1 1 1\n\n\nThe ifelse() approach is fine for two groups. When there are more than two groups, however, re-coding can be confusing with ifelse() because you’ll need to nest an ifelse() inside an ifelse(). The popular {dplyr} library also has a couple functions similar to ifelse(), for example, if_else() and case_when().\n\n\nRecoding using dplyr::case_when()\nThe case_when() function will also perform logical tests but you can easily specify more than one. The help documentation tells us that “This function allows you to vectorise multiple if_else() statements. Each case is evaluated sequentially and the first match for each element determines the corresponding value in the output vector. If no cases match, the .default is used as a final”else” statement.” And later “If none of the cases match and no .default is supplied, NA is used.\nWith case_when(), we will perform a logical test of the elements against the character string \"M\" first. The elements that match \"M\" will evaluate as TRUE and will be recoded as 0. Then the elements of the new recoded vector will be tested again against \"F\". Those that are TRUE will be recoded as 1. Anything else will be assigned NA for missing because they matched neither \"M\" nor \"F\".\nWe wee that only the first element returns TRUE. Other elements are FALSE or NA.\n\ndplyr::case_when(\n  temp_sex == \"M\" ~ 0,\n  temp_sex == \"F\" ~ 1\n  ) \n\n[1]  0 NA  1 NA NA\n\n\nBut note that if the character case is inconsistent, NA’s will replace elements that are \"m\" and \"f\". An easy fix for casing is to convert the vector (without assignment) by passing it to tolower() or toupper() and then perform the logical conversion on the case change elements.\n\ndplyr::case_when(\n  toupper(temp_sex) == \"M\" ~ 0,\n  toupper(temp_sex) == \"F\" ~ 1\n  ) \n\n[1]  0  0  1  1 NA\n\n\nYou can now see that all elements will evaluate to TRUE and are recoded except for the NA in the vector. Keep in mind that strings may be very messy and require careful inspection and cleaning. Sometimes simple case recoding solves your problems.\nNote: There is a much powerful library called {stringr} for wrangling strings. We will use this library to perform other tasks. If you wanted to familiarize yourself with making strings upper or lowercase using that library, use stringr::str_to_lower() and stringr::str_to_upper().\nTo illustrate:\n\nlibrary(stringr)            # load the library first\n\ndplyr::case_when(\n  str_to_upper(temp_sex) == \"M\" ~ 0,\n  str_to_upper(temp_sex) == \"F\" ~ 1\n  ) \n\n[1]  0  0  1  1 NA\n\n\nWhen you have more logical tests to perform, you can specify them on a new line. Using the existing vector, we can illustrate with a silly example.\n\ndplyr::case_when(\n  temp_sex == \"m\" ~ \"Young Men\",\n  temp_sex == \"M\" ~ \"Old Men\",\n  temp_sex == \"f\" ~ \"Young Women\",\n  temp_sex == \"F\" ~ \"Old Women\",\n  ) \n\n[1] \"Old Men\"     \"Young Men\"   \"Old Women\"   \"Young Women\" NA           \n\n\nWe have not recoded the vector to have clear names for 4 groups, plus and NAs. Of course, you have not changed temp_sex unless you assign the returned vector to a name.\n\ntemp_sex\n\n[1] \"M\" \"m\" \"F\" \"f\" NA \n\n\nAssign to temp_sex to overwrite:\n\ntemp_sex &lt;- dplyr::case_when(\n  temp_sex == \"m\" ~ \"Young Men\",\n  temp_sex == \"M\" ~ \"Old Men\",\n  temp_sex == \"f\" ~ \"Young Women\",\n  temp_sex == \"F\" ~ \"Old Women\",\n  ) \n\n\ntemp_sex\n\n[1] \"Old Men\"     \"Young Men\"   \"Old Women\"   \"Young Women\" NA"
   },
@@ -1645,288 +1645,260 @@
     "text": "Weekly Worklog/Report\nTracking individual and team goals weekly ensures progress toward the goal, commitment to the project, accountability for oneself, and a record of accomplishments.\nThe Project Manager should inquire with the team about the best way to submit worklogs or transparency and review. This could be a Google Doc File, a spreadsheet, or even a Google From that contains questions to answer, which then get dumped into a Google Spreadsheet for all to review.\n\nFrequency of Worklog\nWorklogs are to be completed by end-of-day following the team meeting, after communicating future goals (distributed equally) to other team members. Please make public for me to review. Meetings should be physical to facilitate team cohesion and conversation, and limit silly technical issues that just waste meeting time.\n\n\nContents of Worklog\nWorklogs should contain information about the reporting date, the team member reporting, that member’s previous week accomplishments, and that member’s future week goals\n\nFor the past week, I accomplished the following specific goals for my team:\n\n\nThis…\nThat…\nAnd the other…\n\n\nFor this past week, the number of hours allocated toward those goals was: ___\nFor this coming week, my specific goals for the team include:\n\n\nThis…\nThat…\nAnd the other…\n\n\nIf relevant, any items to discuss with liaison."
   },
   {
-    "objectID": "slides/01_intro_rstudio_rmarkdown.html#r-is-an-interpreted-language",
-    "href": "slides/01_intro_rstudio_rmarkdown.html#r-is-an-interpreted-language",
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#r-is-an-interpreted-language",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#r-is-an-interpreted-language",
     "title": "R, RStudio, & Rmarkdown",
     "section": "R is an Interpreted Language",
     "text": "R is an Interpreted Language\n\n\ncode or programs you write execute in real time\nthe R interpreter translates your code\ncode does not need to be compiled prior to being executed"
   },
   {
-    "objectID": "slides/01_intro_rstudio_rmarkdown.html#r-involves-functional-programming",
-    "href": "slides/01_intro_rstudio_rmarkdown.html#r-involves-functional-programming",
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#r-involves-functional-programming",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#r-involves-functional-programming",
     "title": "R, RStudio, & Rmarkdown",
     "section": "R involves functional programming",
     "text": "R involves functional programming\n\n\nhttps://en.wikipedia.org/wiki/Functional_programming\nprograms are constructed by applying and composing functions\nfunctions:\n\nmean()\ndplyr::summarize()"
   },
   {
-    "objectID": "slides/01_intro_rstudio_rmarkdown.html#some-basics",
-    "href": "slides/01_intro_rstudio_rmarkdown.html#some-basics",
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#some-basics",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#some-basics",
     "title": "R, RStudio, & Rmarkdown",
     "section": "Some basics",
     "text": "Some basics\n\n\nnumeric objects\nstrings/character objects:\n\ncomposed of letters\nenclosed by quotes"
   },
   {
-    "objectID": "slides/01_intro_rstudio_rmarkdown.html#write-some-code",
-    "href": "slides/01_intro_rstudio_rmarkdown.html#write-some-code",
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#write-some-code",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#write-some-code",
     "title": "R, RStudio, & Rmarkdown",
     "section": "Write some code",
     "text": "Write some code\n\n\n```{r}\nband &lt;- \"your favorite band\"\nstate &lt;- \"the state in which you grew up\"\nname &lt;- \"your name\"\nage &lt;- your age\n```"
   },
   {
-    "objectID": "slides/01_intro_rstudio_rmarkdown.html#rstudio",
-    "href": "slides/01_intro_rstudio_rmarkdown.html#rstudio",
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#rstudio",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#rstudio",
     "title": "R, RStudio, & Rmarkdown",
     "section": "RStudio",
     "text": "RStudio\n\nIDE for using R\nmake for a better experience\nlots of extras\n\nbetter UI, markdown, Terminal, Git, code snippets"
   },
   {
-    "objectID": "slides/01_intro_rstudio_rmarkdown.html#r-markdown",
-    "href": "slides/01_intro_rstudio_rmarkdown.html#r-markdown",
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#r-markdown",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#r-markdown",
     "title": "R, RStudio, & Rmarkdown",
     "section": "R Markdown",
     "text": "R Markdown\n\n\nMarkdown is a lightweight markup language used for adding formatting elements to plain text text\nR Markdown is a markdown language create for R and RStudio\nAllows you to dress up text, embed and render code, reference hyperlinks, etc. within a written document\nLibraries like {rmarkdown} and {knitr} help you build HTML, pdf, and Word documents that update automatically with new data"
   },
   {
-    "objectID": "slides/01_intro_rstudio_rmarkdown.html#create-an-r-markdown-file",
-    "href": "slides/01_intro_rstudio_rmarkdown.html#create-an-r-markdown-file",
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#create-an-r-markdown-file",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#create-an-r-markdown-file",
     "title": "R, RStudio, & Rmarkdown",
     "section": "Create an R Markdown File",
     "text": "Create an R Markdown File\n\n\nCreate directory/folder named: fods24\nFile &gt; New File &gt; R Markdown\nName it: my_first_markdown.Rmd\nSave in: /fods24\nNOTE: Directories will be addressed for next week!"
   },
   {
-    "objectID": "slides/01_intro_rstudio_rmarkdown.html#dressing-up-text",
-    "href": "slides/01_intro_rstudio_rmarkdown.html#dressing-up-text",
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#dressing-up-text",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#dressing-up-text",
     "title": "R, RStudio, & Rmarkdown",
     "section": "Dressing up Text",
     "text": "Dressing up Text\n\n\nItalics: wrap text in *\n\n*italics*\n\nBold: wrap text in **\n\n**bold**\n\nBold Italics: wrap text in ***\n\n***bold italics***"
   },
   {
-    "objectID": "slides/01_intro_rstudio_rmarkdown.html#insert-and-embed-code-block",
-    "href": "slides/01_intro_rstudio_rmarkdown.html#insert-and-embed-code-block",
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#insert-and-embed-code-block",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#insert-and-embed-code-block",
     "title": "R, RStudio, & Rmarkdown",
     "section": "Insert and Embed Code Block",
     "text": "Insert and Embed Code Block\n\n\n```{r}\n\n```\n\n\n\n\nWindows: CLTR+ALT+I\nMac: COMMAND+ALT+I"
   },
   {
-    "objectID": "slides/01_intro_rstudio_rmarkdown.html#create-code-in-block-assign-value-to-year",
-    "href": "slides/01_intro_rstudio_rmarkdown.html#create-code-in-block-assign-value-to-year",
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#create-code-in-block-assign-value-to-year",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#create-code-in-block-assign-value-to-year",
     "title": "R, RStudio, & Rmarkdown",
     "section": "Create Code in Block: Assign value to year ",
     "text": "Create Code in Block: Assign value to year \n\n\n```{r}\nyear &lt;- 2024\n```\n\n\n\n\ncode\nyear &lt;- 2024"
   },
   {
-    "objectID": "slides/01_intro_rstudio_rmarkdown.html#code-block-settings",
-    "href": "slides/01_intro_rstudio_rmarkdown.html#code-block-settings",
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#code-block-settings",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#code-block-settings",
     "title": "R, RStudio, & Rmarkdown",
     "section": "Code block settings",
     "text": "Code block settings"
   },
   {
-    "objectID": "slides/01_intro_rstudio_rmarkdown.html#embed-code-in-line-inside-text",
-    "href": "slides/01_intro_rstudio_rmarkdown.html#embed-code-in-line-inside-text",
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#embed-code-in-line-inside-text",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#embed-code-in-line-inside-text",
     "title": "R, RStudio, & Rmarkdown",
     "section": "Embed code in-line (inside text)",
     "text": "Embed code in-line (inside text)\n\n\nIf you have an object in R\nYou can render the object in text\nAnd dress up the text"
   },
   {
-    "objectID": "slides/01_intro_rstudio_rmarkdown.html#embed-code-in-line-inside-text-1",
-    "href": "slides/01_intro_rstudio_rmarkdown.html#embed-code-in-line-inside-text-1",
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#embed-code-in-line-inside-text-1",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#embed-code-in-line-inside-text-1",
     "title": "R, RStudio, & Rmarkdown",
     "section": "Embed code in-line (inside text)",
     "text": "Embed code in-line (inside text)\n\nIf you have an object in R\nYou can render the object in text\nAnd dress up the text\n\n\n\nThe year is `r year`!"
   },
   {
-    "objectID": "slides/01_intro_rstudio_rmarkdown.html#embed-code-in-line-inside-text-2",
-    "href": "slides/01_intro_rstudio_rmarkdown.html#embed-code-in-line-inside-text-2",
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#embed-code-in-line-inside-text-2",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#embed-code-in-line-inside-text-2",
     "title": "R, RStudio, & Rmarkdown",
     "section": "Embed code in-line (inside text)",
     "text": "Embed code in-line (inside text)\n\nIf you have an object in R\nYou can render the object in text\nAnd dress up the text\n\n\n\nThe year is `r year`!\n\n\nThe year is 2024!"
   },
   {
-    "objectID": "slides/01_intro_rstudio_rmarkdown.html#add-header-sections-and-subsections-using",
-    "href": "slides/01_intro_rstudio_rmarkdown.html#add-header-sections-and-subsections-using",
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#add-header-sections-and-subsections-using",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#add-header-sections-and-subsections-using",
     "title": "R, RStudio, & Rmarkdown",
     "section": "Add header sections and subsections using #",
     "text": "Add header sections and subsections using #\n# Main Section\n## 2nd Level\n### 3rd Level"
   },
   {
-    "objectID": "slides/01_intro_rstudio_rmarkdown.html#insert-hyperlinks",
-    "href": "slides/01_intro_rstudio_rmarkdown.html#insert-hyperlinks",
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#insert-hyperlinks",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#insert-hyperlinks",
     "title": "R, RStudio, & Rmarkdown",
     "section": "Insert hyperlinks",
     "text": "Insert hyperlinks\n\n\n[message](url)\n[cheatsheet](https://gabrielcook.xyz/fods24/cheatsheets/rmarkdown-2.0.pdf)\ncheatsheet"
   },
   {
-    "objectID": "slides/01_intro_rstudio_rmarkdown.html#knitting-r-markdown-files",
-    "href": "slides/01_intro_rstudio_rmarkdown.html#knitting-r-markdown-files",
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#knitting-r-markdown-files",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#knitting-r-markdown-files",
     "title": "R, RStudio, & Rmarkdown",
     "section": "Knitting R Markdown Files",
     "text": "Knitting R Markdown Files\n\n\nAs HTML\nAs pdf\nAs Word"
   },
   {
-    "objectID": "slides/02_git.html#version-control",
-    "href": "slides/02_git.html#version-control",
+    "objectID": "slides/02_git_slides.html#version-control",
+    "href": "slides/02_git_slides.html#version-control",
     "title": "Git and GitHub",
     "section": "Version Control",
     "text": "Version Control\n\n\nWhat is version control?\n\nProject backup\nSee specific changes inside files\nUndo changes (time machine)\n\nVersion Control Summary Video"
   },
   {
-    "objectID": "slides/02_git.html#version-control-git-workflow-basics",
-    "href": "slides/02_git.html#version-control-git-workflow-basics",
+    "objectID": "slides/02_git_slides.html#version-control-git-workflow-basics",
+    "href": "slides/02_git_slides.html#version-control-git-workflow-basics",
     "title": "Git and GitHub",
     "section": "Version Control: Git Workflow Basics",
     "text": "Version Control: Git Workflow Basics\nThere are three main parts to Git Workflow:\n\n\nVersion control for files (not empty directories)\nMake local changes (in your working directory)\nStage changes (in your staging directory)\nCommit changes (to apply them for pushing to your remote repository)\nVersion Control Workflow Basics\nOther Parts\n\nPush for sending commits to GitHub\nMerge for merging branches (i.e., to incorporate your edits into main)"
   },
   {
-    "objectID": "slides/02_git.html#git-image-version",
-    "href": "slides/02_git.html#git-image-version",
+    "objectID": "slides/02_git_slides.html#git-image-version",
+    "href": "slides/02_git_slides.html#git-image-version",
     "title": "Git and GitHub",
     "section": "Git: Image Version",
     "text": "Git: Image Version\nunderstanding git through images"
   },
   {
-    "objectID": "slides/02_git.html#connecting-git-to-github-the-rstudio-terminal",
-    "href": "slides/02_git.html#connecting-git-to-github-the-rstudio-terminal",
+    "objectID": "slides/02_git_slides.html#connecting-git-to-github-the-rstudio-terminal",
+    "href": "slides/02_git_slides.html#connecting-git-to-github-the-rstudio-terminal",
     "title": "Git and GitHub",
     "section": "Connecting Git to GitHub: The RStudio Terminal",
     "text": "Connecting Git to GitHub: The RStudio Terminal\n\n\nConfigure Git and GitHub in RStudio Terminal\nCreate token\nSet token\nCan use the RStudio Gui (clunky though)"
   },
   {
-    "objectID": "slides/02_git.html#configuring-git-and-github-with-usethis",
-    "href": "slides/02_git.html#configuring-git-and-github-with-usethis",
+    "objectID": "slides/02_git_slides.html#configuring-git-and-github-with-usethis",
+    "href": "slides/02_git_slides.html#configuring-git-and-github-with-usethis",
     "title": "Git and GitHub",
     "section": "Configuring Git and GitHub with {usethis}",
     "text": "Configuring Git and GitHub with {usethis}\n\nusethis::use_git_config(user.name = \"janegit\", \n                        user.email = \"jane_git@gitrdone.com\"\n                        )"
   },
   {
-    "objectID": "slides/02_git.html#creating-a-personal-access-token-pat-for-github-with-usethis",
-    "href": "slides/02_git.html#creating-a-personal-access-token-pat-for-github-with-usethis",
+    "objectID": "slides/02_git_slides.html#creating-a-personal-access-token-pat-for-github-with-usethis",
+    "href": "slides/02_git_slides.html#creating-a-personal-access-token-pat-for-github-with-usethis",
     "title": "Git and GitHub",
     "section": "Creating a Personal Access Token (PAT) for GitHub with {usethis}",
     "text": "Creating a Personal Access Token (PAT) for GitHub with {usethis}\n\n\nusethis::create_github_token()\nCreate token and copy to your clipboard"
   },
   {
-    "objectID": "slides/02_git.html#setting-your-git-credentials-using-pat-with-gitcreds",
-    "href": "slides/02_git.html#setting-your-git-credentials-using-pat-with-gitcreds",
+    "objectID": "slides/02_git_slides.html#setting-your-git-credentials-using-pat-with-gitcreds",
+    "href": "slides/02_git_slides.html#setting-your-git-credentials-using-pat-with-gitcreds",
     "title": "Git and GitHub",
     "section": "Setting your Git Credentials (using PAT) with {gitcreds}",
     "text": "Setting your Git Credentials (using PAT) with {gitcreds}\n\n\ngitcreds::gitcreds_set()\nChoose option to either set or replace\nAt ? Enter new password or token, paste PAT to set\ngh::gh_whoami() to check if set"
   },
   {
-    "objectID": "slides/02_git.html#some-basic-commands",
-    "href": "slides/02_git.html#some-basic-commands",
+    "objectID": "slides/02_git_slides.html#some-basic-commands",
+    "href": "slides/02_git_slides.html#some-basic-commands",
     "title": "Git and GitHub",
     "section": "Some Basic Commands",
     "text": "Some Basic Commands\n\nFork: to make a copy of a repo in your own GitHub account\nClone: make a copy of the your GitHub repo on your local computer. * copies a remote repo to create a local repo with a remote called origin automatically set up."
   },
   {
-    "objectID": "slides/02_git.html#some-basic-commands-cont.",
-    "href": "slides/02_git.html#some-basic-commands-cont.",
+    "objectID": "slides/02_git_slides.html#some-basic-commands-cont.",
+    "href": "slides/02_git_slides.html#some-basic-commands-cont.",
     "title": "Git and GitHub",
     "section": "Some Basic Commands (Cont.)",
     "text": "Some Basic Commands (Cont.)\n\nPull: incorporates changes into your repo from remote\nAdd: adds snapshots of your changes to the “Staging” area.\nCommit: takes the files as they are in your staging area and stores a snap shot of your files (changes) permanently in your Git directory\nPush: uploads your files (changes) to the remote repo\nStatus: checks the status of a repo changes, etc.\nMerge: incorporates changes into the branch you are on.\nPull Request: By “issuing a pull request” to the owner of the upstream repo, you are requesting that your changes be pulled into their repo (accept your changes/work)."
   },
   {
-    "objectID": "slides/02_git.html#making-local-file-changes-committing-and-pushing-to-github",
-    "href": "slides/02_git.html#making-local-file-changes-committing-and-pushing-to-github",
+    "objectID": "slides/02_git_slides.html#making-local-file-changes-committing-and-pushing-to-github",
+    "href": "slides/02_git_slides.html#making-local-file-changes-committing-and-pushing-to-github",
     "title": "Git and GitHub",
     "section": "Making Local File Changes, Committing, and Pushing to GitHub",
     "text": "Making Local File Changes, Committing, and Pushing to GitHub\n\n\nMake a change to a file, save to local computer\nCheck status of project for changes\nAdd/Stage change\nCommit change(s)\nPush changes\nPull pulls changes down from repo (downloads and merges changes)\nFetch downloads new data (does not change your working copy)"
   },
   {
-    "objectID": "slides/02_git.html#checking-the-status-of-local-file-changes",
-    "href": "slides/02_git.html#checking-the-status-of-local-file-changes",
+    "objectID": "slides/02_git_slides.html#checking-the-status-of-local-file-changes",
+    "href": "slides/02_git_slides.html#checking-the-status-of-local-file-changes",
     "title": "Git and GitHub",
     "section": "Checking the Status of Local File Changes",
     "text": "Checking the Status of Local File Changes\nAt the Terminal in RStudio\n\n$ git status"
   },
   {
-    "objectID": "slides/02_git.html#shared-repository-workflow-book-analogy",
-    "href": "slides/02_git.html#shared-repository-workflow-book-analogy",
-    "title": "Git and GitHub",
-    "section": "Shared Repository Workflow: Book Analogy",
-    "text": "Shared Repository Workflow: Book Analogy\n\n\ncheck out original (checkout main)\nmake a copy of the original (checkout )\nmake edits to the copy\nadd the edits (add)\ncommit to those changes (commit)\npush the edits to the copy (push) - optional\nswitch/check out the original (checkout main)\nmerge edits to the original (merge)"
-  },
-  {
-    "objectID": "slides/02_git.html#shared-repository-workflow",
-    "href": "slides/02_git.html#shared-repository-workflow",
+    "objectID": "slides/02_git_slides.html#shared-repository-workflow",
+    "href": "slides/02_git_slides.html#shared-repository-workflow",
     "title": "Git and GitHub",
     "section": "Shared Repository Workflow",
     "text": "Shared Repository Workflow\n\n\nPull recent changes from main: git pull\nMake changes to files\nStage your changes: git add\nCommit changes locally: git commit -m \"description of changes\"\nUpload your new the changes to GitHub: git push"
   },
   {
-    "objectID": "slides/02_git.html#merging-your-branch-to-main",
-    "href": "slides/02_git.html#merging-your-branch-to-main",
-    "title": "Git and GitHub",
-    "section": "Merging Your Branch to Main",
-    "text": "Merging Your Branch to Main\n\n\nGet main branch: git checkout main\nVerify main: git checkout\nPull recent changes: git pull\nMerge into main branch: git merge &lt;branch_name&gt;\nTag the change (optional): git tag\nDelete the branch (optional): git branch -d &lt;branch_name&gt;\nConfirm branch removal (optional): git branch"
-  },
-  {
-    "objectID": "slides/02_git.html#collaboration-process-review",
-    "href": "slides/02_git.html#collaboration-process-review",
-    "title": "Git and GitHub",
-    "section": "Collaboration Process Review",
-    "text": "Collaboration Process Review\n\n\ngit checkout main, then git pull\ngit checkout -b &lt;branch_name&gt;\ngit add, commit, push changes\ngit checkout main, then git pull recent changes\ngit merge &lt;branch_name&gt; into main\ngit tag to add a tag\nFor new issue/task: Repeat Steps 1, 2, 3, 4, 5, (6)"
-  },
-  {
-    "objectID": "slides/02_git.html#staging-changes-adding-changes",
-    "href": "slides/02_git.html#staging-changes-adding-changes",
+    "objectID": "slides/02_git_slides.html#staging-changes-adding-changes",
+    "href": "slides/02_git_slides.html#staging-changes-adding-changes",
     "title": "Git and GitHub",
     "section": "Staging Changes (Adding Changes)",
     "text": "Staging Changes (Adding Changes)\n\n\nStaging and Committing\n\nUntracked vs. tracked files\nTo have tracked by Git, you need to add"
   },
   {
-    "objectID": "slides/02_git.html#staging-a-specific-change",
-    "href": "slides/02_git.html#staging-a-specific-change",
+    "objectID": "slides/02_git_slides.html#staging-a-specific-change",
+    "href": "slides/02_git_slides.html#staging-a-specific-change",
     "title": "Git and GitHub",
     "section": "Staging a Specific Change",
     "text": "Staging a Specific Change\n\n\n$ git add &lt;file&gt;... such that &lt;file&gt; refers to the file name\nfile might be in a directory, e.g., r/\n$ git add r/yourname.R\nTab to auto-complete, e.g., git add r/you{TAB}"
   },
   {
-    "objectID": "slides/02_git.html#staging-all-changes",
-    "href": "slides/02_git.html#staging-all-changes",
+    "objectID": "slides/02_git_slides.html#staging-all-changes",
+    "href": "slides/02_git_slides.html#staging-all-changes",
     "title": "Git and GitHub",
     "section": "Staging All Changes",
     "text": "Staging All Changes\n\n$ git add ."
   },
   {
-    "objectID": "slides/02_git.html#committing-the-changes",
-    "href": "slides/02_git.html#committing-the-changes",
+    "objectID": "slides/02_git_slides.html#committing-the-changes",
+    "href": "slides/02_git_slides.html#committing-the-changes",
     "title": "Git and GitHub",
     "section": "Committing the Change(s)",
     "text": "Committing the Change(s)\n\n\ngit commit is used to commit the changes\nadd -m to tell git you want a message (e.g., \"my message here\")\n\n$ git commit -m \"added my first .R file\""
   },
   {
-    "objectID": "slides/02_git.html#push-publish-the-changes-from-your-branch-to-the-remote-repository",
-    "href": "slides/02_git.html#push-publish-the-changes-from-your-branch-to-the-remote-repository",
+    "objectID": "slides/02_git_slides.html#push-publish-the-changes-from-your-branch-to-the-remote-repository",
+    "href": "slides/02_git_slides.html#push-publish-the-changes-from-your-branch-to-the-remote-repository",
     "title": "Git and GitHub",
     "section": "Push (publish) the change(s) from your branch to the remote repository",
     "text": "Push (publish) the change(s) from your branch to the remote repository\n\n\n$ git push\nPushing changes"
   },
   {
-    "objectID": "slides/02_git.html#pulls-changes-from-the-remote-repository",
-    "href": "slides/02_git.html#pulls-changes-from-the-remote-repository",
+    "objectID": "slides/02_git_slides.html#pulls-changes-from-the-remote-repository",
+    "href": "slides/02_git_slides.html#pulls-changes-from-the-remote-repository",
     "title": "Git and GitHub",
     "section": "Pulls change(s) from the remote repository",
     "text": "Pulls change(s) from the remote repository\n\n\n$ git pull\nIf you make changes that other will need, let them know to pull"
   },
   {
-    "objectID": "slides/02_git.html#fetch-changes",
-    "href": "slides/02_git.html#fetch-changes",
+    "objectID": "slides/02_git_slides.html#git-client-video-tutorials",
+    "href": "slides/02_git_slides.html#git-client-video-tutorials",
     "title": "Git and GitHub",
-    "section": "Fetch changes",
-    "text": "Fetch changes"
+    "section": "Git Client Video Tutorials",
+    "text": "Git Client Video Tutorials\n\n\nGitKraken Git Client examples\nfor more, see: this video"
   },
   {
-    "objectID": "slides/02_git.html#video-tutorials",
-    "href": "slides/02_git.html#video-tutorials",
-    "title": "Git and GitHub",
-    "section": "Video Tutorials",
-    "text": "Video Tutorials\n\n\nGitKraken Git Client examples\nfor more, see: this video"
-  },
-  {
-    "objectID": "slides/02_git.html#videos-of-many-things-you-can-do",
-    "href": "slides/02_git.html#videos-of-many-things-you-can-do",
+    "objectID": "slides/02_git_slides.html#videos-of-many-things-you-can-do",
+    "href": "slides/02_git_slides.html#videos-of-many-things-you-can-do",
     "title": "Git and GitHub",
     "section": "Videos of many things you can do",
     "text": "Videos of many things you can do\nIf interested, see gittower YouTube"
@@ -2014,12 +1986,5 @@
     "title": "Sample Presentation",
     "section": "Output Location",
     "text": "Output Location\n\n\nlibrary(ggplot2)\n\nmtcars |&gt; \n  ggplot(aes(x = disp, y = mpg)) +\n  geom_point() +\n  geom_smooth(method = \"loess\", formula = \"y~x\")"
-  },
-  {
-    "objectID": "slides/02_git.html#git-client-video-tutorials",
-    "href": "slides/02_git.html#git-client-video-tutorials",
-    "title": "Git and GitHub",
-    "section": "Git Client Video Tutorials",
-    "text": "Git Client Video Tutorials\n\n\nGitKraken Git Client examples\nfor more, see: this video"
   }
 ]
