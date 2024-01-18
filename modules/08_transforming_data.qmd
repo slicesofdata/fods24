@@ -58,7 +58,7 @@ R.utils::sourceDirectory(here::here("r", "functions"))
 
 # **Overview**
 
-In this module, we will start manipulating data frames. Data frames are composed of column variables and row observations/cases and we will address how to perform operations on both. We will learn how to use **{dplyr}**, rather than `base R` to select, remove, add, and modify vectors in data frames. In addition, we will address how to filter and arrange rows in various ways. The focus will be on cleaning or wrangling data. Helper functions from libraries like **{magrittr}**, **{stringr}**, and **{tidyselect}** are also used in conjunction with **{dplyr}**.
+In this module, we will start manipulating data frames. Data frames are composed of column variables and row observations/cases and we will address how to perform operations on both. We will learn how to use **{dplyr}**, rather than `base R` to select, remove, add, and modify vectors in data frames. In addition, we will address how to filter and arrange rows in various ways. The focus will be on cleaning or wrangling data. We will also use functions from libraries like **{stringr}** and **{tidyselect}**in conjunction with **{dplyr}**. In some sections, there are multiple examples depending on your specific use case. As long as you understand the basic functionality of the function, you do not need to work through all of the use cases provide. These examples, however, are provided to help you troubleshoot use cases as you may encounter them in class or in projects.  
 
 ## **Readings and Preparation**
 
@@ -91,6 +91,7 @@ You can access remotely using this code, though you do not need to do so now.
 ```{r}
 source("https://raw.githubusercontent.com/slicesofdata/fods24/main/r/functions/view_html.R")
 ```
+
 If this function is in `r/functions/`:
 
 ```{r}

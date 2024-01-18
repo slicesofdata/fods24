@@ -1993,5 +1993,180 @@
     "title": "Installing R & RStudio",
     "section": "Install R first and then install RStudio",
     "text": "Install R first and then install RStudio\nInstalling should be easy and you can accept all of the defaults although the desktop icons are not needed, especially for R because you will never need it; RStudio will find R for you. You can follow these videos for simple installing.\nPC: How to Install R and R Studio on Windows 10/11\nMac: Installing R and RStudio on a Mac\nNote: If you leave the desktop icon for R, you can remove that later. You will never need it because RStudio will find R for you."
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#r-is-an-interpreted-language",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#r-is-an-interpreted-language",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "R is an Interpreted Language",
+    "text": "R is an Interpreted Language\n\n\ncode or programs you write execute in real time\nthe R interpreter translates your code\ncode does not need to be compiled prior to being executed"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#r-involves-functional-programming",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#r-involves-functional-programming",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "R involves functional programming",
+    "text": "R involves functional programming\n\n\nhttps://en.wikipedia.org/wiki/Functional_programming\nprograms are constructed by applying and composing functions\nfunctions:\n\nmean()\ndplyr::summarize()"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#some-basics",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#some-basics",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Some basics",
+    "text": "Some basics\n\n\nnumeric objects (e.g., 2024, 21.2)\nstrings/character objects:\n\ncomposed of letters\nenclosed by quotes (e.g., \"Sam\", \"Male\", \"21\")\n\nvector objects:\n\ncollections of objects (e.g., c(\"18\", \"23\", \"20\"))\n\ndata frames:\n\ncollections of vectors"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#some-basics-cont.",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#some-basics-cont.",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Some basics (cont.)",
+    "text": "Some basics (cont.)\n\n\nwe assign objects to names/names to objects\n\nages &lt;- c(\"18\", \"23\", \"20\")\n\nwe perform functions on objects:\n\nas.numeric(ages)\noften by assigning or reassigning:\n\nages &lt;- as.numeric(ages)"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#some-basics-cont.-1",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#some-basics-cont.-1",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Some basics (cont.)",
+    "text": "Some basics (cont.)\n\n\nwe inspect object contents\n\nages\nand get something returned: [1] 18 23 20\n\nwe perform more functions on objects:\n\nmean(ageas.numeric(ages))\n[1] 20.33333\n\nwe model data frames"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#open-rstudio",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#open-rstudio",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Open RStudio",
+    "text": "Open RStudio\n\n\nfind the Console\nfind the Terminal\nfind ‘environment’ in pane\nfind ‘history’ in pane\nfind ‘help’ in pane\nfind ‘files’ in pane\nfind ‘plots’ in pane"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#write-some-code-in-the-r-console",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#write-some-code-in-the-r-console",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Write some code in the R console",
+    "text": "Write some code in the R console\n\n\n\nyear &lt;- 2024\n\n\n\n\ncode\nyear &lt;- 2024\n\n\n\nassign objects to names using &lt;-, not ="
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#write-more-code-in-the-r-console",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#write-more-code-in-the-r-console",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Write more code in the R console",
+    "text": "Write more code in the R console\n\n\n\nages &lt;- c(18, 22, 24)\n\n\n\n\ncode\nages &lt;- c(18, 22, 24)\n\n\n\n[1] 18 22 24"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#rstudio",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#rstudio",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "RStudio",
+    "text": "RStudio\n\nIDE for using R\nmake for a better coding experience\nlots of extras\n\nbetter UI, markdown, Terminal, Git, code snippets"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#r-markdown",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#r-markdown",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "R Markdown",
+    "text": "R Markdown\n\n\nMarkdown is a lightweight markup language used for adding formatting elements to plain text text\nR Markdown is a markdown language create for R and RStudio\nAllows you to dress up text, embed and render code, reference hyperlinks, etc. within a written document\nLibraries like {rmarkdown} and {knitr} help you build HTML, pdf, and Word documents that update automatically with new data"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#create-an-r-markdown-file",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#create-an-r-markdown-file",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Create an R Markdown File",
+    "text": "Create an R Markdown File\n\n\nCreate directory/folder named: fods24\nFile &gt; New File &gt; R Markdown\nName it: my_first_markdown.Rmd\nSave in: /fods24\nNOTE: Directories will be addressed for next week!"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#write-some-text-in-the-r-markdown-file",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#write-some-text-in-the-r-markdown-file",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Write some text in the R Markdown File",
+    "text": "Write some text in the R Markdown File\n\nMy name is  and the year I start learning R is ."
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#dressing-up-text",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#dressing-up-text",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Dressing up Text",
+    "text": "Dressing up Text\n\n\nItalics: wrap text in *\n\n*italics*\n\nBold: wrap text in **\n\n**bold**\n\nBold Italics: wrap text in ***\n\n***bold italics***"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#insert-and-embed-code-block",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#insert-and-embed-code-block",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Insert and Embed Code Block",
+    "text": "Insert and Embed Code Block\n\n\n```{r}\n\n```\n\n\n\n\nWindows: CLTR+ALT+I\nMac: COMMAND+ALT+I"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#create-code-in-block-assign-value-to-year",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#create-code-in-block-assign-value-to-year",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Create Code in Block: Assign value to year ",
+    "text": "Create Code in Block: Assign value to year \n\n\n```{r}\nyear &lt;- 2024\n```\n\n\n\n\ncode\nyear &lt;- 2024"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#code-block-settings",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#code-block-settings",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Code block settings",
+    "text": "Code block settings"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#create-a-code-block-write-some-code",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#create-a-code-block-write-some-code",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Create a code block + write some code",
+    "text": "Create a code block + write some code\n\n\n```{r}\nband &lt;- \"your favorite band\"\nstate &lt;- \"the state in which you grew up\"\nname &lt;- \"your name\"\n```"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#embed-code-in-line-inside-text",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#embed-code-in-line-inside-text",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Embed code in-line (inside text)",
+    "text": "Embed code in-line (inside text)\n\n\nIf you have an object in R\nYou can render the object in text\nAnd dress up the text"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#embed-code-in-line-inside-text-1",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#embed-code-in-line-inside-text-1",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Embed code in-line (inside text)",
+    "text": "Embed code in-line (inside text)\n\nIf you have an object in R\nYou can render the object in text\nAnd dress up the text\n\n\n\nThe year is `r year`!"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#embed-code-in-line-inside-text-2",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#embed-code-in-line-inside-text-2",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Embed code in-line (inside text)",
+    "text": "Embed code in-line (inside text)\n\nIf you have an object in R\nYou can render the object in text\nAnd dress up the text\n\n\n\nThe year is `r year`!\n\n\nThe year is 2024!"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#modify-your-text-in-the-r-markdown-file",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#modify-your-text-in-the-r-markdown-file",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Modify your text in the R Markdown File",
+    "text": "Modify your text in the R Markdown File\n\n\nmake the year change by using inline code\nmake sure your inline code is after you assign the object"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#add-header-sections-and-subsections-using",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#add-header-sections-and-subsections-using",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Add header sections and subsections using #",
+    "text": "Add header sections and subsections using #\n# About me\n## My favorite band\n### My favorite band from the 1990s"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#insert-hyperlinks",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#insert-hyperlinks",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Insert hyperlinks",
+    "text": "Insert hyperlinks\n\n\n[message](url)\n[cheatsheet](https://gabrielcook.xyz/fods24/cheatsheets/rmarkdown-2.0.pdf)\ncheatsheet"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#knitting-r-markdown-files",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#knitting-r-markdown-files",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Knitting R Markdown Files",
+    "text": "Knitting R Markdown Files\n\n\nAs HTML\nAs pdf\nAs Word"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown.html#locate-the-html-file",
+    "href": "slides/01_intro_rstudio_rmarkdown.html#locate-the-html-file",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Locate the HTML file ",
+    "text": "Locate the HTML file \n\nmy_first_markdown.html\n\n:::"
   }
 ]

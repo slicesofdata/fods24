@@ -1,5 +1,5 @@
 ---
-title: "**Functions, arguments, and R scripts**"
+title: "**Functions, Arguments, and R scripts**"
 author: "Gabriel I. Cook"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 
@@ -18,29 +18,30 @@ execute:
 ```{r include=FALSE}
 #install.packages("webshot")
 webshot::install_phantomjs()
+R.utils::sourceDirectory(here::here("r", "functions"))
 ```
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 # huber text
 huber_pdf <- "https://www.markhuberdatascience.org/_files/ugd/c2b9b6_543ea42a1ea64e32b4440b34ffd71635.pdf"
-front_matter <- 10
+front_matter   <- 10
 huber_intro_ch <- glue::glue(huber_pdf,"#page=",front_matter + 3)
 huber_rmarkdown_ch <- glue::glue(huber_pdf,"#page=",front_matter + 10)
-huber_graphing_ch <- glue::glue(huber_pdf,"#page=",front_matter + 17)
+huber_graphing_ch  <- glue::glue(huber_pdf,"#page=",front_matter + 17)
 huber_transformation_ch <- glue::glue(huber_pdf,"#page=",front_matter + 59) # 5
 huber_summaries_ch <- glue::glue(huber_pdf,"#page=",front_matter + 71)
-huber_eda_var_ch <- glue::glue(huber_pdf,"#page=",front_matter + 81)
+huber_eda_var_ch   <- glue::glue(huber_pdf,"#page=",front_matter + 81)
 huber_eda_covar_ch <- glue::glue(huber_pdf,"#page=",front_matter + 93)
-huber_import_ch <- glue::glue(huber_pdf,"#page=",front_matter + 103)
+huber_import_ch    <- glue::glue(huber_pdf,"#page=",front_matter + 103)
 huber_tidy_data_ch <- glue::glue(huber_pdf,"#page=",front_matter + 123)
 huber_relational_ch <- glue::glue(huber_pdf,"#page=",front_matter + 141)
 huber_filtering_joins_ch <- glue::glue(huber_pdf,"#page=",front_matter + 150)
-huber_strings_ch <- glue::glue(huber_pdf,"#page=",front_matter + 155)
-huber_regex_ch <- glue::glue(huber_pdf,"#page=",front_matter + 162)
+huber_strings_ch  <- glue::glue(huber_pdf,"#page=",front_matter + 155)
+huber_regex_ch    <- glue::glue(huber_pdf,"#page=",front_matter + 162)
 huber_using_regex_ch <- glue::glue(huber_pdf,"#page=",front_matter + 170)
 huber_func_patterns_ch <- glue::glue(huber_pdf,"#page=",front_matter + 182)
-huber_factors_ch <- glue::glue(huber_pdf,"#page=",front_matter + 186)
-huber_sql_ch <- glue::glue(huber_pdf,"#page=",front_matter + 199)
+huber_factors_ch  <- glue::glue(huber_pdf,"#page=",front_matter + 186)
+huber_sql_ch      <- glue::glue(huber_pdf,"#page=",front_matter + 199)
 huber_writing_functions_ch <- glue::glue(huber_pdf,"#page=",front_matter + 232)
 huber_modeling_ch <- glue::glue(huber_pdf,"#page=",front_matter + 241)
 ```
@@ -73,18 +74,17 @@ Although the R language differs from other languages like Python, JavaScript, or
 
 ### **To Do**
 
-Read through the module. You can use the `R` console or open up an `R Markdown` (e.g., `.Rmd`) file to follow along interactively. If you instead prefer to simply read through the content so that you can understand the concepts without coding, that is fine too. Concepts will be applied in class in order to complete activities, however. Reading the module will provide you with confidence working on those activities and prevent you from feeling lost. Testing out some code may provide you more confidence.
+Read through the module. You can use the `R` console or open up an `R Markdown` (e.g., `.Rmd`) file to follow along interactively. If you instead prefer to simply read through the content so that you can understand the concepts without coding, that is fine too. Concepts will be applied in class in order to complete activities, however. Reading the module will provide you with confidence working on those activities and prevent you from feeling lost while completing activities. Testing out some code may provide you more confidence.
+
+
+## **Libraries** 
+
+- **{here}** `r packageVersion("here")`: for file path management
 
 
 ## **External Functions**
 
-Provided in class:
-
-`view_html()`: for viewing data frames in html format, from `/r/my_functions.R`
-
-```{r}
-source(here::here("r", "my_functions.R"))
-```
+`view_html()`: for viewing data frames in html format
 
 You can access remotely using this code, though you do not need to do so now.
 
@@ -104,7 +104,7 @@ In the example above, you are the *object* and a *name* has been *assigned* to y
 
 You can also think of an *object* as a sort of container that holds something. Containers of different types hold different things and so is true in computer programming. A container for holding water may look different from a container for holding books. In computer speak, one type of container can hold numbers, another can hold characters, another can hold a data frame, etc. The container object is holding whatever you have assigned it to hold.
 
-We will deal with different types of objects in data science. Without providing too complicated or technical of a description, some are describe below. 
+We will deal with different types of objects in data science. Without providing too complicated or technical of descriptions, some are described below. 
 
 - **numeric** objects: representing numeric information (e.g., one's age)
 - **character** objects: representing character information (e.g., one's name or race)
@@ -646,32 +646,145 @@ sum_xy(year, 2)
 
 # **Sourcing code with `source()`**
 
-`source()` is a function that will read and execute R code. One benefit of this function relates to having files of code. Let's say you create an R script file with extension `.R` (see **RStudio -> File -> New File -> R Script**) and that file contains R code to read a data file, or clean up variables in a data frame, or create plot objects. All of the code in that `.R` file can be executed from the R console, from within another `.R` file, or from a `.Rmd` file. As result, `source()` can be used to compartmentalize code serving different purposes and to keep each file from being too busy or complicated. Let's try. 
+`source()` is a function that will read and execute R code. One benefit of this function relates to having files of code. Although there are several parameters for this function, the one you will use to pass a file name is `file`. The other parameters you are unlikely to use, so I will not discuss them. 
 
-Create an `.R` script file from `RStudio`. In it, type `message("My first script file.")` and save it as `my_first_script` (the `.R` should be automatic) in your `"/r"` directory. 
+**Parameters/Arguments:**
+
+- `file`: a connection or a character string giving the pathname of the file or URL to read from 
+
+Let's say you create an R script file with extension `.R` and that file contains `R` code to read a data file, or clean up variables in a data frame, or create plot objects. All of the code in that `.R` file can be executed from the `R` console, from within another `.R` file, or from a `.Rmd` file. As result, `source()` can be used to compartmentalize code that is used to serve different purposes. Moreover, writing code in individual files focuses you (and the script) on a goal and prevents it from from becoming too busy or too complicated. Let's try. 
+
+## **Creating a `.R` script file to `source()`**
+
+There are a few ways to create files for your `R` project. You can do so easily from `RStudio` or you can do so more quickly using `Git`.
+
+
+### **Creating a `.R` script using `RStudio`**
+
+You can easily create an `.R` script file from `RStudio`. You are most likely familiar with this file creation process.
+
+First, go to **File > New File > R Script**
+
+Second, **File > Save As**, browse to the projects `/r` directory, name it `my_first_script.R` and click save. 
+
+In it, type `message("My first script file.")` and save it as `my_first_script` (the `.R` should be automatic) in your `"/r"` directory. 
+
+Your file will be written to the `r/` directory and will be opened in `RStudio`.
 
 Because the `.Rmd` file you are working with is already saved in `"/r"` (if you saved it there correctly), you can source the file by name.
 
-```{r}
-source(here::here("r", "my_first_script.R"))   # runs code saved in "my_first_script.R" file; print message
+
+
+### **Creating a `.R` script file using the `Terminal`**
+
+**First**, go to your `Terminal` in `RStudio`. This is located by the `Console` tab and is the same place you type your `Git` commands.  
+
+**Second**, you can use the `touch` function to create the file. You will want to specify the directory to write the file and the name of the file to write. 
+
+**Third**, to create a file named `my_first_script.R`, type:
+
+`touch r/my_first_script.R` and your file will be written to the `r/` directory.
+
+
+To open the file in `RStudio`, the easiest way to go to the `Files` pane in `RStudio`, locate it and click it so that it appears as an open tab. 
+
+
+
+
+If you want to add it to `Git`, type:
+
+`git add r/my_first_script.R` and it will be staged.
+
+If you misspelled the file name and want to delete it, or just need to delete it for some reason, you can type: 
+
+`rm r/my_first_script.R`
+
+
+To delete it and remove from `Git`, type:
+
+`git rm r/my_first_script.R`
+
+
+## **Adding code to the script file**
+
+We will now add code to the file. To demonstrate how this works, let's just add a message to the file using `message()` which is a simple stand-in for a bunch of lines of code.
+
+In the script file, type:
+
 ```
+message("My first script file.")
+```
+
+**Note:** Make sure you save the file.
+
+
+## **Sourcing the script file`**
+
+Now, to run the code saved in `my_first_script.R`, we will `source()` the file by specifying the path to it using **{here}**. 
+
+```{r}
+source(file = here::here("r", "my_first_script.R"))
+```
+
+But you can omit using `file` because you are only passing one argument and it's `file`.
+
+```{r}
+source(here::here("r", "my_first_script.R"))
+```
+
+
+## **Sourcing multiple script files**
+
+When you have multiple files to `source()`, you can source them individually, making sure that they are ordered in the order you wish to run them. They will execute line by line.
+
+```
+source(here::here("r", "read_data.R"))
+source(here::here("r", "clean_data.R"))
+source(here::here("r", "create_plots.R"))
+```
+
+You can also create a new `.R` script file that contains the above three lines of source code and add them to another file, named appropriately like `read_clean_plot_data.R`. and then source that file like this:
+
+```
+source(here::here("r", "read_clean_plot_data.R"))
+```
+
+
+## **Sourcing *all* files in a directory**
+
+If all those files to source are in a directory, you can use a special source function from **{R.utils}** `R.utils::sourceDirectory()`. For example, if you have all of personal or project-related functions nicely organized in a directory like `r/funcions/`, you can easily source it like this. The benefit here is that you don't have to specify all of the files individually. 
+
+```{r}
+R.utils::sourceDirectory(here::here("r", "functions"))
+```
+
 
 
 # **Using Functions from Libraries**
 
-Functions in base `R` are easy to operate on data out of the box; they don't require installation. For example, `head()` will look a the first few rows (or cases) of data frame. A data frame contains n rows and m columns. In order to demonstrate this, we will use the `USArrests` data set that is part of base R. Then, we will use `mean()` to calculate the mean of a vector of data. A column of a data frame is a vector of some type (e.g., numbers or characters).  
+Functions in base `R` are easy to operate on data right out of the box; they don't require special installation or loading. For example, `head()` will look a the first few rows (or cases) of data frame. A data frame contains *n* rows and *m* columns. In order to demonstrate this, we will use the `USArrests` data set that is part of base R. Then, we will use `mean()` to calculate the mean of a vector of data. A column of a data frame is a vector of some type (e.g., numbers or characters).  
 
 - `head()` returns the top of the data frame; compare to `tail()`
-- `View()` (uppercase V): returns a table of the data frame; built into R, looks crappy, steals focus
+- `View()` (uppercase V): returns a table of the data frame; built into `R`, looks crappy, steals focus
+
+## **An alternative to `View()`**
+
+As an alternative to `View()`, a function that I wrote using the **{DT}** library to display the data in an `HTML` table that allows you to sort the data.
+
 - `view_html()` (lowercase v): returns an filterable html table of the data frame; my alternative to `View()` 
 
-For now, know that you can `source()` the raw code from the course site using the following code. Because I use this function often, we will want to add it to your `"/r/functions"` directory.
+If you want to use this function, you can `source()` the raw code from the course site using the code below. Because I use this function often, you might wish to add it to your `/r/functions/` directory and simply source all of the files in that directory as describe above.
 
 ```{r}
 source("https://raw.githubusercontent.com/slicesofdata/fods24/main/r/functions/view_html.R")
 ```
 
+
+## **Getting the `head()` of a data frame`**
+
 If you query the function in the console by typing using `?head` or `help(head)`, you will see in there are two main parameters. 
+
+**Parameters/Arguments:**
 
 - `x`: a vector or data frame object 
 - `n`: a value of the indices to be selected (e.g., elements of vector, rows in data frame) 
@@ -719,6 +832,8 @@ Using the viewing options:
 ```
 
 
+## **Checking whether an object is a data frame using `is.data.frame()`**
+
 You can also check whether the `USArrests` data file is a data frame using `is.data.frame()`, which will return `TRUE` indicating that it is indeed a data frame. 
 
 - `is.data.frame()` returns logical ( T or F) about data frame as two-dimensional array
@@ -727,6 +842,7 @@ You can also check whether the `USArrests` data file is a data frame using `is.d
 is.data.frame(USArrests)
 ```
 
+## **Checking the structure of a data frame using `str()`**
 
 That seems tedious, however. You can learn a lot more about the data frame by examining its structure using `str()`. The `USArrests` object is a data frame, contains 50 observations (e.g., rows) and 4 variables (columns). All column variables appear to contains numbers, with two of them being numeric, abbreviated `num` and two are integers, abbreviated `int`. 
 
@@ -736,22 +852,29 @@ That seems tedious, however. You can learn a lot more about the data frame by ex
 str(USArrests)    # see the data frame is a two-dimensional array with 50 rows x 4 columns
 ```
 
+## **Using other functions`**
+
 And you can check the names of the columns using `names()`. What is actually returned to you is a character vector, or a vector whose elements are of character type. You can test whether the column names is a vector by *wrapping* `names()` with the `is.vector()` function. Similarly, wrapping `names()` in `typeof()` will tell you the type is `character`. 
 
-- `names()` returns names of data frame
-- `is.vector()` returns logical if/if not a vector (see other `is.` functions)
-- `typeof()` returns the type of the object
+- `names()`: returns names of data frame
+- `is.vector()`: returns logical if/if not a vector (see other `is.` functions)
+- `typeof()`: returns the type of the object
 
 
 ```{r}
-names(USArrests)           # what are the names of the columns?
+names(USArrests)           # get the names of the columns?
 
 
 is.vector(names(USArrests))
 
 
-typeof(names(USArrests))   # what is type of structure are the names
+typeof(names(USArrests))   # get the type of structure are the names
 ```
+
+
+# **Summary**
+
+You now understand what **functions** are and how to use them. You understand they they contain **parameters** to which you pass **arguments**, unless you accept default arguments. You have also used different functions to fulfill other goals, for example, to create a script to `source()` code and to examine some aspects of data frames. 
 
 
 # **Session Information**
