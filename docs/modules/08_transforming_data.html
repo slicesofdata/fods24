@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gabriel I. Cook">
-<meta name="dcterms.date" content="2024-01-15">
+<meta name="dcterms.date" content="2024-01-18">
 
 <title>PSYC166 - Transforming Data</title>
 <style>
@@ -504,7 +504,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#passing-variables-separately-as-characters-vector" id="toc-passing-variables-separately-as-characters-vector" class="nav-link" data-scroll-target="#passing-variables-separately-as-characters-vector"><strong>Passing variables separately as characters vector</strong></a></li>
   <li><a href="#passing-a-numeric-vector-of-column-positions" id="toc-passing-a-numeric-vector-of-column-positions" class="nav-link" data-scroll-target="#passing-a-numeric-vector-of-column-positions"><strong>Passing a numeric vector of column positions</strong></a></li>
   <li><a href="#passing-an-object-holding-a-character-vector-containing-two-elements" id="toc-passing-an-object-holding-a-character-vector-containing-two-elements" class="nav-link" data-scroll-target="#passing-an-object-holding-a-character-vector-containing-two-elements"><strong>Passing an object holding a character vector containing two elements</strong></a></li>
-  <li><a href="#select-variables-starting-with-or-ending-with-certain-characters" id="toc-select-variables-starting-with-or-ending-with-certain-characters" class="nav-link" data-scroll-target="#select-variables-starting-with-or-ending-with-certain-characters"><strong>Select Variables Starting with or Ending with Certain Characters</strong></a></li>
+  <li><a href="#selecting-variables-starting-with-or-ending-with-certain-characters" id="toc-selecting-variables-starting-with-or-ending-with-certain-characters" class="nav-link" data-scroll-target="#selecting-variables-starting-with-or-ending-with-certain-characters"><strong>Selecting Variables Starting with or Ending with Certain Characters</strong></a></li>
   </ul></li>
   <li><a href="#selecting-and-selecting-out-variables-bybetween-index" id="toc-selecting-and-selecting-out-variables-bybetween-index" class="nav-link" data-scroll-target="#selecting-and-selecting-out-variables-bybetween-index"><strong>Selecting and Selecting Out Variables By/Between Index</strong></a></li>
   <li><a href="#selecting-and-selecting-out-variables-by-or-between-character-name" id="toc-selecting-and-selecting-out-variables-by-or-between-character-name" class="nav-link" data-scroll-target="#selecting-and-selecting-out-variables-by-or-between-character-name"><strong>Selecting and Selecting Out Variables By or Between Character Name</strong></a></li>
@@ -571,7 +571,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 15, 2024</p>
+      <p class="date">January 18, 2024</p>
     </div>
   </div>
   
@@ -783,60 +783,75 @@ Colorado      7.9     204</code></pre>
 </div>
 <p><strong>Note:</strong> <code>select(keep_vars)</code> is deprecated as a solution, so if you see this approach someplace, it won’t work properly at this time or in the future.</p>
 </section>
-<section id="select-variables-starting-with-or-ending-with-certain-characters" class="level3">
-<h3 class="anchored" data-anchor-id="select-variables-starting-with-or-ending-with-certain-characters"><strong>Select Variables Starting with or Ending with Certain Characters</strong></h3>
+<section id="selecting-variables-starting-with-or-ending-with-certain-characters" class="level3">
+<h3 class="anchored" data-anchor-id="selecting-variables-starting-with-or-ending-with-certain-characters"><strong>Selecting Variables Starting with or Ending with Certain Characters</strong></h3>
 <p>One thing about <strong>{dplyr}</strong>, when you load the library, there are functions from other libraries that are imported along with <strong>{dplyr}</strong>’s own functions. These important functions are designed to work with each other, so the people who maintain the libraries have packaged them up nicely so you don’t have to load separate libraries.</p>
 <p>Many of the functions are imported from the <strong>{tidyselect}</strong> library and these functions are what give you additional manipulation ability. Some imported functions are: <code>all_of()</code>, <code>any_of()</code>, <code>contains()</code>, <code>ends_with()</code>, <code>everything()</code>, <code>last_col()</code>, <code>matches()</code>, and <code>starts_with()</code>.</p>
-<p>With functions like <code>starts_with()</code>, <code>contains()</code>, and <code>ends_with()</code>, you can select variables with character patterns in their names.</p>
-<p>Rather that passing the names of the variables as the second argument (e.g., <code>c("Murder", "Assault")</code>), you would pass the helper function, say <code>starts_with()</code>. Whatever <code>starts_with()</code> returns is what gets passed to <code>select()</code> as the variables. This is what is referred to as functional programming. Rather than coding specifically what to do, you with utilize the task of another function to passed its returned object as an argument to another function.</p>
-<p>But first, we need to see what these functions, like <code>starts_with()</code>, are doing. For more information, use <code>?starts_with</code>.</p>
+<p>With functions like <code>starts_with()</code>, <code>contains()</code>, and <code>ends_with()</code>, you can select variables containing character patterns in their names. For example, rather than code out all variables for a memory span task, you might want to grab variables that contain the characters <code>"span"</code>.</p>
+<p>Rather than hard coding variable names (e.g., <code>"span_time1"</code>, <code>"span_time2"</code>, <code>c("Murder", "Assault")</code>) to pass as an argument to <code>select()</code>, you would use another function to perform the heaving lifting for you (e.g.,<code>starts_with()</code>). In this case, the variable names that <code>starts_with()</code> specific character patterns get passed to <code>select()</code>. This process represents a good example of whe what is referred to as <a href="https://en.wikipedia.org/wiki/Functional_programming"><strong>functional programming</strong></a>. This is also a good example of <em>working smarter, not harder</em>. Rather than coding specifically what to pass as an argument to another function, you utilize another function to pass its returned object as an argument to another function.</p>
+<section id="selecting-variables-using-starts_with" class="level4">
+<h4 class="anchored" data-anchor-id="selecting-variables-using-starts_with"><strong>Selecting Variables using <code>starts_with()</code></strong></h4>
+<p>But first, we need to understand what <code>starts_with()</code>, actually does. The function name should provide you some insight but for more information, use <code>?starts_with</code>.</p>
 <ul>
 <li><code>starts_with(match, ignore.case = TRUE, vars = NULL)</code></li>
 </ul>
-<p><strong>Arguments:</strong></p>
+<p><strong>Parameters/Arguments:</strong></p>
 <ul>
-<li><code>match</code>: A character vector</li>
-<li><code>ignore.case</code>: If <code>TRUE</code>, the default, ignores case when matching names. This is most flexible.</li>
-<li><code>vars</code>: A character vector of variable names. If not supplied, the variables are taken from the current selection context (as established by functions like <code>select()</code> or <code>pivot_longer()</code>).</li>
+<li><code>match</code>: a character vector</li>
+<li><code>ignore.case</code>: if <code>TRUE</code>, the default, ignores case when matching names. This is most flexible.</li>
+<li><code>vars</code>: a character vector of variable names. If not supplied, the variables are taken from the current selection context (as established by functions like <code>select()</code> or <code>pivot_longer()</code>).</li>
 </ul>
-<p>Let’s just try out <code>starts_with()</code> on its own. Let’s set a required pattern <code>match = some character</code> and because <code>vars = NULL</code> by default, let’s just set <code>vars = some character vector</code>. Note that <code>vars</code> is not the second argument, so you will want to name it in the function call.</p>
+<p>The best way to understand the function is to use it (after reading the documentation). Let’s try out <code>starts_with()</code>. Let’s set a required pattern <code>match = some character</code> and because <code>vars = NULL</code> by default, let’s just set <code>vars = some character vector</code>. If you reviewed the documentation or looked at the arguments above, <code>vars</code> is not the second parameter, so you will want to name it in the function call if it takes that second position as seen below. We will first test this function without using it on a data frame.</p>
+<p>We set <code>match = "a"</code> and <code>vars = c("Hello", "Hi", "Bye")</code>. This will look for character <code>"a"</code> to match the elements of a character vector <code>c("Hello", "Hi", "Bye")</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">starts_with</span>(<span class="at">match =</span> <span class="st">"a"</span>, <span class="at">vars =</span> <span class="fu">c</span>(<span class="st">"Hello"</span>, <span class="st">"Hi"</span>, <span class="st">"Bye"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">starts_with</span>(<span class="at">match =</span> <span class="st">"a"</span>, </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">vars =</span> <span class="fu">c</span>(<span class="st">"Hello"</span>, <span class="st">"Hi"</span>, <span class="st">"Bye"</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>integer(0)</code></pre>
 </div>
 </div>
-<p>Returns <code>integer(0)</code> which is speak for “there is no match”. Hmm, OK. Let’s try another character.</p>
+<p>What is returned is <code>integer(0)</code>, which is actually speak for “there is no match”. Not very intuitive. Hmm, OK. Let’s try another character.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">starts_with</span>(<span class="at">match =</span> <span class="st">"b"</span>, <span class="at">vars =</span> <span class="fu">c</span>(<span class="st">"Hello"</span>, <span class="st">"Hi"</span>, <span class="st">"Bye"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">starts_with</span>(<span class="at">match =</span> <span class="st">"b"</span>, </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">vars =</span> <span class="fu">c</span>(<span class="st">"Hello"</span>, <span class="st">"Hi"</span>, <span class="st">"Bye"</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3</code></pre>
 </div>
 </div>
 <p>OK, so now an integer is returned (yes, try <code>is.integer()</code> if you don’t believe me).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.integer</span>(<span class="fu">starts_with</span>(<span class="st">"b"</span>, <span class="at">vars =</span> <span class="fu">c</span>(<span class="st">"Hello"</span>, <span class="st">"Hi"</span>, <span class="st">"Bye"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.integer</span>(</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">starts_with</span>(<span class="st">"b"</span>, </span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">vars =</span> <span class="fu">c</span>(<span class="st">"Hello"</span>, <span class="st">"Hi"</span>, <span class="st">"Bye"</span>)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>              ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
 </div>
-<p>Importantly, the value refers to the element index/position in the <code>vars</code> vector. Because the third string <code>"Bye"</code> starts with <code>"b"</code>, that’s what is returned.</p>
+<p>And even though you only see one value, this object is still a vector. We can check using <code>is.vector()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.vector</span>(</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">starts_with</span>(<span class="st">"b"</span>, </span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">vars =</span> <span class="fu">c</span>(<span class="st">"Hello"</span>, <span class="st">"Hi"</span>, <span class="st">"Bye"</span>)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>              ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+<p>Importantly, a vector of values is returned by <code>starts_with()</code>. The values in the vector refer to the element index/position of a match and the number of the elements in the vector tells refers to the number of matches found. Because the <em>third</em> string element <code>"Bye"</code> starts with <code>"b"</code>, that’s what is returned.</p>
 <p>Try something else:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">starts_with</span>(<span class="st">"h"</span>, <span class="at">vars =</span> <span class="fu">c</span>(<span class="st">"Hello"</span>, <span class="st">"Hi"</span>, <span class="st">"Bye"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">starts_with</span>(<span class="st">"h"</span>, </span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">vars =</span> <span class="fu">c</span>(<span class="st">"Hello"</span>, <span class="st">"Hi"</span>, <span class="st">"Bye"</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1 2</code></pre>
 </div>
 </div>
-<p>Now a vector with length = 2 is returned, representing both the first and the second elements start with “h”.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">starts_with</span>(<span class="st">"h"</span>, <span class="at">vars =</span> <span class="fu">c</span>(<span class="st">"Hello"</span>, <span class="st">"Hi"</span>, <span class="st">"Bye"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
-<p>See, it’s really a vector containing the element(s) of the <code>vars</code> vector matching the pattern.</p>
-<p>And yes, this the letter casing is ignored because the default <code>ignore.case = TRUE</code>. Set to <code>FALSE</code> if you want your match to be case sensitive.</p>
+<p>Now the function returns a vector containing <code>1</code> and a <code>2</code>, giving length = 2, representing both the first and the second elements start with “h”.</p>
+<p>Importantly, letter casing is ignored because <code>ignore.case = TRUE</code> by default. Set to <code>FALSE</code> if you want your match to be case sensitive.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">starts_with</span>(<span class="st">"h"</span>, </span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">vars =</span> <span class="fu">c</span>(<span class="st">"Hello"</span>, <span class="st">"Hi"</span>, <span class="st">"Bye"</span>), </span>
@@ -846,14 +861,17 @@ Colorado      7.9     204</code></pre>
 <pre><code>integer(0)</code></pre>
 </div>
 </div>
-<p>OK, there are no matches.</p>
-<p>You will typically use <code>starts_with()</code> along with other functions. When using <code>starts_with()</code> in the context of <code>select()</code>, the <code>vars</code> argument is essentially passing <code>vars = the names of the columns of the data frame passed to select()</code>.</p>
+<p>And now there are no matches.</p>
+</section>
+<section id="selecting-variables-from-a-data-frame-using-starts_with" class="level4">
+<h4 class="anchored" data-anchor-id="selecting-variables-from-a-data-frame-using-starts_with"><strong>Selecting Variables from a Data Frame using <code>starts_with()</code></strong></h4>
+<p>You will typically use <code>starts_with()</code> when working with a data frame and in conjunction with other functions, like <code>select()</code> in order to select variables that start with certain characters. When using <code>starts_with()</code> in the context of <code>select()</code>, the <code>vars</code> argument is essentially passing <code>vars = the names of the columns of the data frame passed to select()</code>.</p>
 <p>Example:</p>
 <pre><code>select(mydataframe,
     starts_with(match = "my pattern",
                 vars = "var names of mydataframe")
                 )</code></pre>
-<p>Passing the <code>data frame</code> into <code>select()</code> without piping it using <code>%&gt;%</code>:</p>
+<p>You can pass the <code>data frame</code> as the first argument to <code>select()</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(USArrests, <span class="fu">starts_with</span>(<span class="st">"m"</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -867,7 +885,8 @@ California    9.0
 Colorado      7.9</code></pre>
 </div>
 </div>
-<p>Piping the <code>data frame</code> into <code>select()</code>:</p>
+<p>Notice that the only column variable that is returned is Murder.</p>
+<p>You can also pipe the <code>data frame</code> into <code>select()</code>, which assumes the first argument is a data frame. This is a process you will see used often by others.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>USArrests <span class="sc">|&gt;</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">"m"</span>)) <span class="sc">|&gt;</span> </span>
@@ -882,7 +901,10 @@ California    9.0
 Colorado      7.9</code></pre>
 </div>
 </div>
-<p>Another example:</p>
+</section>
+<section id="selecting-variables-using-ends_with" class="level4">
+<h4 class="anchored" data-anchor-id="selecting-variables-using-ends_with"><strong>Selecting Variables using <code>ends_with()</code></strong></h4>
+<p>You can use <code>ends_with()</code> to find matches at the end of strings. This function is useful if you have variables that end based on their measurement type (e.g., “_rt” or “_acc” for reaction times and accuracy, respectively). Having the foresight to create variables is such a way to make accessing them easily later is a good example of <em>working smarter, not harder</em>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>USArrests <span class="sc">|&gt;</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">ends_with</span>(<span class="st">"t"</span>)) <span class="sc">|&gt;</span> </span>
@@ -899,6 +921,7 @@ Colorado       204</code></pre>
 </div>
 </section>
 </section>
+</section>
 <section id="selecting-and-selecting-out-variables-bybetween-index" class="level2">
 <h2 class="anchored" data-anchor-id="selecting-and-selecting-out-variables-bybetween-index"><strong>Selecting and Selecting Out Variables By/Between Index</strong></h2>
 <p>There are many approaches for <em>selecting</em> or <em>selecting out</em> column variables. You can pass multiple arguments for each specification or you can pass a single vector that contains all specifications.</p>
@@ -911,7 +934,7 @@ Colorado       204</code></pre>
 <li><p><code>select(-c(1:2))</code>: select out first through second columns</p></li>
 </ul>
 <p><strong>Potential Recommendation</strong>: use options utilizing <code>c()</code> to pass a vector because this habit will be more versatile with <code>base R</code> functionality. However, online solutions will likely not take this approach.</p>
-<p>Let’s make a data frame to work with first.</p>
+<p>Let’s make a data frame to work with first. We will name the data frame <code>DAT</code> even though this is a terrible name because it lacks diagnosticity.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>DAT <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Id  =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">101</span>, <span class="dv">102</span>, <span class="dv">103</span>, <span class="dv">104</span>, <span class="dv">100</span>, <span class="dv">105</span>),</span>

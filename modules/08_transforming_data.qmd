@@ -230,65 +230,77 @@ USArrests |>
 **Note:** `select(keep_vars)` is deprecated as a solution, so if you see this approach someplace, it won't work properly at this time or in the future.
 
 
-### **Select Variables Starting with or Ending with Certain Characters**
+### **Selecting Variables Starting with or Ending with Certain Characters**
 
 One thing about **{dplyr}**, when you load the library, there are functions from other libraries that are imported along with **{dplyr}**'s own functions. These important functions are designed to work with each other, so the people who maintain the libraries have packaged them up nicely so you don't have to load separate libraries. 
 
 Many of the functions are imported from the **{tidyselect}** library and these functions are what give you additional manipulation ability. Some imported functions are:  `all_of()`, `any_of()`, `contains()`, `ends_with()`, `everything()`, `last_col()`, `matches()`, and `starts_with()`.
 
-With functions like `starts_with()`, `contains()`, and `ends_with()`, you can select variables with character patterns in their names.
+With functions like `starts_with()`, `contains()`, and `ends_with()`, you can select variables containing character patterns in their names. For example, rather than code out all variables for a memory span task, you might want to grab variables that contain the characters `"span"`.
 
-Rather that passing the names of the variables as the second argument (e.g., `c("Murder", "Assault")`), you would pass the helper function, say `starts_with()`. Whatever `starts_with()` returns is what gets passed to `select()` as the variables. This is what is referred to as functional programming. Rather than coding specifically what to do, you with utilize the task of another function to passed its returned object as an argument to another function.  
+Rather than hard coding variable names (e.g., `"span_time1"`, `"span_time2"`, `c("Murder", "Assault")`) to pass as an argument to `select()`, you would use another function to perform the heaving lifting for you (e.g.,`starts_with()`). In this case, the variable names that `starts_with()` specific character patterns get passed to `select()`. This process represents a good example of whe what is referred to as [**functional programming**](https://en.wikipedia.org/wiki/Functional_programming). This is also a good example of *working smarter, not harder*. Rather than coding specifically what to pass as an argument to another function, you utilize another function to pass its returned object as an argument to another function.
 
-But first, we need to see what these functions, like `starts_with()`, are doing. For more information, use `?starts_with`.
+#### **Selecting Variables using `starts_with()`**
+
+But first, we need to understand what `starts_with()`, actually does. The function name should provide you some insight but for more information, use `?starts_with`.
 
 - `starts_with(match, ignore.case = TRUE, vars = NULL)`
 
+**Parameters/Arguments:**
 
-**Arguments:**
+- `match`: a character vector
+- `ignore.case`: if `TRUE`, the default, ignores case when matching names. This is most flexible.
+- `vars`: a character vector of variable names. If not supplied, the variables are taken from the current selection context (as established by functions like `select()` or `pivot_longer()`).
 
-- `match`: A character vector
-- `ignore.case`: If `TRUE`, the default, ignores case when matching names. This is most flexible.
-- `vars`: A character vector of variable names. If not supplied, the variables are taken from the current selection context (as established by functions like `select()` or `pivot_longer()`).
+The best way to understand the function is to use it (after reading the documentation). Let's try out `starts_with()`. Let's set a required pattern `match = some character` and because `vars = NULL` by default, let's just set `vars = some character vector`. If you reviewed the documentation or looked at the arguments above, `vars` is not the second parameter, so you will want to name it in the function call if it takes that second position as seen below. We will first test this function without using it on a data frame.
 
-
-Let's just try out `starts_with()` on its own. Let's set a required pattern `match = some character` and because `vars = NULL` by default, let's just set `vars = some character vector`. Note that `vars` is not the second argument, so you will want to name it in the function call. 
-
-```{r}
-starts_with(match = "a", vars = c("Hello", "Hi", "Bye"))
-```
-
-
-Returns `integer(0)` which is speak for "there is no match". Hmm, OK. Let's try another character.
+We set `match = "a"` and `vars = c("Hello", "Hi", "Bye")`. This will look for character `"a"` to match the elements of a character vector `c("Hello", "Hi", "Bye")`.
 
 ```{r}
-starts_with(match = "b", vars = c("Hello", "Hi", "Bye"))
+starts_with(match = "a", 
+            vars = c("Hello", "Hi", "Bye")
+            )
 ```
 
+What is returned is `integer(0)`, which is actually speak for "there is no match". Not very intuitive. Hmm, OK. Let's try another character.
+
+```{r}
+starts_with(match = "b", 
+            vars = c("Hello", "Hi", "Bye")
+            )
+```
 
 OK, so now an integer is returned (yes, try `is.integer()` if you don't believe me). 
 
 ```{r}
-is.integer(starts_with("b", vars = c("Hello", "Hi", "Bye")))
+is.integer(
+  starts_with("b", 
+              vars = c("Hello", "Hi", "Bye")
+              ))
 ```
 
-Importantly, the value refers to the element index/position in the `vars` vector. Because the third string `"Bye"` starts with `"b"`, that's what is returned. 
+And even though you only see one value, this object is still a vector. We can check using `is.vector()`.
+
+```{r}
+is.vector(
+  starts_with("b", 
+              vars = c("Hello", "Hi", "Bye")
+              ))
+```
+
+Importantly, a vector of values is returned  by `starts_with()`. The values in the vector refer to the element index/position of a match and the number of the elements in the vector tells refers to the number of matches found. Because the *third* string element `"Bye"` starts with `"b"`, that's what is returned. 
 
 Try something else:
 
 ```{r}
-starts_with("h", vars = c("Hello", "Hi", "Bye"))
+starts_with("h", 
+            vars = c("Hello", "Hi", "Bye")
+            )
 ```
 
-Now a vector with length = 2 is returned, representing both the first and the second elements start with "h". 
+Now the function returns a vector containing `1` and a `2`, giving length = 2, representing both the first and the second elements start with "h". 
 
-```{r}
-length(starts_with("h", vars = c("Hello", "Hi", "Bye")))
-```
-
-See, it's really a vector containing the element(s) of the `vars` vector matching the pattern. 
-
-And yes, this the letter casing is ignored because the default `ignore.case = TRUE`. Set to `FALSE` if you want your match to be case sensitive.
+Importantly, letter casing is ignored because `ignore.case = TRUE` by default. Set to `FALSE` if you want your match to be case sensitive.
 
 ```{r}
 starts_with("h", 
@@ -297,10 +309,12 @@ starts_with("h",
             )
 ```
 
-OK, there are no matches.
+And now there are no matches.
 
 
-You will typically use `starts_with()` along with other functions. When using `starts_with()` in the context of `select()`, the `vars` argument is essentially passing `vars = the names of the columns of the data frame passed to select()`.
+#### **Selecting Variables from a Data Frame using `starts_with()`**
+
+You will typically use `starts_with()` when working with a data frame and in conjunction with other functions, like `select()` in order to select variables that start with certain characters. When using `starts_with()` in the context of `select()`, the `vars` argument is essentially passing `vars = the names of the columns of the data frame passed to select()`.
 
 Example:
 
@@ -311,16 +325,17 @@ select(mydataframe,
                 )
 ```
 
-
-Passing the `data frame` into `select()` without piping it using `%>%`:
+You can pass the `data frame` as the first argument to `select()`.
 
 ```{r}
 select(USArrests, starts_with("m")) |> 
   head()
 ```
 
+Notice that the only column variable that is returned is `r names(select(USArrests, starts_with("m")))`.
 
-Piping the `data frame` into `select()`:
+
+You can also pipe the `data frame` into `select()`, which assumes the first argument is a data frame. This is a process you will see used often by others.
 
 ```{r}
 USArrests |>
@@ -328,8 +343,9 @@ USArrests |>
   head()
 ```
 
+#### **Selecting Variables using `ends_with()`**
 
-Another example:
+You can use `ends_with()` to find matches at the end of strings. This function is useful if you have variables that end based on their measurement type (e.g., "_rt" or "_acc" for reaction times and accuracy, respectively). Having the foresight to create variables is such a way to make accessing them easily later is a good example of *working smarter, not harder*.
 
 ```{r}
 USArrests |>
@@ -353,7 +369,7 @@ There are many approaches for *selecting* or *selecting out* column variables. Y
 **Potential Recommendation**: use options utilizing `c()` to pass a vector because this habit will be more versatile with `base R` functionality. However, online solutions will likely not take this approach.
 
 
-Let's make a data frame to work with first.
+Let's make a data frame to work with first. We will name the data frame `DAT` even though this is a terrible name because it lacks diagnosticity. 
 
 ```{r}
 DAT <- data.frame(
@@ -477,6 +493,7 @@ DAT |>
 - `select(ends_with("characters"))`
 - `select(contains('e'))`
 
+
 ### **Selecting using `starts_with()`**
 
 Select variables which start with character "i":
@@ -545,6 +562,7 @@ Select variables containing a **regular expression**, use `matches()`:
 DAT |> 
   select(matches(".*"))
 ```
+
 
 #### **Selecting variables with digits using `"\\d"`**
 
