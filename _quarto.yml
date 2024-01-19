@@ -42,38 +42,37 @@ website:
         - text: Git and GitHub
           href: slides/02_git_slides.qmd
         - text: Functions, Parameters, and Arguments
-          href: slides/04_functions_slides.qmd
+          href: slides/03_functions_slides.qmd
         - text: Vectors and Data Frames
-          href: slides/05_vectors_and_data_frames_slides.qmd
+          href: slides/04_vectors_and_data_frames_slides.qmd
         - text: Importing and Exporting Data
-          href: slides/06_importing_and_exporting_slides.qmd
+          href: slides/05_importing_and_exporting_slides.qmd
         - text: Variables, Measures of Cognition
-          href: slides/07_variables_cognition_slides.qmd
+          href: slides/06_variables_cognition_slides.qmd
         - text: Transforming Data
-          href: slides/08_transforming_data_slides.qmd
+          href: slides/07_transforming_data_slides.qmd
         - text: Cognitive Task Data
-          href: slides/09_cognitive_data_slides.qmd
+          href: slides/08_cognitive_data_slides.qmd
         - text: Summarizing Data
-          href: slides/10_summarizing_data_slides.qmd
+          href: slides/09_summarizing_data_slides.qmd
         - text: Summarizing Task Data
-          href: slides/11_cognitive_data_summary_slides.qmd
+          href: slides/10_cognitive_data_summary_slides.qmd
         - text: Visualizing Data
-          href: slides/12_visualizing_data_slides.qmd
+          href: slides/11_visualizing_data_slides.qmd
         - text: Examining Relationships
-          href: slides/13_examining_relationships_slides.qmd
+          href: slides/12_examining_relationships_slides.qmd
         - text: Strings and Factors
-          href: slides/14_strings_and_factors_slides.qmd
+          href: slides/13_strings_and_factors_slides.qmd
         - text: Joining Data
-          href: slides/15_joining_data_slides.qmd
+          href: slides/14_joining_data_slides.qmd
+        - text: Joining Project Data
+          href: slides/15_joining_project_data_slides.qmd
+        - text: Discussing Models for Cognitive Tasks
+          href: slides/16_models_project_slides.qmd
         - text: Linear Models
-          href: slides/16_linear_models_slides.qmd
+          href: slides/17_linear_models_slides.qmd
         - text: Exploratory Data Analysis
-          href: slides/17_eda_slides.qmd
-
-#        - text: Git
-#          href: slides/023_git.qmd
-#        - text: Sample
-#          href: slides/sample.qmd
+          href: slides/18_eda_slides.qmd
 
 ################################################################################
       #- text: "**Readings**"
@@ -112,6 +111,9 @@ website:
             href: https://github.com/slicesofdata/dataviz23/raw/main/data/cms-top-all-time-2023-swim.zip
           - text: Fun Tidy Tuesday Data Sets
             href: https://github.com/rfordatascience/tidytuesday
+          - text: Defense Casualty Analysis System (DCAS)
+            href: https://dcas.dmdc.osd.mil/dcas/app/home
+            #href: https://dcas.dmdc.osd.mil/dcas/app/conflictCasualties/vietnam/vietnamSum
 
 ################################################################################
       - text: "**Cheatsheets**"
