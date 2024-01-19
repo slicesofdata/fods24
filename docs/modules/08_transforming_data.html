@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gabriel I. Cook">
-<meta name="dcterms.date" content="2024-01-18">
+<meta name="dcterms.date" content="2024-01-19">
 
 <title>PSYC166 - Transforming Data</title>
 <style>
@@ -351,7 +351,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../modules/04_functions_and_scripts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Functions, arguments, and R scripts</strong></span></a>
+ <span class="menu-text"><strong>Functions, Arguments, and R scripts</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -363,13 +363,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../modules/06_importing_and_exporting_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Importing and exporting data</strong></span></a>
+ <span class="menu-text"><strong>Importing and Exporting Data</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../modules/07_variables_and_measures_of_cognition.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Variables and Measures of Cognition.qmd</strong></span></a>
+ <span class="menu-text"><strong>Variables and Measures of Cognition</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -451,26 +451,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../project/02_project_team_roles.html" class="sidebar-item-text sidebar-link">
+  <a href="../project/01_project_team_roles.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><strong>Team membership and roles</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../project/04_project_midterm.html" class="sidebar-item-text sidebar-link">
+  <a href="../project/02_project_midterm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><strong>Midterm presentation</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../project/08_project_final.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Final presentation</strong></span></a>
+  <a href="../project/03_project_final.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Final Presentation</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../project/10_project_report.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Final report</strong></span></a>
+  <a href="../project/04_project_report.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Final Report</strong></span></a>
   </div>
 </li>
       </ul>
@@ -571,7 +571,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 18, 2024</p>
+      <p class="date">January 19, 2024</p>
     </div>
   </div>
   
@@ -596,7 +596,7 @@ Under construction.
 </div>
 <section id="overview" class="level1">
 <h1><strong>Overview</strong></h1>
-<p>In this module, we will start manipulating data frames. Data frames are composed of column variables and row observations/cases and we will address how to perform operations on both. We will learn how to use <strong>{dplyr}</strong>, rather than <code>base R</code> to select, remove, add, and modify vectors in data frames. In addition, we will address how to filter and arrange rows in various ways. The focus will be on cleaning or wrangling data. Helper functions from libraries like <strong>{magrittr}</strong>, <strong>{stringr}</strong>, and <strong>{tidyselect}</strong> are also used in conjunction with <strong>{dplyr}</strong>.</p>
+<p>In this module, we will start manipulating data frames. Data frames are composed of column variables and row observations/cases and we will address how to perform operations on both. We will learn how to use <strong>{dplyr}</strong>, rather than <code>base R</code> to select, remove, add, and modify vectors in data frames. In addition, we will address how to filter and arrange rows in various ways. The focus will be on cleaning or wrangling data. We will also use functions from libraries like <strong>{stringr}</strong> and <strong>{tidyselect}</strong>in conjunction with <strong>{dplyr}</strong>. In some sections, there are multiple examples depending on your specific use case. As long as you understand the basic functionality of the function, you do not need to work through all of the use cases provide. These examples, however, are provided to help you troubleshoot use cases as you may encounter them in class or in projects.</p>
 <section id="readings-and-preparation" class="level2">
 <h2 class="anchored" data-anchor-id="readings-and-preparation"><strong>Readings and Preparation</strong></h2>
 <p><em>Before Class</em>: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time. Work through some examples so that you have a good idea of your level of understanding and confidence.</p>
@@ -614,9 +614,9 @@ Under construction.
 <ul>
 <li><strong>{here}</strong>: 1.0.1: for path management</li>
 <li><strong>{dplyr}</strong> 1.1.4: for selecting, filtering, and mutating</li>
-<li><strong>{magrittr}</strong> 2.0.3: for code clarity and piping data frame objects</li>
 <li><strong>{stringr}</strong>: 1.5.1: for working with strings</li>
 <li><strong>{tidyselect}</strong>: 1.2.0: for selecting sets from strings</li>
+<li><strong>{magrittr}</strong> 2.0.3: for code clarity and piping data frame objects</li>
 </ul>
 </section>
 <section id="external-functions" class="level2">
@@ -661,7 +661,7 @@ Under construction.
 <p>Using <code>select()</code>, you can select columns/variables from a data frame. The variables you select are retained and variables omitted that you don’t select are omitted in the returned data frame.</p>
 <p>If you are not piping a data frame from a previous object using either <code>|&gt;</code> (now in base <code>R</code>) or <code>%&gt;%</code> (from <strong>{magrittr}</strong>), the first argument passed into <code>select()</code> will be the data frame. The second and subsequent arguments can be column variables you wish to select from the data frame.</p>
 <pre><code>select(mydataframe, myvars)</code></pre>
-<p>If piping a data frame with <strong>{magrittr}</strong>, <code>.</code> or <code>.data</code> will serve to reference the inherited data frame. This detail is not needed but adding it serves as a reminder that the data frame is the first argument of the function.</p>
+<p>If piping a data frame with <strong>{magrittr}</strong>, <code>.</code> or will serve to reference the inherited data frame. This detail is not needed but adding it serves as a reminder that the data frame is the first argument of the function.</p>
 <p>You can use <code>.</code> to reference the data frame:</p>
 <pre><code>dataframe %&gt;%
    select(., myvars)</code></pre>

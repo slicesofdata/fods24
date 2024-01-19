@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gabriel I. Cook">
-<meta name="dcterms.date" content="2024-01-16">
+<meta name="dcterms.date" content="2024-01-19">
 
 <title>PSYC166 - Installing and Setting Up Git and GitHub for R</title>
 <style>
@@ -351,7 +351,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../modules/04_functions_and_scripts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Functions, arguments, and R scripts</strong></span></a>
+ <span class="menu-text"><strong>Functions, Arguments, and R scripts</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -363,13 +363,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../modules/06_importing_and_exporting_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Importing and exporting data</strong></span></a>
+ <span class="menu-text"><strong>Importing and Exporting Data</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../modules/07_variables_and_measures_of_cognition.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Variables and Measures of Cognition.qmd</strong></span></a>
+ <span class="menu-text"><strong>Variables and Measures of Cognition</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -451,26 +451,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../project/02_project_team_roles.html" class="sidebar-item-text sidebar-link">
+  <a href="../project/01_project_team_roles.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><strong>Team membership and roles</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../project/04_project_midterm.html" class="sidebar-item-text sidebar-link">
+  <a href="../project/02_project_midterm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><strong>Midterm presentation</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../project/08_project_final.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Final presentation</strong></span></a>
+  <a href="../project/03_project_final.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Final Presentation</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../project/10_project_report.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Final report</strong></span></a>
+  <a href="../project/04_project_report.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Final Report</strong></span></a>
   </div>
 </li>
       </ul>
@@ -502,7 +502,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#updating-your-personal-access-token-pat" id="toc-updating-your-personal-access-token-pat" class="nav-link" data-scroll-target="#updating-your-personal-access-token-pat"><strong>Updating your Personal Access Token (PAT)</strong></a></li>
   </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><strong>Summary</strong></a></li>
-  <li><a href="#other-resources" id="toc-other-resources" class="nav-link" data-scroll-target="#other-resources"><strong>Other Resources</strong></a></li>
+  <li><a href="#optional-resources" id="toc-optional-resources" class="nav-link" data-scroll-target="#optional-resources"><strong>Optional Resources</strong></a></li>
   <li><a href="#session-information" id="toc-session-information" class="nav-link" data-scroll-target="#session-information"><strong>Session Information</strong></a></li>
   </ul>
 </nav>
@@ -529,7 +529,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 16, 2024</p>
+      <p class="date">January 19, 2024</p>
     </div>
   </div>
   
@@ -635,12 +635,12 @@ Under construction.
 <ol type="1">
 <li><p>Do I need to install Git?</p>
 <ul>
-<li><p>Mac OS Users can check whether Git is already installed by typing git <code>--version</code> at the Mac Terminal. If a version number is returned, then Git is installed.</p></li>
+<li><p>Mac OS Users can check whether Git is already installed by typing <code>git --version</code> at the Mac Terminal. If a version number is returned, then Git is installed.</p></li>
 <li><p>Windows Users can press the Windows key (or click the Start button) and type Git in the search bar. If you see Git or Git Bash listed, then Git is installed. At the R console, you can also type <code>system("git --version")</code> and if it is installed, the function should return the version number.</p></li>
 </ul></li>
 <li><p>Download and Install Git (if necessary)</p>
 <ul>
-<li>Mac OS Users may experience problems with instructions listed at the <a href="https://git-scm.com/downloads">Git download site</a> to install Homebrew and set the PATH variable. Instead, I recommend downloading the <a href="https://sourceforge.net/projects/git-osx-installer/">binary version here</a> and download it to install.</li>
+<li>Mac OS Users may experience problems and see instructions at the <a href="https://git-scm.com/downloads">Git download site</a> to install Homebrew and then set the PATH variable. You don’t need to do that. Instead, I recommend downloading the <a href="https://sourceforge.net/projects/git-osx-installer/">binary version here</a> and download it to install.</li>
 <li>Windows Users can download the latest version of <a href="https://git-scm.com/download/win">Git here</a>. Download and install Git, making a note of where on your computer you are install it as you may need to locate the path for RStudio, especially if you use a portable version of Git.</li>
 </ul></li>
 </ol>
@@ -651,29 +651,30 @@ Under construction.
 <ol type="1">
 <li><p>Find the path to the Git program executable that was installed in an earlier step.</p>
 <ul>
-<li>In the <em>Terminal</em> in RStudio (not the R console), type: <code>where git</code> on Windows or <code>which git</code> on Mac/Linux and you might find the path easily. If there are more than one paths listed, just make note of one of them.</li>
-<li>If for some reason you don’t see a path listed using that approach, type: <code>Sys.which("git")</code> in your R console. The path here will likely be truncated so you will have to fill in the gaps when performing the step to set the path.</li>
+<li>In the <em>Terminal</em> within <code>RStudio</code> (not the <code>R</code> console), type: <code>where git</code> on Windows and <code>which git</code> on Mac/Linux to find the path to the program. If there are more than one paths listed, just make note of one of them.</li>
+<li>If for some reason you don’t see a path listed using that approach, type: <code>Sys.which("git")</code> in your <code>R</code> console. The path here will likely be truncated so you will have to try to fill in the gaps when performing the step to set the path. See me for help.</li>
 </ul></li>
-<li><p>In RStudio, go to <strong>Tools &gt; Global Options</strong> and click on left side bar menu item <em>Git/SVN</em>.</p></li>
+<li><p>In 1RStudio1, go to <strong>Tools &gt; Global Options</strong> and click on left side bar menu item <em>Git/SVN</em>.</p></li>
 <li><p>Select the option at the top to <em>Enable version control interface for RStudio projects</em> if it is not selected.</p></li>
 <li><p>Set the path to the Git executable if it is not already there. Browse to the path to where Git.exe installed on your computer. Windows Users should make note that this path should be a path containing <code>Git.exe</code> and <strong>not</strong> a path containing <code>git-bash.exe</code>.</p></li>
-<li><p>Click <em>Apply</em> and click <em>OK</em>.</p></li>
+<li><p>Click <em>Apply</em> and then click <em>OK</em>.</p></li>
 </ol>
 </section>
 <section id="configuring-git-and-github" class="level2">
 <h2 class="anchored" data-anchor-id="configuring-git-and-github"><strong>Configuring Git and GitHub</strong></h2>
-<p>There are two ways you can set up, either using R (console) or the command line (terminal). My recommendation is to use R because that is where you are likely most familiar. We will use the <strong>{usethis}</strong> library to help you.</p>
-<p>The <strong>{usethis}</strong> library will make connecting your <code>R</code> project to your github account simple. This library should be installed as part of the packages from the start of the course. You will use <code>usethis::use_git_config()</code> to configure your GitHub account (see earlier) with Git on your computer.</p>
-<p>In the below example, you need to pass two arguments, your <code>user.name</code> and your <code>user.email</code> which is the e-mail attached to your GitHub account. Add your arguments and then execute your modified <code>R</code> code:</p>
+<p>There are two ways you can set up, either using <code>R</code> (console) or the command line (terminal). My recommendation is to use <code>R</code> because that is where you are likely most familiar, if even a small degree. We will use functions from the <strong>{usethis}</strong> library to help you. This library should be installed already as part of the class setup. If you get an error stating that the library is not installed when executing the steps below, just type <code>install.packages("usethis", dep = TRUE)</code> at your <code>R</code> console.</p>
+<p>The <strong>{usethis}</strong> library will make connecting your <code>R</code> project to your github account simple. You will use <code>usethis::use_git_config()</code> to configure your GitHub account with Git on your computer; if you did not create, see earlier step. In the below example, you will see that we need to provide two character strings as arguments to the function. The strings are used to set your <code>user.name</code> and your <code>user.email</code> (the e-mail attached to your GitHub account). Double check your GitHub e-mail and username.</p>
+<p><em>Edit the following code to include your username and email and then execute your modified <code>R</code> code:</em></p>
 <pre><code>usethis::use_git_config(user.name = "github_username", 
                         user.email = "github_email@gitrdone.com"
                         )</code></pre>
+<p>Done!</p>
 </section>
 <section id="creating-a-personal-access-token-pat-for-github" class="level2">
 <h2 class="anchored" data-anchor-id="creating-a-personal-access-token-pat-for-github"><strong>Creating a Personal Access Token (PAT) for GitHub</strong></h2>
 <p>Before completing this step, log into your GitHub account to facilitate the communication between RStudio and GitHub.</p>
 <p>You will need a personal access token (PAT) for making remote changes to GitHub. A first step then is to create a PAT using <code>usethis::create_github_token()</code>. Second, you will register your PAT with the Git credential manager used by your computers operating system using <code>gitcreds::gitcreds_set()</code>. Keep in mind that if you use a different computer (e.g., you get a new one), you’ll need to register the PAT on that computer following the same steps described here.</p>
-<p>To create your personal access token (PAT), type the following at your R console:</p>
+<p><em>To create your personal access token (PAT), type the following at your <code>R</code> console: </em></p>
 <pre><code>usethis::create_github_token()</code></pre>
 <p>After executing the code, you will be taken to your GitHub account (if you remained logged in). Go to the bottom of the page and click <em>generate token</em>. You should <strong>add a description</strong> for it so that you can understand its use case. For example, describe it based the computer you are using it on, “my computer make and model”. You may also describe it based on a project you are working on, “token-for-project-xyz”. If you do not add a description, you will likely become overwhelmed and/or confused when you have multiple tokens. When you need to regenerate or delete a token that expires, you will not be able to determine what they are for if you do not add a description.</p>
 <p>After creating your token, <strong>Copy it</strong> to your computer’s clipboard and <strong>save it someplace safe</strong>. Do not share your token with anyone because anyone who has it can access your public or private GitHub repositories.</p>
@@ -682,23 +683,24 @@ Under construction.
 <section id="setting-your-git-credentials-using-pat" class="level2">
 <h2 class="anchored" data-anchor-id="setting-your-git-credentials-using-pat"><strong>Setting your Git Credentials (using PAT)</strong></h2>
 <p>Now that you have a PAT, we now need to set those credentials for RStudio to communicate with your GitHub account.</p>
-<p>Execute the following <code>R</code> code to set your credentials:</p>
+<p><em>Execute the following <code>R</code> code to set your credentials:</em></p>
 <pre><code>gitcreds::gitcreds_set()</code></pre>
 <p>You may see a set of number options with corresponding descriptions. If you see them, enter the number corresponding to the option that makes the most sense for what you are trying to accomplish, for example, something like “set or replace your credentials”.</p>
 <p>When should then see a prompt like <code>? Enter new password or token</code>. At this point, paste your PAT here and press return/enter. Then remove the PAT from your clipboard so that you don’t paste them someplace.</p>
-<p>You can check that your credentials are stored by typing the following <code>R</code> code in the console:</p>
+<p><em>You can check that your credentials are stored by typing the following <code>R</code> code in the console:</em></p>
 <pre><code>gh::gh_whoami()</code></pre>
 <section id="updating-your-personal-access-token-pat" class="level3">
 <h3 class="anchored" data-anchor-id="updating-your-personal-access-token-pat"><strong>Updating your Personal Access Token (PAT)</strong></h3>
-<p>At some point, your PAT will expire and you will need to update it. When it’s about to expire or if it has expired, you can go to <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a> while logged into your <a href="www.github.com">GitHub</a> account and regenerate the token and change the expiration date. Then, copy the PAT to the clipboard and set your credentials again using <code>gitcreds::gitcreds_set()</code>.</p>
+<p>At some point, even if you set your PAT to expire after the semester, it will expire and you will need to update it. When it’s about to expire, or if it has expired, you can go to <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a> while logged into your <a href="www.github.com">GitHub</a> account and regenerate the token and change the expiration date. Then, copy the PAT to the clipboard and set your credentials again using <code>gitcreds::gitcreds_set()</code>.</p>
 </section>
 </section>
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary"><strong>Summary</strong></h2>
 <p>You have now created your GitHub account, created a repository, created a PAT, and installed and/or set up Git with RStudio. The next step will be to connect the remote GitHub repository with your R/RStudio setup.</p>
 </section>
-<section id="other-resources" class="level2">
-<h2 class="anchored" data-anchor-id="other-resources"><strong>Other Resources</strong></h2>
+<section id="optional-resources" class="level2">
+<h2 class="anchored" data-anchor-id="optional-resources"><strong>Optional Resources</strong></h2>
+<p>If you find yourself working on complicated projects, you might benefit from using a Git client or need to troubleshoot events. Although you won’t need to do this for this course, I’m providing some resources for your future. Feel free to come back to this course site to review content as I don’t intend to remove anything.</p>
 <ol type="1">
 <li><p><strong>Git Client:</strong> Git clients work like the RStudio Gui option described above but likely much better. If you find the <em>Terminal</em> command line daunting or limiting, I might recommend a Git Client to use as I am not a big fan of the RStudio interface.</p>
 <ul>
