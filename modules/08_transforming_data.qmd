@@ -60,6 +60,7 @@ R.utils::sourceDirectory(here::here("r", "functions"))
 
 In this module, we will start manipulating data frames. Data frames are composed of column variables and row observations/cases and we will address how to perform operations on both. We will learn how to use **{dplyr}**, rather than `base R` to select, remove, add, and modify vectors in data frames. In addition, we will address how to filter and arrange rows in various ways. The focus will be on cleaning or wrangling data. We will also use functions from libraries like **{stringr}** and **{tidyselect}**in conjunction with **{dplyr}**. In some sections, there are multiple examples depending on your specific use case. As long as you understand the basic functionality of the function, you do not need to work through all of the use cases provide. These examples, however, are provided to help you troubleshoot use cases as you may encounter them in class or in projects.  
 
+
 ## **Readings and Preparation**
 
 *Before Class*: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time. Work through some examples so that you have a good idea of your level of understanding and confidence. 
@@ -77,9 +78,9 @@ In this module, we will start manipulating data frames. Data frames are composed
 
 - **{here}**: `r packageVersion("here")`: for path management
 - **{dplyr}** `r packageVersion("dplyr")`: for selecting, filtering, and mutating
-- **{magrittr}** `r packageVersion("magrittr")`: for code clarity and piping data frame objects
 - **{stringr}**: `r packageVersion("stringr")`: for working with strings
 - **{tidyselect}**: `r packageVersion("tidyselect")`: for selecting sets from strings
+- **{magrittr}** `r packageVersion("magrittr")`: for code clarity and piping data frame objects
 
 
 ## **External Functions**
@@ -138,7 +139,7 @@ If you are not piping a data frame from a previous object using either `|>` (now
 select(mydataframe, myvars)
 ```
 
-If piping a data frame with **{magrittr}**, `.` or `.data` will serve to reference the inherited data frame. This detail is not needed but adding it serves as a reminder that the data frame is the first argument of the function. 
+If piping a data frame with **{magrittr}**, `.` or will serve to reference the inherited data frame. This detail is not needed but adding it serves as a reminder that the data frame is the first argument of the function. 
 
 You can use `.` to reference the data frame:
 

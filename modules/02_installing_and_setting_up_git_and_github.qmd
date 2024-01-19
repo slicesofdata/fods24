@@ -92,13 +92,13 @@ knitr::include_graphics(here::here("images", "create_github_repo_03.png"))
 
 1. Do I need to install Git?
 
-     * Mac OS Users can check whether Git is already installed by typing git `--version` at the Mac Terminal. If a version number is returned, then Git is installed.
+     * Mac OS Users can check whether Git is already installed by typing `git --version` at the Mac Terminal. If a version number is returned, then Git is installed.
 
      * Windows Users can press the Windows key (or click the Start button) and type Git in the search bar. If you see Git or Git Bash listed, then Git is installed. At the R console, you can also type `system("git --version")` and if it is installed, the function should return the version number.
 
 2. Download and Install Git (if necessary)
 
-     * Mac OS Users may experience problems with instructions listed at the [Git download site](https://git-scm.com/downloads) to install Homebrew and set the PATH variable. Instead, I recommend downloading the [binary version here](https://sourceforge.net/projects/git-osx-installer/) and download it to install.
+     * Mac OS Users may experience problems and see instructions at the [Git download site](https://git-scm.com/downloads) to install Homebrew and then set the PATH variable. You don't need to do that. Instead, I recommend downloading the [binary version here](https://sourceforge.net/projects/git-osx-installer/) and download it to install.
      * Windows Users can download the latest version of [Git here](https://git-scm.com/download/win). Download and install Git, making a note of where on your computer you are install it as you may need to locate the path for RStudio, especially if you use a portable version of Git.
 
 
@@ -108,31 +108,33 @@ knitr::include_graphics(here::here("images", "create_github_repo_03.png"))
 You will need to tell RStudio where to find the Git program as this may not be recognize automatically.
 
 1. Find the path to the Git program executable that was installed in an earlier step.
-     * In the *Terminal* in RStudio (not the R console), type: `where git` on Windows or `which git` on Mac/Linux and you might find the path easily. If there are more than one paths listed, just make note of one of them. 
-     * If for some reason you don't see a path listed using that approach, type:  `Sys.which("git")` in your R console. The path here will likely be truncated so you will have to fill in the gaps when performing the step to set the path.
+     * In the *Terminal* within `RStudio` (not the `R` console), type: `where git` on Windows and `which git` on Mac/Linux to find the path to the program. If there are more than one paths listed, just make note of one of them. 
+     * If for some reason you don't see a path listed using that approach, type:  `Sys.which("git")` in your `R` console. The path here will likely be truncated so you will have to try to fill in the gaps when performing the step to set the path. See me for help. 
      
-2. In RStudio, go to **Tools > Global Options** and click on left side bar menu item *Git/SVN*.
+2. In 1RStudio1, go to **Tools > Global Options** and click on left side bar menu item *Git/SVN*.
 
 2. Select the option at the top to *Enable version control interface for RStudio projects* if it is not selected.
 
 3. Set the path to the Git executable if it is not already there. Browse to the path to where Git.exe installed on your computer. Windows Users should make note that this path should be a path containing `Git.exe` and **not** a path containing `git-bash.exe`.
 
-4. Click *Apply* and click *OK*.
+4. Click *Apply* and then click *OK*.
 
  
 ## **Configuring Git and GitHub**
 
-There are two ways you can set up, either using R (console) or the command line (terminal). My recommendation is to use R because that is where you are likely most familiar. We will use the **{usethis}** library to help you.
+There are two ways you can set up, either using `R` (console) or the command line (terminal). My recommendation is to use `R` because that is where you are likely most familiar, if even a small degree. We will use functions from the **{usethis}** library to help you. This library should be installed already as part of the class setup. If you get an error stating that the library is not installed when executing the steps below, just type `install.packages("usethis", dep = TRUE)` at your `R` console.
 
-The **{usethis}** library will make connecting your `R` project to your github account simple. This library should be installed as part of the packages from the start of the course. You will use `usethis::use_git_config()` to configure your GitHub account  (see earlier) with Git on your computer. 
+The **{usethis}** library will make connecting your `R` project to your github account simple. You will use `usethis::use_git_config()` to configure your GitHub account with Git on your computer; if you did not create, see earlier step. In the below example, you will see that we need to provide two character strings as arguments to the function. The strings are used to set your `user.name` and your `user.email` (the e-mail attached to your GitHub account). Double check your GitHub e-mail and username.
 
-In the below example, you need to pass two arguments, your `user.name` and your `user.email` which is the e-mail attached to your GitHub account. Add your arguments and then execute your modified `R` code:
+*Edit the following code to include your username and email and then execute your modified `R` code:*
 
 ```
 usethis::use_git_config(user.name = "github_username", 
                         user.email = "github_email@gitrdone.com"
                         )
 ```
+
+Done!
 
 
 ## **Creating a Personal Access Token (PAT) for GitHub**
@@ -141,7 +143,8 @@ Before completing this step, log into your GitHub account to facilitate the comm
 
 You will need a personal access token (PAT) for making remote changes to GitHub. A first step then is to create a PAT using `usethis::create_github_token()`. Second, you will register your PAT with the Git credential manager used by your computers operating system using `gitcreds::gitcreds_set()`. Keep in mind that if you use a different computer (e.g., you get a new one), you'll need to register the PAT on that computer following the same steps described here.
 
-To create your personal access token (PAT), type the following at your R console: 
+
+*To create your personal access token (PAT), type the following at your `R` console: *
 
 ```
 usethis::create_github_token()
@@ -158,7 +161,7 @@ After creating your token, **Copy it** to your computer's clipboard and **save i
 
 Now that you have a PAT, we now need to set those credentials for RStudio to communicate with your GitHub account.
 
-Execute the following `R` code to set your credentials:
+*Execute the following `R` code to set your credentials:*
 
 ```
 gitcreds::gitcreds_set()
@@ -168,7 +171,7 @@ You may see a set of number options with corresponding descriptions. If you see 
 
 When should then see a prompt like `? Enter new password or token`. At this point, paste your PAT here and press return/enter. Then remove the PAT from your clipboard so that you don't paste them someplace.
 
-You can check that your credentials are stored by typing the following `R` code in the console:
+*You can check that your credentials are stored by typing the following `R` code in the console:*
 
 ```
 gh::gh_whoami()
@@ -177,7 +180,7 @@ gh::gh_whoami()
 
 ### **Updating your Personal Access Token (PAT)**
 
-At some point, your PAT will expire and you will need to update it. When it's about to expire or if it has expired, you can go to [https://github.com/settings/tokens](https://github.com/settings/tokens) while logged into your [GitHub](www.github.com) account and regenerate the token and change the expiration date. Then, copy the PAT to the clipboard and set your credentials again using 
+At some point, even if you set your PAT to expire after the semester, it will expire and you will need to update it. When it's about to expire, or if it has expired, you can go to [https://github.com/settings/tokens](https://github.com/settings/tokens) while logged into your [GitHub](www.github.com) account and regenerate the token and change the expiration date. Then, copy the PAT to the clipboard and set your credentials again using 
 `gitcreds::gitcreds_set()`.
 
 
@@ -187,7 +190,9 @@ You have now created your GitHub account, created a repository, created a PAT, a
 
 
 
-## **Other Resources**
+## **Optional Resources**
+
+If you find yourself working on complicated projects, you might benefit from using a Git client or need to troubleshoot events. Although you won't need to do this for this course, I'm providing some resources for your future. Feel free to come back to this course site to review content as I don't intend to remove anything.
 
 1. **Git Client:** Git clients work like the RStudio Gui option described above but likely much better. If you find the *Terminal* command line daunting or limiting, I might recommend a Git Client to use as I am not a big fan of the RStudio interface.
 

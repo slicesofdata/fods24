@@ -20,6 +20,7 @@ If the team decides to create roles different from those suggested below, please
 
 ### 1. *Project Manager (PM)*: The project manager helps with organization of the project and is the point person for communication.
 
+-   Communicating the team meeting time and location to me;
 -   Communicating with course faculty and liaison(s);
 -   Scheduling and reminding the team meetings and meetings with liaison;
 -   Assigning tasks to team members (with help from course professor is needed) and based on the project requirements;

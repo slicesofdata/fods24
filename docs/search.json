@@ -1810,7 +1810,7 @@
     "href": "slides/01_intro_rstudio_rmarkdown_slides.html#write-some-text-in-the-r-markdown-file",
     "title": "R, RStudio, & Rmarkdown",
     "section": "Write some text in the R Markdown File",
-    "text": "Write some text in the R Markdown File\n\nMy name is  and the year I start learning R is ."
+    "text": "Write some text in the R Markdown File\n\nMy name is X and the year I start learning R is Y."
   },
   {
     "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#dressing-up-text",
@@ -1915,7 +1915,7 @@
     "href": "slides/02_git_slides.html#version-control-git-workflow-basics",
     "title": "Git and GitHub",
     "section": "Version Control: Git Workflow Basics",
-    "text": "Version Control: Git Workflow Basics\nThere are three main parts to Git Workflow:\n\n\nVersion control for files (not empty directories)\nMake local changes (in your working directory)\nStage changes (in your staging directory)\nCommit changes (to apply them for pushing to your remote repository)\nVersion Control Workflow Basics\nOther Parts\n\nPush for sending commits to GitHub\nMerge for merging branches (i.e., to incorporate your edits into main)"
+    "text": "Version Control: Git Workflow Basics\nThere are 4 main parts to Git Workflow:\n\n\nMake local changes (in your working directory)\nStage changes (in your staging directory)\nCommit changes (to apply them for pushing to your remote repository)\nPush for sending commits to remote repo (on GitHub)\n\n\nOther: Merge for merging branches (i.e., to incorporate your edits into main)\nVideo of Version Control Workflow Basics\n\n\n\n## **Git: Image Version**\n\n@[understanding git through images](https://dev.to/nopenoshishi/understanding-git-through-images-4an1)"
   },
   {
     "objectID": "slides/02_git_slides.html#git-image-version",
@@ -1964,14 +1964,14 @@
     "href": "slides/02_git_slides.html#some-basic-commands-cont.",
     "title": "Git and GitHub",
     "section": "Some Basic Commands (Cont.)",
-    "text": "Some Basic Commands (Cont.)\n\nPull: incorporates changes into your repo from remote\nAdd: adds snapshots of your changes to the “Staging” area.\nCommit: takes the files as they are in your staging area and stores a snap shot of your files (changes) permanently in your Git directory\nPush: uploads your files (changes) to the remote repo\nStatus: checks the status of a repo changes, etc.\nMerge: incorporates changes into the branch you are on.\nPull Request: By “issuing a pull request” to the owner of the upstream repo, you are requesting that your changes be pulled into their repo (accept your changes/work)."
+    "text": "Some Basic Commands (Cont.)\n\nPull: incorporates changes into your repo from remote\nAdd: adds snapshots of your changes to the “Staging” area.\nCommit: takes the files as they are in your staging area and stores a snap shot of your files (changes) permanently in your Git directory\nPush: uploads your files (changes) to the remote repo\nStatus: checks the status of a repo changes, etc."
   },
   {
     "objectID": "slides/02_git_slides.html#making-local-file-changes-committing-and-pushing-to-github",
     "href": "slides/02_git_slides.html#making-local-file-changes-committing-and-pushing-to-github",
     "title": "Git and GitHub",
     "section": "Making Local File Changes, Committing, and Pushing to GitHub",
-    "text": "Making Local File Changes, Committing, and Pushing to GitHub\n\n\nMake a change to a file, save to local computer\nCheck status of project for changes\nAdd/Stage change\nCommit change(s)\nPush changes\nPull pulls changes down from repo (downloads and merges changes)\nFetch downloads new data (does not change your working copy)"
+    "text": "Making Local File Changes, Committing, and Pushing to GitHub\n\n\nMake a change to a file, save to local computer\nCheck status of project for changes\nAdd/Stage change\nCommit change(s)\nPush changes\nPull pulls changes down from repo (downloads and merges changes)"
   },
   {
     "objectID": "slides/02_git_slides.html#checking-the-status-of-local-file-changes",
@@ -2126,5 +2126,19 @@
     "title": "Sample Presentation",
     "section": "Output Location",
     "text": "Output Location\n\n\nlibrary(ggplot2)\n\nmtcars |&gt; \n  ggplot(aes(x = disp, y = mpg)) +\n  geom_point() +\n  geom_smooth(method = \"loess\", formula = \"y~x\")"
+  },
+  {
+    "objectID": "slides/02_git_slides.html#what-is-version-control-for",
+    "href": "slides/02_git_slides.html#what-is-version-control-for",
+    "title": "Git and GitHub",
+    "section": "What is version control for?",
+    "text": "What is version control for?\n\n\nProject backup\nGit monitors/controls file versions (empty directories).\nSee specific changes inside files\nUndo changes (time machine)\nVersion Control Summary Video"
+  },
+  {
+    "objectID": "slides/02_git_slides.html#some-basic-commands-cont.-1",
+    "href": "slides/02_git_slides.html#some-basic-commands-cont.-1",
+    "title": "Git and GitHub",
+    "section": "Some Basic Commands (Cont.)",
+    "text": "Some Basic Commands (Cont.)\n\nMerge: incorporates changes into the branch you are on.\nPull Request: By “issuing a pull request” to the owner of the upstream repo, you are requesting that your changes be pulled into their repo (accept your changes/work)."
   }
 ]

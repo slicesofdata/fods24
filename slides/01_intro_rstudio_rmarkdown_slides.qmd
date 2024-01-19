@@ -31,7 +31,7 @@ execute:
 
 ::: {.incremental}
 * code or programs you write execute in real time
-* the `R` interpreter translates your code 
+* by he `R` interpreter that translates your code 
 * code does not need to be compiled prior to being executed 
 :::
 
@@ -179,7 +179,7 @@ Beyond the console
 ## **Write some text in the `R Markdown` File**
 
 ::: {.incremental}
-My name is <name> and the year I start learning R is <year>.
+My name is X and the year I start learning R is Y.
 :::
 
 
@@ -318,5 +318,3 @@ The year is **`r year`**!
 ## **Locate the `HTML` file **
 
 - `my_first_markdown.html`
-
-:::

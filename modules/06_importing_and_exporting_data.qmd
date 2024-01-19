@@ -1,5 +1,5 @@
 ---
-title: "**Importing and exporting data**"
+title: "**Importing and Exporting Data**"
 author: "Gabriel I. Cook"
 #date: "`r Sys.Date()`"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
@@ -86,6 +86,7 @@ To assist with file paths, we will use the **{here}** library to help manage fil
 Related:
 
 - **{readxl}** `r packageVersion("readxl")`: for reading Excel spreadsheets
+
 
 
 # **Managing Files and File Paths Using {here}**
@@ -429,7 +430,7 @@ Great! Now that we have some data frames, we can write their contents to `/data`
 
 To understand what arguments you need to supply to the function parameters, check the help documentation, `help(write.table)`. This step is relevant if you are trying to understand what a function is doing -- don't just assume you know how a function works.
 
-**Arguments:**
+**Parameters/Arguments:**
 
 - `x`: we need an argument for the object to be written
 - `file`: we need a character string argument naming a file or a connection open for writing (aka the filepath)
@@ -453,7 +454,7 @@ If you are organized, you (a) save your `.R` and `.Rmd` files in a code director
 
 Let's do the same using `write.csv()`. Again, check the help documentation, `help(write.csv)`. 
 
-**Arguments:**
+**Parameters/Arguments:**
 
 - `x`: we need an argument for the data frame object to be written
 - `file`: we need a character string argument naming a file or a connection open for writing (aka the filepath)
@@ -484,7 +485,7 @@ write.csv(x = DAT3,
 
 Despite it's name, the **{readr}** library can save data frames too. Interestingly, at least at the time of this writing, **{readr}** allows you to write files in excel format even though you cannot open them. 
 
-**Arguments:**
+**Parameters/Arguments:**
 
 - `x`: we need an argument for the data frame object to be written
 - `file`: we need a character string argument naming a file or a connection open for writing (aka the filepath)
@@ -518,7 +519,7 @@ Because we have not yet addressed how to create or modify variable columns in da
 
 Give these advantages, we will rely heavily on `.rds` files once wrangling and cleaning occurs.
 
-**Arguments:**
+**Parameters/Arguments:**
 
 - `object`: we need an argument for the data frame to write
 - `file`: we need an argument for the data frame to write
@@ -535,7 +536,7 @@ saveRDS(object = DAT3,
 We will use **{openxlsx}** to write Excel files. 
 - `openxlsx::write.xlsx()`
 
-**Arguments:**
+**Parameters/Arguments:**
 
 - `x`: we need an argument for the data frame object to be written
 - `file`: we need a character string argument naming a file or a connection open for writing (aka the filepath)
@@ -591,7 +592,7 @@ Reading `.csv` files can be accomplished in a variety of ways, most typically us
 
 ### **Reading with `read.table()`**
 
-**Arguments:**
+**Parameters/Arguments:**
 
 - `file`: we need a character string argument naming a file or a connection open for writing (aka the filepath)
 - `sep`: we need an argument for the character used to separate column variables (e.g., `" "`, `","`, `"|"`, `"\t"`, etc.)
@@ -608,7 +609,7 @@ read.table(file = here::here("data", "example3.txt"),
 
 This function is the same as `read.table()` except the separator has already been set to a comma.
 
-**Arguments:**
+**Parameters/Arguments:**
 
 - `file`: we need a character string argument naming a file or a connection open for writing (aka the filepath)
 - `sep`: already predefined by default
@@ -620,7 +621,7 @@ read.csv(file = here::here("data", "example3.txt"))
 
 ### **Reading with `readr::read_csv()`**
 
-**Argument:**
+**Parameters/Arguments:**
 
 - `file`: we need a character string argument naming a file or a connection open for writing (aka the filepath)
 
@@ -660,6 +661,7 @@ readr::spec(example2a_readr)
 ```
 
 We now see the column types are all numeric, doubles. 
+
 
 #### **Changing column variable types**
 
@@ -724,7 +726,7 @@ example2a_readr
   
 You can specify datatypes upon reading if using `readr::read_csv()` but you have to do this every time you read a file. If datatypes for variables change, you would need to track those changes so that you can return the data frame to its last state. An alternative is `saveRDS()` saves datatypes, file encoding, and also compresses the file. Thus, `saveRDS()` and `readRDS()` will be go to functions.
 
-**Argument:**
+**Parameters/Arguments:**
 
 - `file`: we need a character string argument naming a file or a connection open for writing (aka the filepath)
 

@@ -25,38 +25,42 @@ execute:
 ---
 
 
-## **Version Control**
+# **Version Control**
+
+## **What is version control for?**
 
 ::: {.incremental}
-* What is version control? 
-  * Project backup
-  * See specific changes inside files
-  * Undo changes (time machine)
-  
+* Project backup
+* Git monitors/controls file versions (empty directories). 
+* See specific changes inside files
+* Undo changes (time machine)
 * [Version Control Summary Video](https://www.youtube.com/watch?v=M-O8ZNW9icQ)
 :::
 
 
 ## **Version Control: Git Workflow Basics**
 
-There are three main parts to Git Workflow:
+There are 4 main parts to Git Workflow:
 
 ::: {.incremental}
-- Version control for files (not empty directories)
-- Make local changes (in your working directory) 
-- **Stage** changes (in your staging directory) 
-- **Commit** changes (to apply them for pushing to your remote repository)
-- [Version Control Workflow Basics](https://www.youtube.com/watch?v=e8PGuOyZ3YU)
-* Other Parts 
-  * **Push** for sending commits to GitHub 
-  * **Merge** for merging branches (i.e., to incorporate your edits into main)
+1. Make local changes (in your working directory) 
+2. **Stage** changes (in your staging directory) 
+3. **Commit** changes (to apply them for pushing to your remote repository)
+4. **Push** for sending commits to remote repo (on GitHub) 
+* Other: **Merge** for merging branches (i.e., to incorporate your edits into main)
+* [Video of Version Control Workflow Basics](https://www.youtube.com/watch?v=e8PGuOyZ3YU)
 :::
 
+```{.r}
 
 ## **Git: Image Version**
 
-[understanding git through images](https://dev.to/nopenoshishi/understanding-git-through-images-4an1)
+@[understanding git through images](https://dev.to/nopenoshishi/understanding-git-through-images-4an1)
+```
 
+# **Setting up Git and GitHub**
+
+Already completed?
 
 ## **Connecting Git to GitHub: The RStudio Terminal**
 
@@ -64,7 +68,7 @@ There are three main parts to Git Workflow:
 - **Configure** Git and GitHub in RStudio Terminal
 - **Create** token
 - **Set** token
-- Can use the RStudio Gui (clunky though)
+- Can use the `RStudio` Gui (clunky though)
 :::
 
 
@@ -95,6 +99,8 @@ usethis::use_git_config(user.name = "janegit",
 :::
 
 
+# **Controlling Git: Commands**
+
 ## **Some Basic Commands**
 
 ::: {.incremental}
@@ -117,12 +123,19 @@ usethis::use_git_config(user.name = "janegit",
 `Push`:	uploads your files (changes) to the remote repo
 
 `Status`: checks the status of a repo changes, etc.
+:::
 
+
+## **Some Basic Commands (Cont.)**
+
+::: {.incremental}
 `Merge`: incorporates changes into the branch you are on.
 
 `Pull Request`: By "issuing a pull request" to the owner of the upstream repo, you are requesting that your changes be pulled into their repo (accept your changes/work).
 :::
 
+
+# **The Git Process**
 
 ## **Making Local File Changes, Committing, and Pushing to GitHub**
 
@@ -133,7 +146,6 @@ usethis::use_git_config(user.name = "janegit",
 - ***Commit*** change(s)
 - ***Push*** changes
 - ***Pull*** pulls changes down from repo (downloads and merges changes)
-- ***Fetch*** downloads new data (does not change your working copy)
 :::
 
 
@@ -154,6 +166,8 @@ At the **Terminal** in RStudio
 5. Upload your new the changes to GitHub: `git push`
 :::
 
+
+# **Staging**
 
 ## **Staging Changes (Adding Changes)**
 
@@ -182,6 +196,9 @@ At the **Terminal** in RStudio
 * `$ git add .`
 
 
+# **Committing Changes with Messages**
+
+
 ## **Committing the Change(s)** 
 
 ::: {.incremental}
@@ -189,6 +206,9 @@ At the **Terminal** in RStudio
 - add `-m` to tell git you want a message (e.g., `"my message here"`)  
 - `$ git commit -m "added my first .R file"`
 :::
+
+
+# **Pushing Changes to a Remote**
 
 
 ## **Push (publish) the change(s) from your branch to the remote repository**
@@ -200,6 +220,9 @@ At the **Terminal** in RStudio
 :::
 
 
+# **Pulling Changes from a Remote (collaborator's work)**
+
+
 ## **Pulls change(s) from the remote repository**
 
 ::: {.incremental}
@@ -207,6 +230,9 @@ At the **Terminal** in RStudio
 - If you make changes that other will need, let them know to pull
 :::
 
+
+
+# **Git Clients and Tutorials**
 
 ## **Git Client Video Tutorials**
 
