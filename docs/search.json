@@ -1663,7 +1663,7 @@
     "href": "slides/01_intro_rstudio_rmarkdown_slides.html#some-basics",
     "title": "R, RStudio, & Rmarkdown",
     "section": "Some basics",
-    "text": "Some basics\n\n\nnumeric objects\nstrings/character objects:\n\ncomposed of letters\nenclosed by quotes"
+    "text": "Some basics\n\n\nnumeric objects (e.g., 2024, 21.2)\nstrings/character objects:\n\ncomposed of letters\nenclosed by quotes (e.g., \"Sam\", \"Male\", \"21\")\n\nvector objects:\n\ncollections of objects (e.g., c(\"18\", \"23\", \"20\"))\n\ndata frames:\n\ncollections of vectors"
   },
   {
     "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#write-some-code",
@@ -1677,7 +1677,7 @@
     "href": "slides/01_intro_rstudio_rmarkdown_slides.html#rstudio",
     "title": "R, RStudio, & Rmarkdown",
     "section": "RStudio",
-    "text": "RStudio\n\nIDE for using R\nmake for a better experience\nlots of extras\n\nbetter UI, markdown, Terminal, Git, code snippets"
+    "text": "RStudio\n\nIDE for using R\nmake for a better coding experience\nlots of extras\n\nbetter UI, markdown, Terminal, Git, code snippets"
   },
   {
     "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#r-markdown",
@@ -1747,7 +1747,7 @@
     "href": "slides/01_intro_rstudio_rmarkdown_slides.html#add-header-sections-and-subsections-using",
     "title": "R, RStudio, & Rmarkdown",
     "section": "Add header sections and subsections using #",
-    "text": "Add header sections and subsections using #\n# Main Section\n## 2nd Level\n### 3rd Level"
+    "text": "Add header sections and subsections using #\n# About me\n## My favorite band\n### My favorite band from the 1990s"
   },
   {
     "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#insert-hyperlinks",
@@ -2165,6 +2165,69 @@
   {
     "objectID": "slides/01_intro_rstudio_rmarkdown.html#locate-the-html-file",
     "href": "slides/01_intro_rstudio_rmarkdown.html#locate-the-html-file",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Locate the HTML file ",
+    "text": "Locate the HTML file \n\nmy_first_markdown.html\n\n:::"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#some-basics-cont.",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#some-basics-cont.",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Some basics (cont.)",
+    "text": "Some basics (cont.)\n\n\nwe assign objects to names/names to objects\n\nages &lt;- c(\"18\", \"23\", \"20\")\n\nwe perform functions on objects:\n\nas.numeric(ages)\noften by assigning or reassigning:\n\nages &lt;- as.numeric(ages)"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#some-basics-cont.-1",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#some-basics-cont.-1",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Some basics (cont.)",
+    "text": "Some basics (cont.)\n\n\nwe inspect object contents\n\nages\nand get something returned: [1] 18 23 20\n\nwe perform more functions on objects:\n\nmean(ageas.numeric(ages))\n[1] 20.33333\n\nwe model data frames"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#open-rstudio",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#open-rstudio",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Open RStudio",
+    "text": "Open RStudio\n\n\nfind the Console\nfind the Terminal\nfind ‘environment’ in pane\nfind ‘history’ in pane\nfind ‘help’ in pane\nfind ‘files’ in pane\nfind ‘plots’ in pane"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#write-some-code-in-the-r-console",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#write-some-code-in-the-r-console",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Write some code in the R console",
+    "text": "Write some code in the R console\n\n\n\nyear &lt;- 2024\n\n\n\n\ncode\nyear &lt;- 2024\n\n\n\nassign objects to names using &lt;-, not ="
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#write-more-code-in-the-r-console",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#write-more-code-in-the-r-console",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Write more code in the R console",
+    "text": "Write more code in the R console\n\n\n\nages &lt;- c(18, 22, 24)\n\n\n\n\ncode\nages &lt;- c(18, 22, 24)\n\n\n\n[1] 18 22 24"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#write-some-text-in-the-r-markdown-file",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#write-some-text-in-the-r-markdown-file",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Write some text in the R Markdown File",
+    "text": "Write some text in the R Markdown File\n\nMy name is  and the year I start learning R is ."
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#create-a-code-block-write-some-code",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#create-a-code-block-write-some-code",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Create a code block + write some code",
+    "text": "Create a code block + write some code\n\n\n```{r}\nband &lt;- \"your favorite band\"\nstate &lt;- \"the state in which you grew up\"\nname &lt;- \"your name\"\n```"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#modify-your-text-in-the-r-markdown-file",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#modify-your-text-in-the-r-markdown-file",
+    "title": "R, RStudio, & Rmarkdown",
+    "section": "Modify your text in the R Markdown File",
+    "text": "Modify your text in the R Markdown File\n\n\nmake the year change by using inline code\nmake sure your inline code is after you assign the object"
+  },
+  {
+    "objectID": "slides/01_intro_rstudio_rmarkdown_slides.html#locate-the-html-file",
+    "href": "slides/01_intro_rstudio_rmarkdown_slides.html#locate-the-html-file",
     "title": "R, RStudio, & Rmarkdown",
     "section": "Locate the HTML file ",
     "text": "Locate the HTML file \n\nmy_first_markdown.html\n\n:::"

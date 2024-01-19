@@ -49,34 +49,105 @@ execute:
 ## **Some basics**
 
 ::: {.incremental}
-
-* numeric objects
+* numeric objects (e.g., `2024`, `21.2`)
 
 * strings/character objects: 
   * composed of letters
-  * enclosed by quotes
+  * enclosed by quotes (e.g., `"Sam"`, `"Male"`, `"21"`)
 
+* vector objects: 
+  * collections of objects (e.g., `c("18", "23", "20")`)
+
+* data frames: 
+  * collections of vectors
 :::
 
 
+## **Some basics (cont.)**
 
-## **Write some code**
+::: {.incremental}
+* we assign objects to names/names to objects
+  * `ages <- c("18", "23", "20")`
 
+* we perform functions on objects:
+  * `as.numeric(ages)`
+  * often by assigning or reassigning:
+    * `ages <- as.numeric(ages)`
+:::
+
+
+## **Some basics (cont.)**
+
+::: {.incremental}
+* we inspect object contents
+  * `ages` 
+  * and get something returned: `[1] 18 23 20`
+  
+* we perform more functions on objects:
+  * `mean(ageas.numeric(ages))`
+  * `[1] 20.33333`
+  
+* we model data frames  
+:::
+
+
+## **Open `RStudio`**
+
+::: {.incremental}
+* find the Console
+* find the Terminal
+* find 'environment' in pane
+* find 'history' in pane
+* find 'help' in pane 
+* find 'files' in pane
+* find 'plots' in pane
+:::
+
+
+## **Write some code in the `R` console**
+
+::: {.incremental}
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-cat('```{r}\nband <- "your favorite band"\nstate <- "the state in which you grew up"\nname <- "your name"\nage <- your age\n```')
+cat("year <- 2024\n")
 ```
 
+```{r}
+#| code-fold: true
+#| code-summary: "code"
+year <- 2024
+```
 
+- assign objects to names using `<-`, not `=`
+:::
+
+
+## **Write more code in the `R` console**
+
+::: {.incremental}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+cat("ages <- c(18, 22, 24)\n")
+```
+
+```{r}
+#| code-fold: true
+#| code-summary: "code"
+ages <- c(18, 22, 24)
+```
+
+- `[1] 18 22 24`
+:::
 
 
 # **Part 2: `RStudio`**
 
+Beyond the console
+
 ## **`RStudio`**
 
 * IDE for using `R`
-* make for a better experience
+* make for a better coding experience
 * lots of extras
-  * better UI, markdown, Terminal, Git, **code snippets**
+  * better UI, markdown, Terminal, Git, *code snippets*
 
 
 # **Part 3: `R Markdown`**
@@ -94,7 +165,7 @@ cat('```{r}\nband <- "your favorite band"\nstate <- "the state in which you grew
 :::
 
 
-## **Create an R Markdown File**
+## **Create an `R Markdown` File**
 
 ::: {.incremental}
 * Create directory/folder named: `fods24`
@@ -103,6 +174,14 @@ cat('```{r}\nband <- "your favorite band"\nstate <- "the state in which you grew
 * Save in: `/fods24`
 * **NOTE:** Directories will be addressed for next week!
 :::
+
+
+## **Write some text in the `R Markdown` File**
+
+::: {.incremental}
+My name is <name> and the year I start learning R is <year>.
+:::
+
 
 
 ## **Dressing up Text**
@@ -153,6 +232,13 @@ knitr::include_graphics(here::here("images", "chunk_options_gear.png"))
 ```
 
 
+## **Create a code block + write some code**
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+cat('```{r}\nband <- "your favorite band"\nstate <- "the state in which you grew up"\nname <- "your name"\n```')
+```
+
+
 
 ## **Embed code in-line (inside text)**
 
@@ -180,6 +266,10 @@ cat("The year is `r year`!")
 * You can render the object in text 
 * And dress up the text
 
+```{r message=FALSE, warning=FALSE, include=FALSE}
+year <- 2024
+```
+
 ```{r echo=FALSE}
 cat("The year is `r year`!")
 ```
@@ -187,15 +277,21 @@ cat("The year is `r year`!")
 The year is **`r year`**!
 
 
+## **Modify your text in the `R Markdown` File**
+
+::: {.incremental}
+* make the year change by using inline code
+* make sure your inline code is **after** you assign the object 
+:::
 
 
 ## **Add header sections and subsections using #** 
 
-*# Main Section*
+*# About me*
 
-*## 2nd Level*
+*## My favorite band*
 
-*### 3rd Level*
+*### My favorite band from the 1990s*
 
 
 
@@ -210,10 +306,17 @@ The year is **`r year`**!
 :::
 
 
-## **Knitting R Markdown Files**
+## **Knitting `R Markdown` Files**
 
 ::: {.incremental}
 * As `HTML`
 * As `pdf`
 * As `Word`
+:::
+
+
+## **Locate the `HTML` file **
+
+- `my_first_markdown.html`
+
 :::
