@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gabriel I. Cook">
-<meta name="dcterms.date" content="2024-01-19">
+<meta name="dcterms.date" content="2024-01-21">
 
 <title>PSYC166 - Using Git and GitHub</title>
 <style>
@@ -223,6 +223,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="../homework/HW01.Rmd" rel="" target="">
  <span class="dropdown-text">HW 1</span></a>
   </li>  
+        <li class="dropdown-header">HW 2</li>
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -237,6 +238,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="https://github.com/rfordatascience/tidytuesday" rel="" target="">
  <span class="dropdown-text">Fun Tidy Tuesday Data Sets</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://dcas.dmdc.osd.mil/dcas/app/home" rel="" target="">
+ <span class="dropdown-text">Defense Casualty Analysis System (DCAS)</span></a>
   </li>  
     </ul>
   </li>
@@ -271,7 +276,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
         <li>
     <a class="dropdown-item" href="https://rstudio.github.io/cheatsheets/" rel="" target="">
- <span class="dropdown-text">More Cheatsheets Here</span></a>
+ <span class="dropdown-text">More Cheatsheets From RStudio</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="https://images.datacamp.com/image/upload/v1676540721/Marketing/Blog/Quarto_Cheat_Sheet.pdf" rel="" target="">
@@ -534,7 +539,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 19, 2024</p>
+      <p class="date">January 21, 2024</p>
     </div>
   </div>
   
@@ -670,12 +675,12 @@ Under construction.
 </ul></li>
 <li><strong>Staging Changes (Add Changes)</strong>
 <ol type="a">
-<li><em>Stage a specific change</em>: If you made multiple changes and all you want to do is commit a single change and no others, you can specify the change you want to add. For example, if you want only to add a specific file, like <code>yourname.R</code>, you will use <code>git add &lt;file&gt;...</code> such that <code>&lt;file&gt;</code> refers to the file name.
+<li><em>Stage a specific change</em>: If you made multiple changes and all you want to do is <code>add</code> single files or groups of files you changed. For example, if you want only to add a specific file, like <code>yourname.R</code>, you will use <code>git add &lt;file&gt;...</code> such that <code>&lt;file&gt;</code> refers to the file name.
 <ul>
 <li>At the <em>Terminal</em> prompt, type <code>git add</code> followed by <code>&lt;file&gt;</code> to include in what will be committed)</li>
 <li><code>$ git add r/yourname.R</code></li>
 </ul></li>
-<li><em>Stage all change(s)</em>: When you make numerous changes, you may wish not to specify each file individually as that could be tedious. In this case, you may wish to stage all of your changes. Assuming everything you are doing is relevant to the project, one of the easiest ways to add changes is to just add all of your file changes. Note, your changes should not be done inside data files (e.g., <code>.csv</code>, <code>.xlsx</code>). Changes should only be done using R code. If not, your project will not be reproducible.
+<li><em>Stage all change(s)</em>: When you make numerous changes, you may wish not to specify each file individually as that could be tedious. In this case, you may wish to stage all of your changes. Assuming everything you are doing is relevant to the project, one of the easiest ways to add changes is to just add all of your file changes (e.g., your code and a data file produced by your code). However, just ensure that <strong>all file changed are error free</strong>. Keep in mind that, your changes should not be performed inside data files (e.g., <code>.csv</code>, <code>.xlsx</code>) by opening in a program like Excel and deleting content. Changes should only be made using <code>R</code> code. If not, your project will not be reproducible.
 <ul>
 <li>At the <em>Terminal</em>, you can type <code>git add .</code> which tells Git that you are adding all of those changes to commit them.</li>
 <li><code>$ git add .</code></li>
@@ -683,7 +688,7 @@ Under construction.
 </ol></li>
 <li><strong>Committing the change(s)</strong>
 <ul>
-<li>Now that you made a change, you will commit it and assign a useful message to remind your future self and collaborators what you just did.
+<li>Now that you made a change, you will <code>commit</code> it and assign a useful message to remind your future self and collaborators what you just did.
 <ul>
 <li>At the <em>Terminal</em>, type <code>git commit</code> to commit the changes, add <code>-m</code> to tell git you want a message, and then type the message as a string, <code>"my message here"</code> and then press enter/return to commit the changes.</li>
 <li><code>$ git commit -m "added my first .R file"</code></li>
@@ -691,29 +696,30 @@ Under construction.
 </ul></li>
 <li><strong>Push the change to the remote repository</strong>
 <ul>
-<li>We need to push the changes to the remote GitHub repository for version control and for collaborators to access
+<li>We need to <code>push</code> the changes to the remote GitHub repository for version control and for collaborators to access
 <ul>
 <li>At the <em>Terminal</em>, you will push those changes using <code>git push</code> and press enter/return to push.</li>
 <li><code>$ git push</code></li>
 </ul></li>
 <li>If you navigate to your GitHub account in your web browser, you will see the changes there as soon as they arrive. Congrats!</li>
 </ul></li>
-<li><strong>Practice (Yes, seriously): Changing, Committing, and Pushing Again</strong>
+<li><strong>Practice Time (Yes, seriously): Changing, Committing, and Pushing Again</strong>
 <ul>
 <li>You know that file with your name is not needed for the project. Delete it from the project as you normally would delete a file (no need to use the Terminal) and then <em>add</em> the change, <em>commit</em> the change with message “deleted my silly file”, and <em>push</em> changes.</li>
-<li>If for some reason, your push did not work, you may need to specify the project branch. Branching is beyond the scope of this course. If team members are working on separate tasks, their code will be compartmentalized so you can use the main branch.
+<li>If for some reason, your <code>push</code> did not work, you may need to specify the project branch.
 <ul>
 <li>You can set the branch to the main branch at the <em>Terminal</em> using <code>git branch -M main</code>.</li>
 <li><code>$ git branch -M main</code></li>
 </ul></li>
+<li>Branching is beyond the scope of this course, however, so we will not worry about branches other than the main branch. If team members are working on separate tasks, their code will be compartmentalized so all team members should be fine using the main branch.</li>
 </ul></li>
 <li><strong>Pushing Specific File Changes</strong>
 <ul>
-<li>You should not push all of your edits. For example, if you edit a file and save it but it is incomplete (e.g., it contains errors) that will create problems for your team members, you do not want to push them to the repo. If you do, your team member’s code will also break if they are sourcing (e.g., <code>source()</code>) your script file. Similarly, if the data file you write out contains errors, a teammate cannot read that file in successfully. So make sure that what you push is correct and accurate before pushing.</li>
+<li>You should not push all of your edits. For example, if you edit a file and save it but it is incomplete (e.g., it contains errors) that will create problems for your team members whose work may depend on that file (e.g., sourcing a data file you cleaned). Instead, push only files you are certain are ready to go. Similarly, if the data file you write out contains errors, a teammate cannot read that file in successfully. The main point is to ensure your work is working before you push them to the remote repo.</li>
 </ul></li>
 <li><strong>Pulling Changes from the Remote</strong>
 <ul>
-<li>The opposite of push is pull. When your teammates push their changes (e.g., data cleaning, file creation, etc.) to the repo and your code depends on those files, you will want to make sure their edits are in your local project so that you can use them.
+<li>The opposite of push is <code>pull</code>. When your teammates push their changes (e.g., data cleaning, file creation, etc.) to the repo and your code depends on those files, you will want to make sure their edits are in your local project so that you can use them.
 <ul>
 <li>To pull the changes down to your project, at the <em>Terminal</em>, type <code>git pull</code>.</li>
 <li><code>$ git pull</code></li>
@@ -748,6 +754,7 @@ Under construction.
 </section>
 <section id="creating-a-version-control-project-in-rstudio-for-the-team-project" class="level2">
 <h2 class="anchored" data-anchor-id="creating-a-version-control-project-in-rstudio-for-the-team-project"><strong>Creating a Version Control Project in RStudio for the Team Project</strong></h2>
+<p>If you have been assigned to a team, you can create a project and connect to the team remote repo on GitHub. If not, skip this step.</p>
 <ol type="1">
 <li><p>In RStudio, <strong>File &gt; New Project &gt; Version Control &gt; Git</strong>.</p></li>
 <li><p>In the pop-up, you will see a request for the “repository URL”. Paste the URL of the GitHub repository based on your liaison name. This URL will be the same as what you see on your GitHub account. However, we need to add <code>.git</code> to the end.</p></li>
