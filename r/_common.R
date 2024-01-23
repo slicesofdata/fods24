@@ -12,6 +12,21 @@ the_credit       <- "3 hours; 1 credits"
 # End General Course Details
 
 the_course_site <- "https://gabrielcook.xyz/fods24"
+the_course_upload_link <- "https://claremontmckenna.app.box.com/f/140969a32dea44e9ab6c0c00146d66e3"
+
+course_links_grep <- function(path = "modules",
+                              pattern = "git",
+                              replace = "https://gabrielcook.xyz/fods24") {
+  library(magrittr)
+  return(
+    list.files(path = here::here(path),
+             full.names = T
+  ) |>
+    stringr::str_subset(pattern) %>%
+    gsub(here::here(), replace, .) |>
+    print(quote = FALSE)
+  )
+}
 
 # huber text
 huber_pdf <- "https://www.markhuberdatascience.org/_files/ugd/c2b9b6_543ea42a1ea64e32b4440b34ffd71635.pdf"

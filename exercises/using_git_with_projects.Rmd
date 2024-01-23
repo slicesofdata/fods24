@@ -1,5 +1,5 @@
 ---
-title: "Exercise: Functions"
+title: "Exercise: Using Git and R Projects"
 author: "yourname"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
