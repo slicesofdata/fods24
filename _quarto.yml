@@ -84,7 +84,7 @@ website:
         menu:
           - text: HW 1
             href: homework/HW01.Rmd
-#          - text: HW 2
+          - text: HW 2
 #            href: homework/HW02.Rmd
 #          - text: HW 3
 #            href: homework/HW03.Rmd
@@ -102,6 +102,47 @@ website:
 #            href: homework/HW09.Rmd
       #    - text: HW 10
       #      href: "https://raw.githubusercontent.com/slicesofdata/fods24/main/homework/HW10.Rmd")
+
+################################################################################
+      - text: "**Exercises**"  # Built like Homework
+        menu:
+          - text: using_git_with_projects_exercise.Rmd
+            href: exercises/using_git_with_projects_exercise.Rmd
+
+          - text: functions_exercise.Rmd
+            href: exercises/functions_exercise.Rmd
+
+          - text: vectors_and_dataframes_exercise.Rmd
+            href: exercises/vectors_and_dataframes_exercise.Rmd
+
+          - text: imorting_and_exporting_exercise.Rmd
+            href: exercises/imorting_and_exporting_exercise.Rmd
+
+          - text: pivoting_exercise.Rmd
+            href: exercises/pivoting_exercise.Rmd
+
+          - text: transforming_exercise.Rmd
+            href: exercises/transforming_exercise.Rmd
+
+          - text: summarizing_exercise.Rmd
+            href: exercises/summarizing_exercise.Rmd
+
+          - text: visualizing_exercise.Rmd
+            href: exercises/visualizing_exercise.Rmd
+
+          - text: strings_and_factors_exercise.Rmd
+            href: exercises/strings_and_factors_exercise.Rmd
+
+          - text: joining_exercise.Rmd
+            href: exercises/joining_exercise.Rmd
+
+          - text: linear_models_exercise.Rmd
+            href: exercises/linear_models_exercise.Rmd
+
+          - text: eda_exercise.Rmd
+            href: exercises/eda_exercise.Rmd
+
+#
 ################################################################################
 
       - text: "**Data**"
@@ -131,7 +172,7 @@ website:
             href: https://rstudio.github.io/cheatsheets/html/data-import.html
           - text: Data Science with RWorkflow
             href: cheatsheets/Data_Science_With_R_Workflow.pdf
-          - text: More Cheatsheets Here
+          - text: More Cheatsheets From RStudio
             href: https://rstudio.github.io/cheatsheets/
           - text: Quarto Cheat Sheet (what Quarto Files Look Like)
             href: https://images.datacamp.com/image/upload/v1676540721/Marketing/Blog/Quarto_Cheat_Sheet.pdf
@@ -139,11 +180,12 @@ website:
       - text: "**Other Tools**"
         href: resources/tools.qmd
 
+
 ################################################################################
 # on the right of the page
     right:
       - icon: github
-        href: https://github.com/slicesofdata/fods24
+        href: https://github.com/slicesofdata
         aria-label: GitHub
       - text: Me
         href: https://gabrielcook.xyz
