@@ -7,9 +7,6 @@ date: "`r format(Sys.time(), '%d %B, %Y')`"
 execute:
   #enabled: false
   freeze: auto
-  
-# this is a test to fingure out why there is the following error when rendering many quarto files:
-# ERROR: The filename, directory name, or volume label syntax is incorrect. (os error 123)
 ---
 
 ```{r}
@@ -17,14 +14,19 @@ execute:
 #| include: false
 
 #library()
-#library()
+
+```
+
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+# common calls for class and textbook
+source(here::here("r", "_common.R"))
 ```
 
 ::: callout-important
 ## Under construction. 
 
 This page is a work in progress and may contain areas that need more detail or that required syntactical, grammatical, and typographical changes. If you find some part requiring some editing, please let me know so I can fix it for you.
-
 :::
 
 ## **Readings and Preparation**
@@ -35,22 +37,20 @@ This page is a work in progress and may contain areas that need more detail or t
 
 ## **Supplemental Readings**
 
+- [Huber: Graphing](`r huber_graphing_ch`)
 - [Wickham, Navarro, & Pedersen (under revision). *ggplot2: Elegant Graphics for Data Analysis (3e)*. Introduction](https://ggplot2-book.org/introduction)
 
-Optional (more on the grammar):
-
-- [Wickham, Navarro, & Pedersen (under revision). *ggplot2: Elegant Graphics for Data Analysis (3e)*. Build a plot layer by layer](https://ggplot2-book.org/layers)
 
 ```{r eval=FALSE, include=FALSE}
 # https://cedricscherer.netlify.app/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/#ggplot
 ```
 
+
 # **Libraries** 
 
 - **{here}**: `r packageVersion("here")`: for path management
-- **{dplyr}** `r packageVersion("dplyr")`: for selecting, filtering, and mutating
-- **{magrittr}** `r packageVersion("magrittr")`: for code clarity and piping data frame objects
-- **{ggplot2}** `r packageVersion("ggplot2")`: for plotting
+- **{dplyr}**: `r packageVersion("dplyr")`: for selecting, filtering, and mutating
+- **{ggplot2}**: `r packageVersion("ggplot2")`: for plotting
 
 
 ## **Load libraries**
@@ -67,11 +67,18 @@ Provided in class:
 
 `view_html()`: for viewing data frames in html format, from `/r/my_functions.R` 
 
-You can use this in your own workspace but I am having a challenge rendering this of the website, so I'll default to `print()` on occasion.
+If saved, source locally:
 
 ```{r}
 source(here::here("r", "my_functions.R"))
 ```
+
+Or Source online:
+
+```{r}
+source("https://raw.githubusercontent.com/slicesofdata/fods24/main/r/functions/view_html.R")
+```
+
 
 
 # **The Grammar of Graphics**
@@ -114,6 +121,7 @@ There are five mapping components:
 
 5. **A Theme** controlling the niceties of the plot, like font, background, grids, axes, typeface etc.
 
+
 The grammar does not: 
 
 - Make suggestions about what graphics to use
@@ -132,6 +140,17 @@ Let's walk through the steps for making a plot using **{ggplot2}**. We will see 
 ## **Initializing the Plot Object**
 
 What is a `?ggplot` object? Review the [docs](https://ggplot2.tidyverse.org/reference/ggplot.html) first. Let's apply the base layer using `ggplot()`. This function takes a data set and simply initializes the plot object so that you can build other components on top of it. By default, `data = NULL` so, you will need to pass some data argument.  There is also a `mapping` parameter for mapping the aesthetics of the plot, by default, `mapping = aes()`. If you don't pass a data frame to `data`, what happens?
+
+```
+ggplot(data = NULL, 
+       mapping = aes()
+       )
+```
+
+**Parameters/Arguments:**
+
+- `data`: Default data set to use for plot. If not already a data.frame, will be converted to one by fortify(). If not specified, must be supplied in each layer added to the plot.
+- `mapping`: Default list of aesthetic mappings to use for plot. If not specified, must be supplied in each layer added to the plot.
 
 ```{r}
 ggplot()
@@ -197,7 +216,9 @@ If you wanted your plot geometry (the `geom()` you add later) to inherit propert
 For example:
 
 ```{r}
-ggplot(data = SWIM, mapping = aes())
+ggplot(data = SWIM, 
+       mapping = aes()
+       )
 ```
 
 But this still does not present anything you can see. You might have guessed that the reason you do not see anything is because nothing was passed to `aes()`. Here is where you *map data to aesthetics* by specifying the  variable information and passing them to `aes()`. Looking at `?aes`, we see that `aes()` maps how properties of the data connect to, or map, onto with the features of the visualization (e.g., axis position, color, size, etc.). The aesthetics are the visual properties of the visualization, so they are essential to map by passing arguments to `aes()`. 
@@ -245,8 +266,8 @@ At some point, you will want to assign the plot to an object. When you do, the p
 
 ```{r}
 my_first_plot <- ggplot(data = SWIM, 
-       mapping = aes(x = Year, y = Time)
-       ) +
+                        mapping = aes(x = Year, y = Time)
+                        ) +
   geom_point()
 ```
 
@@ -261,8 +282,8 @@ my_first_plot
 
 ```{r}
 (my_first_plot <- ggplot(data = SWIM, 
-       mapping = aes(x = Year, y = Time)
-       ) +
+                         mapping = aes(x = Year, y = Time)
+                         ) +
   geom_point())
 ```
 
@@ -296,24 +317,26 @@ Either in the initialized plot object:
 
 - **`ggplot(data = data, mapping = aes(x, y))`** `+ geom_point()`
 
+
 Or in the geometry:
 
 - `ggplot() + `**`geom_point(data = data, mapping = aes(x, y))`**
 
 
-We can map aesthetics in the initialized plot object by also assigning this to an object named `map` just so we can reference it as need. 
+We can **map** aesthetics in the initialized plot object by also assigning this to an object named `plot` just so we can reference it as need. 
 
 When we do this mapping:
 
 ```{r}
-map <- ggplot(data = SWIM, 
-              mapping = aes(Year, Time))
+plot <- ggplot(data = SWIM, 
+              mapping = aes(Year, Time)
+              )
 ```
 
 The aesthetics are inherited by the geometries that follow, which then do not require any mapping of their own...
 
 ```{r}
-map + 
+plot + 
   geom_point() + 
   geom_line()
 ```
@@ -321,7 +344,7 @@ map +
 But when aesthetics are NOT mapped in initialized plot:
 
 ```{r}
-map <- ggplot() 
+plot <- ggplot() 
 ```
 
 There are no aesthetics to be inherited by the plot geometry functions because they are not passed to the `ggplot()` object. In this case they must be mapped as arguments the geometries themselves. 
@@ -329,18 +352,20 @@ There are no aesthetics to be inherited by the plot geometry functions because t
 Plot points:
 
 ```{r}
-map + 
+plot + 
   geom_point(data = SWIM, 
-             mapping = aes(Year, Time)) 
+             mapping = aes(Year, Time)
+             ) 
 ```
 
 
 Plot a line:
 
 ```{r}
-map + 
+plot + 
   geom_line(data = SWIM, 
-            mapping = aes(x = Year, y = Time))
+            mapping = aes(x = Year, y = Time)
+            )
 ```
 
 In a later section, we will differentiate between *setting* and *mapping* aesthetic attributes.
@@ -466,7 +491,9 @@ Not all geometries are the same. Although many `geom_*()`s share most aesthetics
 If an aesthetic is not understood by a certain geometry, we cannot pass an argument for it. For example, you cannot add a `linetype` argument to `geom_point()`. If you want your points connected by lines, then you can add a new `geom_*()` layer to the plot that contains that aesthetic. Importantly, because `geom_*()`s will inherit the data and mapping from `ggplot()` by default, the line will connect the points in x along y to provide an odd visualization. 
 
 ```{r}
-ggplot(SWIM, aes(x = Year, y = Time)) +
+ggplot(SWIM, 
+       mapping = aes(x = Year, y = Time)
+       ) +
   geom_point() +
   geom_line()
 ```
@@ -488,21 +515,27 @@ Because `geom_point()` understands a `size` aesthetic, points have to take some 
 Let's start a plot object and add `geom_point()`:
 
 ```{r}
-ggplot(data = SWIM, aes(x = Year, y = Time)) + 
+ggplot(data = SWIM, 
+       mapping = aes(x = Year, y = Time)
+       ) + 
   geom_point()
 ```
 
 Let's pass a numeric value to `size`:
 
 ```{r}
-ggplot(data = SWIM, aes(x = Year, y = Time)) + 
+ggplot(data = SWIM, 
+       mapping = aes(x = Year, y = Time)
+       ) + 
   geom_point(size = 4)
 ```
 
 By passing `size = 4`, we have *set* size to a *constant* value. Notice that a size was *not* passed inside an `aes()` function. It it were passed there, something completely different would happen. 
 
 ```{r}
-ggplot(data = SWIM, aes(x = Year, y = Time)) + 
+ggplot(data = SWIM, 
+       mapping = aes(x = Year, y = Time)
+       ) + 
   geom_point(aes(size = 7))
 ```
 
@@ -511,8 +544,10 @@ What do you notice?
 This error is illustrated even better with the `color` aesthetic.
 
 ```{r}
-ggplot(data = SWIM, aes(x = Year, y = Time)) + 
-  geom_point(aes(color = "blue"))
+ggplot(data = SWIM, 
+       mapping = aes(x = Year, y = Time)
+       ) + 
+  geom_point(mapping = aes(color = "blue"))
 ```
 
 In both examples, you notice that a legend now appears in the plot. In the color example, the color is not blue even though this was the intent. Without getting into the details of what ggplot is doing when this happens, it serves as a warning that you did something incorrectly. 
@@ -520,7 +555,9 @@ In both examples, you notice that a legend now appears in the plot. In the color
 Importantly, you can only *set constant values* to aesthetics outside of `aes()`. Inside of `aes()`, you *map variables* to aesthetics. Where are the variables? Well, most likely in the data frame. By passing a different variable column form `SWIM`, we can *map* the aesthetic to that *variable* so that it changes relative to the changes in the variable. The plot will also change in a variety of ways simply by adding a new variable. Let's begin with a baseline plot for comparison and then map variables.
 
 ```{r}
-ggplot(data = SWIM, aes(x = Year, y = Time)) + 
+ggplot(data = SWIM, 
+       mapping = aes(x = Year, y = Time)
+       ) + 
   geom_point()
 ```
 
@@ -529,8 +566,10 @@ ggplot(data = SWIM, aes(x = Year, y = Time)) +
 `ggplot()` defines the `data` as well as variables in `aes()`. You can easily map the `x` or `y` variable to the `geom_*()`. 
 
 ```{r}
-ggplot(data = SWIM, aes(x = Year, y = Time)) + 
-  geom_point(aes(color = Year))
+ggplot(data = SWIM, 
+       mapping = aes(x = Year, y = Time)
+       ) + 
+  geom_point(mapping = aes(color = Year))
 ```
 
 ## **Mapping a variable that differs from what's in the data frame**
@@ -538,25 +577,31 @@ ggplot(data = SWIM, aes(x = Year, y = Time)) +
 You can also change a variable type in the scope of the plot without modifying it in the data frame. Let's change `Year` to numeric to see what happens:
 
 ```{r}
-ggplot(data = SWIM, aes(x = Year, y = Time)) + 
-  geom_point(aes(color = as.numeric(Year)))
+ggplot(data = SWIM, 
+       mapping = aes(x = Year, y = Time)
+       ) + 
+  geom_point(mapping = aes(color = as.numeric(Year)))
 ```
 
 Similarly, if we had a numeric variable and wanted to make a `factor()`:
 
 ```{r}
-SWIM <- SWIM %>%
-  mutate(., Year2 = as.numeric(Year))
+SWIM <- SWIM |>
+  mutate(Year2 = as.numeric(Year))
 
-ggplot(data = SWIM, aes(x = Year, y = Time)) + 
-  geom_point(aes(color = as.factor(Year2)))
+ggplot(data = SWIM, 
+       mapping = aes(x = Year, y = Time)
+       ) + 
+  geom_point(mapping = aes(color = as.factor(Year2)))
 ```
 
 Or make a character:
 
 ```{r}
-ggplot(data = SWIM, aes(x = Year, y = Time)) + 
-  geom_point(aes(color = as.character(Year2)))
+ggplot(data = SWIM, 
+       mapping = aes(x = Year, y = Time)
+       ) + 
+  geom_point(mapping = aes(color = as.character(Year2)))
 ```
 
 You may have noticed that when mapped variables are numeric, the aesthetics are applied continuously and when they are character (e.g., categorical, factors), they are applied discretely. Here is a good example of mapping variable `Year` not as itself but by changing it to a `as.numeric()` or changing numeric variables to either a `factor()` or a character vector. You might notice that the content in the legend is messy now. Fixing this is something we will work on as we progress.
@@ -567,8 +612,10 @@ You may have noticed that when mapped variables are numeric, the aesthetics are 
 Sometimes you may wish to map a variable that is not defined in `ggplot()`. We can map a variable that is neither `x` nor `y`:
 
 ```{r}
-ggplot(data = SWIM, aes(x = Year, y = Time)) + 
-  geom_point(aes(color = Team))
+ggplot(data = SWIM, 
+       mapping = aes(x = Year, y = Time)
+       ) + 
+  geom_point(mapping = aes(color = Team))
 ```
 
 This is no problem because `Team` exists in the SWIM data passed to `data` in the `ggplot()` object.
@@ -579,18 +626,29 @@ This is no problem because `Team` exists in the SWIM data passed to `data` in th
 We can also combine setting aesthetics and mapping them as long as the *mapping* takes place outside inside `aes()` and the *setting* takes place outside. 
 
 ```{r}
-ggplot(data = SWIM, aes(x = Year, y = Time)) + 
-  geom_point(color = "maroon", aes(shape = Team))
+ggplot(data = SWIM, 
+       mapping = aes(x = Year, y = Time)
+       ) + 
+  geom_point(color = "maroon", 
+             mapping = aes(shape = Team)
+             )
 ```
 
 ```{r}
-ggplot(data = SWIM, aes(x = Year, y = Time)) + 
-  geom_point(color = "blue", aes(size = Time))
+ggplot(data = SWIM, 
+       mapping = aes(x = Year, y = Time)
+       ) + 
+  geom_point(color = "blue", 
+             mapping = aes(size = Time)
+             )
 ```
 
 ```{r}
-ggplot(data = SWIM, aes(x = Year, y = Time)) + 
-  geom_point(shape = 21, aes(color = Event))
+ggplot(data = SWIM, 
+       mapping = aes(x = Year, y = Time)
+       ) + 
+  geom_point(shape = 21, 
+             mapping = aes(color = Event))
 ```
 
 Importantly, just as you cannot pass constant values as aesthetics in `aes()`, you cannot pass a variable to an aesthetic in the `geom_*()` outside of `aes()`. 
@@ -598,7 +656,9 @@ Importantly, just as you cannot pass constant values as aesthetics in `aes()`, y
 For example, passing `color = Team` outside of `aes()` in this instance will throw an error.
 
 ```
-ggplot(data = SWIM, aes(x = Year, y = Time)) + 
+ggplot(data = SWIM, 
+       mapping = aes(x = Year, y = Time)
+       ) + 
      geom_point(color = Team)
 
 Error: object 'Team' not found
@@ -607,7 +667,9 @@ Error: object 'Team' not found
 In summary, when you want to set an aesthetic to a constant value, do so in the `geom_*()` function, otherwise pass an aesthetic to `aes()` inside the geometry function. Color options can be discovered using `colors()`. Linetype has fewer options. To make the color more or less transparent, adjust `alpha` transparency (from 0 = invisible to 1). 
 
 ```{r}
-ggplot(SWIM, aes(x = Year, y = Time)) +
+ggplot(SWIM, 
+       mapping = aes(x = Year, y = Time)
+       ) +
   geom_point() +
   geom_line(linetype = "dashed",
             color = "red",

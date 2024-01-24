@@ -15,28 +15,7 @@ execute:
 ```
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
-# huber text
-huber_pdf <- "https://www.markhuberdatascience.org/_files/ugd/c2b9b6_543ea42a1ea64e32b4440b34ffd71635.pdf"
-front_matter <- 10
-huber_intro_ch <- glue::glue(huber_pdf,"#page=",front_matter + 3)
-huber_rmarkdown_ch <- glue::glue(huber_pdf,"#page=",front_matter + 10)
-huber_graphing_ch  <- glue::glue(huber_pdf,"#page=",front_matter + 17)
-huber_transformation_ch <- glue::glue(huber_pdf,"#page=",front_matter + 59) 
-huber_summaries_ch <- glue::glue(huber_pdf,"#page=",front_matter + 71)
-huber_eda_var_ch   <- glue::glue(huber_pdf,"#page=",front_matter + 81)
-huber_eda_covar_ch <- glue::glue(huber_pdf,"#page=",front_matter + 93)
-huber_import_ch <- glue::glue(huber_pdf,"#page=",front_matter + 103)
-huber_tidy_data_ch  <- glue::glue(huber_pdf,"#page=",front_matter + 123)
-huber_relational_ch <- glue::glue(huber_pdf,"#page=",front_matter + 141)
-huber_filtering_joins_ch <- glue::glue(huber_pdf,"#page=",front_matter + 150)
-huber_strings_ch <- glue::glue(huber_pdf,"#page=",front_matter + 155)
-huber_regex_ch   <- glue::glue(huber_pdf,"#page=",front_matter + 162)
-huber_using_regex_ch <- glue::glue(huber_pdf,"#page=",front_matter + 170)
-huber_func_patterns_ch <- glue::glue(huber_pdf,"#page=",front_matter + 182)
-huber_factors_ch <- glue::glue(huber_pdf,"#page=",front_matter + 186)
-huber_sql_ch <- glue::glue(huber_pdf,"#page=",front_matter + 199)
-huber_writing_functions_ch <- glue::glue(huber_pdf,"#page=",front_matter + 232)
-huber_modeling_ch <- glue::glue(huber_pdf,"#page=",front_matter + 241)
+
 ```
 
 
@@ -159,7 +138,7 @@ c(23, 22, 35, "30")
 
 Let's use `rnorm()` to create a numeric vector object that will represent sampling from a ***r***andom ***norm***al distribution. The distribution will have a certain number of observations, `n`, a mean, `mean`, and a standard deviation, `sd`. We will need to pass arguments to create the data.
 
-**Arguments:**
+**Parameters/Arguments:**
 
 - `n`: the number of elements in the vector
 - `mean`: the mean of the elements
@@ -264,12 +243,12 @@ head(sex)
 
 You can dig a little more deeply into the functionality of `seq()` by looking at the help documentation, `help(seq)` or `?seq`.
 
-**Arguments:**
+**Parameters/Arguments:**
 
-`from, to`: the starting and (maximal) end values of the sequence. Of length 1 unless just from is supplied as an unnamed argument.
-`by`:	number: increment of the sequence.
-`length.out`:	desired length of the sequence. A non-negative number, which for seq and seq.int will be rounded up if fractional.
-`along.with`: take the length from the length of this argument.
+- `from, to`: the starting and (maximal) end values of the sequence. Of length 1 unless just from is supplied as an unnamed argument.
+- `by`:	number: increment of the sequence.
+- `length.out`:	desired length of the sequence. A non-negative number, which for seq and seq.int will be rounded up if fractional.
+- `along.with`: take the length from the length of this argument.
 
 
 ### **Sequences `from` one value `to` another**
@@ -469,6 +448,7 @@ Using `base R`'s piping operator:
 iq <- rnorm(1000, 100, 15) |>     # create the random normal dist
     as.integer()                  # pipe to make integer
 ```
+
 
 ## ***Examine the `head()` of the object***
 
@@ -1371,24 +1351,26 @@ DF |>
 
 If your data frame or tibble contains only numeric variables, however, you can use `mutate_all()`. Similarly, you can subset your data frame to include only the numeric variable and use `mutate_all()` but the previous function approaches would likely be better to use if you want the other variables retained in the data frame. 
 
-Here are two examples of subsetting and then creating by selecting using either `select_if(., is.numeric)` or `select(where(is.numeric))`
+Here are two examples of sub-setting and then creating by selecting using `select_if(is.numeric)` or `select(where(is.numeric))`:
 
-- `select_if(., is.numeric)` : selects columns IF they are numeric
+- `select_if(is.numeric)` : selects columns IF they are numeric
 - `select(where(is.numeric))`: selects columns where there are numeric variables
 
 
 ```{r}
-DF %>%
-  select_if(., is.numeric) %>%                   # if type function
-  select(., -c("Id", "NewName2")) %>%            # select out
-  mutate_all(., ~scale(.)) %>%
-  head(.)
+DF |>
+  select_if(is.numeric) |>                   # if type function
+  select(-c("Id", "NewName2")) |>            # select out
+  mutate_all(~scale(.x)) |>
+  head()
+```
 
-DF %>%
-  select(., where(is.numeric)) %>%               # where there are numerics
-  select(., -c("Id", "NewName2")) %>%            # select out
-  mutate_all(., ~scale(.)) %>%
-  head(.)
+```{r}
+DF |>
+  select(where(is.numeric)) |>               # where there are numerics
+  select(-c("Id", "NewName2")) |>            # select out
+  mutate_all(~scale(.)) |>
+  head()
 ```
 
 
@@ -1402,8 +1384,8 @@ Note, the variables can be represented as separated arguments in the function se
 
 **Examples:**
 
-- `arrange(., var1, var2)`:               # the variables by their names
-- `arrange_at(., c("var1", "var2"))`         # the variables as a combined vector
+- `arrange(var1, var2)`: the variables by their names
+- `arrange_at(c("var1", "var2"))`: the variables as a combined vector
 
 By default, `arrange()` will sort in a ascending manner.
 
@@ -1425,6 +1407,7 @@ DF |>
   head()
 ```
 
+
 *Sorting on multiple variables...*
 
 ```{r}
@@ -1438,22 +1421,25 @@ Arrange based on variables containing `"se"` (e.g., Sex):
 
 ```{r}
 DF |>
-  arrange( across(contains("Se"))) |>    
-  view_html( show = 10)
+  arrange(across(contains("Se"))) |>    
+  view_html(show = 10)
 ```
 
 
 If you want to pass a vector of names, you'll need to use an `unquote` operator to unquote the vector object so that dplyr understands it. A double bang `!!` will unquote one character vector and a triple bang `!!!` will unquote more.
 
 ```{r}
-DF %>% 
+DF |>
   arrange(!!! rlang::syms(c("Sex", "Iq"))) |>
   view_html( show = 10)
+```
 
-# or 
+Or:
+
+```{r}
 vars <- c("Sex", "Iq")
 
-DF %>% 
+DF |> 
   arrange(!!! rlang::syms(vars)) |>
   view_html( show = 10)
 ```
@@ -1462,8 +1448,8 @@ However, this is confusing. There is an old function named `arrange_at()` which 
 
 ```{r}
 DF |>
-  arrange_at( vars) |>
-  view_html( show = 10)
+  arrange_at(vars) |>
+  view_html(show = 10)
 ```
 
 
@@ -1474,9 +1460,9 @@ If you want to find out quickly whether a case/row contains completed cases for 
 
 ```{r}
 DF |>
-  mutate( complete_all = complete.cases(across(everything()))) |>        # across all variables
-  mutate( complete_i   = complete.cases(across(contains("i")))) |>       # those containing
-  mutate( complete_num = complete.cases(across(where(is.numeric)))) |>   # those numeric
+  mutate(complete_all = complete.cases(across(everything()))) |>        # across all variables
+  mutate(complete_i   = complete.cases(across(contains("i")))) |>       # those containing
+  mutate(complete_num = complete.cases(across(where(is.numeric)))) |>   # those numeric
   head()
 ```
 
