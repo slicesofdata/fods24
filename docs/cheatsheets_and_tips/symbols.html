@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Gabriel I. Cook">
-<meta name="dcterms.date" content="2024-01-08">
 
-<title>PSYC166 - Joining Project Data</title>
+<title>PSYC166 - Symbols</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -66,9 +64,10 @@ ul.task-list li input[type="checkbox"] {
 
 <link rel="stylesheet" href="../css/nav.css">
 <link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="css/styles.scss">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -90,7 +89,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><strong>Home</strong></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../syllabus/syllabus.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../syllabus/syllabus.html" rel="" target="">
  <span class="menu-text"><strong>Syllabus</strong></span></a>
   </li>  
   <li class="nav-item">
@@ -342,240 +341,27 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/index.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/16_joining_project_data.html"><strong>Joining Project Data</strong></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../syllabus/syllabus.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Syllabus</strong></span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../modules/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Modules</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../modules/01_installing_r_and_rstudio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Installing R &amp; RStudio</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../modules/01_introduction_to_r_rstudio_and_rmarkdown.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Introduction to RStudio and R Markdown</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../modules/02_installing_and_setting_up_git_and_github.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Project Management 01: Installing and Setting Up Git and GitHub for R</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../modules/02_using_git_and_github.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Project Management 02: R Projects, Git, and GitHub</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../modules/04_functions_and_scripts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Functions, Arguments, and R scripts</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../modules/05_vectors_and_data_frame_basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Vectors and Data Frame Basics</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../modules/06_importing_and_exporting_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Importing and Exporting Data</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../modules/07_variables_and_measures_of_cognition.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Variables and Measures of Cognition</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../modules/08_manipulating_data_pivoting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Manipulating Data 01: Pivoting</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../modules/08_manipulating_data_selecting_filtering_mutating.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Manipulating Data 02: Selecting, Filtering, &amp; Mutating</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../modules/09_working_with_cognitive_task_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Working with Cognitive Task Data</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../modules/10_summarizing_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Summarizing Data</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../modules/11_summarizing_cognitive_task_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Summarizing Cognitive Task Data</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../modules/12_visualizing_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Visualizing Data: {ggplot} and the grammar of graphics</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../modules/13_examining_relationships_in_variables_of_cognition.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Examining Relationships in Variables of Cognition</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../modules/14_joining_relational_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Joining Relational Data</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../modules/15_strings_and_factors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Strings, Factors, and Regular Expressions</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../modules/16_joining_project_data.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><strong>Joining Project Data</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../modules/17_linear_models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Linear Models</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../modules/18_exploratory_data_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Exploratory Data Analysis</strong></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../project/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Project</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../project/01_project_team_roles.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Team membership and roles</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../project/02_project_midterm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Midterm presentation</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../project/03_project_final.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Final Presentation</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../project/04_project_report.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Final Report</strong></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><strong>Overview</strong></a></li>
-  <li><a href="#to-do" id="toc-to-do" class="nav-link" data-scroll-target="#to-do"><strong>To Do</strong></a>
-  <ul class="collapse">
-  <li><a href="#supplementary-readings" id="toc-supplementary-readings" class="nav-link" data-scroll-target="#supplementary-readings"><strong>Supplementary Readings</strong></a></li>
-  <li><a href="#task" id="toc-task" class="nav-link" data-scroll-target="#task"><strong>Task</strong></a></li>
-  <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries"><strong>Libraries</strong></a></li>
-  </ul></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><strong>Joining Project Data</strong></h1>
+<h1 class="title"><strong>Symbols</strong></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Gabriel I. Cook </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 8, 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -583,52 +369,118 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Term</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">&lt;-</td>
+<td style="text-align: left;">assignment operator</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">()</td>
+<td style="text-align: left;">(round) brackets / parentheses</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[]</td>
+<td style="text-align: left;">square brackets</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">{}</td>
+<td style="text-align: left;">curly brackets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;&gt;</td>
+<td style="text-align: left;">chevrons/angled brackets</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;</td>
+<td style="text-align: left;">less than</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&gt;</td>
+<td style="text-align: left;">greater than</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">#</td>
+<td style="text-align: left;">hash/pound</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">/</td>
+<td style="text-align: left;">forward slash</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">\</td>
+<td style="text-align: left;">backslash</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">dash/hyphen/minus</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">_</td>
+<td style="text-align: left;">underscore</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">*</td>
+<td style="text-align: left;">asterisk/star</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">^</td>
+<td style="text-align: left;">caret/power symbol</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">~</td>
+<td style="text-align: left;">tilde/twiddle</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">=</td>
+<td style="text-align: left;">equal sign</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">==</td>
+<td style="text-align: left;">double equal sign (logical equivalence)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">.</td>
+<td style="text-align: left;">full stop/period/point</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">|&gt;</td>
+<td style="text-align: left;">pipe (see also %&gt;% for {magrittr})</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&amp;</td>
+<td style="text-align: left;">ampersand/and (“and” operator)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">|</td>
+<td style="text-align: left;">vertical bar/pipe (“or” operator)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">!</td>
+<td style="text-align: left;">exclamation mark/bang (“not” operator)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">?</td>
+<td style="text-align: left;">question mark</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">’</td>
+<td style="text-align: left;">single quote/apostrophe</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="callout-title-container flex-fill">
-Under construction.
 </div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This page is a work in progress and may contain areas that need more detail or that required syntactical, grammatical, and typographical changes. If you find some part requiring some editing, please let me know so I can fix it for you.</p>
-</div>
-</div>
-<section id="overview" class="level1">
-<h1><strong>Overview</strong></h1>
-<p>In this module, we will address several concepts related to reading and writing data files. For example, we will address filename extensions and file formats, file paths associated with where files are stored, reading files that are saved in common file formats, writing files to preserve data types, and libraries associated with handling these issues.</p>
-<p>To assist with file paths, we will use the <strong>{here}</strong> library to help manage files stored locally (on your computer) as part of an RStudio project. You will also learn how to <strong>read and write</strong> data files of different formats. Depending how you access data, the process of reading data may change so this topic is discussed in a general way with different approaches described. If you find yourself in a bind with reading data, one of these approaches will likely work. We will cover functions for reading and writing data from <code>Base R</code>, as well as <strong>{dplyr}</strong>, <strong>{rio}</strong>, and <strong>{haven}</strong> libraries.</p>
-</section>
-<section id="to-do" class="level1">
-<h1><strong>To Do</strong></h1>
-<section id="supplementary-readings" class="level2">
-<h2 class="anchored" data-anchor-id="supplementary-readings"><strong>Supplementary Readings</strong></h2>
-<ul>
-<li><a href="https://r4ds.had.co.nz/workflow-basics.html">R Workflow Basics</a></li>
-</ul>
-</section>
-<section id="task" class="level2">
-<h2 class="anchored" data-anchor-id="task"><strong>Task</strong></h2>
-</section>
-<section id="libraries" class="level2">
-<h2 class="anchored" data-anchor-id="libraries"><strong>Libraries</strong></h2>
-<ul>
-<li><strong>{here}</strong> 1.0.1: for file path management</li>
-<li><strong>{readr}</strong> 2.1.4: for reading <code>.csv</code>, <code>.tsv</code>, and <code>.fwf</code> files</li>
-<li><strong>{openxlsx}</strong> 4.2.5.2: for reading Excel spreadsheets from a URL and writing Excel files</li>
-<li><strong>{haven}</strong> 2.5.4: for reading SPSS, Stata, and SAS files (e.g., <code>.sav</code>, <code>.dta</code>, <code>.sas7bdat</code>, etc. )</li>
-<li><strong>{rio}</strong> 1.0.1: a Swiss-Army knife for data I/O</li>
-</ul>
-<p>Related:</p>
-<ul>
-<li><strong>{readxl}</strong> 1.4.3: for reading Excel spreadsheets</li>
-</ul>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

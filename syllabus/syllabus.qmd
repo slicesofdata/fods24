@@ -109,7 +109,7 @@ If you do the math, including class time of 2½ hours, you should expect to allo
 
 All of the course materials will be available on this course website .
 
-Link to the course website: [https://gabrielcook.xyz/fods24/](https://gabrielcook.xyz/fods24/){.uri}
+Link to the course website: <https://gabrielcook.xyz/fods24/>
 
 #### **Required Equipment**:
 
@@ -130,6 +130,8 @@ Readings will be taken from different sources and will appear in each topic modu
 -   Nordmann, E. & DeBruine, L. (2023). **Applied Data Skills**: Processing & Presenting Data (2023) . <https://psyteachr.github.io/ads-v2>
 
 -   \[**DSRR**\] Data Skills for Reproducible Research: Electronic version.
+
+-   \[[**Data Skills**](https://psyteachr.github.io/data-skills-v2/index.html)\](<https://psyteachr.github.io/data-skills-v2/>
 
 -   Cognition readings for project topics will be available on Canvas/Sakai
 
@@ -255,7 +257,6 @@ The above link lists many examples of cheating and plagiarism that are not allow
 -   Do not copy random words from the internet that have nothing to do with the assignment and submit them as your own work.
 -   Do not work on individual assignments with other students, share answers or other material, and then all hand in versions of the same thing that are slightly different.
 -   Do not plagiarize yourself by submitting work that you have previously completed in another class.
-
 
 ### **Mandate to report violations**
 

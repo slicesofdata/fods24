@@ -1,0 +1,45 @@
+---
+title: "**Manipulating Data 01: Pivoting**"
+author: "Gabriel I. Cook"
+#date: "`r Sys.Date()`"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+
+execute:
+  #enabled: false
+  freeze: auto
+
+---
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+# secret functions
+source(here::here("r", "src", "color_format_text.R"))
+source(here::here("r", "_common.R"))
+```
+
+
+::: callout-important
+## Under construction. 
+
+This page is a work in progress and may contain areas that need more detail or that required syntactical, grammatical, and typographical changes. If you find some part requiring some editing, please let me know so I can fix it for you.
+:::
+
+
+```{r}
+#| label: load-packages
+#| include: false
+
+#library()
+# source(here::here("r", "my_functions.R"))
+R.utils::sourceDirectory(here::here("r", "functions"))
+source("https://raw.githubusercontent.com/slicesofdata/fods24/main/r/functions/view_html.R")
+```
+
+# **Overview**
+
+
+
+# **Session Information**
+
+```{r}
+sessionInfo()
+```

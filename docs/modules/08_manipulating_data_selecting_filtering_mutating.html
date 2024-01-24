@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gabriel I. Cook">
-<meta name="dcterms.date" content="2024-01-19">
+<meta name="dcterms.date" content="2024-01-23">
 
-<title>PSYC166 - Transforming Data</title>
+<title>PSYC166 - Manipulating Data 02: Selecting, Filtering, &amp; Mutating</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -165,8 +165,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Variables, Measures of Cognition</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../slides/07_transforming_data_slides.html" rel="" target="">
- <span class="dropdown-text">Transforming Data</span></a>
+    <a class="dropdown-item" href="../slides/07_manipulating_data_pivoting_slides.html" rel="" target="">
+ <span class="dropdown-text">Manipulating Data: Pivoting</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../slides/07_manipulating_data_selecting_filtering_mutating_slides.html" rel="" target="">
+ <span class="dropdown-text">Manipulating Data: Selecting, Filtering, &amp; Mutating</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../slides/08_cognitive_data_slides.html" rel="" target="">
@@ -174,7 +178,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
         <li>
     <a class="dropdown-item" href="../slides/09_summarizing_data_slides.html" rel="" target="">
- <span class="dropdown-text">Summarizing Data</span></a>
+ <span class="dropdown-text">Grouping and Summarizing Data</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../slides/10_cognitive_data_summary_slides.html" rel="" target="">
@@ -189,12 +193,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Examining Relationships</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../slides/13_strings_and_factors_slides.html" rel="" target="">
- <span class="dropdown-text">Strings and Factors</span></a>
+    <a class="dropdown-item" href="../slides/13_joining_data_slides.html" rel="" target="">
+ <span class="dropdown-text">Joining Data</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../slides/14_joining_data_slides.html" rel="" target="">
- <span class="dropdown-text">Joining Data</span></a>
+    <a class="dropdown-item" href="../slides/14_strings_and_factors_slides.html" rel="" target="">
+ <span class="dropdown-text">Strings and Factors</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../slides/15_joining_project_data_slides.html" rel="" target="">
@@ -215,10 +219,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-homework" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
- <span class="menu-text"><strong>Homework</strong></span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-hw" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text"><strong>HW</strong></span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-homework">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-hw">    
         <li>
     <a class="dropdown-item" href="../homework/HW01.Rmd" rel="" target="">
  <span class="dropdown-text">HW 1</span></a>
@@ -314,6 +318,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-cheatsheets">    
         <li>
+    <a class="dropdown-item" href="../cheatsheets_and_tips/symbols.html" rel="" target="">
+ <span class="dropdown-text">Symbols</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../cheatsheets/rmarkdown-2.0.pdf" rel="" target="">
  <span class="dropdown-text">RMarkdown</span></a>
   </li>  
@@ -373,7 +381,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/index.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/08_transforming_data.html"><strong>Transforming Data</strong></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/index.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/08_manipulating_data_selecting_filtering_mutating.html"><strong>Manipulating Data 02: Selecting, Filtering, &amp; Mutating</strong></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -420,7 +428,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/03_using_git_and_github.html" class="sidebar-item-text sidebar-link">
+  <a href="../modules/02_using_git_and_github.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><strong>Project Management 02: R Projects, Git, and GitHub</strong></span></a>
   </div>
 </li>
@@ -450,8 +458,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/08_transforming_data.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><strong>Transforming Data</strong></span></a>
+  <a href="../modules/08_manipulating_data_pivoting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Manipulating Data 01: Pivoting</strong></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/08_manipulating_data_selecting_filtering_mutating.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><strong>Manipulating Data 02: Selecting, Filtering, &amp; Mutating</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -486,14 +500,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/14_strings_and_factors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Strings, Factors, and Regular Expressions</strong></span></a>
+  <a href="../modules/14_joining_relational_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Joining Relational Data</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/15_joining_relational_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Joining Relational Data</strong></span></a>
+  <a href="../modules/15_strings_and_factors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Strings, Factors, and Regular Expressions</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -630,7 +644,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><strong>Transforming Data</strong></h1>
+<h1 class="title"><strong>Manipulating Data 02: Selecting, Filtering, &amp; Mutating</strong></h1>
 </div>
 
 
@@ -647,7 +661,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 19, 2024</p>
+      <p class="date">January 23, 2024</p>
     </div>
   </div>
   
@@ -672,7 +686,7 @@ Under construction.
 </div>
 <section id="overview" class="level1">
 <h1><strong>Overview</strong></h1>
-<p>In this module, we will start manipulating data frames. Data frames are composed of column variables and row observations/cases and we will address how to perform operations on both. We will learn how to use <strong>{dplyr}</strong>, rather than <code>base R</code> to select, remove, add, and modify vectors in data frames. In addition, we will address how to filter and arrange rows in various ways. The focus will be on cleaning or wrangling data. We will also use functions from libraries like <strong>{stringr}</strong> and <strong>{tidyselect}</strong>in conjunction with <strong>{dplyr}</strong>. In some sections, there are multiple examples depending on your specific use case. As long as you understand the basic functionality of the function, you do not need to work through all of the use cases provide. These examples, however, are provided to help you troubleshoot use cases as you may encounter them in class or in projects.</p>
+<p>In this module, we will start manipulating data frames. Data frames are composed of column variables and row observations/cases and we will address how to perform operations on both. We will learn how to use <strong>{dplyr}</strong>, rather than <code>base R</code> to select, remove, add, and modify vectors in data frames. In addition, we will address how to filter and arrange rows in various ways. The focus will be on cleaning or wrangling data. Helper functions from libraries like <strong>{tidyr}</strong>, <strong>{stringr}</strong>, and <strong>{tidyselect}</strong> are also used in conjunction with <strong>{dplyr}</strong>.</p>
 <section id="readings-and-preparation" class="level2">
 <h2 class="anchored" data-anchor-id="readings-and-preparation"><strong>Readings and Preparation</strong></h2>
 <p><em>Before Class</em>: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time. Work through some examples so that you have a good idea of your level of understanding and confidence.</p>
@@ -692,7 +706,6 @@ Under construction.
 <li><strong>{dplyr}</strong> 1.1.4: for selecting, filtering, and mutating</li>
 <li><strong>{stringr}</strong>: 1.5.1: for working with strings</li>
 <li><strong>{tidyselect}</strong>: 1.2.0: for selecting sets from strings</li>
-<li><strong>{magrittr}</strong> 2.0.3: for code clarity and piping data frame objects</li>
 </ul>
 </section>
 <section id="external-functions" class="level2">
@@ -700,7 +713,8 @@ Under construction.
 <p><code>view_html()</code>: for viewing data frames in <code>HTML</code> format</p>
 <p>You can access remotely using this code, though you do not need to do so now.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/slicesofdata/fods24/main/r/functions/view_html.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>R.utils<span class="sc">::</span><span class="fu">sourceDirectory</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"r"</span>, <span class="st">"functions"</span>))</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://raw.githubusercontent.com/slicesofdata/fods24/main/r/functions/view_html.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If this function is in <code>r/functions/</code>:</p>
 <div class="cell">
@@ -712,9 +726,8 @@ Under construction.
 <h1><strong>Loading Libraries</strong></h1>
 <p>We will work with a few different libraries for data manipulation. Let’s load them into our work space using <code>library()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Make note of any warnings that appear when loading libraries. There are some libraries that contain functions with the same names. Be aware that the most recently loaded library function will take precedence. You can avoid confusion using <code>::</code> to call a function from a particular library (e.g., <code>libraryname::functionname()</code>).</p>
 </section>
@@ -737,12 +750,12 @@ Under construction.
 <p>Using <code>select()</code>, you can select columns/variables from a data frame. The variables you select are retained and variables omitted that you don’t select are omitted in the returned data frame.</p>
 <p>If you are not piping a data frame from a previous object using either <code>|&gt;</code> (now in base <code>R</code>) or <code>%&gt;%</code> (from <strong>{magrittr}</strong>), the first argument passed into <code>select()</code> will be the data frame. The second and subsequent arguments can be column variables you wish to select from the data frame.</p>
 <pre><code>select(mydataframe, myvars)</code></pre>
-<p>If piping a data frame with <strong>{magrittr}</strong>, <code>.</code> or will serve to reference the inherited data frame. This detail is not needed but adding it serves as a reminder that the data frame is the first argument of the function.</p>
+<p>If piping a data frame with <strong>{magrittr}</strong>, <code>.</code> or <code>.data</code> will serve to reference the inherited data frame. This detail is not needed but adding it serves as a reminder that the data frame is the first argument of the function.</p>
 <p>You can use <code>.</code> to reference the data frame:</p>
-<pre><code>dataframe %&gt;%
+<pre><code>dataframe |&gt;
    select(., myvars)</code></pre>
 <p>Dropping out the <code>.</code> will execute just the same:</p>
-<pre><code>dataframe %&gt;%
+<pre><code>dataframe |&gt;
    select(myvars)</code></pre>
 <p>If using <code>base R</code>’s piping operator, you cannot add the <code>.</code> and must omit it:</p>
 <pre><code>dataframe |&gt;
@@ -1619,7 +1632,7 @@ Colorado       204</code></pre>
 <section id="piping-multiple-filter-function-calls" class="level1">
 <h1><strong>Piping Multiple Filter Function Calls</strong></h1>
 <p>In many cases, data filtering will involve different conditions for different column variables, so specifying them separately as separate lines of code is most appropriate.</p>
-<p>When passing a data frame using <code>%&gt;%</code> from <strong>{magrittr}</strong>, the first argument for the data frame can be specified using a <code>.</code> because the function inherits the data frame manipulated. However, <strong>{dplyr}</strong> also understand this so the <code>.</code> can also be omitted for convenience; this is the general practice you will see in forums like <a href="stackoverflow.com">stackoverflow.com</a>. Example to follow.</p>
+<p>When passing a data frame using the piping operator <code>%&gt;%</code> from <strong>{magrittr}</strong>, the first argument for the data frame can be specified using a <code>.</code> because the function inherits the data frame manipulated. However, <strong>{dplyr}</strong> also understand this so the <code>.</code> can also be omitted for convenience; this is the general practice you will see in forums like <a href="stackoverflow.com">stackoverflow.com</a>. Example to follow.</p>
 </section>
 <section id="filtering-cases-by-character-namesstring-values" class="level1">
 <h1><strong>Filtering Cases by Character Names/String Values </strong></h1>
@@ -2083,7 +2096,7 @@ Colorado       204</code></pre>
 6 105 neither  40     yes</code></pre>
 </div>
 </div>
-<p>And filter step-by-step for each variable using <code>%&gt;%</code> and separate function calls:</p>
+<p>And filter step-by-step for each variable using <code>|&gt;</code> and separate function calls:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb175"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb175-1"><a href="#cb175-1" aria-hidden="true" tabindex="-1"></a>DAT <span class="sc">|&gt;</span></span>
 <span id="cb175-2"><a href="#cb175-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Sex)) <span class="sc">|&gt;</span></span>
@@ -2166,7 +2179,7 @@ attached base packages:
 [1] stats     graphics  grDevices datasets  utils     methods   base     
 
 other attached packages:
-[1] stringr_1.5.1  dplyr_1.1.4    magrittr_2.0.3
+[1] stringr_1.5.1 dplyr_1.1.4  
 
 loaded via a namespace (and not attached):
  [1] vctrs_0.6.5         cli_3.6.1           knitr_1.45         
@@ -2179,8 +2192,8 @@ loaded via a namespace (and not attached):
 [22] pkgconfig_2.0.3     htmlwidgets_1.6.4   here_1.0.1         
 [25] rstudioapi_0.15.0   R.oo_1.25.0         R.utils_2.12.2     
 [28] digest_0.6.33       R6_2.5.1            tidyselect_1.2.0   
-[31] utf8_1.2.4          pillar_1.9.0        R.methodsS3_1.8.2  
-[34] withr_2.5.0         tools_4.3.2        </code></pre>
+[31] utf8_1.2.4          pillar_1.9.0        magrittr_2.0.3     
+[34] R.methodsS3_1.8.2   withr_2.5.0         tools_4.3.2        </code></pre>
 </div>
 </div>
 
