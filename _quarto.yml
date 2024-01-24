@@ -86,21 +86,21 @@ website:
             href: homework/HW01.Rmd
           - text: HW 2
 #            href: homework/HW02.Rmd
-#          - text: HW 3
+          - text: HW 3
 #            href: homework/HW03.Rmd
-#          - text: HW 4
+          - text: HW 4
 #            href: homework/HW04.Rmd
-#          - text: HW 5
+          - text: HW 5
 #            href: homework/HW05.Rmd
-#          - text: HW 6
+          - text: HW 6
 #            href: homework/HW06.Rmd
-#          - text: HW 7
+          - text: HW 7
 #            file: homework/HW07.Rmd
-#          - text: HW 8
+          - text: HW 8
 #            href: homework/HW08.Rmd
-#          - text: HW 9
+          - text: HW 9
 #            href: homework/HW09.Rmd
-      #    - text: HW 10
+          - text: HW 10
       #      href: "https://raw.githubusercontent.com/slicesofdata/fods24/main/homework/HW10.Rmd")
 
 ################################################################################
