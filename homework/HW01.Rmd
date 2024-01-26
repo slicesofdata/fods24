@@ -28,7 +28,7 @@ For this homework, you will save the `R Markdown` (e.g., `.Rmd`) homework docume
 
 # **Overview**
 
-I will create homework assignments with the intention to facilitate progress toward the final project. Homework assignments, like other class activities, will involve working with project data to address bit-sized sub-goals of the project. Although readings will work with external data sets, homework assignments will generally not unless there is a call to do so. If teams are not meeting weekly, logging goals and accomplishments, and working together, I will adjust homework assignments to work with different data. 
+I will create homework assignments with the intention to facilitate progress toward the final project. Homework assignments, like other class activities, will involve working with project data to address bite-sized sub-goals of the project. Although readings will work with external data sets, homework assignments will generally not unless there is a call to do so. If teams are not meeting weekly, logging goals and accomplishments, and working together, I will adjust homework assignments to work with different data. 
 
 
 # **Team Unity: Meetings**
