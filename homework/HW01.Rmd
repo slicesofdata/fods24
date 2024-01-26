@@ -98,10 +98,9 @@ First, take a screen shot of your GitHub (online) repository with the pushed cha
 Next, because the `#` in code files refers to commenting out the code to prevent it from executing, the two lines of code in the code block are commented out. Based on whether your image file is `.png` or `.jpg`, remove the `#` for the line that you would like to execute.
 
 ```{r, echo=FALSE, out.width="50%", fig.cap="GitHub Screenshot."}
-#HW01_gh.png
-knitr::include_graphics(here::here("figs", "geom_bar.png"))
+#knitr::include_graphics(here::here("figs", "HW01_gh.png"))
 
-#knitr::include_graphics(here::here("figs", "geom_bar.jpg"))
+#knitr::include_graphics(here::here("figs", "HW01_gh.jpg"))
 ```
 
 Finally, knit an `html` file containing that image file and upload to: https://claremontmckenna.app.box.com/f/d688027b294e4f20b5039a6acb6d9f1c

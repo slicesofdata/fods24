@@ -85,26 +85,26 @@ website:
       - text: "**HW**"
         # file: homework/index.qmd         # this quarto file is not used - files referenced separately
         menu:
-          - text: HW 1
-            href: homework/HW01.Rmd
-          - text: HW 2
-#            href: homework/HW02.Rmd
-          - text: HW 3
-#            href: homework/HW03.Rmd
-          - text: HW 4
-#            href: homework/HW04.Rmd
-          - text: HW 5
-#            href: homework/HW05.Rmd
-          - text: HW 6
-#            href: homework/HW06.Rmd
-          - text: HW 7
-#            file: homework/HW07.Rmd
-          - text: HW 8
-#            href: homework/HW08.Rmd
-          - text: HW 9
-#            href: homework/HW09.Rmd
+          - text: HW 01
+            href: https://raw.githubusercontent.com/slicesofdata/fods24/main/homework/HW01.Rmd
+          - text: HW 02
+            href: https://raw.githubusercontent.com/slicesofdata/fods24/main/homework/HW02.Rmd
+          - text: HW 03
+            href: https://raw.githubusercontent.com/slicesofdata/fods24/main/homework/HW03.Rmd
+          - text: HW 04
+            href: https://raw.githubusercontent.com/slicesofdata/fods24/main/homework/HW04.Rmd
+          - text: HW 05
+            href: https://raw.githubusercontent.com/slicesofdata/fods24/main/homework/HW05.Rmd
+          - text: HW 06
+            href: https://raw.githubusercontent.com/slicesofdata/fods24/main/homework/HW06.Rmd
+          - text: HW 07
+            file: https://raw.githubusercontent.com/slicesofdata/fods24/main/homework/HW07.Rmd
+          - text: HW 08
+            href: https://raw.githubusercontent.com/slicesofdata/fods24/main/homework/HW08.Rmd
+          - text: HW 09
+            href: https://raw.githubusercontent.com/slicesofdata/fods24/main/homework/HW09.Rmd
           - text: HW 10
-      #      href: "https://raw.githubusercontent.com/slicesofdata/fods24/main/homework/HW10.Rmd")
+            href: https://raw.githubusercontent.com/slicesofdata/fods24/main/homework/HW10.Rmd
 
 ################################################################################
       - text: "**Exercises**"  # Built like Homework
