@@ -252,6 +252,69 @@
     "text": "Output Location\n\n\nlibrary(ggplot2)\n\nmtcars |&gt; \n  ggplot(aes(x = disp, y = mpg)) +\n  geom_point() +\n  geom_smooth(method = \"loess\", formula = \"y~x\")"
   },
   {
+    "objectID": "slides/03_functions_slides.html#some-object-types",
+    "href": "slides/03_functions_slides.html#some-object-types",
+    "title": "Functions, Parameters, and Arguments",
+    "section": "Some Object Types",
+    "text": "Some Object Types\n\n\nnumeric objects: representing numeric information (e.g., one’s age)\ncharacter objects: representing character information (e.g., one’s name or race)\nvector objects: representing more than one numeric object (e.g., ages of participants)\ndata frame objects: containing vectors of data (e.g., column variables and row instances of data)\nfunction objects: that accept one object and return an other object (e.g., the mean of numeric vector)"
+  },
+  {
+    "objectID": "slides/03_functions_slides.html#object-assignment",
+    "href": "slides/03_functions_slides.html#object-assignment",
+    "title": "Functions, Parameters, and Arguments",
+    "section": "Object Assignment",
+    "text": "Object Assignment\n\n\nObjects need names\nObtained through assignment\n\nname is assigned an object; or\nobject is set to name\n\nAssignment operator &lt;-\n\nex: age &lt;- 22\nex: age &lt;- as.numeric(c(\"22\", \"25\", \"19\"))"
+  },
+  {
+    "objectID": "slides/03_functions_slides.html#function-objects",
+    "href": "slides/03_functions_slides.html#function-objects",
+    "title": "Functions, Parameters, and Arguments",
+    "section": "Function Objects",
+    "text": "Function Objects\n\nFunctions are special objects which contain statements for carrying out operations\n\nc() or Hmisc::Cs(): to combine elements into a vector\nmean(): to compute the mean of a numeric vector\nsource(): for reading/executing R code\ndplyr::mutate(): for creating variables in data frames\nrio::import() or readr::read_csv(): for reading data files\nreadRDS(): for reading compressed data files"
+  },
+  {
+    "objectID": "slides/03_functions_slides.html#function-characteristics",
+    "href": "slides/03_functions_slides.html#function-characteristics",
+    "title": "Functions, Parameters, and Arguments",
+    "section": "Function Characteristics",
+    "text": "Function Characteristics\n5 terms concepts to know:\n\n\nname (created by assignment operator &lt;-)\ndefinition (code statements or instructions for its usage)\narguments (optional variables that specify the function’s operation)\nfunction call (e.g., execution of a function)\nreturned object (value returned from the executed function)"
+  },
+  {
+    "objectID": "slides/03_functions_slides.html#function-statements-without-parameterargument",
+    "href": "slides/03_functions_slides.html#function-statements-without-parameterargument",
+    "title": "Functions, Parameters, and Arguments",
+    "section": "Function Statements without Parameter/Argument",
+    "text": "Function Statements without Parameter/Argument\n\n\nmy_function &lt;- function() {\n\n    statements/instructions to do something\n\n    \n    return(result of instructions)\n\n}"
+  },
+  {
+    "objectID": "slides/03_functions_slides.html#function-example-with-parameterargument",
+    "href": "slides/03_functions_slides.html#function-example-with-parameterargument",
+    "title": "Functions, Parameters, and Arguments",
+    "section": "Function Example with Parameter/Argument",
+    "text": "Function Example with Parameter/Argument\n\n\n\nget_years_since_birth &lt;- function(dob) {\n  if (!hasArg(dob)) {\n      message(\"Error: dob missing/no argument provided\")\n    } \n  else {\n    # make string a data\n    dob = lubridate::as_date(dob) \n    # obtain the difference in time in days\n    diff = difftime(time1 = Sys.Date(), time2 = dob, units = \"days\")\n    # create age based on days in year\n    age = as.numeric(diff / 365.25)\n    # return the age in years, truncated \n    return(trunc(age))\n  }\n}"
+  },
+  {
+    "objectID": "slides/03_functions_slides.html#functions-in-libraries",
+    "href": "slides/03_functions_slides.html#functions-in-libraries",
+    "title": "Functions, Parameters, and Arguments",
+    "section": "Functions in Libraries",
+    "text": "Functions in Libraries\n\n\n{dplyr}: for wrangling data frames\n{ggplot2}: for plotting data\n{tidyverse}: for loading all libraries in the tidyverse ecosystem\n{easystats}: for loading all libraries in the easystats ecosystem"
+  },
+  {
+    "objectID": "slides/03_functions_slides.html#loadingimporting-functions-from-libraries",
+    "href": "slides/03_functions_slides.html#loadingimporting-functions-from-libraries",
+    "title": "Functions, Parameters, and Arguments",
+    "section": "Loading/Importing Functions from Libraries",
+    "text": "Loading/Importing Functions from Libraries\n\n\nLoading all functions:\n\nlibrary(dplyr)\n\nLoading order matters: Function of the same name will overwrite others"
+  },
+  {
+    "objectID": "slides/03_functions_slides.html#calling-functions-from-libraries",
+    "href": "slides/03_functions_slides.html#calling-functions-from-libraries",
+    "title": "Functions, Parameters, and Arguments",
+    "section": "Calling Functions from Libraries",
+    "text": "Calling Functions from Libraries\n\n\nIf loaded:\n\nmutate() (from {dplyr})\n\nIf not loaded:\n\neeptools::age_calc(): for calculating age based on a date\n:: calls ensures choice (duplicate function names in different libraries)"
+  },
+  {
     "objectID": "slides/023_git.html#version-control",
     "href": "slides/023_git.html#version-control",
     "title": "Git and GitHub",

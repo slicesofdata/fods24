@@ -109,41 +109,41 @@ website:
 ################################################################################
       - text: "**Exercises**"  # Built like Homework
         menu:
-          - text: using_git_with_projects_exercise.Rmd
+          - text: using_git_with_projects_exercise.docx
             href: exercises/using_git_with_projects_exercise.Rmd
 
-          - text: functions_exercise.Rmd
-            href: exercises/functions_exercise.Rmd
+          - text: functions_exercise.docx
+            href: exercises/functions_exercise.docx
 
-          - text: vectors_and_dataframes_exercise.Rmd
-            href: exercises/vectors_and_dataframes_exercise.Rmd
+          - text: vectors_and_dataframes_exercise.docx
+            href: exercises/vectors_and_dataframes_exercise.docx
 
-          - text: imorting_and_exporting_exercise.Rmd
-            href: exercises/imorting_and_exporting_exercise.Rmd
+          - text: importing_and_exporting_exercise.docx
+            href: exercises/imorting_and_exporting_exercise.docx
 
-          - text: pivoting_exercise.Rmd
-            href: exercises/pivoting_exercise.Rmd
+          - text: transforming_exercise.docx
+            href: exercises/transforming_exercise.docx
 
-          - text: transforming_exercise.Rmd
-            href: exercises/transforming_exercise.Rmd
+          - text: summarizing_exercise.docx
+            href: exercises/summarizing_exercise.docx
 
-          - text: summarizing_exercise.Rmd
-            href: exercises/summarizing_exercise.Rmd
+          - text: visualizing_exercise.docx
+            href: exercises/visualizing_exercise.docx
 
-          - text: visualizing_exercise.Rmd
-            href: exercises/visualizing_exercise.Rmd
+          - text: pivoting_exercise.docx
+            href: exercises/pivoting_exercise.docx
 
-          - text: strings_and_factors_exercise.Rmd
-            href: exercises/strings_and_factors_exercise.Rmd
+          - text: strings_and_factors_exercise.docx
+            href: exercises/strings_and_factors_exercise.docx
 
-          - text: joining_exercise.Rmd
-            href: exercises/joining_exercise.Rmd
+          - text: joining_exercise.docx
+            href: exercises/joining_exercise.docx
 
-          - text: linear_models_exercise.Rmd
+          - text: linear_models_exercise.docx
             href: exercises/linear_models_exercise.Rmd
 
-          - text: eda_exercise.Rmd
-            href: exercises/eda_exercise.Rmd
+          - text: eda_exercise.docx
+            href: exercises/eda_exercise.docx
 
 #
 ################################################################################

@@ -1147,13 +1147,154 @@ margin-right: 0; }
 </div>
 
 </section>
-<section class="slide level2">
+<section>
+<section id="objects" class="title-slide slide level1 center">
+<h1><strong>Objects</strong></h1>
+<div>
+<ul>
+<li class="fragment">An <em>object</em> as a sort of container</li>
+<li class="fragment">Containers hold different things</li>
+</ul>
+</div>
+</section>
+<section id="some-object-types" class="slide level2">
+<h2><strong>Some Object Types</strong></h2>
+<div>
+<ul>
+<li class="fragment"><strong>numeric</strong> objects: representing numeric information (e.g., one’s age)</li>
+<li class="fragment"><strong>character</strong> objects: representing character information (e.g., one’s name or race)</li>
+<li class="fragment"><strong>vector</strong> objects: representing more than one numeric object (e.g., ages of participants)</li>
+<li class="fragment"><strong>data frame</strong> objects: containing vectors of data (e.g., column variables and row instances of data)</li>
+<li class="fragment"><strong>function</strong> objects: that accept one object and return an other object (e.g., the mean of numeric vector)</li>
+</ul>
+</div>
+</section>
+<section id="object-assignment" class="slide level2">
+<h2><strong>Object Assignment</strong></h2>
+<div>
+<ul>
+<li class="fragment">Objects need names</li>
+<li class="fragment">Obtained through assignment
+<ul>
+<li class="fragment"><code>name</code> is assigned an <code>object</code>; or</li>
+<li class="fragment"><code>object</code> is set to <code>name</code></li>
+</ul></li>
+<li class="fragment">Assignment operator <code>&lt;-</code>
+<ul>
+<li class="fragment">ex: <code>age &lt;- 22</code></li>
+<li class="fragment">ex: <code>age &lt;- as.numeric(c(&quot;22&quot;, &quot;25&quot;, &quot;19&quot;))</code></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="function-objects" class="slide level2">
+<h2><strong>Function Objects</strong></h2>
+<div>
+<p>Functions are special objects which contain statements for carrying out operations</p>
+<ul>
+<li class="fragment"><code>c()</code> or <code>Hmisc::Cs()</code>: to combine elements into a vector</li>
+<li class="fragment"><code>mean()</code>: to compute the mean of a numeric vector</li>
+<li class="fragment"><code>source()</code>: for reading/executing <code>R</code> code</li>
+<li class="fragment"><code>dplyr::mutate()</code>: for creating variables in data frames</li>
+<li class="fragment"><code>rio::import()</code> or <code>readr::read_csv()</code>: for reading data files</li>
+<li class="fragment"><code>readRDS()</code>: for reading compressed data files</li>
+</ul>
+</div>
+</section>
+<section id="function-characteristics" class="slide level2">
+<h2><strong>Function Characteristics</strong></h2>
+<p>5 terms concepts to know:</p>
+<div>
+<ul>
+<li class="fragment"><code>name</code> (created by assignment operator <code>&lt;-</code>)</li>
+<li class="fragment"><code>definition</code> (code statements or instructions for its usage)</li>
+<li class="fragment"><code>arguments</code> (optional variables that specify the function’s operation)</li>
+<li class="fragment"><code>function call</code> (e.g., execution of a function)</li>
+<li class="fragment"><code>returned object</code> (value returned from the executed function)</li>
+</ul>
+</div>
+</section>
+<section id="function-statements-without-parameterargument" class="slide level2">
+<h2><strong>Function Statements without Parameter/Argument</strong></h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>my_function &lt;- function() {
 
+    statements/instructions to do something
+
+    
+    return(result of instructions)
+
+}</code></pre>
+</div>
+</div>
+</section>
+<section id="function-example-with-parameterargument" class="slide level2">
+<h2><strong>Function Example with Parameter/Argument</strong></h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+get_years_since_birth &lt;- function(dob) {
+  if (!hasArg(dob)) {
+      message(&quot;Error: dob missing/no argument provided&quot;)
+    } 
+  else {
+    # make string a data
+    dob = lubridate::as_date(dob) 
+    # obtain the difference in time in days
+    diff = difftime(time1 = Sys.Date(), time2 = dob, units = &quot;days&quot;)
+    # create age based on days in year
+    age = as.numeric(diff / 365.25)
+    # return the age in years, truncated 
+    return(trunc(age))
+  }
+}</code></pre>
+</div>
+</div>
+</section>
+<section id="functions-in-libraries" class="slide level2">
+<h2><strong>Functions in Libraries</strong></h2>
+<div>
+<ul>
+<li class="fragment"><strong>{dplyr}</strong>: for wrangling data frames</li>
+<li class="fragment"><strong>{ggplot2}</strong>: for plotting data</li>
+<li class="fragment"><strong>{tidyverse}</strong>: for loading all libraries in the <strong>tidyverse</strong> ecosystem</li>
+<li class="fragment"><strong>{easystats}</strong>: for loading all libraries in the <strong>easystats</strong> ecosystem</li>
+</ul>
+</div>
+</section>
+<section id="loadingimporting-functions-from-libraries" class="slide level2">
+<h2><strong>Loading/Importing Functions from Libraries</strong></h2>
+<div>
+<ul>
+<li class="fragment">Loading all functions:
+<ul>
+<li class="fragment"><code>library(dplyr)</code></li>
+</ul></li>
+<li class="fragment">Loading order matters: Function of the same name will overwrite others</li>
+</ul>
+</div>
+</section>
+<section id="calling-functions-from-libraries" class="slide level2">
+<h2><strong>Calling Functions from Libraries</strong></h2>
+<div>
+<ul>
+<li class="fragment">If loaded:
+<ul>
+<li class="fragment"><code>mutate()</code> (from <strong>{dplyr}</strong>)</li>
+</ul></li>
+<li class="fragment">If not loaded:
+<ul>
+<li class="fragment"><code>eeptools::age_calc()</code>: for calculating age based on a date</li>
+<li class="fragment"><code>::</code> calls ensures choice (duplicate function names in different libraries)</li>
+</ul></li>
+</ul>
+</div>
 
 <div class="footer footer-default">
 
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
@@ -2183,6 +2324,44 @@ window.QuartoSupport = function () {
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
