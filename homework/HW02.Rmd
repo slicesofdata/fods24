@@ -18,90 +18,80 @@ knitr::opts_chunk$set(echo = TRUE)
 
 **This homework is due by Thursday by 2:30pm.**
 
-For this homework, you will save the `R Markdown` (e.g., `.Rmd`) homework document and save it to your `/fods-exercises/report` project directory. Either rename or save a copy of this file so that its name has the prefix `2024_Lastname_FirstInitial`. Full name example: `2024_cookg_HW_01.Rmd`. Feel free to work with a partner but understand that the work submitted has to be your own.
+For this homework, you will save the `R Markdown` (e.g., `.Rmd`) homework document and save it to your `/fods-exercises/report` project directory. Either rename it or save a copy of this file so that its name has the prefix `2024_Lastname_FirstInitial`. Full name example: `2024_cookg_HW_02.Rmd`. 
 
 *Enter your name in the author YAML code above*   
 
 
-
-
-
 # **Overview**
 
-I will create homework assignments with the intention to facilitate progress toward the final project. Homework assignments, like other class activities, will involve working with project data to address bite-sized sub-goals of the project. Although readings will work with external data sets, homework assignments will generally not unless there is a call to do so. If teams are not meeting weekly, logging goals and accomplishments, and working together, I will adjust homework assignments to work with different data. 
+The goal of this homework is to make another step toward the team project. You will soon set up a meeting with the liaison, which we want to make efficient and obtain as much positive direction from them as possible. In pursuit of that goal, you should identify potential variables or measures of interest from the CHAMP data set that could be relevant to the project proposed by your liaison. Although the proposal identifies some key measures and cognitive tasks (e.g., go/no-go, symmetry span), other measures are not specified directly and are instead only conceptualized. This component of the project proposal is to involve you in the process of helping identity relevant variables in a way similar to evaluating variables in data scraped from websites or that which is extracted from meta data. The liaisons have also left this open in order to offer you some flexibility to explore the data in a way or ways that are most interesting to you. In order to have a greater hand in the process, your task is to review some contents of the CHAMPS data so that you can propose approaches to the liaison that can be agreed upon as ways to go. 
+
+# **Project Proposal: Identifying Measures/Variables**
+
+In the `/docs` directory for your **team** project, you will find some files related to the CHAMP data set. The focus will be on using data from Wave 1 of the CHAMP data set. Some key files are:
+
+* **1 - CHAMP - Sources of Data.docx:** A file describing the sources of data and data collection methods for the CHAMP data. This file will be relevant for the section of the final report within which you describe the data.
+
+* **2 - CHAMP - Measurement Instruments.docx:** A file outlining the measurement instruments used during the waves of data collection. Information is provided on the number of items in various measures. The measurement scales also contain information on the response options to questions. Sections also include some citations that you may find relevant. Full citations can be found at the end of the file.
+
+* **3 - CHAMP - Wave One Survey - Codebook.docx:** A large file providing clarity about all variables in the data set, including variable names, coded response options, etc. This file will be relevant for helping you pivot data from wide format to long format, for recoding any verbal responses to numeric, for creating factors with levels, for creating ordered factors, etc. This file will also help provide you with clarity about how to clean variables and describe any details associated with preparing data.  
+
+* **7 - CHAMP - Data Dictionary.xlsx:** A spreadsheet containing measures, rationale (related to the grant), and sources for measures in the data set. Details are redundant with other sections but you may find this file helpful with understanding some hypotheses outlined in the original grant but also to consider hypothesis that were not identified (but may be of interest).  
+
+This item will facilitate the initial meeting with your liaison. You will feel more confident in the meeting and you will have better direction by the conclusion of that meeting, leaving fewer loose ends. Based on your understanding of the proposal, your team will delegate sections of the documents to team members to undergo an initial review of the measures and questions in order to identify some measures that are likely relevant to the project proposal.
+
+Although you may identify more than 5, identify at least 5 questions/measures other than the symmetry span task or the go/no-go task. Reflect on those measures and determine their [level of measurement](https://en.wikipedia.org/wiki/Level_of_measurement) as this will help with models as you might remember from your statistics course. Keep in mind that ratio scales can often still be turned into lower-level variables (e.g., categorical/factors) but nominal/categorical variables cannot easily be converted into numeric. The liaison may ask you a question about the measurement scale so having a response can be advantageous. Based on the measures you identify, I can create future class exercises and homework assignments to help you wrangle them.
+
+**Identify 5 Relevant Measures / level of measurement** (e.g., nominal/categorical/factor; numeric but ordinal; numeric and equal-interval or ratio)
+
+1. 
+2. 
+3. 
+4. 
+5. 
 
 
-# **Team Unity: Meetings**
-
-Most of you have communicated in the class survey that you believe you often contribute to projects more than do other team members. On one hand, this suggests that many of you are committed to doing good work and as a team should be able to accomplish goals easily. On the other hand, egocentric biases in availability and attribution [(Ross & Sicoly, 1979)](http://web.mit.edu/curhan/www/docs/Articles/biases/37_J_Personality_Social_Psychology_322_%28Ross%29.pdf) often occur because strong, durable, and well-learned memories associated with our own experiences are retrieved more quickly and easily than weaker memories associated with what others have told us. As a result, we often perceive personal contributions to be greater than other even when they are equal simply as a function of retrieval bias.
-
-Although we cannot eliminate such retrieval biases, *clear* and *consistent* communication among team members will circumvent many related issues. Communicating weekly goals and accomplishments *clearly* will a) eliminate ambiguity about personal goals because you are intentional about your commitments, b) eliminate ambiguity about what others' goals, c) allow for equitable distribution of tasks, and d) highlight completion of or failure to complete goals. *Consistent* communication does much of the same but also a) builds team cohesion and unity, b) ensures personal accountability and c) allows for timely intervention when team members are contributing inequitably.   
+ 
 
 
-Determine time and location of a weekly in-person team meeting and enter below, even if for 30 minutes to discuss weekly accomplishments and goals for the next week. 
+# **Team Work log and Concerns**
 
-Provide the time and location at the prompts below but use `R Markdown` code to make them italicized.
+Importantly, you want to have a safeguard for accountability. I recommend keeping a shared document that you complete after each weekly team meeting in order to identify tasks that each team member will set out to accomplish by the next weekly meeting. If you do create such a file, please share it with me. That content could be placed here for me to review if you don't share with me. 
 
-Time:
+## **Weekly Accomplishments for Team**
 
-Location:
-
-
-
-# **Project Proposal: Identifying Questions**
-
-Review the project proposal. Provide a general summary of the goals and identify 2-3 questions that you would like to ask the liaison during the first meeting. Enter them as `R Markdown` bullet points.  
-
-
-
-
-
-
-# **Specifying Team Roles**
-
-Review the project team roles and determine who might be best suited for certain types of tasks. Provide the names corresponding to roles below and edit the roles to make bold in `R Markdown`. Understand that everyone will participate in all tasks but some members will handle more specific details, which reduces confusion. 
-
-Project Manager:
-
-Writing Lead:
-
-Coding Lead: 
-
-
-Once done with the above, please knit your `R Markdown` file as an `html` file.
+Please itemize/bullet point your personal accomplishments/tasks completed for your team as discussed/delegated in your team meeting. 
 
 
 
+## **Team Issues**
 
-# **GitHub Practice**
-
-Ensure that this `.Rmd` file is named correctly and is saved in `/fods-exercises/report`. Once you have saved the file and knitted an `HTML` version of it, use your Terminal in `RStudio` to:
-
-1. `add` the files to your local Git repository (aka stage it). These files should be in `/report`. You can add all files using `git add .`. 
-
-
-2. `commit` the file changes along with a descriptive message, like "completed HW 1 files" 
-
-
-3. `push` the changed files to your remote repo on GitHub
+Please itemize/bullet point any issues with team communication, task delegation, lack of follow-through as promised, etc. so that I understand them and look into.
 
 
 
-# **Optional Practice** 
 
-Note: Do only after completing the above. This step will require knitting again. 
 
-In your final project report, you will have to include some visualizations in your `R Markdown report`. One of the easiest ways to embed plot files in reports is to use the `knitr::include_graphics()` function. Let's practice using this function as well as `#` for commenting out code.
 
-First, take a screen shot of your GitHub (online) repository with the pushed changes. Name it `"HW01_gh.png"` and save it to the `/figs` directory. Although this image is not a figure, `/figs` is the directory of your project within which you would save image type files. If for some reason you cannot save `.png` files, save it as `"HW01_gh.jpg"`. 
+# **Optional**
 
-Next, because the `#` in code files refers to commenting out the code to prevent it from executing, the two lines of code in the code block are commented out. Based on whether your image file is `.png` or `.jpg`, remove the `#` for the line that you would like to execute.
+If your team has time to accomplish this element, do so this week or postpone until next week.
 
-```{r, echo=FALSE, out.width="50%", fig.cap="GitHub Screenshot."}
-#knitr::include_graphics(here::here("figs", "HW01_gh.png"))
+## **Readings**
 
-#knitr::include_graphics(here::here("figs", "HW01_gh.jpg"))
-```
+The project proposal includes readings that the liaison has identified as relevant for understanding the motivation for the project. These papers are in `/refs`. The final report should at very least include these papers as references. In addition to those papers, I have included other papers co-authored by James Pike, a coauthor on the grant for the CHAMP data. These references are supplemental to those identified by the liaison but may prove fruitful to your project as some papers are based on the CHAMP data or use tasks or measurements in the CHAMP data.  
+
+At some point, team members should determine which papers to read and agree how they will  distribute them to team members based on factors the team deems relevant (e.g., background knowledge, courses taken, etc.). Setting a timeline for both reading and discussing their importance in a future meeting is suggested so that there is no ambiguity among the team members about due dates, though I will not personally set a date. If some members have the time to review their share before the first liaison meeting, having that background may also prove useful, though not required.
+
+Once completed, specify the member name and dedicted paper(s) below.
+
+Member name: Citation(s)
+
+
+
+
 
 Finally, knit an `html` file containing that image file and upload to: https://claremontmckenna.app.box.com/f/026ed41483fb4a739f0ddfc7fbf8fd01
+
 
