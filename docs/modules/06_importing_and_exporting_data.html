@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gabriel I. Cook">
-<meta name="dcterms.date" content="2024-01-19">
+<meta name="dcterms.date" content="2024-02-02">
 
-<title>PSYC166 - Importing and Exporting Data</title>
+<title>PSYC166 - Pivoting Data Frames</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -408,7 +408,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/index.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/06_importing_and_exporting_data.html"><strong>Importing and Exporting Data</strong></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/index.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/06_importing_and_exporting_data.html"><strong>Pivoting Data Frames</strong></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -474,7 +474,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../modules/06_importing_and_exporting_data.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><strong>Importing and Exporting Data</strong></span></a>
+ <span class="menu-text"><strong>Pivoting Data Frames</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -611,7 +611,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><strong>Overview</strong></a>
   <ul class="collapse">
   <li><a href="#readings-and-preparation" id="toc-readings-and-preparation" class="nav-link" data-scroll-target="#readings-and-preparation"><strong>Readings and Preparation</strong></a></li>
-  <li><a href="#supplementary-readings" id="toc-supplementary-readings" class="nav-link" data-scroll-target="#supplementary-readings"><strong>Supplementary Readings</strong></a></li>
+  <li><a href="#supplementary-readings-if-you-want-to-dig-deeper" id="toc-supplementary-readings-if-you-want-to-dig-deeper" class="nav-link" data-scroll-target="#supplementary-readings-if-you-want-to-dig-deeper"><strong>Supplementary Readings (if you want to dig deeper)</strong></a></li>
   </ul></li>
   <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries"><strong>Libraries</strong></a></li>
   <li><a href="#managing-files-and-file-paths-using-here" id="toc-managing-files-and-file-paths-using-here" class="nav-link" data-scroll-target="#managing-files-and-file-paths-using-here"><strong>Managing Files and File Paths Using {here}</strong></a></li>
@@ -619,13 +619,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#tidy-files" id="toc-tidy-files" class="nav-link" data-scroll-target="#tidy-files"><strong>Tidy Files</strong></a>
   <ul class="collapse">
-  <li><a href="#wide-format-tidy-files" id="toc-wide-format-tidy-files" class="nav-link" data-scroll-target="#wide-format-tidy-files"><strong>Wide-Format Tidy Files</strong></a></li>
-  <li><a href="#long-format-tidy-files" id="toc-long-format-tidy-files" class="nav-link" data-scroll-target="#long-format-tidy-files"><strong>Long-Format Tidy Files</strong></a></li>
+  <li><a href="#wide-format-data-files" id="toc-wide-format-data-files" class="nav-link" data-scroll-target="#wide-format-data-files"><strong>Wide-Format Data Files</strong></a></li>
+  <li><a href="#long-format-data-files" id="toc-long-format-data-files" class="nav-link" data-scroll-target="#long-format-data-files"><strong>Long-Format Data Files</strong></a></li>
   <li><a href="#rearranging-data-files" id="toc-rearranging-data-files" class="nav-link" data-scroll-target="#rearranging-data-files"><strong>Rearranging Data Files</strong></a></li>
   </ul></li>
-  <li><a href="#filename-extensions" id="toc-filename-extensions" class="nav-link" data-scroll-target="#filename-extensions"><strong>Filename Extensions</strong></a>
+  <li><a href="#filename-extensions-general" id="toc-filename-extensions-general" class="nav-link" data-scroll-target="#filename-extensions-general"><strong>Filename Extensions: General</strong></a>
   <ul class="collapse">
-  <li><a href="#filename-extensions-for-tidy-files" id="toc-filename-extensions-for-tidy-files" class="nav-link" data-scroll-target="#filename-extensions-for-tidy-files"><strong>Filename Extensions for Tidy Files</strong></a></li>
+  <li><a href="#filename-extensions-for-data-files" id="toc-filename-extensions-for-data-files" class="nav-link" data-scroll-target="#filename-extensions-for-data-files"><strong>Filename Extensions for Data Files</strong></a></li>
   </ul></li>
   </ul></li>
   <li><a href="#managing-file-paths-with-here" id="toc-managing-file-paths-with-here" class="nav-link" data-scroll-target="#managing-file-paths-with-here"><strong>Managing File Paths with {here}</strong></a></li>
@@ -637,7 +637,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#writing-with-write.csv" id="toc-writing-with-write.csv" class="nav-link" data-scroll-target="#writing-with-write.csv"><strong>Writing with <code>write.csv()</code></strong></a></li>
   <li><a href="#writing-with-readrwrite_csv" id="toc-writing-with-readrwrite_csv" class="nav-link" data-scroll-target="#writing-with-readrwrite_csv"><strong>Writing with <code>readr::write_csv()</code></strong></a></li>
   </ul></li>
-  <li><a href="#writing-compressed-.rds-files" id="toc-writing-compressed-.rds-files" class="nav-link" data-scroll-target="#writing-compressed-.rds-files"><strong>Writing Compressed <code>.rds</code> Files</strong></a></li>
+  <li><a href="#writing-compressed-.rds-files" id="toc-writing-compressed-.rds-files" class="nav-link" data-scroll-target="#writing-compressed-.rds-files"><strong>Writing Compressed <code>.Rds</code> Files</strong></a></li>
   <li><a href="#writing-.xlsx-files" id="toc-writing-.xlsx-files" class="nav-link" data-scroll-target="#writing-.xlsx-files"><strong>Writing <code>.xlsx</code> Files</strong></a></li>
   </ul></li>
   <li><a href="#reading-data-files" id="toc-reading-data-files" class="nav-link" data-scroll-target="#reading-data-files"><strong>Reading Data Files</strong></a>
@@ -648,7 +648,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#reading-with-read.csv" id="toc-reading-with-read.csv" class="nav-link" data-scroll-target="#reading-with-read.csv"><strong>Reading with <code>read.csv()</code></strong></a></li>
   <li><a href="#reading-with-readrread_csv" id="toc-reading-with-readrread_csv" class="nav-link" data-scroll-target="#reading-with-readrread_csv"><strong>Reading with <code>readr::read_csv()</code></strong></a></li>
   </ul></li>
-  <li><a href="#reading-.rds-files" id="toc-reading-.rds-files" class="nav-link" data-scroll-target="#reading-.rds-files"><strong>Reading <code>.rds</code> Files</strong></a></li>
+  <li><a href="#reading-.rds-files" id="toc-reading-.rds-files" class="nav-link" data-scroll-target="#reading-.rds-files"><strong>Reading <code>.Rds</code> Files</strong></a></li>
   <li><a href="#reading-with-rioimport" id="toc-reading-with-rioimport" class="nav-link" data-scroll-target="#reading-with-rioimport"><strong>Reading with <code>rio::import()</code></strong></a></li>
   <li><a href="#reading-with-openxlsxread.xlsx" id="toc-reading-with-openxlsxread.xlsx" class="nav-link" data-scroll-target="#reading-with-openxlsxread.xlsx"><strong>Reading with <code>openxlsx::read.xlsx()</code></strong></a></li>
   </ul></li>
@@ -663,7 +663,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><strong>Importing and Exporting Data</strong></h1>
+<h1 class="title"><strong>Pivoting Data Frames</strong></h1>
 </div>
 
 
@@ -680,7 +680,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 19, 2024</p>
+      <p class="date">February 2, 2024</p>
     </div>
   </div>
   
@@ -710,10 +710,25 @@ Under construction.
 <section id="readings-and-preparation" class="level2">
 <h2 class="anchored" data-anchor-id="readings-and-preparation"><strong>Readings and Preparation</strong></h2>
 <p><em>Before Class</em>: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time.</p>
-<p><em>Class</em>: In class, some functions and concepts will be introduced and we will practice implementing code through exercises.</p>
+<p>This module contains information for importing and reading data that you might experience either in this class or beyond. Several concepts are covered along with examples in the event that you encounter some issue in the future, you know you can return to this module to help you. However, you many not deal with they special instances. For example, we will work primarily with <code>.csv</code> and <code>.Rds</code> files which will be provided to you. That being said, I obtained the data as a <code>.sas7bdat</code> SAS data file which I converted to <code>.Rds</code> for you. You may similarly find yourself at some point in the future needing libraries to open special files types, so I present some details here simply to make you aware that reading them can be easy if you are aware of the correct tools. In addition. We also will not typically access data from a URL or webpage for this course but I show you that’s possible too.</p>
+<p><strong>What’s most relevant for reading:</strong></p>
+<ul>
+<li>What tidy data are</li>
+<li>Wide versus long data formats/structures</li>
+<li>Understanding what filename extensions are</li>
+<li>Understanding what a comma-separated values file is</li>
+<li>Managing file paths with <strong>{here}</strong> with <code>R</code> projects (we will use the each week)</li>
+<li>Writing compressed <code>.Rds</code> files with <code>saveRDS()</code></li>
+<li>Reading compressed <code>.Rds</code> files with <code>readRDS()</code></li>
+<li>Writing <code>.csv</code> files with <code>readr::write_csv()</code></li>
+<li>Importing files with <code>RStudio</code> for the less confident</li>
+</ul>
+<p><strong>What you can overlook unless you are curious</strong></p>
+<p>Unless you are curious, you don’t need to: understand how to read or write <code>.tsv</code> SPSS, Stata Files, or Excel files using special libraries like <strong>{haven}</strong>, <strong>{foreign}</strong>, <strong>{readxl}</strong>, <strong>{openxlsx}</strong>, <strong>{rio}</strong>, or others. You don’t need to know how to handle messages with importing files or how to quiet messages unless you start seeing messages you don’t want. You won’t really need to know how to change column variable types because we will generally save data as <code>.Rds</code> files in order to prevent such problems. You also won’t need to know the differences between <code>read.table()</code>, <code>read.csv()</code>, and <code>readr::read_csv()</code> though you might at some point experience these differences when collaborating with others to handle data using different libraries that we will use.</p>
+<p><em>Class</em>: In class, some functions and concepts will be introduced and we will practice implementing code through exercises. Specifically, we will use <code>readr::write_csv()</code>, <code>readr::read_csv()</code>, <code>saveRDS()</code>, and <code>readRDS()</code>.</p>
 </section>
-<section id="supplementary-readings" class="level2">
-<h2 class="anchored" data-anchor-id="supplementary-readings"><strong>Supplementary Readings</strong></h2>
+<section id="supplementary-readings-if-you-want-to-dig-deeper" class="level2">
+<h2 class="anchored" data-anchor-id="supplementary-readings-if-you-want-to-dig-deeper"><strong>Supplementary Readings (if you want to dig deeper)</strong></h2>
 <ul>
 <li><a href="https://r4ds.hadley.nz/data-import">Data Import</a></li>
 <li><a href="https://www.markhuberdatascience.org/_files/ugd/c2b9b6_543ea42a1ea64e32b4440b34ffd71635.pdf#page=113">Huber: Data Import I and II</a></li>
@@ -760,13 +775,20 @@ Under construction.
 <p>A data set represents a set of <em>quantitative</em> (e.g., numbers) and/or <em>qualitative</em> (e.g., strings, characters) values. These values correspond to <strong>variables</strong>, which represent measurements of some property or attribute of some object or event. The object, for example, may be a person, computer chip, or dog. The property represents the height in inches of a set of individuals, the weight in grams of a set of computer chips, or the loudness in decibels for a set of dogs. Each measured property value represents a <strong>observation</strong> (aka case). Thus, data sets are collections of variables and observations.</p>
 <section id="tidy-files" class="level2">
 <h2 class="anchored" data-anchor-id="tidy-files"><strong>Tidy Files</strong></h2>
-<p>There are many sources of data files and data files take many forms and are structured in different ways. They can be tidy or they can be messy. Data that are tidy are generally structures as two-dimensional flat files of data neatly arranged in <strong>rows</strong> and <strong>columns.</strong> Even though data are tidy, the file containing the data can take many forms depending the software creating it or depending on the person using the software to create the file. However the file is created, the file is saved to disk and the format is recognized by a <strong><a href="https://en.wikipedia.org/wiki/Filename_extension">filename extension</a></strong>. Before addressing more about file names, let’s first get the look and feel of different arrangements of data.</p>
+<p>There are many sources of data files and data files take many forms and are structured in different ways. They can be tidy or they can be messy. In general, tidiness refers to a data structure. Much of data science involves wrangling data sets to make them tidy. Whether a data set is tidy or messy depends on how the rows and columns are matched up with cases/observations.</p>
+<p>So what’s is considered tidy?</p>
+<ul>
+<li>Each <strong>variable</strong> is represented as a column</li>
+<li>Each <strong>case/observation</strong> is represented as a row</li>
+<li>Each <strong>value</strong> is represented in a row/column cell</li>
+</ul>
+<p>In other words, data that are tidy are generally structured as two-dimensional flat files of data neatly arranged in <strong>rows</strong> and <strong>columns</strong> specifically such that columns are variables and rows contain observations. Cell contain the value of an observation for a variable. Whether data are tidy or messy, data files created by software will be saved to disk and will be recognized by a <strong><a href="https://en.wikipedia.org/wiki/Filename_extension">filename extension</a></strong>. Before addressing more about file names and extensions, let’s first get the look and feel of different structures or arrangements of data.</p>
 <p>For example:</p>
 <pre><code>name age iq
 Bill 28  130
 Jane 35  145
 Sal  55  125</code></pre>
-<p>Although we will discuss data frames and <a href="https://r4ds.had.co.nz/tibbles.html">tibbles</a> later, we can create data frames in <code>base R</code> using the <code>data.frame()</code> function. We would name a variable and then assign the observations/cases as elements of a vector using the combine function, <code>c()</code>.</p>
+<p>Although we work with importing data files rather than create them, if you wanted to create the data frame for <code>R</code> we can to so easily with different function. We will discuss standard data frames and data frames that are <a href="https://r4ds.had.co.nz/tibbles.html">tibbles</a> later, we can create data frames in <code>base R</code> using the <code>data.frame()</code> function. We would name a variable and then assign the observations/cases as elements of a vector using the combine function, <code>c()</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Bill"</span>, <span class="st">"Jane"</span>, <span class="st">"Sal"</span>),</span>
@@ -780,7 +802,7 @@ Sal  55  125</code></pre>
 3  Sal  55 125</code></pre>
 </div>
 </div>
-<p>Using the <code>tribble()</code> function from the <strong>{tibble}</strong> library, we can also create a special type of data frame known as a <a href="https://r4ds.had.co.nz/tibbles.html">tibble</a>. For tibbles, the arrangement of data is similar to how the data would appear in a file – variables as columns and cases as rows.</p>
+<p>Similarly, using the <code>tribble()</code> function from the <strong>{tibble}</strong> library, we can also create a special type of data frame known as a <a href="https://r4ds.had.co.nz/tibbles.html">tibble</a>. For tibbles, the arrangement of data is similar to how the data would appear in a file – variables as columns and cases as rows.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tribble</span>(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>name, <span class="sc">~</span>age, <span class="sc">~</span>iq,</span>
@@ -797,9 +819,10 @@ Sal  55  125</code></pre>
 3 Sal      55   125</code></pre>
 </div>
 </div>
-<section id="wide-format-tidy-files" class="level3">
-<h3 class="anchored" data-anchor-id="wide-format-tidy-files"><strong>Wide-Format Tidy Files</strong></h3>
-<p>The organization of those variables and observations, however, can change based on the person or system creating them or based on an analytics software’s expectations for working with those values. In many instances, columns of data sets represent variables and the rows represent the cases/observations. SPSS for example, works with data sets organized in <strong>wide-format</strong>.</p>
+<p>Notice that tibbles don’t take vector objects created using <code>c()</code> with which you are familiar by now. Whether created as a standard data frame or a tibble, the structure is the same but this example represents only one structure. Data sets do not always take this structure, so let’s consider formats that are considered wide-format or long-format so that you understand the difference. Later on, we will explore converted data in one format to the other format.</p>
+<section id="wide-format-data-files" class="level3">
+<h3 class="anchored" data-anchor-id="wide-format-data-files"><strong>Wide-Format Data Files</strong></h3>
+<p>The organization of those variables and observations can change based on the person or system creating them or based on an analytics software’s expectations for working with those values. In many instances, columns of data sets represent variables and the rows represent the cases/observations. SPSS for example, works with data sets organized in <strong>wide-format</strong>.</p>
 <p>Let’s work through an example of a wide-format data file. Weight could be an interesting property to measure for tracking a weight-loss program or a body-building program. Weight could be measured weekly or monthly (repeated measures). Let’s say you have measured weight for three or more individuals on three different occasions. In wide-format, the cases correspond to rows and the variables as columns but each measurement is treated as a separate variable combination of <code>weight</code> and <code>time</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tribble</span>(</span>
@@ -817,10 +840,11 @@ Sal  55  125</code></pre>
 3 Sal            160          158          150</code></pre>
 </div>
 </div>
+<p>We see here that all of the variables are not represented by columns. The individuals <code>name</code> is a variable but <code>weight</code> and <code>time</code> are somewhat confounded. The <code>time</code> variable should be a column and the cell for a row/column should represent the <code>weight</code>. What if the same data had a different structure?</p>
 </section>
-<section id="long-format-tidy-files" class="level3">
-<h3 class="anchored" data-anchor-id="long-format-tidy-files"><strong>Long-Format Tidy Files</strong></h3>
-<p>R and R libraries generally prefer with data sets organized in <strong>long-format</strong>. In long-format, the cases still correspond to rows and the variables as columns. The difference is that the repeated measurements of <code>weight</code> are organize as separate rows. Because weight is measure at different time, each measurement of <code>weight</code> is associated explicitly with a new column variable <code>time</code>.</p>
+<section id="long-format-data-files" class="level3">
+<h3 class="anchored" data-anchor-id="long-format-data-files"><strong>Long-Format Data Files</strong></h3>
+<p><code>R</code> and <code>R</code> libraries generally prefer with data sets organized in <strong>long-format</strong>. In long-format, the cases still correspond to rows and the variables as columns. The difference is that the repeated measurements of <code>weight</code> are organize as separate rows. Because weight is measure at different time, each measurement of <code>weight</code> is associated explicitly with a new column variable <code>time</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tribble</span>(</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>name, <span class="sc">~</span>time, <span class="sc">~</span>weight, </span>
@@ -849,20 +873,20 @@ Sal  55  125</code></pre>
 9 Sal       3    150</code></pre>
 </div>
 </div>
-<p>Both long- and wide-format data files, however, are considered <em>tidy</em> because the data are neatly structured as rows and columns.</p>
+<p>Note that this format is <strong>tidy</strong>. Each row represents an observation. For example, the first row corresponds to “Bill” who weighed 175 lbs at time 1. Similarly, each row contains observations for each variable and each cell contains a row/column value.</p>
 </section>
 <section id="rearranging-data-files" class="level3">
 <h3 class="anchored" data-anchor-id="rearranging-data-files"><strong>Rearranging Data Files</strong></h3>
 <p>Depending on the source of data or the requirement by a client or piece of software, you may sometimes need to rearrange data. For example, you may need to change a wide-formatted file to a long-formatted file or vice versa. For such instances, we will use <a href="https://tidyr.tidyverse.org/articles/pivot.html">pivoting</a> functions from <strong>{tidyr}</strong>.</p>
 </section>
 </section>
-<section id="filename-extensions" class="level2">
-<h2 class="anchored" data-anchor-id="filename-extensions"><strong>Filename Extensions</strong></h2>
+<section id="filename-extensions-general" class="level2">
+<h2 class="anchored" data-anchor-id="filename-extensions-general"><strong>Filename Extensions: General</strong></h2>
 <p>A filename extension is the suffix of the filename following the dot/period. For example, <code>.txt</code> is used for text files, <code>.csv</code> for comma-separated values files, <code>.jpg</code> or <code>.png</code> for image files, and <code>.xls</code> or <code>xlsx</code> for MS Excel files among many file types. The extension is used to help understand how the file should be opened (or read) using a program that can understand that file format. To some extent, extensions are arbitrary; you can change the extension of <code>myfile.xlsx</code> to <code>myfile.txt</code>. Changing the extension does not, however, change the format. Thus, extensions are not arbitrary to the extent that you will need a program that reads the file appropriately. The program that tries to read your newly named <code>myfile.txt</code> will assume the file is in a text format because of its new extension and will fail to open the file correctly. Using MS Excel to read the file will open it just fine because Excel understand the saved format.</p>
 <p>So why does any of this matter? You may have never thought too much about filenames and extensions before. In fact, your computer may not even be set up to display extensions for common file types. Because data scientists deal with files of all different types, knowing these extensions is necessary for reading and writing data files appropriately. If your computer does not show file extensions, I recommend you change your computer settings so that you can see them by following these links for <a href="https://fileinfo.com/tutorials/show_file_extensions_macos">Mac</a> or <a href="https://fileinfo.com/help/windows_10_show_file_extensions">Windows PC</a> computers.</p>
-<section id="filename-extensions-for-tidy-files" class="level3">
-<h3 class="anchored" data-anchor-id="filename-extensions-for-tidy-files"><strong>Filename Extensions for Tidy Files</strong></h3>
-<p>Tidy data files are often associated with <code>.csv</code>, <code>.tsv</code>, and <code>.xlsx</code> file extensions. If you have worked with various statistics software, you may be familiar with other formats like <code>.sav</code> for SPSS data files, <code>.dta</code> for Stata data files, or <code>.sas7bdat</code> for SAS data files. Knowing the file format will prove exceptionally helpful when trying to read data files. In fact, libraries like <a href="https://haven.tidyverse.org/"><strong>{haven}</strong></a> and more extensively <a href="https://rdrr.io/cran/foreign/man/"><strong>{foreign}</strong></a> are dedicated specifically to reading data files into R that have been saved by data analytics software packages such as SPSS, Stata, SAS, Minitab, etc.</p>
+<section id="filename-extensions-for-data-files" class="level3">
+<h3 class="anchored" data-anchor-id="filename-extensions-for-data-files"><strong>Filename Extensions for Data Files</strong></h3>
+<p>Data files are often associated with <code>.csv</code>, <code>.tsv</code>, and <code>.xlsx</code> file extensions. If you have worked with various statistics software, you may be familiar with other formats like <code>.sav</code> for SPSS data files, <code>.dta</code> for Stata data files, or <code>.sas7bdat</code> for SAS data files. Knowing the file format will prove exceptionally helpful when trying to read data files. In fact, libraries like <a href="https://haven.tidyverse.org/"><strong>{haven}</strong></a> and more extensively <a href="https://rdrr.io/cran/foreign/man/"><strong>{foreign}</strong></a> are dedicated specifically to reading data files into R that have been saved by data analytics software packages such as SPSS, Stata, SAS, Minitab, etc.</p>
 <section id="comma-separated-files-.csv" class="level4">
 <h4 class="anchored" data-anchor-id="comma-separated-files-.csv"><strong>Comma-Separated Files, <code>.csv</code></strong></h4>
 <p>Even for tidy data arranged neatly in rows and columns, one must know the structure of the data file in order to read the file and make sense of its contents.</p>
@@ -894,7 +918,7 @@ Sal  55  125</code></pre>
 2 128 60 1985 NA</code></pre>
 </div>
 </div>
-<p>R is telling you that there are 2 variables, which it automatically names, <code>V1</code> and <code>V2</code>. The first variable contains the numbers and the second variable contains <code>NA</code> values (missing values). Two variables are specified because the <strong>comma splits the row into two pieces</strong> representing two variable columns.</p>
+<p><code>R</code> is telling you that there are 2 variables, which it automatically names, <code>V1</code> and <code>V2</code>. The first variable contains the numbers and the second variable contains <code>NA</code> values (missing values). Two variables are specified because the <strong>comma splits the row into two pieces</strong> representing two variable columns.</p>
 <p>Just because there are commas in a data file, this does not require that you read the file that way. By reading the same data but now telling R that <strong>spaces separate the variables</strong> rather than commas, R would read the same file as:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -903,14 +927,14 @@ Sal  55  125</code></pre>
 2 128 60 1985,</code></pre>
 </div>
 </div>
-<p>R now tells you that there are 3 variables but the last variable contains the comma. A comma is likely not relevant and would need to be removed as part of data cleaning.</p>
+<p><code>R</code> now tells you that there are 3 variables but the last variable contains the comma. A comma is likely not relevant and would need to be removed as part of data cleaning.</p>
 <p><em>Example 3, comma-separated with variable headers:</em></p>
 <p>Some data files can include variable names (also separated by columns) at the top of the file. These are helpful with reading in the columns. The next example show what the file might look like.</p>
 <pre><code>name, age, iq
 Bill, 28, 130
 Jane, 35, 145
 Sal, 55, 125</code></pre>
-<p>When R reads the file, useful variable names are displayed.</p>
+<p>When <code>R</code> reads the file, useful variable names are displayed.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>  name age  iq
@@ -1115,11 +1139,11 @@ Sal, 55, 125</code></pre>
 </section>
 </section>
 <section id="writing-compressed-.rds-files" class="level2">
-<h2 class="anchored" data-anchor-id="writing-compressed-.rds-files"><strong>Writing Compressed <code>.rds</code> Files</strong></h2>
+<h2 class="anchored" data-anchor-id="writing-compressed-.rds-files"><strong>Writing Compressed <code>.Rds</code> Files</strong></h2>
 <p>Sometimes you are dealing with large data sets. Saving large files will take up a lot of disk space. Larger files typically take longer to read as well. A solution is to compress the files. The <code>base R</code> function <code>saveRDS()</code> will be the go-to here. By default, <code>saveRDS()</code> compresses the file. Compression will matter for larger data files.</p>
 <p>Also, when you manipulate data frames, you may change variable types, create new variables of a certain type, etc. Writing you data out as a <code>.csv</code> file will not preserve these characteristics.</p>
 <p>Because we have not yet addressed how to create or modify variable columns in data frames, we won’t actually change the data type of the data frame. However, if we modified a data frame and wanted to preserve the data types of the columns, <code>saveRDS()</code> would take care so this for us. When you have many variables to manage, you certainly don’t want to specify whether they are factors, ordered factors, numeric, etc. every time you read the file.</p>
-<p><strong>Some key details of <code>.rds</code> files:</strong></p>
+<p><strong>Some key details of <code>.Rds</code> files:</strong></p>
 <ul>
 <li>data are compressed</li>
 <li>read/restore quickly</li>
@@ -1255,8 +1279,8 @@ dbl (3): wt_lbs, ht_in, yob
 2    128    60  1985</code></pre>
 </div>
 </div>
-<section id="handling-messages" class="level4">
-<h4 class="anchored" data-anchor-id="handling-messages"><strong>Handling messages`</strong></h4>
+<section id="handling-messages-with-importing" class="level4">
+<h4 class="anchored" data-anchor-id="handling-messages-with-importing"><strong>Handling Messages with Importing</strong></h4>
 <p>When reading with this function, there will be some messaging in the console. One is to examine the column specifications using <code>spec()</code> or specifically <code>readr::spec()</code>. We can .</p>
 <p><code>spec()</code> has one parameter <code>x</code>, which stands for the data frame. Because the file read is a data frame, we can just wrap the function in <code>spec()</code>.</p>
 <div class="cell">
@@ -1382,7 +1406,7 @@ Levels: 66 60</code></pre>
 </section>
 </section>
 <section id="reading-.rds-files" class="level2">
-<h2 class="anchored" data-anchor-id="reading-.rds-files"><strong>Reading <code>.rds</code> Files</strong></h2>
+<h2 class="anchored" data-anchor-id="reading-.rds-files"><strong>Reading <code>.Rds</code> Files</strong></h2>
 <ul>
 <li><strong>Base R</strong>:
 <ul>
