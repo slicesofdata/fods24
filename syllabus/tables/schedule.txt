@@ -3,7 +3,7 @@ Date;Week;Module;Topic
 01-25;2;2;Data Mise en Place (Project Management), Git & GitHub
 02-01;3;3;Functions, Parameters, Arguments, and Scripts
 ;3;4;Vectors and Data Frame Basics
-02-08;4;5;Importing and Exporting Data
+02-08;4;5;Importing and Exporting Data / Vectors and Data Frame Basics
 ;4;6;Variables and Measures of Cognition
 02-15;5;7;Manipulating Data Frames (Selecting, Filtering, & Mutating)
 ;5;8;Working with Cognitive Task Data
