@@ -1,5 +1,5 @@
 ---
-title: "**Importing and Exporting Data**"
+title: "**Pivoting Data Frames**"
 author: "Gabriel I. Cook"
 #date: "`r Sys.Date()`"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
@@ -13,31 +13,12 @@ execute:
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 # secret functions
 source(here::here("r", "src", "color_format_text.R"))
+source(here::here("r", "_common.R"))
+
 ```
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
-# huber text
-huber_pdf <- "https://www.markhuberdatascience.org/_files/ugd/c2b9b6_543ea42a1ea64e32b4440b34ffd71635.pdf"
-front_matter <- 10
-huber_intro_ch <- glue::glue(huber_pdf,"#page=",front_matter + 3)
-huber_rmarkdown_ch <- glue::glue(huber_pdf,"#page=",front_matter + 10)
-huber_graphing_ch <- glue::glue(huber_pdf,"#page=",front_matter + 17)
-huber_transformation_ch <- glue::glue(huber_pdf,"#page=",front_matter + 59) # 5
-huber_summaries_ch <- glue::glue(huber_pdf,"#page=",front_matter + 71)
-huber_eda_var_ch <- glue::glue(huber_pdf,"#page=",front_matter + 81)
-huber_eda_covar_ch <- glue::glue(huber_pdf,"#page=",front_matter + 93)
-huber_import_ch <- glue::glue(huber_pdf,"#page=",front_matter + 103)
-huber_tidy_data_ch <- glue::glue(huber_pdf,"#page=",front_matter + 123)
-huber_relational_ch <- glue::glue(huber_pdf,"#page=",front_matter + 141)
-huber_filtering_joins_ch <- glue::glue(huber_pdf,"#page=",front_matter + 150)
-huber_strings_ch <- glue::glue(huber_pdf,"#page=",front_matter + 155)
-huber_regex_ch <- glue::glue(huber_pdf,"#page=",front_matter + 162)
-huber_using_regex_ch <- glue::glue(huber_pdf,"#page=",front_matter + 170)
-huber_func_patterns_ch <- glue::glue(huber_pdf,"#page=",front_matter + 182)
-huber_factors_ch <- glue::glue(huber_pdf,"#page=",front_matter + 186)
-huber_sql_ch <- glue::glue(huber_pdf,"#page=",front_matter + 199)
-huber_writing_functions_ch <- glue::glue(huber_pdf,"#page=",front_matter + 232)
-huber_modeling_ch <- glue::glue(huber_pdf,"#page=",front_matter + 241)
+
 ```
 
 ::: callout-important
@@ -53,7 +34,6 @@ This page is a work in progress and may contain areas that need more detail or t
 
 #library()
 source(here::here("r", "my_functions.R"))
-
 ```
 
 # **Overview**
@@ -67,9 +47,29 @@ To assist with file paths, we will use the **{here}** library to help manage fil
 
 *Before Class*: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time. 
 
-*Class*: In class, some functions and concepts will be introduced and we will practice implementing code through exercises. 
+This module contains information for importing and reading data that you might experience either in this class or beyond. Several concepts are covered along with examples in the event that you encounter some issue in the future, you know you can return to this module to help you.  However, you many not deal with they special instances. For example, we will work primarily with `.csv` and `.Rds` files which will be provided to you. That being said, I obtained the data as a `.sas7bdat` SAS data file which I converted to `.Rds` for you. You may similarly find yourself at some point in the future needing libraries to open special files types, so I present some details here simply to make you aware that reading them can be easy if you are aware of the correct tools. In addition. We also will not typically access data from a URL or webpage for this course but I show you that's possible too. 
 
-## **Supplementary Readings**
+**What's most relevant for reading:**
+
+- What tidy data are
+- Wide versus long data formats/structures
+- Understanding what filename extensions are
+- Understanding what a comma-separated values file is
+- Managing file paths with **{here}** with `R` projects (we will use the each week)
+- Writing compressed `.Rds` files with `saveRDS()`
+- Reading compressed `.Rds` files with `readRDS()`
+- Writing `.csv` files with `readr::write_csv()`
+- Importing files with `RStudio` for the less confident
+
+**What you can overlook unless you are curious**
+
+Unless you are curious, you don't need to: understand how to read or write `.tsv` SPSS, Stata Files, or Excel files using special libraries like **{haven}**, **{foreign}**, **{readxl}**, **{openxlsx}**, **{rio}**, or others. You don't need to know how to handle messages with importing files or how to quiet messages unless you start seeing messages you don't want. You won't really need to know how to change column variable types because we will generally save data as `.Rds` files in order to prevent such problems. You also won't need to know the differences between `read.table()`, `read.csv()`, and `readr::read_csv()` though you might at some point experience these differences when collaborating with others to handle data using different libraries that we will use.
+
+
+*Class*: In class, some functions and concepts will be introduced and we will practice implementing code through exercises. Specifically, we will use `readr::write_csv()`, `readr::read_csv()`, `saveRDS()`, and `readRDS()`.
+
+
+## **Supplementary Readings (if you want to dig deeper)**
 
 - [Data Import](https://r4ds.hadley.nz/data-import)
 - [Huber: Data Import I and II](`r huber_import_ch`)
@@ -125,7 +125,15 @@ A data set represents a set of *quantitative* (e.g., numbers) and/or *qualitativ
 
 ## **Tidy Files**
 
-There are many sources of data files and data files take many forms and are structured in different ways. They can be tidy or they can be messy. Data that are tidy are generally structures as two-dimensional flat files of data neatly arranged in **rows** and **columns.** Even though data are tidy, the file containing the data can take many forms depending the software creating it or depending on the person using the software to create the file. However the file is created, the file is saved to disk and the format is recognized by a **[filename extension](https://en.wikipedia.org/wiki/Filename_extension)**. Before addressing more about file names, let's first get the look and feel of different arrangements of data.
+There are many sources of data files and data files take many forms and are structured in different ways. They can be tidy or they can be messy. In general, tidiness refers to a data structure. Much of data science involves wrangling data sets to make them tidy. Whether a data set is tidy or messy depends on how the rows and columns are matched up with cases/observations. 
+
+So what's is considered tidy?
+
+- Each **variable** is represented as a column
+- Each **case/observation** is represented as a row
+- Each **value** is represented in a row/column cell 
+
+In other words, data that are tidy are generally structured as two-dimensional flat files of data neatly arranged in **rows** and **columns** specifically such that columns are variables and rows contain observations. Cell contain the value of an observation for a variable. Whether data are tidy or messy, data files created by software will be saved to disk and will be recognized by a **[filename extension](https://en.wikipedia.org/wiki/Filename_extension)**. Before addressing more about file names and extensions, let's first get the look and feel of different structures or arrangements of data.
 
 For example:
 
@@ -136,7 +144,7 @@ Jane 35  145
 Sal  55  125
 ```
 
-Although we will discuss data frames and [tibbles](https://r4ds.had.co.nz/tibbles.html) later, we can create data frames in `base R` using the `data.frame()` function. We would name a variable and then assign the observations/cases as elements of a vector using the combine function, `c()`. 
+Although we work with importing data files rather than create them, if you wanted to create the data frame for `R` we can to so easily with different function. We will discuss standard data frames and data frames that are [tibbles](https://r4ds.had.co.nz/tibbles.html) later, we can create data frames in `base R` using the `data.frame()` function. We would name a variable and then assign the observations/cases as elements of a vector using the combine function, `c()`. 
 
 ```{r}
 data.frame(
@@ -146,7 +154,7 @@ data.frame(
 )
 ```
 
-Using the `tribble()` function from the **{tibble}** library, we can also create a special type of data frame known as a [tibble](https://r4ds.had.co.nz/tibbles.html). For tibbles, the arrangement of data is similar to how the data would appear in a file -- variables as columns and cases as rows. 
+Similarly, using the `tribble()` function from the **{tibble}** library, we can also create a special type of data frame known as a [tibble](https://r4ds.had.co.nz/tibbles.html). For tibbles, the arrangement of data is similar to how the data would appear in a file -- variables as columns and cases as rows. 
 
 ```{r}
 tibble::tribble(
@@ -157,10 +165,12 @@ tibble::tribble(
   )
 ```
 
+Notice that tibbles don't take vector objects created using `c()` with which you are familiar by now. Whether created as a standard data frame or a tibble, the structure is the same but this example represents only one structure. Data sets do not always take this structure, so let's consider formats that are considered wide-format or long-format so that you understand the difference. Later on, we will explore converted data in one format to the other format. 
 
-### **Wide-Format Tidy Files**
 
-The organization of those variables and observations, however, can change based on the person or system creating them or based on an analytics software's expectations for working with those values. In many instances, columns of data sets represent variables and the rows represent the cases/observations. SPSS for example, works with data sets organized in **wide-format**. 
+### **Wide-Format Data Files**
+
+The organization of those variables and observations can change based on the person or system creating them or based on an analytics software's expectations for working with those values. In many instances, columns of data sets represent variables and the rows represent the cases/observations. SPSS for example, works with data sets organized in **wide-format**. 
 
 Let's work through an example of a wide-format data file. Weight could be an interesting property to measure for tracking a weight-loss program or a body-building program. Weight could be measured weekly or monthly (repeated measures). Let's say you have measured weight for three or more individuals on three different occasions. In wide-format, the cases correspond to rows and the variables as columns but each measurement is treated as a separate variable combination of `weight` and `time`.  
 
@@ -173,9 +183,12 @@ tibble::tribble(
   )
 ```
 
-### **Long-Format Tidy Files**
+We see here that all of the variables are not represented by columns. The individuals `name` is a variable but `weight` and `time` are somewhat confounded. The `time` variable should be a column and the cell for a row/column should represent the `weight`. What if the same data had a different structure?  
 
-R and R libraries generally prefer with data sets organized in **long-format**. In long-format, the cases still correspond to rows and the variables as columns. The difference is that the repeated measurements of `weight` are organize as separate rows. Because weight is measure at different time, each measurement of `weight` is associated explicitly with a new column variable `time`.  
+
+### **Long-Format Data Files**
+
+`R` and `R` libraries generally prefer with data sets organized in **long-format**. In long-format, the cases still correspond to rows and the variables as columns. The difference is that the repeated measurements of `weight` are organize as separate rows. Because weight is measure at different time, each measurement of `weight` is associated explicitly with a new column variable `time`.  
 
 ```{r}
 tibble::tribble(
@@ -192,14 +205,15 @@ tibble::tribble(
   ) 
 ```
 
-Both long- and wide-format data files, however, are considered *tidy* because the data are neatly structured as rows and columns.
+Note that this format is **tidy**. Each row represents an observation. For example, the first row corresponds to "Bill" who weighed 175 lbs at time 1. Similarly, each row contains observations for each variable and each cell contains a row/column value.
+
 
 ### **Rearranging Data Files**
 
 Depending on the source of data or the requirement by a client or piece of software, you may sometimes need to rearrange data. For example, you may need to change a wide-formatted file to a long-formatted file or vice versa. For such instances, we will use [pivoting](https://tidyr.tidyverse.org/articles/pivot.html) functions from **{tidyr}**.
 
 
-## **Filename Extensions**
+## **Filename Extensions: General**
 
 A filename extension is the suffix of the filename following the dot/period. For example, `.txt` is used for text files, `.csv` for comma-separated values files, `.jpg` or `.png` for image files, and `.xls` or `xlsx` for MS Excel files among many file types. The extension is used to help understand how the file should be opened (or read) using a program that can understand that file format. To some extent, extensions are arbitrary; you can change the extension of `myfile.xlsx` to `myfile.txt`. 
 Changing the extension does not, however, change the format. Thus, extensions are not arbitrary to the extent that you will need a program that reads the file appropriately. The program that tries to read your newly named `myfile.txt` will assume the file is in a text format because of its new extension and will fail to open the file correctly. Using MS Excel to read the file will open it just fine because Excel understand the saved format. 
@@ -207,9 +221,10 @@ Changing the extension does not, however, change the format. Thus, extensions ar
 So why does any of this matter? You may have never thought too much about filenames and extensions before. In fact, your computer may not even be set up to display extensions for common file types. Because data scientists deal with files of all different types, knowing these extensions is necessary for reading and writing data files appropriately. If your computer does not show file extensions, I recommend you change your computer settings so that you can see them by following these links for [Mac](https://fileinfo.com/tutorials/show_file_extensions_macos) or [Windows PC](https://fileinfo.com/help/windows_10_show_file_extensions) computers. 
 
 
-### **Filename Extensions for Tidy Files**
+### **Filename Extensions for Data Files**
 
-Tidy data files are often associated with `.csv`, `.tsv`,  and `.xlsx` file extensions. If you have worked with various statistics software, you may be familiar with other formats like `.sav` for SPSS data files, `.dta` for Stata data files, or `.sas7bdat` for SAS data files. Knowing the file format will prove exceptionally helpful when trying to read data files. In fact, libraries like [**{haven}**](https://haven.tidyverse.org/) and more extensively [**{foreign}**](https://rdrr.io/cran/foreign/man/) are dedicated specifically to reading data files into R that have been saved by data analytics software packages such as SPSS, Stata, SAS, Minitab, etc. 
+Data files are often associated with `.csv`, `.tsv`,  and `.xlsx` file extensions. If you have worked with various statistics software, you may be familiar with other formats like `.sav` for SPSS data files, `.dta` for Stata data files, or `.sas7bdat` for SAS data files. Knowing the file format will prove exceptionally helpful when trying to read data files. In fact, libraries like [**{haven}**](https://haven.tidyverse.org/) and more extensively [**{foreign}**](https://rdrr.io/cran/foreign/man/) are dedicated specifically to reading data files into R that have been saved by data analytics software packages such as SPSS, Stata, SAS, Minitab, etc. 
+
 
 #### **Comma-Separated Files, `.csv`**
 
@@ -256,7 +271,7 @@ Reading the data and telling R that commas separate the variables, R would read 
 read.table(here::here("data/test2b.txt"), header = F, sep =  ",")
 ```
 
-R is telling you that there are 2 variables, which it automatically names, `V1` and `V2`. The first variable contains the numbers and the second variable contains `NA` values (missing values). Two variables are specified because the **comma splits the row into two pieces** representing two variable columns.
+`R` is telling you that there are 2 variables, which it automatically names, `V1` and `V2`. The first variable contains the numbers and the second variable contains `NA` values (missing values). Two variables are specified because the **comma splits the row into two pieces** representing two variable columns.
 
 Just because there are commas in a data file, this does not require that you read the file that way. By reading the same data but now telling R that **spaces separate the variables** rather than commas, R would read the same file as: 
 
@@ -264,7 +279,7 @@ Just because there are commas in a data file, this does not require that you rea
 read.table(file = here::here("_omit/data/test2b.txt"), sep = " ")
 ```
 
-R now tells you that there are 3 variables but the last variable contains the comma. A comma is likely not relevant and would need to be removed as part of data cleaning.
+`R` now tells you that there are 3 variables but the last variable contains the comma. A comma is likely not relevant and would need to be removed as part of data cleaning.
 
 *Example 3, comma-separated with variable headers:*
 
@@ -277,7 +292,7 @@ Jane, 35, 145
 Sal, 55, 125
 ```
 
-When R reads the file, useful variable names are displayed.
+When `R` reads the file, useful variable names are displayed.
 
 ```{r echo=FALSE}
 data.frame(
@@ -503,7 +518,7 @@ readr::write_csv(x = DAT2a,
 
 
 
-## **Writing Compressed `.rds` Files**
+## **Writing Compressed `.Rds` Files**
 
 Sometimes you are dealing with large data sets. Saving large files will take up a lot of disk space. Larger files typically take longer to read as well. A solution is to compress the files. The `base R` function `saveRDS()` will be the go-to here. By default, `saveRDS()` compresses the file. Compression will matter for larger data files.
 
@@ -511,7 +526,7 @@ Also, when you manipulate data frames, you may change variable types, create new
 
 Because we have not yet addressed how to create or modify variable columns in data frames, we won't actually change the data type of the data frame. However, if we modified a data frame and wanted to preserve the data types of the columns, `saveRDS()` would take care so this for us. When you have many variables to manage, you certainly don't want to specify whether they are factors, ordered factors, numeric, etc. every time you read the file. 
 
-**Some key details of `.rds` files:**
+**Some key details of `.Rds` files:**
 
 - data are compressed
 - read/restore quickly
@@ -590,6 +605,8 @@ Reading `.csv` files can be accomplished in a variety of ways, most typically us
 
 **NOTE:** Another term for the separator is *delimiter*, so you may see this used in documentation.
 
+
+
 ### **Reading with `read.table()`**
 
 **Parameters/Arguments:**
@@ -632,7 +649,8 @@ Because the columns are separated by a comma, set `sep = ","`:
 readr::read_csv(file = here::here("data", "example2a_readr.csv"))
 ```
 
-#### **Handling messages`**
+
+#### **Handling Messages with Importing**
 
 When reading with this function, there will be some messaging in the console. One is to examine the column specifications using `spec()` or specifically `readr::spec()`. We can . 
 
@@ -719,7 +737,7 @@ example2a_readr
 ```
 
 
-## **Reading `.rds` Files**
+## **Reading `.Rds` Files**
 
 * **Base R**:
   * `readRDS(file = "my_filename.Rds")` for modified data frames
