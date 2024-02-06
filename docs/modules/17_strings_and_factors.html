@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gabriel I. Cook">
-<meta name="dcterms.date" content="2024-01-10">
+<meta name="dcterms.date" content="2024-02-06">
 
-<title>PSYC166 - Exploratory Data Analysis</title>
+<title>PSYC166 - Strings, Factors, and Regular Expressions</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -131,10 +131,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Variables, Measures of Cognition</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../slides/07_manipulating_data_pivoting_slides.html" rel="" target="">
- <span class="dropdown-text">Manipulating Data: Pivoting</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../slides/07_manipulating_data_selecting_filtering_mutating_slides.html" rel="" target="">
  <span class="dropdown-text">Manipulating Data: Selecting, Filtering, &amp; Mutating</span></a>
   </li>  
@@ -151,6 +147,14 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Summarizing Task Data</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../slides/07_manipulating_data_pivoting_slides.html" rel="" target="">
+ <span class="dropdown-text">Transforming Data: Pivoting</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../slides/13_joining_data_slides.html" rel="" target="">
+ <span class="dropdown-text">Joining Data</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../slides/11_visualizing_data_slides.html" rel="" target="">
  <span class="dropdown-text">Visualizing Data</span></a>
   </li>  
@@ -159,12 +163,8 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Examining Relationships</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../slides/13_joining_data_slides.html" rel="" target="">
- <span class="dropdown-text">Joining Data</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../slides/14_strings_and_factors_slides.html" rel="" target="">
- <span class="dropdown-text">Strings and Factors</span></a>
+ <span class="dropdown-text">Strings, Factors, and Regular Expressions</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../slides/15_joining_project_data_slides.html" rel="" target="">
@@ -374,7 +374,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/index.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/18_exploratory_data_analysis.html"><strong>Exploratory Data Analysis</strong></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/index.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/17_strings_and_factors.html"><strong>Strings, Factors, and Regular Expressions</strong></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -451,14 +451,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/08_manipulating_data_pivoting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Manipulating Data 01: Pivoting</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../modules/08_manipulating_data_selecting_filtering_mutating.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Manipulating Data 02: Selecting, Filtering, &amp; Mutating</strong></span></a>
+ <span class="menu-text"><strong>Selecting, Filtering, &amp; Mutating</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -481,14 +475,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/12_visualizing_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Visualizing Data: {ggplot} and the grammar of graphics</strong></span></a>
+  <a href="../modules/12_manipulating_data_pivoting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Transforming Data Frames: Pivoting</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/13_examining_relationships_in_variables_of_cognition.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Examining Relationships in Variables of Cognition</strong></span></a>
+  <a href="../modules/13_visualizing_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Visualizing Data: {ggplot} and the grammar of graphics</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -499,25 +493,31 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/15_strings_and_factors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Strings, Factors, and Regular Expressions</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../modules/16_joining_project_data.html" class="sidebar-item-text sidebar-link">
+  <a href="../modules/15_joining_project_data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><strong>Joining Project Data</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/17_linear_models.html" class="sidebar-item-text sidebar-link">
+  <a href="../modules/16_examining_relationships_in_variables_of_cognition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Examining Relationships in Variables of Cognition</strong></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/17_strings_and_factors.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><strong>Strings, Factors, and Regular Expressions</strong></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/18_linear_models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><strong>Linear Models</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/18_exploratory_data_analysis.html" class="sidebar-item-text sidebar-link active">
+  <a href="../modules/19_exploratory_data_analysis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><strong>Exploratory Data Analysis</strong></span></a>
   </div>
 </li>
@@ -577,7 +577,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><strong>Overview</strong></a>
   <ul class="collapse">
   <li><a href="#readings-and-preparation" id="toc-readings-and-preparation" class="nav-link" data-scroll-target="#readings-and-preparation"><strong>Readings and Preparation</strong></a></li>
-  <li><a href="#supplementary-readings" id="toc-supplementary-readings" class="nav-link" data-scroll-target="#supplementary-readings"><strong>Supplementary Readings</strong></a></li>
   <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries"><strong>Libraries</strong></a></li>
   </ul></li>
   </ul>
@@ -588,7 +587,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><strong>Exploratory Data Analysis</strong></h1>
+<h1 class="title"><strong>Strings, Factors, and Regular Expressions</strong></h1>
 </div>
 
 
@@ -605,7 +604,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 10, 2024</p>
+      <p class="date">February 6, 2024</p>
     </div>
   </div>
   
@@ -630,17 +629,11 @@ Under construction.
 </div>
 <section id="overview" class="level1">
 <h1><strong>Overview</strong></h1>
-<p>In this module, we will introduce some other models and engage in some exploratory data analysis.</p>
+<p>In this module, we work with strings, or character vectors, and factors.</p>
 <section id="readings-and-preparation" class="level2">
 <h2 class="anchored" data-anchor-id="readings-and-preparation"><strong>Readings and Preparation</strong></h2>
 <p><em>Before Class</em>: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time. Work through some examples so that you have a good idea of your level of understanding and confidence.</p>
 <p><em>Class</em>: In class, some functions and concepts will be introduced and we will practice implementing code through exercises.</p>
-</section>
-<section id="supplementary-readings" class="level2">
-<h2 class="anchored" data-anchor-id="supplementary-readings"><strong>Supplementary Readings</strong></h2>
-<ul>
-<li><a href="https://r4ds.hadley.nz/eda">Exploratory Data Analysis</a></li>
-</ul>
 </section>
 <section id="libraries" class="level2">
 <h2 class="anchored" data-anchor-id="libraries"><strong>Libraries</strong></h2>

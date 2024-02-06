@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gabriel I. Cook">
-<meta name="dcterms.date" content="2024-01-23">
+<meta name="dcterms.date" content="2024-02-06">
 
-<title>PSYC166 - Manipulating Data 01: Pivoting</title>
+<title>PSYC166 - Transforming Data Frames: Pivoting</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -165,10 +165,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Variables, Measures of Cognition</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../slides/07_manipulating_data_pivoting_slides.html" rel="" target="">
- <span class="dropdown-text">Manipulating Data: Pivoting</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../slides/07_manipulating_data_selecting_filtering_mutating_slides.html" rel="" target="">
  <span class="dropdown-text">Manipulating Data: Selecting, Filtering, &amp; Mutating</span></a>
   </li>  
@@ -185,6 +181,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Summarizing Task Data</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../slides/07_manipulating_data_pivoting_slides.html" rel="" target="">
+ <span class="dropdown-text">Transforming Data: Pivoting</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../slides/13_joining_data_slides.html" rel="" target="">
+ <span class="dropdown-text">Joining Data</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../slides/11_visualizing_data_slides.html" rel="" target="">
  <span class="dropdown-text">Visualizing Data</span></a>
   </li>  
@@ -193,12 +197,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Examining Relationships</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../slides/13_joining_data_slides.html" rel="" target="">
- <span class="dropdown-text">Joining Data</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../slides/14_strings_and_factors_slides.html" rel="" target="">
- <span class="dropdown-text">Strings and Factors</span></a>
+ <span class="dropdown-text">Strings, Factors, and Regular Expressions</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../slides/15_joining_project_data_slides.html" rel="" target="">
@@ -408,7 +408,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/index.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/08_manipulating_data_pivoting.html"><strong>Manipulating Data 01: Pivoting</strong></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/index.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/12_manipulating_data_pivoting.html"><strong>Transforming Data Frames: Pivoting</strong></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -485,14 +485,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/08_manipulating_data_pivoting.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><strong>Manipulating Data 01: Pivoting</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../modules/08_manipulating_data_selecting_filtering_mutating.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Manipulating Data 02: Selecting, Filtering, &amp; Mutating</strong></span></a>
+ <span class="menu-text"><strong>Selecting, Filtering, &amp; Mutating</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -515,14 +509,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/12_visualizing_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Visualizing Data: {ggplot} and the grammar of graphics</strong></span></a>
+  <a href="../modules/12_manipulating_data_pivoting.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><strong>Transforming Data Frames: Pivoting</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/13_examining_relationships_in_variables_of_cognition.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Examining Relationships in Variables of Cognition</strong></span></a>
+  <a href="../modules/13_visualizing_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Visualizing Data: {ggplot} and the grammar of graphics</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -533,25 +527,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/15_strings_and_factors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Strings, Factors, and Regular Expressions</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../modules/16_joining_project_data.html" class="sidebar-item-text sidebar-link">
+  <a href="../modules/15_joining_project_data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><strong>Joining Project Data</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/17_linear_models.html" class="sidebar-item-text sidebar-link">
+  <a href="../modules/16_examining_relationships_in_variables_of_cognition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Examining Relationships in Variables of Cognition</strong></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/17_strings_and_factors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Strings, Factors, and Regular Expressions</strong></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/18_linear_models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><strong>Linear Models</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/18_exploratory_data_analysis.html" class="sidebar-item-text sidebar-link">
+  <a href="../modules/19_exploratory_data_analysis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><strong>Exploratory Data Analysis</strong></span></a>
   </div>
 </li>
@@ -618,7 +618,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><strong>Manipulating Data 01: Pivoting</strong></h1>
+<h1 class="title"><strong>Transforming Data Frames: Pivoting</strong></h1>
 </div>
 
 
@@ -635,7 +635,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 23, 2024</p>
+      <p class="date">February 6, 2024</p>
     </div>
   </div>
   
