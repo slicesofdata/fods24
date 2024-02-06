@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gabriel I. Cook">
-<meta name="dcterms.date" content="2024-02-02">
+<meta name="dcterms.date" content="2024-02-06">
 
-<title>PSYC166 - Pivoting Data Frames</title>
+<title>PSYC166 - Importing and Exporting Data Frames</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -408,7 +408,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/index.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/06_importing_and_exporting_data.html"><strong>Pivoting Data Frames</strong></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/index.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/06_importing_and_exporting_data.html"><strong>Importing and Exporting Data Frames</strong></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -474,7 +474,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../modules/06_importing_and_exporting_data.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><strong>Pivoting Data Frames</strong></span></a>
+ <span class="menu-text"><strong>Importing and Exporting Data Frames</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -663,7 +663,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><strong>Pivoting Data Frames</strong></h1>
+<h1 class="title"><strong>Importing and Exporting Data Frames</strong></h1>
 </div>
 
 
@@ -680,7 +680,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 2, 2024</p>
+      <p class="date">February 6, 2024</p>
     </div>
   </div>
   
@@ -1566,7 +1566,7 @@ Sal   55    125</code></pre>
 <section id="summary" class="level1">
 <h1><strong>Summary</strong></h1>
 <p>You can now appreciate the there is more to reading data files that simply knowing the filename. You also need to know where the file is located and use a library like <strong>{here}</strong> to ensure the code you write to open the file will be able to read the file without error if you ever move your directory to a new location, to a new computer, or if you collaborate with others who work on different computers. You also need to understand how the data are structured, most notably how to distinguish one variable from another. Sometimes the structure also requires you to use specialize libraries like <strong>{haven}</strong> or <strong>{foreign}</strong>.</p>
-<p>You can also appreciate that there is more to writing files than simply knowing the filename. You need to know the path for saving the file and the data structure you would like when writing the file. You may need to have the foresight to plan so that your saved file preserves data types, is large and needs to be compressed to conserve space, or can be read easily with a different piece of software. If, for example, a collaborator or a client does not use R, you would likely not want to save the files as <code>.rds</code> unless you know they can read the file. You may even need to record a reference file of the data types. If a client uses SPSS or Stata and they are not savvy enough to know how to open certain files, you may wish to save the file in the format with which they are familiar. You may even need to be mindful of whether the file will be accessed by a system that prefers wide-format to long-formtat and rearrange the data for a client.</p>
+<p>You can also appreciate that there is more to writing files than simply knowing the filename. You need to know the path for saving the file and the data structure you would like when writing the file. You may need to have the foresight to plan so that your saved file preserves data types, is large and needs to be compressed to conserve space, or can be read easily with a different piece of software. If, for example, a collaborator or a client does not use R, you would likely not want to save the files as <code>.rds</code> unless you know they can read the file. You may even need to record a reference file of the data types. If a client uses SPSS or Stata and they are not savvy enough to know how to open certain files, you may wish to save the file in the format with which they are familiar. You may even need to be mindful of whether the file will be accessed by a system that prefers wide-format to long-format and rearrange the data for a client.</p>
 </section>
 <section id="session-information" class="level1">
 <h1><strong>Session Information</strong></h1>
