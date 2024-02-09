@@ -1609,7 +1609,7 @@ Sally; 28; Female; Michigan; Married</code></pre>
 <h2><strong>Relocating/Moving Variable Position Using <code>relocate()</code></strong></h2>
 <p>Assuming piping using <code>|&gt;</code> or <code>%&gt;%</code>:</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="sc">&lt;</span>DATA_FRAME<span class="sc">&gt;</span> <span class="er">|&gt;</span> </span>
-<span id="cb25-2"><a href="#cb25-2"></a>     <span class="fu">relocate</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-2"><a href="#cb25-2"></a>     <span class="fu">relocate</span>(...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="relocatingmoving-variable-position-using-relocate-2" class="slide level2">
 <h2><strong>Relocating/Moving Variable Position Using <code>relocate()</code></strong></h2>
@@ -1686,10 +1686,58 @@ Sally; 28; Female; Michigan; Married</code></pre>
 <section id="removing-spaces-using-mutate-gsub" class="slide level2">
 <h2><strong>Removing Spaces Using <code>mutate()</code> + <code>gsub()</code></strong></h2>
 <div>
-<ul>
-<li class="fragment"><code>mutate(.data, variable_name = gsub(&quot; &quot;, &quot;&quot;, variables_name))</code></li>
-</ul>
+<pre><code>&lt;data_frame&gt; |&gt;  
+   mutate(variable_name = gsub(&quot; &quot;, &quot;&quot;, variable_name))`</code></pre>
 </div>
+</section>
+<section id="removing-spaces-using-mutate-gsub-1" class="slide level2">
+<h2><strong>Removing Spaces Using <code>mutate()</code> + <code>gsub()</code></strong></h2>
+<p>Specify <code>.data</code> if not piping:</p>
+<pre><code>mutate(.data = &lt;data_frame&gt;,
+       variable_name = gsub(&quot; &quot;, &quot;&quot;, variable_name)
+       )</code></pre>
+</section>
+<section id="removing-spaces-using-mutate-gsub-2" class="slide level2">
+<h2><strong>Removing Spaces Using <code>mutate()</code> + <code>gsub()</code></strong></h2>
+<p>When piping the data frame, <code>.data</code> is inherited:</p>
+<pre><code>&lt;data_frame&gt; |&gt;  
+   mutate(variable_name = gsub(&quot; &quot;, &quot;&quot;, variable_name))`</code></pre>
+</section></section>
+<section>
+<section id="multiple-piping" class="title-slide slide level1 center">
+<h1><strong>Multiple Piping</strong></h1>
+<p>A strategy for cleaner code.</p>
+</section>
+<section id="pipe-pipe-pipe" class="slide level2">
+<h2><strong>Pipe, Pipe, Pipe</strong></h2>
+<pre><code>&lt;data_frame&gt; |&gt;         # pipe data frame to...
+   # rename the variables...
+   rename_with(...) |&gt;  # pipe modifed data frame to...
+   
+   # change the contents of the varbiable
+   mutate(...)          # pipe modified-modified data frame to... 
+   
+   # move the location of variable(s)
+   relocate(...)</code></pre>
+</section>
+<section id="pipe-pipe-pipe-and-assign" class="slide level2">
+<h2><strong>Pipe, Pipe, Pipe, and Assign</strong></h2>
+<p>Once you are sure the code works as planned, assign.</p>
+</section>
+<section id="pipe-pipe-pipe-and-assign-1" class="slide level2">
+<h2><strong>Pipe, Pipe, Pipe, and Assign</strong></h2>
+<p>Once you are sure the code works as planned, assign.</p>
+<pre><code>&lt;data_frame&gt; &lt;-        # reassign the data frame with new content
+   &lt;data_frame&gt; |&gt;     # pipe data frame to...
+
+   # rename the variables...
+   rename_with(...) |&gt; # pipe modifed data frame to...
+   
+   # change the contents of the varbiable
+   mutate(...) |&gt;      # pipe modified-modified data frame to... 
+   
+   # move the location of variable(s)
+   relocate(...)</code></pre>
 
 <div class="footer footer-default">
 
