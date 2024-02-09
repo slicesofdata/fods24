@@ -17,3 +17,10 @@ homework/key
 *.RData
 *.rdb
 *.rdx
+
+/data/gng
+/data/symmspan
+champ_all_waves_ten.csv
+champ_all_waves_ten.Rds
+symmspan_long.csv
+symmspan_long.Rds
