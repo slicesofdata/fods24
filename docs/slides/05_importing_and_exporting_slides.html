@@ -1369,7 +1369,7 @@ Sally; 28; Female; Michigan; Married</code></pre>
 <h2><strong>Exporting with <code>saveRDS()</code></strong></h2>
 <p>As long you <strong>pass arguments are passed in the same order</strong> as their intended parameters, you don’t need parameter specification.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">saveRDS</span>(data_frame_object<span class="sc">&gt;</span>, </span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">saveRDS</span>(<span class="sc">&lt;</span>data_frame_object<span class="sc">&gt;</span>, </span>
 <span id="cb9-3"><a href="#cb9-3"></a>        here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;file_name.Rds&quot;</span>)</span>
 <span id="cb9-4"><a href="#cb9-4"></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
@@ -1455,22 +1455,21 @@ Sally; 28; Female; Michigan; Married</code></pre>
 <span id="cb12-3"><a href="#cb12-3"></a>[<span class="dv">1</span>] <span class="st">&quot;name&quot;</span>  <span class="st">&quot;age&quot;</span>  <span class="st">&quot;sex&quot;</span>  <span class="st">&quot;location&quot;</span>  <span class="st">&quot;marital_stat&quot;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div>
 <ul>
-<li class="fragment"><p>Assign new names:</p></li>
-<li class="fragment"><p>create new vector: <code>new_names &lt;- c(&quot;first_name&quot;, &quot;age&quot;, &quot;sex&quot;, &quot;location&quot;, &quot;marital_status&quot;)</code></p></li>
-<li class="fragment"><p>then assign: <code>names(&lt;data_frame&gt;) &lt;- new_names</code></p></li>
-<li class="fragment"><p>or: <code>names(&lt;data_frame&gt;) &lt;- c(&quot;first_name&quot;, &quot;age&quot;, &quot;sex&quot;, &quot;location&quot;, &quot;marital_status&quot;)</code></p></li>
+<li class="fragment">Because <code>names(&lt;data_frame&gt;)</code> contains a vector of variable names, we can assign a vector of different names to the object.</li>
+<li class="fragment"><code>names(&lt;data_frame&gt;) &lt;- c(&quot;first_name&quot;, &quot;age&quot;, &quot;sex&quot;, &quot;location&quot;, &quot;marital_status&quot;)</code></li>
 </ul>
 </div>
 </section>
 <section id="renaming-variables-popular-options" class="slide level2">
 <h2><strong>Renaming Variables: Popular Options</strong></h2>
+<p>To make the names lower case we can fix them with <code>tolower()</code> and assign them back.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">names</span>(<span class="sc">&lt;</span>data_frame<span class="sc">&gt;</span>)</span>
 <span id="cb13-2"><a href="#cb13-2"></a></span>
 <span id="cb13-3"><a href="#cb13-3"></a>[<span class="dv">1</span>] <span class="st">&quot;Name&quot;</span>  <span class="st">&quot;AGE&quot;</span>  <span class="st">&quot;sEx&quot;</span>  <span class="st">&quot;LocatioN&quot;</span>  <span class="st">&quot;marital_stat&quot;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div>
 <ul>
-<li class="fragment"><code>names(&lt;data_frame&gt;) &lt;- tolower(new_names)</code></li>
-<li class="fragment"><code>dplyr::rename_with(...)</code></li>
+<li class="fragment"><code>names(&lt;data_frame&gt;) &lt;- tolower(names(&lt;data_frame&gt;))</code></li>
+<li class="fragment">or used <code>dplyr::rename_with(...)</code> and along with <code>tolower()</code></li>
 </ul>
 </div>
 </section>
@@ -1498,7 +1497,7 @@ Sally; 28; Female; Michigan; Married</code></pre>
 </section>
 <section id="renaming-variables-using-dplyrrename_with-and" class="slide level2">
 <h2><strong>Renaming Variables Using <code>dplyr::rename_with()</code> and <code>|&gt;</code></strong></h2>
-<p>Assuming piping using <code>|&gt;</code> or <code>%&gt;%</code></p>
+<p>Assuming piping using <code>|&gt;</code> or <code>%&gt;%</code>, <code>.data</code> is omitted because it’s inherited from the piping procedure.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="sc">&lt;</span>DATA_FRAME<span class="sc">&gt;</span> <span class="er">|&gt;</span> </span>
 <span id="cb16-2"><a href="#cb16-2"></a>     <span class="fu">rename_with</span>(<span class="at">.fn =</span> tolower,           </span>
 <span id="cb16-3"><a href="#cb16-3"></a>                 <span class="at">.cols =</span> <span class="fu">everything</span>()</span>
@@ -1607,7 +1606,7 @@ Sally; 28; Female; Michigan; Married</code></pre>
 </section>
 <section id="relocatingmoving-variable-position-using-relocate-1" class="slide level2">
 <h2><strong>Relocating/Moving Variable Position Using <code>relocate()</code></strong></h2>
-<p>Assuming piping using <code>|&gt;</code> or <code>%&gt;%</code>:</p>
+<p>Assuming you are piping using <code>|&gt;</code> or <code>%&gt;%</code>:</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="sc">&lt;</span>DATA_FRAME<span class="sc">&gt;</span> <span class="er">|&gt;</span> </span>
 <span id="cb25-2"><a href="#cb25-2"></a>     <span class="fu">relocate</span>(...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
