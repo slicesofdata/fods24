@@ -2904,12 +2904,12 @@ Virginia          8.5     156       63 20.7</code></pre>
 <section id="the-data-manipulation-workflow-putting-it-all-together" class="level1">
 <h1><strong>The Data Manipulation Workflow: Putting It All Together</strong></h1>
 <p>Of course, all of these functions can be paired with <code>select()</code>, <code>mutate()</code>, <code>filter()</code>, etc. Here is the data manipulation workflow.</p>
-<pre><code>dataframe |&gt;
-    select(...) |&gt;     # select variables of interest
-    mutate(...) |&gt;     # then create new variables
-    filter(...) |&gt;     # then filter by rows
-    group_by(...) |&gt;   # then group for subsetting
-    summarize(...)     # then summarize</code></pre>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb173-1"><a href="#cb173-1" aria-hidden="true" tabindex="-1"></a>dataframe <span class="sc">|&gt;</span></span>
+<span id="cb173-2"><a href="#cb173-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(...) <span class="sc">|&gt;</span>     <span class="co"># select variables of interest</span></span>
+<span id="cb173-3"><a href="#cb173-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(...) <span class="sc">|&gt;</span>     <span class="co"># then create new variables</span></span>
+<span id="cb173-4"><a href="#cb173-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(...) <span class="sc">|&gt;</span>     <span class="co"># then filter by rows</span></span>
+<span id="cb173-5"><a href="#cb173-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(...) <span class="sc">|&gt;</span>   <span class="co"># then group for subsetting</span></span>
+<span id="cb173-6"><a href="#cb173-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(...)     <span class="co"># then summarize</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="many-more-use-case-examples-optional" class="level1">
 <h1><strong>Many More Use-Case Examples (Optional)</strong></h1>
