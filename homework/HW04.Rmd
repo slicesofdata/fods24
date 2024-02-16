@@ -25,9 +25,13 @@ For this homework, you will save the `R Markdown` (e.g., `.Rmd`) homework docume
 
 # **Overview**
 
-This homework will involve you thinking carefully about creating variables and adding them to a data frame. These steps will be 
+This homework will involve you thinking carefully about creating variables and adding them to a data frame. These steps will be entered into the sections below. 
 
-You can find the detailed instructions for this homework at:  
+Instructions for the homework are in a separate file to keep the homework file short. You can:
+
+- download the instructions for this homework from https://raw.githubusercontent.com/slicesofdata/fods24/main/homework/HW04_instructions.pdf
+- or view at https://github.com/slicesofdata/fods24/blob/main/homework/HW04_instructions.pdf
+
 
 # **Loading Libraries**
 
