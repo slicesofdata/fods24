@@ -1,5 +1,5 @@
 ---
-title: "Exercise 05"
+title: "Homework 04"
 author: "yourname"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
@@ -14,6 +14,53 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+R.utils::sourceDirectory(here::here("r", "functions"))
+```
+
+**This homework is due by Thursday by 2:30pm.**
+
+For this homework, you will save the `R Markdown` (e.g., `.Rmd`) homework document and save it to your `/fods-exercises/report` project directory. Either rename it or save a copy of this file so that its name has the prefix `2024_Lastname_FirstInitial`. Full name example: `2024_cookg_HW_04.Rmd`. 
+
+
+
+# **Overview**
+
+This homework will involve you thinking carefully about creating variables and adding them to a data frame. These steps will be 
+
+You can find the detailed instructions for this homework at:  
+
+# **Loading Libraries**
+
+Create a code block to load only the libraries you need. 
+
+
+
+
+# **Reading Data**
+
+Create a code block and read the `gng_long.Rds` data file and assign that to `GNG` in the code block below. 
+
+
+
+
+# **Combining the Full Code**
+
+Finally, using `GNG`, *remove/select out* the id_subject, id_wave, w1age, and trial variables and pipe that data frame subset to the function that you would used to view the top part of the data frame so that I can see the contents. 
+
+
+```{r}
+
+
 ```
 
 
+# **Viewing the Data Frame Contents**
+
+Finally, using `GNG`, select out the id_subject, id_wave, w1age, and trial variables and pipe that to the function used to view the top part of the data frame so that I can see the contents. Put your code in the block below.
+
+```{r}
+
+```
+
+
+Finally, knit an `html` file and upload it to: https://claremontmckenna.app.box.com/f/026ed41483fb4a739f0ddfc7fbf8fd01
