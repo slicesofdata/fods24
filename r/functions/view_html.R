@@ -15,11 +15,17 @@ view_html <- function(object, rows = F, show = 100, ...) {
       message("Object is a list. Viewer displays last list element. Consider passing each element to view().")
 
       lapply(object, function(x) {
-        DT::datatable(x, rownames = rows, options = list(pageLength = show))
+        DT::datatable(x,
+                      rownames = rows,
+                      filter = "top",
+                      options = list(pageLength = show))
       })
     } else {
-      DT::datatable(object, rownames = rows, options = list(pageLength = show))
+      DT::datatable(object,
+                    rownames = rows,
+                    filter = "top",
+                    options = list(pageLength = show))
     }
-
   }
 }
+
