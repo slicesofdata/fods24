@@ -2874,7 +2874,7 @@
     "href": "modules/12_manipulating_data_pivoting.html#loading-libraries",
     "title": "Transforming Data Frames: Pivoting",
     "section": "Loading Libraries",
-    "text": "Loading Libraries\nWe will work with a few different libraries for data manipulation. Let’s load them into our work space using library().\n\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(tidyr)\nlibrary(tidyselect)\n\n# or just library(tidyverse)"
+    "text": "Loading Libraries\nWe will work with a few different libraries for data manipulation. Let’s load them into our work space using library().\n\nlibrary(dplyr)\nlibrary(tidyr)\nlibrary(tidyselect)"
   },
   {
     "objectID": "modules/12_manipulating_data_pivoting.html#external-functions",
