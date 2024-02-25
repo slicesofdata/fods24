@@ -16,7 +16,8 @@ The final written report for the project will be delivered to me and to your lia
 
 # **Elements to Focus On**
 
-TBA
+For the final presentation, you should focus on presenting a description of the problem, the data set used, data summaries, model interpretation, and visualization to help tell a story about your findings. You should make sure to address the key elements outlined in the project proposal and discussed with your liaison. 
+
 
 # **Presentation Medium**
 
