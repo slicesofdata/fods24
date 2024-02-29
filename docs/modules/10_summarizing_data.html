@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gabriel I. Cook">
-<meta name="dcterms.date" content="2024-02-25">
+<meta name="dcterms.date" content="2024-02-29">
 
 <title>PSYC166 - Summarizing Data</title>
 <style>
@@ -175,6 +175,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="../slides/09_summarizing_data_slides.html" rel="" target="">
  <span class="dropdown-text">Grouping and Summarizing Data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../slides/09_summarizing_data_advanced_slides.html" rel="" target="">
+ <span class="dropdown-text">Grouping and Summarizing Data (Advanced)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../slides/10_cognitive_data_summary_slides.html" rel="" target="">
@@ -551,6 +555,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><strong>Exploratory Data Analysis</strong></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/summarizing_data_advanced.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Summarizing Data: Using <code>across()</code> and Lists</strong></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -630,7 +640,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#data-aggregation-using-group_by" id="toc-data-aggregation-using-group_by" class="nav-link" data-scroll-target="#data-aggregation-using-group_by"><strong>Data aggregation using <code>group_by()</code></strong></a></li>
   </ul></li>
-  <li><a href="#comparing-mutate-with-summarize" id="toc-comparing-mutate-with-summarize" class="nav-link" data-scroll-target="#comparing-mutate-with-summarize"><strong>Comparing mutate() with summarize()</strong></a>
+  <li><a href="#comparing-mutate-with-summarize" id="toc-comparing-mutate-with-summarize" class="nav-link" data-scroll-target="#comparing-mutate-with-summarize"><strong>Comparing <code>mutate()</code> with <code>summarize()</code></strong></a>
   <ul class="collapse">
   <li><a href="#grouping-structure-of-group_by-and-mutate" id="toc-grouping-structure-of-group_by-and-mutate" class="nav-link" data-scroll-target="#grouping-structure-of-group_by-and-mutate"><strong>Grouping structure of <code>group_by()</code> and <code>mutate()</code></strong></a></li>
   <li><a href="#grouping-structure-of-group_by-and-summarize" id="toc-grouping-structure-of-group_by-and-summarize" class="nav-link" data-scroll-target="#grouping-structure-of-group_by-and-summarize"><strong>Grouping structure of <code>group_by()</code> and <code>summarize()</code></strong></a>
@@ -654,9 +664,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#variable-loss-with-summarize" id="toc-variable-loss-with-summarize" class="nav-link" data-scroll-target="#variable-loss-with-summarize"><strong>Variable loss with <code>summarize()</code></strong></a></li>
   <li><a href="#an-alternative-to-summarize-reframe" id="toc-an-alternative-to-summarize-reframe" class="nav-link" data-scroll-target="#an-alternative-to-summarize-reframe"><strong>An alternative to <code>summarize()</code>: <code>reframe()</code></strong></a></li>
-  <li><a href="#retaining-distinct-data-after-mutate-using-distinct" id="toc-retaining-distinct-data-after-mutate-using-distinct" class="nav-link" data-scroll-target="#retaining-distinct-data-after-mutate-using-distinct"><strong>Retaining distinct data after <code>mutate()</code> using distinct()`</strong></a></li>
+  <li><a href="#retaining-distinct-data-after-mutate-using-distinct" id="toc-retaining-distinct-data-after-mutate-using-distinct" class="nav-link" data-scroll-target="#retaining-distinct-data-after-mutate-using-distinct"><strong>Retaining distinct data after <code>mutate()</code> using <code>distinct()</code></strong></a></li>
   </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><strong>Summary</strong></a></li>
+  <li><a href="#advanced-summarizing-techniques" id="toc-advanced-summarizing-techniques" class="nav-link" data-scroll-target="#advanced-summarizing-techniques"><strong>Advanced Summarizing Techniques</strong></a></li>
   <li><a href="#session-info" id="toc-session-info" class="nav-link" data-scroll-target="#session-info"><strong>Session Info</strong></a></li>
   </ul>
 </nav>
@@ -683,7 +694,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 25, 2024</p>
+      <p class="date">February 29, 2024</p>
     </div>
   </div>
   
@@ -782,12 +793,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="summarizing-data-using-dplyr" class="level1">
 <h1><strong>Summarizing Data Using {dplyr}</strong></h1>
 <p>However, there are many ways to summarize data. To introduce data summary techniques using <strong>{dplyr}</strong>, we will use <code>dplyr::summarise()</code> or <code>dplyr::summarize()</code> to summarize the data in the data frame. The <code>summarize()</code> (or <code>summarise()</code>) function works similar to <code>mutate()</code> insofar as it creates variables but it differs insofar as the data frame returned from <code>summarize()</code> contains only the variable(s) referenced in as part of that summary process. Importantly, <code>summarize()</code> will be performed based on some functions called immediately prior to <code>summarize()</code>.</p>
-<pre><code>summarize(
-   .data, 
-   ..., 
-   .by = NULL, 
-   .groups = NULL
-   )</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>   .data, </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>   ..., </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>   <span class="at">.by =</span> <span class="cn">NULL</span>, </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>   <span class="at">.groups =</span> <span class="cn">NULL</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>   )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Key Parameters/Arguments:</strong></p>
 <ul>
 <li><code>.data</code>: a data frame</li>
@@ -962,7 +973,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 <section id="comparing-mutate-with-summarize" class="level1">
-<h1><strong>Comparing mutate() with summarize()</strong></h1>
+<h1><strong>Comparing <code>mutate()</code> with <code>summarize()</code></strong></h1>
 <p><strong>{dplyr}</strong> has two main verb functions for creating variables (e.g., <code>mutate()</code> and <code>summarize()</code>). They operate differently and their returned tibble also differ. If you have not been paying attention to the returned tibble post calculation, you might have overlooked the differences.</p>
 <section id="grouping-structure-of-group_by-and-mutate" class="level2">
 <h2 class="anchored" data-anchor-id="grouping-structure-of-group_by-and-mutate"><strong>Grouping structure of <code>group_by()</code> and <code>mutate()</code></strong></h2>
@@ -1703,11 +1714,11 @@ women old    x</code></pre>
 </div>
 </div>
 <p>You can try to summarize based on a variable without assign it to a function but that is no longer allowed with <code>summarize()</code>. The following code block will throw an error.</p>
-<pre><code>DATA |&gt;
-  group_by(District) |&gt;
-  summarize(Mean = mean(Score),
-          School               # add school 
-          )</code></pre>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="sc">|&gt;</span></span>
+<span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(District) <span class="sc">|&gt;</span></span>
+<span id="cb104-3"><a href="#cb104-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Mean =</span> <span class="fu">mean</span>(Score),</span>
+<span id="cb104-4"><a href="#cb104-4" aria-hidden="true" tabindex="-1"></a>          School               <span class="co"># add school </span></span>
+<span id="cb104-5"><a href="#cb104-5" aria-hidden="true" tabindex="-1"></a>          )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="an-alternative-to-summarize-reframe" class="level2">
 <h2 class="anchored" data-anchor-id="an-alternative-to-summarize-reframe"><strong>An alternative to <code>summarize()</code>: <code>reframe()</code></strong></h2>
@@ -1773,7 +1784,7 @@ women old    x</code></pre>
 </div>
 </section>
 <section id="retaining-distinct-data-after-mutate-using-distinct" class="level2">
-<h2 class="anchored" data-anchor-id="retaining-distinct-data-after-mutate-using-distinct"><strong>Retaining distinct data after <code>mutate()</code> using distinct()`</strong></h2>
+<h2 class="anchored" data-anchor-id="retaining-distinct-data-after-mutate-using-distinct"><strong>Retaining distinct data after <code>mutate()</code> using <code>distinct()</code></strong></h2>
 <p>This is just too tedious. Your better option is <code>mutate()</code> as all variables will be added to the full data frame. All variables are neatly and logically appended to the right hand side of the data frame.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb109"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="sc">|&gt;</span></span>
@@ -1800,18 +1811,18 @@ women old    x</code></pre>
 </div>
 </div>
 <p>Also, when you use a new <code>group_by()</code>, it will replace previous grouping structure by default. The following two code blocks return the same data frame.</p>
-<pre><code>DATA |&gt;
-  group_by(District) |&gt;
-  mutate(District_Mean = mean(Score)) |&gt;
-  group_by(School) |&gt;
-  mutate(School_Mean = mean(Score))</code></pre>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="sc">|&gt;</span></span>
+<span id="cb111-2"><a href="#cb111-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(District) <span class="sc">|&gt;</span></span>
+<span id="cb111-3"><a href="#cb111-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">District_Mean =</span> <span class="fu">mean</span>(Score)) <span class="sc">|&gt;</span></span>
+<span id="cb111-4"><a href="#cb111-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(School) <span class="sc">|&gt;</span></span>
+<span id="cb111-5"><a href="#cb111-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">School_Mean =</span> <span class="fu">mean</span>(Score))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>With <code>ungroup()</code>:</p>
-<pre><code>DATA |&gt;
-  group_by(District) |&gt;
-  mutate(District_Mean = mean(Score)) |&gt;
-  ungroup() |&gt;                            # ungroup
-  group_by(School) |&gt;
-  mutate(School_Mean = mean(Score))</code></pre>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="sc">|&gt;</span></span>
+<span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(District) <span class="sc">|&gt;</span></span>
+<span id="cb112-3"><a href="#cb112-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">District_Mean =</span> <span class="fu">mean</span>(Score)) <span class="sc">|&gt;</span></span>
+<span id="cb112-4"><a href="#cb112-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span>                            <span class="co"># ungroup</span></span>
+<span id="cb112-5"><a href="#cb112-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(School) <span class="sc">|&gt;</span></span>
+<span id="cb112-6"><a href="#cb112-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">School_Mean =</span> <span class="fu">mean</span>(Score))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If you wish those variables to remain, you have a couple of options. The first would be to use <code>mutate()</code>.</p>
 <p>Notice, however, that if you want to extract the summaries from the large data frame as you would have had you used <code>summarize()</code>, you cannot just <code>select()</code> your column of interest because the repetitions will exist for each row in the data frame.</p>
 <div class="cell">
@@ -1887,6 +1898,10 @@ women old    x</code></pre>
 <p>A main workhorse of adding variables and creating aggregated data in the <code>R</code> language is the <strong>{dplyr}</strong> library. You must, however, be sensitive to the way its functions work so that the variables you create in either a full or summarized data frame represent your intentions and goals.</p>
 <p>We have seen that a lot of customization can be applied to our visualizations of data and have shown just a little bit of what can be done. Many more functions and parameters can be used to customize to greater extents.</p>
 </section>
+<section id="advanced-summarizing-techniques" class="level1">
+<h1><strong>Advanced Summarizing Techniques</strong></h1>
+<p>For more <em>advanced</em> summarizing techniques, see this module on <a href="https://gabrielcook.xyz/fods24/modules/">advanced summarizing techniques</a>.</p>
+</section>
 <section id="session-info" class="level1">
 <h1><strong>Session Info</strong></h1>
 <div class="cell">
@@ -1915,20 +1930,22 @@ other attached packages:
 [1] dplyr_1.1.4
 
 loaded via a namespace (and not attached):
- [1] bit_4.0.5           jsonlite_1.8.7      compiler_4.3.2     
- [4] BiocManager_1.30.22 renv_1.0.3          crayon_1.5.2       
- [7] tidyselect_1.2.0    parallel_4.3.2      yaml_2.3.7         
-[10] fastmap_1.1.1       here_1.0.1          readr_2.1.4        
-[13] R6_2.5.1            generics_0.1.3      curl_5.2.0         
-[16] knitr_1.45          htmlwidgets_1.6.4   tibble_3.2.1       
-[19] rprojroot_2.0.3     pillar_1.9.0        tzdb_0.4.0         
-[22] rlang_1.1.1         utf8_1.2.4          xfun_0.40          
-[25] bit64_4.0.5         cli_3.6.1           withr_2.5.0        
-[28] magrittr_2.0.3      digest_0.6.33       vroom_1.6.5        
-[31] rstudioapi_0.15.0   hms_1.1.3           lifecycle_1.0.3    
-[34] vctrs_0.6.5         evaluate_0.21       glue_1.6.2         
-[37] fansi_1.0.4         rmarkdown_2.25      tools_4.3.2        
-[40] pkgconfig_2.0.3     htmltools_0.5.7    </code></pre>
+ [1] bit_4.0.5           jsonlite_1.8.7      crayon_1.5.2       
+ [4] compiler_4.3.2      BiocManager_1.30.22 renv_1.0.3         
+ [7] tidyselect_1.2.0    stringr_1.5.1       parallel_4.3.2     
+[10] yaml_2.3.7          fastmap_1.1.1       here_1.0.1         
+[13] readr_2.1.4         R6_2.5.1            generics_0.1.3     
+[16] curl_5.2.0          knitr_1.45          htmlwidgets_1.6.4  
+[19] tibble_3.2.1        rprojroot_2.0.3     pillar_1.9.0       
+[22] tzdb_0.4.0          R.utils_2.12.2      rlang_1.1.1        
+[25] utf8_1.2.4          stringi_1.7.12      xfun_0.40          
+[28] bit64_4.0.5         cli_3.6.1           withr_2.5.0        
+[31] magrittr_2.0.3      digest_0.6.33       vroom_1.6.5        
+[34] rstudioapi_0.15.0   hms_1.1.3           lifecycle_1.0.3    
+[37] R.methodsS3_1.8.2   R.oo_1.25.0         vctrs_0.6.5        
+[40] evaluate_0.21       glue_1.6.2          fansi_1.0.4        
+[43] rmarkdown_2.25      tools_4.3.2         pkgconfig_2.0.3    
+[46] htmltools_0.5.7    </code></pre>
 </div>
 </div>
 
