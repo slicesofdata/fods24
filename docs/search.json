@@ -2097,21 +2097,21 @@
     "href": "modules/14_joining_relational_data.html",
     "title": "Joining Relational Data",
     "section": "",
-    "text": "Under construction.\n\n\n\nThis page is a work in progress and may contain areas that need more detail or that required syntactical, grammatical, and typographical changes. If you find some part requiring some editing, please let me know so I can fix it for you."
+    "text": "In this module, we will cover how to join data frames that are related in some way. For example, perhaps you have multiple data frames containing data from the same participants and you need to combine them all so that you can summarize, visualize, or model the data. Students familiar with SQL (Structured Query Language) should have some experience with joining relational data. The joining or merging process is often a large component of data science projects, especially those that involve collaborators cleaning separate components that need to be merged together.\nYou can run SQL code within an R Markdown code block but there are other libraries like {sqldf} that allow you to include SQL to perform data queries.\nFor those who wish to dig deeper into learning SQL, there are tutorials here.\n\n\nBefore Class: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time. Work through some examples so that you have a good idea of your level of understanding and confidence.\nClass: In class, some functions and concepts will be introduced and we will practice implementing code through exercises.\n\n\n\n\nJoining Data\n\n\n\n\n\n{here} 1.0.1: for file path management\n{dplyr} 1.1.4: for joining data frames\n\nMore generally:\n\n{tidyverse} 2.0.0: the tidyverse ecosystem\n\n\nlibrary(dplyr)"
   },
   {
     "objectID": "modules/14_joining_relational_data.html#readings-and-preparation",
     "href": "modules/14_joining_relational_data.html#readings-and-preparation",
     "title": "Joining Relational Data",
-    "section": "Readings and Preparation",
-    "text": "Readings and Preparation\nBefore Class: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time. Work through some examples so that you have a good idea of your level of understanding and confidence.\nClass: In class, some functions and concepts will be introduced and we will practice implementing code through exercises.\n\nJoining Data"
+    "section": "",
+    "text": "Before Class: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time. Work through some examples so that you have a good idea of your level of understanding and confidence.\nClass: In class, some functions and concepts will be introduced and we will practice implementing code through exercises."
   },
   {
     "objectID": "modules/14_joining_relational_data.html#libraries",
     "href": "modules/14_joining_relational_data.html#libraries",
     "title": "Joining Relational Data",
-    "section": "Libraries",
-    "text": "Libraries\n\n{here} 1.0.1: for file path management\n{tidyr} 1.3.0: for joining and tidying data (e.g., pivot)\n\nMore generally: - {tidyverse} 2.0.0: the tidyverse ecosystem\nRelated:\n\n{readxl} 1.4.3: for reading Excel spreadsheets"
+    "section": "",
+    "text": "{here} 1.0.1: for file path management\n{dplyr} 1.1.4: for joining data frames\n\nMore generally:\n\n{tidyverse} 2.0.0: the tidyverse ecosystem\n\n\nlibrary(dplyr)"
   },
   {
     "objectID": "modules/16_examining_relationships_in_variables_of_cognition.html",
@@ -3183,5 +3183,26 @@
     "title": "Visualizing Data: {ggplot} and the grammar of graphics",
     "section": "Adding layers that do not that inherit aesthetics",
     "text": "Adding layers that do not that inherit aesthetics\nWhen aesthetics are not inherited by the initial object, they can be set or mapped in their own geometry. This example does not even pass data = DATA. If it did and each geometry used DATA, then that doesn’t need passing. Only omitted characteristics need mapping.\n\nmap &lt;- ggplot()   \n\n\nmap + \n  geom_point(data = DATA, \n             mapping = aes(A, C)) +\n  geom_col(data = DATA, \n           mapping = aes(A, B),\n           fill = \"green\") +\n  geom_line(data = DATA, \n            mapping = aes(A, B), \n            linetype = \"dashed\",\n            color = \"red\", \n            size = 1, \n            alpha = .5\n            )\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n\n\n\nBy specifying DATA and aes(A, B), all geometries using DATA with x = A and y = B will inherit them. Otherwise, pass the necessary arguments to the geometries.\n\nmap &lt;- DATA |&gt;\n  ggplot(mapping = aes(A, B))\n\nmap + \n  geom_col(fill = \"green\") +           # set all columns to blue\n  geom_line(mapping = aes(y = C),      # a new mapping y = C for the line data\n            linetype = \"dashed\") +     # set the linetype\n            \n  geom_point(mapping = aes(color = B,  # map color to A (inherited as y)  \n                           size = A),  # map size to B (inherited as x)\n            alpha = .5                 # set alpha transparency\n            ) +\n  theme_classic()\n\n\n\n\nNow, this plot is certainly not the best and it certainly needs work. But the coding of the plot illustrates the flexibility of ggplot for adding plot geometry layers to a single plot, utilizing aesthetics inherited from an initialized object, mapping new aesthetics not inherited, setting aesthetic constants, and mapping variables to aesthetics."
+  },
+  {
+    "objectID": "modules/14_joining_relational_data.html#full-join",
+    "href": "modules/14_joining_relational_data.html#full-join",
+    "title": "Joining Relational Data",
+    "section": "Full Join",
+    "text": "Full Join\nWhen you want to completely join two data frames, a full join would join the two data frames so that the data frame would combine all rows from both data frames by some unique value including NA where there are no matches.\nWe can join data frames A and B by matching the two using the row values of id. When there are NA\nA where ‘id’ doesn’t match in either A or B."
+  },
+  {
+    "objectID": "modules/14_joining_relational_data.html#supplementary-readings-optional",
+    "href": "modules/14_joining_relational_data.html#supplementary-readings-optional",
+    "title": "Joining Relational Data",
+    "section": "",
+    "text": "Joining Data"
+  },
+  {
+    "objectID": "modules/14_joining_relational_data.html#writing-a-function",
+    "href": "modules/14_joining_relational_data.html#writing-a-function",
+    "title": "Joining Relational Data",
+    "section": "Writing a Function",
+    "text": "Writing a Function\nYou can also write a function to help you. Here, we can make a function to take a list of data frames and cycles through them to return a data frame based on full_join().\n\nfull_join_data_frames_in_list &lt;- function(list, by) {\n  if (missing(by)) {\n    message(\"Please specify the 'by' parameter for merging.\")\n    return(NULL)\n  } else {\n    joined &lt;- Reduce(function(x, y) dplyr::full_join(x, y, by = by), list)\n    return(joined)\n  }\n}\n\nPut the data frames in a list:\n\nABC_list &lt;- list(A, B, C)\n\nPass the list to the list parameter and supply the by argument as a string.\n\nfull_join_data_frames_in_list(list = ABC_list,\n                              by = \"id\"\n                              )\n\n# A tibble: 6 × 6\n     id height weight city        age name \n  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;\n1  1111     60    128 Claremont    22 Sally\n2  2211     NA    120 Dallas       25 Jane \n3  9811     60    149 Akron        38 &lt;NA&gt; \n4  3000     65    140 &lt;NA&gt;         NA &lt;NA&gt; \n5  3050     NA     NA &lt;NA&gt;         50 &lt;NA&gt; \n6    NA     NA     NA &lt;NA&gt;         NA Kelly"
   }
 ]
