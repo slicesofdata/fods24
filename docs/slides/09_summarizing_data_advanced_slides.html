@@ -1396,15 +1396,15 @@ margin-right: 0; }
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>DATA <span class="sc">|&gt;</span></span>
 <span id="cb21-2"><a href="#cb21-2"></a>  <span class="fu">group_by</span>(group) <span class="sc">|&gt;</span></span>
 <span id="cb21-3"><a href="#cb21-3"></a>  <span class="fu">summarize</span>(<span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(x, y), </span>
-<span id="cb21-4"><a href="#cb21-4"></a>                   <span class="at">.fns =</span> <span class="sc">~</span><span class="fu">mean</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb21-4"><a href="#cb21-4"></a>                   <span class="at">.fns =</span> <span class="sc">~</span><span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb21-5"><a href="#cb21-5"></a>                   )</span>
 <span id="cb21-6"><a href="#cb21-6"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
   group     x     y
   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 a      15    15  
-2 b      47.5  47.5</code></pre>
+1 a      15    27.7
+2 b      47.5  19.5</code></pre>
 </div>
 </div>
 </section>
@@ -1415,7 +1415,7 @@ margin-right: 0; }
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>DATA <span class="sc">|&gt;</span></span>
 <span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">group_by</span>(group) <span class="sc">|&gt;</span></span>
 <span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">summarize</span>(<span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(x, y), </span>
-<span id="cb23-4"><a href="#cb23-4"></a>                   <span class="at">.fns =</span> <span class="sc">~</span><span class="fu">mean</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb23-4"><a href="#cb23-4"></a>                   <span class="at">.fns =</span> <span class="sc">~</span><span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb23-5"><a href="#cb23-5"></a>                   <span class="at">.names =</span> <span class="st">&quot;{col}_{fn}&quot;</span></span>
 <span id="cb23-6"><a href="#cb23-6"></a>                   )</span>
 <span id="cb23-7"><a href="#cb23-7"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1423,8 +1423,8 @@ margin-right: 0; }
 <pre><code># A tibble: 2 × 3
   group   x_1   y_1
   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 a      15    15  
-2 b      47.5  47.5</code></pre>
+1 a      15    27.7
+2 b      47.5  19.5</code></pre>
 </div>
 </div>
 </section>
@@ -1435,7 +1435,7 @@ margin-right: 0; }
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>DATA <span class="sc">|&gt;</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a>  <span class="fu">group_by</span>(group) <span class="sc">|&gt;</span></span>
 <span id="cb25-3"><a href="#cb25-3"></a>  <span class="fu">summarize</span>(<span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(<span class="st">&quot;x&quot;</span>, <span class="st">&quot;y&quot;</span>), </span>
-<span id="cb25-4"><a href="#cb25-4"></a>                   <span class="at">.fns =</span> <span class="sc">~</span><span class="fu">mean</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb25-4"><a href="#cb25-4"></a>                   <span class="at">.fns =</span> <span class="sc">~</span><span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb25-5"><a href="#cb25-5"></a>                   <span class="at">.names =</span> <span class="st">&quot;{col}_{fn}&quot;</span></span>
 <span id="cb25-6"><a href="#cb25-6"></a>                   )</span>
 <span id="cb25-7"><a href="#cb25-7"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1443,8 +1443,8 @@ margin-right: 0; }
 <pre><code># A tibble: 2 × 3
   group   x_1   y_1
   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 a      15    15  
-2 b      47.5  47.5</code></pre>
+1 a      15    27.7
+2 b      47.5  19.5</code></pre>
 </div>
 </div>
 </section>
@@ -1467,7 +1467,7 @@ margin-right: 0; }
 <span id="cb27-3"><a href="#cb27-3"></a>DATA <span class="sc">|&gt;</span></span>
 <span id="cb27-4"><a href="#cb27-4"></a>  <span class="fu">group_by</span>(group) <span class="sc">|&gt;</span></span>
 <span id="cb27-5"><a href="#cb27-5"></a>  <span class="fu">summarize</span>(<span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">any_of</span>(summarize_these), </span>
-<span id="cb27-6"><a href="#cb27-6"></a>                   <span class="at">.fns =</span> <span class="sc">~</span><span class="fu">mean</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb27-6"><a href="#cb27-6"></a>                   <span class="at">.fns =</span> <span class="sc">~</span><span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb27-7"><a href="#cb27-7"></a>                   <span class="at">.names =</span> <span class="st">&quot;{col}_{fn}&quot;</span></span>
 <span id="cb27-8"><a href="#cb27-8"></a>                   )</span>
 <span id="cb27-9"><a href="#cb27-9"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1475,8 +1475,8 @@ margin-right: 0; }
 <pre><code># A tibble: 2 × 3
   group   x_1   y_1
   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 a      15    15  
-2 b      47.5  47.5</code></pre>
+1 a      15    27.7
+2 b      47.5  19.5</code></pre>
 </div>
 </div>
 <ul>
@@ -1551,7 +1551,7 @@ margin-right: 0; }
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>DATA <span class="sc">|&gt;</span></span>
 <span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">group_by</span>(group) <span class="sc">|&gt;</span></span>
 <span id="cb32-3"><a href="#cb32-3"></a>  <span class="fu">summarize</span>(<span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(x, y), </span>
-<span id="cb32-4"><a href="#cb32-4"></a>                   <span class="at">.fns =</span> <span class="fu">list</span>(<span class="sc">~</span><span class="fu">mean</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)),</span>
+<span id="cb32-4"><a href="#cb32-4"></a>                   <span class="at">.fns =</span> <span class="fu">list</span>(<span class="sc">~</span><span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)),</span>
 <span id="cb32-5"><a href="#cb32-5"></a>                   <span class="at">.names =</span> <span class="st">&quot;{col}_{fn}&quot;</span></span>
 <span id="cb32-6"><a href="#cb32-6"></a>                   )</span>
 <span id="cb32-7"><a href="#cb32-7"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1559,8 +1559,8 @@ margin-right: 0; }
 <pre><code># A tibble: 2 × 3
   group   x_1   y_1
   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 a      15    15  
-2 b      47.5  47.5</code></pre>
+1 a      15    27.7
+2 b      47.5  19.5</code></pre>
 </div>
 </div>
 </section>
@@ -1592,7 +1592,7 @@ margin-right: 0; }
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>DATA <span class="sc">|&gt;</span></span>
 <span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">group_by</span>(group) <span class="sc">|&gt;</span></span>
 <span id="cb34-3"><a href="#cb34-3"></a>  <span class="fu">summarize</span>(<span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(x, y), </span>
-<span id="cb34-4"><a href="#cb34-4"></a>                   <span class="at">.fns =</span> <span class="fu">list</span>(<span class="at">some_name =</span> <span class="sc">~</span><span class="fu">mean</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)),</span>
+<span id="cb34-4"><a href="#cb34-4"></a>                   <span class="at">.fns =</span> <span class="fu">list</span>(<span class="at">some_name =</span> <span class="sc">~</span><span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)),</span>
 <span id="cb34-5"><a href="#cb34-5"></a>                   <span class="at">.names =</span> <span class="st">&quot;{col}_{fn}&quot;</span></span>
 <span id="cb34-6"><a href="#cb34-6"></a>                   )</span>
 <span id="cb34-7"><a href="#cb34-7"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1600,8 +1600,8 @@ margin-right: 0; }
 <pre><code># A tibble: 2 × 3
   group x_some_name y_some_name
   &lt;chr&gt;       &lt;dbl&gt;       &lt;dbl&gt;
-1 a            15          15  
-2 b            47.5        47.5</code></pre>
+1 a            15          27.7
+2 b            47.5        19.5</code></pre>
 </div>
 </div>
 </section>
@@ -1622,10 +1622,10 @@ margin-right: 0; }
 </section>
 <section id="passing-a-list-object-to-.fns-cont." class="slide level2">
 <h2><strong>Passing a List Object to <code>.fns</code> (Cont.)</strong></h2>
-<p>Create a list containing <code>~mean(x, na.rm = TRUE))</code> used in previous example:</p>
+<p>Create a list containing <code>~mean(.x, na.rm = TRUE))</code> used in previous example:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>summary_funcs <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb36-2"><a href="#cb36-2"></a>  <span class="at">mean =</span> <span class="sc">~</span><span class="fu">mean</span>(<span class="fu">na.omit</span>(.x))  </span>
+<span id="cb36-2"><a href="#cb36-2"></a>  <span class="at">mean =</span> <span class="sc">~</span><span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)  </span>
 <span id="cb36-3"><a href="#cb36-3"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -1672,10 +1672,10 @@ margin-right: 0; }
 <p>Add functions to the list to accomplish more</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>summary_funcs <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb40-2"><a href="#cb40-2"></a>  <span class="at">mean =</span> <span class="sc">~</span><span class="fu">mean</span>(<span class="fu">na.omit</span>(.x)),</span>
-<span id="cb40-3"><a href="#cb40-3"></a>  <span class="at">median =</span> <span class="sc">~</span><span class="fu">median</span>(<span class="fu">na.omit</span>(.x)),</span>
-<span id="cb40-4"><a href="#cb40-4"></a>  <span class="at">sd =</span> <span class="sc">~</span><span class="fu">sd</span>(<span class="fu">na.omit</span>(.x)),</span>
-<span id="cb40-5"><a href="#cb40-5"></a>  <span class="at">n =</span> <span class="sc">~</span><span class="fu">length</span>(<span class="fu">na.omit</span>(.x))</span>
+<span id="cb40-2"><a href="#cb40-2"></a>  <span class="at">mean =</span> <span class="sc">~</span><span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb40-3"><a href="#cb40-3"></a>  <span class="at">median =</span> <span class="sc">~</span><span class="fu">median</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb40-4"><a href="#cb40-4"></a>  <span class="at">sd =</span> <span class="sc">~</span><span class="fu">sd</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb40-5"><a href="#cb40-5"></a>  <span class="at">n =</span> <span class="sc">~</span><span class="fu">length</span>(<span class="fu">na.omit</span>(.x))  <span class="co"># no na.rm parameter in length()</span></span>
 <span id="cb40-6"><a href="#cb40-6"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
