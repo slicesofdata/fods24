@@ -1069,7 +1069,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   data %&gt;% select(all_of(summarize_these))
   
 See &lt;https://tidyselect.r-lib.org/reference/faq-external-vector.html&gt;.  </code></pre>
-<p><strong>Solution:</strong> When passing an external vector, you need to use <code>all_of()</code> or `any_of().</p>
+<p><strong>Solution:</strong> When passing an external vector, you need to use <code>all_of()</code> or <code>any_of()</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="sc">|&gt;</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">all_of</span>(summarize_these),</span>
