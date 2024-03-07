@@ -3204,5 +3204,222 @@
     "title": "Joining Relational Data",
     "section": "Writing a Function",
     "text": "Writing a Function\nYou can also write a function to help you. Here, we can make a function to take a list of data frames and cycles through them to return a data frame based on full_join().\n\nfull_join_data_frames_in_list &lt;- function(list, by) {\n  if (missing(by)) {\n    message(\"Please specify the 'by' parameter for merging.\")\n    return(NULL)\n  } else {\n    joined &lt;- Reduce(function(x, y) dplyr::full_join(x, y, by = by), list)\n    return(joined)\n  }\n}\n\nPut the data frames in a list:\n\nABC_list &lt;- list(A, B, C)\n\nPass the list to the list parameter and supply the by argument as a string.\n\nfull_join_data_frames_in_list(list = ABC_list,\n                              by = \"id\"\n                              )\n\n# A tibble: 6 × 6\n     id height weight city        age name \n  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;\n1  1111     60    128 Claremont    22 Sally\n2  2211     NA    120 Dallas       25 Jane \n3  9811     60    149 Akron        38 &lt;NA&gt; \n4  3000     65    140 &lt;NA&gt;         NA &lt;NA&gt; \n5  3050     NA     NA &lt;NA&gt;         50 &lt;NA&gt; \n6    NA     NA     NA &lt;NA&gt;         NA Kelly"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#hi-1",
+    "href": "slides/11_visualizing_data_slides.html#hi-1",
+    "title": "Visualizing Data",
+    "section": "Hi",
+    "text": "Hi\n\nljlasjf\naljasf"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#r-libraries",
+    "href": "slides/11_visualizing_data_slides.html#r-libraries",
+    "title": "Data Visualization",
+    "section": "R Libraries",
+    "text": "R Libraries\n\n\n{dplyr} for arranging data frames\nThe Grammar of Graphics: {ggplot}\nLibraries leveraging {ggplot2}; + others"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#components-of-ggplot2",
+    "href": "slides/11_visualizing_data_slides.html#components-of-ggplot2",
+    "title": "Data Visualization",
+    "section": "5 components of {ggplot2}",
+    "text": "5 components of {ggplot2}\n\n\nLayer containing geometric elements and data\nScales that map values in the data space to values in aesthetic space\nCoordinate System for mapping coordinates to the graphic plane\nFacet for arranging the data into a grid\nTheme (e.g., like font, background, grids, axes, etc.)"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#section",
+    "href": "slides/11_visualizing_data_slides.html#section",
+    "title": "Data Visualization",
+    "section": "",
+    "text": "ljljasf\nlljasfd"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#hi",
+    "href": "slides/11_visualizing_data_slides.html#hi",
+    "title": "Data Visualization",
+    "section": "Hi",
+    "text": "Hi\n\nljlasjf\naljasf"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#data",
+    "href": "slides/11_visualizing_data_slides.html#data",
+    "title": "Data Visualization",
+    "section": "Data",
+    "text": "Data\n\nDATA &lt;- data.frame(\n var1 = c(1, 2, 3, 4), \n var2 = c(2, 5, 3, 8), \n var3 = c(10, 15, 32, 28), \n group = c(\"A\", \"A\", \"B\", \"B\")\n)"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#initialize-the-plot-object",
+    "href": "slides/11_visualizing_data_slides.html#initialize-the-plot-object",
+    "title": "Data Visualization",
+    "section": "Initialize the Plot Object",
+    "text": "Initialize the Plot Object\n\nDATA |&gt;\n  ggplot()"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#mapping-data-and-aesthetics",
+    "href": "slides/11_visualizing_data_slides.html#mapping-data-and-aesthetics",
+    "title": "Data Visualization",
+    "section": "Mapping Data and Aesthetics",
+    "text": "Mapping Data and Aesthetics\n\n\nneed at least an x or y\nsome geoms need both (e.g., geom_point(), geom_col(), etc.)"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#plot-geometries",
+    "href": "slides/11_visualizing_data_slides.html#plot-geometries",
+    "title": "Data Visualization",
+    "section": "Plot Geometries",
+    "text": "Plot Geometries\n\n\nx or y: geom_histogram(), geom_density(), geom_bar(), etc.\nx & y:geom_point(), geom_col(), geom_line(), etc."
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-plot-geometries",
+    "href": "slides/11_visualizing_data_slides.html#adding-plot-geometries",
+    "title": "Data Visualization",
+    "section": "Adding Plot Geometries",
+    "text": "Adding Plot Geometries\n\n\nadd to object using + (don’t |&gt;)"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_histogram",
+    "href": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_histogram",
+    "title": "Data Visualization",
+    "section": "Adding a Geometry: geom_histogram()",
+    "text": "Adding a Geometry: geom_histogram()\n\nDATA |&gt;\n  ggplot(mapping = aes(x = var1)) +\n  geom_histogram()"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_point",
+    "href": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_point",
+    "title": "Data Visualization",
+    "section": "Adding a Geometry: geom_point()",
+    "text": "Adding a Geometry: geom_point()\n\nDATA |&gt;\n  ggplot(mapping = aes(x = var1,\n                       y = var2\n                       )\n         ) +\n  geom_point()"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_col",
+    "href": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_col",
+    "title": "Data Visualization",
+    "section": "Adding a Geometry: geom_col()",
+    "text": "Adding a Geometry: geom_col()\n\nDATA |&gt;\n  ggplot(mapping = aes(x = var1, \n                       y = var2\n                       )\n         ) +\n  geom_col()"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-more-geometries",
+    "href": "slides/11_visualizing_data_slides.html#adding-more-geometries",
+    "title": "Data Visualization",
+    "section": "Adding More Geometries",
+    "text": "Adding More Geometries\n\n\nadd a layer using +\nspecify the data\nmap the aesthetics"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-more-geometries-1",
+    "href": "slides/11_visualizing_data_slides.html#adding-more-geometries-1",
+    "title": "Data Visualization",
+    "section": "Adding More Geometries",
+    "text": "Adding More Geometries\n\nDATA |&gt;\n  ggplot(mapping = aes(x = var1, \n                       y = var2\n                       )\n         ) +\n  geom_point(mapping = aes(x = var1, \n                           y = var2\n                           ),   \n             data = NULL, \n             stat = \"identity\", \n             position = \"identity\", \n             size = 1.5\n             )"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-a-theme",
+    "href": "slides/11_visualizing_data_slides.html#adding-a-theme",
+    "title": "Data Visualization",
+    "section": "Adding a Theme",
+    "text": "Adding a Theme\n\n\na plot is in a theme by default\nto change a theme, add a theme layer"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-a-theme-1",
+    "href": "slides/11_visualizing_data_slides.html#adding-a-theme-1",
+    "title": "Data Visualization",
+    "section": "Adding a Theme",
+    "text": "Adding a Theme\n\nDATA |&gt;\n  ggplot(mapping = aes(x = var1, \n                       y = var2)\n         ) +\n  geom_point() +\n  facet_wrap(facets = vars(group)) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-a-facet",
+    "href": "slides/11_visualizing_data_slides.html#adding-a-facet",
+    "title": "Data Visualization",
+    "section": "Adding a Facet",
+    "text": "Adding a Facet\n\n\na plot is in a facet by default\nto change the facet, add a facet layer\nfacet_wrap() or facet_grid()\n\n\n\nDATA |&gt;\n  ggplot(mapping = aes(x = var1, \n                       y = var2)\n         ) +\n  geom_point() +\n  facet_wrap(facets = vars(group))"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#data-1",
+    "href": "slides/11_visualizing_data_slides.html#data-1",
+    "title": "Data Visualization",
+    "section": "Data",
+    "text": "Data\n\nDATA\n\n  var1 var2 var3 group\n1    1    2   10     A\n2    2    5   15     A\n3    3    3   32     B\n4    4    8   28     B"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#mapping-data-and-aesthetics-cont.",
+    "href": "slides/11_visualizing_data_slides.html#mapping-data-and-aesthetics-cont.",
+    "title": "Data Visualization",
+    "section": "Mapping Data and Aesthetics (Cont.)",
+    "text": "Mapping Data and Aesthetics (Cont.)\n\nDATA |&gt;\n  ggplot(mapping = aes(x = var1))"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#mapping",
+    "href": "slides/11_visualizing_data_slides.html#mapping",
+    "title": "Data Visualization",
+    "section": "Mapping",
+    "text": "Mapping\n\n\nspecified by arguments to aes()\nat least an x or y (e.g., geom_histogram())\nsome geoms need both (e.g., geom_point(), geom_col(), etc.)"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#setting-vs.-mapping",
+    "href": "slides/11_visualizing_data_slides.html#setting-vs.-mapping",
+    "title": "Data Visualization",
+    "section": "Setting vs. Mapping",
+    "text": "Setting vs. Mapping\n\n\nmapping: specified by arguments to aes()\nsetting: specified by arguments in the geom_*(); outside of aes()"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#setting-an-aesthetic-color",
+    "href": "slides/11_visualizing_data_slides.html#setting-an-aesthetic-color",
+    "title": "Data Visualization",
+    "section": "Setting an Aesthetic: Color",
+    "text": "Setting an Aesthetic: Color\n\nDATA |&gt;\n  ggplot(mapping = aes(x = var1,\n                       y = var2\n                       )\n         ) +\n  geom_point(color = \"red\")"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#mapping-an-aesthetic-color",
+    "href": "slides/11_visualizing_data_slides.html#mapping-an-aesthetic-color",
+    "title": "Data Visualization",
+    "section": "Mapping an Aesthetic: Color",
+    "text": "Mapping an Aesthetic: Color\n\nDATA |&gt;\n  ggplot(mapping = aes(x = var1, \n                       y = var2\n                       )\n         ) +\n  geom_point(mapping = aes(color = group))"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#errors-with-mapping-and-setting",
+    "href": "slides/11_visualizing_data_slides.html#errors-with-mapping-and-setting",
+    "title": "Data Visualization",
+    "section": "Errors with Mapping and Setting",
+    "text": "Errors with Mapping and Setting\n\nDATA |&gt;\n  ggplot(mapping = aes(x = var1, \n                       y = var2\n                       )\n         ) +\n  geom_point(mapping = aes(color = \"green\"))"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_col-cont.",
+    "href": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_col-cont.",
+    "title": "Data Visualization",
+    "section": "Adding a Geometry: geom_col() (Cont.)",
+    "text": "Adding a Geometry: geom_col() (Cont.)\n\nDATA |&gt;\n  ggplot(mapping = aes(x = group, \n                       y = var2\n                       )\n         ) +\n  geom_col()\n\n\nNotice anything odd?"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_col-cont.-1",
+    "href": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_col-cont.-1",
+    "title": "Data Visualization",
+    "section": "Adding a Geometry: geom_col() (Cont.)",
+    "text": "Adding a Geometry: geom_col() (Cont.)\nSet aesthetics to make more apparent.\n\nDATA |&gt;\n  ggplot(mapping = aes(x = group, \n                       y = var2\n                       )\n         ) +\n  geom_col(fill = \"yellow\", color = \"blue\")"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#remember-the-data",
+    "href": "slides/11_visualizing_data_slides.html#remember-the-data",
+    "title": "Data Visualization",
+    "section": "Remember the Data",
+    "text": "Remember the Data\n\nDATA\n\n  var1 var2 var3 group\n1    1    2   10     A\n2    2    5   15     A\n3    3    3   32     B\n4    4    8   28     B\n\n\n\n\nall plots have some statistical transformation\ncould be \"identity\" (what you see is what you get)\ncould be based on a statistic (e.g., count, sum, mean, etc.)"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_col-cont.-2",
+    "href": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_col-cont.-2",
+    "title": "Data Visualization",
+    "section": "Adding a Geometry: geom_col() (Cont.)",
+    "text": "Adding a Geometry: geom_col() (Cont.)\n\nDATA |&gt;\n  # aggregate across the groups, then summarize\n  group_by(group) |&gt;\n  summarize(var2 = mean(var2, na.rm = TRUE)) |&gt;\n  # then plot\n  ggplot(mapping = aes(x = group, \n                       y = var2)\n         ) +\n  geom_col()"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#change-the-data-frame",
+    "href": "slides/11_visualizing_data_slides.html#change-the-data-frame",
+    "title": "Data Visualization",
+    "section": "Change the Data Frame",
+    "text": "Change the Data Frame\n\nDATA |&gt;\n  # aggregate across the groups, then summarize\n  group_by(group) |&gt;\n  summarize(var2 = mean(var2, na.rm = TRUE)) \n\n# A tibble: 2 × 2\n  group  var2\n  &lt;chr&gt; &lt;dbl&gt;\n1 A       3.5\n2 B       5.5"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#plot-that-new-data-frame",
+    "href": "slides/11_visualizing_data_slides.html#plot-that-new-data-frame",
+    "title": "Data Visualization",
+    "section": "Plot that New Data Frame",
+    "text": "Plot that New Data Frame\n\nDATA |&gt;\n  # aggregate across the groups, then summarize\n  group_by(group) |&gt;\n  summarize(var2 = mean(var2, na.rm = TRUE)) |&gt;\n  # then plot\n  ggplot(mapping = aes(x = group, \n                       y = var2)\n         ) +\n  geom_col()"
   }
 ]
