@@ -2118,14 +2118,14 @@
     "href": "modules/16_examining_relationships_in_variables_of_cognition.html",
     "title": "Examining Relationships in Variables of Cognition",
     "section": "",
-    "text": "Under construction.\n\n\n\nThis page is a work in progress and may contain areas that need more detail or that required syntactical, grammatical, and typographical changes. If you find some part requiring some editing, please let me know so I can fix it for you."
+    "text": "We will explore some ways to examine relationships among variables. The focus will be on using Pearson’s r correlation to examine linear relationships and presenting a correlation matrix as a table. We will also visualize variable relationships in the form of scatterplots, faceted scatterplots, and generalized pairs plots.\n\n\nBefore Class: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time. Work through some examples so that you have a good idea of your level of understanding and confidence.\nClass: In class, some functions and concepts will be introduced and we will practice implementing code through exercises.\n\n\n\n\n{here} 1.0.1: for file path management\n{dplyr} 1.1.4: for data frame manipulation\n{tidyr} 1.3.0: for data frame transformation\n{correlation} 0.8.4: for correlations; from {easystats} ecosystem\n{ggplot2} 3.4.4: for data visualization\n{GGally} 1.3.0: for generalized pairs plots\n{insight} 0.19.7: for model post processing"
   },
   {
     "objectID": "modules/16_examining_relationships_in_variables_of_cognition.html#readings-and-preparation",
     "href": "modules/16_examining_relationships_in_variables_of_cognition.html#readings-and-preparation",
     "title": "Examining Relationships in Variables of Cognition",
-    "section": "Readings and Preparation",
-    "text": "Readings and Preparation\nBefore Class: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time. Work through some examples so that you have a good idea of your level of understanding and confidence.\nClass: In class, some functions and concepts will be introduced and we will practice implementing code through exercises."
+    "section": "",
+    "text": "Before Class: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time. Work through some examples so that you have a good idea of your level of understanding and confidence.\nClass: In class, some functions and concepts will be introduced and we will practice implementing code through exercises."
   },
   {
     "objectID": "modules/16_examining_relationships_in_variables_of_cognition.html#task",
@@ -2138,8 +2138,8 @@
     "objectID": "modules/16_examining_relationships_in_variables_of_cognition.html#libraries",
     "href": "modules/16_examining_relationships_in_variables_of_cognition.html#libraries",
     "title": "Examining Relationships in Variables of Cognition",
-    "section": "Libraries",
-    "text": "Libraries\n\n{here} 1.0.1: for file path management"
+    "section": "",
+    "text": "{here} 1.0.1: for file path management\n{dplyr} 1.1.4: for data frame manipulation\n{tidyr} 1.3.0: for data frame transformation\n{correlation} 0.8.4: for correlations; from {easystats} ecosystem\n{ggplot2} 3.4.4: for data visualization\n{GGally} 1.3.0: for generalized pairs plots\n{insight} 0.19.7: for model post processing"
   },
   {
     "objectID": "modules/18_linear_models.html",
@@ -3280,21 +3280,21 @@
     "href": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_histogram",
     "title": "Data Visualization",
     "section": "Adding a Geometry: geom_histogram()",
-    "text": "Adding a Geometry: geom_histogram()\n\nDATA |&gt;\n  ggplot(mapping = aes(x = var1)) +\n  geom_histogram()"
+    "text": "Adding a Geometry: geom_histogram()\ngeom_histogram(\n  mapping = NULL,\n  data = NULL,\n  stat = \"bin\",\n  position = \"identity\",\n  ...\n  )"
   },
   {
     "objectID": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_point",
     "href": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_point",
     "title": "Data Visualization",
     "section": "Adding a Geometry: geom_point()",
-    "text": "Adding a Geometry: geom_point()\n\nDATA |&gt;\n  ggplot(mapping = aes(x = var1,\n                       y = var2\n                       )\n         ) +\n  geom_point()"
+    "text": "Adding a Geometry: geom_point()\ngeom_point(\n  mapping = NULL,\n  data = NULL,\n  stat = \"identity\",\n  position = \"identity\",\n  ...\n  )"
   },
   {
     "objectID": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_col",
     "href": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_col",
     "title": "Data Visualization",
     "section": "Adding a Geometry: geom_col()",
-    "text": "Adding a Geometry: geom_col()\n\nDATA |&gt;\n  ggplot(mapping = aes(x = var1, \n                       y = var2\n                       )\n         ) +\n  geom_col()"
+    "text": "Adding a Geometry: geom_col()\ngeom_col(\n  mapping = NULL,\n  data = NULL,\n  position = \"stack\",\n  ...\n  )"
   },
   {
     "objectID": "slides/11_visualizing_data_slides.html#adding-more-geometries",
@@ -3322,14 +3322,14 @@
     "href": "slides/11_visualizing_data_slides.html#adding-a-theme-1",
     "title": "Data Visualization",
     "section": "Adding a Theme",
-    "text": "Adding a Theme\n\nDATA |&gt;\n  ggplot(mapping = aes(x = var1, \n                       y = var2)\n         ) +\n  geom_point() +\n  facet_wrap(facets = vars(group)) +\n  theme_minimal()"
+    "text": "Adding a Theme\nDATA2 |&gt;\n  ggplot(mapping = aes(x = var1, \n                       y = var2)\n         ) +\n  geom_point() +\n  facet_wrap(facets = vars(group1)) +\n  # change the theme\n  theme_minimal()"
   },
   {
     "objectID": "slides/11_visualizing_data_slides.html#adding-a-facet",
     "href": "slides/11_visualizing_data_slides.html#adding-a-facet",
     "title": "Data Visualization",
     "section": "Adding a Facet",
-    "text": "Adding a Facet\n\n\na plot is in a facet by default\nto change the facet, add a facet layer\nfacet_wrap() or facet_grid()\n\n\n\nDATA |&gt;\n  ggplot(mapping = aes(x = var1, \n                       y = var2)\n         ) +\n  geom_point() +\n  facet_wrap(facets = vars(group))"
+    "text": "Adding a Facet\n\n\na plot is in a facet by default\nto change the facet, add a facet layer\nfacet_wrap() or facet_grid()"
   },
   {
     "objectID": "slides/11_visualizing_data_slides.html#data-1",
@@ -3398,8 +3398,8 @@
     "objectID": "slides/11_visualizing_data_slides.html#remember-the-data",
     "href": "slides/11_visualizing_data_slides.html#remember-the-data",
     "title": "Data Visualization",
-    "section": "Remember the Data",
-    "text": "Remember the Data\n\nDATA\n\n  var1 var2 var3 group\n1    1    2   10     A\n2    2    5   15     A\n3    3    3   32     B\n4    4    8   28     B\n\n\n\n\nall plots have some statistical transformation\ncould be \"identity\" (what you see is what you get)\ncould be based on a statistic (e.g., count, sum, mean, etc.)"
+    "section": "Remember the Data?",
+    "text": "Remember the Data?\n\nDATA\n\n  var1 var2 var3 group\n1    1    2   10     A\n2    2    5   15     A\n3    3    3   32     B\n4    4    8   28     B\n\n\n\n\nall plots have some statistical transformation\ncould be \"identity\" (what you see is what you get)\ncould be based on a statistic (e.g., count, sum, mean, etc.)"
   },
   {
     "objectID": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_col-cont.-2",
@@ -3413,13 +3413,237 @@
     "href": "slides/11_visualizing_data_slides.html#change-the-data-frame",
     "title": "Data Visualization",
     "section": "Change the Data Frame",
-    "text": "Change the Data Frame\n\nDATA |&gt;\n  # aggregate across the groups, then summarize\n  group_by(group) |&gt;\n  summarize(var2 = mean(var2, na.rm = TRUE)) \n\n# A tibble: 2 × 2\n  group  var2\n  &lt;chr&gt; &lt;dbl&gt;\n1 A       3.5\n2 B       5.5"
+    "text": "Change the Data Frame\n\nDATA |&gt;\n  # aggregate across the groups, then summarize\n  group_by(group) |&gt;\n  summarize(var2 = mean(var2, na.rm = TRUE)) \n\n# A tibble: 2 × 2\n  group  var2\n  &lt;chr&gt; &lt;dbl&gt;\n1 A      55.3\n2 B      54.7"
   },
   {
     "objectID": "slides/11_visualizing_data_slides.html#plot-that-new-data-frame",
     "href": "slides/11_visualizing_data_slides.html#plot-that-new-data-frame",
     "title": "Data Visualization",
     "section": "Plot that New Data Frame",
-    "text": "Plot that New Data Frame\n\nDATA |&gt;\n  # aggregate across the groups, then summarize\n  group_by(group) |&gt;\n  summarize(var2 = mean(var2, na.rm = TRUE)) |&gt;\n  # then plot\n  ggplot(mapping = aes(x = group, \n                       y = var2)\n         ) +\n  geom_col()"
+    "text": "Plot that New Data Frame\n\nDATA |&gt;\n  # aggregate across the groups, then summarize\n  group_by(group) |&gt;\n  summarize(var2 = mean(var2, na.rm = TRUE)) |&gt;\n  \n  # then plot\n  ggplot(mapping = aes(x = group, \n                       y = var2)\n         ) +\n  geom_col()"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_histogram-1",
+    "href": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_histogram-1",
+    "title": "Data Visualization",
+    "section": "Adding a Geometry: geom_histogram()",
+    "text": "Adding a Geometry: geom_histogram()\n\nDATA |&gt;\n  ggplot(mapping = aes(x = var1)) +\n  geom_histogram()"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_point-1",
+    "href": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_point-1",
+    "title": "Data Visualization",
+    "section": "Adding a Geometry: geom_point()",
+    "text": "Adding a Geometry: geom_point()\n\nDATA |&gt;\n  ggplot(mapping = aes(x = var1,\n                       y = var2\n                       )\n         ) +\n  geom_point()"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_col-1",
+    "href": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_col-1",
+    "title": "Data Visualization",
+    "section": "Adding a Geometry: geom_col()",
+    "text": "Adding a Geometry: geom_col()\n\nDATA |&gt;\n  ggplot(mapping = aes(x = var1, \n                       y = var2\n                       )\n         ) +\n  geom_col()"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_boxplot",
+    "href": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_boxplot",
+    "title": "Data Visualization",
+    "section": "Adding a Geometry: geom_boxplot()",
+    "text": "Adding a Geometry: geom_boxplot()\ngeom_boxplot(\n  mapping = NULL,\n  data = NULL,\n  stat = \"boxplot\",\n  position = \"dodge2\",\n  ...\n  )"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#new-data",
+    "href": "slides/11_visualizing_data_slides.html#new-data",
+    "title": "Data Visualization",
+    "section": "New Data",
+    "text": "New Data\n\nDATA &lt;- \n  data.frame(\n    var1 = rnorm(n = 100, mean = 20, sd = 2),\n    var2 = rnorm(n = 100, mean = 55, sd = 3),\n    group = rep(c(\"A\", \"B\"), 50)\n  )"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_boxplot-1",
+    "href": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_boxplot-1",
+    "title": "Data Visualization",
+    "section": "Adding a Geometry: geom_boxplot()",
+    "text": "Adding a Geometry: geom_boxplot()\n\nDATA |&gt;\n  ggplot(mapping = aes(x = group, \n                       y = var2\n                       )\n         ) +\n  geom_boxplot(mapping = aes(fill = group),\n               show.legend = FALSE\n               )"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_boxplot-geom_point",
+    "href": "slides/11_visualizing_data_slides.html#adding-a-geometry-geom_boxplot-geom_point",
+    "title": "Data Visualization",
+    "section": "Adding a Geometry: geom_boxplot() + geom_point() ",
+    "text": "Adding a Geometry: geom_boxplot() + geom_point() \n\nDATA |&gt;\n  ggplot(mapping = aes(x = group, \n                       y = var2\n                       )\n         ) +\n  geom_boxplot(mapping = aes(fill = group),\n               show.legend = FALSE\n               ) +\n  geom_point(position = position_jitter(width = .2))"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#change-the-data-frame-e.g.-summarize",
+    "href": "slides/11_visualizing_data_slides.html#change-the-data-frame-e.g.-summarize",
+    "title": "Data Visualization",
+    "section": "Change the Data Frame (e.g., summarize)",
+    "text": "Change the Data Frame (e.g., summarize)\n\nDATA |&gt;\n  # aggregate across the groups, then summarize\n  group_by(group) |&gt;\n  summarize(var2 = mean(var2, na.rm = TRUE)) \n\n# A tibble: 2 × 2\n  group  var2\n  &lt;chr&gt; &lt;dbl&gt;\n1 A       3.5\n2 B       5.5"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-geometries-as-plot-layers",
+    "href": "slides/11_visualizing_data_slides.html#adding-geometries-as-plot-layers",
+    "title": "Data Visualization",
+    "section": "Adding Geometries as Plot Layers",
+    "text": "Adding Geometries as Plot Layers\n\n\nadd a layer using +\nspecify the data\nmap the aesthetics"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#make-some-new-data",
+    "href": "slides/11_visualizing_data_slides.html#make-some-new-data",
+    "title": "Data Visualization",
+    "section": "Make Some New Data",
+    "text": "Make Some New Data\n\nDATA2 &lt;- \n  data.frame(\n    var1 = rnorm(n = 100, mean = 20, sd = 2),\n    var2 = rnorm(n = 100, mean = 55, sd = 3),\n    group1 = rep(c(\"A\", \"B\"), 50),\n    group2 = rep(c(\"A\", \"A\", \"B\", \"B\"), 25)\n  )"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-a-facet-1",
+    "href": "slides/11_visualizing_data_slides.html#adding-a-facet-1",
+    "title": "Data Visualization",
+    "section": "Adding a Facet",
+    "text": "Adding a Facet\n\nDATA |&gt;\n  ggplot(mapping = aes(x = var1, \n                       y = var2)\n         ) +\n  geom_point() +\n  facet_wrap(facets = vars(group))"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-geometry-layers-geom_boxplot-geom_point",
+    "href": "slides/11_visualizing_data_slides.html#adding-geometry-layers-geom_boxplot-geom_point",
+    "title": "Data Visualization",
+    "section": "Adding Geometry Layers: geom_boxplot() + geom_point() ",
+    "text": "Adding Geometry Layers: geom_boxplot() + geom_point() \nDATA |&gt;\n  ggplot(mapping = aes(x = group, \n                       y = var2\n                       )\n         ) +\n  # add a boxplot layer; remove legend\n  geom_boxplot(color = \"black\",\n               fill = \"white\",\n               show.legend = FALSE,\n               notch = TRUE\n               ) +\n  # add a point layer with jittered points\n  geom_point(position = position_jitter(width = .2),\n             alpha = .7\n             )"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#small-multiples-replicating-plots-for-subgroups",
+    "href": "slides/11_visualizing_data_slides.html#small-multiples-replicating-plots-for-subgroups",
+    "title": "Data Visualization",
+    "section": "Small Multiples: Replicating Plots for Subgroups",
+    "text": "Small Multiples: Replicating Plots for Subgroups\n\n\nSometimes you need create multiple plots by another variable\nBar plots for each month; scatter plot for each city; etc."
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-geometry-layers-geom_boxplot-geom_point-1",
+    "href": "slides/11_visualizing_data_slides.html#adding-geometry-layers-geom_boxplot-geom_point-1",
+    "title": "Data Visualization",
+    "section": "Adding Geometry Layers: geom_boxplot() + geom_point()",
+    "text": "Adding Geometry Layers: geom_boxplot() + geom_point()"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-a-facet-based-on-one-variable",
+    "href": "slides/11_visualizing_data_slides.html#adding-a-facet-based-on-one-variable",
+    "title": "Data Visualization",
+    "section": "Adding a Facet Based on One Variable",
+    "text": "Adding a Facet Based on One Variable\nDATA2 |&gt;\n  ggplot(mapping = aes(x = var1, \n                       y = var2)\n         ) +\n  geom_point() +\n  # facet by one variable\n  facet_wrap(facets = vars(group1))"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-a-facet-based-on-two-variables",
+    "href": "slides/11_visualizing_data_slides.html#adding-a-facet-based-on-two-variables",
+    "title": "Data Visualization",
+    "section": "Adding a Facet Based on Two Variables",
+    "text": "Adding a Facet Based on Two Variables"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-a-facet-based-on-two-variables-1",
+    "href": "slides/11_visualizing_data_slides.html#adding-a-facet-based-on-two-variables-1",
+    "title": "Data Visualization",
+    "section": "Adding a Facet Based on Two Variables",
+    "text": "Adding a Facet Based on Two Variables"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-a-facet-based-on-one-variable-1",
+    "href": "slides/11_visualizing_data_slides.html#adding-a-facet-based-on-one-variable-1",
+    "title": "Data Visualization",
+    "section": "Adding a Facet Based on One Variable",
+    "text": "Adding a Facet Based on One Variable"
+  },
+  {
+    "objectID": "slides/11_visualizing_data_slides.html#adding-a-theme-2",
+    "href": "slides/11_visualizing_data_slides.html#adding-a-theme-2",
+    "title": "Data Visualization",
+    "section": "Adding a Theme",
+    "text": "Adding a Theme\n\nDATA2 |&gt;\n  ggplot(mapping = aes(x = var1, \n                       y = var2)\n         ) +\n  geom_point() +\n  facet_wrap(facets = vars(group1)) +\n  # change the theme\n  theme_minimal()"
+  },
+  {
+    "objectID": "modules/16_examining_relationships_in_variables_of_cognition.html#correlations",
+    "href": "modules/16_examining_relationships_in_variables_of_cognition.html#correlations",
+    "title": "Examining Relationships in Variables of Cognition",
+    "section": "Correlations",
+    "text": "Correlations"
+  },
+  {
+    "objectID": "modules/16_examining_relationships_in_variables_of_cognition.html#pivot-wide",
+    "href": "modules/16_examining_relationships_in_variables_of_cognition.html#pivot-wide",
+    "title": "Examining Relationships in Variables of Cognition",
+    "section": "Pivot Wide",
+    "text": "Pivot Wide\nPivot the data frame to take the levels of time to create new column variables by taking the values from the var1 and var2.\n\n(WIDE &lt;-\n  LONG |&gt;\n  tidyr::pivot_wider( \n    names_from  = time,            # the measurement time variable\n    values_from = c(var1, var2)    # two types of variables measured\n  )\n)\n\n# A tibble: 576 × 8\n   id    group var1_1 var1_2 var1_3 var2_1 var2_2 var2_3\n   &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n 1 AQAFS A         25     NA     NA     32     NA     NA\n 2 AQAMF A          8     NA     NA     16     NA     NA\n 3 AQAMS A         19     24      9     27     33     19\n 4 AQAQQ A         28     NA     19     37     NA     22\n 5 AQAQP A         37     32     30     41     40     39\n 6 AQAYR A         28     42     28     34     42     36\n 7 AQASY A         18     18     NA     29     24     NA\n 8 AQARM A          0     NA      4      0     NA      8\n 9 AQFAF A          9     11     NA     20     16     NA\n10 AQFJA A         21      8      7     31     19     21\n# ℹ 566 more rows"
+  },
+  {
+    "objectID": "modules/16_examining_relationships_in_variables_of_cognition.html#correlating-variables-using-cor",
+    "href": "modules/16_examining_relationships_in_variables_of_cognition.html#correlating-variables-using-cor",
+    "title": "Examining Relationships in Variables of Cognition",
+    "section": "Correlating Variables using cor()",
+    "text": "Correlating Variables using cor()\nOut of the box, however, cor() will require some modifications. If you specify an x and a y variable to correlate, the default method = \"person which means that Pearson’s r will be correlated.\n\ncor(x = WIDE$var1_1, \n    y = WIDE$var1_2\n    )\n\n[1] NA"
+  },
+  {
+    "objectID": "modules/16_examining_relationships_in_variables_of_cognition.html#dealing-with-nas-missing-observations",
+    "href": "modules/16_examining_relationships_in_variables_of_cognition.html#dealing-with-nas-missing-observations",
+    "title": "Examining Relationships in Variables of Cognition",
+    "section": "Dealing with NAs (Missing Observations)",
+    "text": "Dealing with NAs (Missing Observations)\nBut if there are NAs, you will see that the correlation is returned as NA. This is because use = \"everything\", which means that all values will be included in the correlation computation. However, just like other functions (e.g., mean(), etc.), when there are NAs, the correlation will be NA.\nIn order to correlate only the complete cases, for which individuals have data for both x and y variables, pass use = \"complete.obs\"\n\ncor(x = WIDE$var1_1, \n    y = WIDE$var1_2,\n    use = \"complete.obs\"\n    )\n\n[1] 0.5274822"
+  },
+  {
+    "objectID": "modules/16_examining_relationships_in_variables_of_cognition.html#correlating-matrices",
+    "href": "modules/16_examining_relationships_in_variables_of_cognition.html#correlating-matrices",
+    "title": "Examining Relationships in Variables of Cognition",
+    "section": "Correlating Matrices",
+    "text": "Correlating Matrices\nCorrelating more than two variables, however, is quite common. The x parameter in cor() will also take a matrix, so you can pass a data frame that contains the numeric variables you wish to correlate.\nSelecting specific variables is easy using :.\n\nWIDE |&gt;\n  select(var1_1:var2_3) |&gt;\n  cor(use = \"complete.obs\")\n\n          var1_1    var1_2    var1_3    var2_1    var2_2    var2_3\nvar1_1 1.0000000 0.5563847 0.4780208 0.9139159 0.5005610 0.4133120\nvar1_2 0.5563847 1.0000000 0.6022340 0.5683264 0.9040954 0.5892968\nvar1_3 0.4780208 0.6022340 1.0000000 0.4590756 0.5823953 0.9126153\nvar2_1 0.9139159 0.5683264 0.4590756 1.0000000 0.5369649 0.4126811\nvar2_2 0.5005610 0.9040954 0.5823953 0.5369649 1.0000000 0.6122694\nvar2_3 0.4133120 0.5892968 0.9126153 0.4126811 0.6122694 1.0000000\n\n\nBut if you wanted to correlate all numeric variables, you can select columns that are numeric by using where(). All you need to do is pass an argument for a function, for example, fn = is.numeric.\n\nWIDE |&gt;\n  select(where(fn = is.numeric)) |&gt; \n  head()\n\n# A tibble: 6 × 6\n  var1_1 var1_2 var1_3 var2_1 var2_2 var2_3\n   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1     25     NA     NA     32     NA     NA\n2      8     NA     NA     16     NA     NA\n3     19     24      9     27     33     19\n4     28     NA     19     37     NA     22\n5     37     32     30     41     40     39\n6     28     42     28     34     42     36\n\n\nYou see that all other variables are no longer in the data frame. With only numeric variables, if the entire data frame is passed as the argument to x in cor(), all variables will be correlated with each other.\n\nWIDE |&gt;\n  select(where(fn = is.numeric)) |&gt;\n  cor()\n\n       var1_1 var1_2 var1_3 var2_1 var2_2 var2_3\nvar1_1      1     NA     NA     NA     NA     NA\nvar1_2     NA      1     NA     NA     NA     NA\nvar1_3     NA     NA      1     NA     NA     NA\nvar2_1     NA     NA     NA      1     NA     NA\nvar2_2     NA     NA     NA     NA      1     NA\nvar2_3     NA     NA     NA     NA     NA      1\n\n\nBut if there are NAs, you will need to deal with them. There are two options for this. First, you can correlate variables at the pair levels by dropping out the NA for each pair for pairwise correlations (e.g., use = \"pairwise.complete.obs\" or you can drop out all the NAs to include complete cases use = \"complete.obs\". The latter option will correlate data by including only those who have no missing data across all of the variables. Let’s try both options.\nCorrelate at the pair level. Drop out those who have not contributed for each x,y pair.\n\nWIDE |&gt;\n  select(where(fn = is.numeric)) |&gt;\n  cor(use = \"pairwise.complete.obs\")\n\n          var1_1    var1_2    var1_3    var2_1    var2_2    var2_3\nvar1_1 1.0000000 0.5274822 0.4703198 0.9089004 0.5086606 0.4230712\nvar1_2 0.5274822 1.0000000 0.6026012 0.5615591 0.9018850 0.5863472\nvar1_3 0.4703198 0.6026012 1.0000000 0.4587613 0.5802238 0.9081988\nvar2_1 0.9089004 0.5615591 0.4587613 1.0000000 0.5772950 0.4325422\nvar2_2 0.5086606 0.9018850 0.5802238 0.5772950 1.0000000 0.6067406\nvar2_3 0.4230712 0.5863472 0.9081988 0.4325422 0.6067406 1.0000000\n\n\nUse only those who have data for all measurements.\n\nWIDE |&gt;\n  select(where(fn = is.numeric)) |&gt;\n  cor(use = \"complete.obs\")\n\n          var1_1    var1_2    var1_3    var2_1    var2_2    var2_3\nvar1_1 1.0000000 0.5563847 0.4780208 0.9139159 0.5005610 0.4133120\nvar1_2 0.5563847 1.0000000 0.6022340 0.5683264 0.9040954 0.5892968\nvar1_3 0.4780208 0.6022340 1.0000000 0.4590756 0.5823953 0.9126153\nvar2_1 0.9139159 0.5683264 0.4590756 1.0000000 0.5369649 0.4126811\nvar2_2 0.5005610 0.9040954 0.5823953 0.5369649 1.0000000 0.6122694\nvar2_3 0.4133120 0.5892968 0.9126153 0.4126811 0.6122694 1.0000000"
+  },
+  {
+    "objectID": "modules/16_examining_relationships_in_variables_of_cognition.html#correlating-with-correlation",
+    "href": "modules/16_examining_relationships_in_variables_of_cognition.html#correlating-with-correlation",
+    "title": "Examining Relationships in Variables of Cognition",
+    "section": "Correlating with correlation()",
+    "text": "Correlating with correlation()\nSelect the the var1 variables, var1_1:var1_3 as well as the group variable, group by group, and correlate the pairwise combinations for each group. By default, the correlation will be Pearson’s r.\n\nWIDE |&gt;\n  select(c(var1_1 : var1_3), group) |&gt;     # select var1 variables\n  group_by(group) |&gt;\n  correlation()\n\n# Correlation Matrix (pearson-method)\n\nGroup | Parameter1 | Parameter2 |    r |       95% CI |    t |  df |         p\n------------------------------------------------------------------------------\nA     |     var1_1 |     var1_2 | 0.54 | [0.41, 0.65] | 7.59 | 139 | &lt; .001***\nA     |     var1_1 |     var1_3 | 0.52 | [0.38, 0.65] | 6.51 | 112 | &lt; .001***\nA     |     var1_2 |     var1_3 | 0.62 | [0.46, 0.74] | 6.85 |  77 | &lt; .001***\nB     |     var1_1 |     var1_2 | 0.50 | [0.33, 0.63] | 5.70 | 100 | &lt; .001***\nB     |     var1_1 |     var1_3 | 0.41 | [0.25, 0.55] | 4.75 | 111 | &lt; .001***\nB     |     var1_2 |     var1_3 | 0.56 | [0.37, 0.70] | 5.59 |  69 | &lt; .001***\n\np-value adjustment method: Holm (1979)\nObservations: 71-141\n\n\nThe correlation table print out from correlation() is organized by group, followed by the pairwise correlations for the variable pairs (e.g., parameters 1 and 2). In addition to r, a 95% confidence interval (CI), t-test, degrees of freedom (df), and p value, are also provided. Because these metrics are important for reporting, all of these are advantages of using correlation().\nYou will also notice that the degrees of freedom are not the same for all variable pairs, thus indicating that the default operation is to use complete observations in a pairwise fashion; rows with NAs for any of the variables are not dropped. The smallest sample sizes correspond to correlation between var1_2 and var1_3 as attrition rates affected data collected at time 3. Also, the p-values are adjusted by default using Holm’s methods."
+  },
+  {
+    "objectID": "modules/16_examining_relationships_in_variables_of_cognition.html#correlating-complete-cases",
+    "href": "modules/16_examining_relationships_in_variables_of_cognition.html#correlating-complete-cases",
+    "title": "Examining Relationships in Variables of Cognition",
+    "section": "Correlating Complete Cases",
+    "text": "Correlating Complete Cases\nIf you want to obtain the correlation for cases that contributed to all variables, reduce the data frame by dropping any rows with NAs using drop_na().\n\nWIDE |&gt;\n  select(c(var1_1 : var1_3), group) |&gt;     # select var1 variables\n  drop_na() |&gt;\n  group_by(group) |&gt;\n  correlation()\n\n# Correlation Matrix (pearson-method)\n\nGroup | Parameter1 | Parameter2 |    r |       95% CI |    t | df |         p\n-----------------------------------------------------------------------------\nA     |     var1_1 |     var1_2 | 0.54 | [0.36, 0.68] | 5.61 | 75 | &lt; .001***\nA     |     var1_1 |     var1_3 | 0.48 | [0.29, 0.63] | 4.73 | 75 | &lt; .001***\nA     |     var1_2 |     var1_3 | 0.63 | [0.47, 0.75] | 7.00 | 75 | &lt; .001***\nB     |     var1_1 |     var1_2 | 0.57 | [0.39, 0.72] | 5.71 | 66 | &lt; .001***\nB     |     var1_1 |     var1_3 | 0.47 | [0.26, 0.64] | 4.36 | 66 | &lt; .001***\nB     |     var1_2 |     var1_3 | 0.54 | [0.35, 0.69] | 5.26 | 66 | &lt; .001***\n\np-value adjustment method: Holm (1979)\nObservations: 68-77\n\n\nYou will see that the data are now reduced to those who contributed to all measures."
+  },
+  {
+    "objectID": "modules/16_examining_relationships_in_variables_of_cognition.html#calculating-partial-correlations",
+    "href": "modules/16_examining_relationships_in_variables_of_cognition.html#calculating-partial-correlations",
+    "title": "Examining Relationships in Variables of Cognition",
+    "section": "Calculating Partial Correlations`",
+    "text": "Calculating Partial Correlations`\nTo calculate partial correlations, pass partial = TRUE.\n\nWIDE |&gt;\n  select(c(var1_1 : var1_3), group) |&gt;     # select var1 variables\n  group_by(group) |&gt;\n  correlation(partial = TRUE)\n\n# Correlation Matrix (pearson-method)\n\nGroup | Parameter1 | Parameter2 |    r |        95% CI |    t | df |         p\n------------------------------------------------------------------------------\nA     |     var1_1 |     var1_2 | 0.36 | [ 0.14, 0.54] | 3.30 | 75 | 0.003**  \nA     |     var1_1 |     var1_3 | 0.21 | [-0.01, 0.41] | 1.86 | 75 | 0.067    \nA     |     var1_2 |     var1_3 | 0.50 | [ 0.31, 0.65] | 4.97 | 75 | &lt; .001***\nB     |     var1_1 |     var1_2 | 0.43 | [ 0.21, 0.60] | 3.84 | 66 | &lt; .001***\nB     |     var1_1 |     var1_3 | 0.23 | [-0.01, 0.44] | 1.92 | 66 | 0.059    \nB     |     var1_2 |     var1_3 | 0.38 | [ 0.16, 0.57] | 3.34 | 66 | 0.003**  \n\np-value adjustment method: Holm (1979)\nObservations: 68-77\n\n\nYou see that the sample size again is reduced to include rows with data for all variables. This is because the partial correlation represents the relationship between each variable pair by removing the relationship between each of those two variables and the third variable. In order to remove the relationship between var1_1 and var1_2 while controlling for the relationship between var1_1 and var1_3 and var1_2 and var1_3. In order for these relationships to be accounted for, only those contributing to all measures will be included in the partial correlation.\nAs a result, dropping NAs using drop_na() does not change the sample sizes.\n\nWIDE |&gt;\n  select(c(var1_1 : var1_3), group) |&gt;   \n  drop_na() |&gt;\n  group_by(group) |&gt;\n  correlation(partial = TRUE)\n\n# Correlation Matrix (pearson-method)\n\nGroup | Parameter1 | Parameter2 |    r |        95% CI |    t | df |         p\n------------------------------------------------------------------------------\nA     |     var1_1 |     var1_2 | 0.36 | [ 0.14, 0.54] | 3.30 | 75 | 0.003**  \nA     |     var1_1 |     var1_3 | 0.21 | [-0.01, 0.41] | 1.86 | 75 | 0.067    \nA     |     var1_2 |     var1_3 | 0.50 | [ 0.31, 0.65] | 5.00 | 75 | &lt; .001***\nB     |     var1_1 |     var1_2 | 0.43 | [ 0.21, 0.61] | 3.86 | 66 | &lt; .001***\nB     |     var1_1 |     var1_3 | 0.23 | [ 0.00, 0.45] | 1.96 | 66 | 0.055    \nB     |     var1_2 |     var1_3 | 0.38 | [ 0.15, 0.56] | 3.30 | 66 | 0.003**  \n\np-value adjustment method: Holm (1979)\nObservations: 68-77"
+  },
+  {
+    "objectID": "modules/16_examining_relationships_in_variables_of_cognition.html#tables",
+    "href": "modules/16_examining_relationships_in_variables_of_cognition.html#tables",
+    "title": "Examining Relationships in Variables of Cognition",
+    "section": "Tables",
+    "text": "Tables\nPresenting the data in tabular form is one of the easiest ways to communicate the relationships between the variables. Moreover, the data are already in a form that is ready for a table. The {gt} library provides a simple way to presents data in a table. You can find additional about using the library at the {gt} website.\n{gt} will want to work with data frames, so we need to verify that the correlation matrix is actually a data frame by piping it to is.data.frame().\n\nWIDE |&gt;\n  select(c(var1_1 : var1_3), group) |&gt;   \n  drop_na() |&gt;\n  group_by(group) |&gt;\n  correlation(partial = TRUE) |&gt;\n  is.data.frame()\n\n[1] TRUE\n\n\nGreat, we know it is. The next step is to simply pipe the data frame to gt::gt() to create a table.\n\nWIDE |&gt;\n  select(c(var1_1 : var1_3), group) |&gt;   \n  drop_na() |&gt;\n  group_by(group) |&gt;\n  correlation(partial = TRUE) |&gt;\n  gt::gt()\n\n\n\n\n\n  \n    \n    \n      Group\n      Parameter1\n      Parameter2\n      r\n      CI\n      CI_low\n      CI_high\n      t\n      df_error\n      p\n      Method\n      n_Obs\n    \n  \n  \n    A\nvar1_1\nvar1_2\n0.3557371\n0.95\n0.143165377\n0.5369343\n3.296405\n75\n2.996000e-03\nPearson correlation\n77\n    A\nvar1_1\nvar1_3\n0.2098622\n0.95\n-0.014812901\n0.4143640\n1.858855\n75\n6.697077e-02\nPearson correlation\n77\n    A\nvar1_2\nvar1_3\n0.4999301\n0.95\n0.310746798\n0.6510126\n4.999069\n75\n1.101353e-05\nPearson correlation\n77\n    B\nvar1_1\nvar1_2\n0.4294958\n0.95\n0.212869040\n0.6058775\n3.863759\n66\n7.717955e-04\nPearson correlation\n68\n    B\nvar1_1\nvar1_3\n0.2341086\n0.95\n-0.004571681\n0.4475525\n1.956271\n66\n5.466712e-02\nPearson correlation\n68\n    B\nvar1_2\nvar1_3\n0.3766514\n0.95\n0.151864231\n0.5643923\n3.303194\n66\n3.092850e-03\nPearson correlation\n68\n  \n  \n  \n\n\n\n\nThe table is somewhat busy, so we should clean it up a bit. We don’t need the Method variable and we can also round all of the values that are numeric in the data frame in order to improve appearance. We need to pass arguments to .cols and .fns. Using {dplyr}, we can mutate() across() columns where() the data are numeric and then pass a function that will iterate across all of those columns. Let’s just round by 3 digits. If you desire more rounding granularity, you can round specific columns if you don’t want the same rounding rule applied to all values.\n\nWIDE |&gt;\n  select(c(var1_1 : var1_3), group) |&gt;   \n  drop_na() |&gt;\n  group_by(group) |&gt;\n  correlation(partial = TRUE) |&gt;\n  select(-Method) |&gt;\n  mutate(across(.cols = where(is.numeric),  # where the columns are numeric \n                .fns = ~round(.x, 3))       # apply the rounding function\n         ) |&gt;\n  gt::gt()\n\n\n\n\n\n  \n    \n    \n      Group\n      Parameter1\n      Parameter2\n      r\n      CI\n      CI_low\n      CI_high\n      t\n      df_error\n      p\n      n_Obs\n    \n  \n  \n    A\nvar1_1\nvar1_2\n0.356\n0.95\n0.143\n0.537\n3.296\n75\n0.003\n77\n    A\nvar1_1\nvar1_3\n0.210\n0.95\n-0.015\n0.414\n1.859\n75\n0.067\n77\n    A\nvar1_2\nvar1_3\n0.500\n0.95\n0.311\n0.651\n4.999\n75\n0.000\n77\n    B\nvar1_1\nvar1_2\n0.429\n0.95\n0.213\n0.606\n3.864\n66\n0.001\n68\n    B\nvar1_1\nvar1_3\n0.234\n0.95\n-0.005\n0.448\n1.956\n66\n0.055\n68\n    B\nvar1_2\nvar1_3\n0.377\n0.95\n0.152\n0.564\n3.303\n66\n0.003\n68"
+  },
+  {
+    "objectID": "modules/16_examining_relationships_in_variables_of_cognition.html#scatterplots-using-geom_point-and-geom_smooth",
+    "href": "modules/16_examining_relationships_in_variables_of_cognition.html#scatterplots-using-geom_point-and-geom_smooth",
+    "title": "Examining Relationships in Variables of Cognition",
+    "section": "Scatterplots using geom_point() and geom_smooth()",
+    "text": "Scatterplots using geom_point() and geom_smooth()\nUsing {ggplot}, a point plot can be used to visualize the relationship between two variables.\n\nWIDE |&gt;\n  #select(c(var1_1 : var1_3), group) |&gt;\n  ggplot(mapping = aes(\n    x = var1_1, \n    y = var1_2\n    )\n    ) +\n  geom_point() +\n  theme_minimal()\n\nWarning: Removed 333 rows containing missing values (`geom_point()`).\n\n\n\n\n\nTo plot points from subgroups in different colors, map a variable to the color aesthetic.\n\nWIDE |&gt;\n  ggplot(mapping = aes(\n    x = var1_1, \n    y = var1_2\n    )\n    ) +\n  geom_point(mapping = aes(col = group)) +\n  theme_minimal()\n\nWarning: Removed 333 rows containing missing values (`geom_point()`).\n\n\n\n\n\nIf you wanted to add a file to the plot, use geom_smooth().\n\nWIDE |&gt;\n  ggplot(mapping = aes(\n    x = var1_1, \n    y = var1_2\n    )\n    ) +\n  geom_point() +\n  geom_smooth()\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'\n\n\nWarning: Removed 333 rows containing non-finite values (`stat_smooth()`).\n\n\nWarning: Removed 333 rows containing missing values (`geom_point()`).\n\n\n\n\n\nTo add a linear fit line, use method = \"lm\".\n\nWIDE |&gt;\n  ggplot(mapping = aes(\n    x = var1_1, \n    y = var1_2\n    )\n    ) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  theme_minimal()\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 333 rows containing non-finite values (`stat_smooth()`).\n\n\nWarning: Removed 333 rows containing missing values (`geom_point()`).\n\n\n\n\n\nTo plot separate fits lines for subgroups map a variable to the color aesthetic.\n\nWIDE |&gt;\n  ggplot(mapping = aes(\n    x = var1_1, \n    y = var1_2\n    )\n    ) +\n  geom_point(mapping = aes(col = group)) +\n  geom_smooth(method = \"lm\",\n              mapping = aes(col = group)\n              ) +\n  theme_minimal()\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 333 rows containing non-finite values (`stat_smooth()`).\n\n\nWarning: Removed 333 rows containing missing values (`geom_point()`).\n\n\n\n\n\nTo extend fits lines, use fullrange = TRUE.\n\nWIDE |&gt;\n  ggplot(mapping = aes(\n    x = var1_1, \n    y = var1_2\n    )\n    ) +\n  geom_point(mapping = aes(col = group)) +\n  geom_smooth(method = \"lm\",\n              mapping = aes(col = group),\n              fullrange = TRUE\n              ) +\n  theme_minimal()\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 333 rows containing non-finite values (`stat_smooth()`).\n\n\nWarning: Removed 333 rows containing missing values (`geom_point()`).\n\n\n\n\n\nRather than use different colors, to create a facet plot by subgroups, use facet_wrap().\n\nWIDE |&gt;\n  ggplot(mapping = aes(\n    x = var1_1, \n    y = var1_2\n    )\n    ) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  facet_wrap(facets = vars(group))\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 333 rows containing non-finite values (`stat_smooth()`).\n\n\nWarning: Removed 333 rows containing missing values (`geom_point()`)."
+  },
+  {
+    "objectID": "modules/16_examining_relationships_in_variables_of_cognition.html#generalized-pairs-plot-using-ggallyggpairs",
+    "href": "modules/16_examining_relationships_in_variables_of_cognition.html#generalized-pairs-plot-using-ggallyggpairs",
+    "title": "Examining Relationships in Variables of Cognition",
+    "section": "Generalized Pairs Plot using GGally::ggpairs()",
+    "text": "Generalized Pairs Plot using GGally::ggpairs()\nGeneralized pairs plots are data visualizations used to exploratory data for individual variables and for relationships across multiple variable pairs. They are often used in exploratory data analysis (EDA) to examine the relationships between multiple variables using point plots, bar plots, boxplots, density plots, histograms, etc. They are an extension of traditional pairwise scatter plots created above using geom_point() but they also allow for the visualization of relationships between more than two variables simultaneously.\nGGally::ggpairs() makes creating generalized pairs plots easy.\nggpairs(\n  data,\n  mapping = NULL,\n  columns = 1:ncol(data),\n  title = NULL,\n  upper = list(continuous = \"cor\", combo = \"box_no_facet\", discrete = \"count\", na = \"na\"),\n  lower = list(continuous = \"points\", combo = \"facethist\", discrete = \"facetbar\", na =\n    \"na\"),\n  diag = list(continuous = \"densityDiag\", discrete = \"barDiag\", na = \"naDiag\"),\n  params = NULL,\n  ...\n)\nKey Parameters/Arguments\n\ndata: a data frame\nmapping: for mapping aesthetics in ggplot objects\n\nThere are other parameters but not needed for this brief introduction.\nThe simplest usage is to pipe your data frame containing your columns of interest to ggpairs() without passing any arguments to the function. Let’s assume first that you have only numeric data and no grouping variable. The pairs plot will provide xy point plots for all variables pairs, density plots for each variable, and Pearson’s r correlations for each variable pair.\n\nWIDE |&gt; \n  select(var1_1:var1_3) |&gt;\n  GGally::ggpairs()\n\nWarning: Removed 54 rows containing non-finite values (`stat_density()`).\n\n\nWarning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :\nRemoved 333 rows containing missing values\n\n\nWarning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :\nRemoved 349 rows containing missing values\n\n\nWarning: Removed 333 rows containing missing values (`geom_point()`).\n\n\nWarning: Removed 287 rows containing non-finite values (`stat_density()`).\n\n\nWarning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :\nRemoved 426 rows containing missing values\n\n\nWarning: Removed 349 rows containing missing values (`geom_point()`).\n\n\nWarning: Removed 426 rows containing missing values (`geom_point()`).\n\n\nWarning: Removed 336 rows containing non-finite values (`stat_density()`).\n\n\n\n\n\nWhen you have a grouping variable, you see a bar plot for sample sizes across groups, side-by-side histograms of data for each sub group across all variables, boxplots for the distributions of data for each sub group, density plots without grouping, scatter plots, and correlations.\n\nWIDE |&gt; \n  select(group, var1_1:var1_3) |&gt;\n  GGally::ggpairs()\n\nWarning: Removed 54 rows containing non-finite values (`stat_boxplot()`).\n\n\nWarning: Removed 287 rows containing non-finite values (`stat_boxplot()`).\n\n\nWarning: Removed 336 rows containing non-finite values (`stat_boxplot()`).\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\nWarning: Removed 54 rows containing non-finite values (`stat_bin()`).\n\n\nWarning: Removed 54 rows containing non-finite values (`stat_density()`).\n\n\nWarning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :\nRemoved 333 rows containing missing values\n\n\nWarning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :\nRemoved 349 rows containing missing values\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\nWarning: Removed 287 rows containing non-finite values (`stat_bin()`).\n\n\nWarning: Removed 333 rows containing missing values (`geom_point()`).\n\n\nWarning: Removed 287 rows containing non-finite values (`stat_density()`).\n\n\nWarning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :\nRemoved 426 rows containing missing values\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\nWarning: Removed 336 rows containing non-finite values (`stat_bin()`).\n\n\nWarning: Removed 349 rows containing missing values (`geom_point()`).\n\n\nWarning: Removed 426 rows containing missing values (`geom_point()`).\n\n\nWarning: Removed 336 rows containing non-finite values (`stat_density()`).\n\n\n\n\n\nThe {GGally} library is built on the backs of {ggplot2}, so the aesthetics can be mapped as you would with ggplot objects.\n\nWIDE |&gt; \n  select(group, var1_1:var1_3) |&gt;\n  GGally::ggpairs(mapping = aes(col = group,    # set color by group\n                                alpha = .3      # adjust transparency\n                                )\n                  ) \n\nWarning: Removed 54 rows containing non-finite values (`stat_boxplot()`).\n\n\nWarning: Removed 287 rows containing non-finite values (`stat_boxplot()`).\n\n\nWarning: Removed 336 rows containing non-finite values (`stat_boxplot()`).\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\nWarning: Removed 54 rows containing non-finite values (`stat_bin()`).\n\n\nWarning: Removed 54 rows containing non-finite values (`stat_density()`).\n\n\nWarning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :\nRemoved 333 rows containing missing values\n\n\nWarning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :\nRemoved 349 rows containing missing values\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\nWarning: Removed 287 rows containing non-finite values (`stat_bin()`).\n\n\nWarning: Removed 333 rows containing missing values (`geom_point()`).\n\n\nWarning: Removed 287 rows containing non-finite values (`stat_density()`).\n\n\nWarning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :\nRemoved 426 rows containing missing values\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\nWarning: Removed 336 rows containing non-finite values (`stat_bin()`).\n\n\nWarning: Removed 349 rows containing missing values (`geom_point()`).\n\n\nWarning: Removed 426 rows containing missing values (`geom_point()`).\n\n\nWarning: Removed 336 rows containing non-finite values (`stat_density()`).\n\n\n\n\n\nIf you do not like the default palette, you can modify the colors manually. One easy way is to create a vector of colors (e.g., c(\"cornflowerblue\", \"firebrick\") and pass that to the values parameter of scale_fill_manual(). This tells ggplot() to manually change the colors for the fill aesthetic.\n\nnew_colors &lt;- c(\"cornflowerblue\", \"firebrick\") \n\nWIDE |&gt; \n  select(group, var1_1:var1_3) |&gt;\n  GGally::ggpairs(mapping = aes(col = group, \n                                alpha = .3\n                                )\n                  ) +\n  scale_fill_manual(values = new_colors)\n\nWarning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :\nRemoved 333 rows containing missing values\n\n\nWarning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :\nRemoved 349 rows containing missing values\n\n\nWarning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :\nRemoved 426 rows containing missing values\n\n\nWarning: Removed 54 rows containing non-finite values (`stat_boxplot()`).\n\n\nWarning: Removed 287 rows containing non-finite values (`stat_boxplot()`).\n\n\nWarning: Removed 336 rows containing non-finite values (`stat_boxplot()`).\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\nWarning: Removed 54 rows containing non-finite values (`stat_bin()`).\n\n\nWarning: Removed 54 rows containing non-finite values (`stat_density()`).\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\nWarning: Removed 287 rows containing non-finite values (`stat_bin()`).\n\n\nWarning: Removed 333 rows containing missing values (`geom_point()`).\n\n\nWarning: Removed 287 rows containing non-finite values (`stat_density()`).\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\nWarning: Removed 336 rows containing non-finite values (`stat_bin()`).\n\n\nWarning: Removed 349 rows containing missing values (`geom_point()`).\n\n\nWarning: Removed 426 rows containing missing values (`geom_point()`).\n\n\nWarning: Removed 336 rows containing non-finite values (`stat_density()`).\n\n\n\n\n\nWhereas the fill color changes for bars, boxplots, and density plots, the point color did not change. We need to change the color aesthetic using scale_color_manual().\n\nWIDE |&gt; \n  select(group, var1_1:var1_3) |&gt;\n \n  GGally::ggpairs(mapping = aes(col = group, \n                                alpha = .3\n                                )\n                  ) +\n  scale_color_manual(values = new_colors) +\n  scale_fill_manual(values = new_colors)\n\nWarning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :\nRemoved 333 rows containing missing values\n\n\nWarning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :\nRemoved 349 rows containing missing values\n\n\nWarning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :\nRemoved 426 rows containing missing values\n\n\nWarning: Removed 54 rows containing non-finite values (`stat_boxplot()`).\n\n\nWarning: Removed 287 rows containing non-finite values (`stat_boxplot()`).\n\n\nWarning: Removed 336 rows containing non-finite values (`stat_boxplot()`).\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\nWarning: Removed 54 rows containing non-finite values (`stat_bin()`).\n\n\nWarning: Removed 54 rows containing non-finite values (`stat_density()`).\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\nWarning: Removed 287 rows containing non-finite values (`stat_bin()`).\n\n\nWarning: Removed 333 rows containing missing values (`geom_point()`).\n\n\nWarning: Removed 287 rows containing non-finite values (`stat_density()`).\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\nWarning: Removed 336 rows containing non-finite values (`stat_bin()`).\n\n\nWarning: Removed 349 rows containing missing values (`geom_point()`).\n\n\nWarning: Removed 426 rows containing missing values (`geom_point()`).\n\n\nWarning: Removed 336 rows containing non-finite values (`stat_density()`).\n\n\n\n\n\nVoilà! The colors have changed."
+  },
+  {
+    "objectID": "modules/16_examining_relationships_in_variables_of_cognition.html#getting-a-data-frame",
+    "href": "modules/16_examining_relationships_in_variables_of_cognition.html#getting-a-data-frame",
+    "title": "Examining Relationships in Variables of Cognition",
+    "section": "Getting a Data Frame",
+    "text": "Getting a Data Frame\nWe will use a long-format data file that contains repeated measures of a variable."
+  },
+  {
+    "objectID": "modules/16_examining_relationships_in_variables_of_cognition.html#arranging-variables-as-columns",
+    "href": "modules/16_examining_relationships_in_variables_of_cognition.html#arranging-variables-as-columns",
+    "title": "Examining Relationships in Variables of Cognition",
+    "section": "Arranging Variables as Columns",
+    "text": "Arranging Variables as Columns\nWhen you want to correlate variables, you will need to have them as vectors of the same length. If those vectors are in data frames, you will want to arrange the variables you wish to correlate as column variables in in the data frame. If, for example, you want to correlate variables that are\nYou see that var1 and var2 are measured repeatedly at each time. Some individuals have data for one, two, or three time points. In order to correlate the var1 or var2 performance across the different time points, the data need to be arranged as columns in the data frame."
   }
 ]
