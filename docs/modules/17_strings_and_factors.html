@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Gabriel I. Cook">
-<meta name="dcterms.date" content="2024-02-06">
 
-<title>PSYC166 - Strings, Factors, and Regular Expressions</title>
+<title>**PSYC166** – strings_and_factors</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -261,20 +293,20 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">summarizing_exercise.docx</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../exercises/visualizing_exercise.docx" rel="" target="">
- <span class="dropdown-text">visualizing_exercise.docx</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../exercises/pivoting_exercise.docx" rel="" target="">
  <span class="dropdown-text">pivoting_exercise.docx</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../exercises/strings_and_factors_exercise.docx" rel="" target="">
- <span class="dropdown-text">strings_and_factors_exercise.docx</span></a>
+    <a class="dropdown-item" href="../exercises/visualization_exercise.docx" rel="" target="">
+ <span class="dropdown-text">visualizing_exercise.docx</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../exercises/joining_exercise.docx" rel="" target="">
  <span class="dropdown-text">joining_exercise.docx</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../exercises/strings_and_factors_exercise.docx" rel="" target="">
+ <span class="dropdown-text">strings_and_factors_exercise.docx</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../exercises/linear_models_exercise.Rmd" rel="" target="">
@@ -374,7 +406,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/index.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/17_strings_and_factors.html"><strong>Strings, Factors, and Regular Expressions</strong></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/index.html">Modules</a></li><li class="breadcrumb-item"><a href="../modules/17_strings_and_factors.html">secret functions</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -506,7 +538,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../modules/17_strings_and_factors.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><strong>Strings, Factors, and Regular Expressions</strong></span></a>
+ <span class="menu-text">secret functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -585,57 +617,50 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#readings-and-preparation" id="toc-readings-and-preparation" class="nav-link" data-scroll-target="#readings-and-preparation"><strong>Readings and Preparation</strong></a></li>
   <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries"><strong>Libraries</strong></a></li>
   </ul></li>
+  <li><a href="#strings" id="toc-strings" class="nav-link" data-scroll-target="#strings"><strong>Strings</strong></a>
+  <ul class="collapse">
+  <li><a href="#splitting-strings" id="toc-splitting-strings" class="nav-link" data-scroll-target="#splitting-strings"><strong>Splitting Strings</strong></a>
+  <ul class="collapse">
+  <li><a href="#splitting-a-simple-string-by-space" id="toc-splitting-a-simple-string-by-space" class="nav-link" data-scroll-target="#splitting-a-simple-string-by-space"><strong>Splitting a simple string by space</strong></a></li>
+  <li><a href="#splitting-a-string-by-comma" id="toc-splitting-a-string-by-comma" class="nav-link" data-scroll-target="#splitting-a-string-by-comma"><strong>Splitting a string by comma</strong></a></li>
+  <li><a href="#splitting-a-string-by-multiple-delimiters" id="toc-splitting-a-string-by-multiple-delimiters" class="nav-link" data-scroll-target="#splitting-a-string-by-multiple-delimiters"><strong>Splitting a string by multiple delimiters</strong></a></li>
+  <li><a href="#splitting-a-string-and-extracting-a-specific-element" id="toc-splitting-a-string-and-extracting-a-specific-element" class="nav-link" data-scroll-target="#splitting-a-string-and-extracting-a-specific-element"><strong>Splitting a string and extracting a specific element</strong></a></li>
+  <li><a href="#splitting-a-string-with-a-regular-expression" id="toc-splitting-a-string-with-a-regular-expression" class="nav-link" data-scroll-target="#splitting-a-string-with-a-regular-expression"><strong>Splitting a string with a regular expression</strong></a></li>
+  <li><a href="#splitting-a-string-with-a-regular-expression-and-limiting-the-number-of-splits" id="toc-splitting-a-string-with-a-regular-expression-and-limiting-the-number-of-splits" class="nav-link" data-scroll-target="#splitting-a-string-with-a-regular-expression-and-limiting-the-number-of-splits"><strong>Splitting a string with a regular expression and limiting the number of splits</strong></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#factors" id="toc-factors" class="nav-link" data-scroll-target="#factors"><strong>Factors</strong></a>
+  <ul class="collapse">
+  <li><a href="#creating-factors" id="toc-creating-factors" class="nav-link" data-scroll-target="#creating-factors"><strong>Creating Factors</strong></a>
+  <ul class="collapse">
+  <li><a href="#levels-vs.-labels" id="toc-levels-vs.-labels" class="nav-link" data-scroll-target="#levels-vs.-labels"><strong>Levels vs.&nbsp;Labels</strong></a></li>
+  </ul></li>
+  <li><a href="#mutating-factors" id="toc-mutating-factors" class="nav-link" data-scroll-target="#mutating-factors"><strong>Mutating Factors</strong></a></li>
+  <li><a href="#unordered-factors" id="toc-unordered-factors" class="nav-link" data-scroll-target="#unordered-factors"><strong>Unordered Factors</strong></a></li>
+  <li><a href="#factor-levels-and-labels" id="toc-factor-levels-and-labels" class="nav-link" data-scroll-target="#factor-levels-and-labels"><strong>Factor Levels and Labels</strong></a>
+  <ul class="collapse">
+  <li><a href="#inspecting-factor-levels" id="toc-inspecting-factor-levels" class="nav-link" data-scroll-target="#inspecting-factor-levels"><strong>Inspecting Factor Levels</strong></a></li>
+  </ul></li>
+  <li><a href="#ordered-factors" id="toc-ordered-factors" class="nav-link" data-scroll-target="#ordered-factors"><strong>Ordered Factors</strong></a>
+  <ul class="collapse">
+  <li><a href="#and-example-with-character-vectors" id="toc-and-example-with-character-vectors" class="nav-link" data-scroll-target="#and-example-with-character-vectors"><strong>And Example with Character Vectors</strong></a></li>
+  <li><a href="#and-example-with-character-vectors-1" id="toc-and-example-with-character-vectors-1" class="nav-link" data-scroll-target="#and-example-with-character-vectors-1"><strong>And Example with Character Vectors</strong></a></li>
+  <li><a href="#and-example-with-numeric-vectors" id="toc-and-example-with-numeric-vectors" class="nav-link" data-scroll-target="#and-example-with-numeric-vectors"><strong>And Example with Numeric Vectors</strong></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><strong>Summary</strong></a></li>
+  <li><a href="#session-information" id="toc-session-information" class="nav-link" data-scroll-target="#session-information"><strong>Session Information</strong></a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title"><strong>Strings, Factors, and Regular Expressions</strong></h1>
-</div>
 
 
-
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Gabriel I. Cook </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">February 6, 2024</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-</header>
-
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Under construction.
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This page is a work in progress and may contain areas that need more detail or that required syntactical, grammatical, and typographical changes. If you find some part requiring some editing, please let me know so I can fix it for you.</p>
-</div>
-</div>
 <section id="overview" class="level1">
 <h1><strong>Overview</strong></h1>
-<p>In this module, we work with strings, or character vectors, and factors.</p>
+<p>In this module, we work with strings, character vectors, and factors. The focus will be on factors so if you desire to skip over the section on strings, that is fine.</p>
 <section id="readings-and-preparation" class="level2">
 <h2 class="anchored" data-anchor-id="readings-and-preparation"><strong>Readings and Preparation</strong></h2>
 <p><em>Before Class</em>: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time. Work through some examples so that you have a good idea of your level of understanding and confidence.</p>
@@ -645,10 +670,4200 @@ Under construction.
 <h2 class="anchored" data-anchor-id="libraries"><strong>Libraries</strong></h2>
 <ul>
 <li><strong>{here}</strong> 1.0.1: for file path management</li>
+<li><strong>{dplyr}</strong> 1.1.4: for data frame manipulation</li>
 </ul>
-
-
+<p>Others:</p>
+<ul>
+<li><strong>{forcats}</strong> 1.0.0: for file path management</li>
+</ul>
 </section>
+</section>
+<section id="strings" class="level1">
+<h1><strong>Strings</strong></h1>
+<p>A string is an ordered list of symbols. For example <code>"Male"</code> would be a string</p>
+<p>The <strong>{stringr}</strong> library contains many functions for handling strings and is part of the <strong>{tidyverse}</strong> ecosystem.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>string_1 <span class="ot">&lt;-</span> <span class="st">'My favorite string used single quotes.'</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>string_2 <span class="ot">&lt;-</span> <span class="st">"My second favorite string uses double quotes."</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>string_1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "My favorite string used single quotes."</code></pre>
+</div>
+</div>
+<p><code>string_1</code> prints on screen with double quotes. Quotes do not matter except inside of strings. For example, you cannot have double quotes inside a string of double quotes. You can, however, have single quotes inside of a string with double quotes and vice versa.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>string_3 <span class="ot">&lt;-</span> <span class="st">'My favorite string used "single" quotes.'</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>string_4 <span class="ot">&lt;-</span> <span class="st">"My second favorite string uses 'double' quotes."</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>date_string <span class="ot">&lt;-</span> <span class="st">"10/31/2008"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>dates_string <span class="ot">&lt;-</span> <span class="st">"10/31/2008, 01/08/2009"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>date_string</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "10/31/2008"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>dates_string</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "10/31/2008, 01/08/2009"</code></pre>
+</div>
+</div>
+<section id="splitting-strings" class="level2">
+<h2 class="anchored" data-anchor-id="splitting-strings"><strong>Splitting Strings</strong></h2>
+<p>Splitting strings into pieces is easy used <code>stringr::str_split()</code> or <code>stringr::str_split_fixed()</code>. The functions return a <code>list()</code> of character vectors.</p>
+<section id="splitting-a-simple-string-by-space" class="level3">
+<h3 class="anchored" data-anchor-id="splitting-a-simple-string-by-space"><strong>Splitting a simple string by space</strong></h3>
+<p>We can try to split a string based on finding a pattern that is an empty string but because there is no space, the returned object is a <code>list()</code> of character vectors containing only one in the vector.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>stringr<span class="sc">::</span><span class="fu">str_split</span>(date_string, <span class="at">pattern =</span> <span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] "10/31/2008"</code></pre>
+</div>
+</div>
+<p>By contrast, because <code>dates_string</code> contains a space, the returned object is a <code>list()</code> of character vectors containing two elements.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>stringr<span class="sc">::</span><span class="fu">str_split</span>(dates_string, <span class="at">pattern =</span> <span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] "10/31/2008," "01/08/2009" </code></pre>
+</div>
+</div>
+<p>Using <code>unlist()</code>, you can convert the list into a vector, which you see has a <code>length()</code> of two (e.g., two dates).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unlist</span>(stringr<span class="sc">::</span><span class="fu">str_split</span>(dates_string, <span class="at">pattern =</span> <span class="st">" "</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "10/31/2008," "01/08/2009" </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unlist</span>(stringr<span class="sc">::</span><span class="fu">str_split</span>(dates_string, <span class="at">pattern =</span> <span class="st">" "</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+<p>Notice, however, that the first vector element contains a comma. This is because the split is based on <code>" "</code> which appears after the comma.</p>
+</section>
+<section id="splitting-a-string-by-comma" class="level3">
+<h3 class="anchored" data-anchor-id="splitting-a-string-by-comma"><strong>Splitting a string by comma</strong></h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>stringr<span class="sc">::</span><span class="fu">str_split</span>(dates_string, <span class="at">pattern =</span> <span class="st">","</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] "10/31/2008"  " 01/08/2009"</code></pre>
+</div>
+</div>
+<p>The first vector element contains no comma. Neither does the second. That’s because the string was split based on the comma. The second element contains a space because the <code>","</code> was followed by as space.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>stringr<span class="sc">::</span><span class="fu">str_split</span>(dates_string, <span class="at">pattern =</span> <span class="st">","</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] "10/31/2008"  " 01/08/2009"</code></pre>
+</div>
+</div>
+<p>If this pattern held for the entire string, you could split by a comma followed by a space.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>stringr<span class="sc">::</span><span class="fu">str_split</span>(dates_string, <span class="at">pattern =</span> <span class="st">", "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] "10/31/2008" "01/08/2009"</code></pre>
+</div>
+</div>
+<p>Neither vector element contains a space or a comma.</p>
+</section>
+<section id="splitting-a-string-by-multiple-delimiters" class="level3">
+<h3 class="anchored" data-anchor-id="splitting-a-string-by-multiple-delimiters"><strong>Splitting a string by multiple delimiters</strong></h3>
+<p>Strings can be split by multiple delimiter patterns. If the pattern is a space or a comma, adding them in a <code>[]</code> will split the <code>dates_string</code> based on either the space or the comma.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>stringr<span class="sc">::</span><span class="fu">str_split</span>(dates_string, <span class="at">pattern =</span> <span class="st">"[ ,]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] "10/31/2008" ""           "01/08/2009"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>stringr<span class="sc">::</span><span class="fu">str_split</span>(dates_string, <span class="at">pattern =</span> <span class="st">"[, ]"</span>)  <span class="co"># same thing: order does not matter</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] "10/31/2008" ""           "01/08/2009"</code></pre>
+</div>
+</div>
+<p>In this case, there are three vector elements but the second one contains an empty string. If you wanted to extract all dates from a string, that might not be your solution. Of course, if your string is messy, it might contain commas or spaces and not always both together. For example, if your string is <code>"10/31/2008, 01/08/2009 01/11/2023"</code>, some dates are separated by a comma and some a space.</p>
+<p>Trying to split by pattern <code>"[, ]"</code> will split by one or the other but not both.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>stringr<span class="sc">::</span><span class="fu">str_split</span>(<span class="st">"10/31/2008, 01/08/2009 01/11/2023"</span>, <span class="at">pattern =</span> <span class="st">"[, ]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] "10/31/2008" ""           "01/08/2009" "01/11/2023"</code></pre>
+</div>
+</div>
+<p>You have four vector elements and one is an empty string. This may not be what you want. Changing the pattern to <code>"[, ]+"</code> will allow you to match more than one The <code>+</code> is a quantifier to the pattern will match <strong>one or more occurrences</strong> of the preceding character class or characters.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>stringr<span class="sc">::</span><span class="fu">str_split</span>(<span class="st">"10/31/2008, 01/08/2009 01/11/2023"</span>, <span class="at">pattern =</span> <span class="st">"[, ]+"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] "10/31/2008" "01/08/2009" "01/11/2023"</code></pre>
+</div>
+</div>
+<p>We have three elements, all of which are dates.</p>
+</section>
+<section id="splitting-a-string-and-extracting-a-specific-element" class="level3">
+<h3 class="anchored" data-anchor-id="splitting-a-string-and-extracting-a-specific-element"><strong>Splitting a string and extracting a specific element</strong></h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>stringr<span class="sc">::</span><span class="fu">str_split_fixed</span>(<span class="st">"10/31/2008, 01/08/2009 01/11/2023"</span>, <span class="at">pattern =</span> <span class="st">"/"</span>, <span class="at">n =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3]                         
+[1,] "10" "31" "2008, 01/08/2009 01/11/2023"</code></pre>
+</div>
+</div>
+</section>
+<section id="splitting-a-string-with-a-regular-expression" class="level3">
+<h3 class="anchored" data-anchor-id="splitting-a-string-with-a-regular-expression"><strong>Splitting a string with a regular expression</strong></h3>
+<p>If you wanted to split only by digits, you could use a regular expression that looks for a digit pattern. `“[/d+]”</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>stringr<span class="sc">::</span><span class="fu">str_split</span>(dates_string, <span class="at">pattern =</span> <span class="st">"[d+]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] "10/31/2008, 01/08/2009"</code></pre>
+</div>
+</div>
+</section>
+<section id="splitting-a-string-with-a-regular-expression-and-limiting-the-number-of-splits" class="level3">
+<h3 class="anchored" data-anchor-id="splitting-a-string-with-a-regular-expression-and-limiting-the-number-of-splits"><strong>Splitting a string with a regular expression and limiting the number of splits</strong></h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>stringr<span class="sc">::</span><span class="fu">str_split</span>(dates_string, <span class="at">pattern =</span> <span class="st">"[/d+]"</span>, <span class="at">n =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] "10"                  "31/2008, 01/08/2009"</code></pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="factors" class="level1">
+<h1><strong>Factors</strong></h1>
+<p>As part of data preparation or cleaning, you will likely have to create factor variables. A factor variable that represents nominal categories in data. Factors typically represent qualitative data, such as group membership, levels of a factor, or labels. Factors are particularly useful for statistical analysis and modeling. Factors look like character objects but they are different and they come in different flavors serving different purposes.</p>
+<ul>
+<li><p><strong>Fixed set of levels</strong>: A factor variable has a fixed set of possible values known as levels. Each level represents a distinct category or group within the variable.</p></li>
+<li><p><strong>Ordered or unordered</strong>: Factor variables can be either ordered or unordered. Ordered factors have a meaningful order among their levels, while unordered factors do not. An example of an ordered factor would be ranks or ratings for example low, medium, and high groups.</p></li>
+<li><p><strong>Factor levels</strong>: You can specify factor levels explicitly using the <code>levels()</code> function or R will infer levels based on the unique values present in the data. It’s important to ensure that factor levels are correctly specified to avoid unexpected behavior in statistical analyses.</p></li>
+<li><p><strong>Statistical modeling</strong>: Many statistical functions and modeling techniques, such as linear regression or ANOVA, automatically treat factor variables differently from numeric variables. They use factors to understand categorical differences and estimate coefficients or perform hypothesis tests.</p></li>
+</ul>
+<section id="creating-factors" class="level2">
+<h2 class="anchored" data-anchor-id="creating-factors"><strong>Creating Factors</strong></h2>
+<p>Let’s get some data and create some factor objects to represent factor variables.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">var1 =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>),</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">var2 =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">650</span>, <span class="dv">890</span>, <span class="dv">20</span>),</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">var3 =</span> <span class="fu">c</span>(<span class="fl">1.0</span>, .<span class="dv">6</span>, .<span class="dv">9</span>, .<span class="dv">98</span>),</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">group =</span> <span class="fu">c</span>(<span class="st">"B"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"A"</span>)</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>gt<span class="sc">::</span><span class="fu">gt</span>(DATA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="mrckbmsnzd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mrckbmsnzd table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#mrckbmsnzd thead, #mrckbmsnzd tbody, #mrckbmsnzd tfoot, #mrckbmsnzd tr, #mrckbmsnzd td, #mrckbmsnzd th {
+  border-style: none;
+}
+
+#mrckbmsnzd p {
+  margin: 0;
+  padding: 0;
+}
+
+#mrckbmsnzd .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#mrckbmsnzd .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#mrckbmsnzd .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#mrckbmsnzd .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#mrckbmsnzd .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#mrckbmsnzd .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#mrckbmsnzd .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#mrckbmsnzd .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#mrckbmsnzd .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#mrckbmsnzd .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#mrckbmsnzd .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#mrckbmsnzd .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#mrckbmsnzd .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#mrckbmsnzd .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#mrckbmsnzd .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#mrckbmsnzd .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#mrckbmsnzd .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#mrckbmsnzd .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#mrckbmsnzd .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mrckbmsnzd .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#mrckbmsnzd .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#mrckbmsnzd .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#mrckbmsnzd .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mrckbmsnzd .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#mrckbmsnzd .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#mrckbmsnzd .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#mrckbmsnzd .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mrckbmsnzd .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#mrckbmsnzd .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#mrckbmsnzd .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#mrckbmsnzd .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#mrckbmsnzd .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#mrckbmsnzd .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mrckbmsnzd .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#mrckbmsnzd .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mrckbmsnzd .gt_left {
+  text-align: left;
+}
+
+#mrckbmsnzd .gt_center {
+  text-align: center;
+}
+
+#mrckbmsnzd .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#mrckbmsnzd .gt_font_normal {
+  font-weight: normal;
+}
+
+#mrckbmsnzd .gt_font_bold {
+  font-weight: bold;
+}
+
+#mrckbmsnzd .gt_font_italic {
+  font-style: italic;
+}
+
+#mrckbmsnzd .gt_super {
+  font-size: 65%;
+}
+
+#mrckbmsnzd .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#mrckbmsnzd .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#mrckbmsnzd .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#mrckbmsnzd .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#mrckbmsnzd .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#mrckbmsnzd .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#mrckbmsnzd .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="var1">var1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="var2">var2</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="var3">var3</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="group">group</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="var1" class="gt_row gt_right">1</td>
+<td headers="var2" class="gt_row gt_right">100</td>
+<td headers="var3" class="gt_row gt_right">1.00</td>
+<td headers="group" class="gt_row gt_left">B</td></tr>
+    <tr><td headers="var1" class="gt_row gt_right">3</td>
+<td headers="var2" class="gt_row gt_right">650</td>
+<td headers="var3" class="gt_row gt_right">0.60</td>
+<td headers="group" class="gt_row gt_left">A</td></tr>
+    <tr><td headers="var1" class="gt_row gt_right">4</td>
+<td headers="var2" class="gt_row gt_right">890</td>
+<td headers="var3" class="gt_row gt_right">0.90</td>
+<td headers="group" class="gt_row gt_left">B</td></tr>
+    <tr><td headers="var1" class="gt_row gt_right">5</td>
+<td headers="var2" class="gt_row gt_right">20</td>
+<td headers="var3" class="gt_row gt_right">0.98</td>
+<td headers="group" class="gt_row gt_left">A</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+<p>In order to convert the vector variables into factors, we can use <code>as.factor()</code> from base R or <code>forcats::as_factor()</code>.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">factor</span>(<span class="at">x =</span> <span class="fu">character</span>(), </span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>       levels, </span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">labels =</span> levels,</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">exclude =</span> <span class="cn">NA</span>, </span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">ordered =</span> <span class="fu">is.ordered</span>(x), </span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">nmax =</span> <span class="cn">NA</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>       )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Key Parameters/Arguments</strong></p>
+<ul>
+<li><code>x</code>: a vector of data, usually taking a small number of distinct values.</li>
+<li><code>levels</code>: an optional vector of the unique values (as character strings) that x might have taken. The default is the unique set of values taken by as.character(x), sorted into increasing order of x. Note that this set can be specified as smaller than sort(unique(x)).</li>
+<li><code>labels</code>: either an optional character vector of labels for the levels (in the same order as levels after removing those in exclude), or a character string of length 1. Duplicated values in labels can be used to map different values of x to the same factor level.</li>
+<li><code>ordered</code>: logical flag to determine if the levels should be regarded as ordered (in the order given)</li>
+</ul>
+<section id="levels-vs.-labels" class="level3">
+<h3 class="anchored" data-anchor-id="levels-vs.-labels"><strong>Levels vs.&nbsp;Labels</strong></h3>
+<p>In brief, <code>levels</code> are the input whereas <code>labels</code> are the output for <code>factor()</code>. A factor has a level attribute, which is set by the <code>labels</code> argument.</p>
+<p>When you convert the vector to a factor, the factor object has <em>levels</em> as seen in the print out. All factors have levels but importantly, you must attend to the ordering of those levels.</p>
+<p>The print out appears to indicate that the first level is B and the second level is A,</p>
+<p>The <code>levels()</code> function, however, will tell us the actual order, so let’s verify whether that assumption is true.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(<span class="fu">as.factor</span>(DATA<span class="sc">$</span>group))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "A" "B"</code></pre>
+</div>
+</div>
+<p>Wrapping both functions in <code>levels()</code> is informative. First, the functions are returning different ordered. Second, <code>factor()</code> reorders the levels alphabetically. This order may appear trivial but the order matters when performing statistical modeling. For example, linear regression involving factor/categorical predictors using <code>lm()</code> will treat the first level as the base category to which all other levels will be compared. When a baseline or control group is not positioned first alphabetically, you will need to change the order.</p>
+<p>And what about numbers?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>factor_a <span class="ot">=</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"1"</span>, <span class="st">"8"</span>, <span class="st">"3"</span>, <span class="st">"5"</span>, <span class="st">"2"</span>))</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(factor_a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "1" "2" "3" "5" "8"</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>factor_b <span class="ot">=</span> forcats<span class="sc">::</span><span class="fu">as_factor</span>(<span class="fu">c</span>(<span class="st">"1"</span>, <span class="st">"8"</span>, <span class="st">"3"</span>, <span class="st">"5"</span>, <span class="st">"2"</span>))</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(factor_b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "1" "8" "3" "5" "2"</code></pre>
+</div>
+</div>
+<p>If you wanted more details, the the attributes of the object can be examined using <code>attribute()</code>. The class is a factor and the levels are the unique values. Importantly, there is no label attribute.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(factor_a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$levels
+[1] "1" "2" "3" "5" "8"
+
+$class
+[1] "factor"</code></pre>
+</div>
+</div>
+<p>Again, you see the two functions use the data differently; <code>factor()</code> reorders numerically. As the data scientist, you need to know how the function operates.</p>
+</section>
+</section>
+<section id="mutating-factors" class="level2">
+<h2 class="anchored" data-anchor-id="mutating-factors"><strong>Mutating Factors</strong></h2>
+<p>Variables that you want to make into factors are typically in a data frame, so let’s mutate factors in a data frame.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="sc">|&gt;</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">factor_1 =</span> <span class="fu">factor</span>(group),</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">factor_2 =</span> <span class="fu">as.factor</span>(group),</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">factor_3 =</span> <span class="fu">as.factor</span>(var1)</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 4
+Columns: 7
+$ var1     &lt;dbl&gt; 1, 3, 4, 5
+$ var2     &lt;dbl&gt; 100, 650, 890, 20
+$ var3     &lt;dbl&gt; 1.00, 0.60, 0.90, 0.98
+$ group    &lt;chr&gt; "B", "A", "B", "A"
+$ factor_1 &lt;fct&gt; B, A, B, A
+$ factor_2 &lt;fct&gt; B, A, B, A
+$ factor_3 &lt;fct&gt; 1, 3, 4, 5</code></pre>
+</div>
+</div>
+<p>You see the data frame’s structure lists the new variables as factors.</p>
+</section>
+<section id="unordered-factors" class="level2">
+<h2 class="anchored" data-anchor-id="unordered-factors"><strong>Unordered Factors</strong></h2>
+<p>Factor variable levels and labels require some order.</p>
+<p>For example, let’s create some some vectors that could be columns in a data frame.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>factor_a <span class="ot">=</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"1"</span>, <span class="st">"8"</span>, <span class="st">"3"</span>, <span class="st">"5"</span>, <span class="st">"2"</span>))</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>factor_b <span class="ot">=</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"1"</span>, <span class="st">"8"</span>, <span class="st">"3"</span>, <span class="st">"5"</span>, <span class="st">"2"</span>))</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(factor_a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$levels
+[1] "1" "2" "3" "5" "8"
+
+$class
+[1] "factor"</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>factor_a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 8 3 5 2
+Levels: 1 2 3 5 8</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>factor_b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 8 3 5 2
+Levels: 1 2 3 5 8</code></pre>
+</div>
+</div>
+</section>
+<section id="factor-levels-and-labels" class="level2">
+<h2 class="anchored" data-anchor-id="factor-levels-and-labels"><strong>Factor Levels and Labels</strong></h2>
+<p>Looking at the data frame, we see that there are some numeric and character variables but no factors.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 4
+Columns: 4
+$ var1  &lt;dbl&gt; 1, 3, 4, 5
+$ var2  &lt;dbl&gt; 100, 650, 890, 20
+$ var3  &lt;dbl&gt; 1.00, 0.60, 0.90, 0.98
+$ group &lt;chr&gt; "B", "A", "B", "A"</code></pre>
+</div>
+</div>
+<p>We can create three factors. The <em>first</em> factor can be a simple factor based on the character vector <code>group</code>. Using <code>factor()</code> will convert it to a factor variable, which will contain levels for each unique character type. The <em>second</em> factor will make use of the <code>labels</code> parameter to which we can pass a character vector of labels. The vector passed to <code>labels</code> will need to be the same length as the unique elements, so use <code>unique()</code> to ensure proper labeling. If your vector is of an incorrect length, you will receive an error stating <code>invalid 'labels'</code>. You could have one string label (e.g., <code>"My Label"</code>) but R will create levels by appending a number as a suffix to the string, which likely won’t be as helpful (see <code>factor2b</code>). Finally, the <em>third</em> factor would make use of the <code>labels</code> and the <code>levels</code> parameters to which we can pass a character vector of labels and levels.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>DATA<span class="sc">$</span>group <span class="sc">|&gt;</span> <span class="fu">unique</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "B" "A"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="ot">&lt;-</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>  DATA <span class="sc">|&gt;</span></span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">factor_1  =</span> <span class="fu">factor</span>(<span class="at">x =</span> group),</span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">factor_2a =</span> <span class="fu">factor</span>(<span class="at">x =</span> group,</span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Old"</span>, <span class="st">"Young"</span>)</span>
+<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a>                       ),</span>
+<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">factor_2b =</span> <span class="fu">factor</span>(<span class="at">x =</span> group,</span>
+<span id="cb59-9"><a href="#cb59-9" aria-hidden="true" tabindex="-1"></a>                       <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"My Label"</span>)</span>
+<span id="cb59-10"><a href="#cb59-10" aria-hidden="true" tabindex="-1"></a>                       ),</span>
+<span id="cb59-11"><a href="#cb59-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">factor_2c =</span> <span class="fu">factor</span>(<span class="at">x =</span> group,</span>
+<span id="cb59-12"><a href="#cb59-12" aria-hidden="true" tabindex="-1"></a>                       <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Old"</span>, <span class="st">"Young"</span>)</span>
+<span id="cb59-13"><a href="#cb59-13" aria-hidden="true" tabindex="-1"></a>                       ),    </span>
+<span id="cb59-14"><a href="#cb59-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">factor_3 =</span> <span class="fu">factor</span>(<span class="at">x =</span> group,</span>
+<span id="cb59-15"><a href="#cb59-15" aria-hidden="true" tabindex="-1"></a>                      <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>),</span>
+<span id="cb59-16"><a href="#cb59-16" aria-hidden="true" tabindex="-1"></a>                      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Young"</span>, <span class="st">"Old"</span>)   <span class="co"># intentionally reversed </span></span>
+<span id="cb59-17"><a href="#cb59-17" aria-hidden="true" tabindex="-1"></a>                      )</span>
+<span id="cb59-18"><a href="#cb59-18" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="olnffllcsu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#olnffllcsu table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#olnffllcsu thead, #olnffllcsu tbody, #olnffllcsu tfoot, #olnffllcsu tr, #olnffllcsu td, #olnffllcsu th {
+  border-style: none;
+}
+
+#olnffllcsu p {
+  margin: 0;
+  padding: 0;
+}
+
+#olnffllcsu .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#olnffllcsu .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#olnffllcsu .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#olnffllcsu .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#olnffllcsu .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#olnffllcsu .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#olnffllcsu .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#olnffllcsu .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#olnffllcsu .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#olnffllcsu .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#olnffllcsu .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#olnffllcsu .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#olnffllcsu .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#olnffllcsu .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#olnffllcsu .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#olnffllcsu .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#olnffllcsu .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#olnffllcsu .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#olnffllcsu .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#olnffllcsu .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#olnffllcsu .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#olnffllcsu .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#olnffllcsu .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#olnffllcsu .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#olnffllcsu .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#olnffllcsu .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#olnffllcsu .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#olnffllcsu .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#olnffllcsu .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#olnffllcsu .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#olnffllcsu .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#olnffllcsu .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#olnffllcsu .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#olnffllcsu .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#olnffllcsu .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#olnffllcsu .gt_left {
+  text-align: left;
+}
+
+#olnffllcsu .gt_center {
+  text-align: center;
+}
+
+#olnffllcsu .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#olnffllcsu .gt_font_normal {
+  font-weight: normal;
+}
+
+#olnffllcsu .gt_font_bold {
+  font-weight: bold;
+}
+
+#olnffllcsu .gt_font_italic {
+  font-style: italic;
+}
+
+#olnffllcsu .gt_super {
+  font-size: 65%;
+}
+
+#olnffllcsu .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#olnffllcsu .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#olnffllcsu .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#olnffllcsu .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#olnffllcsu .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#olnffllcsu .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#olnffllcsu .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="var1">var1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="var2">var2</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="var3">var3</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="group">group</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_1">factor_1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_2a">factor_2a</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_2b">factor_2b</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_2c">factor_2c</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_3">factor_3</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="var1" class="gt_row gt_right">1</td>
+<td headers="var2" class="gt_row gt_right">100</td>
+<td headers="var3" class="gt_row gt_right">1.00</td>
+<td headers="group" class="gt_row gt_left">B</td>
+<td headers="factor_1" class="gt_row gt_center">B</td>
+<td headers="factor_2a" class="gt_row gt_center">Young</td>
+<td headers="factor_2b" class="gt_row gt_center">My Label2</td>
+<td headers="factor_2c" class="gt_row gt_center">NA</td>
+<td headers="factor_3" class="gt_row gt_center">Old</td></tr>
+    <tr><td headers="var1" class="gt_row gt_right">3</td>
+<td headers="var2" class="gt_row gt_right">650</td>
+<td headers="var3" class="gt_row gt_right">0.60</td>
+<td headers="group" class="gt_row gt_left">A</td>
+<td headers="factor_1" class="gt_row gt_center">A</td>
+<td headers="factor_2a" class="gt_row gt_center">Old</td>
+<td headers="factor_2b" class="gt_row gt_center">My Label1</td>
+<td headers="factor_2c" class="gt_row gt_center">NA</td>
+<td headers="factor_3" class="gt_row gt_center">Young</td></tr>
+    <tr><td headers="var1" class="gt_row gt_right">4</td>
+<td headers="var2" class="gt_row gt_right">890</td>
+<td headers="var3" class="gt_row gt_right">0.90</td>
+<td headers="group" class="gt_row gt_left">B</td>
+<td headers="factor_1" class="gt_row gt_center">B</td>
+<td headers="factor_2a" class="gt_row gt_center">Young</td>
+<td headers="factor_2b" class="gt_row gt_center">My Label2</td>
+<td headers="factor_2c" class="gt_row gt_center">NA</td>
+<td headers="factor_3" class="gt_row gt_center">Old</td></tr>
+    <tr><td headers="var1" class="gt_row gt_right">5</td>
+<td headers="var2" class="gt_row gt_right">20</td>
+<td headers="var3" class="gt_row gt_right">0.98</td>
+<td headers="group" class="gt_row gt_left">A</td>
+<td headers="factor_1" class="gt_row gt_center">A</td>
+<td headers="factor_2a" class="gt_row gt_center">Old</td>
+<td headers="factor_2b" class="gt_row gt_center">My Label1</td>
+<td headers="factor_2c" class="gt_row gt_center">NA</td>
+<td headers="factor_3" class="gt_row gt_center">Young</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+<p>Piping the data frame to <code>glimpse()</code> will allow you to take inventory of the factors created.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="sc">|&gt;</span> <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 4
+Columns: 9
+$ var1      &lt;dbl&gt; 1, 3, 4, 5
+$ var2      &lt;dbl&gt; 100, 650, 890, 20
+$ var3      &lt;dbl&gt; 1.00, 0.60, 0.90, 0.98
+$ group     &lt;chr&gt; "B", "A", "B", "A"
+$ factor_1  &lt;fct&gt; B, A, B, A
+$ factor_2a &lt;fct&gt; Young, Old, Young, Old
+$ factor_2b &lt;fct&gt; My Label2, My Label1, My Label2, My Label1
+$ factor_2c &lt;fct&gt; NA, NA, NA, NA
+$ factor_3  &lt;fct&gt; Old, Young, Old, Young</code></pre>
+</div>
+</div>
+<p>The variable are not flagged as <code>&lt;fct&gt;</code>.</p>
+<section id="inspecting-factor-levels" class="level3">
+<h3 class="anchored" data-anchor-id="inspecting-factor-levels"><strong>Inspecting Factor Levels</strong></h3>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="ycqjwdzevm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ycqjwdzevm table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#ycqjwdzevm thead, #ycqjwdzevm tbody, #ycqjwdzevm tfoot, #ycqjwdzevm tr, #ycqjwdzevm td, #ycqjwdzevm th {
+  border-style: none;
+}
+
+#ycqjwdzevm p {
+  margin: 0;
+  padding: 0;
+}
+
+#ycqjwdzevm .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ycqjwdzevm .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#ycqjwdzevm .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ycqjwdzevm .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ycqjwdzevm .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ycqjwdzevm .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ycqjwdzevm .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ycqjwdzevm .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ycqjwdzevm .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ycqjwdzevm .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ycqjwdzevm .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ycqjwdzevm .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ycqjwdzevm .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#ycqjwdzevm .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#ycqjwdzevm .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ycqjwdzevm .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ycqjwdzevm .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ycqjwdzevm .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ycqjwdzevm .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ycqjwdzevm .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#ycqjwdzevm .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#ycqjwdzevm .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#ycqjwdzevm .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ycqjwdzevm .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#ycqjwdzevm .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#ycqjwdzevm .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ycqjwdzevm .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ycqjwdzevm .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ycqjwdzevm .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ycqjwdzevm .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ycqjwdzevm .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ycqjwdzevm .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ycqjwdzevm .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ycqjwdzevm .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ycqjwdzevm .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ycqjwdzevm .gt_left {
+  text-align: left;
+}
+
+#ycqjwdzevm .gt_center {
+  text-align: center;
+}
+
+#ycqjwdzevm .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ycqjwdzevm .gt_font_normal {
+  font-weight: normal;
+}
+
+#ycqjwdzevm .gt_font_bold {
+  font-weight: bold;
+}
+
+#ycqjwdzevm .gt_font_italic {
+  font-style: italic;
+}
+
+#ycqjwdzevm .gt_super {
+  font-size: 65%;
+}
+
+#ycqjwdzevm .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#ycqjwdzevm .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#ycqjwdzevm .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#ycqjwdzevm .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#ycqjwdzevm .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#ycqjwdzevm .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#ycqjwdzevm .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="var1">var1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="var2">var2</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="var3">var3</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="group">group</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_1">factor_1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_2a">factor_2a</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_2b">factor_2b</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_2c">factor_2c</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_3">factor_3</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="var1" class="gt_row gt_right">1</td>
+<td headers="var2" class="gt_row gt_right">100</td>
+<td headers="var3" class="gt_row gt_right">1.00</td>
+<td headers="group" class="gt_row gt_left">B</td>
+<td headers="factor_1" class="gt_row gt_center">B</td>
+<td headers="factor_2a" class="gt_row gt_center">Young</td>
+<td headers="factor_2b" class="gt_row gt_center">My Label2</td>
+<td headers="factor_2c" class="gt_row gt_center">NA</td>
+<td headers="factor_3" class="gt_row gt_center">Old</td></tr>
+    <tr><td headers="var1" class="gt_row gt_right">3</td>
+<td headers="var2" class="gt_row gt_right">650</td>
+<td headers="var3" class="gt_row gt_right">0.60</td>
+<td headers="group" class="gt_row gt_left">A</td>
+<td headers="factor_1" class="gt_row gt_center">A</td>
+<td headers="factor_2a" class="gt_row gt_center">Old</td>
+<td headers="factor_2b" class="gt_row gt_center">My Label1</td>
+<td headers="factor_2c" class="gt_row gt_center">NA</td>
+<td headers="factor_3" class="gt_row gt_center">Young</td></tr>
+    <tr><td headers="var1" class="gt_row gt_right">4</td>
+<td headers="var2" class="gt_row gt_right">890</td>
+<td headers="var3" class="gt_row gt_right">0.90</td>
+<td headers="group" class="gt_row gt_left">B</td>
+<td headers="factor_1" class="gt_row gt_center">B</td>
+<td headers="factor_2a" class="gt_row gt_center">Young</td>
+<td headers="factor_2b" class="gt_row gt_center">My Label2</td>
+<td headers="factor_2c" class="gt_row gt_center">NA</td>
+<td headers="factor_3" class="gt_row gt_center">Old</td></tr>
+    <tr><td headers="var1" class="gt_row gt_right">5</td>
+<td headers="var2" class="gt_row gt_right">20</td>
+<td headers="var3" class="gt_row gt_right">0.98</td>
+<td headers="group" class="gt_row gt_left">A</td>
+<td headers="factor_1" class="gt_row gt_center">A</td>
+<td headers="factor_2a" class="gt_row gt_center">Old</td>
+<td headers="factor_2b" class="gt_row gt_center">My Label1</td>
+<td headers="factor_2c" class="gt_row gt_center">NA</td>
+<td headers="factor_3" class="gt_row gt_center">Young</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+<p><strong>Factor 1</strong></p>
+<p>Let’s inspect the variable by <code>pull()</code>ing it from the data frame.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="sc">|&gt;</span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(factor_1) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] B A B A
+Levels: A B</code></pre>
+</div>
+</div>
+<p>You see that the vector along with all 4 elements. There are also are 2 levels listed. To inspect just the levels, pipe the variable to <code>levels()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="sc">|&gt;</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(factor_1) <span class="sc">|&gt;</span></span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">levels</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "A" "B"</code></pre>
+</div>
+</div>
+<p>The levels take on the character elements. For the rows where <code>group</code> is <code>A</code>, <code>factor_1</code> is shown as <code>A</code> also.</p>
+<p><strong>Factor 2a</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="sc">|&gt;</span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(factor_2a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] Young Old   Young Old  
+Levels: Old Young</code></pre>
+</div>
+</div>
+<p>The levels take on the levels specified in the function. Note that the levels are returned alphabetically, <code>"Old"</code> before <code>"Young"</code>. Do not be fooled, however. This order is not based on the level but rather on the label. For example, <code>labels = c("Young", "Old")</code> corresponded to <code>levels = c("A", "B")</code>). Because <code>"A"</code> is alphabetically before <code>"B"</code>, then <code>"Young"</code> will appear before <code>"Old"</code>. To make this distinction more clear, we will compare <code>factor_2a</code> to <code>factor_3</code>.</p>
+<p>In the data frame, the rows where <code>group</code> is <code>A</code>, <code>factor_2a</code> is now shown as <code>Old</code> rather than <code>A</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>gt<span class="sc">::</span><span class="fu">gt</span>(DATA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="fjvvvprzsj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fjvvvprzsj table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#fjvvvprzsj thead, #fjvvvprzsj tbody, #fjvvvprzsj tfoot, #fjvvvprzsj tr, #fjvvvprzsj td, #fjvvvprzsj th {
+  border-style: none;
+}
+
+#fjvvvprzsj p {
+  margin: 0;
+  padding: 0;
+}
+
+#fjvvvprzsj .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#fjvvvprzsj .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#fjvvvprzsj .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#fjvvvprzsj .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#fjvvvprzsj .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#fjvvvprzsj .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fjvvvprzsj .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#fjvvvprzsj .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#fjvvvprzsj .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#fjvvvprzsj .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#fjvvvprzsj .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#fjvvvprzsj .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#fjvvvprzsj .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#fjvvvprzsj .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#fjvvvprzsj .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#fjvvvprzsj .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#fjvvvprzsj .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#fjvvvprzsj .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#fjvvvprzsj .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fjvvvprzsj .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#fjvvvprzsj .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#fjvvvprzsj .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#fjvvvprzsj .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fjvvvprzsj .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#fjvvvprzsj .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#fjvvvprzsj .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fjvvvprzsj .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fjvvvprzsj .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#fjvvvprzsj .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fjvvvprzsj .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#fjvvvprzsj .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fjvvvprzsj .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#fjvvvprzsj .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fjvvvprzsj .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#fjvvvprzsj .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fjvvvprzsj .gt_left {
+  text-align: left;
+}
+
+#fjvvvprzsj .gt_center {
+  text-align: center;
+}
+
+#fjvvvprzsj .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#fjvvvprzsj .gt_font_normal {
+  font-weight: normal;
+}
+
+#fjvvvprzsj .gt_font_bold {
+  font-weight: bold;
+}
+
+#fjvvvprzsj .gt_font_italic {
+  font-style: italic;
+}
+
+#fjvvvprzsj .gt_super {
+  font-size: 65%;
+}
+
+#fjvvvprzsj .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#fjvvvprzsj .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#fjvvvprzsj .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#fjvvvprzsj .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#fjvvvprzsj .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#fjvvvprzsj .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#fjvvvprzsj .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="var1">var1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="var2">var2</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="var3">var3</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="group">group</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_1">factor_1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_2a">factor_2a</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_2b">factor_2b</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_2c">factor_2c</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_3">factor_3</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="var1" class="gt_row gt_right">1</td>
+<td headers="var2" class="gt_row gt_right">100</td>
+<td headers="var3" class="gt_row gt_right">1.00</td>
+<td headers="group" class="gt_row gt_left">B</td>
+<td headers="factor_1" class="gt_row gt_center">B</td>
+<td headers="factor_2a" class="gt_row gt_center">Young</td>
+<td headers="factor_2b" class="gt_row gt_center">My Label2</td>
+<td headers="factor_2c" class="gt_row gt_center">NA</td>
+<td headers="factor_3" class="gt_row gt_center">Old</td></tr>
+    <tr><td headers="var1" class="gt_row gt_right">3</td>
+<td headers="var2" class="gt_row gt_right">650</td>
+<td headers="var3" class="gt_row gt_right">0.60</td>
+<td headers="group" class="gt_row gt_left">A</td>
+<td headers="factor_1" class="gt_row gt_center">A</td>
+<td headers="factor_2a" class="gt_row gt_center">Old</td>
+<td headers="factor_2b" class="gt_row gt_center">My Label1</td>
+<td headers="factor_2c" class="gt_row gt_center">NA</td>
+<td headers="factor_3" class="gt_row gt_center">Young</td></tr>
+    <tr><td headers="var1" class="gt_row gt_right">4</td>
+<td headers="var2" class="gt_row gt_right">890</td>
+<td headers="var3" class="gt_row gt_right">0.90</td>
+<td headers="group" class="gt_row gt_left">B</td>
+<td headers="factor_1" class="gt_row gt_center">B</td>
+<td headers="factor_2a" class="gt_row gt_center">Young</td>
+<td headers="factor_2b" class="gt_row gt_center">My Label2</td>
+<td headers="factor_2c" class="gt_row gt_center">NA</td>
+<td headers="factor_3" class="gt_row gt_center">Old</td></tr>
+    <tr><td headers="var1" class="gt_row gt_right">5</td>
+<td headers="var2" class="gt_row gt_right">20</td>
+<td headers="var3" class="gt_row gt_right">0.98</td>
+<td headers="group" class="gt_row gt_left">A</td>
+<td headers="factor_1" class="gt_row gt_center">A</td>
+<td headers="factor_2a" class="gt_row gt_center">Old</td>
+<td headers="factor_2b" class="gt_row gt_center">My Label1</td>
+<td headers="factor_2c" class="gt_row gt_center">NA</td>
+<td headers="factor_3" class="gt_row gt_center">Young</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+<p><strong>Factor 2b</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="sc">|&gt;</span></span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(factor_2b) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] My Label2 My Label1 My Label2 My Label1
+Levels: My Label1 My Label2</code></pre>
+</div>
+</div>
+<p>The levels take on increments of the specified level. Note that they are presented alphanumerically, again based on the label, though this distinction is not clear.</p>
+<p><strong>Factor 2c</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="sc">|&gt;</span></span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(factor_2c) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;
+Levels: Old Young</code></pre>
+</div>
+</div>
+<p>This factor is problematic and is created incorrectly. Specifying the <code>levels</code> resulted in the creation of a factor variable with <code>NA</code> values across the rows.</p>
+<p><strong>Factor 3</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="sc">|&gt;</span></span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(factor_3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] Old   Young Old   Young
+Levels: Young Old</code></pre>
+</div>
+</div>
+<p>The levels take on the levels specified in the function. Note that they are <strong>not</strong> presented alphabetically but rather in the order of the levels (e.g., <code>labels = c("Young", "Old")</code>) paired to the labels (<code>levels = c("A", "B")</code>). Because <code>"A"</code> is alphabetically before <code>"B"</code>, then <code>"Young"</code> will appear before <code>"Old"</code>.</p>
+<p><strong>Note:</strong> Remember that unordered factors actually have an order, which is based on the underlying characters or level.</p>
+</section>
+</section>
+<section id="ordered-factors" class="level2">
+<h2 class="anchored" data-anchor-id="ordered-factors"><strong>Ordered Factors</strong></h2>
+<p>Ordered factors differ from unordered factors in that they are ordered to represent some ordering of levels of a variable. Variables like race, college major, sex, etc. have no order to them. Variables like tumor stage, satisfaction rating, etc. have an order to them. Some values represent outcomes that are less than or greater than others.</p>
+<p>Ordered factors should be used when there are more than two categories that are ordinal. Beyond the ordering of the values, ordered factors in statistical models impose constraints on the data that are not imposed with unordered factors. In other words, the magnitude and direction of effects of an outcome variable that is associated with the ordered factor predictor will obey that ordering. Thus, ordering of categories is equivalent to a constraint on the parameter space in the model.</p>
+<p>The documentation states that ordered is <em>“logical flag to determine if the levels should be regarded as ordered (in the order given)”</em></p>
+<section id="and-example-with-character-vectors" class="level3">
+<h3 class="anchored" data-anchor-id="and-example-with-character-vectors"><strong>And Example with Character Vectors</strong></h3>
+<p>Taking variable to create into a factor and specifying <code>ordered = TRUE</code> will create a new variable that is ordered.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="ot">&lt;-</span></span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>  DATA <span class="sc">|&gt;</span></span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">factor_4a =</span> <span class="fu">factor</span>(<span class="at">x =</span> group,</span>
+<span id="cb75-5"><a href="#cb75-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">ordered =</span> <span class="cn">TRUE</span></span>
+<span id="cb75-6"><a href="#cb75-6" aria-hidden="true" tabindex="-1"></a>                      )</span>
+<span id="cb75-7"><a href="#cb75-7" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The factor levels take on the order values in alphabetical order. A problem will arise if this order may not be the order that you need. Always make sure your ordering is created correctly.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="sc">|&gt;</span> <span class="fu">pull</span>(factor_4a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] B A B A
+Levels: A &lt; B</code></pre>
+</div>
+</div>
+<p>The attributes so that the object class is now “ordered” and “factor”.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="sc">|&gt;</span> <span class="fu">pull</span>(factor_4a) <span class="sc">|&gt;</span> <span class="fu">attributes</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$levels
+[1] "A" "B"
+
+$class
+[1] "ordered" "factor" </code></pre>
+</div>
+</div>
+<section id="adjusting-the-levels-order" class="level4">
+<h4 class="anchored" data-anchor-id="adjusting-the-levels-order"><strong>Adjusting the <code>levels</code> Order</strong></h4>
+<p>A safe approach to creating ordered factors is to ensure that you specify the order rather than assume R will read your mind. Do not assume that the alphabetical or alphanumeric order is the proper ordering of the factor. If the letters A and B represented grades, A &gt; B rather that A &lt; B. Similarly, Young &lt; Old but without you controlling the order, Old &lt; Young. Your ordered factor would then be incorrect.</p>
+<p>Passing <code>levels = c("B", "A")</code> will ensure that A &gt; B.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="ot">&lt;-</span></span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>  DATA <span class="sc">|&gt;</span></span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">factor_4b =</span> <span class="fu">factor</span>(<span class="at">x =</span> group,</span>
+<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"B"</span>, <span class="st">"A"</span>),</span>
+<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">ordered =</span> <span class="cn">TRUE</span></span>
+<span id="cb80-7"><a href="#cb80-7" aria-hidden="true" tabindex="-1"></a>                       )</span>
+<span id="cb80-8"><a href="#cb80-8" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The factor levels now take on the order passed to <code>levels</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="sc">|&gt;</span> <span class="fu">pull</span>(factor_4b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] B A B A
+Levels: B &lt; A</code></pre>
+</div>
+</div>
+<p>If you want to add different labels, pass a character vector to <code>labels</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="ot">&lt;-</span></span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>  DATA <span class="sc">|&gt;</span></span>
+<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">factor_4c =</span> <span class="fu">factor</span>(<span class="at">x =</span> group,</span>
+<span id="cb83-5"><a href="#cb83-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"B"</span>, <span class="st">"A"</span>),</span>
+<span id="cb83-6"><a href="#cb83-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Young"</span>, <span class="st">"Old"</span>),</span>
+<span id="cb83-7"><a href="#cb83-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">ordered =</span> <span class="cn">TRUE</span></span>
+<span id="cb83-8"><a href="#cb83-8" aria-hidden="true" tabindex="-1"></a>                       )</span>
+<span id="cb83-9"><a href="#cb83-9" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The factor levels now take on the order passed to <code>levels</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="sc">|&gt;</span> <span class="fu">pull</span>(factor_4c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] Young Old   Young Old  
+Levels: Young &lt; Old</code></pre>
+</div>
+</div>
+<p>Comparing the factor variables, versions a, b, and c</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="sc">|&gt;</span> <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">"4"</span>)) <span class="sc">|&gt;</span> gt<span class="sc">::</span><span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="lobjxgiuyy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lobjxgiuyy table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#lobjxgiuyy thead, #lobjxgiuyy tbody, #lobjxgiuyy tfoot, #lobjxgiuyy tr, #lobjxgiuyy td, #lobjxgiuyy th {
+  border-style: none;
+}
+
+#lobjxgiuyy p {
+  margin: 0;
+  padding: 0;
+}
+
+#lobjxgiuyy .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#lobjxgiuyy .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#lobjxgiuyy .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#lobjxgiuyy .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#lobjxgiuyy .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lobjxgiuyy .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lobjxgiuyy .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lobjxgiuyy .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#lobjxgiuyy .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#lobjxgiuyy .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#lobjxgiuyy .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#lobjxgiuyy .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#lobjxgiuyy .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#lobjxgiuyy .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#lobjxgiuyy .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#lobjxgiuyy .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#lobjxgiuyy .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#lobjxgiuyy .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#lobjxgiuyy .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lobjxgiuyy .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#lobjxgiuyy .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#lobjxgiuyy .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#lobjxgiuyy .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lobjxgiuyy .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#lobjxgiuyy .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#lobjxgiuyy .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lobjxgiuyy .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lobjxgiuyy .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#lobjxgiuyy .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lobjxgiuyy .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#lobjxgiuyy .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lobjxgiuyy .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lobjxgiuyy .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lobjxgiuyy .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lobjxgiuyy .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lobjxgiuyy .gt_left {
+  text-align: left;
+}
+
+#lobjxgiuyy .gt_center {
+  text-align: center;
+}
+
+#lobjxgiuyy .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#lobjxgiuyy .gt_font_normal {
+  font-weight: normal;
+}
+
+#lobjxgiuyy .gt_font_bold {
+  font-weight: bold;
+}
+
+#lobjxgiuyy .gt_font_italic {
+  font-style: italic;
+}
+
+#lobjxgiuyy .gt_super {
+  font-size: 65%;
+}
+
+#lobjxgiuyy .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#lobjxgiuyy .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#lobjxgiuyy .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#lobjxgiuyy .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#lobjxgiuyy .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#lobjxgiuyy .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#lobjxgiuyy .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_4a">factor_4a</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_4b">factor_4b</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_4c">factor_4c</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="factor_4a" class="gt_row gt_center">B</td>
+<td headers="factor_4b" class="gt_row gt_center">B</td>
+<td headers="factor_4c" class="gt_row gt_center">Young</td></tr>
+    <tr><td headers="factor_4a" class="gt_row gt_center">A</td>
+<td headers="factor_4b" class="gt_row gt_center">A</td>
+<td headers="factor_4c" class="gt_row gt_center">Old</td></tr>
+    <tr><td headers="factor_4a" class="gt_row gt_center">B</td>
+<td headers="factor_4b" class="gt_row gt_center">B</td>
+<td headers="factor_4c" class="gt_row gt_center">Young</td></tr>
+    <tr><td headers="factor_4a" class="gt_row gt_center">A</td>
+<td headers="factor_4b" class="gt_row gt_center">A</td>
+<td headers="factor_4c" class="gt_row gt_center">Old</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="and-example-with-character-vectors-1" class="level3">
+<h3 class="anchored" data-anchor-id="and-example-with-character-vectors-1"><strong>And Example with Character Vectors</strong></h3>
+<p>When your variable that you want to use for creating a factor is character in nature, the <code>levels</code> would need a character vector.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="ot">&lt;-</span></span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a>  DATA <span class="sc">|&gt;</span></span>
+<span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb87-4"><a href="#cb87-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">factor_4 =</span> <span class="fu">factor</span>(<span class="at">x =</span> group,</span>
+<span id="cb87-5"><a href="#cb87-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>),</span>
+<span id="cb87-6"><a href="#cb87-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Young"</span>, <span class="st">"Old"</span>),</span>
+<span id="cb87-7"><a href="#cb87-7" aria-hidden="true" tabindex="-1"></a>                      <span class="at">ordered =</span> <span class="cn">TRUE</span></span>
+<span id="cb87-8"><a href="#cb87-8" aria-hidden="true" tabindex="-1"></a>                      )</span>
+<span id="cb87-9"><a href="#cb87-9" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s take inventory of the data frame.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="sc">|&gt;</span> <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 4
+Columns: 13
+$ var1      &lt;dbl&gt; 1, 3, 4, 5
+$ var2      &lt;dbl&gt; 100, 650, 890, 20
+$ var3      &lt;dbl&gt; 1.00, 0.60, 0.90, 0.98
+$ group     &lt;chr&gt; "B", "A", "B", "A"
+$ factor_1  &lt;fct&gt; B, A, B, A
+$ factor_2a &lt;fct&gt; Young, Old, Young, Old
+$ factor_2b &lt;fct&gt; My Label2, My Label1, My Label2, My Label1
+$ factor_2c &lt;fct&gt; NA, NA, NA, NA
+$ factor_3  &lt;fct&gt; Old, Young, Old, Young
+$ factor_4a &lt;ord&gt; B, A, B, A
+$ factor_4b &lt;ord&gt; B, A, B, A
+$ factor_4c &lt;ord&gt; Young, Old, Young, Old
+$ factor_4  &lt;ord&gt; Old, Young, Old, Young</code></pre>
+</div>
+</div>
+<p>Now, <code>factor_4</code> is shown as <code>&lt;ord&gt;</code>, which represents it is an ordered factor. Looking at the data frame, the levels and the labels look just like those for <code>factor_3</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="sc">|&gt;</span> gt<span class="sc">::</span><span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="axdgxxnkal" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#axdgxxnkal table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#axdgxxnkal thead, #axdgxxnkal tbody, #axdgxxnkal tfoot, #axdgxxnkal tr, #axdgxxnkal td, #axdgxxnkal th {
+  border-style: none;
+}
+
+#axdgxxnkal p {
+  margin: 0;
+  padding: 0;
+}
+
+#axdgxxnkal .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#axdgxxnkal .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#axdgxxnkal .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#axdgxxnkal .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#axdgxxnkal .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#axdgxxnkal .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#axdgxxnkal .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#axdgxxnkal .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#axdgxxnkal .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#axdgxxnkal .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#axdgxxnkal .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#axdgxxnkal .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#axdgxxnkal .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#axdgxxnkal .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#axdgxxnkal .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#axdgxxnkal .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#axdgxxnkal .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#axdgxxnkal .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#axdgxxnkal .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#axdgxxnkal .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#axdgxxnkal .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#axdgxxnkal .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#axdgxxnkal .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#axdgxxnkal .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#axdgxxnkal .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#axdgxxnkal .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#axdgxxnkal .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#axdgxxnkal .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#axdgxxnkal .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#axdgxxnkal .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#axdgxxnkal .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#axdgxxnkal .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#axdgxxnkal .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#axdgxxnkal .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#axdgxxnkal .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#axdgxxnkal .gt_left {
+  text-align: left;
+}
+
+#axdgxxnkal .gt_center {
+  text-align: center;
+}
+
+#axdgxxnkal .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#axdgxxnkal .gt_font_normal {
+  font-weight: normal;
+}
+
+#axdgxxnkal .gt_font_bold {
+  font-weight: bold;
+}
+
+#axdgxxnkal .gt_font_italic {
+  font-style: italic;
+}
+
+#axdgxxnkal .gt_super {
+  font-size: 65%;
+}
+
+#axdgxxnkal .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#axdgxxnkal .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#axdgxxnkal .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#axdgxxnkal .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#axdgxxnkal .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#axdgxxnkal .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#axdgxxnkal .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="var1">var1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="var2">var2</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="var3">var3</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="group">group</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_1">factor_1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_2a">factor_2a</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_2b">factor_2b</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_2c">factor_2c</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_3">factor_3</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_4a">factor_4a</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_4b">factor_4b</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_4c">factor_4c</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_4">factor_4</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="var1" class="gt_row gt_right">1</td>
+<td headers="var2" class="gt_row gt_right">100</td>
+<td headers="var3" class="gt_row gt_right">1.00</td>
+<td headers="group" class="gt_row gt_left">B</td>
+<td headers="factor_1" class="gt_row gt_center">B</td>
+<td headers="factor_2a" class="gt_row gt_center">Young</td>
+<td headers="factor_2b" class="gt_row gt_center">My Label2</td>
+<td headers="factor_2c" class="gt_row gt_center">NA</td>
+<td headers="factor_3" class="gt_row gt_center">Old</td>
+<td headers="factor_4a" class="gt_row gt_center">B</td>
+<td headers="factor_4b" class="gt_row gt_center">B</td>
+<td headers="factor_4c" class="gt_row gt_center">Young</td>
+<td headers="factor_4" class="gt_row gt_center">Old</td></tr>
+    <tr><td headers="var1" class="gt_row gt_right">3</td>
+<td headers="var2" class="gt_row gt_right">650</td>
+<td headers="var3" class="gt_row gt_right">0.60</td>
+<td headers="group" class="gt_row gt_left">A</td>
+<td headers="factor_1" class="gt_row gt_center">A</td>
+<td headers="factor_2a" class="gt_row gt_center">Old</td>
+<td headers="factor_2b" class="gt_row gt_center">My Label1</td>
+<td headers="factor_2c" class="gt_row gt_center">NA</td>
+<td headers="factor_3" class="gt_row gt_center">Young</td>
+<td headers="factor_4a" class="gt_row gt_center">A</td>
+<td headers="factor_4b" class="gt_row gt_center">A</td>
+<td headers="factor_4c" class="gt_row gt_center">Old</td>
+<td headers="factor_4" class="gt_row gt_center">Young</td></tr>
+    <tr><td headers="var1" class="gt_row gt_right">4</td>
+<td headers="var2" class="gt_row gt_right">890</td>
+<td headers="var3" class="gt_row gt_right">0.90</td>
+<td headers="group" class="gt_row gt_left">B</td>
+<td headers="factor_1" class="gt_row gt_center">B</td>
+<td headers="factor_2a" class="gt_row gt_center">Young</td>
+<td headers="factor_2b" class="gt_row gt_center">My Label2</td>
+<td headers="factor_2c" class="gt_row gt_center">NA</td>
+<td headers="factor_3" class="gt_row gt_center">Old</td>
+<td headers="factor_4a" class="gt_row gt_center">B</td>
+<td headers="factor_4b" class="gt_row gt_center">B</td>
+<td headers="factor_4c" class="gt_row gt_center">Young</td>
+<td headers="factor_4" class="gt_row gt_center">Old</td></tr>
+    <tr><td headers="var1" class="gt_row gt_right">5</td>
+<td headers="var2" class="gt_row gt_right">20</td>
+<td headers="var3" class="gt_row gt_right">0.98</td>
+<td headers="group" class="gt_row gt_left">A</td>
+<td headers="factor_1" class="gt_row gt_center">A</td>
+<td headers="factor_2a" class="gt_row gt_center">Old</td>
+<td headers="factor_2b" class="gt_row gt_center">My Label1</td>
+<td headers="factor_2c" class="gt_row gt_center">NA</td>
+<td headers="factor_3" class="gt_row gt_center">Young</td>
+<td headers="factor_4a" class="gt_row gt_center">A</td>
+<td headers="factor_4b" class="gt_row gt_center">A</td>
+<td headers="factor_4c" class="gt_row gt_center">Old</td>
+<td headers="factor_4" class="gt_row gt_center">Young</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+<p>Nothing appears visually different between <code>factor_3</code> and <code>factor_4</code> in the data frame. We know that <code>factor_4</code> is ordered, however. Let’s see what happens if we inspect the variable and its levels.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="sc">|&gt;</span></span>
+<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(factor_4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] Old   Young Old   Young
+Levels: Young &lt; Old</code></pre>
+</div>
+</div>
+<p>Now we see something different. The elements of the factor are listed as well as the levels. Importantly, the <code>&lt;</code> indicates an order to the levels such that one level is less than/greater than the other.</p>
+</section>
+<section id="and-example-with-numeric-vectors" class="level3">
+<h3 class="anchored" data-anchor-id="and-example-with-numeric-vectors"><strong>And Example with Numeric Vectors</strong></h3>
+<p>Let’s create another ordered factor. In this instance, the vector used to make the factor is numeric. Assume that the numeric values in <code>var1</code> represent satisfaction responses to a question like <em>“How satisfied are you with your purchase?”</em>. The options available were 1 = “very dissatisfied”, 2 = “dissatisfied”, 3 = “neutral”, 4= “satisfied”, 5 = “very satisfied”. If you wanted to use the responses as a grouping variable as a predictor for another variables, you could treat them as an ordered categorical variable or even some numeric value. Responses options clearly have an order to them but the order may not be equivalent. Making the levels ordered would create such an order to them.</p>
+<p>Looking at the values in <code>var1</code>, you see that they are numbers: 1, 3, 4, 5. All numbers have not been used either. For example, the “dissatisfied” option was not used by anyone.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a>DATA<span class="sc">$</span>var1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 3 4 5</code></pre>
+</div>
+</div>
+<p>Because <code>var1</code> is numeric, pass a numeric vector to <code>levels</code> and a character vector to <code>labels</code>. If the variable you are trying to convert into the factors is character and not numeric, your vector passed to <code>levels</code> would be character as well.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="ot">&lt;-</span></span>
+<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a>  DATA <span class="sc">|&gt;</span></span>
+<span id="cb95-3"><a href="#cb95-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">factor_5a =</span> <span class="fu">factor</span>(var1, </span>
+<span id="cb95-4"><a href="#cb95-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,     <span class="co"># or c(1, 2, 3, 4, 5)</span></span>
+<span id="cb95-5"><a href="#cb95-5" aria-hidden="true" tabindex="-1"></a>                           <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"very dissatisfied"</span>,</span>
+<span id="cb95-6"><a href="#cb95-6" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"dissatisfied"</span>, </span>
+<span id="cb95-7"><a href="#cb95-7" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"neutral"</span>, </span>
+<span id="cb95-8"><a href="#cb95-8" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"satisfied"</span>, </span>
+<span id="cb95-9"><a href="#cb95-9" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"very satisfied"</span></span>
+<span id="cb95-10"><a href="#cb95-10" aria-hidden="true" tabindex="-1"></a>                                      ),</span>
+<span id="cb95-11"><a href="#cb95-11" aria-hidden="true" tabindex="-1"></a>                           <span class="at">ordered =</span> <span class="cn">TRUE</span></span>
+<span id="cb95-12"><a href="#cb95-12" aria-hidden="true" tabindex="-1"></a>                           )</span>
+<span id="cb95-13"><a href="#cb95-13" aria-hidden="true" tabindex="-1"></a>       ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="sc">|&gt;</span></span>
+<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(factor_5a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] very dissatisfied neutral           satisfied         very satisfied   
+5 Levels: very dissatisfied &lt; dissatisfied &lt; neutral &lt; ... &lt; very satisfied</code></pre>
+</div>
+</div>
+<p>If your variable is numeric and you do not pass an argument of the labels, you will receive an error.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>DATA <span class="sc">|&gt;</span> gt<span class="sc">::</span><span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="bwglyrjcrn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bwglyrjcrn table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#bwglyrjcrn thead, #bwglyrjcrn tbody, #bwglyrjcrn tfoot, #bwglyrjcrn tr, #bwglyrjcrn td, #bwglyrjcrn th {
+  border-style: none;
+}
+
+#bwglyrjcrn p {
+  margin: 0;
+  padding: 0;
+}
+
+#bwglyrjcrn .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#bwglyrjcrn .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#bwglyrjcrn .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#bwglyrjcrn .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#bwglyrjcrn .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bwglyrjcrn .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bwglyrjcrn .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bwglyrjcrn .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#bwglyrjcrn .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#bwglyrjcrn .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#bwglyrjcrn .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#bwglyrjcrn .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#bwglyrjcrn .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#bwglyrjcrn .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#bwglyrjcrn .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#bwglyrjcrn .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#bwglyrjcrn .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#bwglyrjcrn .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#bwglyrjcrn .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bwglyrjcrn .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#bwglyrjcrn .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#bwglyrjcrn .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#bwglyrjcrn .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bwglyrjcrn .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#bwglyrjcrn .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#bwglyrjcrn .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bwglyrjcrn .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bwglyrjcrn .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#bwglyrjcrn .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bwglyrjcrn .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#bwglyrjcrn .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bwglyrjcrn .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bwglyrjcrn .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bwglyrjcrn .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bwglyrjcrn .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bwglyrjcrn .gt_left {
+  text-align: left;
+}
+
+#bwglyrjcrn .gt_center {
+  text-align: center;
+}
+
+#bwglyrjcrn .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#bwglyrjcrn .gt_font_normal {
+  font-weight: normal;
+}
+
+#bwglyrjcrn .gt_font_bold {
+  font-weight: bold;
+}
+
+#bwglyrjcrn .gt_font_italic {
+  font-style: italic;
+}
+
+#bwglyrjcrn .gt_super {
+  font-size: 65%;
+}
+
+#bwglyrjcrn .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#bwglyrjcrn .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#bwglyrjcrn .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#bwglyrjcrn .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#bwglyrjcrn .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#bwglyrjcrn .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#bwglyrjcrn .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="var1">var1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="var2">var2</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="var3">var3</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="group">group</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_1">factor_1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_2a">factor_2a</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_2b">factor_2b</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_2c">factor_2c</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_3">factor_3</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_4a">factor_4a</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_4b">factor_4b</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_4c">factor_4c</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_4">factor_4</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="factor_5a">factor_5a</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="var1" class="gt_row gt_right">1</td>
+<td headers="var2" class="gt_row gt_right">100</td>
+<td headers="var3" class="gt_row gt_right">1.00</td>
+<td headers="group" class="gt_row gt_left">B</td>
+<td headers="factor_1" class="gt_row gt_center">B</td>
+<td headers="factor_2a" class="gt_row gt_center">Young</td>
+<td headers="factor_2b" class="gt_row gt_center">My Label2</td>
+<td headers="factor_2c" class="gt_row gt_center">NA</td>
+<td headers="factor_3" class="gt_row gt_center">Old</td>
+<td headers="factor_4a" class="gt_row gt_center">B</td>
+<td headers="factor_4b" class="gt_row gt_center">B</td>
+<td headers="factor_4c" class="gt_row gt_center">Young</td>
+<td headers="factor_4" class="gt_row gt_center">Old</td>
+<td headers="factor_5a" class="gt_row gt_center">very dissatisfied</td></tr>
+    <tr><td headers="var1" class="gt_row gt_right">3</td>
+<td headers="var2" class="gt_row gt_right">650</td>
+<td headers="var3" class="gt_row gt_right">0.60</td>
+<td headers="group" class="gt_row gt_left">A</td>
+<td headers="factor_1" class="gt_row gt_center">A</td>
+<td headers="factor_2a" class="gt_row gt_center">Old</td>
+<td headers="factor_2b" class="gt_row gt_center">My Label1</td>
+<td headers="factor_2c" class="gt_row gt_center">NA</td>
+<td headers="factor_3" class="gt_row gt_center">Young</td>
+<td headers="factor_4a" class="gt_row gt_center">A</td>
+<td headers="factor_4b" class="gt_row gt_center">A</td>
+<td headers="factor_4c" class="gt_row gt_center">Old</td>
+<td headers="factor_4" class="gt_row gt_center">Young</td>
+<td headers="factor_5a" class="gt_row gt_center">neutral</td></tr>
+    <tr><td headers="var1" class="gt_row gt_right">4</td>
+<td headers="var2" class="gt_row gt_right">890</td>
+<td headers="var3" class="gt_row gt_right">0.90</td>
+<td headers="group" class="gt_row gt_left">B</td>
+<td headers="factor_1" class="gt_row gt_center">B</td>
+<td headers="factor_2a" class="gt_row gt_center">Young</td>
+<td headers="factor_2b" class="gt_row gt_center">My Label2</td>
+<td headers="factor_2c" class="gt_row gt_center">NA</td>
+<td headers="factor_3" class="gt_row gt_center">Old</td>
+<td headers="factor_4a" class="gt_row gt_center">B</td>
+<td headers="factor_4b" class="gt_row gt_center">B</td>
+<td headers="factor_4c" class="gt_row gt_center">Young</td>
+<td headers="factor_4" class="gt_row gt_center">Old</td>
+<td headers="factor_5a" class="gt_row gt_center">satisfied</td></tr>
+    <tr><td headers="var1" class="gt_row gt_right">5</td>
+<td headers="var2" class="gt_row gt_right">20</td>
+<td headers="var3" class="gt_row gt_right">0.98</td>
+<td headers="group" class="gt_row gt_left">A</td>
+<td headers="factor_1" class="gt_row gt_center">A</td>
+<td headers="factor_2a" class="gt_row gt_center">Old</td>
+<td headers="factor_2b" class="gt_row gt_center">My Label1</td>
+<td headers="factor_2c" class="gt_row gt_center">NA</td>
+<td headers="factor_3" class="gt_row gt_center">Young</td>
+<td headers="factor_4a" class="gt_row gt_center">A</td>
+<td headers="factor_4b" class="gt_row gt_center">A</td>
+<td headers="factor_4c" class="gt_row gt_center">Old</td>
+<td headers="factor_4" class="gt_row gt_center">Young</td>
+<td headers="factor_5a" class="gt_row gt_center">very satisfied</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="summary" class="level1">
+<h1><strong>Summary</strong></h1>
+<p>Factors represent categorical groupings of data that are not numeric. They can be unordered for which all levels of the factor will be treated the same but they can also be ordered. Ordered factors provide information about a hierarchy of the levels, which will be relevant for building appropriate statistical models that depend on the order.</p>
+</section>
+<section id="session-information" class="level1">
+<h1><strong>Session Information</strong></h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>sessioninfo<span class="sc">::</span><span class="fu">session_info</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>─ Session info ───────────────────────────────────────────────────────────────
+ setting  value
+ version  R version 4.3.2 (2023-10-31 ucrt)
+ os       Windows 11 x64 (build 22621)
+ system   x86_64, mingw32
+ ui       RTerm
+ language (EN)
+ collate  English_United States.utf8
+ ctype    English_United States.utf8
+ tz       America/Los_Angeles
+ date     2024-03-22
+ pandoc   3.1.5 @ C:/PROGRA~1/Pandoc/ (via rmarkdown)
+
+─ Packages ───────────────────────────────────────────────────────────────────
+ ! package     * version date (UTC) lib source
+   BiocManager   1.30.22 2023-08-08 [1] RSPM (R 4.3.0)
+ P bit           4.0.5   2022-11-15 [?] CRAN (R 4.3.1)
+ P bit64         4.0.5   2020-08-30 [?] CRAN (R 4.3.1)
+ P cli           3.6.1   2023-03-23 [?] CRAN (R 4.3.1)
+ P colorspace    2.1-0   2023-01-23 [?] CRAN (R 4.3.1)
+ P crayon        1.5.2   2022-09-29 [?] CRAN (R 4.3.1)
+ P digest        0.6.33  2023-07-07 [?] CRAN (R 4.3.1)
+   dplyr       * 1.1.4   2023-11-17 [1] RSPM (R 4.3.0)
+ P evaluate      0.21    2023-05-05 [?] CRAN (R 4.3.1)
+ P fansi         1.0.4   2023-01-22 [?] CRAN (R 4.3.1)
+ P fastmap       1.1.1   2023-02-24 [?] CRAN (R 4.3.1)
+ P forcats     * 1.0.0   2023-01-29 [?] CRAN (R 4.3.1)
+ P generics      0.1.3   2022-07-05 [?] CRAN (R 4.3.1)
+   ggplot2     * 3.4.4   2023-10-12 [1] RSPM (R 4.3.0)
+   glue          1.6.2   2022-02-24 [1] RSPM (R 4.3.0)
+   gt            0.10.0  2023-10-07 [1] RSPM (R 4.3.0)
+ P gtable        0.3.4   2023-08-21 [?] CRAN (R 4.3.1)
+   here          1.0.1   2020-12-13 [1] RSPM (R 4.3.0)
+ P hms           1.1.3   2023-03-21 [?] CRAN (R 4.3.1)
+   htmltools     0.5.7   2023-11-03 [1] RSPM (R 4.3.0)
+   htmlwidgets   1.6.4   2023-12-06 [1] RSPM (R 4.3.0)
+ P jsonlite      1.8.7   2023-06-29 [?] CRAN (R 4.3.1)
+   knitr         1.45    2023-10-30 [1] RSPM (R 4.3.0)
+ P lifecycle     1.0.3   2022-10-07 [?] CRAN (R 4.3.1)
+   lubridate   * 1.9.3   2023-09-27 [1] RSPM (R 4.3.0)
+   magrittr      2.0.3   2022-03-30 [1] RSPM (R 4.3.0)
+ P munsell       0.5.0   2018-06-12 [?] CRAN (R 4.3.1)
+ P pillar        1.9.0   2023-03-22 [?] CRAN (R 4.3.1)
+ P pkgconfig     2.0.3   2019-09-22 [?] CRAN (R 4.3.1)
+ P purrr       * 1.0.2   2023-08-10 [?] CRAN (R 4.3.1)
+ P R.methodsS3   1.8.2   2022-06-13 [?] CRAN (R 4.3.0)
+ P R.oo          1.25.0  2022-06-12 [?] CRAN (R 4.3.0)
+ P R.utils       2.12.2  2022-11-11 [?] CRAN (R 4.3.1)
+ P R6            2.5.1   2021-08-19 [?] CRAN (R 4.3.1)
+   readr       * 2.1.4   2023-02-10 [1] RSPM (R 4.3.0)
+   renv          1.0.3   2023-09-19 [1] RSPM (R 4.3.0)
+ P rlang         1.1.1   2023-04-28 [?] CRAN (R 4.3.1)
+   rmarkdown     2.25    2023-09-18 [1] RSPM (R 4.3.0)
+ P rprojroot     2.0.3   2022-04-02 [?] CRAN (R 4.3.1)
+   rstudioapi    0.15.0  2023-07-07 [1] RSPM (R 4.3.0)
+ P sass          0.4.7   2023-07-15 [?] CRAN (R 4.3.1)
+   scales        1.3.0   2023-11-28 [1] RSPM (R 4.3.0)
+   sessioninfo   1.2.2   2021-12-06 [1] RSPM (R 4.3.0)
+ P stringi       1.7.12  2023-01-11 [?] CRAN (R 4.3.0)
+   stringr     * 1.5.1   2023-11-14 [1] RSPM (R 4.3.0)
+ P tibble      * 3.2.1   2023-03-20 [?] CRAN (R 4.3.1)
+ P tidyr       * 1.3.0   2023-01-24 [?] CRAN (R 4.3.1)
+ P tidyselect    1.2.0   2022-10-10 [?] CRAN (R 4.3.1)
+   tidyverse   * 2.0.0   2023-02-22 [1] RSPM (R 4.3.0)
+ P timechange    0.2.0   2023-01-11 [?] CRAN (R 4.3.1)
+ P tzdb          0.4.0   2023-05-12 [?] CRAN (R 4.3.1)
+   utf8          1.2.4   2023-10-22 [1] RSPM (R 4.3.0)
+   vctrs         0.6.5   2023-12-01 [1] RSPM (R 4.3.0)
+   vroom       * 1.6.5   2023-12-05 [1] RSPM (R 4.3.0)
+ P withr         2.5.0   2022-03-03 [?] CRAN (R 4.3.1)
+ P xfun          0.40    2023-08-09 [?] CRAN (R 4.3.1)
+ P xml2          1.3.5   2023-07-06 [?] CRAN (R 4.3.1)
+ P yaml          2.3.7   2023-01-23 [?] CRAN (R 4.3.0)
+
+ [1] C:/Users/gcook/Sync/git/fods24/renv/library/R-4.3/x86_64-w64-mingw32
+ [2] C:/Users/gcook/AppData/Local/R/cache/R/renv/sandbox/R-4.3/x86_64-w64-mingw32/5b568fc0
+
+ P ── Loaded and on-disk path mismatch.
+
+──────────────────────────────────────────────────────────────────────────────</code></pre>
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
