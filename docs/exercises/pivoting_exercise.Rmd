@@ -221,7 +221,7 @@ Error in `tidyr::pivot_longer()`:
   `names_sep` or `names_pattern`.
 ```
 
-We will need to use `names_pattern` to extract the two components by looking for one pattern to match the names and another pattern to match the numbers. If the column variables were composed of the word "correct" plus some number, we could search for the specific character pattern, "correct". If we select only the first three columns, we can match that specific pattern along with numbers.   
+We will need to use `names_pattern` to extract the two components by looking for one pattern to match the names and another pattern to match the numbers. If the column variables were composed of the word "correct" plus some number, we could search for the specific character pattern, "correct". If we select only the first three columns, we can demonstrate matching that specific pattern along with numbers.   
 
 - `"(correct)"`: match the pattern with the literal characters "correct"
 - `"(\\d+)"`: match one or more digits following the letters in the column names
@@ -230,7 +230,7 @@ Putting them together:
 
 - `"(correct)(\\d+)"`: match "correct" followed by one or more digits
 
-**Note:** The parentheses are used to enclose each pattern separately, otherwise the match would be for the full pattern. We want to separate the letters from the numbers. 
+**Note:** The parentheses are used to enclose each pattern separately, otherwise the match would be for the full pattern. We want to separate the letters from the numbers in order to obtain a column variable with a name that matches the character pattern (viz., `"correct"`) and a column variable that matching the digits (viz., `"trial"`), respectively.    
 
 ```{r}
 WIDE |>
@@ -242,7 +242,28 @@ WIDE |>
   )
 ```
 
-Because the variable names are `"task_correct1"`, `"task_correct2"`, `"task_stim1"`, `"task_stim2"`, we need a pattern that is flexible enough to match both `"correct"` and `"stim"`. The solution is to match any letter in the alphabet.
+Because the variable names are `"task_correct1"`, `"task_correct2"`, `"task_stim1"`, `"task_stim2"`, we need a pattern that is flexible enough to match both `"correct"` and `"stim"`. 
+
+Sure, we could find all of the variable names for our task:
+
+```{r}
+WIDE |>
+  select(starts_with("task_")) |>
+  names()
+```  
+
+And then specify them directly for the pattern match `"(correct|stim)(\\d+)"`:
+
+```{r}
+WIDE |>
+  tidyr::pivot_longer(
+    cols = starts_with("task_"),
+    names_to = c(".value", "trial"),
+    names_pattern = "(correct|stim)(\\d+)"
+  )
+```
+
+But more flexible solution is to match any letter in the alphabet.
 
 - `"([A-Za-z]+)"`: match one or more alphabetical characters that are either uppercase or lowercase
 - `"(\\d+)"`: match one or more digits following the letters in the column names.
@@ -251,7 +272,7 @@ Putting them together:
 
 - `"([A-Za-z]+)(\\d+)"`: match any alphabetical characters followed by any digits
 
-```{r}
+```{.r}
 WIDE |>
   tidyr::pivot_longer(
     cols = starts_with("task_"),

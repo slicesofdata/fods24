@@ -32,7 +32,11 @@ For your project, you will read, manipulate, and write data. The code containing
 You can think of the structure as a building composed of floors. Each floor rests on the infrastructure of all lower floors. In order to reach the top floor, you pass through each floor, whether manually (walking stairs) or automatically (riding the elevator). 
 
 ```
-- etc.
+- Report_file – contains written text, in-line R objects,
+                calls relevant script files, File_XX,
+                writes out/knits report file
+- . . . 
+
 
 - File_03 - code loads libraries/functions, 
             calls File_02, reads transformed data, cleans/adds variables
@@ -56,7 +60,7 @@ Create another `.R` script file:
 
 1. Name the file `ex02.R`.
 
-2. Save to the project directory where you would save your script files.
+2. Save your script file in your project `/r` directory where code files would go.
 
 
 ### **Editing a Script**
@@ -67,7 +71,7 @@ Inside `ex02.R`:
 
 2. Create a vector object containing 5 names of individuals and assign it a meaningful name.
 
-3. Save your script file.
+3. Re-Save your script file.
 
 **Recommendation:** Consider adding comments about what your code instructions are doing so that you can be reminded easily.
 
@@ -78,8 +82,6 @@ names <- c("Bill", "Jill", "Mill", "Till", "Jill",  "Lill")
 ```
 
 
-
-
 ## **Creating a Function Script**
 
 Most of the functions you will use will in libraries that you will load. Other libraries, which you obtain someplace or write yourself, may be inside specific files. You will now create a function script.
@@ -88,7 +90,7 @@ Create another `.R` script file:
 
 1. Name the file `get_years_since_birth.R`.
 
-2. Save to the appropriate project directory.
+2. Save your script file in your project `/r/functions` directory where function files would go. If you don't have such a directory, create one.
 
 \newpage
 
@@ -155,7 +157,7 @@ Inside `ex02.R`:
 
 2. Create a new object that contains the mean of this new vector object. Use the `base R` function, `mean()` and name the object `mean_age`.
 
-3. Save your script file.
+3. Re-save your script file.
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 ages <- get_years_since_birth(birthdates)
@@ -188,7 +190,7 @@ source(here::here("r", "functions", "get_years_since_birth.R"))
 
 ## **Sourcing Function Files from a Directory**
 
-Assuming you save any personal functions in `/r/functions`, you may wish to source all functions saved there rather than source specific ones.
+Assuming you save any personal functions in `/r/functions`, you may wish to source all functions saved there rather than source specific ones. 
 
 1. Add a comment to describe what you are doing with this code.
 
