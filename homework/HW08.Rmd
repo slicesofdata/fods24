@@ -1,5 +1,5 @@
 ---
-title: "Exercise 10"
+title: "Exercise 08"
 author: "yourname"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
