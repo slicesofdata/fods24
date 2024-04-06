@@ -3875,7 +3875,7 @@
     "href": "modules/18_linear_models.html#linear-model-equation-1",
     "title": "Linear Models",
     "section": "Linear Model Equation",
-    "text": "Linear Model Equation\nThe linear model equation:\n\\[\nY = \\beta_0 + \\beta_1 X + \\beta_2 + X + \\epsilon\n\\]\n\nbeta_0: is the intercept (the value of Y when X = 0)\nbeta_1: is the slope (the change in Y for each one-unit change in X1)\nbeta_2: is the slope (the change in Y for each one-unit change in X2)\nepsilon: model error\n\nBecause we know the log(hp) is a better fit to mpg and we can see that wt_log is slightly more correlated with mpg than is wt, we can build some additional models to test.\nModel 2:\n\\[\nY = \\beta_0 + log(hp) X + wt X + \\epsilon\n\\] Model 3:\n\\[\nY = \\beta_0 + log(hp) X + \\log(wt) X + \\epsilon\n\\]"
+    "text": "Linear Model Equation\nThe linear model equation:\n\\[\nY = \\beta_0 + \\beta_1 X + \\beta_2 + X + \\epsilon\n\\]\n\nbeta_0: is the intercept (the value of Y when all Xs = 0)\nbeta_1: is the slope (the change in Y for each one-unit change in X1)\nbeta_2: is the slope (the change in Y for each one-unit change in X2)\nepsilon: model error\n\nBecause we know the log(hp) is a better fit to mpg and we can see that wt_log is slightly more correlated with mpg than is wt, we can build some additional models to test.\nModel 2:\n\\[\nY = \\beta_0 + log(hp) X + wt X + \\epsilon\n\\] Model 3:\n\\[\nY = \\beta_0 + log(hp) X + \\log(wt) X + \\epsilon\n\\]"
   },
   {
     "objectID": "modules/18_linear_models.html#building-multiple-predictor-models-using-lm",
