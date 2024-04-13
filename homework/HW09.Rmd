@@ -36,7 +36,7 @@ library(easystats)
 
 Read in data for your project so that you have numeric variables that you could use to build a linear regression model to examine the fit of a linear model. 
 
-```{r, eval=eval_answers, include=include_answers}
+```{r eval=eval_answers, message=FALSE, warning=FALSE, include=include_answers}
 
 ```
 
@@ -56,7 +56,7 @@ Specify the predictor(s) and outcome variables of the model and explain why you 
 
 Visualize the relationships between the predictor(s) and outcome variable. 
 
-```{r, eval=eval_answers, include=include_answers}
+```{r eval=eval_answers, message=FALSE, warning=FALSE, include=include_answers}
 
 ```
 
