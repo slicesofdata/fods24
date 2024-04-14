@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gabriel I. Cook">
-<meta name="dcterms.date" content="2024-02-06">
+<meta name="dcterms.date" content="2024-04-14">
 
 <title>PSYC166 - Exploratory Data Analysis</title>
 <style>
@@ -261,20 +261,20 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">summarizing_exercise.docx</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../exercises/visualizing_exercise.docx" rel="" target="">
- <span class="dropdown-text">visualizing_exercise.docx</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../exercises/pivoting_exercise.docx" rel="" target="">
  <span class="dropdown-text">pivoting_exercise.docx</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../exercises/strings_and_factors_exercise.docx" rel="" target="">
- <span class="dropdown-text">strings_and_factors_exercise.docx</span></a>
+    <a class="dropdown-item" href="../exercises/visualization_exercise.docx" rel="" target="">
+ <span class="dropdown-text">visualizing_exercise.docx</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../exercises/joining_exercise.docx" rel="" target="">
  <span class="dropdown-text">joining_exercise.docx</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../exercises/strings_and_factors_exercise.docx" rel="" target="">
+ <span class="dropdown-text">strings_and_factors_exercise.docx</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../exercises/linear_models_exercise.Rmd" rel="" target="">
@@ -517,6 +517,18 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../modules/18_linear_models_with_categorical_predictors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Linear Models (Categorical Predictors</strong></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../modules/18_validating_models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Validating Models</strong></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../modules/19_exploratory_data_analysis.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><strong>Exploratory Data Analysis</strong></span></a>
   </div>
@@ -576,18 +588,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><strong>Overview</strong></a>
-  <ul class="collapse">
-  <li><a href="#readings-and-preparation" id="toc-readings-and-preparation" class="nav-link" data-scroll-target="#readings-and-preparation"><strong>Readings and Preparation</strong></a></li>
-  <li><a href="#supplementary-readings" id="toc-supplementary-readings" class="nav-link" data-scroll-target="#supplementary-readings"><strong>Supplementary Readings</strong></a></li>
-  <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries"><strong>Libraries</strong></a></li>
-  </ul></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -611,7 +612,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 6, 2024</p>
+      <p class="date">April 14, 2024</p>
     </div>
   </div>
   
@@ -627,36 +628,15 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Under construction.
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This page is a work in progress and may contain areas that need more detail or that required syntactical, grammatical, and typographical changes. If you find some part requiring some editing, please let me know so I can fix it for you.</p>
+<p>Because of limited knowledge about concepts about basic mathematical models covered in prerequisite courses, this topic will be omitted. Additional coverage about linear models will be addressed in class.</p>
 </div>
 </div>
-<section id="overview" class="level1">
-<h1><strong>Overview</strong></h1>
-<p>In this module, we will introduce some other models and engage in some exploratory data analysis.</p>
-<section id="readings-and-preparation" class="level2">
-<h2 class="anchored" data-anchor-id="readings-and-preparation"><strong>Readings and Preparation</strong></h2>
-<p><em>Before Class</em>: First, read to familiarize yourself with the concepts rather than master them. I will assume that you attend class with some level of basic understanding of concepts and working of functions. The goal of reading should be to understand and implement code functions as well as support your understanding and help your troubleshooting of problems. This cannot happen if you just read the content without interacting with it, however reading is absolutely essential to being successful during class time. Work through some examples so that you have a good idea of your level of understanding and confidence.</p>
-<p><em>Class</em>: In class, some functions and concepts will be introduced and we will practice implementing code through exercises.</p>
-</section>
-<section id="supplementary-readings" class="level2">
-<h2 class="anchored" data-anchor-id="supplementary-readings"><strong>Supplementary Readings</strong></h2>
-<ul>
-<li><a href="https://r4ds.hadley.nz/eda">Exploratory Data Analysis</a></li>
-</ul>
-</section>
-<section id="libraries" class="level2">
-<h2 class="anchored" data-anchor-id="libraries"><strong>Libraries</strong></h2>
-<ul>
-<li><strong>{here}</strong> 1.0.1: for file path management</li>
-</ul>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
