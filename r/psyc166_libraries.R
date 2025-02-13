@@ -2,10 +2,10 @@ dataviz166_packages <- c(
 
   # DATA FRAME MANIPULATION
   "tidyverse", "dplyr", "dtplyr", "data.table",
-  "car",  "magrittr",
+  "car", "magrittr",
 
   # DATES AND TIMES
-  "lubridate", "zoo", "xts",
+  "lubridate", #"zoo", "xts",
 
   # DEVELOPMENT
   "devtools", "remotes",
@@ -21,14 +21,14 @@ dataviz166_packages <- c(
   "boot",    # bootstrapping
   "broom",   # cleaning up model outputs
   "lavaan",  # latent variable
-  "ranger",  # random forest
-  "party",   # decision tree
+  #"ranger",  # random forest
+  #"party",   # decision tree
   "caret",   #
   # http://www.sthda.com/english/articles/35-statistical-machine-learning-essentials/141-cart-model-decision-tree-essentials/
   "rpart",   # decision tree
 
   # PLOTTING
-  "dendextend", "dygraphs",
+  #"dendextend", "dygraphs",
   "ggplot2", "GGally", "ggiraph", "ggpubr",
   "gt", "gtsummary",
   "plotly", "cowplot",
